@@ -1,0 +1,15 @@
+# Derleme bağlamını küçük tut: imaj içinde yeniden üretilen veya
+# hiç gerekmeyen her şey dışarıda kalır.
+node_modules/
+dist/
+.astro/
+.dev/
+.git/
+.gitignore
+*.log
+.DS_Store
+
+# Belgeler ve yerel geliştirme araçları imaja girmez
+README.md
+CLAUDE.md
+dev.sh

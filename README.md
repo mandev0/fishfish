@@ -89,6 +89,34 @@ Güvenli bağlamın aktif olduğunu anlamanın en hızlı yolu: `/noktalar` sayf
 "Konumuma göre sırala" düğmesi görünüyorsa aktiftir. O düğmeyi `konumDestekli()` basıyor
 ve fonksiyon `isSecureContext` denetliyor.
 
+## Yayına alma
+
+Sunucuda Docker yeterli; Node kurmak gerekmez, site imajın içinde derlenir.
+
+```bash
+git pull
+docker compose up -d --build
+```
+
+`docker-compose.yaml` kapsayıcıyı `127.0.0.1:5453` üzerinde yayınlar — yani yalnızca
+makinenin kendisinden erişilebilir. TLS ve alan adı bu dosyanın dışındadır: önündeki
+ters vekil `fish.selimakpinar.com` isteklerini `http://127.0.0.1:5453` adresine taşır.
+Ters vekilin kendisi bir kapsayıcıysa yayın satırını `"5453:80"` yapıp servisi vekilin
+ağına ekle.
+
+`docker/nginx.conf` iki işi yapar:
+
+- **Adresleri olduğu gibi servis eder.** Site içindeki bağlantılar `/noktalar` der,
+  statik çıktı ise `/noktalar/index.html`. `try_files` sıralaması bu yüzden
+  `$uri/index.html`'i `$uri/`den önce dener: aksi hâlde nginx sona eğik çizgi ekleyen
+  bir 301 döndürür ve adres, service worker'ın önbellek anahtarından ayrışır.
+- **Önbellek başlıklarını ayırır.** `sw.js` ve `manifest.webmanifest` hiç önbelleğe
+  alınmaz (yeni sürümün fark edilmesi buna bağlı), adında içerik özeti taşıyan
+  `/_astro/` varlıkları bir yıl `immutable`, HTML ise her zaman doğrulanır.
+
+Kapsayıcı salt okunur bir dosya sisteminde çalışır ve `/healthz` üzerinden sağlık
+yoklaması yapar; `docker compose ps` durumu `healthy` göstermelidir.
+
 ## Çevrimdışı çalışma
 
 `npm run build`, Astro çıktısını ürettikten sonra `scripts/sw-surum.mjs` ile service
