@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import sozluk from '../data/glossary.json';
+
+const sirali = [...sozluk].sort((a, b) => a.terim.localeCompare(b.terim, 'tr'));
+---
+<Base baslik="Sözlük" aciklama="Balıkçılık terimleri: çapari, zoka, egi, LRF, orkoz, tokatlama ve diğerleri.">
+  <h1 class="text-3xl sm:text-4xl">Sözlük</h1>
+  <p class="mt-2 max-w-2xl text-muted">
+    Dükkânda veya iskelede duyup anlamadığın terimler. {sirali.length} madde.
+  </p>
+
+  <label class="mt-5 block">
+    <span class="sr-only">Terim ara</span>
+    <input
+      type="search" data-arama placeholder="Terim ara…"
+      class="w-full kart px-3 py-2 text-sm"
+    />
+  </label>
+
+  <dl class="mt-5 divide-y divide-line kart">
+    {sirali.map((s) => (
+      <div data-madde data-terim={s.terim.toLocaleLowerCase('tr')} class="p-4">
+        <dt class="font-semibold">{s.terim}</dt>
+        <dd class="mt-1 text-sm text-muted">{s.aciklama}</dd>
+      </div>
+    ))}
+  </dl>
+  <p data-bos hidden class="mt-4 text-sm text-muted">Bu aramaya uyan terim yok.</p>
+
+  <script is:inline data-astro-rerun>
+    (function () {
+      const girdi = document.querySelector('[data-arama]');
+      const maddeler = Array.from(document.querySelectorAll('[data-madde]'));
+      const bos = document.querySelector('[data-bos]');
+      girdi?.addEventListener('input', () => {
+        const q = girdi.value.toLocaleLowerCase('tr').trim();
+        let sayi = 0;
+        maddeler.forEach((m) => {
+          const uygun = !q
+            || (m.getAttribute('data-terim') || '').includes(q)
+            || (m.textContent || '').toLocaleLowerCase('tr').includes(q);
+          m.hidden = !uygun;
+          if (uygun) sayi++;
+        });
+        if (bos) bos.hidden = sayi > 0;
+      });
+    })();
+  </script>
+</Base>

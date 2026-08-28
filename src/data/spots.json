@@ -1,0 +1,3268 @@
+[
+  {
+    "id": "rumeli-kavagi",
+    "ad": "Rumeli Kavağı",
+    "il": "istanbul",
+    "bolge": "bogaz-rumeli",
+    "su": "bogaz",
+    "lat": 41.1867,
+    "lng": 29.0783,
+    "tip": [
+      "iskele",
+      "rihtim"
+    ],
+    "ozet": "Boğaz'ın Karadeniz ağzına en yakın Rumeli noktası. Sonbaharda güneye inen lüfer ve palamut sürülerinin ilk uğradığı yerlerden biri.",
+    "turler": [
+      "cupra",
+      "hamsi",
+      "istavrit",
+      "kalamar",
+      "kolyoz",
+      "lufer",
+      "palamut",
+      "zargana"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Sarıyer'den 25A otobüsü; Sarıyer'e Hacıosman metrosundan bağlantı.",
+    "otopark": "orta",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Kuvvetli üst akıntı güneye akar. 60-80 gr kurşun gerekebilir.",
+    "tehlikeler": [
+      "Rıhtım kenarı korkuluksuz",
+      "Yoğun tekne trafiği"
+    ],
+    "kisitlar": [
+      "Balıkçı barınağı içinde tekne manevra alanına atış yapma"
+    ],
+    "kalabalik": "orta",
+    "kiyiYonu": 90
+  },
+  {
+    "id": "garipce",
+    "ad": "Garipçe",
+    "il": "istanbul",
+    "bolge": "bogaz-rumeli",
+    "su": "bogaz",
+    "lat": 41.2036,
+    "lng": 29.1122,
+    "tip": [
+      "kayalik",
+      "mendirek"
+    ],
+    "ozet": "Boğaz ile Karadeniz'in birleştiği kayalık burun. Sert ama sonbaharda kıyıdan kofana lüfer çıkma ihtimalinin en yüksek olduğu noktalardan.",
+    "turler": [
+      "cupra",
+      "gelincik",
+      "iskorpit",
+      "karagoz",
+      "levrek",
+      "lufer",
+      "palamut",
+      "zargana"
+    ],
+    "yontemler": [
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali"
+    ],
+    "ulasim": "Sarıyer'den minibüs; özel araç önerilir.",
+    "otopark": "kolay",
+    "geceIsigi": false,
+    "orkoz": false,
+    "akintiNotu": "Karadeniz girişinde akıntı düzensiz ve serttir; hava bozduğunda çok hızlı değişir.",
+    "tehlikeler": [
+      "Islak kayalarda kayma riski yüksek",
+      "Ani yükselen dalga",
+      "Gece aydınlatma yok — kafa feneri şart"
+    ],
+    "kisitlar": [
+      "Yalı ve askeri bölge sınırlarına dikkat"
+    ],
+    "kalabalik": "sakin",
+    "kiyiYonu": 45
+  },
+  {
+    "id": "sariyer-mendirek",
+    "ad": "Sarıyer Mendireği",
+    "il": "istanbul",
+    "bolge": "bogaz-rumeli",
+    "su": "bogaz",
+    "lat": 41.1667,
+    "lng": 29.0575,
+    "tip": [
+      "mendirek",
+      "iskele"
+    ],
+    "ozet": "Klasik ve güvenli bir başlangıç noktası. Mendirek boyunca çapari, dip ve şamandıra takımının hepsi çalışır.",
+    "turler": [
+      "cupra",
+      "gelincik",
+      "hamsi",
+      "iskorpit",
+      "istavrit",
+      "izmarit",
+      "kalamar",
+      "karagoz",
+      "kefal",
+      "kolyoz",
+      "lufer",
+      "mezgit",
+      "sardalya"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Hacıosman metro + otobüs; Sarıyer vapur iskelesi hemen yanında.",
+    "otopark": "orta",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Mendirek ucunda akıntı hızlanır, dibinde sakinleşir.",
+    "tehlikeler": [
+      "Mendirek taşları yosunlu ve kaygan"
+    ],
+    "kisitlar": [
+      "Vapur iskelesine yakın atış yapma"
+    ],
+    "kalabalik": "kalabalik",
+    "kiyiYonu": 100
+  },
+  {
+    "id": "buyukdere",
+    "ad": "Büyükdere",
+    "il": "istanbul",
+    "bolge": "bogaz-rumeli",
+    "su": "bogaz",
+    "lat": 41.1608,
+    "lng": 29.0447,
+    "tip": [
+      "rihtim",
+      "koy"
+    ],
+    "ozet": "Geniş koy yapısı sayesinde poyrazda bile korunaklı. Sakin su seven kefal ve izmarit için ideal.",
+    "turler": [
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "kefal",
+      "kupes",
+      "lufer"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali"
+    ],
+    "ulasim": "Sarıyer hattı otobüsleri.",
+    "otopark": "orta",
+    "geceIsigi": true,
+    "orkoz": true,
+    "akintiNotu": "Koy içinde lodosta belirgin orkoz (ters akıntı) oluşur; yem kuzeye doğru süzülür.",
+    "tehlikeler": [
+      "Rıhtım kenarında merdiven az"
+    ],
+    "kisitlar": [],
+    "kalabalik": "orta",
+    "kiyiYonu": 95
+  },
+  {
+    "id": "tarabya",
+    "ad": "Tarabya Koyu",
+    "il": "istanbul",
+    "bolge": "bogaz-rumeli",
+    "su": "bogaz",
+    "lat": 41.14,
+    "lng": 29.0567,
+    "tip": [
+      "koy",
+      "rihtim"
+    ],
+    "ozet": "Marina çevresi ve koy içi, akşam saatlerinde levrek ve lüfer için sessiz bir seçenek.",
+    "turler": [
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "kefal",
+      "levrek",
+      "lufer"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "samandirali"
+    ],
+    "ulasim": "Sarıyer yönü otobüsleri, Tarabya durağı.",
+    "otopark": "zor",
+    "geceIsigi": true,
+    "orkoz": true,
+    "akintiNotu": "Koy ağzında ters akıntı sık görülür.",
+    "tehlikeler": [],
+    "kisitlar": [
+      "Marina içine ve bağlı teknelerin arasına atış yapma"
+    ],
+    "kalabalik": "orta",
+    "kiyiYonu": 90
+  },
+  {
+    "id": "yenikoy",
+    "ad": "Yeniköy",
+    "il": "istanbul",
+    "bolge": "bogaz-rumeli",
+    "su": "bogaz",
+    "lat": 41.1225,
+    "lng": 29.0592,
+    "tip": [
+      "rihtim",
+      "iskele"
+    ],
+    "ozet": "Derin su kıyıya çok yakın. Kısa atışla bile 15-20 metre derinliğe ulaşırsın.",
+    "turler": [
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "kalamar",
+      "karagoz",
+      "lufer",
+      "mezgit"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Vapur iskelesi + sahil otobüsleri.",
+    "otopark": "zor",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Kıyıya yakın kuvvetli akıntı; ağır kurşun gerekir.",
+    "tehlikeler": [
+      "Rıhtım yüksek, balık çıkarmak için kepçe gerekli"
+    ],
+    "kisitlar": [
+      "İskele yolcu bölgesinde balık tutmak yasak"
+    ],
+    "kalabalik": "orta",
+    "kiyiYonu": 85
+  },
+  {
+    "id": "emirgan",
+    "ad": "Emirgan Sahili",
+    "il": "istanbul",
+    "bolge": "bogaz-rumeli",
+    "su": "bogaz",
+    "lat": 41.1078,
+    "lng": 29.0553,
+    "tip": [
+      "rihtim"
+    ],
+    "ozet": "Uzun ve düz rıhtım; kalabalık olmadığı saatlerde rahatça yer bulunur. Başlangıç için güvenli.",
+    "turler": [
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "kefal",
+      "kolyoz",
+      "kupes",
+      "lufer"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "samandirali"
+    ],
+    "ulasim": "Sahil otobüs hatları, Emirgan durağı.",
+    "otopark": "orta",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Orta şiddette güney yönlü akıntı.",
+    "tehlikeler": [],
+    "kisitlar": [],
+    "kalabalik": "orta",
+    "kiyiYonu": 90
+  },
+  {
+    "id": "bebek",
+    "ad": "Bebek Koyu",
+    "il": "istanbul",
+    "bolge": "bogaz-rumeli",
+    "su": "bogaz",
+    "lat": 41.0778,
+    "lng": 29.0433,
+    "tip": [
+      "koy",
+      "rihtim"
+    ],
+    "ozet": "İstanbul'un en bilinen orkoz noktalarından. Ters akıntı yem balığını koy içinde toplar, avcı balık peşinden gelir.",
+    "turler": [
+      "istavrit",
+      "izmarit",
+      "kalamar",
+      "kefal",
+      "levrek",
+      "lufer",
+      "zargana"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Metro (Levent) + otobüs; sahil hatları.",
+    "otopark": "zor",
+    "geceIsigi": true,
+    "orkoz": true,
+    "akintiNotu": "Lodos kuvvetlendiğinde koy içinde belirgin orkoz oluşur ve akıntı kuzeye döner. Yem sürüklenme yönünü atıştan önce gözle kontrol et.",
+    "tehlikeler": [
+      "Yoğun yaya trafiği — arkanı kontrol etmeden atma"
+    ],
+    "kisitlar": [
+      "Kafe/restoran önlerinde balık tutmak sorun çıkarabilir"
+    ],
+    "kalabalik": "kalabalik",
+    "kiyiYonu": 85
+  },
+  {
+    "id": "arnavutkoy",
+    "ad": "Arnavutköy",
+    "il": "istanbul",
+    "bolge": "bogaz-rumeli",
+    "su": "bogaz",
+    "lat": 41.0683,
+    "lng": 29.0428,
+    "tip": [
+      "rihtim",
+      "koy"
+    ],
+    "ozet": "Akıntı burnu ile koyun buluştuğu klasik lüfer mevkii. Akşam alacası en verimli saat.",
+    "turler": [
+      "istavrit",
+      "izmarit",
+      "kefal",
+      "levrek",
+      "lufer",
+      "zargana"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "samandirali"
+    ],
+    "ulasim": "Sahil otobüs hatları, Arnavutköy durağı.",
+    "otopark": "zor",
+    "geceIsigi": true,
+    "orkoz": true,
+    "akintiNotu": "Burun önünde kuvvetli akıntı, koy içinde orkoz. İki akıntının birleştiği çizgi en verimli hattır.",
+    "tehlikeler": [
+      "Dar sahil şeridi"
+    ],
+    "kisitlar": [],
+    "kalabalik": "kalabalik",
+    "kiyiYonu": 95
+  },
+  {
+    "id": "ortakoy",
+    "ad": "Ortaköy",
+    "il": "istanbul",
+    "bolge": "bogaz-rumeli",
+    "su": "bogaz",
+    "lat": 41.0472,
+    "lng": 29.0269,
+    "tip": [
+      "rihtim",
+      "iskele"
+    ],
+    "ozet": "Köprü ayağına yakın, ışıklı ve kalabalık. Gece çapari ve kalamar için pratik bir nokta.",
+    "turler": [
+      "istavrit",
+      "izmarit",
+      "kalamar",
+      "kefal",
+      "lufer",
+      "palamut",
+      "sardalya",
+      "zargana"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Metro (Beşiktaş/Kabataş) + otobüs, vapur.",
+    "otopark": "zor",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Köprü ayağı çevresinde girdaplı akıntı.",
+    "tehlikeler": [
+      "Çok yoğun yaya trafiği"
+    ],
+    "kisitlar": [
+      "Köprü ayakları ve güvenlik bölgelerine yaklaşma"
+    ],
+    "kalabalik": "kalabalik",
+    "kiyiYonu": 100
+  },
+  {
+    "id": "kabatas",
+    "ad": "Kabataş Sahili",
+    "il": "istanbul",
+    "bolge": "bogaz-rumeli",
+    "su": "bogaz",
+    "lat": 41.0344,
+    "lng": 28.9925,
+    "tip": [
+      "rihtim",
+      "iskele"
+    ],
+    "ozet": "Toplu taşımayla ulaşımı en kolay noktalardan. İş çıkışı birkaç saat için ideal.",
+    "turler": [
+      "hamsi",
+      "istavrit",
+      "izmarit",
+      "kalamar",
+      "kefal",
+      "kolyoz",
+      "kupes",
+      "lufer",
+      "palamut",
+      "sardalya"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Kabataş tramvay/füniküler/vapur — kapıdan kapıya ulaşım.",
+    "otopark": "zor",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Orta şiddette akıntı; vapur dalgası sık.",
+    "tehlikeler": [
+      "Vapur dalgası ve yoğun deniz trafiği"
+    ],
+    "kisitlar": [
+      "İskele yolcu peronlarında balık tutmak yasak"
+    ],
+    "kalabalik": "kalabalik",
+    "kiyiYonu": 110
+  },
+  {
+    "id": "galata-koprusu",
+    "ad": "Galata Köprüsü",
+    "il": "istanbul",
+    "bolge": "bogaz-rumeli",
+    "su": "halic",
+    "lat": 41.0203,
+    "lng": 28.9733,
+    "tip": [
+      "kopru"
+    ],
+    "ozet": "İstanbul'un simgesi haline gelmiş amatör balıkçı noktası. Çapariyle istavrit ve izmarit, mevsiminde lüfer çıkar.",
+    "turler": [
+      "hamsi",
+      "istavrit",
+      "izmarit",
+      "kefal",
+      "kolyoz",
+      "lufer",
+      "sardalya"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "samandirali"
+    ],
+    "ulasim": "Eminönü/Karaköy tramvay ve vapur — ulaşımı en kolay nokta.",
+    "otopark": "yok",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Haliç ağzında akıntı zayıf; hafif kurşun yeterli.",
+    "tehlikeler": [
+      "Köprüden 8-10 m yükseklik — balığı kepçesiz alamazsın",
+      "Yoğun kalabalık, arkadan geçen yayalar"
+    ],
+    "kisitlar": [
+      "Belediye zaman zaman köprüde balık tutmayı kısıtlayabiliyor; gitmeden önce güncel duruma bak"
+    ],
+    "kalabalik": "kalabalik",
+    "kiyiYonu": 30
+  },
+  {
+    "id": "sarayburnu",
+    "ad": "Sarayburnu",
+    "il": "istanbul",
+    "bolge": "bogaz-rumeli",
+    "su": "bogaz",
+    "lat": 41.0136,
+    "lng": 28.9797,
+    "tip": [
+      "rihtim"
+    ],
+    "ozet": "Haliç, Boğaz ve Marmara akıntılarının buluştuğu burun. Sonbaharda göç eden balığın geçiş hattı üzerinde.",
+    "turler": [
+      "cupra",
+      "istavrit",
+      "kefal",
+      "kolyoz",
+      "lufer",
+      "palamut",
+      "zargana"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "samandirali"
+    ],
+    "ulasim": "Gülhane tramvay durağı, yürüme mesafesi.",
+    "otopark": "orta",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Üç akıntının birleştiği karışık bölge; kurşun gramajını sık değiştirmen gerekebilir.",
+    "tehlikeler": [
+      "Rıhtım kenarı korkuluksuz bölümler"
+    ],
+    "kisitlar": [
+      "Liman güvenlik bölgesi sınırlarına dikkat"
+    ],
+    "kalabalik": "orta",
+    "kiyiYonu": 110
+  },
+  {
+    "id": "anadolu-kavagi",
+    "ad": "Anadolu Kavağı",
+    "il": "istanbul",
+    "bolge": "bogaz-anadolu",
+    "su": "bogaz",
+    "lat": 41.1739,
+    "lng": 29.0872,
+    "tip": [
+      "iskele",
+      "rihtim"
+    ],
+    "ozet": "Boğaz'ın kuzey ucu, Anadolu yakası. Göç mevsiminde balığın ilk göründüğü noktalardan.",
+    "turler": [
+      "cupra",
+      "hamsi",
+      "istavrit",
+      "kalamar",
+      "kolyoz",
+      "lufer",
+      "mezgit",
+      "palamut"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Üsküdar/Beykoz'dan 15A otobüsü; Şehir Hatları vapuru.",
+    "otopark": "orta",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Kuvvetli üst akıntı; ağır takım gerekir.",
+    "tehlikeler": [
+      "Tekne trafiği yoğun"
+    ],
+    "kisitlar": [
+      "Askeri bölge sınırlarına dikkat"
+    ],
+    "kalabalik": "orta",
+    "kiyiYonu": 280
+  },
+  {
+    "id": "poyrazkoy",
+    "ad": "Poyrazköy",
+    "il": "istanbul",
+    "bolge": "bogaz-anadolu",
+    "su": "bogaz",
+    "lat": 41.1953,
+    "lng": 29.1281,
+    "tip": [
+      "mendirek",
+      "kayalik"
+    ],
+    "ozet": "Karadeniz girişinde, mendireği ve kayalıklarıyla iri balık ihtimali yüksek bir nokta.",
+    "turler": [
+      "cupra",
+      "gelincik",
+      "iskorpit",
+      "karagoz",
+      "levrek",
+      "lufer",
+      "palamut",
+      "sargoz",
+      "zargana"
+    ],
+    "yontemler": [
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali"
+    ],
+    "ulasim": "Beykoz'dan minibüs; özel araç rahat.",
+    "otopark": "kolay",
+    "geceIsigi": false,
+    "orkoz": false,
+    "akintiNotu": "Karadeniz etkisinde düzensiz akıntı; kuzeyli rüzgârda dalga hızla büyür.",
+    "tehlikeler": [
+      "Kuzeyli rüzgârda mendirek üstü tehlikeli",
+      "Aydınlatma yok"
+    ],
+    "kisitlar": [
+      "Askeri bölge; işaretlenmiş alanlara girme"
+    ],
+    "kalabalik": "sakin",
+    "kiyiYonu": 30
+  },
+  {
+    "id": "beykoz",
+    "ad": "Beykoz Sahili",
+    "il": "istanbul",
+    "bolge": "bogaz-anadolu",
+    "su": "bogaz",
+    "lat": 41.135,
+    "lng": 29.0917,
+    "tip": [
+      "rihtim",
+      "koy"
+    ],
+    "ozet": "Geniş ve düzenlenmiş sahil bandı. Aileyle gidilebilecek en rahat noktalardan.",
+    "turler": [
+      "cupra",
+      "hamsi",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "kefal",
+      "kolyoz",
+      "kupes",
+      "lufer"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali"
+    ],
+    "ulasim": "Üsküdar'dan 15 numaralı otobüs hatları; vapur iskelesi var.",
+    "otopark": "kolay",
+    "geceIsigi": true,
+    "orkoz": true,
+    "akintiNotu": "Koy içinde lodosta ters akıntı görülür.",
+    "tehlikeler": [],
+    "kisitlar": [],
+    "kalabalik": "orta",
+    "kiyiYonu": 270
+  },
+  {
+    "id": "pasabahce",
+    "ad": "Paşabahçe",
+    "il": "istanbul",
+    "bolge": "bogaz-anadolu",
+    "su": "bogaz",
+    "lat": 41.1181,
+    "lng": 29.0783,
+    "tip": [
+      "rihtim",
+      "iskele"
+    ],
+    "ozet": "Sakin rıhtım, akşamüstü lüfer ve gece kalamar için iyi bilinen bir mevki.",
+    "turler": [
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "kalamar",
+      "kefal",
+      "lufer"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Üsküdar–Beykoz otobüs hatları; vapur.",
+    "otopark": "orta",
+    "geceIsigi": true,
+    "orkoz": true,
+    "akintiNotu": "Kıyıya yakın orta şiddette akıntı, koyda orkoz.",
+    "tehlikeler": [],
+    "kisitlar": [],
+    "kalabalik": "sakin",
+    "kiyiYonu": 275
+  },
+  {
+    "id": "kanlica",
+    "ad": "Kanlıca",
+    "il": "istanbul",
+    "bolge": "bogaz-anadolu",
+    "su": "bogaz",
+    "lat": 41.0928,
+    "lng": 29.0603,
+    "tip": [
+      "rihtim",
+      "koy"
+    ],
+    "ozet": "Klasik orkoz noktası. Ters akıntının yem balığını topladığı hat üzerinde lüfer ve levrek dolaşır.",
+    "turler": [
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "kefal",
+      "levrek",
+      "lufer"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "samandirali"
+    ],
+    "ulasim": "Vapur iskelesi; sahil otobüs hatları.",
+    "otopark": "zor",
+    "geceIsigi": true,
+    "orkoz": true,
+    "akintiNotu": "Boğaz'ın en belirgin orkoz bölgelerinden. Lodosta akıntı tersine döner; şamandıra takımı kuzeye süzülür.",
+    "tehlikeler": [],
+    "kisitlar": [
+      "İskele ve çay bahçesi önlerine dikkat"
+    ],
+    "kalabalik": "orta",
+    "kiyiYonu": 265
+  },
+  {
+    "id": "anadolu-hisari",
+    "ad": "Anadolu Hisarı",
+    "il": "istanbul",
+    "bolge": "bogaz-anadolu",
+    "su": "bogaz",
+    "lat": 41.0817,
+    "lng": 29.0658,
+    "tip": [
+      "rihtim",
+      "koy"
+    ],
+    "ozet": "Göksu Deresi'nin Boğaz'a döküldüğü nokta. Tatlı-tuzlu su karışımı kefal ve levreği toplar.",
+    "turler": [
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "kefal",
+      "levrek",
+      "lufer"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "samandirali"
+    ],
+    "ulasim": "Sahil otobüs hatları, Anadolu Hisarı durağı.",
+    "otopark": "orta",
+    "geceIsigi": true,
+    "orkoz": true,
+    "akintiNotu": "Dere ağzında akıntı ve tuzluluk değişir; yağmurdan sonra su bulanır ve levrek aktifleşir.",
+    "tehlikeler": [],
+    "kisitlar": [],
+    "kalabalik": "sakin",
+    "kiyiYonu": 280
+  },
+  {
+    "id": "kandilli",
+    "ad": "Kandilli",
+    "il": "istanbul",
+    "bolge": "bogaz-anadolu",
+    "su": "bogaz",
+    "lat": 41.0722,
+    "lng": 29.0578,
+    "tip": [
+      "rihtim",
+      "kayalik"
+    ],
+    "ozet": "Boğaz'ın en dar ve en akıntılı yerlerinden. Ağır takım ister ama iri balık ihtimali yüksektir.",
+    "turler": [
+      "cupra",
+      "gelincik",
+      "iskorpit",
+      "istavrit",
+      "karagoz",
+      "levrek",
+      "lufer",
+      "mezgit"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali"
+    ],
+    "ulasim": "Sahil otobüs hatları.",
+    "otopark": "zor",
+    "geceIsigi": false,
+    "orkoz": false,
+    "akintiNotu": "Boğaz'ın en kuvvetli akıntı bölgesi. 80 gr kurşun bile sürüklenebilir.",
+    "tehlikeler": [
+      "Kuvvetli akıntı",
+      "Kaygan kayalıklar",
+      "Aydınlatma sınırlı"
+    ],
+    "kisitlar": [],
+    "kalabalik": "sakin",
+    "kiyiYonu": 270
+  },
+  {
+    "id": "cengelkoy",
+    "ad": "Çengelköy",
+    "il": "istanbul",
+    "bolge": "bogaz-anadolu",
+    "su": "bogaz",
+    "lat": 41.0525,
+    "lng": 29.0478,
+    "tip": [
+      "rihtim",
+      "koy"
+    ],
+    "ozet": "Uzun sahil bandı ve orkoz etkisi. Ulaşımı kolay, akşam avı için pratik.",
+    "turler": [
+      "istavrit",
+      "izmarit",
+      "kalamar",
+      "kefal",
+      "kupes",
+      "levrek",
+      "lufer"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Üsküdar'dan sahil otobüsleri; vapur iskelesi.",
+    "otopark": "orta",
+    "geceIsigi": true,
+    "orkoz": true,
+    "akintiNotu": "Koy içinde lodosta ters akıntı belirgindir.",
+    "tehlikeler": [
+      "Yaya trafiği yoğun"
+    ],
+    "kisitlar": [],
+    "kalabalik": "kalabalik",
+    "kiyiYonu": 275
+  },
+  {
+    "id": "beylerbeyi",
+    "ad": "Beylerbeyi",
+    "il": "istanbul",
+    "bolge": "bogaz-anadolu",
+    "su": "bogaz",
+    "lat": 41.0433,
+    "lng": 29.0417,
+    "tip": [
+      "rihtim"
+    ],
+    "ozet": "Köprü ayağına yakın rıhtım. Akıntı hattı kıyıya yakın geçtiği için lüfer sık uğrar.",
+    "turler": [
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "kefal",
+      "lufer",
+      "zargana"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "samandirali"
+    ],
+    "ulasim": "Üsküdar sahil otobüs hatları.",
+    "otopark": "zor",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Köprü ayağı çevresinde girdap ve hızlanan akıntı.",
+    "tehlikeler": [],
+    "kisitlar": [
+      "Köprü güvenlik bölgesine yaklaşma"
+    ],
+    "kalabalik": "orta",
+    "kiyiYonu": 270
+  },
+  {
+    "id": "kuzguncuk",
+    "ad": "Kuzguncuk",
+    "il": "istanbul",
+    "bolge": "bogaz-anadolu",
+    "su": "bogaz",
+    "lat": 41.0339,
+    "lng": 29.0286,
+    "tip": [
+      "rihtim",
+      "koy"
+    ],
+    "ozet": "Küçük ve sakin koy. Kalabalıktan uzak, hafif takımla keyifli bir akşam avı yeri.",
+    "turler": [
+      "iskorpit",
+      "istavrit",
+      "izmarit",
+      "kefal",
+      "kupes",
+      "lufer"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali"
+    ],
+    "ulasim": "Üsküdar'dan yürüyerek 25 dk veya sahil otobüsü.",
+    "otopark": "zor",
+    "geceIsigi": true,
+    "orkoz": true,
+    "akintiNotu": "Koy içi sakin, ağzında akıntı hızlanır.",
+    "tehlikeler": [],
+    "kisitlar": [],
+    "kalabalik": "sakin",
+    "kiyiYonu": 280
+  },
+  {
+    "id": "salacak",
+    "ad": "Salacak",
+    "il": "istanbul",
+    "bolge": "bogaz-anadolu",
+    "su": "bogaz",
+    "lat": 41.0219,
+    "lng": 29.0092,
+    "tip": [
+      "rihtim",
+      "kayalik"
+    ],
+    "ozet": "Kız Kulesi karşısı. Boğaz ve Marmara sularının buluştuğu geçiş bölgesi, tür çeşitliliği yüksek.",
+    "turler": [
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "kalamar",
+      "karagoz",
+      "kefal",
+      "kolyoz",
+      "lufer",
+      "palamut",
+      "zargana"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Üsküdar metro/vapur + 10 dk yürüyüş.",
+    "otopark": "orta",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Akıntı yön değiştirebilir; Boğaz'dan Marmara'ya geçiş hattı.",
+    "tehlikeler": [
+      "Kayalık bölümler kaygan"
+    ],
+    "kisitlar": [],
+    "kalabalik": "kalabalik",
+    "kiyiYonu": 230
+  },
+  {
+    "id": "kilyos",
+    "ad": "Kilyos",
+    "il": "istanbul",
+    "bolge": "karadeniz",
+    "su": "karadeniz",
+    "lat": 41.2469,
+    "lng": 29.0244,
+    "tip": [
+      "plaj",
+      "kayalik"
+    ],
+    "ozet": "Açık Karadeniz kıyısı. Uzun atışlı surf balıkçılığının İstanbul'daki en iyi adresi.",
+    "turler": [
+      "barbunya",
+      "cupra",
+      "gelincik",
+      "iskorpit",
+      "karagoz",
+      "levrek",
+      "lufer",
+      "mezgit",
+      "minakop",
+      "palamut",
+      "sargoz",
+      "tekir"
+    ],
+    "yontemler": [
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "surf"
+    ],
+    "ulasim": "Hacıosman metro + Kilyos minibüsü.",
+    "otopark": "kolay",
+    "geceIsigi": false,
+    "orkoz": false,
+    "akintiNotu": "Kıyı boyu akıntı (longshore) kuvvetlidir; 100-150 gr piramit kurşun gerekir.",
+    "tehlikeler": [
+      "Karadeniz dalgası hızla büyür",
+      "Dip akıntısı — suya girme",
+      "Aydınlatma yok"
+    ],
+    "kisitlar": [
+      "Yaz aylarında plaj işletmelerinin bulunduğu bölümlerde balık tutulamaz"
+    ],
+    "kalabalik": "sakin",
+    "kiyiYonu": 0
+  },
+  {
+    "id": "riva",
+    "ad": "Riva",
+    "il": "istanbul",
+    "bolge": "karadeniz",
+    "su": "karadeniz",
+    "lat": 41.1958,
+    "lng": 29.2306,
+    "tip": [
+      "plaj",
+      "kayalik",
+      "mendirek"
+    ],
+    "ozet": "Dere ağzı, plaj ve kayalığın bir arada olduğu çok yönlü nokta. Levrek için İstanbul'un en iyi kıyı mevkilerinden.",
+    "turler": [
+      "cupra",
+      "gelincik",
+      "iskorpit",
+      "karagoz",
+      "kefal",
+      "levrek",
+      "mezgit",
+      "minakop",
+      "palamut",
+      "sargoz",
+      "subye",
+      "tekir"
+    ],
+    "yontemler": [
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi",
+      "surf"
+    ],
+    "ulasim": "Beykoz üzerinden minibüs; özel araç önerilir.",
+    "otopark": "kolay",
+    "geceIsigi": false,
+    "orkoz": false,
+    "akintiNotu": "Dere ağzında tatlı su karışımı; yağmurdan sonra bulanan suda levrek çok aktifleşir.",
+    "tehlikeler": [
+      "Dere ağzında ani derinleşme",
+      "Dalga ve dip akıntısı"
+    ],
+    "kisitlar": [],
+    "kalabalik": "sakin",
+    "kiyiYonu": 10
+  },
+  {
+    "id": "sile",
+    "ad": "Şile",
+    "il": "istanbul",
+    "bolge": "karadeniz",
+    "su": "karadeniz",
+    "lat": 41.1761,
+    "lng": 29.6122,
+    "tip": [
+      "kayalik",
+      "plaj",
+      "mendirek"
+    ],
+    "ozet": "Geniş kayalık ve mendirek seçenekleri. Şehirden uzak ama en temiz su ve en az baskı burada.",
+    "turler": [
+      "barbunya",
+      "cupra",
+      "gelincik",
+      "iskorpit",
+      "karagoz",
+      "levrek",
+      "lufer",
+      "mezgit",
+      "minakop",
+      "palamut",
+      "sargoz",
+      "tekir"
+    ],
+    "yontemler": [
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "surf"
+    ],
+    "ulasim": "Üsküdar'dan 139 numaralı otobüs; özel araçla ~1,5 saat.",
+    "otopark": "kolay",
+    "geceIsigi": false,
+    "orkoz": false,
+    "akintiNotu": "Açık deniz koşulları; rüzgâr yönü doğrudan dalgaya dönüşür.",
+    "tehlikeler": [
+      "Kayalıklarda büyük dalga riski",
+      "Karadeniz'de hava hızlı bozar"
+    ],
+    "kisitlar": [],
+    "kalabalik": "sakin",
+    "kiyiYonu": 0
+  },
+  {
+    "id": "agva",
+    "ad": "Ağva",
+    "il": "istanbul",
+    "bolge": "karadeniz",
+    "su": "karadeniz",
+    "lat": 41.1394,
+    "lng": 29.8481,
+    "tip": [
+      "plaj",
+      "koy",
+      "kayalik"
+    ],
+    "ozet": "İki derenin denize döküldüğü sakin kıyı. Levrek ve kefal için tatlı-tuzlu geçiş bölgesi.",
+    "turler": [
+      "cupra",
+      "gelincik",
+      "karagoz",
+      "kefal",
+      "levrek",
+      "mezgit",
+      "minakop"
+    ],
+    "yontemler": [
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "surf"
+    ],
+    "ulasim": "Şile üzerinden; özel araç gerekli.",
+    "otopark": "kolay",
+    "geceIsigi": false,
+    "orkoz": false,
+    "akintiNotu": "Dere ağızlarında tuzluluk değişimi; levrek bu hatta beslenir.",
+    "tehlikeler": [
+      "Dere ağzı akıntısı",
+      "Tenha — yalnız gitme"
+    ],
+    "kisitlar": [],
+    "kalabalik": "sakin",
+    "kiyiYonu": 0
+  },
+  {
+    "id": "yenikapi",
+    "ad": "Yenikapı",
+    "il": "istanbul",
+    "bolge": "marmara-avrupa",
+    "su": "marmara",
+    "lat": 40.9989,
+    "lng": 28.9497,
+    "tip": [
+      "mendirek",
+      "rihtim"
+    ],
+    "ozet": "Uzun mendirekler ve kolay ulaşım. Marmara tarafının en pratik başlangıç noktası.",
+    "turler": [
+      "cupra",
+      "hamsi",
+      "istavrit",
+      "izmarit",
+      "kalamar",
+      "karagoz",
+      "kefal",
+      "kolyoz",
+      "kupes",
+      "lufer",
+      "mezgit",
+      "minakop",
+      "palamut",
+      "sardalya",
+      "sargoz"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Yenikapı metro/Marmaray — kapıdan kapıya.",
+    "otopark": "orta",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Zayıf akıntı; 40-60 gr kurşun yeterli.",
+    "tehlikeler": [
+      "Mendirek taşları arasında ayak sıkışabilir"
+    ],
+    "kisitlar": [
+      "Deniz otobüsü terminali güvenlik bölgesine girme"
+    ],
+    "kalabalik": "kalabalik",
+    "kiyiYonu": 180
+  },
+  {
+    "id": "kumkapi",
+    "ad": "Kumkapı",
+    "il": "istanbul",
+    "bolge": "marmara-avrupa",
+    "su": "marmara",
+    "lat": 41.0011,
+    "lng": 28.9631,
+    "tip": [
+      "mendirek",
+      "iskele"
+    ],
+    "ozet": "Balıkçı barınağı ve mendirek. Barınağın etrafı yem balığı ve dolayısıyla avcı balık toplar.",
+    "turler": [
+      "cupra",
+      "hamsi",
+      "istavrit",
+      "izmarit",
+      "kalamar",
+      "karagoz",
+      "kefal",
+      "kolyoz",
+      "kupes",
+      "lufer",
+      "sardalya"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Kumkapı Marmaray/banliyö durağı.",
+    "otopark": "zor",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Barınak içi sakin, mendirek dışında hafif akıntı.",
+    "tehlikeler": [],
+    "kisitlar": [
+      "Barınak içinde tekne manevra alanına atış yapma"
+    ],
+    "kalabalik": "kalabalik",
+    "kiyiYonu": 180
+  },
+  {
+    "id": "zeytinburnu",
+    "ad": "Zeytinburnu Sahili",
+    "il": "istanbul",
+    "bolge": "marmara-avrupa",
+    "su": "marmara",
+    "lat": 40.9906,
+    "lng": 28.9014,
+    "tip": [
+      "mendirek",
+      "rihtim"
+    ],
+    "ozet": "Uzun sahil bandı ve birden fazla mendirek. Yer bulmakta hiç zorlanmazsın.",
+    "turler": [
+      "cupra",
+      "hamsi",
+      "iskorpit",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "kefal",
+      "lufer",
+      "minakop",
+      "sardalya",
+      "tekir"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali"
+    ],
+    "ulasim": "Zeytinburnu metro/tramvay + kısa yürüyüş.",
+    "otopark": "kolay",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Zayıf akıntı.",
+    "tehlikeler": [
+      "Mendirek taşları kaygan"
+    ],
+    "kisitlar": [],
+    "kalabalik": "orta",
+    "kiyiYonu": 185
+  },
+  {
+    "id": "bakirkoy",
+    "ad": "Bakırköy Sahili",
+    "il": "istanbul",
+    "bolge": "marmara-avrupa",
+    "su": "marmara",
+    "lat": 40.9756,
+    "lng": 28.8672,
+    "tip": [
+      "mendirek",
+      "rihtim",
+      "koy"
+    ],
+    "ozet": "Düzenlenmiş sahil parkı boyunca birçok mendirek. Aileyle gidilecek en konforlu noktalardan.",
+    "turler": [
+      "barbunya",
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "kefal",
+      "kolyoz",
+      "kupes",
+      "lufer",
+      "mezgit",
+      "sardalya",
+      "sargoz",
+      "subye",
+      "tekir"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Bakırköy Marmaray + sahil yürüyüşü.",
+    "otopark": "kolay",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Zayıf akıntı; hafif takım yeterli.",
+    "tehlikeler": [],
+    "kisitlar": [],
+    "kalabalik": "orta",
+    "kiyiYonu": 190
+  },
+  {
+    "id": "yesilkoy",
+    "ad": "Yeşilköy",
+    "il": "istanbul",
+    "bolge": "marmara-avrupa",
+    "su": "marmara",
+    "lat": 40.9636,
+    "lng": 28.8231,
+    "tip": [
+      "mendirek",
+      "kayalik",
+      "koy"
+    ],
+    "ozet": "Marina çevresi ve doğal kayalıklar. Çupra ve karagöz için Marmara'nın iyi noktalarından.",
+    "turler": [
+      "barbunya",
+      "cupra",
+      "gelincik",
+      "iskorpit",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "levrek",
+      "lufer",
+      "minakop",
+      "sargoz",
+      "subye",
+      "tekir"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Yeşilköy Marmaray + 10 dk yürüyüş.",
+    "otopark": "orta",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Zayıf akıntı, kayalık dip yapısı.",
+    "tehlikeler": [
+      "Kayalıklarda yosun kaygan"
+    ],
+    "kisitlar": [
+      "Marina içine atış yapma"
+    ],
+    "kalabalik": "orta",
+    "kiyiYonu": 185
+  },
+  {
+    "id": "florya",
+    "ad": "Florya",
+    "il": "istanbul",
+    "bolge": "marmara-avrupa",
+    "su": "marmara",
+    "lat": 40.9756,
+    "lng": 28.7808,
+    "tip": [
+      "plaj",
+      "iskele",
+      "mendirek"
+    ],
+    "ozet": "Kumluk dip yapısı; tekir, barbunya ve minakop gibi kum balıkları için doğru adres.",
+    "turler": [
+      "barbunya",
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "kefal",
+      "minakop",
+      "subye",
+      "tekir"
+    ],
+    "yontemler": [
+      "capari",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi",
+      "surf"
+    ],
+    "ulasim": "Florya Marmaray istasyonu, sahile yürüme mesafesi.",
+    "otopark": "kolay",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Zayıf akıntı; kumluk dipte uzun atış avantaj sağlar.",
+    "tehlikeler": [],
+    "kisitlar": [
+      "Yaz sezonunda plaj işletmesi bölgelerinde balık tutulamaz"
+    ],
+    "kalabalik": "orta",
+    "kiyiYonu": 190
+  },
+  {
+    "id": "buyukcekmece",
+    "ad": "Büyükçekmece",
+    "il": "istanbul",
+    "bolge": "marmara-avrupa",
+    "su": "marmara",
+    "lat": 40.9714,
+    "lng": 28.5747,
+    "tip": [
+      "mendirek",
+      "plaj",
+      "iskele"
+    ],
+    "ozet": "Uzun mendirek ve göl ağzı. Şehir merkezinden uzaklaştıkça baskı azalır, balık iriler.",
+    "turler": [
+      "barbunya",
+      "cupra",
+      "istavrit",
+      "karagoz",
+      "kefal",
+      "levrek",
+      "lufer",
+      "minakop",
+      "sargoz",
+      "subye",
+      "tekir"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi",
+      "surf"
+    ],
+    "ulasim": "Metrobüs Beylikdüzü + minibüs; özel araç rahat.",
+    "otopark": "kolay",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Göl ağzından gelen tatlı su karışımı balığı toplar.",
+    "tehlikeler": [
+      "Mendirek ucunda lodosta dalga aşar"
+    ],
+    "kisitlar": [],
+    "kalabalik": "sakin",
+    "kiyiYonu": 180
+  },
+  {
+    "id": "silivri",
+    "ad": "Silivri",
+    "il": "istanbul",
+    "bolge": "marmara-avrupa",
+    "su": "marmara",
+    "lat": 41.0728,
+    "lng": 28.2489,
+    "tip": [
+      "mendirek",
+      "plaj",
+      "kayalik"
+    ],
+    "ozet": "Şehirden en uzak Marmara noktası; buna karşılık en temiz su ve en az kalabalık.",
+    "turler": [
+      "barbunya",
+      "cupra",
+      "karagoz",
+      "levrek",
+      "lufer",
+      "mezgit",
+      "minakop",
+      "sargoz",
+      "subye",
+      "tekir"
+    ],
+    "yontemler": [
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi",
+      "surf"
+    ],
+    "ulasim": "Silivri banliyö/otobüs; özel araçla ~1 saat.",
+    "otopark": "kolay",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Açık Marmara; lodosta dalga belirgin büyür.",
+    "tehlikeler": [
+      "Lodosta mendirek üstü tehlikeli"
+    ],
+    "kisitlar": [],
+    "kalabalik": "sakin",
+    "kiyiYonu": 180
+  },
+  {
+    "id": "moda",
+    "ad": "Moda Burnu",
+    "il": "istanbul",
+    "bolge": "marmara-anadolu",
+    "su": "marmara",
+    "lat": 40.9789,
+    "lng": 29.0272,
+    "tip": [
+      "kayalik",
+      "rihtim",
+      "koy"
+    ],
+    "ozet": "Kayalık burun ve düzenlenmiş sahil. Boğaz ağzına yakın olduğu için geçiş balığı da uğrar.",
+    "turler": [
+      "cupra",
+      "gelincik",
+      "iskorpit",
+      "istavrit",
+      "izmarit",
+      "kalamar",
+      "karagoz",
+      "kefal",
+      "kolyoz",
+      "kupes",
+      "lufer",
+      "palamut",
+      "subye",
+      "zargana"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Kadıköy metro/vapur + 15 dk yürüyüş.",
+    "otopark": "zor",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Burun önünde akıntı hızlanır.",
+    "tehlikeler": [
+      "Kayalıklar yosunlu ve kaygan"
+    ],
+    "kisitlar": [],
+    "kalabalik": "kalabalik",
+    "kiyiYonu": 215
+  },
+  {
+    "id": "caddebostan",
+    "ad": "Caddebostan",
+    "il": "istanbul",
+    "bolge": "marmara-anadolu",
+    "su": "marmara",
+    "lat": 40.9633,
+    "lng": 29.0625,
+    "tip": [
+      "mendirek",
+      "plaj",
+      "rihtim"
+    ],
+    "ozet": "Uzun sahil bandı ve çok sayıda mendirek. Anadolu yakasının en erişilebilir noktası.",
+    "turler": [
+      "barbunya",
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "kalamar",
+      "karagoz",
+      "kefal",
+      "kolyoz",
+      "kupes",
+      "lufer",
+      "mezgit",
+      "palamut",
+      "sardalya",
+      "sargoz",
+      "subye",
+      "tekir"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi",
+      "surf"
+    ],
+    "ulasim": "Kadıköy'den sahil otobüsleri; Bostancı Marmaray + yürüyüş.",
+    "otopark": "orta",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Zayıf akıntı; hafif kurşun yeterli.",
+    "tehlikeler": [
+      "Mendirek taşları kaygan"
+    ],
+    "kisitlar": [],
+    "kalabalik": "kalabalik",
+    "kiyiYonu": 195
+  },
+  {
+    "id": "bostanci",
+    "ad": "Bostancı",
+    "il": "istanbul",
+    "bolge": "marmara-anadolu",
+    "su": "marmara",
+    "lat": 40.9508,
+    "lng": 29.0928,
+    "tip": [
+      "mendirek",
+      "iskele",
+      "rihtim"
+    ],
+    "ozet": "Vapur iskelesi ve mendirekler. Toplu taşımayla en kolay ulaşılan Marmara noktalarından.",
+    "turler": [
+      "cupra",
+      "hamsi",
+      "istavrit",
+      "izmarit",
+      "kalamar",
+      "karagoz",
+      "kefal",
+      "kolyoz",
+      "kupes",
+      "lufer",
+      "mezgit",
+      "minakop",
+      "palamut",
+      "sardalya",
+      "subye"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Bostancı Marmaray/vapur — iskele yanı.",
+    "otopark": "orta",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Zayıf akıntı.",
+    "tehlikeler": [],
+    "kisitlar": [
+      "İskele yolcu bölgesinde balık tutmak yasak"
+    ],
+    "kalabalik": "kalabalik",
+    "kiyiYonu": 190
+  },
+  {
+    "id": "maltepe",
+    "ad": "Maltepe Sahili",
+    "il": "istanbul",
+    "bolge": "marmara-anadolu",
+    "su": "marmara",
+    "lat": 40.9231,
+    "lng": 29.1289,
+    "tip": [
+      "mendirek",
+      "plaj",
+      "rihtim"
+    ],
+    "ozet": "Dolgu sahil boyunca uzun mendirekler. Yer bolluğu ve kolay park avantajı.",
+    "turler": [
+      "barbunya",
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "kefal",
+      "lufer",
+      "mezgit",
+      "minakop",
+      "sargoz",
+      "subye",
+      "tekir"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi",
+      "surf"
+    ],
+    "ulasim": "Maltepe Marmaray + sahil yürüyüşü.",
+    "otopark": "kolay",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Zayıf akıntı; dolgu bölgesinde dip taşlık.",
+    "tehlikeler": [],
+    "kisitlar": [],
+    "kalabalik": "orta",
+    "kiyiYonu": 190
+  },
+  {
+    "id": "kartal",
+    "ad": "Kartal Sahili",
+    "il": "istanbul",
+    "bolge": "marmara-anadolu",
+    "su": "marmara",
+    "lat": 40.8886,
+    "lng": 29.1889,
+    "tip": [
+      "mendirek",
+      "rihtim",
+      "iskele"
+    ],
+    "ozet": "Geniş sahil düzenlemesi ve mendirekler. Adalar hattına yakın olması tür çeşitliliğini artırır.",
+    "turler": [
+      "barbunya",
+      "cupra",
+      "iskorpit",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "kefal",
+      "kolyoz",
+      "lufer",
+      "mezgit",
+      "minakop",
+      "sargoz",
+      "subye",
+      "tekir"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Kartal metro/Marmaray + kısa yürüyüş.",
+    "otopark": "kolay",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Zayıf akıntı.",
+    "tehlikeler": [],
+    "kisitlar": [],
+    "kalabalik": "orta",
+    "kiyiYonu": 195
+  },
+  {
+    "id": "pendik",
+    "ad": "Pendik Sahili",
+    "il": "istanbul",
+    "bolge": "marmara-anadolu",
+    "su": "marmara",
+    "lat": 40.8747,
+    "lng": 29.2317,
+    "tip": [
+      "mendirek",
+      "rihtim",
+      "koy"
+    ],
+    "ozet": "Marina ve balıkçı barınağı çevresi. Barınak yakını yem balığı ve avcı balık için verimli.",
+    "turler": [
+      "barbunya",
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "kefal",
+      "lufer",
+      "mezgit",
+      "minakop",
+      "subye",
+      "tekir"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Pendik metro/Marmaray + sahil yürüyüşü.",
+    "otopark": "kolay",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Zayıf akıntı; marina içi tamamen durgun.",
+    "tehlikeler": [],
+    "kisitlar": [
+      "Marina ve barınak manevra alanlarına atış yapma"
+    ],
+    "kalabalik": "orta",
+    "kiyiYonu": 190
+  },
+  {
+    "id": "tuzla",
+    "ad": "Tuzla",
+    "il": "istanbul",
+    "bolge": "marmara-anadolu",
+    "su": "marmara",
+    "lat": 40.8367,
+    "lng": 29.3006,
+    "tip": [
+      "mendirek",
+      "kayalik",
+      "koy"
+    ],
+    "ozet": "Şehir merkezinden uzak, nispeten sakin. Kayalık bölümlerde karagöz ve sargoz iyi çıkar.",
+    "turler": [
+      "cupra",
+      "gelincik",
+      "iskorpit",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "levrek",
+      "minakop",
+      "sargoz",
+      "subye",
+      "tekir"
+    ],
+    "yontemler": [
+      "capari",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Tuzla Marmaray + minibüs.",
+    "otopark": "kolay",
+    "geceIsigi": false,
+    "orkoz": false,
+    "akintiNotu": "Zayıf akıntı.",
+    "tehlikeler": [
+      "Bazı bölümlerde tersane bölgesi — girme"
+    ],
+    "kisitlar": [
+      "Tersane ve liman güvenlik bölgelerine yaklaşma"
+    ],
+    "kalabalik": "sakin",
+    "kiyiYonu": 195
+  },
+  {
+    "id": "buyukada",
+    "ad": "Büyükada",
+    "il": "istanbul",
+    "bolge": "adalar",
+    "su": "marmara",
+    "lat": 40.8578,
+    "lng": 29.1264,
+    "tip": [
+      "kayalik",
+      "iskele",
+      "koy"
+    ],
+    "ozet": "Berrak su ve kayalık dip. Adaların en temiz suyunda çupra ve karagöz avı çok keyiflidir.",
+    "turler": [
+      "cupra",
+      "gelincik",
+      "iskorpit",
+      "istavrit",
+      "izmarit",
+      "kalamar",
+      "karagoz",
+      "kupes",
+      "lufer",
+      "palamut",
+      "sargoz",
+      "subye",
+      "zargana"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Bostancı/Kabataş vapuru; adada bisiklet veya yürüyüş.",
+    "otopark": "yok",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Ada çevresinde akıntı yönü değişkendir; burunlarda hızlanır.",
+    "tehlikeler": [
+      "Kayalıklara iniş dikkat ister",
+      "Son vapur saatini kaçırma"
+    ],
+    "kisitlar": [
+      "Adada motorlu araç yok — ekipmanı taşıyabileceğin kadar götür"
+    ],
+    "kalabalik": "sakin",
+    "kiyiYonu": 180
+  },
+  {
+    "id": "heybeliada",
+    "ad": "Heybeliada",
+    "il": "istanbul",
+    "bolge": "adalar",
+    "su": "marmara",
+    "lat": 40.8756,
+    "lng": 29.0894,
+    "tip": [
+      "kayalik",
+      "iskele",
+      "koy"
+    ],
+    "ozet": "Büyükada'ya göre daha sakin, kayalık koylarıyla LRF ve dip takımı için ideal.",
+    "turler": [
+      "cupra",
+      "gelincik",
+      "iskorpit",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "kupes",
+      "lufer",
+      "sargoz",
+      "subye"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Bostancı/Kabataş vapuru.",
+    "otopark": "yok",
+    "geceIsigi": true,
+    "orkoz": false,
+    "akintiNotu": "Koylarda sakin, burunlarda orta akıntı.",
+    "tehlikeler": [
+      "Tenha koylarda yalnız gitme",
+      "Son vapur saati"
+    ],
+    "kisitlar": [],
+    "kalabalik": "sakin",
+    "kiyiYonu": 190
+  },
+  {
+    "id": "bayramoglu",
+    "ad": "Bayramoğlu",
+    "il": "kocaeli",
+    "bolge": "kocaeli-korfez",
+    "su": "marmara",
+    "lat": 40.786,
+    "lng": 29.356,
+    "tip": [
+      "kayalik",
+      "rihtim",
+      "koy"
+    ],
+    "ozet": "Körfezin ağzındaki burun. Kocaeli kıyısında açık Marmara suyuna en yakın nokta, dolayısıyla en berrak su ve en geniş tür çeşitliliği burada.",
+    "turler": [
+      "cupra",
+      "iskorpit",
+      "istavrit",
+      "izmarit",
+      "kalamar",
+      "karagoz",
+      "kefal",
+      "kupes",
+      "levrek",
+      "lufer",
+      "minakop",
+      "sargoz",
+      "subye"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Darıca'dan minibüs; Gebze OSB metro hattına aktarma. Özel araç rahat.",
+    "otopark": "kolay",
+    "geceIsigi": true,
+    "orkoz": false,
+    "denizVerisiZayif": false,
+    "akintiNotu": "Körfez ağzında Marmara suyu ile körfez suyu karışır; burun önünde belirgin bir akıntı hattı oluşur ve balık bu hat boyunca dolaşır.",
+    "tehlikeler": [
+      "Kayalıklar yosunlu ve kaygan",
+      "Burun ucunda ani derinleşme"
+    ],
+    "kisitlar": [],
+    "kalabalik": "orta",
+    "kiyiYonu": 230
+  },
+  {
+    "id": "darica-sahil",
+    "ad": "Darıca Sahili",
+    "il": "kocaeli",
+    "bolge": "kocaeli-korfez",
+    "su": "marmara",
+    "lat": 40.769,
+    "lng": 29.39,
+    "tip": [
+      "rihtim",
+      "plaj"
+    ],
+    "ozet": "Düzenlenmiş sahil bandı, korkuluklu ve aydınlatmalı. Kocaeli tarafında aileyle gidilecek en rahat nokta.",
+    "turler": [
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "kefal",
+      "kupes",
+      "lufer",
+      "subye",
+      "tekir"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Darıca merkez; Gebze'den belediye otobüsleri.",
+    "otopark": "kolay",
+    "geceIsigi": true,
+    "orkoz": false,
+    "denizVerisiZayif": false,
+    "akintiNotu": "Zayıf akıntı; 30-50 gr kurşun yeterli.",
+    "tehlikeler": [],
+    "kisitlar": [],
+    "kalabalik": "orta",
+    "kiyiYonu": 195
+  },
+  {
+    "id": "eskihisar",
+    "ad": "Eskihisar",
+    "il": "kocaeli",
+    "bolge": "kocaeli-korfez",
+    "su": "marmara",
+    "lat": 40.766,
+    "lng": 29.427,
+    "tip": [
+      "kayalik",
+      "iskele",
+      "rihtim"
+    ],
+    "ozet": "Hereke-Yalova feribot iskelesinin iki yanındaki kayalıklar. İskele ışıkları geceleri yem balığını topluyor.",
+    "turler": [
+      "cupra",
+      "iskorpit",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "kefal",
+      "levrek",
+      "lufer",
+      "minakop",
+      "subye"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Gebze'den Eskihisar feribot iskelesine minibüs.",
+    "otopark": "orta",
+    "geceIsigi": true,
+    "orkoz": false,
+    "denizVerisiZayif": false,
+    "akintiNotu": "Feribot manevraları suyu bulandırır; kalkışlardan 10-15 dakika sonra su durulur.",
+    "tehlikeler": [
+      "Feribot rampası çevresinde durma"
+    ],
+    "kisitlar": [
+      "Feribot iskelesi ve rampa güvenlik alanına atış yapma"
+    ],
+    "kalabalik": "orta",
+    "kiyiYonu": 190
+  },
+  {
+    "id": "tavsancil",
+    "ad": "Tavşancıl",
+    "il": "kocaeli",
+    "bolge": "kocaeli-korfez",
+    "su": "marmara",
+    "lat": 40.762,
+    "lng": 29.576,
+    "tip": [
+      "rihtim",
+      "kayalik"
+    ],
+    "ozet": "Körfezin kuzey kıyısı. Balık var ama çevre ağır sanayi bölgesi — tuttuğunu yemek konusunda dikkatli ol.",
+    "turler": [
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "kefal",
+      "subye"
+    ],
+    "yontemler": [
+      "capari",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "D-100 üzerinden özel araç; Gebze-Körfez minibüsleri.",
+    "otopark": "kolay",
+    "geceIsigi": false,
+    "orkoz": false,
+    "denizVerisiZayif": false,
+    "akintiNotu": "Körfez içi akıntı zayıftır.",
+    "tehlikeler": [
+      "Liman ve iskele trafiği yoğun",
+      "Sahil şeridinin bir kısmı sanayi tesisi"
+    ],
+    "kisitlar": [
+      "Liman ve tesis güvenlik bölgelerine girme",
+      "Bölge ağır sanayi kıyısı; avladığını tüketmeden önce güncel su kalitesi ve tüketim uyarılarına bak"
+    ],
+    "kalabalik": "sakin",
+    "kiyiYonu": 185
+  },
+  {
+    "id": "hereke",
+    "ad": "Hereke",
+    "il": "kocaeli",
+    "bolge": "kocaeli-korfez",
+    "su": "marmara",
+    "lat": 40.783,
+    "lng": 29.61,
+    "tip": [
+      "mendirek",
+      "rihtim"
+    ],
+    "ozet": "Balıkçı barınağı ve mendirek. Körfezin kuzey kıyısında ulaşımı en kolay ve en güvenli mendireklerden.",
+    "turler": [
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "kefal",
+      "kupes",
+      "levrek",
+      "minakop",
+      "subye",
+      "tekir"
+    ],
+    "yontemler": [
+      "capari",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Hereke tren istasyonu (banliyö) hemen sahile yakın.",
+    "otopark": "orta",
+    "geceIsigi": true,
+    "orkoz": false,
+    "denizVerisiZayif": false,
+    "akintiNotu": "Mendirek ucunda hafif akıntı, barınak içi tamamen durgun.",
+    "tehlikeler": [
+      "Mendirek taşları kaygan"
+    ],
+    "kisitlar": [
+      "Barınak içinde tekne manevra alanına atış yapma"
+    ],
+    "kalabalik": "orta",
+    "kiyiYonu": 200
+  },
+  {
+    "id": "karamursel",
+    "ad": "Karamürsel",
+    "il": "kocaeli",
+    "bolge": "kocaeli-korfez",
+    "su": "marmara",
+    "lat": 40.689,
+    "lng": 29.612,
+    "tip": [
+      "rihtim",
+      "mendirek",
+      "plaj"
+    ],
+    "ozet": "Körfezin güney kıyısı. Kuzeye baktığı için poyrazda dalga alır, lodosta korunaklıdır — İstanbul kıyılarının tam tersi.",
+    "turler": [
+      "barbunya",
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "kefal",
+      "levrek",
+      "minakop",
+      "subye",
+      "tekir"
+    ],
+    "yontemler": [
+      "capari",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi",
+      "surf"
+    ],
+    "ulasim": "İzmit ve Yalova yönünden otobüs; Topçular feribotuyla da ulaşılır.",
+    "otopark": "kolay",
+    "geceIsigi": true,
+    "orkoz": false,
+    "denizVerisiZayif": false,
+    "akintiNotu": "Körfez içi zayıf akıntı; güney kıyı kuzeyli rüzgârda dalga alır.",
+    "tehlikeler": [],
+    "kisitlar": [],
+    "kalabalik": "sakin",
+    "kiyiYonu": 15
+  },
+  {
+    "id": "ulasli",
+    "ad": "Ulaşlı",
+    "il": "kocaeli",
+    "bolge": "kocaeli-korfez",
+    "su": "marmara",
+    "lat": 40.704,
+    "lng": 29.696,
+    "tip": [
+      "rihtim",
+      "plaj"
+    ],
+    "ozet": "Gölcük'ün batısında sakin bir sahil şeridi. Kalabalıktan uzak, hafif takımla keyifli.",
+    "turler": [
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "kefal",
+      "subye",
+      "tekir"
+    ],
+    "yontemler": [
+      "capari",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "Gölcük'ten sahil minibüsleri.",
+    "otopark": "kolay",
+    "geceIsigi": false,
+    "orkoz": false,
+    "denizVerisiZayif": true,
+    "akintiNotu": "Körfezin bu bölümünde akıntı neredeyse yok; en hafif kurşunla çalış.",
+    "tehlikeler": [],
+    "kisitlar": [],
+    "kalabalik": "sakin",
+    "kiyiYonu": 10
+  },
+  {
+    "id": "degirmendere",
+    "ad": "Değirmendere",
+    "il": "kocaeli",
+    "bolge": "kocaeli-korfez",
+    "su": "marmara",
+    "lat": 40.73,
+    "lng": 29.783,
+    "tip": [
+      "iskele",
+      "rihtim"
+    ],
+    "ozet": "Uzun iskele ve düzenlenmiş sahil. Körfezin güney kıyısında ulaşımı en kolay noktalardan.",
+    "turler": [
+      "cupra",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "kefal",
+      "levrek",
+      "subye"
+    ],
+    "yontemler": [
+      "capari",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "İzmit'ten Değirmendere minibüsleri; deniz otobüsü iskelesi var.",
+    "otopark": "orta",
+    "geceIsigi": true,
+    "orkoz": false,
+    "denizVerisiZayif": true,
+    "akintiNotu": "Durgun su. Yem doğal süzülmediği için hareket vermen gerekir.",
+    "tehlikeler": [],
+    "kisitlar": [
+      "İskele yolcu bölgesinde balık tutmak yasak"
+    ],
+    "kalabalik": "orta",
+    "kiyiYonu": 350
+  },
+  {
+    "id": "golcuk",
+    "ad": "Gölcük Sahili",
+    "il": "kocaeli",
+    "bolge": "kocaeli-korfez",
+    "su": "marmara",
+    "lat": 40.716,
+    "lng": 29.818,
+    "tip": [
+      "rihtim",
+      "plaj"
+    ],
+    "ozet": "Geniş sahil parkı. Su durgun ve sığ; küçük balık bol, iri balık seyrek.",
+    "turler": [
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "kefal",
+      "levrek",
+      "subye"
+    ],
+    "yontemler": [
+      "capari",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "egi"
+    ],
+    "ulasim": "İzmit-Gölcük otobüs ve minibüs hatları.",
+    "otopark": "kolay",
+    "geceIsigi": true,
+    "orkoz": false,
+    "denizVerisiZayif": true,
+    "akintiNotu": "Akıntı yok denecek kadar az.",
+    "tehlikeler": [],
+    "kisitlar": [
+      "Askeri tesis ve tersane bölgelerine yaklaşma"
+    ],
+    "kalabalik": "orta",
+    "kiyiYonu": 350
+  },
+  {
+    "id": "izmit-sahil",
+    "ad": "İzmit Sahili (SEKA Park)",
+    "il": "kocaeli",
+    "bolge": "kocaeli-korfez",
+    "su": "marmara",
+    "lat": 40.759,
+    "lng": 29.901,
+    "tip": [
+      "rihtim",
+      "koy"
+    ],
+    "ozet": "Körfezin en dibi. Şehir içinde ulaşımı en kolay nokta ama su en kapalı ve en sığ olan burası; beklentini buna göre ayarla.",
+    "turler": [
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "kefal",
+      "levrek"
+    ],
+    "yontemler": [
+      "capari",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali"
+    ],
+    "ulasim": "İzmit şehir merkezi, yürüme mesafesinde; tramvay ve otobüs.",
+    "otopark": "kolay",
+    "geceIsigi": true,
+    "orkoz": false,
+    "denizVerisiZayif": true,
+    "akintiNotu": "Kapalı körfez dibi: akıntı yok, su yenilenmesi yavaş.",
+    "tehlikeler": [],
+    "kisitlar": [
+      "Körfezin dibi tarihsel olarak sanayi kirliliği yaşadı; avladığını tüketmeden önce güncel su kalitesi ve tüketim uyarılarına bak"
+    ],
+    "kalabalik": "orta",
+    "kiyiYonu": 230
+  },
+  {
+    "id": "bagirganli",
+    "ad": "Bağırganlı",
+    "il": "kocaeli",
+    "bolge": "kocaeli-karadeniz",
+    "su": "karadeniz",
+    "lat": 41.158,
+    "lng": 30.012,
+    "tip": [
+      "plaj",
+      "kayalik"
+    ],
+    "ozet": "Kandıra kıyısının batı ucunda uzun kum plajı. Surf balıkçılığı için tenha ve geniş bir alan.",
+    "turler": [
+      "barbunya",
+      "cupra",
+      "karagoz",
+      "levrek",
+      "mezgit",
+      "minakop",
+      "sargoz",
+      "tekir"
+    ],
+    "yontemler": [
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "surf"
+    ],
+    "ulasim": "Kandıra üzerinden; özel araç gerekli.",
+    "otopark": "kolay",
+    "geceIsigi": false,
+    "orkoz": false,
+    "denizVerisiZayif": false,
+    "akintiNotu": "Kıyı boyu akıntı kuvvetlidir; 100-150 gr piramit kurşun gerekir.",
+    "tehlikeler": [
+      "Karadeniz dalgası hızla büyür",
+      "Dip akıntısı — suya girme",
+      "Tenha ve aydınlatmasız; yalnız gitme"
+    ],
+    "kisitlar": [],
+    "kalabalik": "sakin",
+    "kiyiYonu": 0
+  },
+  {
+    "id": "kerpe",
+    "ad": "Kerpe",
+    "il": "kocaeli",
+    "bolge": "kocaeli-karadeniz",
+    "su": "karadeniz",
+    "lat": 41.164,
+    "lng": 30.196,
+    "tip": [
+      "koy",
+      "kayalik",
+      "mendirek"
+    ],
+    "ozet": "Kayalık burunlarla korunmuş koy. Kandıra kıyısında dalga bozduğunda sığınılabilecek tek yer; kayalıkları karagöz ve sargoz için birinci sınıf.",
+    "turler": [
+      "cupra",
+      "gelincik",
+      "iskorpit",
+      "istavrit",
+      "izmarit",
+      "karagoz",
+      "levrek",
+      "lufer",
+      "mezgit",
+      "minakop",
+      "sargoz"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali"
+    ],
+    "ulasim": "Kandıra'dan minibüs; İstanbul'dan özel araçla yaklaşık 2 saat.",
+    "otopark": "kolay",
+    "geceIsigi": true,
+    "orkoz": false,
+    "denizVerisiZayif": false,
+    "akintiNotu": "Koy içi korunaklı, burun önlerinde akıntı hızlanır. Kuzeyli rüzgârda bile koyun içi avlanılabilir kalır.",
+    "tehlikeler": [
+      "Kayalıklar keskin ve kaygan",
+      "Burun uçlarında dalga aşar"
+    ],
+    "kisitlar": [],
+    "kalabalik": "orta",
+    "kiyiYonu": 350
+  },
+  {
+    "id": "kefken",
+    "ad": "Kefken",
+    "il": "kocaeli",
+    "bolge": "kocaeli-karadeniz",
+    "su": "karadeniz",
+    "lat": 41.176,
+    "lng": 30.229,
+    "tip": [
+      "mendirek",
+      "iskele",
+      "kayalik"
+    ],
+    "ozet": "Balıkçı barınağı ve mendirek. Kefken Adası'nın önü açıkta olduğu için göç eden lüfer ve palamut bu hattan geçer.",
+    "turler": [
+      "cupra",
+      "gelincik",
+      "iskorpit",
+      "istavrit",
+      "karagoz",
+      "levrek",
+      "lufer",
+      "mezgit",
+      "minakop",
+      "palamut",
+      "sargoz"
+    ],
+    "yontemler": [
+      "capari",
+      "ac-cek",
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali"
+    ],
+    "ulasim": "Kandıra'dan Kefken minibüsü; özel araç önerilir.",
+    "otopark": "kolay",
+    "geceIsigi": true,
+    "orkoz": false,
+    "denizVerisiZayif": false,
+    "akintiNotu": "Ada ile kıyı arasındaki geçitte akıntı belirgin şekilde hızlanır — göç mevsiminde balık bu geçidi kullanır.",
+    "tehlikeler": [
+      "Kuzeyli rüzgârda mendirek üstü tehlikeli",
+      "Karadeniz'de hava çok hızlı bozar"
+    ],
+    "kisitlar": [
+      "Barınak içinde tekne manevra alanına atış yapma"
+    ],
+    "kalabalik": "orta",
+    "kiyiYonu": 10
+  },
+  {
+    "id": "cebeci",
+    "ad": "Cebeci",
+    "il": "kocaeli",
+    "bolge": "kocaeli-karadeniz",
+    "su": "karadeniz",
+    "lat": 41.19,
+    "lng": 30.257,
+    "tip": [
+      "plaj",
+      "kayalik"
+    ],
+    "ozet": "Kefken'in doğusunda plaj ve kayalığın birlikte bulunduğu kıyı. İki dip yapısı yan yana olduğu için tür çeşitliliği yüksek.",
+    "turler": [
+      "barbunya",
+      "cupra",
+      "gelincik",
+      "iskorpit",
+      "karagoz",
+      "levrek",
+      "mezgit",
+      "minakop",
+      "sargoz",
+      "tekir"
+    ],
+    "yontemler": [
+      "spin",
+      "lrf",
+      "dip-yemli",
+      "samandirali",
+      "surf"
+    ],
+    "ulasim": "Kefken üzerinden; özel araç gerekli.",
+    "otopark": "kolay",
+    "geceIsigi": false,
+    "orkoz": false,
+    "denizVerisiZayif": false,
+    "akintiNotu": "Açık Karadeniz koşulları; rüzgâr doğrudan dalgaya dönüşür.",
+    "tehlikeler": [
+      "Büyük dalga riski",
+      "Aydınlatma yok — kafa feneri şart"
+    ],
+    "kisitlar": [],
+    "kalabalik": "sakin",
+    "kiyiYonu": 20
+  },
+  {
+    "id": "sapanca-sahil",
+    "ad": "Sapanca Sahil Parkı",
+    "il": "sakarya",
+    "bolge": "sapanca",
+    "su": "gol",
+    "lat": 40.694,
+    "lng": 30.273,
+    "tip": [
+      "rihtim",
+      "iskele"
+    ],
+    "ozet": "Gölün güneydoğu kıyısındaki düzenlenmiş sahil bandı. Yürüyüş yolu, aydınlatma ve tuvalet olduğu için tatlı suya ilk kez gelen biri için en kolay başlangıç.",
+    "turler": [
+      "sazan",
+      "kizilkanat",
+      "tatlisu-kefali",
+      "gumus",
+      "havuz-baligi",
+      "tatlisu-levregi"
+    ],
+    "yontemler": [
+      "samandirali",
+      "dip-yemli",
+      "feeder",
+      "lrf"
+    ],
+    "ulasim": "Sapanca ilçe merkezinden yürüme mesafesinde. İstanbul'dan Adapazarı yönüne giden tren (Adapazarı Ekspresi) Sapanca'da durur, istasyondan göle 10 dakika yürünür.",
+    "otopark": "kolay",
+    "geceIsigi": true,
+    "orkoz": false,
+    "denizVerisiZayif": true,
+    "tehlikeler": [
+      "Kıyı taşları yosunludur, ıslakken kaygan olur."
+    ],
+    "kisitlar": [
+      "Göl aynı zamanda içme suyu kaynağıdır; suya girme, kıyıdan avlan.",
+      "Park alanında yem artığı ve misina bırakma; kuşlar misinaya dolanıyor."
+    ],
+    "kalabalik": "kalabalik",
+    "mevzuat": {
+      "metin": "İç sularda 15 Mart – 15 Haziran arasında üreme dönemi av yasağı uygulanır; yasak amatör oltacıyı da kapsar. Akarsularda oltayla tatlısu kefali ve gümüş balığı avı bu dönemde de serbesttir. Tarihler her yıl il müdürlüğü duyurusuyla teyit edilir.",
+      "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21) ve il tarım ve orman müdürlüğü iç su av yasağı duyuruları",
+      "kontrolTarihi": "2026-08-28"
+    },
+    "kiyiYonu": 340
+  },
+  {
+    "id": "sapanca-kirkpinar",
+    "ad": "Kırkpınar Kıyısı",
+    "il": "sakarya",
+    "bolge": "sapanca",
+    "su": "gol",
+    "lat": 40.7021,
+    "lng": 30.2236,
+    "tip": [
+      "koy",
+      "sazlik"
+    ],
+    "ozet": "Gölün güney kıyısında, sazlık ve düz dip veren sakin bir kesim. Sazan ve kadife için feeder avının en verimli olduğu yerlerden.",
+    "turler": [
+      "sazan",
+      "kadife",
+      "kizilkanat",
+      "tatlisu-kefali",
+      "turna",
+      "tatlisu-levregi",
+      "yayin",
+      "gumus",
+      "havuz-baligi"
+    ],
+    "yontemler": [
+      "spin",
+      "samandirali",
+      "dip-yemli",
+      "feeder",
+      "lrf"
+    ],
+    "ulasim": "Sapanca merkezden batıya giden göl kıyı yolu ile 6 km. Toplu taşıma seyrek; araçla gitmek pratik.",
+    "otopark": "orta",
+    "geceIsigi": false,
+    "orkoz": false,
+    "denizVerisiZayif": true,
+    "tehlikeler": [
+      "Sazlık kenarında zemin çamurludur, ayak kayabilir.",
+      "Aydınlatma yok; karanlıkta fenersiz dolaşma."
+    ],
+    "kisitlar": [
+      "Sazlığı ezerek yol açma; kuş üreme alanıdır.",
+      "Göl içme suyu kaynağıdır, suya girilmez."
+    ],
+    "kalabalik": "sakin",
+    "mevzuat": {
+      "metin": "İç sularda 15 Mart – 15 Haziran arasında üreme dönemi av yasağı uygulanır; yasak amatör oltacıyı da kapsar. Akarsularda oltayla tatlısu kefali ve gümüş balığı avı bu dönemde de serbesttir. Tarihler her yıl il müdürlüğü duyurusuyla teyit edilir.",
+      "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21) ve il tarım ve orman müdürlüğü iç su av yasağı duyuruları",
+      "kontrolTarihi": "2026-08-28"
+    },
+    "kiyiYonu": 0
+  },
+  {
+    "id": "sapanca-kurtkoy",
+    "ad": "Kurtköy Kıyısı",
+    "il": "sakarya",
+    "bolge": "sapanca",
+    "su": "gol",
+    "lat": 40.705,
+    "lng": 30.2008,
+    "tip": [
+      "iskele",
+      "koy"
+    ],
+    "ozet": "Gölün güneybatı ucundaki balıkçı iskelesi çevresi. Kıyıdan birkaç metre sonra derinleştiği için turna ve tatlısu levreği spinle burada aranır.",
+    "turler": [
+      "turna",
+      "tatlisu-levregi",
+      "sazan",
+      "yayin",
+      "kadife",
+      "kizilkanat",
+      "tatlisu-kefali",
+      "havuz-baligi"
+    ],
+    "yontemler": [
+      "spin",
+      "samandirali",
+      "dip-yemli",
+      "feeder",
+      "lrf"
+    ],
+    "ulasim": "Sapanca–Kartepe göl yolu üzerinde, Sapanca merkezden 9 km batıda.",
+    "otopark": "orta",
+    "geceIsigi": false,
+    "orkoz": false,
+    "denizVerisiZayif": true,
+    "tehlikeler": [
+      "İskele tahtaları yer yer çürük; adımını görerek at.",
+      "Aydınlatma yok."
+    ],
+    "kisitlar": [
+      "Balıkçı teknelerinin bağlandığı bölüme atış yapma.",
+      "Göl içme suyu kaynağıdır, suya girilmez."
+    ],
+    "kalabalik": "orta",
+    "mevzuat": {
+      "metin": "İç sularda 15 Mart – 15 Haziran arasında üreme dönemi av yasağı uygulanır; yasak amatör oltacıyı da kapsar. Akarsularda oltayla tatlısu kefali ve gümüş balığı avı bu dönemde de serbesttir. Tarihler her yıl il müdürlüğü duyurusuyla teyit edilir.",
+      "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21) ve il tarım ve orman müdürlüğü iç su av yasağı duyuruları",
+      "kontrolTarihi": "2026-08-28"
+    },
+    "kiyiYonu": 10
+  },
+  {
+    "id": "sapanca-kartepe-guney",
+    "ad": "Sapanca Gölü — Kartepe Güney Kıyısı",
+    "il": "kocaeli",
+    "bolge": "kocaeli-icsu",
+    "su": "gol",
+    "lat": 40.712,
+    "lng": 30.1763,
+    "tip": [
+      "sazlik",
+      "koy"
+    ],
+    "ozet": "Gölün Kocaeli'ye düşen batı ucunda, sazlıklarla çevrili doğal kıyı. Kalabalıktan uzak, turna ve sazan için en sakin kesim.",
+    "turler": [
+      "turna",
+      "sazan",
+      "yayin",
+      "tatlisu-levregi",
+      "kizilkanat",
+      "kadife",
+      "havuz-baligi"
+    ],
+    "yontemler": [
+      "spin",
+      "samandirali",
+      "dip-yemli",
+      "feeder"
+    ],
+    "ulasim": "Kartepe Maşukiye yolundan göl kıyısına inen tali yollar. Toplu taşıma yok, araç gerekir.",
+    "otopark": "orta",
+    "geceIsigi": false,
+    "orkoz": false,
+    "denizVerisiZayif": true,
+    "tehlikeler": [
+      "Kıyı çamurlu ve yumuşaktır; su kenarına fazla yaklaşma.",
+      "Aydınlatma ve yakın yerleşim yok."
+    ],
+    "kisitlar": [
+      "Sazlıkta kuş üreme dönemi ilkbahardadır; gürültü yapma.",
+      "Göl içme suyu kaynağıdır, suya girilmez."
+    ],
+    "kalabalik": "sakin",
+    "mevzuat": {
+      "metin": "İç sularda 15 Mart – 15 Haziran arasında üreme dönemi av yasağı uygulanır; yasak amatör oltacıyı da kapsar. Akarsularda oltayla tatlısu kefali ve gümüş balığı avı bu dönemde de serbesttir. Tarihler her yıl il müdürlüğü duyurusuyla teyit edilir.",
+      "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21) ve il tarım ve orman müdürlüğü iç su av yasağı duyuruları",
+      "kontrolTarihi": "2026-08-28"
+    },
+    "kiyiYonu": 20
+  },
+  {
+    "id": "sapanca-kartepe-kuzey",
+    "ad": "Sapanca Gölü — Kartepe Kuzey Kıyısı",
+    "il": "kocaeli",
+    "bolge": "kocaeli-icsu",
+    "su": "gol",
+    "lat": 40.7191,
+    "lng": 30.1671,
+    "tip": [
+      "koy",
+      "sazlik"
+    ],
+    "ozet": "Gölün batı ucunun kuzey yakası. Rüzgâr güneyden estiğinde dalganın kırıldığı, korunaklı bir kıyı şeridi.",
+    "turler": [
+      "sazan",
+      "turna",
+      "kadife",
+      "kizilkanat",
+      "tatlisu-kefali",
+      "havuz-baligi"
+    ],
+    "yontemler": [
+      "spin",
+      "samandirali",
+      "dip-yemli",
+      "feeder"
+    ],
+    "ulasim": "Kocaeli–Sakarya eski karayolundan göle inen kıyı yollarıyla. Araç gerekir.",
+    "otopark": "orta",
+    "geceIsigi": false,
+    "orkoz": false,
+    "denizVerisiZayif": true,
+    "tehlikeler": [
+      "Kıyıda korkuluk yok, zemin eğimli.",
+      "Aydınlatma yok."
+    ],
+    "kisitlar": [
+      "Göl içme suyu kaynağıdır, suya girilmez."
+    ],
+    "kalabalik": "sakin",
+    "mevzuat": {
+      "metin": "İç sularda 15 Mart – 15 Haziran arasında üreme dönemi av yasağı uygulanır; yasak amatör oltacıyı da kapsar. Akarsularda oltayla tatlısu kefali ve gümüş balığı avı bu dönemde de serbesttir. Tarihler her yıl il müdürlüğü duyurusuyla teyit edilir.",
+      "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21) ve il tarım ve orman müdürlüğü iç su av yasağı duyuruları",
+      "kontrolTarihi": "2026-08-28"
+    },
+    "kiyiYonu": 180
+  },
+  {
+    "id": "poyrazlar-golu",
+    "ad": "Poyrazlar Gölü",
+    "il": "sakarya",
+    "bolge": "sakarya-icsu",
+    "su": "gol",
+    "lat": 40.84,
+    "lng": 30.469,
+    "tip": [
+      "koy",
+      "sazlik"
+    ],
+    "ozet": "Adapazarı'nın kuzeyinde, ormanla çevrili küçük bir göl. Piknik alanı olduğu için aileyle gelinen, sazan ve kadife veren sakin bir yer.",
+    "turler": [
+      "sazan",
+      "kadife",
+      "turna",
+      "tatlisu-levregi",
+      "kizilkanat",
+      "havuz-baligi",
+      "yayin"
+    ],
+    "yontemler": [
+      "spin",
+      "samandirali",
+      "dip-yemli",
+      "feeder"
+    ],
+    "ulasim": "Adapazarı merkezden Poyrazlar yönüne 15 km. Hafta sonu belediye otobüsü var, hafta içi seyrek.",
+    "otopark": "kolay",
+    "geceIsigi": false,
+    "orkoz": false,
+    "denizVerisiZayif": true,
+    "tehlikeler": [
+      "Kıyı boyunca ağaç kökleri ve çamur var; yağmurdan sonra kaygan."
+    ],
+    "kisitlar": [
+      "Piknik alanında ateş ve çöp kuralları belediyece belirlenir; tabelaları oku."
+    ],
+    "kalabalik": "orta",
+    "mevzuat": {
+      "metin": "İç sularda 15 Mart – 15 Haziran arasında üreme dönemi av yasağı uygulanır; yasak amatör oltacıyı da kapsar. Akarsularda oltayla tatlısu kefali ve gümüş balığı avı bu dönemde de serbesttir. Tarihler her yıl il müdürlüğü duyurusuyla teyit edilir.",
+      "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21) ve il tarım ve orman müdürlüğü iç su av yasağı duyuruları",
+      "kontrolTarihi": "2026-08-28"
+    },
+    "kiyiYonu": 0
+  },
+  {
+    "id": "taskisigi-golu",
+    "ad": "Taşkısığı Gölü",
+    "il": "sakarya",
+    "bolge": "sakarya-icsu",
+    "su": "gol",
+    "lat": 40.87,
+    "lng": 30.405,
+    "tip": [
+      "sazlik",
+      "koy"
+    ],
+    "ozet": "Poyrazlar'ın batısındaki sazlık kıyılı göl. Turna için bilinen bir yer; kıyı boyunca yürüyerek spin yapılır.",
+    "turler": [
+      "turna",
+      "sazan",
+      "kadife",
+      "tatlisu-levregi",
+      "kizilkanat",
+      "havuz-baligi",
+      "yayin"
+    ],
+    "yontemler": [
+      "spin",
+      "samandirali",
+      "dip-yemli",
+      "feeder"
+    ],
+    "ulasim": "Adapazarı–Karasu yolundan Taşkısığı köyüne sapılır. Araç gerekir.",
+    "otopark": "orta",
+    "geceIsigi": false,
+    "orkoz": false,
+    "denizVerisiZayif": true,
+    "tehlikeler": [
+      "Sazlık aralarında zemin bataklık; bilmediğin yere basma.",
+      "Aydınlatma ve yakın yardım yok."
+    ],
+    "kisitlar": [
+      "Sazlık kuş üreme alanıdır, ilkbaharda mesafeni koru."
+    ],
+    "kalabalik": "sakin",
+    "mevzuat": {
+      "metin": "İç sularda 15 Mart – 15 Haziran arasında üreme dönemi av yasağı uygulanır; yasak amatör oltacıyı da kapsar. Akarsularda oltayla tatlısu kefali ve gümüş balığı avı bu dönemde de serbesttir. Tarihler her yıl il müdürlüğü duyurusuyla teyit edilir.",
+      "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21) ve il tarım ve orman müdürlüğü iç su av yasağı duyuruları",
+      "kontrolTarihi": "2026-08-28"
+    },
+    "kiyiYonu": 10
+  },
+  {
+    "id": "sakarya-nehri",
+    "ad": "Sakarya Nehri — Beşköprü",
+    "il": "sakarya",
+    "bolge": "sakarya-icsu",
+    "su": "dere",
+    "lat": 40.771,
+    "lng": 30.4335,
+    "tip": [
+      "dere-kenari"
+    ],
+    "ozet": "Adapazarı'nın doğusundan geçen nehrin geniş ve yavaş akan bölümü. Akıntıda ağır kurşunla sazan ve yayın avlanır.",
+    "turler": [
+      "sazan",
+      "yayin",
+      "tatlisu-kefali",
+      "havuz-baligi",
+      "turna"
+    ],
+    "yontemler": [
+      "spin",
+      "dip-yemli",
+      "feeder",
+      "samandirali"
+    ],
+    "ulasim": "Adapazarı merkezden Beşköprü yönüne 6 km; şehir içi otobüs hattı var.",
+    "otopark": "orta",
+    "geceIsigi": false,
+    "orkoz": false,
+    "denizVerisiZayif": true,
+    "akintiNotu": "Yağış sonrası akıntı belirgin biçimde artar ve su bulanır; kurşunu 60-80 grama çıkarman gerekebilir.",
+    "tehlikeler": [
+      "Nehir kenarı diktir ve akıntı güçlüdür; suya yaklaşma.",
+      "Yağış sonrası su seviyesi hızla yükselebilir."
+    ],
+    "kisitlar": [
+      "Sulama kanalı ve pompa yapılarının çevresine atış yapma."
+    ],
+    "kalabalik": "sakin",
+    "mevzuat": {
+      "metin": "İç sularda 15 Mart – 15 Haziran arasında üreme dönemi av yasağı uygulanır; yasak amatör oltacıyı da kapsar. Akarsularda oltayla tatlısu kefali ve gümüş balığı avı bu dönemde de serbesttir. Tarihler her yıl il müdürlüğü duyurusuyla teyit edilir.",
+      "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21) ve il tarım ve orman müdürlüğü iç su av yasağı duyuruları",
+      "kontrolTarihi": "2026-08-28"
+    },
+    "kiyiYonu": 270
+  },
+  {
+    "id": "riva-deresi",
+    "ad": "Riva Deresi Ağzı",
+    "il": "istanbul",
+    "bolge": "istanbul-icsu",
+    "su": "dere",
+    "lat": 41.2205,
+    "lng": 29.2168,
+    "tip": [
+      "dere-kenari"
+    ],
+    "ozet": "Karadeniz'e dökülen Riva Deresi'nin tatlı ve tuzlu suyun karıştığı alt bölümü. Yağmurdan sonra levrek ve kefal derenin ağzına girer.",
+    "turler": [
+      "tatlisu-kefali",
+      "sazan",
+      "havuz-baligi",
+      "kefal",
+      "levrek"
+    ],
+    "yontemler": [
+      "spin",
+      "samandirali",
+      "dip-yemli",
+      "feeder"
+    ],
+    "ulasim": "Beykoz Riva'ya minibüsle; dere kenarındaki yol boyunca yürünerek nokta seçilir.",
+    "otopark": "orta",
+    "geceIsigi": false,
+    "orkoz": false,
+    "denizVerisiZayif": true,
+    "akintiNotu": "Yağıştan sonra dere kabarır ve su kahverengiye döner; bu dönemde avcı balık dere ağzına toplanır.",
+    "tehlikeler": [
+      "Kıyı çamurlu ve kaygandır.",
+      "Yağış sonrası debi hızla artabilir."
+    ],
+    "kisitlar": [
+      "Özel araziden geçerek kıyıya inme; kamuya açık yolu kullan."
+    ],
+    "kalabalik": "sakin",
+    "mevzuat": {
+      "metin": "İç sularda 15 Mart – 15 Haziran arasında üreme dönemi av yasağı uygulanır; yasak amatör oltacıyı da kapsar. Akarsularda oltayla tatlısu kefali ve gümüş balığı avı bu dönemde de serbesttir. Tarihler her yıl il müdürlüğü duyurusuyla teyit edilir.",
+      "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21) ve il tarım ve orman müdürlüğü iç su av yasağı duyuruları",
+      "kontrolTarihi": "2026-08-28"
+    },
+    "kiyiYonu": 90
+  },
+  {
+    "id": "agva-goksu",
+    "ad": "Ağva Göksu Deresi",
+    "il": "istanbul",
+    "bolge": "istanbul-icsu",
+    "su": "dere",
+    "lat": 41.133,
+    "lng": 29.843,
+    "tip": [
+      "dere-kenari"
+    ],
+    "ozet": "Ağva'nın batısındaki dere. Kıyı boyunca yürüyerek nokta seçilir; kanoların geçmediği saatlerde çok sakindir.",
+    "turler": [
+      "tatlisu-kefali",
+      "sazan",
+      "havuz-baligi",
+      "kefal"
+    ],
+    "yontemler": [
+      "samandirali",
+      "dip-yemli",
+      "feeder"
+    ],
+    "ulasim": "Şile üzerinden Ağva'ya otobüs; kasabadan dere kenarına yürünür.",
+    "otopark": "orta",
+    "geceIsigi": false,
+    "orkoz": false,
+    "denizVerisiZayif": true,
+    "akintiNotu": "Denize yakın bölümde gelgit ve rüzgâra bağlı olarak su seviyesi az da olsa değişir.",
+    "tehlikeler": [
+      "Dere kenarı kaygan ve diktir.",
+      "Yaz aylarında kano ve tekne trafiği var."
+    ],
+    "kisitlar": [
+      "Kano güzergâhına atış yapma.",
+      "İşletmelerin iskelelerinden izinsiz avlanma."
+    ],
+    "kalabalik": "orta",
+    "mevzuat": {
+      "metin": "İç sularda 15 Mart – 15 Haziran arasında üreme dönemi av yasağı uygulanır; yasak amatör oltacıyı da kapsar. Akarsularda oltayla tatlısu kefali ve gümüş balığı avı bu dönemde de serbesttir. Tarihler her yıl il müdürlüğü duyurusuyla teyit edilir.",
+      "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21) ve il tarım ve orman müdürlüğü iç su av yasağı duyuruları",
+      "kontrolTarihi": "2026-08-28"
+    },
+    "kiyiYonu": 90
+  },
+  {
+    "id": "agva-yesilcay",
+    "ad": "Ağva Yeşilçay Deresi",
+    "il": "istanbul",
+    "bolge": "istanbul-icsu",
+    "su": "dere",
+    "lat": 41.133,
+    "lng": 29.86,
+    "tip": [
+      "dere-kenari",
+      "sazlik"
+    ],
+    "ozet": "Ağva'nın doğusundaki ikinci dere. Göksu'ya göre daha geniş ve yavaş akar; kıyısında sazlık boşluklar vardır.",
+    "turler": [
+      "tatlisu-kefali",
+      "sazan",
+      "havuz-baligi",
+      "kefal"
+    ],
+    "yontemler": [
+      "samandirali",
+      "dip-yemli",
+      "feeder"
+    ],
+    "ulasim": "Ağva merkezden doğuya yürüyerek veya kısa bir araç yoluyla.",
+    "otopark": "orta",
+    "geceIsigi": false,
+    "orkoz": false,
+    "denizVerisiZayif": true,
+    "akintiNotu": "Yağış sonrası akıntı artar, su bulanır ve balık kıyıya yaklaşır.",
+    "tehlikeler": [
+      "Sazlık kenarında zemin çamurlu.",
+      "Aydınlatma yok."
+    ],
+    "kisitlar": [
+      "Kano ve tekne güzergâhına atış yapma."
+    ],
+    "kalabalik": "orta",
+    "mevzuat": {
+      "metin": "İç sularda 15 Mart – 15 Haziran arasında üreme dönemi av yasağı uygulanır; yasak amatör oltacıyı da kapsar. Akarsularda oltayla tatlısu kefali ve gümüş balığı avı bu dönemde de serbesttir. Tarihler her yıl il müdürlüğü duyurusuyla teyit edilir.",
+      "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21) ve il tarım ve orman müdürlüğü iç su av yasağı duyuruları",
+      "kontrolTarihi": "2026-08-28"
+    },
+    "kiyiYonu": 270
+  },
+  {
+    "id": "kucukcekmece-golu",
+    "ad": "Küçükçekmece Gölü",
+    "il": "istanbul",
+    "bolge": "istanbul-icsu",
+    "su": "aci",
+    "lat": 41.018,
+    "lng": 28.747,
+    "tip": [
+      "koy",
+      "sazlik"
+    ],
+    "ozet": "Denizle bağlantısı olan, bu yüzden hem tatlı hem tuzlu su türü barındıran şehir içi göl. Ulaşımı kolay; kefal, sazan ve gümüş bir arada bulunur.",
+    "turler": [
+      "sazan",
+      "kizilkanat",
+      "gumus",
+      "havuz-baligi",
+      "kefal"
+    ],
+    "yontemler": [
+      "samandirali",
+      "dip-yemli",
+      "feeder"
+    ],
+    "ulasim": "Halkalı ve Küçükçekmece istasyonlarından yürüme mesafesinde; Marmaray ve metrobüs bağlantısı var.",
+    "otopark": "orta",
+    "geceIsigi": true,
+    "orkoz": false,
+    "denizVerisiZayif": true,
+    "tehlikeler": [
+      "Kıyıda korkuluksuz ve çamurlu kesimler var."
+    ],
+    "kisitlar": [
+      "Göle şehir dereleri karışıyor; buradan çıkan balığı yemek yerine suya bırakmak daha doğru.",
+      "Kıyıdaki park düzenlemesi ve tabelalara uy."
+    ],
+    "kalabalik": "orta",
+    "mevzuat": {
+      "metin": "İç sularda 15 Mart – 15 Haziran arasında üreme dönemi av yasağı uygulanır; yasak amatör oltacıyı da kapsar. Akarsularda oltayla tatlısu kefali ve gümüş balığı avı bu dönemde de serbesttir. Tarihler her yıl il müdürlüğü duyurusuyla teyit edilir.",
+      "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21) ve il tarım ve orman müdürlüğü iç su av yasağı duyuruları",
+      "kontrolTarihi": "2026-08-28"
+    },
+    "kiyiYonu": 270
+  }
+]

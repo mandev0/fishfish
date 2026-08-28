@@ -1,0 +1,145 @@
+{
+  "ad": "Kızılkanat",
+  "latin": "Scardinius erythrophthalmus",
+  "ingilizce": "Rudd",
+  "digerAdlar": [
+    "Kızılgöz (yanlış kullanım)"
+  ],
+  "ozet": "Yüzgeçleri kırmızı, gümüş renkli sürü balığı. Yüzeye yakın gezer, şamandıralı takıma hemen gelir — çocuklu bir günün balığı.",
+  "zorluk": 1,
+  "aylar": [
+    2,
+    2,
+    2,
+    0,
+    0,
+    2,
+    4,
+    4,
+    4,
+    3,
+    2,
+    2
+  ],
+  "sular": [
+    "gol",
+    "aci"
+  ],
+  "gece": false,
+  "boySiniflari": [
+    {
+      "ad": "Küçük kızılkanat",
+      "cm": "0-12 cm"
+    },
+    {
+      "ad": "Kızılkanat",
+      "cm": "12-20 cm"
+    },
+    {
+      "ad": "İri kızılkanat",
+      "cm": "20 cm ve üzeri"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": null,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Tebliğ'de bu tür için asgari boy belirtilmemiştir. İç sularda kişi başı günlük toplam 5 kg sınırı geçerlidir.",
+    "yasakDonemi": "15 Mart – 15 Haziran: iç sularda üreme dönemi av yasağı. Yasak amatör oltacıyı da kapsar."
+  },
+  "suSicakligi": {
+    "min": 8,
+    "ideal": [
+      16,
+      24
+    ],
+    "max": 28
+  },
+  "aktifSaatler": [
+    "sabah",
+    "oglen",
+    "ikindi",
+    "aksam"
+  ],
+  "ruzgarTercihi": [],
+  "ruzgarKacinilan": [
+    "poyraz"
+  ],
+  "derinlik": "0,3-2 m; çoğu zaman yüzeyin hemen altında.",
+  "yasamAlani": "Sazlık boşlukları, nilüfer kenarları, iskele altları, durgun sığ koylar.",
+  "teshis": {
+    "siluet": "kizilkanat",
+    "ayirtEdici": [
+      "Gövde yanlardan yassı ve gümüş parlaklığında.",
+      "Karın, anal ve kuyruk yüzgeçleri belirgin kırmızı.",
+      "Ağız yukarı bakar — yüzeyden beslendiğinin işaretidir.",
+      "Sırt yüzgeci, karın yüzgeçlerinin belirgin biçimde gerisinden başlar."
+    ],
+    "karistirilan": [
+      "tatlisu-kefali"
+    ]
+  },
+  "takimlar": [
+    "tatli-sabit-samandira",
+    "feeder-takimi"
+  ],
+  "yemler": {
+    "dogal": [
+      "Ekmek içi",
+      "Hamur yem",
+      "Toprak solucanı parçası",
+      "Mısır"
+    ],
+    "sahte": []
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "3,0-4,0 m hafif kamış",
+      "not": "Uzun kamış şamandırayı kontrol etmeyi kolaylaştırır."
+    },
+    "makine": {
+      "deger": "1000-2500"
+    },
+    "anaMisina": {
+      "deger": "0,16-0,18 mm mono"
+    },
+    "sokLideri": {
+      "deger": "Gerekmez",
+      "not": "Bu balık için ince köstek yeterlidir."
+    },
+    "igne": {
+      "deger": "12-16 numara ince telli"
+    },
+    "agirlik": {
+      "deger": "Üç dört saçma kurşun",
+      "not": "Şamandırayı dik tutacak kadar; fazlası vuruşu gizler."
+    }
+  },
+  "taktik": {
+    "atis": "Sazlık boşluğuna veya iskele gölgesine yumuşak bir hareketle at. Uzağa atmaya gerek yok.",
+    "cekme": "Şamandırayı akıntıyla veya rüzgârla süzülmeye bırak, misinayı ne gergin ne tamamen gevşek tut.",
+    "tokatlama": "Şamandıra tamamen batıp bir saniye kaldığında bileğinden kısa bir hareketle tokatla.",
+    "yakalama": "Küçük ve narin balıktır; ıslak elle tut, iğneyi pense ile çıkar.",
+    "ipuclari": [
+      "Suya bir avuç ekmek kırıntısı at; sürü kısa sürede toplanır.",
+      "Yem küçük olsun; iğnenin ucu yemden çıksın.",
+      "Çocukla gidiyorsan bu balık en hızlı sonucu veren türdür."
+    ],
+    "hatalar": [
+      "İri şamandıra kullanmak; balık direnç hissedip yemi bırakır.",
+      "İlk oynamada tokatlamak.",
+      "Yakaladığını kuru elle tutmak."
+    ]
+  },
+  "mutfak": "Küçük ve kılçıklıdır; genelde tutulup suya bırakılır. Tutulacaksa iyice kızartılarak yenir.",
+  "noktalar": [
+    "sapanca-sahil",
+    "sapanca-kirkpinar",
+    "sapanca-kurtkoy",
+    "sapanca-kartepe-guney",
+    "sapanca-kartepe-kuzey",
+    "poyrazlar-golu",
+    "taskisigi-golu",
+    "kucukcekmece-golu"
+  ]
+}

@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import RigDiagram from '../../components/svg/RigDiagram.astro';
+import Zorluk from '../../components/Zorluk.astro';
+import { baslikBicimi } from '../../lib/metin';
+
+const takimlar = (await getCollection('rigs')).sort((a, b) => a.data.zorluk - b.data.zorluk);
+const yontemler = (await getCollection('methods')).sort((a, b) => a.data.zorluk - b.data.zorluk);
+
+/** Takımlar yönteme göre gruplanır: "hangi işi yapıyorum" sorusu "neyi bağlıyorum"dan önce gelir. */
+const gruplar = yontemler
+  .map((y) => ({ yontem: y, liste: takimlar.filter((r) => r.data.yontem === y.id) }))
+  .filter((g) => g.liste.length > 0);
+---
+<Base baslik="Takımlar" aciklama={`Çapariden feeder'a, kıyı ve tatlı su balıkçılığında kullanılan ${takimlar.length} takımın şeması ve kurulumu.`}>
+  <h1 class="text-3xl sm:text-4xl">Takımlar</h1>
+  <p class="mt-2 max-w-2xl text-muted">
+    Yönteme göre gruplanmış {takimlar.length} takım. Her takımın bileşen listesi, kurulum adımları,
+    etiketli şeması ve sık yapılan hataları var.
+    Hangi yöntemin sana uyduğuna karar vermek için <a href="/yontem" class="text-accent underline">yöntemler</a> sayfasına bak.
+  </p>
+
+  {gruplar.map((g) => (
+    <section class="mt-8">
+      <h2 class="bolum-baslik mb-1 text-xl sm:text-2xl">
+        <a href={`/yontem/${g.yontem.id}`} class="hover:text-accent">{baslikBicimi(g.yontem.data.ad)}</a>
+      </h2>
+      <p class="mb-3 pl-[0.7rem] text-sm text-muted">{g.yontem.data.ozet}</p>
+      <div class="grid gap-4 sm:grid-cols-2">
+        {g.liste.map((r) => (
+          <a href={`/takim/${r.id}`} class="group kart p-4 hover:border-accent">
+            <div class="flex items-baseline justify-between gap-2">
+              <h3 class="font-semibold group-hover:text-accent">{baslikBicimi(r.data.ad)}</h3>
+              <Zorluk seviye={r.data.zorluk} />
+            </div>
+            <p class="mt-1 text-sm text-muted">{r.data.ozet}</p>
+            <div class="mx-auto mt-3 max-w-[200px] text-muted transition-colors group-hover:text-accent">
+              <RigDiagram sema={r.data.sema} />
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
+</Base>

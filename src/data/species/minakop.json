@@ -1,0 +1,160 @@
+{
+  "ad": "Minakop",
+  "latin": "Umbrina cirrosa",
+  "ingilizce": "Shi drum",
+  "digerAdlar": [
+    "Minekop",
+    "Kötek",
+    "Sarıağız minakop"
+  ],
+  "ozet": "İri boya ulaşan, güçlü bir dip balığı. Kıyıdan tutulması zordur ama sonbaharda kumluk-kayalık sınırlarında şansın vardır. Boy limiti yüksektir, dikkat et.",
+  "zorluk": 5,
+  "aylar": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    3,
+    4,
+    5,
+    4,
+    3
+  ],
+  "sular": [
+    "marmara",
+    "karadeniz"
+  ],
+  "gece": true,
+  "boySiniflari": [
+    {
+      "ad": "Küçük minakop",
+      "cm": "0-45 cm",
+      "not": "45 cm altı yasal değil — çoğu kıyı balığı bu boyun altındadır, dikkatli ölç."
+    },
+    {
+      "ad": "Minakop",
+      "cm": "45 cm ve üzeri"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 45,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Asgari boy oldukça yüksek. Kıyıdan tutulan minakopların çoğu bu boyun altında kalır ve suya bırakılmalıdır."
+  },
+  "suSicakligi": {
+    "min": 12,
+    "ideal": [
+      15,
+      22
+    ],
+    "max": 25
+  },
+  "aktifSaatler": [
+    "aksam",
+    "gece",
+    "safak"
+  ],
+  "ruzgarTercihi": [
+    "lodos",
+    "kible"
+  ],
+  "ruzgarKacinilan": [],
+  "derinlik": "5-50 m; dalgalı havada kıyıya sokulur.",
+  "yasamAlani": "Kumlu-çakıllı dipler, kayalık kenarları, dalgakıran önleri.",
+  "teshis": {
+    "siluet": "minakop",
+    "ayirtEdici": [
+      "Çene altında tek kısa, kalın bıyık.",
+      "Gövdede eğik altın-gümüş çizgiler.",
+      "Sırt yüksek, kuyruk düz kesik veya hafif içbükey.",
+      "Sudan çıkarıldığında hava kesesiyle vurmalı bir ses çıkarır."
+    ],
+    "karistirilan": [
+      "cupra"
+    ]
+  },
+  "takimlar": [
+    "dip-takimi-sabit-kursun",
+    "paternoster",
+    "surf-clipdown"
+  ],
+  "yemler": {
+    "dogal": [
+      "Deniz solucanı",
+      "Kalamar şeridi",
+      "Karides",
+      "Midye içi",
+      "Canlı yem balığı"
+    ],
+    "sahte": []
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "3,6-4,5 m surf, 100-200 gr",
+      "not": "Uzak atış ve güçlü gövde gerekir."
+    },
+    "makine": {
+      "deger": "5000-8000",
+      "not": "İri balık ihtimaline karşı büyük makara ve sağlam fren."
+    },
+    "anaMisina": {
+      "deger": "0,35-0,40 mm mono"
+    },
+    "sokLideri": {
+      "deger": "0,40-0,50 mm fluorocarbon, 60-80 cm"
+    },
+    "igne": {
+      "deger": "1/0-4/0 güçlü",
+      "not": "İri ağzına uygun büyük iğne."
+    },
+    "agirlik": {
+      "deger": "100-180 gr piramit",
+      "not": "Dalgalı havada dibi tutması şart."
+    }
+  },
+  "taktik": {
+    "atis": "Dalganın bulandırdığı bölgeye, kum-kaya sınırına uzun at. Minakop bulanık suyu sever.",
+    "cekme": "Yem dipte dursun. Sabır işi — bir noktada 30-45 dakika beklemek normaldir.",
+    "tokatlama": "Vuruş çok serttir, kamışı yatırır. Geniş ve güçlü tokatla.",
+    "yakalama": "Uzun ve güçlü mücadele eder. Freni doğru ayarla, aceleci olma. Boyunu ölç, 45 cm altındaysa suya bırak.",
+    "ipuclari": [
+      "Lodosun bulandırdığı su ve gece saatleri en iyi kombinasyondur.",
+      "Kıyıdan yasal boyda minakop yakalamak nadir bir başarıdır; küçüklerini bırakmayı baştan kabul et.",
+      "Silivri, Büyükçekmece ve Karadeniz kıyıları en iyi şansı verir."
+    ],
+    "hatalar": [
+      "Boy ölçmeden alıkoymak — asgari boy 45 cm ve ceza yüksek.",
+      "Hafif takımla çıkmak."
+    ]
+  },
+  "mutfak": "Fırında veya buğulama. İri boyu çok değerli bir sofra balığıdır.",
+  "noktalar": [
+    "kilyos",
+    "riva",
+    "sile",
+    "agva",
+    "yenikapi",
+    "zeytinburnu",
+    "yesilkoy",
+    "florya",
+    "buyukcekmece",
+    "silivri",
+    "bostanci",
+    "maltepe",
+    "kartal",
+    "pendik",
+    "tuzla",
+    "bayramoglu",
+    "eskihisar",
+    "hereke",
+    "karamursel",
+    "bagirganli",
+    "kerpe",
+    "kefken",
+    "cebeci"
+  ]
+}

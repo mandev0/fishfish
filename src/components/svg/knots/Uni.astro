@@ -1,0 +1,37 @@
+---
+import Adim from './_Adim.astro';
+---
+<svg class="diagram" viewBox="0 0 400 450" role="img" aria-labelledby="k-uni">
+  <title id="k-uni">Uni düğümü: halkadan geçir ve geriye katlayarak paralel hat oluştur, ucu bu hattın etrafında beş-altı kez ilmekten geçir, sık ve halkaya kaydır.</title>
+
+  <Adim no={1} baslik="Halkadan geçir, geriye katlayarak paralel hat yap" y={0}>
+    <circle cx="60" cy="46" r="13" class="metal" />
+    <path class="misina" d="M388 40 L73 40" />
+    <path class="uc" d="M47 40 q-14 0 -14 8 q0 8 14 8 L230 56" />
+    <path class="uc" d="M230 56 q26 2 26 -8" />
+    <text class="lbl-misina" x="120" y="86">paralel çift hat</text>
+  </Adim>
+
+  <Adim no={2} baslik="Ucu, çift hattın etrafındaki ilmekten 5-6 kez geçir" y={150}>
+    <circle cx="60" cy="46" r="13" class="metal" />
+    <path class="misina" d="M388 40 L73 40" />
+    <path class="uc" d="M47 40 q-14 0 -14 8 q0 8 14 8 L240 56" />
+    <path class="uc" d="M240 56 q28 2 28 -10 q0 -10 -20 -10 L150 36" />
+    {[0,1,2,3,4,5].map((i) => (
+      <path class="uc" d={`M${152 + i * 16} 36 q8 22 16 20 q8 -2 0 -20`} />
+    ))}
+    <text class="lbl-a" x="150" y="96">5-6 sarım ilmeğin içinden</text>
+  </Adim>
+
+  <Adim no={3} baslik="Islat, ucu çekerek topla, sonra halkaya kaydır" y={300}>
+    <circle cx="60" cy="46" r="13" class="metal" />
+    <path class="misina" d="M388 40 L112 40" />
+    <g transform="translate(88,40)">
+      <rect x="-24" y="-13" width="48" height="26" rx="5" class="dugum-dolu" />
+      {[0,1,2,3].map((i) => (<path class="ln-thin" d={`M${-16 + i * 10} -13 L${-16 + i * 10} 13`} />))}
+    </g>
+    <path class="misina" d="M64 40 L76 40" />
+    <path class="uc" d="M112 40 l24 -10" />
+    <text class="lbl-a" x="150" y="34">fazlalığı kes</text>
+  </Adim>
+</svg>

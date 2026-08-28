@@ -1,0 +1,183 @@
+{
+  "ad": "Karagöz",
+  "latin": "Diplodus vulgaris",
+  "ingilizce": "Common two-banded seabream",
+  "digerAdlar": [
+    "İki bantlı karagöz"
+  ],
+  "ozet": "Kayalık kıyıların kurnaz sakini. Yemi hızla soyup kaçmakta ustadır; onu tutmak refleks ve doğru iğne meselesidir.",
+  "zorluk": 3,
+  "aylar": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    4,
+    5,
+    5,
+    4,
+    3
+  ],
+  "sular": [
+    "bogaz",
+    "marmara",
+    "karadeniz"
+  ],
+  "gece": false,
+  "boySiniflari": [
+    {
+      "ad": "Küçük karagöz",
+      "cm": "0-18 cm",
+      "not": "18 cm altı yasal değil."
+    },
+    {
+      "ad": "Karagöz",
+      "cm": "18-30 cm"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 18,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28"
+  },
+  "suSicakligi": {
+    "min": 11,
+    "ideal": [
+      15,
+      24
+    ],
+    "max": 27
+  },
+  "aktifSaatler": [
+    "safak",
+    "sabah",
+    "ikindi",
+    "aksam"
+  ],
+  "ruzgarTercihi": [
+    "poyraz"
+  ],
+  "ruzgarKacinilan": [
+    "karayel"
+  ],
+  "derinlik": "1-30 m; kayalık ve yosunlu diplerde.",
+  "yasamAlani": "Kayalıklar, mendirek taşları, iskele ayakları, midye kaplı yüzeyler.",
+  "teshis": {
+    "siluet": "karagoz",
+    "ayirtEdici": [
+      "Ense üzerinde ve kuyruk sapında olmak üzere iki belirgin koyu bant.",
+      "Gövde oval ve yüksek, gümüş renkli.",
+      "Ön dişleri kesici, arkada midye kıran azı dişleri.",
+      "Yüzgeçler sarımsı tonda."
+    ],
+    "karistirilan": [
+      "sargoz",
+      "cupra"
+    ]
+  },
+  "takimlar": [
+    "dip-takimi-sabit-kursun",
+    "paternoster",
+    "lrf-jig-head"
+  ],
+  "yemler": {
+    "dogal": [
+      "Midye içi",
+      "Karides",
+      "Deniz solucanı",
+      "Yengeç",
+      "Kum midyesi"
+    ],
+    "sahte": [
+      "Kokulu silikon karides"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "2,7-3,6 m, 20-80 gr",
+      "not": "Hassas uçlu olması vuruşu görmeni sağlar."
+    },
+    "makine": {
+      "deger": "3000-4000"
+    },
+    "anaMisina": {
+      "deger": "0,28-0,32 mm mono"
+    },
+    "sokLideri": {
+      "deger": "0,22-0,28 mm fluorocarbon, 30-50 cm",
+      "not": "İnce köstek karagözde belirgin fark yaratır."
+    },
+    "igne": {
+      "deger": "4-8 numara, kısa pipolu güçlü",
+      "not": "Küçük ve keskin iğne şart; karagözün ağzı küçüktür."
+    },
+    "agirlik": {
+      "deger": "40-100 gr"
+    }
+  },
+  "taktik": {
+    "atis": "Kayalığın hemen kenarına, midye kaplı taşların dibine at. Karagöz açık kumda beslenmez.",
+    "cekme": "Yem dipte dursun. Misinayı hafif gergin tut ki en küçük dokunuşu görebilesin.",
+    "tokatlama": "En kritik nokta. Karagöz yemi tek hamlede soyup kaçar. Kamış ucu ilk sert titremede tokatla — beklersen yemi kaybedersin.",
+    "yakalama": "Boyuna göre çok güçlüdür ve kayalığa kaçar. İlk saniyelerde baskıyı bırakma.",
+    "ipuclari": [
+      "Yemi iğneye sıkı ve küçük tak; büyük yem karagözün soymasını kolaylaştırır.",
+      "Sürekli yem soyuluyor ama balık takılmıyorsa iğneyi bir numara küçült.",
+      "Midye içini iğneye takmadan önce birkaç saniye havada beklet, biraz sertleşsin."
+    ],
+    "hatalar": [
+      "Geç tokatlamak.",
+      "Büyük iğne ve büyük yem kullanmak.",
+      "Kumluk dipte karagöz aramak."
+    ]
+  },
+  "mutfak": "Izgara veya tavada. Kılçığı serttir ama eti beyaz ve lezzetlidir.",
+  "noktalar": [
+    "garipce",
+    "sariyer-mendirek",
+    "buyukdere",
+    "yenikoy",
+    "poyrazkoy",
+    "beykoz",
+    "kandilli",
+    "salacak",
+    "kilyos",
+    "riva",
+    "sile",
+    "agva",
+    "yenikapi",
+    "kumkapi",
+    "zeytinburnu",
+    "bakirkoy",
+    "yesilkoy",
+    "florya",
+    "buyukcekmece",
+    "silivri",
+    "moda",
+    "caddebostan",
+    "bostanci",
+    "maltepe",
+    "kartal",
+    "pendik",
+    "tuzla",
+    "buyukada",
+    "heybeliada",
+    "bayramoglu",
+    "darica-sahil",
+    "eskihisar",
+    "tavsancil",
+    "hereke",
+    "karamursel",
+    "ulasli",
+    "degirmendere",
+    "golcuk",
+    "izmit-sahil",
+    "bagirganli",
+    "kerpe",
+    "kefken",
+    "cebeci"
+  ]
+}

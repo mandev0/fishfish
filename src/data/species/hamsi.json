@@ -1,0 +1,139 @@
+{
+  "ad": "Hamsi",
+  "latin": "Engraulis encrasicolus",
+  "ingilizce": "European anchovy",
+  "digerAdlar": [
+    "Hamsi kuşu"
+  ],
+  "ozet": "Kışın Karadeniz'den inen kalabalık sürüler halinde gelir. Sürü kıyıya girdiğinde ince sabikiyle bir saatte kova doldurabilirsin.",
+  "zorluk": 1,
+  "aylar": [
+    5,
+    4,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    3,
+    5,
+    5
+  ],
+  "sular": [
+    "bogaz",
+    "marmara",
+    "karadeniz",
+    "halic"
+  ],
+  "gece": true,
+  "boySiniflari": [
+    {
+      "ad": "Küçük hamsi",
+      "cm": "0-9 cm",
+      "not": "9 cm altı yasal değil."
+    },
+    {
+      "ad": "Hamsi",
+      "cm": "9-18 cm"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 9,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28"
+  },
+  "suSicakligi": {
+    "min": 6,
+    "ideal": [
+      8,
+      15
+    ],
+    "max": 20
+  },
+  "aktifSaatler": [
+    "aksam",
+    "gece",
+    "safak"
+  ],
+  "ruzgarTercihi": [
+    "poyraz",
+    "yildiz"
+  ],
+  "ruzgarKacinilan": [
+    "lodos"
+  ],
+  "derinlik": "Yüzey ile 40 m arası; gece ışığa gelerek yüzeye çıkar.",
+  "yasamAlani": "Açık kıyı suları; kışın Boğaz ve Haliç'e girer.",
+  "teshis": {
+    "siluet": "hamsi",
+    "ayirtEdici": [
+      "Üst çene alt çeneden belirgin şekilde uzun ve sivri — burnu çıkıntılı görünür.",
+      "Ağzı çok geniş, gözün arkasına kadar yarılır.",
+      "Gövde ince, uzun ve yuvarlak kesitli.",
+      "Yanda ince gümüş bir bant."
+    ],
+    "karistirilan": [
+      "sardalya"
+    ]
+  },
+  "takimlar": [
+    "sabiki-ince"
+  ],
+  "yemler": {
+    "dogal": [],
+    "sahte": [
+      "Çok ince simli sabiki (14-18 numara)"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "2,1-3,0 m hafif"
+    },
+    "makine": {
+      "deger": "2000-3000"
+    },
+    "anaMisina": {
+      "deger": "0,16-0,20 mm mono"
+    },
+    "sokLideri": {
+      "deger": "Gerekmez"
+    },
+    "igne": {
+      "deger": "14-18 numara",
+      "not": "Hamsi iğnesi en küçük boydur."
+    },
+    "agirlik": {
+      "deger": "10-20 gr"
+    }
+  },
+  "taktik": {
+    "atis": "Sürünün olduğu yere at; hamsi geldiğinde iskele zaten kalabalıklaşır, sürüyü bulmak zor değildir.",
+    "cekme": "Yavaşça indir ve bekle. Sürü yoğunsa sabikinin tüm iğneleri dolar.",
+    "tokatlama": "Gerekmez.",
+    "yakalama": "Silkeleyerek kovaya boşalt.",
+    "ipuclari": [
+      "Kasım-Ocak arası, özellikle poyrazlı soğuk gecelerde en verimli dönem.",
+      "Sürü bir noktada uzun durmaz; geldiğinde hızlı çalış.",
+      "Balıkçı iskelelerinde ve Galata Köprüsü'nde sezonda çok kalabalık olur."
+    ],
+    "hatalar": [
+      "Yaz aylarında hamsi aramak.",
+      "Büyük iğneli sabiki kullanmak."
+    ]
+  },
+  "mutfak": "Tava, buğulama, pilav, izgara — mutfakta sınırsız kullanımı var. Taze hamsinin gövdesi diri ve parlak olur.",
+  "noktalar": [
+    "rumeli-kavagi",
+    "sariyer-mendirek",
+    "kabatas",
+    "galata-koprusu",
+    "anadolu-kavagi",
+    "beykoz",
+    "yenikapi",
+    "kumkapi",
+    "zeytinburnu",
+    "bostanci"
+  ]
+}

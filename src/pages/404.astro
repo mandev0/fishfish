@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base baslik="Sayfa Bulunamadı">
+  <h1 class="text-3xl sm:text-4xl">Bu Sayfa Yok</h1>
+  <p class="mt-2 text-muted">Aradığın sayfa taşınmış veya hiç var olmamış olabilir.</p>
+  <ul class="mt-6 flex flex-wrap gap-2">
+    {[
+      ['Bugün ne tutulur?', '/'],
+      ['Balık takvimi', '/takvim'],
+      ['Balıklar', '/balik'],
+      ['Takımlar', '/takim'],
+      ['Noktalar', '/noktalar'],
+    ].map(([ad, href]) => (
+      <li><a href={href} class="block kart px-3 py-1.5 text-sm hover:border-accent">{ad}</a></li>
+    ))}
+  </ul>
+</Base>

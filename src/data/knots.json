@@ -1,0 +1,139 @@
+[
+  {
+    "id": "klinc",
+    "ad": "Klinç Düğümü",
+    "ozet": "İğne, fırdöndü ve zoka bağlamanın en yaygın yolu. Öğrenmesi beş dakika, ömür boyu işine yarar.",
+    "kullanim": "Monofilament ve fluorocarbon misinayı iğne/fırdöndü halkasına bağlamak.",
+    "zorluk": 1,
+    "guc": "Misina gücünün yaklaşık %85-90'ı",
+    "adimlar": [
+      "Misinanın ucunu halkadan geçir, 15-20 cm serbest uç bırak.",
+      "Serbest ucu ana misinanın etrafında 5-6 tur sar.",
+      "Serbest ucu, halkanın hemen üstünde kalan ilk ilmeğin içinden geçir.",
+      "Yeni oluşan büyük ilmeğin içinden serbest ucu bir kez daha geçir (bu adım düğümü \"improved\" yapar ve kaymayı önler).",
+      "Düğümü tükürükle ıslat, ana misinayı çekerek sarımları halkaya doğru sıkıştır.",
+      "Fazlalığı 2-3 mm bırakarak kes."
+    ],
+    "ipuclari": [
+      "Islatmadan sıkma. Kuru misina sürtünme ısısıyla zayıflar ve tam orada kopar.",
+      "0,40 mm üstü kalın misinada tur sayısını 4'e indir; yoksa düzgün sıkışmaz."
+    ]
+  },
+  {
+    "id": "palomar",
+    "ad": "Palomar Düğümü",
+    "ozet": "Bağlaması en kolay, gücü en yüksek düğümlerden biri. Karanlıkta bile bağlayabilirsin.",
+    "kullanim": "Örgü ve monofilament misinayı iğne, klips veya fırdöndüye bağlamak.",
+    "zorluk": 1,
+    "guc": "Misina gücünün yaklaşık %90-95'i",
+    "adimlar": [
+      "Misinayı ikiye katla, katlanmış ilmeği halkadan geçir.",
+      "Çift misinayla basit bir düğüm (yarım düğüm) at, ilmeği serbest bırak.",
+      "İlmeği açıp iğnenin/klipsin tamamının üstünden geçir.",
+      "Düğümü ıslat ve hem ana misinayı hem serbest ucu aynı anda çekerek sık.",
+      "Fazlalığı kes."
+    ],
+    "ipuclari": [
+      "Örgü misinada en güvendiğin düğüm bu olsun.",
+      "İlmeği iğnenin üstünden geçirirken iğne ucuna takmamaya dikkat et; sıkarken misinayı keser."
+    ]
+  },
+  {
+    "id": "uni",
+    "ad": "Uni Düğümü",
+    "ozet": "Tek başına bağlantı düğümü, iki tane yan yana kullanılınca iki misinayı birleştiren \"çift uni\" olur.",
+    "kullanim": "Halkaya bağlamak veya iki misinayı (ana misina ↔ köstek) birleştirmek.",
+    "zorluk": 2,
+    "guc": "Misina gücünün yaklaşık %85-90'ı",
+    "adimlar": [
+      "Misinayı halkadan geçir ve geriye doğru katlayarak paralel bir hat oluştur.",
+      "Serbest uçla, oluşan çift hattın etrafında geriye doğru bir ilmek çevir.",
+      "Serbest ucu bu ilmeğin içinden 5-6 kez geçir.",
+      "Düğümü ıslat, serbest ucu çekerek sarımları toparla.",
+      "Ana misinayı çekerek düğümü halkaya kadar kaydır."
+    ],
+    "ipuclari": [
+      "İki misinayı birleştirmek için: uçları paralel getir, her iki uçla birer uni düğüm at, sonra ana hatları ters yönde çekerek düğümleri birbirine kilitle.",
+      "Kalınlık farkı 1,5 katı geçmesin; yoksa ince olan kayar."
+    ]
+  },
+  {
+    "id": "fg",
+    "ad": "FG Düğümü",
+    "ozet": "Örgü misinayı fluorocarbon şok liderine bağlamanın en ince ve en güçlü yolu. Düğüm neredeyse hiç kalınlaşmadığı için kamış halkalarından pürüzsüz geçer.",
+    "kullanim": "PE örgü ana misina ↔ fluorocarbon şok lideri.",
+    "zorluk": 4,
+    "guc": "Örgü gücünün yaklaşık %95'i",
+    "adimlar": [
+      "Örgü misinayı gergin tut (ayağına veya dizine dola). Lideri örgüye dik konumda tut.",
+      "Lideri örgünün etrafında dönüşümlü olarak alttan ve üstten geçirerek örgü (braid) yap; 20-24 geçiş yeterli.",
+      "Sarımların üstüne örgü misinanın serbest ucuyla 2 kez yarım düğüm atarak kilitle.",
+      "Örgünün serbest ucuyla, lider ve ana hattın üstünden 4-5 turluk bir sarım daha at, ilmekten geçirip sık.",
+      "Düğümü iyice ıslat ve yavaşça sıkıştır; sarımların lidere gömüldüğünü gör.",
+      "Lider fazlalığını 1-2 mm bırakarak, örgü fazlalığını dibinden kes."
+    ],
+    "ipuclari": [
+      "İlk seferde evde, kalın misinayla ve yavaşça çalış. Sahada rüzgârda öğrenilmez.",
+      "Sarım sırasında örgünün gerginliği sabit kalmalı; gevşerse düğüm kayar.",
+      "Aceleci olma diye kestirme yol: aynı işi çift uni düğüm de görür, sadece biraz daha kalın olur."
+    ]
+  },
+  {
+    "id": "snell",
+    "ad": "Snell Düğümü",
+    "ozet": "Misinayı iğnenin pipo kısmına sararak bağlar. Çekiş kuvveti iğneyi döndürüp ağza daha iyi kilitler.",
+    "kullanim": "Pipolu (gözsüz veya gözlü) iğnelere köstek bağlamak; özellikle dip takımında.",
+    "zorluk": 3,
+    "guc": "Misina gücünün yaklaşık %90'ı",
+    "adimlar": [
+      "Misinanın ucunu iğnenin gözünden, iğne ucu tarafına doğru geçir.",
+      "Bir ilmek bırakarak ucu tekrar aynı gözden ters yönde geçir.",
+      "Oluşan ilmeği tutarak, ilmeğin misinasını iğnenin pipo kısmına doğru 6-8 tur sar. Sarımlar sık ve düzgün olmalı.",
+      "Serbest kalan ana misinayı yavaşça çek; sarımlar pipoya oturur.",
+      "Islat ve tam olarak sık, fazlalığı kes."
+    ],
+    "ipuclari": [
+      "Sarımlar iğne ucuna doğru değil, göze doğru sıkışmalı.",
+      "Yem takarken misinanın iğneye 180 derece hizalı çıktığını kontrol et."
+    ]
+  },
+  {
+    "id": "cift-ilmek",
+    "ad": "Çift İlmek (Surgeon's Loop)",
+    "ozet": "Misina ucunda sağlam bir ilmek oluşturur. İlmek-ilmeğe bağlantıyla köstek değiştirmeyi saniyeler meselesi yapar.",
+    "kullanim": "Köstek ucu, beden ucu ve hızlı takım değişimi.",
+    "zorluk": 1,
+    "guc": "Misina gücünün yaklaşık %80-85'i",
+    "adimlar": [
+      "Misinanın ucunu 15 cm katlayarak çift hat oluştur.",
+      "Çift hatla basit bir ilmek yap.",
+      "Katlanmış ucu bu ilmeğin içinden iki kez geçir.",
+      "Islat ve dört ucu birden çekerek sık.",
+      "İlmek boyu 3-5 cm olacak şekilde ayarla."
+    ],
+    "ipuclari": [
+      "İlmek-ilmeğe bağlarken: bir ilmeği diğerinin içinden geçir, sonra karşı tarafın ucunu ilk ilmekten geçir. Düğümsüz, güçlü ve anında sökülür.",
+      "Balıkçı dükkânından aldığın hazır kösteklerin ucunda genelde bu ilmek bulunur."
+    ]
+  },
+  {
+    "id": "kostek-bagi",
+    "ad": "Köstek Bağı (Dropper Loop)",
+    "ozet": "Misinanın ortasında, hattı kesmeden dik duran bir ilmek oluşturur. Paternoster ve çapari yapımının temel düğümü.",
+    "kullanim": "Bedenin ortasına köstek çıkışı açmak.",
+    "zorluk": 3,
+    "guc": "Misina gücünün yaklaşık %75-80'i",
+    "adimlar": [
+      "Bedenin istediğin noktasında bir ilmek oluştur.",
+      "İlmeğin bir kolunu tutup ilmeği kendi ekseninde 6-8 kez döndür.",
+      "Sarımların tam ortasında oluşan küçük açıklığı parmağınla aç.",
+      "İlmeğin alt kısmını bu açıklığın içinden yukarı çek.",
+      "İlmeği tutarak bedenin iki ucunu ters yönde çek; sarımlar toparlanır ve ilmek dik durur.",
+      "Islat ve sık. İlmek bedene 90 derece açıyla çıkmalı."
+    ],
+    "ipuclari": [
+      "İlmek uzunluğu, köstek arası mesafenin yarısını geçmesin.",
+      "Sarım sayısı tek değil çift olsun; ilmek daha dik durur."
+    ]
+  }
+]

@@ -1,0 +1,118 @@
+---
+import Rozet from './Rozet.astro';
+import { SU_TURU, TIP_ADLARI } from '../lib/season';
+
+/** Bir noktanın özelliklerini metin yerine simgelerle gösterir. */
+interface Props { nokta: any; genis?: boolean }
+const { nokta: d, genis = false } = Astro.props;
+
+const TIP_IKON: Record<string, string> = {
+  mendirek: 'mendirek', iskele: 'iskele', kayalik: 'kayalik',
+  plaj: 'plaj', kopru: 'kopru', rihtim: 'rihtim', koy: 'koy',
+  sazlik: 'sazlik', 'dere-kenari': 'dere-kenari',
+};
+const TIP_IPUCU: Record<string, string> = {
+  mendirek: 'Mendirek — dalgakıran taşlarının üstünden avlanılır. Taşlar yosunlu ve kaygandır.',
+  iskele: 'İskele — ahşap veya beton platform. Altı gölge yaptığı için balık toplar.',
+  kayalik: 'Kayalık — doğal kaya kıyı. Karagöz, sargoz ve iskorpit için verimli, güvenlik ister.',
+  plaj: 'Plaj / kum — kumluk dip. Tekir, barbunya ve minakop gibi kum balıkları için uzun atış yapılır.',
+  kopru: 'Köprü — yükseklik fazladır, balığı almak için kepçe veya sepet gerekir.',
+  rihtim: 'Rıhtım — düzenlenmiş beton kıyı. Ulaşımı kolay, çoğu zaman korkuluklu.',
+  koy: 'Koy — korunaklı girinti. Rüzgârlı havada dalga kırılır, akıntı zayıflar.',
+  sazlik: 'Sazlık — kamış ve saz kenarı. Sazan, turna ve kızılkanat bu örtünün dibinde beslenir; zemin çamurlu olur.',
+  'dere-kenari': 'Dere kenarı — akan su boyunca yürüyerek nokta seçilir. Yağış sonrası debi ve bulanıklık hızla değişir.',
+};
+
+const OTOPARK_IPUCU: Record<string, string> = {
+  kolay: 'Otopark: park yeri bulmak kolay.',
+  orta: 'Otopark: park yeri bulunur ama kalabalık saatlerde zorlanırsın.',
+  zor: 'Otopark: park yeri bulmak zor.',
+  yok: 'Otopark: araçla gidilemez veya park imkânı yok.',
+};
+const KALABALIK_IPUCU: Record<string, string> = {
+  sakin: 'Yoğunluk: genelde sakin, yer bulmakta zorlanmazsın.',
+  orta: 'Yoğunluk: orta. Hafta sonu kalabalıklaşır.',
+  kalabalik: 'Yoğunluk: kalabalık — yer kapmak için erken git.',
+};
+const KALABALIK_TON = { sakin: 'iyi', orta: 'notr', kalabalik: 'uyari' } as const;
+const OTOPARK_TON = { kolay: 'iyi', orta: 'notr', zor: 'uyari', yok: 'tehlike' } as const;
+
+// Rozet üstündeki kısa etiketler — ham veri değerini olduğu gibi basmıyoruz.
+const OTOPARK_ETIKET: Record<string, string> = {
+  kolay: 'Park kolay', orta: 'Park orta', zor: 'Park zor', yok: 'Park yok',
+};
+const KALABALIK_ETIKET: Record<string, string> = {
+  sakin: 'Sakin', orta: 'Orta yoğun', kalabalik: 'Kalabalık',
+};
+---
+<div class="flex flex-wrap items-center gap-1.5">
+  {d.tip.map((t: string) => (
+    <Rozet
+      ikon={TIP_IKON[t] ?? 'konum'}
+      ipucu={TIP_IPUCU[t] ?? TIP_ADLARI[t]}
+      etiket={genis ? TIP_ADLARI[t] : undefined}
+    />
+  ))}
+
+  {d.geceIsigi && (
+    <Rozet
+      ikon="isik" ton="vurgu"
+      ipucu="Gece aydınlatması var. Karanlıkta avlanabilir; ışığın suya vurduğu sınır lüfer ve istavrit için en verimli hattır."
+      etiket={genis ? 'Işık' : undefined}
+    />
+  )}
+
+  {d.orkoz && (
+    <Rozet
+      ikon="orkoz" ton="vurgu"
+      ipucu="Orkoz bölgesi. Kuvvetli lodosta bu koyda akıntı tersine döner; yem balığı ters akıntıda toplanır, avcı balık peşinden gelir."
+      etiket={genis ? 'Orkoz' : undefined}
+    />
+  )}
+
+  <Rozet
+    ikon="otopark" ton={OTOPARK_TON[d.otopark as keyof typeof OTOPARK_TON]}
+    ipucu={OTOPARK_IPUCU[d.otopark]}
+    etiket={genis ? OTOPARK_ETIKET[d.otopark] : undefined}
+  />
+
+  <Rozet
+    ikon="kalabalik" ton={KALABALIK_TON[d.kalabalik as keyof typeof KALABALIK_TON]}
+    ipucu={KALABALIK_IPUCU[d.kalabalik]}
+    etiket={genis ? KALABALIK_ETIKET[d.kalabalik] : undefined}
+  />
+
+  {d.denizVerisiZayif && (
+    <Rozet
+      ikon="dalga" ton="uyari"
+      ipucu={SU_TURU[d.su] === 'deniz'
+        ? 'Bu nokta kapalı ve sığ bir suda; Open-Meteo deniz modeli burayı kapsamıyor. Dalga ve deniz suyu sıcaklığı gösterilemez, skorlar bu iki faktör olmadan hesaplanır.'
+        : 'Burası tatlı su; deniz modeli göl ve dereleri kapsamıyor. Dalga ve su sıcaklığı gösterilemez, skorlar bu iki faktör olmadan hesaplanır.'}
+      etiket={genis ? (SU_TURU[d.su] === 'deniz' ? 'Deniz verisi yok' : 'Tatlı su') : undefined}
+    />
+  )}
+
+  {d.mevzuat && (
+    <Rozet
+      ikon="takvim" ton="uyari"
+      ipucu={`Mevzuat: ${d.mevzuat.metin}`}
+      etiket={genis ? 'Av yasağı dönemi' : undefined}
+    />
+  )}
+
+  {d.tehlikeler?.length > 0 && (
+    <Rozet
+      ikon="uyari" ton="tehlike"
+      ipucu={`Dikkat edilmesi gerekenler: ${d.tehlikeler.join(' · ')}`}
+      etiket={genis ? `${d.tehlikeler.length} uyarı` : undefined}
+    />
+  )}
+
+  {d.kisitlar?.length > 0 && (
+    <Rozet
+      ikon="yasak" ton="uyari"
+      ipucu={`Kısıtlar: ${d.kisitlar.join(' · ')}`}
+      etiket={genis ? `${d.kisitlar.length} kısıt` : undefined}
+    />
+  )}
+</div>

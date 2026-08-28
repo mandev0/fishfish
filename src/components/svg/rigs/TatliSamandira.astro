@@ -1,0 +1,75 @@
+---
+// Sabit şamandıralı tatlı su takımı — iki stoper, kalem şamandıra, azalan saçma kurşunlar, ince köstek.
+---
+<svg class="diagram" viewBox="0 0 380 520" role="img" aria-labelledby="tatli-samandira-baslik">
+  <title id="tatli-samandira-baslik">Sabit şamandıralı tatlı su takımı şeması: iki kauçuk stoper arasındaki kalem şamandıra, azalan sırayla dizilmiş saçma kurşunlar, ince köstek ve solucanlı iğne.</title>
+
+  <rect class="water" x="0" y="168" width="380" height="352" />
+  <path class="ln-thin" d="M0 168 q20 -6 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" />
+
+  <path class="kamis" d="M14 26 L110 40" />
+  <text class="lbl-b" x="14" y="18">Hafif kamış 3,0-4,0 m</text>
+
+  <path class="misina" d="M110 40 L166 96" />
+  <text class="lbl-misina" x="192" y="70">Ana misina 0,16-0,20 mm</text>
+
+  <!-- Üst stoper -->
+  <path class="metal" d="M160 96 h12 v9 h-12 z" />
+  <text class="lbl-metal" x="192" y="104">Üst stoper</text>
+  <text class="lbl-a" x="192" y="118">derinliği bu belirler</text>
+
+  <path class="misina" d="M166 105 L166 126" />
+
+  <!-- Kalem şamandıra -->
+  <g transform="translate(166,168)">
+    <path class="yem" d="M0 -42 L0 -14" stroke-width="3" />
+    <path class="metal" d="M0 -14 c9 0 14 10 14 22 c0 13 -7 22 -14 22 c-7 0 -14 -9 -14 -22 c0 -12 5 -22 14 -22 z" />
+    <path class="misina" d="M0 30 L0 46" />
+  </g>
+  <text class="lbl-yem" x="196" y="136">Antenin ucu</text>
+  <text class="lbl" x="196" y="150">suyun üstünde kalır</text>
+  <text class="lbl-metal" x="196" y="178">Kalem şamandıra</text>
+  <text class="lbl" x="196" y="192">1-3 gr</text>
+
+  <!-- Alt stoper -->
+  <path class="metal" d="M160 214 h12 v9 h-12 z" />
+  <text class="lbl-metal" x="128" y="222" text-anchor="end">Alt stoper</text>
+  <path class="tick" d="M134 218 L156 218" />
+
+  <path class="misina" d="M166 223 L166 300" />
+
+  <!-- Saçma kurşunlar: yukarıdan aşağı küçülür -->
+  <circle class="metal" cx="166" cy="244" r="6" />
+  <circle class="metal" cx="166" cy="266" r="4.6" />
+  <circle class="metal" cx="166" cy="286" r="3.4" />
+  <text class="lbl-metal" x="128" y="252" text-anchor="end">Saçma kurşun</text>
+  <path class="tick" d="M134 248 L158 246" />
+  <text class="lbl-a" x="128" y="270" text-anchor="end">En küçüğü</text>
+  <text class="lbl-a" x="128" y="284" text-anchor="end">iğneye en yakın</text>
+  <text class="lbl" x="128" y="302" text-anchor="end">şamandırayı diker</text>
+
+  <!-- Köstek -->
+  <path class="lider" d="M166 300 L166 386" />
+  <path class="tick" d="M222 300 L222 386 M216 300 L228 300 M216 386 L228 386" />
+  <text class="lbl-lider" x="238" y="330">Köstek</text>
+  <text class="lbl" x="238" y="344">0,12-0,16 mm</text>
+  <text class="lbl" x="238" y="358">25-40 cm</text>
+  <text class="lbl-a" x="238" y="378">Ana misinadan ince</text>
+
+  <!-- İğne ve solucan -->
+  <g transform="translate(166,390)">
+    <path class="igne" d="M0 0 l0 13 a8 8 0 1 0 13 4" />
+    <path class="uc" d="M2 5 q10 5 11 15 q1 9 -5 14" />
+  </g>
+  <text class="lbl-igne" x="128" y="400" text-anchor="end">İğne 12-16 no</text>
+  <text class="lbl-yem" x="128" y="414" text-anchor="end">solucan parçası</text>
+
+  <!-- Sazlık ve dip -->
+  <path class="ground" d="M0 452 q40 -10 80 -2 q40 10 80 -6 q40 -12 80 0 q40 12 80 -4 q20 -6 40 -2 L380 520 L0 520 z" />
+  <path class="ln-thin" d="M0 452 q40 -10 80 -2 q40 10 80 -6 q40 -12 80 0 q40 12 80 -4 q20 -6 40 -2" />
+  <path class="ln-thin" d="M22 452 V342 M34 454 V362 M46 452 V330 M58 454 V356 M330 448 V352 M342 450 V368 M354 448 V336" />
+  <text class="lbl" x="14" y="326">Sazlık</text>
+
+  <text class="lbl-a" x="196" y="430">Yem dibin 20-40 cm üstünde</text>
+  <text class="lbl" x="14" y="500">Şamandıra tamamen batıp bir saniye kalınca tokatla.</text>
+</svg>

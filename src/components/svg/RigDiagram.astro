@@ -1,0 +1,43 @@
+---
+import Capari from './rigs/Capari.astro';
+import Samandira from './rigs/Samandira.astro';
+import Zoka from './rigs/Zoka.astro';
+import Spin from './rigs/Spin.astro';
+import Dip from './rigs/Dip.astro';
+import Paternoster from './rigs/Paternoster.astro';
+import Lrf from './rigs/Lrf.astro';
+import Egi from './rigs/Egi.astro';
+import Kefal from './rigs/Kefal.astro';
+import Surf from './rigs/Surf.astro';
+import Feeder from './rigs/Feeder.astro';
+import Sazan from './rigs/Sazan.astro';
+import TatliSamandira from './rigs/TatliSamandira.astro';
+import SpinTatli from './rigs/SpinTatli.astro';
+
+interface Props { sema: string }
+const { sema } = Astro.props;
+
+const SEMALAR: Record<string, any> = {
+  capari: Capari,
+  samandira: Samandira,
+  zoka: Zoka,
+  spin: Spin,
+  dip: Dip,
+  paternoster: Paternoster,
+  lrf: Lrf,
+  egi: Egi,
+  kefal: Kefal,
+  surf: Surf,
+  feeder: Feeder,
+  sazan: Sazan,
+  'tatli-samandira': TatliSamandira,
+  'spin-tatli': SpinTatli,
+};
+
+const Sema = SEMALAR[sema];
+---
+{Sema ? <Sema /> : (
+  <p class="rounded-lg border border-line bg-surface-2 p-4 text-sm text-muted">
+    Bu takım için şema henüz çizilmedi ({sema}).
+  </p>
+)}

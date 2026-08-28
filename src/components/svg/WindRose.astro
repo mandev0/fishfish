@@ -1,0 +1,58 @@
+---
+/** Türkçe rüzgâr gülü. `derece` verilirse rüzgârın geldiği yönü ok ile gösterir. */
+interface Props { derece?: number | null; vurgu?: string | null }
+const { derece = null, vurgu = null } = Astro.props;
+
+const YONLER = [
+  { id: 'yildiz', ad: 'Yıldız', aci: 0 },
+  { id: 'poyraz', ad: 'Poyraz', aci: 45 },
+  { id: 'gundogusu', ad: 'Gündoğusu', aci: 90 },
+  { id: 'kesisleme', ad: 'Keşişleme', aci: 135 },
+  { id: 'kible', ad: 'Kıble', aci: 180 },
+  { id: 'lodos', ad: 'Lodos', aci: 225 },
+  { id: 'gunbatisi', ad: 'Günbatısı', aci: 270 },
+  { id: 'karayel', ad: 'Karayel', aci: 315 },
+];
+
+const M = 110;
+const nokta = (aci: number, r: number) => {
+  const rad = ((aci - 90) * Math.PI) / 180;
+  return [M + r * Math.cos(rad), M + r * Math.sin(rad)] as const;
+};
+---
+<svg class="diagram" viewBox="0 0 220 220" role="img" aria-label="Türkçe rüzgâr gülü">
+  <circle cx={M} cy={M} r="74" class="ln-thin" fill="none" />
+  <circle cx={M} cy={M} r="52" class="ln-thin" fill="none" />
+
+  {YONLER.map((y) => {
+    const [x1, y1] = nokta(y.aci, 24);
+    const [x2, y2] = nokta(y.aci, 74);
+    const [tx, ty] = nokta(y.aci, 94);
+    const secili = vurgu === y.id;
+    return (
+      <g>
+        <path class={secili ? 'ruzgar-secili' : 'ruzgar-cizgi'} d={`M${x1} ${y1} L${x2} ${y2}`} />
+        <text
+          x={tx} y={ty + 4} text-anchor="middle"
+          class={secili ? 'lbl-a' : 'lbl'}
+        >{y.ad}</text>
+      </g>
+    );
+  })}
+
+  {typeof derece === 'number' && (() => {
+    const [ux, uy] = nokta(derece, 66);
+    const [sx, sy] = nokta(derece + 180, 30);
+    return (
+      <g>
+        <path class="ruzgar-ok" d={`M${sx} ${sy} L${ux} ${uy}`} />
+        <path class="ruzgar-ok-uc" d={`M${ux} ${uy} L${nokta(derece - 8, 52)[0]} ${nokta(derece - 8, 52)[1]} L${nokta(derece + 8, 52)[0]} ${nokta(derece + 8, 52)[1]} Z`} />
+      </g>
+    );
+  })()}
+
+  <circle cx={M} cy={M} r="4.5" class="ruzgar-merkez" />
+  {typeof derece === 'number' && (
+    <text x={M} y={M + 42} text-anchor="middle" class="lbl">geldiği yön</text>
+  )}
+</svg>

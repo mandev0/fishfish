@@ -1,0 +1,170 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Ikon from '../components/Ikon.astro';
+import NoktaRozetleri from '../components/NoktaRozetleri.astro';
+import { baslikBicimi } from '../lib/metin';
+import { BOLGE_ADLARI, BOLGE_ILI, IL_ADLARI, SU_TURU } from '../lib/season';
+
+const noktalar = (await getCollection('spots')).sort((a, b) => a.data.ad.localeCompare(b.data.ad, 'tr'));
+const turler = (await getCollection('species')).sort((a, b) => a.data.ad.localeCompare(b.data.ad, 'tr'));
+const yontemler = (await getCollection('methods')).sort((a, b) => a.data.zorluk - b.data.zorluk);
+
+const veri = noktalar.map((n) => ({
+  id: n.id, ad: n.data.ad, il: n.data.il, bolge: n.data.bolge, su: n.data.su,
+  lat: n.data.lat, lng: n.data.lng, turler: n.data.turler, tip: n.data.tip,
+  yontemler: n.data.yontemler,
+  geceIsigi: n.data.geceIsigi, otopark: n.data.otopark, ozet: n.data.ozet,
+}));
+
+const iller = [...new Set(noktalar.map((n) => n.data.il))];
+const bolgeler = [...new Set(noktalar.map((n) => n.data.bolge))];
+
+/**
+ * Su türü filtresi. Seçenek değeri, o sınıfa giren su alanı kimliklerini
+ * boşlukla ayrılmış olarak taşır; istemci tarafı bunu ayırıp eşleştirir.
+ * Böylece sınıflandırma tek kaynakta (SU_TURU) kalır.
+ */
+const suSiniflari = (() => {
+  const kullanilan = [...new Set(noktalar.map((n) => n.data.su))];
+  const grup = (tur: string) => kullanilan.filter((s) => SU_TURU[s] === tur).join(' ');
+  return [
+    { deger: grup('deniz'), ad: 'Deniz' },
+    { deger: [grup('tatli'), grup('aci')].filter(Boolean).join(' '), ad: 'Tatlı ve acı su' },
+  ].filter((g) => g.deger);
+})();
+
+const tatliSuSayisi = noktalar.filter((n) => SU_TURU[n.data.su] !== 'deniz').length;
+---
+<Base
+  baslik="Noktalar" genis
+  aciklama="İstanbul, Kocaeli ve Sakarya'da kıyıdan ve tatlı sudan balık tutulabilecek noktalar: ulaşım, dip yapısı, akıntı, tehlikeler ve hangi balık çıkar."
+>
+  <h1 class="text-3xl sm:text-4xl">Noktalar</h1>
+  <p class="mt-2 max-w-2xl text-sm text-muted sm:text-base">
+    {noktalar.length} nokta — Boğaz, Marmara, Karadeniz, Adalar ve İzmit Körfezi kıyısı,
+    ayrıca {tatliSuSayisi} tatlı su noktası: Sapanca Gölü, Sakarya iç suları ve İstanbul dereleri.
+    Her nokta için ulaşım, otopark, gece aydınlatması, akıntı notu, uygulanabilen yöntemler
+    ve tehlikeler yazılı.
+  </p>
+
+  {/* Birincil eylem: telefonda ilk sorulan şey "bana yakın olan hangisi".
+      Konum yalnızca bu düğmeye basılınca istenir; tarayıcı konum vermiyorsa
+      düğme hiç görünmez. */}
+  <button
+    type="button" data-yakin hidden
+    class="mt-4 inline-flex min-h-11 items-center gap-2 rounded-sm border border-line bg-surface px-3 py-2 text-sm font-medium text-ink transition-colors hover:border-accent disabled:opacity-60"
+  >
+    <Ikon ad="konum" sinif="size-4 shrink-0 text-accent" />
+    <span data-yakin-etiket>Konumuma göre sırala</span>
+  </button>
+  <p data-konum-durum hidden class="mt-2 text-sm text-warn" role="status"></p>
+
+  <div id="harita" class="mt-4 hidden h-[380px] w-full overflow-hidden rounded-sm border border-line sm:h-[460px]"></div>
+
+  {/* Filtreler dar ekranda katlanır: dört seçici açıkken haritayı ekranın
+      dışına itiyordu. Sunucu paneli açık basar, JavaScript kapalıyken de
+      filtreler görünür kalır. */}
+  <details data-filtreler open class="mt-5">
+    <summary class="filtre-ozet">
+      <Ikon ad="filtre" sinif="size-4 shrink-0 text-vurgu" />
+      Filtrele
+      <span data-filtre-rozeti hidden class="rounded-sm bg-vurgu-soft px-1.5 py-0.5 text-xs text-vurgu"></span>
+      <svg class="filtre-ok size-4 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="m6 9 6 6 6-6" />
+      </svg>
+    </summary>
+
+    <div class="grid grid-cols-2 gap-3 pt-3 sm:pt-0 lg:grid-cols-3">
+      <label class="block">
+        <span class="text-xs uppercase tracking-wide text-muted">Su</span>
+        <select data-su-filtre class="mt-1 w-full kart px-3 py-2.5 text-sm">
+          <option value="">Hepsi</option>
+          {suSiniflari.map((g) => <option value={g.deger}>{g.ad}</option>)}
+        </select>
+      </label>
+      <label class="block">
+        <span class="text-xs uppercase tracking-wide text-muted">İl</span>
+        <select data-il-filtre class="mt-1 w-full kart px-3 py-2.5 text-sm">
+          <option value="">Hepsi</option>
+          {iller.map((il) => <option value={il}>{IL_ADLARI[il]}</option>)}
+        </select>
+      </label>
+      <label class="block">
+        <span class="text-xs uppercase tracking-wide text-muted">Bölge</span>
+        {/* Seçenekler il seçilince daraltılır; her seçenek hangi ile ait olduğunu taşır. */}
+        <select data-bolge-filtre class="mt-1 w-full kart px-3 py-2.5 text-sm">
+          <option value="">Hepsi</option>
+          {bolgeler.map((b) => (
+            <option value={b} data-il={BOLGE_ILI[b]}>{BOLGE_ADLARI[b]}</option>
+          ))}
+        </select>
+      </label>
+      <label class="block">
+        <span class="text-xs uppercase tracking-wide text-muted">Balık</span>
+        <select data-tur-filtre class="mt-1 w-full kart px-3 py-2.5 text-sm">
+          <option value="">Hepsi</option>
+          {turler.map((t) => <option value={t.id}>{t.data.ad}</option>)}
+        </select>
+      </label>
+      <label class="block">
+        <span class="text-xs uppercase tracking-wide text-muted">Yöntem</span>
+        <select data-yontem-filtre class="mt-1 w-full kart px-3 py-2.5 text-sm">
+          <option value="">Hepsi</option>
+          {yontemler.map((y) => <option value={y.id}>{y.data.ad}</option>)}
+        </select>
+      </label>
+      <label class="col-span-2 flex min-h-11 items-center gap-2 lg:col-span-1 lg:items-end lg:pb-2.5">
+        <input type="checkbox" data-isik-filtre class="size-4 rounded-sm border-line" />
+        <span class="text-sm">Sadece gece aydınlatması olanlar</span>
+      </label>
+    </div>
+  </details>
+
+  <script is:inline data-astro-rerun>
+    // Paneli dar ekranda kapat. Betik öğenin hemen ardında olduğu için panel
+    // bir kez açık görünüp kapanmıyor. Geniş ekrana geçilirse geri açılır —
+    // orada başlık gizli olduğundan kapalı kalsa açılamazdı.
+    (function () {
+      var dar = matchMedia('(max-width: 639px)');
+      function ayarla() {
+        var panel = document.querySelector('[data-filtreler]');
+        if (panel) panel.open = !dar.matches;
+      }
+      ayarla();
+      if (!window.__fishfishFiltrePaneli) {
+        window.__fishfishFiltrePaneli = true;
+        dar.addEventListener('change', ayarla);
+      }
+    })();
+  </script>
+
+  <p data-sayac class="mt-4 text-sm text-muted">{noktalar.length} nokta gösteriliyor</p>
+
+  <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+    {noktalar.map((n) => (
+      <article
+        data-nokta-id={n.id} data-bolge={n.data.bolge}
+        class="kart bolge-kenar flex flex-col p-4"
+      >
+        <p class="flex items-center gap-1.5 text-xs font-medium bolge-metin">
+          <span class="bolge-nokta" aria-hidden="true" />
+          {IL_ADLARI[n.data.il]} — {BOLGE_ADLARI[n.data.bolge]}
+          {/* Konuma göre sıralanınca doldurulur. */}
+          <span data-mesafe hidden class="olcu ml-auto shrink-0 text-muted"></span>
+        </p>
+        <h2 class="mt-1 text-lg">
+          <a href={`/nokta/${n.id}`} class="hover:text-accent">{baslikBicimi(n.data.ad)}</a>
+        </h2>
+        <p class="mt-1.5 flex-1 text-sm text-muted">{n.data.ozet}</p>
+        <div class="mt-3"><NoktaRozetleri nokta={n.data} /></div>
+      </article>
+    ))}
+  </div>
+</Base>
+
+<script type="application/json" id="nokta-verisi" set:html={JSON.stringify(veri)} is:inline></script>
+<script>
+  import { baslat } from '../components/islands/spot-map';
+  document.addEventListener('astro:page-load', () => void baslat());
+</script>

@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Bolum from '../../components/Bolum.astro';
+import Liste from '../../components/Liste.astro';
+import Metin from '../../components/Metin.astro';
+import KnotDiagram from '../../components/svg/KnotDiagram.astro';
+import Zorluk from '../../components/Zorluk.astro';
+
+export async function getStaticPaths() {
+  const dugumler = await getCollection('knots');
+  return dugumler.map((k) => ({ params: { id: k.id }, props: { dugum: k } }));
+}
+
+const { dugum } = Astro.props;
+const d = dugum.data;
+const takimlar = (await getCollection('rigs')).filter((r) => r.data.dugumler.includes(dugum.id));
+const gorulen = new Set<string>();
+---
+<Base baslik={d.ad} aciklama={d.ozet}>
+  <h1 class="text-3xl sm:text-4xl">{d.ad}</h1>
+  <Metin metin={d.ozet} etiket="p" sinif="mt-2 max-w-2xl" gorulen={gorulen} />
+
+  <dl class="mt-4 grid gap-3 sm:grid-cols-3">
+    <div class="kart p-3">
+      <dt class="text-xs uppercase tracking-wide text-muted">Nerede kullanılır</dt>
+      <Metin metin={d.kullanim} etiket="dd" sinif="mt-1 text-sm" gorulen={gorulen} />
+    </div>
+    <div class="kart p-3">
+      <dt class="text-xs uppercase tracking-wide text-muted">Gücü</dt>
+      <dd class="mt-1 text-sm">{d.guc}</dd>
+    </div>
+    <div class="kart p-3">
+      <dt class="text-xs uppercase tracking-wide text-muted">Zorluk</dt>
+      <dd class="mt-1"><Zorluk seviye={d.zorluk} /></dd>
+    </div>
+  </dl>
+
+  <div class="mt-6 kart p-4">
+    <div class="mx-auto max-w-md"><KnotDiagram dugum={dugum.id} /></div>
+  </div>
+
+  <Bolum baslik="Adım Adım">
+    <ol class="space-y-2">
+      {d.adimlar.map((adim, i) => (
+        <li class="kart flex gap-3 p-3 text-sm">
+          <span class="sayisal flex size-6 shrink-0 items-center justify-center rounded-sm bg-accent text-xs font-bold text-accent-ink">{i + 1}</span>
+          <Metin metin={adim} gorulen={gorulen} />
+        </li>
+      ))}
+    </ol>
+  </Bolum>
+
+  {d.ipuclari.length > 0 && <Bolum baslik="İpuçları"><Liste maddeler={d.ipuclari} tip="ipucu" gorulen={gorulen} /></Bolum>}
+
+  {takimlar.length > 0 && (
+    <Bolum baslik="Bu Düğümün Kullanıldığı Takımlar">
+      <ul class="flex flex-wrap gap-2">
+        {takimlar.map((r) => (
+          <li><a href={`/takim/${r.id}`} class="block kart px-3 py-1.5 text-sm hover:border-accent">{r.data.ad}</a></li>
+        ))}
+      </ul>
+    </Bolum>
+  )}
+</Base>

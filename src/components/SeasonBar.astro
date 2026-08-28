@@ -1,0 +1,30 @@
+---
+import { AY_KISA, bulunabilirlikMetni } from '../lib/season';
+interface Props { aylar: number[]; suanAy?: number }
+const { aylar, suanAy } = Astro.props;
+
+/** Takvimdeki hücrelerle aynı bolluk skalası (bkz. global.css → --bol*). */
+const kutu = (v: number) => (v > 0
+  ? `bolluk-${v}`
+  : '');
+---
+<div class="scroll-x -mx-1 px-1">
+  <ol class="flex min-w-max gap-1" aria-label="Aylara göre bulunabilirlik">
+    {aylar.map((v, i) => (
+      <li
+        class:list={[
+          'flex w-11 flex-col items-center gap-1 rounded-md border py-1.5',
+          suanAy === i + 1 ? 'border-accent' : 'border-line',
+        ]}
+        title={`${AY_KISA[i]}: ${bulunabilirlikMetni(v)}`}
+      >
+        <span class="text-[11px] text-muted">{AY_KISA[i]}</span>
+        <span
+          class:list={['flex h-6 w-6 items-center justify-center rounded text-[11px] font-semibold', kutu(v)]}
+          style={v > 0 ? 'background: var(--z-bg); color: var(--z-fg)' : undefined}
+        >{v > 0 ? v : '·'}</span>
+      </li>
+    ))}
+  </ol>
+</div>
+<p class="mt-2 text-xs text-muted">0 = yok · 5 = sezonun zirvesi</p>

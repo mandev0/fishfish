@@ -1,0 +1,195 @@
+{
+  "ad": "Kefal",
+  "latin": "Mugil cephalus",
+  "ingilizce": "Flathead grey mullet",
+  "digerAdlar": [
+    "Has kefal",
+    "Topan",
+    "Altınbaş"
+  ],
+  "ozet": "Kıyının her yerinde görülür ama tutması sanıldığı kadar kolay değildir. Ürkek, seçici ve şaşırtıcı derecede güçlüdür; ince takım ve sabır ister.",
+  "zorluk": 3,
+  "aylar": [
+    4,
+    4,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    4,
+    5,
+    5,
+    4
+  ],
+  "sular": [
+    "bogaz",
+    "marmara",
+    "karadeniz",
+    "halic",
+    "dere",
+    "aci"
+  ],
+  "gece": false,
+  "boySiniflari": [
+    {
+      "ad": "Küçük kefal",
+      "cm": "0-20 cm"
+    },
+    {
+      "ad": "Kefal",
+      "cm": "20-40 cm"
+    },
+    {
+      "ad": "Topan kefal",
+      "cm": "40 cm ve üzeri"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 20,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Kaynaklar has kefal (Mugil cephalus) için 30 cm de veriyor. Emin olmak için çıkmadan önce güncel tebliğ tablosunu kontrol et."
+  },
+  "suSicakligi": {
+    "min": 8,
+    "ideal": [
+      12,
+      24
+    ],
+    "max": 28
+  },
+  "aktifSaatler": [
+    "sabah",
+    "oglen",
+    "ikindi",
+    "aksam"
+  ],
+  "ruzgarTercihi": [],
+  "ruzgarKacinilan": [
+    "karayel"
+  ],
+  "derinlik": "Yüzey ile 5 m arası. Çoğunlukla su yüzeyine yakın dolaşır.",
+  "yasamAlani": "Liman içleri, dere ağızları, iskele altları, rıhtım kenarları. Kirli sayılan sularda da yaşar.",
+  "teshis": {
+    "siluet": "kefal",
+    "ayirtEdici": [
+      "Baş geniş ve yassı, gövde silindirik ve kalın.",
+      "Gözü şeffaf yağ dokusuyla kısmen örtülü.",
+      "Ağzı küçük ve dişsiz; dipten organik madde süzerek beslenir.",
+      "Sırtta iki ayrı, birbirinden uzak yüzgeç."
+    ],
+    "karistirilan": [
+      "levrek"
+    ]
+  },
+  "takimlar": [
+    "kefal-takimi",
+    "lrf-jig-head",
+    "dip-takimi-sabit-kursun"
+  ],
+  "yemler": {
+    "dogal": [
+      "Ekmek içi hamuru",
+      "Peynirli hamur",
+      "Mısır",
+      "Deniz solucanı",
+      "Karides"
+    ],
+    "sahte": [
+      "Küçük kokulu silikon (nadiren)"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "3,6-4,5 m match/telegonya",
+      "not": "Uzun ve hafif kamış ince misinayı korur."
+    },
+    "makine": {
+      "deger": "2500-3000, hassas fren",
+      "not": "İlk kaçışı serttir, fren yumuşak olmalı."
+    },
+    "anaMisina": {
+      "deger": "0,18-0,22 mm mono",
+      "not": "İnce misina şamandırayı doğal süzülmeye bırakır."
+    },
+    "sokLideri": {
+      "deger": "0,14-0,18 mm fluorocarbon, 40-60 cm",
+      "not": "Ne kadar ince olursa o kadar çok vuruş alırsın."
+    },
+    "igne": {
+      "deger": "10-14 numara ince telli",
+      "not": "Ağzı küçüktür; büyük iğne yutulmaz."
+    },
+    "agirlik": {
+      "deger": "1-4 gr saçma kurşun",
+      "not": "Şamandıranın sadece ucu suyun üstünde kalacak şekilde dengele."
+    }
+  },
+  "taktik": {
+    "atis": "Yem serperek balığı bir noktaya alıştır ve hep aynı yere at. Kefal alıştığı beslenme noktasına döner.",
+    "cekme": "Şamandırayı akıntıya bırak, doğal süzülmesine izin ver. Sabit duran yemi kefal çoğu zaman almaz.",
+    "tokatlama": "Kefal yemi önce emip bırakır. Şamandıra oynadığında değil, tamamen dalıp gitmeye başladığında çek.",
+    "yakalama": "Boyuna göre çok güçlüdür ve dudakları incedir. Freni gevşek tut, koşmasına izin ver, yorulunca yaklaştır.",
+    "ipuclari": [
+      "En iyi yem, bayat ekmek içinden yoğrulmuş sıkı bir hamurdur; suda dağılmayacak kıvamda olmalı.",
+      "Balıkçı barınakları, dere ağızları ve iskele altları en verimli noktalardır.",
+      "Kalabalık sürü görüp de vuruş alamıyorsan takımını inceltmeyi dene — sorun neredeyse her zaman kalın misinadır."
+    ],
+    "hatalar": [
+      "Kalın misina ve büyük iğne kullanmak.",
+      "İlk dokunuşta tokatlamak.",
+      "Yem serpmeyi ihmal etmek; kefal avı yem düzenine dayanır."
+    ]
+  },
+  "mutfak": "Izgara veya fırında. Temiz sudan tutulanı tercih et; kefal bulunduğu suyun tadını taşır. Yumurtası (kefal yumurtası / haviar) çok değerlidir.",
+  "noktalar": [
+    "sariyer-mendirek",
+    "buyukdere",
+    "tarabya",
+    "emirgan",
+    "bebek",
+    "arnavutkoy",
+    "ortakoy",
+    "kabatas",
+    "galata-koprusu",
+    "sarayburnu",
+    "beykoz",
+    "pasabahce",
+    "kanlica",
+    "anadolu-hisari",
+    "cengelkoy",
+    "beylerbeyi",
+    "kuzguncuk",
+    "salacak",
+    "riva",
+    "agva",
+    "yenikapi",
+    "kumkapi",
+    "zeytinburnu",
+    "bakirkoy",
+    "florya",
+    "buyukcekmece",
+    "moda",
+    "caddebostan",
+    "bostanci",
+    "maltepe",
+    "kartal",
+    "pendik",
+    "bayramoglu",
+    "darica-sahil",
+    "eskihisar",
+    "tavsancil",
+    "hereke",
+    "karamursel",
+    "ulasli",
+    "degirmendere",
+    "golcuk",
+    "izmit-sahil",
+    "riva-deresi",
+    "agva-goksu",
+    "agva-yesilcay",
+    "kucukcekmece-golu"
+  ]
+}

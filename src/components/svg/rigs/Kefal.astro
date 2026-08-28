@@ -1,0 +1,64 @@
+---
+// Kefal takımı — hassas kalem şamandıra, saçma kurşun dizisi, ince köstek.
+---
+<svg class="diagram" viewBox="0 0 380 540" role="img" aria-labelledby="kefal-baslik">
+  <title id="kefal-baslik">Kefal takımı: kayar stoper, hassas kalem şamandıra, dizilmiş saçma kurşunlar, ince fluorocarbon köstek ve hamur yemli küçük iğne.</title>
+
+  <rect class="water" x="0" y="168" width="380" height="372" />
+  <path class="ln-thin" d="M0 168 q20 -6 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" />
+  <text class="lbl" x="8" y="162">su yüzeyi</text>
+
+  <path class="kamis" d="M16 26 L104 40" stroke-width="2.8" />
+  <text class="lbl-b" x="16" y="18">Match kamışı 3,6-4,5 m</text>
+
+  <path class="misina" d="M104 40 L172 108" stroke-width="1.6" />
+  <text class="lbl-misina" x="188" y="86">Ana misina 0,18-0,22 mm</text>
+
+  <rect class="dugum-dolu" x="166" y="110" width="12" height="7" rx="2" />
+  <text class="lbl-a" x="192" y="118">Stoper</text>
+
+  <path class="misina" d="M172 118 L172 140" stroke-width="1.6" />
+
+  <!-- Kalem şamandıra: sadece ucu suyun üstünde -->
+  <g transform="translate(172,140)">
+    <path class="accent" d="M-3 0 h6 v32 h-6 z" />
+    <path class="yem" d="M-3 30 c-5 12 -6 40 3 58 c9 -18 8 -46 3 -58 z" />
+    <path class="misina" d="M0 88 L0 104" stroke-width="1.4" />
+  </g>
+  <text class="lbl-yem" x="200" y="152">Kalem şamandıra 1-4 gr</text>
+  <text class="lbl-a" x="200" y="196">Sadece kırmızı ucu</text>
+  <text class="lbl-a" x="200" y="210">suyun üstünde kalsın</text>
+
+  <!-- Saçma kurşunlar -->
+  {[0, 1, 2, 3].map((i) => (
+    <circle class="metal" cx="172" cy={262 + i * 22} r="3.6" />
+  ))}
+  <path class="misina" d="M172 244 L172 340" stroke-width="1.5" />
+  <text class="lbl-metal" x="200" y="286">Saçma kurşun</text>
+  <text class="lbl" x="200" y="300">dizerek dengeyi ayarla</text>
+
+  <ellipse class="metal" cx="172" cy="352" rx="5" ry="8" />
+  <text class="lbl-metal" x="200" y="356">Fırdöndü</text>
+
+  <!-- İnce köstek -->
+  <path class="lider" d="M172 360 L172 456" />
+  <path class="tick" d="M124 360 L124 456" />
+  <path class="tick" d="M118 360 L130 360 M118 456 L130 456" />
+  <text class="lbl-lider" x="26" y="396">Köstek 40-60 cm</text>
+  <text class="lbl" x="26" y="410">fluorocarbon</text>
+  <text class="lbl" x="26" y="424">0,14-0,18 mm</text>
+  <text class="lbl-a" x="26" y="444">Ne kadar ince,</text>
+  <text class="lbl-a" x="26" y="458">o kadar çok vuruş</text>
+
+  <!-- Küçük iğne + hamur -->
+  <g transform="translate(172,458)">
+    <path class="igne" d="M0 0 l0 11 a6 6 0 1 0 10 3" />
+    <circle class="yem" cx="5" cy="13" r="8" />
+  </g>
+  <text class="lbl-igne" x="204" y="466">İğne 10-14 no</text>
+  <text class="lbl-yem" x="204" y="480">ekmek içi hamuru</text>
+  <text class="lbl" x="204" y="494">fındık büyüklüğünde</text>
+
+  <text class="lbl" x="16" y="510">Şamandırayı akıntıya bırak; sabit duran yemi</text>
+  <text class="lbl" x="16" y="524">kefal çoğu zaman almaz.</text>
+</svg>

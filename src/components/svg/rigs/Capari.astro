@@ -1,0 +1,63 @@
+---
+// Çapari takımı — beden üzerinde sıralı kösteklü iğneler, altta kurşun.
+---
+<svg class="diagram" viewBox="0 0 380 560" role="img" aria-labelledby="capari-baslik">
+  <title id="capari-baslik">Çapari takımı şeması: kamış, ana misina, fırdöndü, beş kösteklü iğne ve alttaki armut kurşun.</title>
+
+  <!-- Kamış ucu -->
+  <path class="kamis" d="M20 34 L118 52" />
+  <circle class="metal" cx="118" cy="52" r="5" />
+  <text class="lbl-b" x="20" y="24">Kamış ucu</text>
+
+  <!-- Ana misina -->
+  <path class="misina" d="M118 52 L150 92" />
+  <path class="misina" d="M150 92 L150 128" />
+  <text class="lbl-misina" x="164" y="86">Ana misina</text>
+  <text class="lbl" x="164" y="100">0,25-0,30 mm mono</text>
+
+  <!-- Fırdöndü -->
+  <ellipse class="metal" cx="150" cy="136" rx="6" ry="10" />
+  <text class="lbl-metal" x="164" y="140">Fırdöndü</text>
+
+  <!-- Beden -->
+  <path class="beden" d="M150 146 L150 470" />
+  <text class="lbl-misina" x="164" y="176">Çapari bedeni</text>
+  <text class="lbl" x="164" y="190">0,20-0,25 mm</text>
+
+  <!-- İğneler: sola/sağa dönüşümlü kösteklerle -->
+  {[0, 1, 2, 3, 4].map((i) => {
+    const y = 210 + i * 52;
+    const sol = i % 2 === 0;
+    const ucX = sol ? 96 : 204;
+    return (
+      <g>
+        <path class="lider" d={`M150 ${y} L${ucX} ${y + 16}`} />
+        {/* iğne: J biçimi */}
+        <path class="igne" d={`M${ucX} ${y + 16} l0 12 a7 7 0 1 ${sol ? 1 : 0} ${sol ? -11 : 11} 3`} />
+        {/* tüy */}
+        <path class="hareket" stroke-dasharray="none" stroke-width="1.4" d={`M${ucX} ${y + 16} l${sol ? -8 : 8} -7 M${ucX} ${y + 18} l${sol ? -10 : 10} -2 M${ucX} ${y + 20} l${sol ? -8 : 8} 4`} />
+      </g>
+    );
+  })}
+
+  <!-- Aralık ölçüsü -->
+  <path class="tick" d="M262 210 L262 262" />
+  <path class="tick" d="M256 210 L268 210 M256 262 L268 262" />
+  <text class="lbl" x="272" y="204">25-30 cm</text>
+  <text class="lbl" x="272" y="218">iğne arası</text>
+
+  <text class="lbl-igne" x="238" y="228">Tüylü iğne</text>
+  <text class="lbl" x="238" y="242">6-10 no</text>
+
+  <!-- Kurşun -->
+  <path class="beden" d="M150 470 L150 486" />
+  <path class="metal" d="M150 486 c14 0 20 14 20 30 c0 16 -9 26 -20 26 c-11 0 -20 -10 -20 -26 c0 -16 6 -30 20 -30 z" />
+  <text class="lbl-metal" x="188" y="514">Armut kurşun</text>
+  <text class="lbl" x="188" y="528">20-60 gr</text>
+
+  <!-- Yön oku -->
+  <path class="ln-dash" d="M40 120 L40 500" />
+  <path class="ln-thin" d="M40 500 l-5 -9 M40 500 l5 -9" />
+  <text class="lbl" x="30" y="112" text-anchor="middle">yüzey</text>
+  <text class="lbl" x="36" y="518" text-anchor="middle">dip</text>
+</svg>

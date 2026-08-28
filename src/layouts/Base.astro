@@ -1,0 +1,207 @@
+---
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+import Ikon from '../components/Ikon.astro';
+import TerimBalonu from '../components/TerimBalonu.astro';
+import { SEKMELER, TUM_BAGLANTILAR, aktifMi, aktifSekme } from '../lib/gezinme';
+import { baslikBicimi } from '../lib/metin';
+
+interface Props {
+  baslik: string;
+  aciklama?: string;
+  genis?: boolean;
+}
+
+const { baslik, aciklama, genis = false } = Astro.props;
+const yol = Astro.url.pathname;
+const acikSekme = aktifSekme(yol);
+---
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{baslikBicimi(baslik)} · Balıkçılık Rehberi</title>
+    {aciklama && <meta name="description" content={aciklama} />}
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎣%3C/text%3E%3C/svg%3E" />
+    <meta name="theme-color" content="#f6f4ee" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c1417" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    {/* iOS'ta ana ekrandan açılınca tarayıcı çubuğu olmadan çalışsın. */}
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Balıkçılık" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <ClientRouter />
+    <script is:inline>
+      // Tema tercihini ilk boyamadan önce uygula ki ekran titremesin.
+      // Sayfa geçişinde <html> öznitelikleri yenisiyle değiştiği için
+      // aynı işi `astro:after-swap` sonrası tekrar yapıyoruz.
+      (function () {
+        function uygula() {
+          var t = null;
+          try { t = localStorage.getItem('fishfish:tema'); } catch (e) {}
+          if (t === 'dark' || t === 'light') {
+            document.documentElement.dataset.theme = t;
+            var damga = document.querySelector('meta[name="theme-color"]:not([media])');
+            if (damga) damga.setAttribute('content', t === 'dark' ? '#0c1417' : '#f6f4ee');
+          }
+        }
+        uygula();
+        document.addEventListener('astro:after-swap', uygula);
+      })();
+    </script>
+  </head>
+  <body class="pb-[calc(3.5rem+1px+env(safe-area-inset-bottom))] lg:pb-0">
+    <a href="#icerik" class="sr-only focus:not-sr-only absolute left-2 top-2 z-50 rounded bg-accent px-3 py-2 text-accent-ink">
+      İçeriğe atla
+    </a>
+
+    <header class="sticky top-0 z-40 border-b border-line-strong bg-bg/95 backdrop-blur">
+      <div class="h-[3px] w-full bg-vurgu" aria-hidden="true"></div>
+      <div class="mx-auto flex max-w-6xl items-center gap-2 px-4 py-2">
+        <a href="/" class="flex shrink-0 items-center gap-2 py-1">
+          <span class="flex size-8 items-center justify-center rounded-sm bg-accent text-accent-ink" aria-hidden="true">
+            <Ikon ad="balik" sinif="size-5" />
+          </span>
+          <span class="leading-none">
+            <span class="block font-[family-name:var(--font-baslik)] text-[15px] font-semibold tracking-tight">
+              Balıkçılık Rehberi
+            </span>
+            <span class="mt-0.5 block text-[10px] uppercase tracking-[0.14em] text-muted">
+              Kıyı · Tatlı su
+            </span>
+          </span>
+        </a>
+
+        <!-- Geniş ekran: tek satır menü. Telefonda gezinme alt çubuktadır. -->
+        <nav aria-label="Ana menü" class="ml-auto hidden lg:block">
+          <ul class="flex items-center gap-0.5">
+            {TUM_BAGLANTILAR.map((m) => (
+              <li>
+                <a
+                  href={m.href}
+                  aria-current={aktifMi(m.href, yol) ? 'page' : undefined}
+                  class:list={[
+                    'block whitespace-nowrap border-b-2 px-2.5 py-2 text-sm transition-colors',
+                    aktifMi(m.href, yol)
+                      ? 'border-vurgu font-semibold text-ink'
+                      : 'border-transparent text-muted hover:border-line-strong hover:text-ink',
+                  ]}
+                >{m.ad}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <button
+          id="tema-dugmesi" type="button"
+          class="ml-auto flex size-11 shrink-0 items-center justify-center rounded-sm border border-line bg-surface text-muted hover:border-line-strong hover:text-ink lg:ml-2"
+          aria-label="Temayı değiştir"
+        >
+          <svg viewBox="0 0 24 24" class="size-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="8" />
+            <path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor" stroke="none" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="icerik" class:list={['mx-auto w-full px-4 py-6 sm:py-10', genis ? 'max-w-6xl' : 'max-w-4xl']}>
+      <slot />
+    </main>
+
+    <footer class="mt-16 border-t-2 border-line-strong bg-surface">
+      <div class="mx-auto max-w-6xl space-y-3 px-4 py-8 text-sm text-muted">
+        <p>
+          <strong class="text-ink">Bu site bir tahmin aracıdır, garanti değildir.</strong>
+          Skorlar ve tavsiyeler balıkçılık pratiğinden türetilmiş sezgisel kurallara dayanır.
+          Canlı hava ve deniz verisi <a class="text-accent underline" href="https://open-meteo.com" rel="noopener">Open-Meteo</a>'dan,
+          harita <a class="text-accent underline" href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> katkıcılarından gelir.
+        </p>
+        <p>
+          Yasal boy limitleri ve avlanma kuralları değişebilir. Denize çıkmadan önce
+          <a class="font-medium text-accent underline" href="/kurallar">Kurallar</a> sayfasını ve Tarım ve Orman Bakanlığı'nın
+          yürürlükteki tebliğini kontrol et. Güvenlik uyarıları için
+          <a class="text-accent underline" href="/guvenlik">Güvenlik</a> sayfasını oku.
+        </p>
+      </div>
+    </footer>
+
+    <!--
+      Alt sekme çubuğu — telefonda birincil gezinme. Başparmak menzilinde durur,
+      her sayfada görünür ve nerede olunduğunu söyler. Geniş ekranda yerini
+      üstteki tek satır menüye bırakır.
+    -->
+    <nav
+      aria-label="Ana gezinme"
+      class="fixed inset-x-0 bottom-0 z-40 border-t border-line-strong bg-bg/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden"
+    >
+      <ul class="mx-auto flex max-w-md">
+        {SEKMELER.map((s) => {
+          const acik = s.href === acikSekme;
+          return (
+            <li class="flex-1">
+              <a
+                href={s.href}
+                aria-current={acik ? 'page' : undefined}
+                class:list={[
+                  'relative flex min-h-[3.5rem] flex-col items-center justify-center gap-[3px] px-1 transition-colors',
+                  acik ? 'text-ink' : 'text-muted',
+                ]}
+              >
+                {acik && <span class="absolute inset-x-0 top-0 h-[3px] bg-vurgu" aria-hidden="true"></span>}
+                <Ikon ad={s.ikon} sinif="size-[22px]" />
+                <span class:list={['text-[10px] leading-none tracking-tight', acik ? 'font-semibold' : 'font-medium']}>
+                  {s.ad}
+                </span>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+
+    <TerimBalonu />
+
+    {import.meta.env.PROD && (
+      <script is:inline>
+        // Çevrimdışı kullanım için service worker. Kayıt sayfa yüklendikten sonra
+        // yapılır ki ilk boyamayla yarışmasın. Geliştirme derlemesinde hiç kaydedilmez:
+        // kayıtlı bir service worker eski dosyaları servis edip kafa karıştırıyor.
+        if ('serviceWorker' in navigator) {
+          addEventListener('load', function () {
+            navigator.serviceWorker.register('/sw.js').catch(function () {
+              // Kayıt olmazsa site normal şekilde ağdan çalışmaya devam eder.
+            });
+          });
+        }
+      </script>
+    )}
+
+    <script is:inline>
+      // Kabuk betiği bir kez kurulur: dinleyiciler `document` üzerinde durduğu için
+      // sayfa geçişlerinde hayatta kalır, ikinci kez bağlanmaları gerekmez.
+      (function () {
+        if (window.__fishfishKabuk) return;
+        window.__fishfishKabuk = true;
+
+        document.addEventListener('click', function (e) {
+          if (!(e.target instanceof Element)) return;
+          if (!e.target.closest('#tema-dugmesi')) return;
+          var kok = document.documentElement;
+          var koyuMu = kok.dataset.theme
+            ? kok.dataset.theme === 'dark'
+            : matchMedia('(prefers-color-scheme: dark)').matches;
+          var yeni = koyuMu ? 'light' : 'dark';
+          kok.dataset.theme = yeni;
+          try { localStorage.setItem('fishfish:tema', yeni); } catch (hata) {}
+          var damga = document.querySelector('meta[name="theme-color"]:not([media])');
+          if (damga) damga.setAttribute('content', yeni === 'dark' ? '#0c1417' : '#f6f4ee');
+        });
+      })();
+    </script>
+  </body>
+</html>

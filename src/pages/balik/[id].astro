@@ -1,0 +1,281 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Bolum from '../../components/Bolum.astro';
+import GearTable from '../../components/GearTable.astro';
+import Liste from '../../components/Liste.astro';
+import Metin from '../../components/Metin.astro';
+import SeasonBar from '../../components/SeasonBar.astro';
+import Ikon from '../../components/Ikon.astro';
+import Rozet from '../../components/Rozet.astro';
+import Zorluk from '../../components/Zorluk.astro';
+import FishSilhouette from '../../components/svg/FishSilhouette.astro';
+import RigDiagram from '../../components/svg/RigDiagram.astro';
+import SemaLejant from '../../components/SemaLejant.astro';
+import { bolgeTamAdi, SAAT_ADLARI, SU_ADLARI, SU_KISA_ADLARI } from '../../lib/season';
+import { RUZGARLAR } from '../../lib/wind';
+import { baslikBicimi } from '../../lib/metin';
+
+export async function getStaticPaths() {
+  const turler = await getCollection('species');
+  return turler.map((t) => ({ params: { id: t.id }, props: { tur: t } }));
+}
+
+const { tur } = Astro.props;
+const d = tur.data;
+
+const tumTakimlar = await getCollection('rigs');
+const tumNoktalar = await getCollection('spots');
+
+const takimlar = d.takimlar.map((r) => tumTakimlar.find((x) => x.id === r)!).filter(Boolean);
+const noktalar = d.noktalar.map((n) => tumNoktalar.find((x) => x.id === n)!).filter(Boolean);
+const karistirilan = await Promise.all(
+  d.teshis.karistirilan.map((k) => getEntry('species', k)),
+);
+
+const gorulen = new Set<string>();
+
+const bolgeliNoktalar = [...new Set(noktalar.map((n) => n.data.bolge))].map((b) => ({
+  bolge: b,
+  liste: noktalar.filter((n) => n.data.bolge === b),
+}));
+---
+<Base baslik={d.ad} aciklama={d.ozet}>
+  <article>
+    <header class="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-start sm:gap-5">
+      <div class="w-40 shrink-0 text-accent sm:w-52">
+        <FishSilhouette tur={tur.id} />
+      </div>
+      <div class="min-w-0 flex-1">
+        <h1 class="text-3xl sm:text-4xl">{baslikBicimi(d.ad)}</h1>
+        <p class="text-sm italic text-muted">{d.latin}{d.ingilizce && ` · ${d.ingilizce}`}</p>
+        {d.digerAdlar.length > 0 && (
+          <p class="mt-1 text-sm text-muted">Diğer adları: {d.digerAdlar.join(', ')}</p>
+        )}
+        <Metin metin={d.ozet} etiket="p" sinif="mt-3" gorulen={gorulen} />
+        <div class="mt-3 flex flex-wrap items-center gap-1.5">
+          <Zorluk seviye={d.zorluk} />
+          <Rozet
+            ikon="dalga"
+            etiket={d.sular.map((su) => SU_KISA_ADLARI[su] ?? SU_ADLARI[su]).join(' · ')}
+            ipucu={`${d.ad} şu sularda bulunur: ${d.sular.map((su) => SU_ADLARI[su]).join(', ')}.`}
+          />
+          {d.gece && (
+            <Rozet
+              ikon="gece" ton="vurgu" etiket="Gece avı"
+              ipucu="Bu tür gece de avlanır. Karanlıkta kafa feneri, ışıklı şamandıra ve görünürlük için açık renk kıyafet gerekir."
+            />
+          )}
+          <Rozet
+            ikon="konum" etiket={`${noktalar.length} nokta`}
+            ipucu={`Kapsanan alanda bu türün tutulduğu ${noktalar.length} nokta kayıtlı.`}
+          />
+        </div>
+      </div>
+    </header>
+
+    <div class:list={[
+      'mt-6 rounded-sm border border-l-[3px] p-4',
+      d.yasal.asgariBoy ? 'border-warn/40 border-l-warn bg-warn-soft' : 'border-line border-l-line-strong bg-surface',
+    ]}>
+      <p class="text-sm">
+        {d.yasal.asgariBoy
+          ? <span><strong>Yasal asgari boy: <span class="olcu">{d.yasal.asgariBoy} cm</span>.</strong> Bu boyun altındaki balığı suya bırakman gerekiyor.</span>
+          : <span><strong>Bu tür için tebliğde asgari boy belirtilmemiş.</strong></span>}
+        {d.yasal.not && <span class="mt-1 block">{d.yasal.not}</span>}
+        {d.yasal.yasakDonemi && (
+          <span class="mt-1 block"><strong>Av yasağı dönemi:</strong> {d.yasal.yasakDonemi}</span>
+        )}
+      </p>
+      <p class="mt-2 text-xs text-muted">
+        Kaynak: {d.yasal.kaynak} · Son kontrol: {d.yasal.kontrolTarihi} ·
+        <a href="/kurallar" class="underline">Tüm kurallar</a>
+      </p>
+    </div>
+
+    <Bolum baslik="Teşhis" not="Sahada karıştırmamak için bakılacak işaretler.">
+      <Liste maddeler={d.teshis.ayirtEdici} gorulen={gorulen} />
+      <figure class="mt-4 kart p-4">
+        <div class="mx-auto max-w-md text-accent"><FishSilhouette tur={tur.id} etiket /></div>
+        <figcaption class="mt-2 text-center text-xs text-muted">
+          {d.ad} — sahada bakılacak işaretler
+        </figcaption>
+      </figure>
+      {karistirilan.length > 0 && (
+        <p class="mt-3 text-sm text-muted">
+          Sık karıştırılır:{' '}
+          {karistirilan.map((k, i) => (
+            <>
+              <a href={`/balik/${k!.id}`} class="text-accent underline">{k!.data.ad}</a>
+              {i < karistirilan.length - 1 ? ', ' : ''}
+            </>
+          ))}
+        </p>
+      )}
+    </Bolum>
+
+    <Bolum baslik="Sezon" not="Aylara göre bulunabilirlik. İç su türlerinde ilkbahar boşluğu üreme dönemi av yasağıdır.">
+      <SeasonBar aylar={d.aylar} />
+      {d.boySiniflari.length > 0 && (
+        <div class="mt-4 overflow-hidden rounded-sm border border-line">
+          <table class="w-full border-collapse text-sm">
+            <thead class="bg-surface-2">
+              <tr>
+                <th scope="col" class="px-3 py-2 text-left font-semibold">Boy sınıfı</th>
+                <th scope="col" class="px-3 py-2 text-left font-semibold">Boy</th>
+              </tr>
+            </thead>
+            <tbody>
+              {d.boySiniflari.map((b) => (
+                <tr class="border-t border-line">
+                  <td class="px-3 py-2 font-medium">{b.ad}</td>
+                  <td class="px-3 py-2">
+                    {b.cm}
+                    {b.not && <span class="block text-xs text-muted">{b.not}</span>}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </Bolum>
+
+    <Bolum baslik="Nerede ve Ne Zaman">
+      <dl class="grid gap-3 sm:grid-cols-2">
+        <div class="kart p-3">
+          <dt class="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted"><Ikon ad="konum" sinif="size-[15px]" />Yaşam alanı</dt>
+          <Metin metin={d.yasamAlani} etiket="dd" sinif="mt-1 text-sm" gorulen={gorulen} />
+        </div>
+        <div class="kart p-3">
+          <dt class="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted"><Ikon ad="dalga" sinif="size-[15px]" />Derinlik</dt>
+          <Metin metin={d.derinlik} etiket="dd" sinif="mt-1 text-sm" gorulen={gorulen} />
+        </div>
+        <div class="kart p-3">
+          <dt class="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted"><Ikon ad="saat" sinif="size-[15px]" />Aktif saatler</dt>
+          <dd class="mt-1 text-sm">{d.aktifSaatler.map((s) => SAAT_ADLARI[s]).join(' · ')}</dd>
+        </div>
+        <div class="kart p-3">
+          <dt class="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted"><Ikon ad="sicaklik" sinif="size-[15px]" />Su sıcaklığı</dt>
+          <dd class="mt-1 text-sm">
+            İdeal <span class="olcu">{d.suSicakligi.ideal[0]}-{d.suSicakligi.ideal[1]} °C</span>
+            <span class="text-muted"> (sınırlar <span class="olcu">{d.suSicakligi.min}-{d.suSicakligi.max} °C</span>)</span>
+          </dd>
+        </div>
+        {(d.ruzgarTercihi.length > 0 || d.ruzgarKacinilan.length > 0) && (
+          <div class="kart p-3 sm:col-span-2">
+            <dt class="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted"><Ikon ad="ruzgar" sinif="size-[15px]" />Rüzgâr</dt>
+            <dd class="mt-1 space-y-1 text-sm">
+              {d.ruzgarTercihi.length > 0 && (
+                <p><span class="font-medium text-good">Makbul:</span> {d.ruzgarTercihi.map((r) => RUZGARLAR[r].ad).join(', ')}</p>
+              )}
+              {d.ruzgarKacinilan.length > 0 && (
+                <p><span class="font-medium text-danger">İstenmeyen:</span> {d.ruzgarKacinilan.map((r) => RUZGARLAR[r].ad).join(', ')}</p>
+              )}
+            </dd>
+          </div>
+        )}
+      </dl>
+    </Bolum>
+
+    <Bolum baslik="Ekipman" not="Bu tür için doğru kamış, makine, misina ve iğne.">
+      <GearTable ekipman={d.ekipman} gorulen={gorulen} />
+    </Bolum>
+
+    <Bolum baslik="Yem ve Sahte Yem">
+      <div class="grid gap-3 sm:grid-cols-2">
+        {d.yemler.dogal.length > 0 && (
+          <div class="kart p-4">
+            <h3 class="font-semibold">Doğal Yem</h3>
+            <ul class="mt-2 space-y-1 text-sm text-muted">
+              {d.yemler.dogal.map((y) => <li class="flex gap-1.5"><span aria-hidden="true">·</span><Metin metin={y} gorulen={gorulen} /></li>)}
+            </ul>
+          </div>
+        )}
+        {d.yemler.sahte.length > 0 && (
+          <div class="kart p-4">
+            <h3 class="font-semibold">Sahte Yem</h3>
+            <ul class="mt-2 space-y-1 text-sm text-muted">
+              {d.yemler.sahte.map((y) => <li class="flex gap-1.5"><span aria-hidden="true">·</span><Metin metin={y} gorulen={gorulen} /></li>)}
+            </ul>
+          </div>
+        )}
+      </div>
+    </Bolum>
+
+    <Bolum baslik="Takımlar" not="Bu tür için çalışan takımlar ve şemaları.">
+      <div class="space-y-8">
+        {takimlar.map((r) => (
+          <div class="kart p-4">
+            <div class="flex flex-wrap items-baseline gap-2">
+              <h3 class="text-base font-semibold">{baslikBicimi(r.data.ad)}</h3>
+              <a href={`/takim/${r.id}`} class="text-sm text-accent underline">ayrıntılı anlatım</a>
+            </div>
+            <Metin metin={r.data.ozet} etiket="p" sinif="mt-1 text-sm text-muted" gorulen={gorulen} />
+            <div class="scroll-x mt-4">
+              <div class="mx-auto max-w-sm"><RigDiagram sema={r.data.sema} /></div>
+            </div>
+            <SemaLejant sema={r.data.sema} />
+          </div>
+        ))}
+      </div>
+    </Bolum>
+
+    <Bolum baslik="Taktik" not="Atıştan balığı sudan almaya kadar.">
+      <ol class="space-y-3">
+        {[
+          ['Atış', d.taktik.atis],
+          ['Çekme', d.taktik.cekme],
+          ['Tokatlama', d.taktik.tokatlama],
+          ['Yakalama', d.taktik.yakalama],
+        ].map(([ad, metin], i) => (
+          <li class="kart flex gap-3 p-4">
+            <span class="sayisal flex size-7 shrink-0 items-center justify-center rounded-sm bg-accent text-sm font-bold text-accent-ink">{i + 1}</span>
+            <div>
+              <h3 class="font-semibold">{baslikBicimi(ad)}</h3>
+              <Metin metin={metin} etiket="p" sinif="mt-1 text-sm" gorulen={gorulen} />
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      {d.taktik.ipuclari.length > 0 && (
+        <div class="mt-4">
+          <h3 class="mb-2 text-sm font-semibold uppercase tracking-wide text-muted">İpuçları</h3>
+          <Liste maddeler={d.taktik.ipuclari} tip="ipucu" gorulen={gorulen} />
+        </div>
+      )}
+      {d.taktik.hatalar.length > 0 && (
+        <div class="mt-4">
+          <h3 class="mb-2 text-sm font-semibold uppercase tracking-wide text-muted">Sık Yapılan Hatalar</h3>
+          <Liste maddeler={d.taktik.hatalar} tip="hata" gorulen={gorulen} />
+        </div>
+      )}
+    </Bolum>
+
+    <Bolum baslik="Noktalar" not={`Bu türün tutulduğu ${noktalar.length} nokta.`}>
+      <div class="space-y-4">
+        {bolgeliNoktalar.map(({ bolge, liste }) => (
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-wide text-muted">{bolgeTamAdi(bolge)}</h3>
+            <ul class="mt-2 flex flex-wrap gap-2">
+              {liste.map((n) => (
+                <li>
+                  <a href={`/nokta/${n.id}`} class="block kart px-3 py-1.5 text-sm hover:border-accent">
+                    {n.data.ad}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </Bolum>
+
+    {d.mutfak && (
+      <Bolum baslik="Mutfakta">
+        <p class="kart p-4 text-sm">{d.mutfak}</p>
+      </Bolum>
+    )}
+  </article>
+</Base>

@@ -1,0 +1,32 @@
+---
+import Adim from './_Adim.astro';
+---
+<svg class="diagram" viewBox="0 0 400 450" role="img" aria-labelledby="k-palomar">
+  <title id="k-palomar">Palomar düğümü: misinayı ikiye katlayıp halkadan geçir, çift misinayla basit düğüm at, ilmeği iğnenin üstünden aşır ve sık.</title>
+
+  <Adim no={1} baslik="İkiye katla, katlanmış ilmeği halkadan geçir" y={0}>
+    <circle cx="70" cy="46" r="13" class="metal" />
+    <path class="misina" d="M388 40 L84 40" />
+    <path class="misina" d="M388 52 L84 52" />
+    <path class="uc" d="M84 40 q-24 0 -24 6 q0 6 24 6" />
+    <text class="lbl-misina" x="100" y="88">çift misina</text>
+  </Adim>
+
+  <Adim no={2} baslik="Çift misinayla basit düğüm at, ilmeği serbest bırak" y={150}>
+    <circle cx="70" cy="46" r="13" class="metal" />
+    <path class="misina" d="M388 40 L150 40" />
+    <path class="misina" d="M388 52 L150 52" />
+    <path class="uc" d="M150 40 q-40 -6 -54 12 q-14 18 10 24 q24 6 32 -12 q8 -18 -14 -24 L96 46" />
+    <path class="uc" d="M96 46 q-30 0 -30 6 q0 6 20 6" />
+    <text class="lbl" x="176" y="94">ilmeği açık bırak</text>
+  </Adim>
+
+  <Adim no={3} baslik="İlmeği iğnenin tamamının üstünden geçir, sık" y={300}>
+    <circle cx="70" cy="46" r="13" class="metal" />
+    <path class="igne" d="M70 59 l0 16 a12 12 0 1 0 20 5" />
+    <path class="hareket" d="M84 46 q40 -22 62 4 q22 26 -6 44 q-30 20 -56 -6" />
+    <path class="misina" d="M388 40 L160 40" />
+    <path class="misina" d="M388 52 L160 52" />
+    <text class="lbl-a" x="176" y="96">ilmek iğnenin üstünden aşırılır</text>
+  </Adim>
+</svg>

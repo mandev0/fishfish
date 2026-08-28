@@ -1,0 +1,537 @@
+[
+  {
+    "id": "capari",
+    "ad": "Çapari",
+    "kisaAd": "Çapari",
+    "ikon": "capari",
+    "ozet": "Tek misinaya dizili tüylü iğnelerle sürü balığı avlamak. Yem takmadan, en az bilgiyle iş gören yöntem — ilk balığın büyük ihtimalle buradan gelir.",
+    "zorluk": 1,
+    "tarz": "aktif",
+    "sular": [
+      "deniz"
+    ],
+    "nedir": "Çapari, hazır satılan bir takımdır: bir metre uzunluğundaki bedene altı-sekiz kısa köstek bağlıdır ve her köstekte tüy, sim veya deri parçasıyla süslenmiş küçük bir iğne durur. Ucundaki kurşun takımı dibe indirir. Sürü hâlinde gezen istavrit, kolyoz ve sardalya bu parlak taneleri küçük balık sanıp saldırır. Yem takmadığın için elin kirlenmez, takımı hazırlamak bir dakika sürer.",
+    "kimeUygun": "Hayatında hiç olta tutmamış biri için en doğru başlangıç. Tek gereken bir kamış, bir makine ve paket içinden çıkan hazır takım.",
+    "nerede": [
+      "Işıklı iskele ve rıhtımlar — gece lambanın altında yem balığı toplanır.",
+      "Mendirek başları ve derin kenarlı balıkçı barınakları.",
+      "Vapur iskelelerinin dip köşeleri; akıntının durgunlaştığı yerler."
+    ],
+    "neZaman": "Eylül-Aralık arası zirve yapar. Şafak ve akşam alacası en verimli saatlerdir; ışıklı iskelelerde gece boyunca sürer.",
+    "adimlar": [
+      "Çapariyi paketinden çıkarıp bedenin üst ilmeğini ana misinaya, alt ilmeğine kurşunu bağla.",
+      "Takımı dolaştırmadan suya sarkıt; kamışı ileri uzatarak yavaşça bırak.",
+      "Kurşun dibe değene kadar bekle, sonra iki üç tur sararak biraz yukarı al.",
+      "Kamış ucunu 30-40 santim aralıklarla yavaşça kaldırıp indir — tüyler bu hareketle canlanır.",
+      "Ucunda titreme hissedince hemen çekme; bir iki saniye bekle, diğer iğnelere de balık gelir.",
+      "Kamışı dik tutarak düzenli sar; iğneleri tek tek çıkar, misinayı asla çıplak elle çekiştirme."
+    ],
+    "takimlar": [
+      "capari",
+      "capari-agir",
+      "sabiki-ince"
+    ],
+    "turler": [
+      "istavrit",
+      "kolyoz",
+      "sardalya",
+      "hamsi",
+      "kupes",
+      "izmarit",
+      "lufer"
+    ],
+    "ekipman": [
+      "kamis",
+      "spin-makine",
+      "monofilament",
+      "kursun",
+      "firdondu"
+    ],
+    "ipuclari": [
+      "Su berraksa ince bedenli ve küçük iğneli çapari, bulanıksa iri ve parlak olanı iş görür.",
+      "Sürü genelde belli bir derinlikte durur. Balığı bulduğun derinliği aklında tut, her atışta oraya in.",
+      "Bir iğneye balık geldiğinde takımı biraz orada tut — sürü peşinden gelir."
+    ],
+    "hatalar": [
+      "Çapariyi hızlı ve sert sallamak; tüyler açılmaz, takım kendi üstüne dolanır.",
+      "İlk vuruşta paniğe kapılıp hemen sarmak — tek balıkla yetinirsin.",
+      "Kullanılmış çapariyi karışık hâlde çantaya atmak; bir sonraki sefere düğüm yumağı çıkar."
+    ]
+  },
+  {
+    "id": "ac-cek",
+    "ad": "Aç-çek",
+    "kisaAd": "Aç-çek",
+    "ikon": "ac-cek",
+    "ozet": "Ağır bir zokayı olabildiğince uzağa atıp, dibe bıraktıktan sonra hızlı hızlı sararak geri getirmek. Sonbaharda palamut ve lüfer sürüsü kıyıya vurduğunda en çok iş gören yöntem.",
+    "zorluk": 2,
+    "tarz": "aktif",
+    "sular": [
+      "deniz"
+    ],
+    "nedir": "Adı işin kendisini anlatır: makinenin kapağını \"açar\", zokayı bırakır, sonra durmadan \"çekersin\". Metal zoka suda kaçan bir hamsi gibi parlar; palamut ve lüfer gibi hızlı avcılar bunu koşarak kovalar. Yem, şamandıra, kurşun yoktur — misinanın ucunda tek bir metal parça vardır. Bu yüzden takım hazırlığı yok denecek kadar azdır, ama kolun yorulur: bir seansta yüzlerce atış yapılır.",
+    "kimeUygun": "Çapariyi öğrenmiş, artık daha iri balık isteyen biri. Atış tekniği biraz alışma ister ama takımda karmaşık bir şey yoktur.",
+    "nerede": [
+      "Boğaz'ın akıntılı burunları ve derin kenarlı mendirekleri.",
+      "Sürünün geçtiği daralma noktaları — Rumeli ve Anadolu Kavağı çevresi.",
+      "Suyun birdenbire derinleştiği rıhtım ve dalgakıran başları."
+    ],
+    "neZaman": "Eylül ortasından Aralık'a kadar. Kuş sürüsünün suya daldığı, suyun kaynadığı anlar en verimli dakikalardır; sürü on dakikada gelip geçebilir.",
+    "adimlar": [
+      "Zokayı kilitli bir klipsle liderin ucuna tak; klips zokayı hızlıca değiştirmeni sağlar.",
+      "Zokayı kamış ucundan 40-60 santim aşağıda tut, arkanı kontrol et ve tek hamlede uzağa at.",
+      "Zoka suya değince misinayı serbest bırak, dibe inmesini bekle — kaç saniyede indiğini say.",
+      "Balığın durduğu derinliğe göre bekleme süresini ayarla: yüzeydeyse hemen, dipteyse tam say.",
+      "Kamışı yatay tutup düzenli ve hızlı sar. Palamut hızlı, lüfer biraz daha yavaş çekişi sever.",
+      "Vuruş sarma sırasında gelir ve serttir; kendini kasma, kamış zaten iğneyi oturtur."
+    ],
+    "takimlar": [
+      "zoka-atma"
+    ],
+    "turler": [
+      "palamut",
+      "lufer",
+      "kolyoz",
+      "zargana"
+    ],
+    "ekipman": [
+      "kamis",
+      "spin-makine",
+      "orgu-misina",
+      "sok-lideri",
+      "klips",
+      "zoka"
+    ],
+    "ipuclari": [
+      "Sürü yüzeyde kaynıyorsa dibe bırakma; zoka suya değer değmez sarmaya başla.",
+      "Yanında iki üç farklı ağırlıkta zoka bulundur. Rüzgâra karşı atarken ağır olan çok daha uzağa gider.",
+      "Çekiş hızını değiştirerek dene. Aynı gün içinde balık bir saat hızlıyı, bir saat sonra yavaşı ister."
+    ],
+    "hatalar": [
+      "Kalabalık iskelede arkaya bakmadan atmak — zoka üç iğnelidir, ciddi yaralanma olur.",
+      "İnce mono misinaya doğrudan ağır zoka bağlamak; atış anında kopar ve zoka uçar.",
+      "Sürü gelmeden saatlerce aynı yerde atmak. Aç-çek beklemeyi değil, doğru anı yakalamayı gerektirir."
+    ]
+  },
+  {
+    "id": "spin",
+    "ad": "Spin",
+    "kisaAd": "Spin",
+    "ikon": "spin",
+    "ozet": "Balık taklidi yapan sahte yemi atıp, elinle canlandırarak geri getirmek. Denizde lüfer ve levrek, tatlı suda turna ve tatlısu levreği bu yöntemle avlanır.",
+    "zorluk": 3,
+    "tarz": "aktif",
+    "sular": [
+      "deniz",
+      "tatli"
+    ],
+    "nedir": "Spin, sahte yemle avın en yaygın hâlidir. Maket balık, kaşık, silikon yem veya yüzey yemi atarsın; sararken yem yaralı bir balık gibi yalpalar. Avcı balık bunu bir fırsat sanıp saldırır. Çapari ve dip takımının aksine sürekli yürür, farklı yerleri denersin — bir noktada beklemek yerine balığı ararsın. Aynı takım hem denizde hem gölde çalışır; değişen tek şey yemin boyu ve lider tercihidir.",
+    "kimeUygun": "Bir yerde oturup beklemekten sıkılan, yürüyerek av arayan biri. Yem kutusu birikince masraflı bir yöntem olabilir, tek bir maketle de başlanabilir.",
+    "nerede": [
+      "Akıntının döndüğü burunlar, dalgakıran başları ve dere ağızları.",
+      "Gölde sazlık kenarları, batık ağaçlar ve derinliğin değiştiği hatlar.",
+      "Kıyı boyunca yürünebilen her yer — spin yürüyerek yapılır."
+    ],
+    "neZaman": "Denizde sonbahar zirvedir, ilkbaharda levrek verir. Tatlı suda turna için erken ilkbahar ve sonbahar en iyisidir; 15 Mart – 15 Haziran arası iç su av yasağını unutma. Şafak ve akşam alacası her mevsim öne çıkar.",
+    "adimlar": [
+      "Suyun rengine göre yem seç: berrak suda doğal renkler, bulanık suda parlak veya koyu siluet.",
+      "Yemi kıyıya paralel de at, açığa da; balık çoğu zaman düşündüğünden daha yakında durur.",
+      "Yem suya değdikten sonra bir iki saniye bekle, sonra misinayı toplayarak sarmaya başla.",
+      "Düz sarma, iki tur sar bir dur, kamış ucuyla ufak çekişler — üç farklı ritmi aynı noktada dene.",
+      "Vuruş çoğunlukla duraklama anında gelir; misinayı gergin tut ki hissedebilesin.",
+      "Balık vurunca yana doğru kısa bir tokat at, sonra sabit baskıyla yaklaştır."
+    ],
+    "takimlar": [
+      "spin-yuzey",
+      "spin-tatli"
+    ],
+    "turler": [
+      "lufer",
+      "levrek",
+      "palamut",
+      "zargana",
+      "turna",
+      "tatlisu-levregi"
+    ],
+    "ekipman": [
+      "kamis",
+      "spin-makine",
+      "orgu-misina",
+      "sok-lideri",
+      "maket-balik",
+      "kasik",
+      "silikon-yem",
+      "spinner"
+    ],
+    "ipuclari": [
+      "Bir yemi on atıştan fazla denemeden değiştirme; ama otuz atışta sonuç yoksa yeri değiştir.",
+      "Turnada çelik veya kalın fluorocarbon lider kullan — turnanın dişleri normal misinayı bir vuruşta keser.",
+      "Yemin iğnelerini her çıkışta kontrol et; körelmiş üç iğneli yem balığı tutmuyor, sadece dürtüyor."
+    ],
+    "hatalar": [
+      "Sürekli aynı hızda sarmak; balık monotonluğu çabuk fark eder.",
+      "Çok büyük yemle başlamak. 7-9 santimlik bir maket kıyıda çoğu balığı kapsar.",
+      "Kayalık dipte yüzeye yakın çalışan yem yerine derin dalan yem kullanıp her atışta takılmak."
+    ]
+  },
+  {
+    "id": "lrf",
+    "ad": "LRF (hafif sahte yem)",
+    "kisaAd": "LRF",
+    "ikon": "lrf",
+    "ozet": "Çok hafif takımla, birkaç gramlık silikon yemle kaya diplerini ve iskele ayaklarını taramak. Küçük balığı bile büyük bir mücadeleye çevirir.",
+    "zorluk": 3,
+    "tarz": "aktif",
+    "sular": [
+      "deniz",
+      "tatli"
+    ],
+    "nedir": "LRF, \"light rock fishing\" yani hafif kaya balıkçılığının kısaltmasıdır. Ucunda 1-5 gramlık kurşunlu bir iğne (jig head) ve iki üç santimlik silikon bir kurtçuk vardır. Kamış ince, makine küçük, misina saç teli inceliğindedir. Amaç iri balık değil, kıyının hemen dibinde yaşayan iskorpit, izmarit, kaya levreği gibi türleri bulmaktır. Ekipman küçük olduğu için sırt çantasında taşınır; şehir içinde bir saatlik boşlukta bile av yapılabilir.",
+    "kimeUygun": "Ağır takım taşımak istemeyen, av sayısından çok avın kendisinden keyif alan biri. Hassas takım kullandığın için ilk vuruşları hissetmek biraz alışma ister.",
+    "nerede": [
+      "Rıhtım ve iskele ayaklarının dibi, merdiven kenarları.",
+      "Kayalıkların arasındaki oyuklar ve yosun sınırı.",
+      "Marina duvarları, gölge yapan her türlü yapı."
+    ],
+    "neZaman": "Bütün yıl. Su soğuduğunda balık dibe iner, yemi daha yavaş oynatman gerekir. Gece ışıklı iskelede çok verimlidir.",
+    "adimlar": [
+      "En hafif jig head ile başla; dibi hissedemiyorsan bir gram artır.",
+      "Silikon yemi iğneye düz geçir — eğri duran yem suda burgu gibi döner ve misinayı büker.",
+      "Kısa bir mesafeye at, yemin dibe inmesini bekle ve misinayı hafif gergin tut.",
+      "Kamış ucuyla iki üç kısa zıplatma yap, sonra dur ve bekle.",
+      "Vuruş çoğu zaman bekleme anında, hafif bir \"tık\" olarak gelir; bileğinden kısa bir hareketle tokatla.",
+      "Balığı iri değil diye hor görme; iskorpitin dikenlerine dokunmadan pense ile iğneyi çıkar."
+    ],
+    "takimlar": [
+      "lrf-jig-head"
+    ],
+    "turler": [
+      "iskorpit",
+      "izmarit",
+      "karagoz",
+      "levrek",
+      "kupes",
+      "gelincik",
+      "tatlisu-levregi"
+    ],
+    "ekipman": [
+      "solid-tip",
+      "spin-makine",
+      "orgu-misina",
+      "fluorocarbon",
+      "jig-head",
+      "silikon-yem"
+    ],
+    "ipuclari": [
+      "Kenarları tara: iskele ayağı, kaya oyuğu, duvar dibi. LRF balıkları açıkta durmaz.",
+      "Kokulu silikon yemler iskorpit ve gelincikte belirgin fark yaratır.",
+      "Yakaladığın balığın çoğu yasal boyun altında kalır; ıslak elle tut ve hızlıca suya bırak."
+    ],
+    "hatalar": [
+      "Ağır jig head ile başlamak; yem taş gibi düşer, doğallığını kaybeder.",
+      "Sürekli sarmak — LRF'de duraklamalar avın yarısıdır.",
+      "İskorpiti çıplak elle tutmak; sırt dikenleri zehirlidir, saatlerce süren ağrı yapar."
+    ]
+  },
+  {
+    "id": "dip-yemli",
+    "ad": "Yemli dip avı",
+    "kisaAd": "Dip avı",
+    "ikon": "dip-yemli",
+    "ozet": "Doğal yemi bir kurşunla dibe indirip beklemek. Öğrenmesi kolay, sabır isteyen, hem denizde hem tatlı suda en çok tür veren yöntem.",
+    "zorluk": 2,
+    "tarz": "pasif",
+    "sular": [
+      "deniz",
+      "tatli"
+    ],
+    "nedir": "Yemli dip avında misinanın ucunda bir kurşun, ondan kısa bir mesafede de doğal yem takılı bir iğne bulunur. Takımı atar, kamışı sehpaya koyar ve balığın yemi bulmasını beklersin. Balık yemi çekince kamış ucu titrer. Dipte gezen bütün türler bu yöntemle avlanır: denizde mezgit, barbunya, karagöz; gölde sazan ve yayın. Beklemek bu yöntemin eksiği değil, doğasıdır — bu yüzden iki kamışla çalışmak yaygındır.",
+    "kimeUygun": "Sakin bir av isteyen, aileyle veya arkadaşla oturarak vakit geçirmek isteyen biri. Doğal yemle uğraşmak gerekir, karşılığında en geniş tür yelpazesini verir.",
+    "nerede": [
+      "Kumluk ve çamurlu diplerin önündeki plajlar ve rıhtımlar.",
+      "Mendirek arkasındaki durgun sular ve balıkçı barınakları.",
+      "Gölde sazlık önü, dere ağzı ve derinliğin başladığı yamaçlar."
+    ],
+    "neZaman": "Bütün yıl. Denizde soğuk aylarda mezgit ve minakop öne çıkar; tatlı suda su ısındıkça sazan hareketlenir. Şafak, akşam ve gece en verimli saatlerdir.",
+    "adimlar": [
+      "Kurşunu ana misinaya kayar biçimde geçir; arkasına bir boncuk, sonra fırdöndü bağla.",
+      "Fırdöndüye ana misinadan daha ince bir köstek, köstek ucuna iğneyi bağla.",
+      "Yemi iğneye iğnenin ucu görünmeyecek şekilde, doğal duracak biçimde tak.",
+      "Yumuşak ve geniş bir hareketle at; sert atış yemi iğneden fırlatır.",
+      "Kurşun dibe oturunca misinayı hafifçe topla, kamışı sehpaya koy ve ucunu izle.",
+      "Kamış ucu iki üç kez tekrarlayan bir ritimle titrediğinde kamışı al ve yatay bir hareketle tokatla."
+    ],
+    "takimlar": [
+      "dip-takimi-sabit-kursun",
+      "paternoster",
+      "sazan-kayar-kursun"
+    ],
+    "turler": [
+      "mezgit",
+      "minakop",
+      "barbunya",
+      "tekir",
+      "karagoz",
+      "sargoz",
+      "gelincik",
+      "iskorpit",
+      "sazan",
+      "yayin",
+      "kadife"
+    ],
+    "ekipman": [
+      "kamis",
+      "spin-makine",
+      "monofilament",
+      "kursun",
+      "boncuk",
+      "firdondu",
+      "kostek",
+      "igne",
+      "kamis-sehpasi"
+    ],
+    "ipuclari": [
+      "Kamış ucunun tek bir kez oynaması genelde akıntıdır; tekrarlayan ritim balıktır.",
+      "Yemi yarım saatte bir kontrol et. Yenmiş veya suda dağılmış yem hiçbir şey getirmez.",
+      "İki kamış kullanıyorsan birini yakına, birini uzağa at — balığın hangi mesafede olduğunu böyle bulursun."
+    ],
+    "hatalar": [
+      "Misinayı gergin bırakmak; balık direnci hissedince yemi bırakır.",
+      "Kösteği ana misinadan kalın seçmek. Dipte takılınca bütün takımı kaybedersin.",
+      "Kamışı sehpasız yere bırakmak; vuruşta kamışın suya gittiği çok görülür."
+    ]
+  },
+  {
+    "id": "samandirali",
+    "ad": "Şamandıralı av",
+    "kisaAd": "Şamandıra",
+    "ikon": "samandirali",
+    "ozet": "Yemi istediğin derinlikte, dipten yukarıda tutmak ve şamandıranın batışını izlemek. Vuruşu gözle görürsün — yeni başlayan için en anlaşılır yöntem.",
+    "zorluk": 2,
+    "tarz": "pasif",
+    "sular": [
+      "deniz",
+      "tatli"
+    ],
+    "nedir": "Şamandıra hem yemi belli bir derinlikte asılı tutar hem de vuruşu haber verir. Suda dik duran şamandıra bir anda batıyorsa balık yemi almıştır. Yemin dipten ne kadar yukarıda duracağını sen ayarlarsın; bu yüzden kayalık ve yosunlu diplerde dip takımına göre çok daha az takılma yaşarsın. Denizde kefal, çupra ve canlı yemle lüfer; tatlı suda kızılkanat ve tatlısu kefali bu yöntemin balıklarıdır.",
+    "kimeUygun": "Kamış ucundaki titremeyi okumakta zorlanan herkes. Vuruşu gözle görmek, yeni başlayanın en hızlı öğrendiği geri bildirimdir.",
+    "nerede": [
+      "Rıhtım ve iskele önleri, akıntının yavaş aktığı kanallar.",
+      "Kayalık kenarlar — yem dipten yukarıda durduğu için takılmaz.",
+      "Gölde sazlık boşlukları ve iskele altları."
+    ],
+    "neZaman": "Bütün yıl. Kefal ve tatlı su türleri için ilkbahar ve sonbahar; canlı yemle lüfer için sonbahar akşamları.",
+    "adimlar": [
+      "Suyun derinliğini önce kurşunla ölç: yemsiz bir kurşun bağla, dibe indir ve misinayı işaretle.",
+      "Şamandırayı ölçtüğün derinliğin biraz üstüne ayarla — yem dibin 20-40 santim yukarısında dursun.",
+      "Şamandıranın ucu suyun üstünde ince bir çizgi kalacak kadar kurşunla dengele.",
+      "Yemi doğal duracak biçimde tak ve yumuşak bir hareketle akıntının üst tarafına at.",
+      "Şamandıranın akıntıyla süzülmesine izin ver; misinayı ne gergin ne de tamamen gevşek tut.",
+      "Şamandıra tamamen batınca bir saniye bekle, sonra yana doğru sakin bir hareketle tokatla."
+    ],
+    "takimlar": [
+      "samandirali-canli-yem",
+      "kefal-takimi",
+      "tatli-sabit-samandira"
+    ],
+    "turler": [
+      "lufer",
+      "levrek",
+      "kefal",
+      "cupra",
+      "karagoz",
+      "kizilkanat",
+      "tatlisu-kefali",
+      "gumus",
+      "havuz-baligi"
+    ],
+    "ekipman": [
+      "kamis",
+      "spin-makine",
+      "monofilament",
+      "samandira",
+      "stoper",
+      "boncuk",
+      "kursun",
+      "igne"
+    ],
+    "ipuclari": [
+      "Şamandıra suyun üstünde yan yatıyorsa fazla hafif kurşun koymuşsun demektir; dengeyi düzelt.",
+      "Akıntılı suda şamandırayı serbest bırak, sonra kısa bir fren uygula — yem yukarı kalkar ve dikkat çeker.",
+      "Kefalde yem çok küçük olmalı; iğne ucu ekmek içinin veya hamurun içinde saklı kalsın."
+    ],
+    "hatalar": [
+      "Şamandırayı derinliğe göre ayarlamadan atmak; yem ya dipte sürünür ya yüzeyde asılı kalır.",
+      "Şamandıra ilk oynadığında hemen tokatlamak. Balık yemi ağzına almadan şamandıra bir iki kez sallanır.",
+      "Fazla iri şamandıra kullanmak; balık yemi çekerken direnç hisseder ve bırakır."
+    ]
+  },
+  {
+    "id": "egi",
+    "ad": "Egi (kalamar ve sübye avı)",
+    "kisaAd": "Egi",
+    "ikon": "egi",
+    "ozet": "Karides biçimindeki dikenli zokayı zıplatarak kalamar ve sübye avlamak. Balık değil kafadanbacaklı avlar; tekniği tamamen kendine özgüdür.",
+    "zorluk": 3,
+    "tarz": "aktif",
+    "sular": [
+      "deniz"
+    ],
+    "nedir": "Egi, Japonya'dan gelen ve karidese benzeyen bir sahte yemdir. İğnesi yoktur; arkasında yukarı bakan bir taç şeklinde dikenler bulunur. Kalamar yemi kollarıyla sardığında bu dikenlere takılır. Teknik keskin çekişler ve uzun duraklamalardan oluşur: egiyi iki üç kez sert çekip zıplatır, sonra süzülerek batmasını beklersin. Kalamar neredeyse her zaman bu batış sırasında yakalar.",
+    "kimeUygun": "Farklı bir şey denemek isteyen orta seviye bir balıkçı. Tek bir egi ile başlanabilir; asıl öğrenilmesi gereken ritimdir.",
+    "nerede": [
+      "Berrak sulu, yosunlu ve kayalık dipli kıyılar.",
+      "Boğaz'ın akıntısı kesilen koyları ve iskele çevreleri.",
+      "Gece ışıklı iskeleler — ışığın karanlıkla buluştuğu sınır."
+    ],
+    "neZaman": "Ekim-Şubat arası. Gece ve akşam alacası belirgin biçimde daha verimlidir. Su berrak olmalı; fırtına sonrası bulanık suda kalamar egiyi görmez.",
+    "adimlar": [
+      "Egiyi liderin ucuna doğrudan veya küçük bir klipsle bağla.",
+      "At ve egiyi say sayarak dibe yakın bir derinliğe indir.",
+      "Kamışı iki üç kez keskin biçimde yukarı çek — egi suda sıçrayarak kaçan karides taklidi yapar.",
+      "Çekişten sonra misinayı gevşetmeden egiyi süzülerek batmaya bırak, beş on saniye bekle.",
+      "Ağırlık hissettiğinde sert tokatlama; kalamarın kolları kopar. Sabit ve yumuşak baskıyla sar.",
+      "Kalamarı sudan çıkarırken mürekkebini sana değil yere püskürtecek şekilde tut."
+    ],
+    "takimlar": [
+      "kalamar-zokasi-egi"
+    ],
+    "turler": [
+      "kalamar",
+      "subye"
+    ],
+    "ekipman": [
+      "kamis",
+      "spin-makine",
+      "orgu-misina",
+      "fluorocarbon",
+      "egi"
+    ],
+    "ipuclari": [
+      "Egiler farklı batma hızlarında üretilir. Sığ ve akıntısız yerde yavaş batanı seç.",
+      "Kalamar yemi izler ama vurmaz; bu durumda çekiş sayısını azalt, bekleme süresini uzat.",
+      "Yanında bez veya eldiven bulundur — mürekkep giysiden zor çıkar."
+    ],
+    "hatalar": [
+      "Sert tokatlamak; kalamar dikenlere kollarıyla tutunur, ani darbe kolları koparır.",
+      "Misinayı boş bırakarak egiyi batırmak. Gevşek misinada vuruşu hiç hissetmezsin.",
+      "Bulanık ve dalgalı günde ısrar etmek."
+    ]
+  },
+  {
+    "id": "surf",
+    "ad": "Surf (uzak atım)",
+    "kisaAd": "Surf",
+    "ikon": "surf",
+    "ozet": "Uzun kamışla kumsaldan yüz metreye varan atışlar yaparak açıktaki kum balıklarına ulaşmak. Ekipmanı ve tekniği en özel yöntem.",
+    "zorluk": 4,
+    "tarz": "pasif",
+    "sular": [
+      "deniz"
+    ],
+    "nedir": "Açık kumsallarda balık çoğu zaman kıyıdan uzakta, dalganın kumu karıştırdığı çukurlarda gezer. Oraya ulaşmak için 3,9-4,5 metrelik surf kamışı, iri makine ve 100-150 gramlık kurşun kullanılır. Takım aerodinamik olsun diye iğneler atış sırasında gövdeye kilitlenir. Vuruşu beklerken kamış yüksek bir sehpaya dikilir, böylece misina dalganın üstünde kalır. Yöntem güç değil teknik ister: doğru zamanlanmış bir atış, kaba kuvvetten çok daha uzağa gider.",
+    "kimeUygun": "Kumsalda saatlerce oturmayı seven, ayrı bir takım almaya hazır balıkçı. Kıyıdaki ilk yılında olan biri için ikinci adım sayılır.",
+    "nerede": [
+      "Karadeniz kumsalları — Kilyos, Şile, Kerpe, Kefken.",
+      "Marmara'nın açık kumluk sahilleri.",
+      "Dalganın kumu oyduğu, rengin koyulaştığı çukurların önü."
+    ],
+    "neZaman": "Sonbahar ve kış aylarında minakop ve mezgit; yazın barbunya ve tekir. Fırtınadan bir gün sonra, deniz düşerken en verimli zamandır.",
+    "adimlar": [
+      "Kumsalı gözle oku: dalganın kırılmadığı koyu renkli şeritler daha derin çukurlardır, oraya at.",
+      "Şok liderini makineye 5-6 tur sar — atış anındaki yükü ince ana misina değil lider taşır.",
+      "İğneleri klipse tak, kurşunu kamış ucundan bir buçuk metre aşağıda sarkıt.",
+      "Vücudunu yana çevir, kamışı geriye yatır ve tek bir hızlanan hareketle at; kolla değil gövdeyle at.",
+      "Kurşun dibe oturunca misinayı gerdirip kamışı yüksek sehpaya dik.",
+      "Vuruşta acele etme; iri kum balıkları yemi alıp bir süre yürür, kamış tam yay yaptığında tokatla."
+    ],
+    "takimlar": [
+      "surf-clipdown",
+      "paternoster"
+    ],
+    "turler": [
+      "minakop",
+      "barbunya",
+      "tekir",
+      "mezgit",
+      "levrek"
+    ],
+    "ekipman": [
+      "kamis",
+      "atis-gramaji",
+      "spin-makine",
+      "monofilament",
+      "sok-lideri",
+      "kursun",
+      "kamis-sehpasi"
+    ],
+    "ipuclari": [
+      "Şok lideri olmadan ağır kurşun atma; misina atış anında kopar ve kurşun tehlikeli biçimde savrulur.",
+      "Deniz solucanını iğneye boydan geçir, ucu serbest kalsın — kokusu akıntıyla dağılır.",
+      "Aynı noktaya üst üste at. Yemin kokusu birikince balık o noktaya toplanır."
+    ],
+    "hatalar": [
+      "Kalabalık plajda uzun atış denemek; 150 gram kurşun ciddi bir silahtır.",
+      "Kısa ve sert bir hamleyle atmaya çalışmak — mesafeyi hız değil, kamışın tam yüklenmesi verir.",
+      "Islak kumda kamışı yere yatırmak; kum halkalara girer ve misinayı keser."
+    ]
+  },
+  {
+    "id": "feeder",
+    "ad": "Feeder (yemlikli dip avı)",
+    "kisaAd": "Feeder",
+    "ikon": "feeder",
+    "ozet": "Kurşun yerine yemle doldurulan küçük bir kafes kullanmak: her atışta dibe yem serpersin, balık o noktaya toplanır. Tatlı suda sazan ve kadife için en verimli yöntem.",
+    "zorluk": 3,
+    "tarz": "pasif",
+    "sular": [
+      "tatli"
+    ],
+    "nedir": "Feeder, dip avının yemlemeli hâlidir. Ağırlık görevini delikli bir tel kafes üstlenir; kafesin içi ıslatılmış yem karışımıyla doldurulur. Kafes dibe oturunca yem yavaşça dağılır ve iğnedeki yemin etrafında bir koku bulutu oluşur. Kamışın ucu ayrı ve çok yumuşaktır (quiver tip) — en küçük dokunuşu bile büker. Aynı noktaya on beş dakikada bir atarak dibi düzenli beslersin; bir süre sonra balık o kareyi terk etmez.",
+    "kimeUygun": "Göl kıyısında birkaç saat geçirmeyi planlayan biri. Yem hazırlığı biraz uğraş ister ama sonucu doğrudan belirler.",
+    "nerede": [
+      "Sapanca gibi göllerin kıyıya yakın düz dip veren kesimleri.",
+      "Nehirlerin akıntısı yavaşlayan iç kıvrımları.",
+      "Sazlık önündeki açıklıklar ve iskele çevreleri."
+    ],
+    "neZaman": "Nisan-Ekim arası. Su ısındıkça verim artar. İç sularda 15 Mart – 15 Haziran arasında üreme yasağı uygulanır; çıkmadan önce il müdürlüğü duyurusunu kontrol et.",
+    "adimlar": [
+      "Yem karışımını suyla azar azar ıslat; avuçta topak olacak, kafesten çıkınca dağılacak kıvamda olsun.",
+      "Kafesi doldur, sıkıştır ve iğnedeki yemi (mısır, solucan veya hamur) kafesin yanına yerleştir.",
+      "İlk beş atışı yemlemek için yap: aynı noktaya at, kafesi boşalt ve hemen geri sar.",
+      "Sonraki atışlarda iğneli takımla aynı noktayı hedefle; karşı kıyıda bir işaret seç ve hep ona nişan al.",
+      "Kamışı sehpaya koy, misinayı hafifçe gerdir ve ince ucun kıpırdamasını izle.",
+      "Uç önce iki üç kez titrer sonra tam yay yapar; kamışı aldığında balık genelde zaten iğnededir."
+    ],
+    "takimlar": [
+      "feeder-takimi",
+      "sazan-kayar-kursun"
+    ],
+    "turler": [
+      "sazan",
+      "kadife",
+      "tatlisu-kefali",
+      "kizilkanat"
+    ],
+    "ekipman": [
+      "kamis",
+      "spin-makine",
+      "monofilament",
+      "feeder-kafesi",
+      "misir",
+      "hamur-yem",
+      "toprak-solucani",
+      "kepce"
+    ],
+    "ipuclari": [
+      "Aynı noktaya atmak yöntemin yarısıdır. Misinayı makineye bantla işaretle, her atışta aynı mesafede dursun.",
+      "Su soğukken yemi az koy, sıcakken bol koy — soğukta çok yem balığı doyurur ve iğneyi göz ardı ettirir.",
+      "İri sazan için kepçe şart; kamışla karaya sürüklemek hem balığı yaralar hem takımı kırar."
+    ],
+    "hatalar": [
+      "Yemi fazla sulandırmak; kafes daha dibe inmeden boşalır.",
+      "Her atışta farklı yere atmak — koku bulutu hiçbir yerde oluşmaz.",
+      "Av yasağı dönemini kontrol etmeden göle gitmek. İç sularda ilkbahar yasağı amatörü de kapsar."
+    ]
+  }
+]

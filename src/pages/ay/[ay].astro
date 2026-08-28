@@ -1,0 +1,88 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SpeciesCard from '../../components/SpeciesCard.astro';
+import { baslikBicimi } from '../../lib/metin';
+import { AY_ADLARI } from '../../lib/season';
+
+export async function getStaticPaths() {
+  return AY_ADLARI.map((ad, i) => ({ params: { ay: String(i + 1) }, props: { ay: i + 1, ad } }));
+}
+
+const { ay, ad } = Astro.props;
+const turler = await getCollection('species');
+
+const puanli = turler
+  .map((t) => ({ t, v: t.data.aylar[ay - 1]! }))
+  .sort((a, b) => b.v - a.v || a.t.data.ad.localeCompare(b.t.data.ad, 'tr'));
+
+const zirve = puanli.filter((x) => x.v >= 4);
+const olur = puanli.filter((x) => x.v === 3);
+const seyrek = puanli.filter((x) => x.v > 0 && x.v < 3);
+const yok = puanli.filter((x) => x.v === 0);
+
+const oncekiAy = ay === 1 ? 12 : ay - 1;
+const sonrakiAy = ay === 12 ? 1 : ay + 1;
+
+const NOTLAR: Record<number, string> = {
+  1: 'Kışın zirvesi. Mezgit, hamsi ve gelincik için en iyi ay. Soğuk ve rüzgâr sert olabilir, kalın giyin. Tatlı suda turna soğuk suyu sever, sazan durgunlaşır.',
+  2: 'Su en soğuk dönemde. Sübye sığ kumluklara girmeye başlar, kalamar sezonu kapanmak üzeredir. Gölde turna ve tatlısu levreği en hareketli türler.',
+  3: 'Su ısınmaya başlar. Zargana ve sübye öne çıkar; dip balıkları yavaş yavaş kıyıya döner. Dikkat: 15 Mart’ta iç sularda üreme dönemi av yasağı başlar, göl ve derede av kapanır.',
+  4: 'İlkbaharın en canlı ayı. Zargana ve sübye zirvede, kefal ve izmarit hareketlenir. İç sular av yasağında; bu ay yalnızca denize gidilir.',
+  5: 'Su ısındıkça çupra ve karagöz kıyıya sokulur. Uzun ve keyifli akşam avları başlar. İç sulardaki yasak sürüyor.',
+  6: 'Yaz düzeni. Sabah erken ve akşam geç saatler dışında verim düşer. 15 Haziran’da iç sulardaki yasak kalkar: göl ve derede sezon yeniden açılır.',
+  7: 'Sıcak ve durgun. Barbunya ve izmarit için iyi, avcı balık için sabır ayı. Gece avı öne çıkar. Tatlı suda yayın gecelerinin en iyi dönemi.',
+  8: 'Ayın ikinci yarısında palamut ve kolyoz sürüleri Karadeniz’den inmeye başlar. Sezon açılıyor. Gölde sazan sabah sığlıklarda besleniyor.',
+  9: 'Kıyı balıkçılığının en iyi ayı. Palamut, lüfer, çupra ve istavrit aynı anda vurur. Takımını hazır tut. Tatlı suda da sazan ve kadife zirvede.',
+  10: 'Lüfer ve palamut zirvede, kalamar sezonu açılıyor. Yılın en verimli dönemi. Gölde turna soğuyan suyla birlikte yeniden hareketlenir.',
+  11: 'Lüfer ve levrek zirvede, hamsi ve kalamar geliyor. Hava bozar ama balık boldur. Tatlı suda turna ve tatlısu levreği öne çıkar.',
+  12: 'Kış balıkları devrede: kalamar, hamsi, mezgit. Lüfer hâlâ iyi. Kısa günler, uzun geceler. Gölde turna dışındaki türler yavaşlar.',
+};
+---
+<Base baslik={`${ad} Ayı`} aciklama={`${ad} ayında kıyıdan ve tatlı sudan hangi balıklar tutulur.`}>
+  <nav class="mb-4 flex items-center justify-between text-sm">
+    <a href={`/ay/${oncekiAy}`} class="text-accent hover:underline">← {AY_ADLARI[oncekiAy - 1]}</a>
+    <a href="/takvim" class="text-muted hover:text-ink">Tüm takvim</a>
+    <a href={`/ay/${sonrakiAy}`} class="text-accent hover:underline">{AY_ADLARI[sonrakiAy - 1]} →</a>
+  </nav>
+
+  <h1 class="text-3xl sm:text-4xl">{baslikBicimi(`${ad} ayında ne tutulur?`)}</h1>
+  <p class="mt-2 max-w-2xl text-muted">{NOTLAR[ay]}</p>
+
+  {zirve.length > 0 && (
+    <section class="mt-8">
+      <h2 class="text-lg font-semibold tracking-tight">Bu Ayın Hedefleri</h2>
+      <p class="mt-1 text-sm text-muted">Sezonu bu türlerde. Vaktinin çoğunu bunlara ayır.</p>
+      <div class="mt-3 grid gap-3 sm:grid-cols-2">
+        {zirve.map(({ t }) => <SpeciesCard tur={t} ay={ay} />)}
+      </div>
+    </section>
+  )}
+
+  {olur.length > 0 && (
+    <section class="mt-8">
+      <h2 class="text-lg font-semibold tracking-tight">Tutulur</h2>
+      <div class="mt-3 grid gap-3 sm:grid-cols-2">
+        {olur.map(({ t }) => <SpeciesCard tur={t} ay={ay} />)}
+      </div>
+    </section>
+  )}
+
+  {seyrek.length > 0 && (
+    <section class="mt-8">
+      <h2 class="text-lg font-semibold tracking-tight">Şansına</h2>
+      <ul class="mt-3 flex flex-wrap gap-2">
+        {seyrek.map(({ t }) => (
+          <li><a href={`/balik/${t.id}`} class="block kart px-3 py-1.5 text-sm hover:border-accent">{t.data.ad}</a></li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {yok.length > 0 && (
+    <section class="mt-8">
+      <h2 class="text-lg font-semibold tracking-tight text-muted">Bu Ay Boşuna Arama</h2>
+      <p class="mt-2 text-sm text-muted">{yok.map(({ t }) => t.data.ad).join(', ')}.</p>
+    </section>
+  )}
+</Base>

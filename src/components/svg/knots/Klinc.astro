@@ -1,0 +1,36 @@
+---
+import Adim from './_Adim.astro';
+---
+<svg class="diagram" viewBox="0 0 400 450" role="img" aria-labelledby="k-klinc">
+  <title id="k-klinc">Klinç düğümü: misinayı halkadan geçir, ana misina etrafında beş tur sar, ucu halkanın yanındaki ilmekten ve ardından büyük ilmekten geçir, ıslatıp sık.</title>
+
+  <Adim no={1} baslik="Halkadan geçir, 15-20 cm uç bırak" y={0}>
+    <circle cx="60" cy="46" r="13" class="metal" />
+    <path class="misina" d="M388 46 L73 46" />
+    <path class="uc" d="M47 46 q-14 0 -14 12 q0 12 16 12 L300 70" />
+    <text class="lbl-misina" x="300" y="34" text-anchor="end">ana misina</text>
+    <text class="lbl-yem" x="300" y="88" text-anchor="end">serbest uç</text>
+  </Adim>
+
+  <Adim no={2} baslik="Serbest ucu ana misinaya 5-6 tur sar" y={150}>
+    <circle cx="60" cy="46" r="13" class="metal" />
+    <path class="misina" d="M388 46 L73 46" />
+    <path class="uc" d="M47 46 q-14 0 -14 12 q0 12 16 12 L120 70" />
+    {[0,1,2,3,4,5].map((i) => (
+      <path class="uc" d={`M${128 + i * 26} 70 q13 -30 26 -24`} />
+    ))}
+    <path class="uc" d="M282 46 L316 58" />
+    <text class="lbl-yem" x="150" y="100">5-6 tur</text>
+  </Adim>
+
+  <Adim no={3} baslik="Ucu önce küçük, sonra büyük ilmekten geçir" y={300}>
+    <circle cx="60" cy="46" r="13" class="metal" />
+    <path class="misina" d="M388 46 L73 46" />
+    <path class="uc" d="M47 46 q-14 0 -14 12 q0 12 16 12 L120 70" />
+    {[0,1,2,3,4,5].map((i) => (
+      <path class="uc" d={`M${128 + i * 26} 70 q13 -30 26 -24`} />
+    ))}
+    <path class="dugum" d="M92 60 q-14 20 8 26 q30 8 60 -6 q26 -12 10 -30" />
+    <text class="lbl-a" x="188" y="96">ikinci geçiş — kaymayı önler</text>
+  </Adim>
+</svg>

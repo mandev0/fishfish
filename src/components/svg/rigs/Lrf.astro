@@ -1,0 +1,48 @@
+---
+// LRF — hafif jig head + silikon, kayalık dip, zıplatma yolu.
+---
+<svg class="diagram" viewBox="0 0 380 480" role="img" aria-labelledby="lrf-baslik">
+  <title id="lrf-baslik">LRF takımı: ince örgü, FG düğümü, ince fluorocarbon lider, jig head ve silikon kurtçuk; kayalık dipte zıplatarak tarama yolu.</title>
+
+  <rect class="water" x="0" y="60" width="380" height="420" />
+  <path class="ln-thin" d="M0 60 q20 -6 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" />
+
+  <path class="kamis" d="M16 24 L96 36" stroke-width="2.8" />
+  <text class="lbl-b" x="16" y="16">Solid tip kamış 1,8-2,3 m · 0,5-7 gr</text>
+
+  <path class="orgu" d="M96 36 L138 96" stroke-width="1.9" />
+  <text class="lbl-orgu" x="152" y="74">Örgü PE 0,3-0,6</text>
+
+  <g transform="translate(138,100)">
+    <path class="orgu" d="M0 0 L0 30" stroke-width="1.9" />
+    {[0,1,2,3,4].map((i) => (<path class="dugum" stroke-width="1.2" d={`M-5 ${5 + i * 5} q5 -3 10 0`} />))}
+    <circle class="dugum" cx="0" cy="15" r="11" />
+  </g>
+  <text class="lbl-a" x="162" y="118">FG düğümü</text>
+
+  <path class="lider" d="M138 130 L138 250" />
+  <text class="lbl-lider" x="152" y="182">Fluorocarbon 0,16-0,22 mm</text>
+  <text class="lbl" x="152" y="196">1-1,5 m</text>
+
+  <!-- Jig head + silikon -->
+  <g transform="translate(138,254)">
+    <circle class="metal" cx="0" cy="0" r="9" />
+    <circle class="solid" cx="-3" cy="-2" r="1.8" />
+    <path class="igne" d="M0 9 l0 14 a8 8 0 1 0 13 4" />
+    <!-- silikon kurtçuk -->
+    <path class="yem" d="M2 6 q16 6 22 18 q6 12 -2 22 q-4 5 -8 2 q6 -8 2 -16 q-6 -12 -18 -18 z" />
+  </g>
+  <text class="lbl-metal" x="188" y="256">Jig head 1-5 gr</text>
+  <text class="lbl" x="188" y="270">6-10 no iğne</text>
+  <text class="lbl-yem" x="188" y="290">Silikon yem 2,5-5 cm</text>
+  <text class="lbl-yem" x="188" y="304">düz geçirilmeli</text>
+
+  <!-- Kayalık dip -->
+  <path class="ground" d="M0 400 l40 -30 l30 22 l36 -40 l40 34 l44 -26 l40 30 l50 -24 l60 34 L380 480 L0 480 z" />
+  <path class="ln-thin" d="M0 400 l40 -30 l30 22 l36 -40 l40 34 l44 -26 l40 30 l50 -24 l60 34" />
+
+  <!-- Zıplatma yolu -->
+  <path class="hareket" d="M300 348 q-20 -34 -40 -4 q-20 30 -40 -4 q-20 -34 -40 -2 q-18 30 -34 6" />
+  <text class="lbl-a" x="18" y="440">Dibe bırak → 2-3 kez kısa zıplat → dur → bekle</text>
+  <text class="lbl" x="18" y="458">Vuruş neredeyse her zaman bekleme anında gelir.</text>
+</svg>

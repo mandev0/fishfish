@@ -1,0 +1,136 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import WeatherPanel from '../components/WeatherPanel.astro';
+import Bolluk from '../components/Bolluk.astro';
+import FishSilhouette from '../components/svg/FishSilhouette.astro';
+import { baslikBicimi } from '../lib/metin';
+import { AY_ADLARI } from '../lib/season';
+
+const turler = await getCollection('species');
+const noktaSayisi = (await getCollection('spots')).length;
+const takimSayisi = (await getCollection('rigs')).length;
+const dugumSayisi = (await getCollection('knots')).length;
+const yontemSayisi = (await getCollection('methods')).length;
+
+/** Her ay için o ayın öne çıkan türleri — statik (JavaScript'siz) yedek liste. */
+const aylikListe = AY_ADLARI.map((ad, i) => ({
+  ay: i + 1,
+  ad,
+  turler: turler
+    .map((t) => ({ t, v: t.data.aylar[i]! }))
+    .filter((x) => x.v >= 3)
+    .sort((a, b) => b.v - a.v || a.t.data.zorluk - b.t.data.zorluk)
+    .slice(0, 8),
+}));
+
+/** Derleme anındaki ay — JS kapalıyken gösterilecek varsayılan. */
+const derlemeAyi = Number(new Intl.DateTimeFormat('en-GB', {
+  timeZone: 'Europe/Istanbul', month: 'numeric',
+}).format(new Date()));
+
+const yeniBaslayan = ['istavrit', 'izmarit', 'kefal']
+  .map((id) => turler.find((t) => t.id === id)!)
+  .filter(Boolean);
+---
+<Base
+  baslik="Bugün Ne Tutulur?"
+  aciklama="İstanbul, Kocaeli ve Sakarya'da kıyı ve tatlı su balıkçılığı için ay ay balık takvimi, yöntemler, takım şemaları, taktikler, nokta rehberi ve canlı hava verisine göre günlük tavsiye."
+>
+  <header class="mb-6 sm:mb-8">
+    <h1 class="text-2xl sm:text-4xl">Kıyıdan ve Tatlı Sudan Balık Tutma Rehberi</h1>
+    <p class="mt-2 max-w-2xl text-sm text-muted sm:text-base">
+      İstanbul ve Kocaeli kıyısı, Sapanca Gölü ve çevresindeki iç sular.
+      Hangi ay hangi balık, hangi yöntemle avlanılır, o yöntem için hangi takım kurulur,
+      nereye gidilir — ve bugünün havası buna uygun mu. {turler.length} tür, {noktaSayisi} nokta,
+      {yontemSayisi} yöntem, {takimSayisi} takım şeması, {dugumSayisi} düğüm.
+    </p>
+  </header>
+
+  <WeatherPanel>
+    <div data-statik>
+      {aylikListe.map(({ ay, ad, turler: liste }) => (
+        <div data-ay-liste={ay} hidden={ay !== derlemeAyi}>
+          <h3 class="mt-4 text-sm font-semibold uppercase tracking-wide text-muted">
+            {baslikBicimi(`${ad} ayında tutulanlar`)}
+          </h3>
+          <ul class="mt-2 grid gap-2 sm:grid-cols-2">
+            {liste.map(({ t, v }) => (
+              <li>
+                <a href={`/balik/${t.id}`} class="kart flex items-center gap-2 px-3 py-2 text-sm transition-colors hover:border-accent">
+                  <span class="w-12 shrink-0 text-muted"><FishSilhouette tur={t.id} /></span>
+                  <span class="font-medium">{t.data.ad}</span>
+                  <span class="ml-auto shrink-0"><Bolluk deger={v} etiket={false} /></span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </WeatherPanel>
+
+  <section class="mt-10">
+    <h2 class="text-lg font-semibold tracking-tight sm:text-xl">Yeni Başlıyorsan</h2>
+    <p class="mt-1 text-sm text-muted">Sıfırdan başlayan biri için en kısa yol.</p>
+    <ol class="mt-4 grid gap-3 sm:grid-cols-3">
+      <li class="kart kart-vurgulu p-4">
+        <span class="sayisal text-xs font-bold text-vurgu">1</span>
+        <h3 class="mt-1 font-semibold">Tek Bir Takım Al</h3>
+        <p class="mt-1 text-sm text-muted">
+          3 metre kamış, 3000 makine, 0,28 mono ve bir tomar çapari.
+          Bu kombinasyon türlerin yarısını kapsar.
+        </p>
+        <a href="/ekipman" class="mt-2 inline-block text-sm text-accent underline">Ekipman rehberi</a>
+      </li>
+      <li class="kart kart-vurgulu p-4">
+        <span class="sayisal text-xs font-bold text-vurgu">2</span>
+        <h3 class="mt-1 font-semibold">Çapari ile Başla</h3>
+        <p class="mt-1 text-sm text-muted">
+          Öğrenmesi en kolay, sonuç alması en hızlı yöntem.
+          İstavrit ve izmarit ilk balığın olsun.
+        </p>
+        <a href="/yontem/capari" class="mt-2 inline-block text-sm text-accent underline">Çapari yöntemi</a>
+      </li>
+      <li class="kart kart-vurgulu p-4">
+        <span class="sayisal text-xs font-bold text-vurgu">3</span>
+        <h3 class="mt-1 font-semibold">Güvenli Bir Nokta Seç</h3>
+        <p class="mt-1 text-sm text-muted">
+          Aydınlatması olan, korkuluklu bir mendirek veya rıhtım.
+          Kayalık ve fırtına sonraya kalsın.
+        </p>
+        <a href="/noktalar" class="mt-2 inline-block text-sm text-accent underline">Nokta haritası</a>
+      </li>
+    </ol>
+  </section>
+
+  <section class="mt-10">
+    <h2 class="text-lg font-semibold tracking-tight sm:text-xl">İlk Balığın İçin En Kolay Üç Tür</h2>
+    <div class="mt-4 grid gap-3 sm:grid-cols-3">
+      {yeniBaslayan.map((t) => (
+        <a href={`/balik/${t.id}`} class="kart group p-4 transition-colors hover:border-accent">
+          <div class="text-muted transition-colors group-hover:text-accent"><FishSilhouette tur={t.id} /></div>
+          <h3 class="mt-2 font-semibold">{baslikBicimi(t.data.ad)}</h3>
+          <p class="mt-1 text-sm text-muted">{t.data.ozet}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <script is:inline data-astro-rerun>
+    // Ayı tarayıcıda hesapla: site bir kez derlenip aylarca kullanılabilir,
+    // bu yüzden "bu ay" bilgisi derleme zamanına çivilenmemeli.
+    (function () {
+      // Sunucu, derleme anındaki ayı açık bırakır (JavaScript kapalıyken de bir şey görünsün).
+      // Site aylar sonra hâlâ aynı derlemeden servis ediliyorsa doğru ayı burada düzeltiriz.
+      const ay = Number(new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Europe/Istanbul', month: 'numeric',
+      }).format(new Date()));
+      const dogru = document.querySelector(`[data-ay-liste="${ay}"]`);
+      if (dogru && dogru.hidden) {
+        document.querySelectorAll('[data-ay-liste]').forEach((d) => { d.hidden = true; });
+        dogru.hidden = false;
+      }
+    })();
+  </script>
+</Base>

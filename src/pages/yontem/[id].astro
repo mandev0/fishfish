@@ -1,0 +1,144 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Bolum from '../../components/Bolum.astro';
+import Ikon from '../../components/Ikon.astro';
+import Liste from '../../components/Liste.astro';
+import Metin from '../../components/Metin.astro';
+import RigDiagram from '../../components/svg/RigDiagram.astro';
+import SpeciesCard from '../../components/SpeciesCard.astro';
+import Zorluk from '../../components/Zorluk.astro';
+import { baslikBicimi } from '../../lib/metin';
+import { bolgeTamAdi } from '../../lib/season';
+
+export async function getStaticPaths() {
+  const yontemler = await getCollection('methods');
+  return yontemler.map((y) => ({ params: { id: y.id }, props: { yontem: y } }));
+}
+
+const { yontem } = Astro.props;
+const d = yontem.data;
+
+const takimlar = (await Promise.all(d.takimlar.map((r) => getEntry('rigs', r)))).filter(Boolean);
+const turler = (await Promise.all(d.turler.map((t) => getEntry('species', t)))).filter(Boolean);
+const ekipman = (await Promise.all(d.ekipman.map((e) => getEntry('gear', e)))).filter(Boolean);
+
+// Bu yöntemin uygulanabildiği noktalar — nokta kayıtları kaynak, liste ondan üretiliyor.
+const noktalar = (await getCollection('spots'))
+  .filter((n) => n.data.yontemler.includes(yontem.id))
+  .sort((a, b) => a.data.ad.localeCompare(b.data.ad, 'tr'));
+
+const bolgeler = [...new Set(noktalar.map((n) => n.data.bolge))];
+
+const SU_METNI: Record<string, string> = { deniz: 'Denizde', tatli: 'Tatlı suda' };
+const TARZ_ACIKLAMA = {
+  aktif: 'Yemi sen oynatırsın; bir noktada beklemek yerine yürüyerek balık ararsın.',
+  pasif: 'Yemi bırakır, balığın gelmesini beklersin. Kamış sehpada durur.',
+} as const;
+
+const gorulen = new Set<string>();
+---
+<Base baslik={d.ad} aciklama={d.ozet}>
+  <nav class="mb-4 text-sm">
+    <a href="/yontem" class="text-accent hover:underline">← Tüm yöntemler</a>
+  </nav>
+
+  <div class="flex items-start gap-3">
+    <span class="mt-1 shrink-0 text-vurgu"><Ikon ad={d.ikon} sinif="size-8" /></span>
+    <div>
+      <h1 class="text-3xl sm:text-4xl">{baslikBicimi(d.ad)}</h1>
+      <p class="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted">
+        <Zorluk seviye={d.zorluk} />
+        <span aria-hidden="true">·</span>
+        <span>{baslikBicimi(d.tarz)}</span>
+        <span aria-hidden="true">·</span>
+        <span>{d.sular.map((s) => SU_METNI[s]).join(' ve ').toLocaleLowerCase('tr')}</span>
+      </p>
+    </div>
+  </div>
+
+  <Metin metin={d.ozet} etiket="p" sinif="mt-3 max-w-2xl" gorulen={gorulen} />
+
+  <Bolum baslik="Nedir">
+    <Metin metin={d.nedir} etiket="p" sinif="max-w-2xl" gorulen={gorulen} />
+    <div class="mt-4 grid gap-3 sm:grid-cols-2">
+      <div class="kart kart-vurgulu p-4">
+        <h3 class="text-sm font-semibold">Kime Uygun</h3>
+        <Metin metin={d.kimeUygun} etiket="p" sinif="mt-1 text-sm text-muted" gorulen={gorulen} />
+      </div>
+      <div class="kart kart-vurgulu p-4">
+        <h3 class="text-sm font-semibold">{baslikBicimi(`${d.tarz} yöntem`)}</h3>
+        <p class="mt-1 text-sm text-muted">{TARZ_ACIKLAMA[d.tarz]}</p>
+      </div>
+    </div>
+  </Bolum>
+
+  <Bolum baslik="Nerede ve Ne Zaman">
+    <Liste maddeler={d.nerede} gorulen={gorulen} />
+    <Metin metin={d.neZaman} etiket="p" sinif="mt-3 text-sm text-muted" gorulen={gorulen} />
+  </Bolum>
+
+  <Bolum baslik="Adım Adım">
+    <ol class="space-y-2">
+      {d.adimlar.map((adim, i) => (
+        <li class="kart flex gap-3 p-3 text-sm">
+          <span class="sayisal flex size-6 shrink-0 items-center justify-center rounded-sm bg-accent text-xs font-bold text-accent-ink">{i + 1}</span>
+          <Metin metin={adim} gorulen={gorulen} />
+        </li>
+      ))}
+    </ol>
+  </Bolum>
+
+  <Bolum baslik="Kullanılan Takımlar" not={`${takimlar.length} takım şeması`}>
+    <div class="grid gap-4 sm:grid-cols-2">
+      {takimlar.map((r) => (
+        <a href={`/takim/${r!.id}`} class="group kart p-4 hover:border-accent">
+          <div class="flex items-baseline justify-between gap-2">
+            <h3 class="font-semibold group-hover:text-accent">{baslikBicimi(r!.data.ad)}</h3>
+            <Zorluk seviye={r!.data.zorluk} etiket={false} />
+          </div>
+          <p class="mt-1 text-sm text-muted">{r!.data.ozet}</p>
+          <div class="mx-auto mt-3 max-w-[190px] text-muted transition-colors group-hover:text-accent">
+            <RigDiagram sema={r!.data.sema} />
+          </div>
+        </a>
+      ))}
+    </div>
+  </Bolum>
+
+  {ekipman.length > 0 && (
+    <Bolum baslik="Gereken Ekipman">
+      <ul class="flex flex-wrap gap-2">
+        {ekipman.map((e) => (
+          <li><a href={`/ekipman/${e!.id}`} class="block kart px-3 py-1.5 text-sm hover:border-accent">{e!.data.ad}</a></li>
+        ))}
+      </ul>
+    </Bolum>
+  )}
+
+  {d.ipuclari.length > 0 && <Bolum baslik="İpuçları"><Liste maddeler={d.ipuclari} tip="ipucu" gorulen={gorulen} /></Bolum>}
+  {d.hatalar.length > 0 && <Bolum baslik="Sık Yapılan Hatalar"><Liste maddeler={d.hatalar} tip="hata" gorulen={gorulen} /></Bolum>}
+
+  <Bolum baslik="Bu Yöntemin Balıkları" not={`${turler.length} tür`}>
+    <div class="grid gap-3 sm:grid-cols-2">
+      {turler.map((t) => <SpeciesCard tur={t} />)}
+    </div>
+  </Bolum>
+
+  <Bolum baslik="Nerede Uygulanır" not={`${noktalar.length} nokta · ${bolgeler.length} bölge`}>
+    <ul class="grid gap-2 sm:grid-cols-2">
+      {noktalar.map((n) => (
+        <li>
+          <a
+            href={`/nokta/${n.id}`}
+            data-bolge={n.data.bolge}
+            class="block kart bolge-kenar p-3 hover:border-accent"
+          >
+            <span class="font-medium">{n.data.ad}</span>
+            <span class="mt-0.5 block text-xs text-muted">{bolgeTamAdi(n.data.bolge)}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </Bolum>
+</Base>

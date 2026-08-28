@@ -1,0 +1,146 @@
+{
+  "ad": "Zargana",
+  "latin": "Belone belone",
+  "ingilizce": "Garfish",
+  "digerAdlar": [
+    "Zurna balığı"
+  ],
+  "ozet": "Uzun gagalı, yılan gibi ince bir yüzey avcısı. Yüzey spinle avı çok eğlencelidir; vurduğunda suyun üstünde takla atar. Kılçığı yeşildir, bu normaldir.",
+  "zorluk": 3,
+  "aylar": [
+    1,
+    2,
+    4,
+    5,
+    4,
+    3,
+    2,
+    2,
+    3,
+    4,
+    3,
+    2
+  ],
+  "sular": [
+    "bogaz",
+    "marmara",
+    "karadeniz"
+  ],
+  "gece": false,
+  "boySiniflari": [
+    {
+      "ad": "Zargana",
+      "cm": "30-70 cm",
+      "not": "Uzunluğunun büyük kısmı ince gövde ve gagadır."
+    }
+  ],
+  "yasal": {
+    "asgariBoy": null,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Tebliğ'de bu tür için asgari boy belirtilmemiştir; günlük toplam 5 kg sınırı yine geçerlidir."
+  },
+  "suSicakligi": {
+    "min": 12,
+    "ideal": [
+      14,
+      22
+    ],
+    "max": 25
+  },
+  "aktifSaatler": [
+    "sabah",
+    "oglen",
+    "ikindi",
+    "aksam"
+  ],
+  "ruzgarTercihi": [
+    "poyraz",
+    "yildiz"
+  ],
+  "ruzgarKacinilan": [
+    "lodos",
+    "karayel"
+  ],
+  "derinlik": "Yüzey ile 2 m arası. Neredeyse tamamen yüzey balığıdır.",
+  "yasamAlani": "Berrak ve sakin kıyı suları, mendirek önleri, koy ağızları.",
+  "teshis": {
+    "siluet": "zargana",
+    "ayirtEdici": [
+      "Çok uzun, ince ve dişli gaga — karıştırılması imkânsız.",
+      "Gövde kurşun kalem gibi ince ve uzun.",
+      "Sırt parlak yeşil-mavi, karın gümüş.",
+      "Kılçıkları yeşil renklidir; zararsızdır."
+    ],
+    "karistirilan": []
+  },
+  "takimlar": [
+    "spin-yuzey",
+    "samandirali-canli-yem",
+    "zoka-atma"
+  ],
+  "yemler": {
+    "dogal": [
+      "İnce sardalya şeridi",
+      "Karides"
+    ],
+    "sahte": [
+      "7-11 cm ince minnow",
+      "10-20 gr kaşık",
+      "İpek püskül (iğnesiz)"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "2,1-2,7 m, 7-30 gr",
+      "not": "Hafif kamış maketin doğal hareketini korur."
+    },
+    "makine": {
+      "deger": "2500-3000"
+    },
+    "anaMisina": {
+      "deger": "PE 0,6-1,0",
+      "not": "İnce örgü uzun atış sağlar."
+    },
+    "sokLideri": {
+      "deger": "0,26-0,30 mm fluorocarbon, 1 m",
+      "not": "Gagasındaki dişler ince misinayı aşındırır."
+    },
+    "igne": {
+      "deger": "Maketin üçlüsü veya iğnesiz püskül",
+      "not": "Püskül yöntemi balığa zarar vermez ve daha çok tutar."
+    },
+    "agirlik": {
+      "deger": "Maketin/kaşığın kendi ağırlığı"
+    }
+  },
+  "taktik": {
+    "atis": "Yüzeyde sıçrayan veya suyun üstünde ok gibi hareket eden balığı gözle; gördüğün noktanın 5 m ötesine at.",
+    "cekme": "Yüzeye yakın, orta hızda ve duraklamalı sar. Zargana yemi kovalar, aniden vurmaz.",
+    "tokatlama": "En zor kısmı budur: gagası kemik gibi sert olduğu için iğne çoğu zaman tutmaz. Vuruşta hemen çekme, balık maketi ağzına alana kadar 1-2 saniye bekle.",
+    "yakalama": "Sudan çıkarken çılgınca takla atar; misinayı gergin tut. Gagasına dikkat et, dişleri parmağı keser.",
+    "ipuclari": [
+      "İğne yerine 10-15 cm ipek/naylon püskül bağla: zarganın dişleri püskülün liflerine dolanır, yakalama oranı ikiye katlanır ve balık yaralanmaz.",
+      "İlkbahar (Nisan-Mayıs) İstanbul'da zarganın en bol olduğu dönemdir.",
+      "Berrak ve sakin su ister; lodosla bulanan suda neredeyse hiç vurmaz."
+    ],
+    "hatalar": [
+      "Vuruşta hemen sert tokatlamak — maket ağzından fırlar.",
+      "Kalın ve kaba takım kullanmak; zargana ürkek bir balıktır."
+    ]
+  },
+  "mutfak": "Izgara veya tavada. Yeşil kılçığı ürkütücü görünür ama tamamen zararsızdır.",
+  "noktalar": [
+    "rumeli-kavagi",
+    "garipce",
+    "bebek",
+    "arnavutkoy",
+    "ortakoy",
+    "sarayburnu",
+    "poyrazkoy",
+    "beylerbeyi",
+    "salacak",
+    "moda",
+    "buyukada"
+  ]
+}

@@ -1,0 +1,22 @@
+---
+/**
+ * Zorluk göstergesi. 1 çok kolay (yeşil) → 5 uzman (kırmızı).
+ * Renk tek başına anlam taşımasın diye hem dolu çubuk sayısı hem de
+ * sözel etiket veriliyor (renk körlüğü ve ekran okuyucu için).
+ */
+import { baslikBicimi } from '../lib/metin';
+
+interface Props { seviye: number; etiket?: boolean; onEk?: string }
+const { seviye, etiket = true, onEk } = Astro.props;
+
+const s = Math.max(1, Math.min(5, Math.round(seviye)));
+const ADLAR = ['Çok kolay', 'Kolay', 'Orta', 'Zor', 'Uzman işi'] as const;
+const ad = ADLAR[s - 1]!;
+---
+<span class:list={['zorluk', `zorluk-${s}`]} title={`Zorluk ${s}/5 — ${ad}`}>
+  <span class="zorluk-bar" aria-hidden="true">
+    {[1, 2, 3, 4, 5].map((i) => <i data-dolu={i <= s ? '' : undefined} />)}
+  </span>
+  {etiket && <span>{baslikBicimi(onEk ? `${onEk} ${ad}` : ad)}</span>}
+  <span class="sr-only">Zorluk {s} / 5 — {ad}</span>
+</span>

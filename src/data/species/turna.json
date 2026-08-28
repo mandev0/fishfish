@@ -1,0 +1,145 @@
+{
+  "ad": "Turna",
+  "latin": "Esox lucius",
+  "ingilizce": "Northern pike",
+  "digerAdlar": [
+    "Turnabalığı"
+  ],
+  "ozet": "Tatlı suyun pusucu avcısı. Sazlık kenarında hareketsiz bekler, geçen her şeye bir hamlede saldırır. Sahte yemle avın tatlı sudaki en heyecanlı hedefi.",
+  "zorluk": 4,
+  "aylar": [
+    3,
+    3,
+    2,
+    0,
+    0,
+    2,
+    2,
+    3,
+    4,
+    5,
+    4,
+    3
+  ],
+  "sular": [
+    "gol",
+    "dere"
+  ],
+  "gece": false,
+  "boySiniflari": [
+    {
+      "ad": "Yavru turna",
+      "cm": "0-40 cm",
+      "not": "40 cm altı yasal değil."
+    },
+    {
+      "ad": "Turna",
+      "cm": "40-70 cm"
+    },
+    {
+      "ad": "İri turna",
+      "cm": "70 cm ve üzeri"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 40,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Kişi başı günlük 5 adet sınırı vardır. Bazı kaynaklar turna için ayrıca kış-ilkbahar yasağı veriyor; çıkmadan önce güncel tebliğ tablosunu ve il müdürlüğü duyurusunu kontrol et.",
+    "yasakDonemi": "15 Mart – 15 Haziran: iç sularda üreme dönemi av yasağı. Yasak amatör oltacıyı da kapsar."
+  },
+  "suSicakligi": {
+    "min": 4,
+    "ideal": [
+      8,
+      18
+    ],
+    "max": 22
+  },
+  "aktifSaatler": [
+    "safak",
+    "sabah",
+    "ikindi",
+    "aksam"
+  ],
+  "ruzgarTercihi": [
+    "lodos"
+  ],
+  "ruzgarKacinilan": [],
+  "derinlik": "0,5-4 m; sazlık ve batık ağaç kenarında yüzeye yakın durur.",
+  "yasamAlani": "Sazlık boşlukları, su altındaki dallar, nilüfer kenarları, derinliğin birden değiştiği yamaçlar.",
+  "teshis": {
+    "siluet": "turna",
+    "ayirtEdici": [
+      "Gövde uzun ve silindirik, sırt yüzgeci gövdenin en arkasında kuyruğa yakın durur.",
+      "Ağız ördek gagası gibi geniş ve yassı, içi geriye dönük keskin dişlerle dolu.",
+      "Yeşil-zeytin zemin üstünde açık sarımsı benek ve çubuk desenleri var.",
+      "Gözler başın üstüne yakın; yukarıyı ve ileriyi birlikte görür."
+    ],
+    "karistirilan": []
+  },
+  "takimlar": [
+    "spin-tatli"
+  ],
+  "yemler": {
+    "dogal": [
+      "Ölü yem balığı"
+    ],
+    "sahte": [
+      "3-4 numara döner kaşık",
+      "9-13 cm maket balık",
+      "Silikon shad",
+      "Kaşık"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "1,9-2,4 m, 10-35 gr",
+      "not": "Kısa kamış sazlık arasında hareket serbestliği verir."
+    },
+    "makine": {
+      "deger": "2500-3000",
+      "not": "Hızlı sarım oranı yemi yüzeye yakın çalıştırmayı kolaylaştırır."
+    },
+    "anaMisina": {
+      "deger": "PE 0,8-1,2 örgü"
+    },
+    "sokLideri": {
+      "deger": "25-40 cm çelik lider",
+      "not": "Zorunlu. Turnanın dişi normal misinayı bir vuruşta keser."
+    },
+    "igne": {
+      "deger": "Yemin kendi üç iğnesi",
+      "not": "Körelmiş üç iğne balığı tutmaz, sadece dürter."
+    },
+    "agirlik": {
+      "deger": "Yemin kendi ağırlığı, 7-25 gr"
+    }
+  },
+  "taktik": {
+    "atis": "Sazlık kenarına, batık ağaç çevresine ve derinliğin değiştiği hatta at. Turna açıkta gezmez, kenarda pusuda bekler.",
+    "cekme": "Yemi yüzeye yakın ve orta hızda çalıştırarak başla. Sonuç yoksa iki tur sar bir dur ritmine geç; vuruş çoğu zaman duraklama anında gelir.",
+    "tokatlama": "Vuruş serttir ve kolunu sarsar. Yana doğru kısa ve net bir tokat at; kemikli ağızda iğnenin oturması için bu gerekir.",
+    "yakalama": "Turna su kenarında son bir hamle daha yapar; acele etme. Ağzından değil, gövdesinden ıslak bezle veya balık pensesiyle tut.",
+    "ipuclari": [
+      "Su berraksa doğal renkli maket, bulanıksa parlak veya koyu siluetli yem kullan.",
+      "Aynı noktada üç dört farklı yem dene; turna bir yemi reddedip diğerine saldırabilir.",
+      "Yakaladığın turnayı fotoğraf için sudan uzun süre çıkarma; solungaç yapısı hassastır."
+    ],
+    "hatalar": [
+      "Çelik lider kullanmadan turna aramak; hem yemi hem balığı kaybedersin.",
+      "Turnayı çıplak elle ağzından tutmak — dişleri ciddi kesik açar.",
+      "Fırdöndüsüz döner kaşık bağlamak; misina burularak kullanılamaz hâle gelir."
+    ]
+  },
+  "mutfak": "Eti beyaz ve yağsızdır ama kılçığı çoktur. Kıyıdan tutulan turnayı fotoğrafını çekip suya bırakmak giderek yaygınlaşıyor.",
+  "noktalar": [
+    "sapanca-kirkpinar",
+    "sapanca-kurtkoy",
+    "sapanca-kartepe-guney",
+    "sapanca-kartepe-kuzey",
+    "poyrazlar-golu",
+    "taskisigi-golu",
+    "sakarya-nehri"
+  ]
+}

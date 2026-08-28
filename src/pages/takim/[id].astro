@@ -1,0 +1,92 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Bolum from '../../components/Bolum.astro';
+import Liste from '../../components/Liste.astro';
+import Metin from '../../components/Metin.astro';
+import RigDiagram from '../../components/svg/RigDiagram.astro';
+import SemaLejant from '../../components/SemaLejant.astro';
+import Zorluk from '../../components/Zorluk.astro';
+import { baslikBicimi } from '../../lib/metin';
+
+export async function getStaticPaths() {
+  const takimlar = await getCollection('rigs');
+  return takimlar.map((r) => ({ params: { id: r.id }, props: { takim: r } }));
+}
+
+const { takim } = Astro.props;
+const d = takim.data;
+const turler = (await Promise.all(d.turler.map((t) => getEntry('species', t)))).filter(Boolean);
+const dugumler = (await Promise.all(d.dugumler.map((k) => getEntry('knots', k)))).filter(Boolean);
+const ekipman = await getCollection('gear');
+const gorulen = new Set<string>();
+---
+<Base baslik={d.ad} aciklama={d.ozet}>
+  <h1 class="text-3xl sm:text-4xl">{baslikBicimi(d.ad)}</h1>
+  <Metin metin={d.ozet} etiket="p" sinif="mt-2 max-w-2xl" gorulen={gorulen} />
+  <p class="mt-3"><Zorluk seviye={d.zorluk} /></p>
+
+  <div class="mt-6 kart p-4">
+    <div class="mx-auto max-w-md"><RigDiagram sema={d.sema} /></div>
+    <SemaLejant sema={d.sema} />
+  </div>
+
+  <Bolum baslik="Bileşenler">
+    <div class="overflow-hidden rounded-sm border border-line">
+      <table class="w-full border-collapse text-sm">
+        <tbody>
+          {d.bilesenler.map((b, i) => (
+            <tr class:list={[i % 2 ? 'bg-surface' : 'bg-surface-2/50']}>
+              <th scope="row" class="w-32 border-b border-line px-3 py-2.5 text-left align-top font-semibold">
+                {b.ekipman
+                  ? <a href={`/ekipman/${b.ekipman}`} class="text-accent hover:underline">{b.ad}</a>
+                  : b.ad}
+              </th>
+              <td class="border-b border-line px-3 py-2.5 align-top">
+                <span class="font-medium">{b.deger}</span>
+                <Metin metin={b.aciklama} etiket="span" sinif="mt-0.5 block text-muted" gorulen={gorulen} />
+                {b.ekipman && (
+                  <a href={`/ekipman/${b.ekipman}`} class="mt-1 inline-block text-xs text-accent hover:underline">
+                    {ekipman.find((e) => e.id === b.ekipman)?.data.ad ?? b.ad} nedir? →
+                  </a>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </Bolum>
+
+  <Bolum baslik="Kurulum">
+    <ol class="space-y-2">
+      {d.kurulum.map((adim, i) => (
+        <li class="kart flex gap-3 p-3 text-sm">
+          <span class="sayisal flex size-6 shrink-0 items-center justify-center rounded-sm bg-accent text-xs font-bold text-accent-ink">{i + 1}</span>
+          <Metin metin={adim} gorulen={gorulen} />
+        </li>
+      ))}
+    </ol>
+  </Bolum>
+
+  {dugumler.length > 0 && (
+    <Bolum baslik="Gereken Düğümler">
+      <ul class="flex flex-wrap gap-2">
+        {dugumler.map((k) => (
+          <li><a href={`/dugum/${k!.id}`} class="block kart px-3 py-1.5 text-sm hover:border-accent">{k!.data.ad}</a></li>
+        ))}
+      </ul>
+    </Bolum>
+  )}
+
+  {d.ipuclari.length > 0 && <Bolum baslik="İpuçları"><Liste maddeler={d.ipuclari} tip="ipucu" gorulen={gorulen} /></Bolum>}
+  {d.hatalar.length > 0 && <Bolum baslik="Sık Yapılan Hatalar"><Liste maddeler={d.hatalar} tip="hata" gorulen={gorulen} /></Bolum>}
+
+  <Bolum baslik="Bu Takımla Tutulan Balıklar">
+    <ul class="flex flex-wrap gap-2">
+      {turler.map((t) => (
+        <li><a href={`/balik/${t!.id}`} class="block kart px-3 py-1.5 text-sm hover:border-accent">{t!.data.ad}</a></li>
+      ))}
+    </ul>
+  </Bolum>
+</Base>

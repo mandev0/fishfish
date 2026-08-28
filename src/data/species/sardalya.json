@@ -1,0 +1,139 @@
+{
+  "ad": "Sardalya",
+  "latin": "Sardina pilchardus",
+  "ingilizce": "European pilchard",
+  "digerAdlar": [
+    "Sardalye"
+  ],
+  "ozet": "Küçük, gümüş ve kalabalık. İnce sabikiyle kolayca tutulur; hem yenir hem de lüfer için birinci sınıf yemdir.",
+  "zorluk": 1,
+  "aylar": [
+    2,
+    2,
+    3,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    3,
+    3,
+    2
+  ],
+  "sular": [
+    "marmara",
+    "bogaz",
+    "karadeniz",
+    "halic"
+  ],
+  "gece": true,
+  "boySiniflari": [
+    {
+      "ad": "Küçük sardalya",
+      "cm": "0-11 cm",
+      "not": "11 cm altı yasal değil."
+    },
+    {
+      "ad": "Sardalya",
+      "cm": "11-20 cm"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 11,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28"
+  },
+  "suSicakligi": {
+    "min": 10,
+    "ideal": [
+      13,
+      22
+    ],
+    "max": 25
+  },
+  "aktifSaatler": [
+    "aksam",
+    "gece",
+    "safak"
+  ],
+  "ruzgarTercihi": [],
+  "ruzgarKacinilan": [
+    "lodos"
+  ],
+  "derinlik": "Yüzey ile 30 m arası; gece ışığa gelir.",
+  "yasamAlani": "Açık kıyı suları, ışıklandırılmış iskele ve rıhtımlar.",
+  "teshis": {
+    "siluet": "sardalya",
+    "ayirtEdici": [
+      "Sırt mavi-yeşil, yanlar ve karın parlak gümüş.",
+      "Solungaç kapağında ışıldayan sırtlar (radyal çizgiler).",
+      "Solungaç kapağının arkasında sıra halinde küçük koyu lekeler olabilir.",
+      "Pulları çok kolay dökülür."
+    ],
+    "karistirilan": [
+      "hamsi",
+      "istavrit"
+    ]
+  },
+  "takimlar": [
+    "sabiki-ince",
+    "capari"
+  ],
+  "yemler": {
+    "dogal": [],
+    "sahte": [
+      "İnce simli sabiki iğnesi (12-16 numara)"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "2,1-3,0 m hafif"
+    },
+    "makine": {
+      "deger": "2000-3000"
+    },
+    "anaMisina": {
+      "deger": "0,18-0,22 mm mono"
+    },
+    "sokLideri": {
+      "deger": "Gerekmez",
+      "not": "Sabiki bedeni yeterli."
+    },
+    "igne": {
+      "deger": "12-16 numara simli",
+      "not": "Çok küçük iğne şart."
+    },
+    "agirlik": {
+      "deger": "10-25 gr"
+    }
+  },
+  "taktik": {
+    "atis": "İskele ışığının aydınlattığı alana at ve yavaşça indir.",
+    "cekme": "Yüzeye yakın tut, çok yavaş sar. Sürü kalabalıksa iğneler kendiliğinden dolar.",
+    "tokatlama": "Gerekmez.",
+    "yakalama": "Silkeleyerek kovaya boşalt; elle tutma, pulları döküldükçe yem değeri düşer.",
+    "ipuclari": [
+      "Lüfer için en iyi doğal yemlerden biridir; filetosunu şeritler halinde kes.",
+      "Buzlu suya alırsan eti çok daha uzun süre diri kalır.",
+      "Gece ışık altında en verimlidir."
+    ],
+    "hatalar": [
+      "Büyük iğne kullanmak.",
+      "Balığı güneşte bekletmek — dakikalar içinde bozulur."
+    ]
+  },
+  "mutfak": "Izgara, tava veya fırında. Taze sardalyanın ızgarası basit ama çok iyidir.",
+  "noktalar": [
+    "sariyer-mendirek",
+    "ortakoy",
+    "kabatas",
+    "galata-koprusu",
+    "yenikapi",
+    "kumkapi",
+    "zeytinburnu",
+    "bakirkoy",
+    "caddebostan",
+    "bostanci"
+  ]
+}

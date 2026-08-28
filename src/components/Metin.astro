@@ -1,0 +1,19 @@
+---
+import { isaretle } from '../lib/terimler';
+/**
+ * Düz metni, içindeki balıkçılık terimleri işaretlenmiş halde basar.
+ * `gorulen` kümesi sayfa boyunca paylaşılırsa her terim yalnızca ilk
+ * geçtiği yerde işaretlenir — sayfa noktalı altı çizili bir denize dönmez.
+ */
+interface Props {
+  metin: string;
+  gorulen?: Set<string>;
+  haric?: string;
+  etiket?: 'p' | 'span' | 'div' | 'li' | 'dd' | 'dt';
+  sinif?: string;
+}
+const { metin, gorulen, haric, etiket = 'span', sinif } = Astro.props;
+const Etiket = etiket;
+const html = isaretle(metin, { gorulen, haric });
+---
+<Etiket class={sinif} set:html={html} />

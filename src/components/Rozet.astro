@@ -1,0 +1,31 @@
+---
+import Ikon from './Ikon.astro';
+import { baslikBicimi } from '../lib/metin';
+/**
+ * İkon + açıklama balonu. "Gece aydınlatması var" gibi bilgileri
+ * uzun metin yerine tek simgeyle gösterir; üzerine gelince (telefonda
+ * dokununca) tam açıklaması çıkar.
+ *
+ * Erişilebilirlik: simge tek başına anlam taşımaz — her rozette
+ * ekran okuyucular için gizli bir metin ve balonda tam açıklama bulunur.
+ */
+interface Props {
+  ikon: string;
+  /** Balonda çıkacak tam açıklama. */
+  ipucu: string;
+  /** Yanında görünecek kısa metin (isteğe bağlı). */
+  etiket?: string;
+  ton?: 'notr' | 'vurgu' | 'iyi' | 'uyari' | 'tehlike' | 'bolge';
+}
+const { ikon, ipucu, etiket, ton = 'notr' } = Astro.props;
+---
+<button
+  type="button"
+  class:list={['rozet', `rozet-${ton}`]}
+  data-ipucu={ipucu}
+  title={ipucu}
+>
+  <Ikon ad={ikon} sinif="size-[15px] shrink-0" />
+  {etiket && <span>{baslikBicimi(etiket)}</span>}
+  <span class="sr-only">{ipucu}</span>
+</button>

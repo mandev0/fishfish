@@ -1,0 +1,131 @@
+{
+  "ad": "Gümüş balığı",
+  "latin": "Atherina boyeri",
+  "ingilizce": "Big-scale sand smelt",
+  "digerAdlar": [
+    "Gümüş",
+    "Aterina"
+  ],
+  "ozet": "Parmak boyunda, gümüş renkli sürü balığı. Kıyıya çok yakın gezer; en ince takımla ve en küçük yemle avlanır.",
+  "zorluk": 1,
+  "aylar": [
+    2,
+    2,
+    2,
+    1,
+    1,
+    3,
+    4,
+    4,
+    5,
+    4,
+    3,
+    2
+  ],
+  "sular": [
+    "gol",
+    "aci"
+  ],
+  "gece": false,
+  "boySiniflari": [
+    {
+      "ad": "Gümüş",
+      "cm": "5-10 cm"
+    },
+    {
+      "ad": "İri gümüş",
+      "cm": "10 cm ve üzeri"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": null,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Tebliğ'de bu tür için asgari boy belirtilmemiştir. Akarsularda oltayla gümüş balığı avı, iç su yasağı döneminde de serbesttir. İç sularda kişi başı günlük toplam 5 kg sınırı geçerlidir.",
+    "yasakDonemi": "15 Mart – 15 Haziran: iç sularda üreme dönemi av yasağı. Yasak amatör oltacıyı da kapsar."
+  },
+  "suSicakligi": {
+    "min": 6,
+    "ideal": [
+      14,
+      24
+    ],
+    "max": 28
+  },
+  "aktifSaatler": [
+    "sabah",
+    "oglen",
+    "ikindi",
+    "aksam"
+  ],
+  "ruzgarTercihi": [],
+  "ruzgarKacinilan": [
+    "poyraz"
+  ],
+  "derinlik": "0,2-2 m; yüzeye yakın, kıyıdan birkaç metre açıkta.",
+  "yasamAlani": "İskele altları, rıhtım kenarları, sığ ve berrak kıyı şeritleri.",
+  "teshis": {
+    "siluet": "gumus",
+    "ayirtEdici": [
+      "Gövde ince, uzun ve saydama yakın; yanlarda parlak gümüş bir şerit var.",
+      "Gözler gövdeye göre büyük.",
+      "İki ayrı sırt yüzgeci bulunur.",
+      "Boyu nadiren 12 santimi geçer."
+    ],
+    "karistirilan": []
+  },
+  "takimlar": [
+    "tatli-sabit-samandira"
+  ],
+  "yemler": {
+    "dogal": [
+      "Toprak solucanı parçası",
+      "Hamur yem",
+      "Ekmek içi"
+    ],
+    "sahte": []
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "3,0-4,0 m çok hafif kamış"
+    },
+    "makine": {
+      "deger": "1000-2000"
+    },
+    "anaMisina": {
+      "deger": "0,12-0,16 mm mono"
+    },
+    "sokLideri": {
+      "deger": "Gerekmez"
+    },
+    "igne": {
+      "deger": "16-20 numara",
+      "not": "En küçük iğneyi kullan; gümüşün ağzı çok küçüktür."
+    },
+    "agirlik": {
+      "deger": "İki üç saçma kurşun"
+    }
+  },
+  "taktik": {
+    "atis": "Kıyıdan birkaç metre açığa, iskele gölgesinin kenarına bırak. Uzağa atmaya gerek yok.",
+    "cekme": "Şamandırayı serbest bırak; sürü yem etrafında toplanınca vuruş üst üste gelir.",
+    "tokatlama": "Şamandıra battığında çok hafif bir bilek hareketi yeterli.",
+    "yakalama": "Islak elle tut, iğneyi hızlıca çıkar. Bu balık elde çabuk yıpranır.",
+    "ipuclari": [
+      "Ekmek kırıntısıyla yemleyince sürü kıyıya toplanır.",
+      "Canlı yem olarak da kullanılır; büyük balık avında en makbul yemlerden biridir.",
+      "Yem çok küçük olsun — iğnenin ucunu kapatmayan bir parça yeterli."
+    ],
+    "hatalar": [
+      "İri iğne kullanmak; gümüş yemi alır ama iğneye gelmez.",
+      "Kalın misina bağlamak.",
+      "Gereğinden fazla tutmak; günlük 5 kg sınırı burada da geçerli."
+    ]
+  },
+  "mutfak": "Un içinde çevrilip kızartılır, bütün olarak yenir. Küçük ve yağlı bir balıktır.",
+  "noktalar": [
+    "sapanca-sahil",
+    "sapanca-kirkpinar",
+    "kucukcekmece-golu"
+  ]
+}

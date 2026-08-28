@@ -1,0 +1,329 @@
+---
+/**
+ * Balık siluetleri.
+ *
+ * Gövde birkaç arketipten (torpido, yüksek gövde, ince uzun, tıknaz)
+ * türetilir; her türün ayırt edici işaretleri üstüne çizilir.
+ * Amaç fotoğraf gerçekçiliği değil, sahada teşhise yarayan şekil ve işaret.
+ */
+interface Props { tur: string; sinif?: string; etiket?: boolean }
+const { tur, sinif = '', etiket = false } = Astro.props;
+
+type Arketip = 'torpido' | 'yuksek' | 'ince' | 'tiknaz' | 'yilan' | 'kalamar' | 'subye';
+
+const ARKETIP: Record<string, Arketip> = {
+  lufer: 'torpido', palamut: 'torpido', kolyoz: 'torpido', levrek: 'torpido',
+  kefal: 'torpido', mezgit: 'torpido', sardalya: 'torpido', hamsi: 'torpido',
+  minakop: 'yuksek', cupra: 'yuksek', karagoz: 'yuksek', sargoz: 'yuksek', izmarit: 'yuksek',
+  istavrit: 'ince', kupes: 'ince', tekir: 'ince', barbunya: 'ince', zargana: 'ince',
+  iskorpit: 'tiknaz', gelincik: 'yilan',
+  kalamar: 'kalamar', subye: 'subye',
+  // Tatlı su türleri
+  sazan: 'yuksek', 'havuz-baligi': 'yuksek', 'tatlisu-levregi': 'yuksek', kizilkanat: 'yuksek',
+  kadife: 'tiknaz', turna: 'ince', gumus: 'ince',
+  'tatlisu-kefali': 'torpido', yayin: 'yilan',
+};
+
+const GOVDE: Record<Arketip, { govde: string; kuyruk: string; gozY: number; gozX: number }> = {
+  torpido: {
+    govde: 'M16 46 C42 24 114 22 150 38 C114 70 42 68 16 46 Z',
+    kuyruk: 'M150 38 L190 18 L180 46 L190 76 L150 54 Z', gozX: 32, gozY: 41,
+  },
+  yuksek: {
+    govde: 'M18 47 C46 12 118 10 150 37 C118 82 46 80 18 47 Z',
+    kuyruk: 'M150 37 L190 18 L181 47 L190 76 L150 57 Z', gozX: 36, gozY: 38,
+  },
+  ince: {
+    govde: 'M12 46 C42 32 114 30 150 41 C114 62 42 60 12 46 Z',
+    kuyruk: 'M150 41 L190 24 L182 46 L190 70 L150 51 Z', gozX: 30, gozY: 42,
+  },
+  tiknaz: {
+    govde: 'M14 48 C34 16 96 22 142 40 C96 76 34 78 14 48 Z',
+    kuyruk: 'M142 40 L184 26 L178 48 L184 70 L142 56 Z', gozX: 34, gozY: 36,
+  },
+  yilan: {
+    govde: 'M12 46 C40 36 120 34 156 43 C120 58 40 56 12 46 Z',
+    kuyruk: 'M156 43 L188 34 L186 46 L188 60 L156 49 Z', gozX: 28, gozY: 43,
+  },
+  kalamar: { govde: '', kuyruk: '', gozX: 0, gozY: 0 },
+  subye: { govde: '', kuyruk: '', gozX: 0, gozY: 0 },
+};
+
+const a = ARKETIP[tur] ?? 'torpido';
+const g = GOVDE[a];
+const kafadanbacakli = a === 'kalamar' || a === 'subye';
+---
+<svg class:list={['diagram', 'siluet', etiket ? '' : 'siluet-sade', sinif]} viewBox={etiket ? "0 0 268 116" : "0 0 200 96"} role="img" aria-label={`${tur} silueti`}>
+  {kafadanbacakli ? (
+    a === 'kalamar' ? (
+      <g>
+        {/* Mızrak biçimli gövde */}
+        <path class="part" d="M96 4 C118 20 124 48 116 68 C111 80 85 80 80 68 C72 48 76 20 96 4 Z" />
+        {/* Yanlarda uzun üçgen yüzgeçler */}
+        <path class="part-a" d="M96 8 C116 22 121 42 114 56 C105 42 100 24 96 8 Z" />
+        <path class="part-a" d="M96 8 C76 22 71 42 78 56 C87 42 92 24 96 8 Z" />
+        <circle class="solid" cx="89" cy="70" r="2.6" />
+        <circle class="solid" cx="103" cy="70" r="2.6" />
+        {/* Sekiz kısa kol */}
+        {[-30, -18, -6, 6, 18, 30].map((d) => (
+          <path class="ln" d={`M${96 + d * 0.28} 78 q${d * 0.35} 9 ${d * 0.5} 16`} />
+        ))}
+        {/* İki uzun yakalama kolu */}
+        <path class="ln" d="M90 79 q-9 12 -7 15" stroke-width="2" />
+        <path class="ln" d="M103 79 q11 12 9 15" stroke-width="2" />
+        <text class="lbl" x="140" y="34">mızrak gövde</text>
+        <text class="lbl" x="140" y="48">yüzgeç yarıdan</text>
+        <text class="lbl" x="140" y="60">uzun</text>
+      </g>
+    ) : (
+      <g>
+        {/* Yassı, geniş gövde */}
+        <path class="part" d="M98 10 C126 22 132 54 120 74 C112 86 84 86 76 74 C64 54 70 22 98 10 Z" />
+        {/* Yüzgeç gövdeyi çepeçevre sarar */}
+        <path class="part-a" d="M98 12 C124 24 130 54 118 72 C126 56 124 26 98 16 Z" />
+        <path class="part-a" d="M98 12 C72 24 66 54 78 72 C70 56 72 26 98 16 Z" />
+        <circle class="solid" cx="88" cy="74" r="2.8" />
+        <circle class="solid" cx="108" cy="74" r="2.8" />
+        {[-24, -12, 0, 12, 24].map((d) => (
+          <path class="ln" d={`M${98 + d * 0.3} 84 q${d * 0.3} 6 ${d * 0.45} 10`} />
+        ))}
+        <path class="ln-thin" d="M98 22 L98 66" />
+        <text class="lbl" x="142" y="40">yassı gövde,</text>
+        <text class="lbl" x="142" y="54">kenar yüzgeci</text>
+        <text class="lbl" x="142" y="66">boydan boya</text>
+      </g>
+    )
+  ) : (
+    <g>
+      <path class="part" d={g.govde} />
+      <path class="part" d={g.kuyruk} />
+      <circle class="solid" cx={g.gozX} cy={g.gozY} r={tur === 'kupes' || tur === 'istavrit' ? 4.2 : 2.8} />
+      {(tur === 'kupes' || tur === 'istavrit') && <circle class="ln-thin" cx={g.gozX} cy={g.gozY} r="6" fill="none" />}
+
+      {/* --- Türe özgü işaretler ------------------------------------- */}
+      {tur === 'lufer' && (<g>
+        <path class="ln" d="M16 48 L40 54" stroke-width="2" />
+        <path class="ln-thin" d="M18 50 l3 3 M24 51 l3 3 M30 52 l3 3" />
+        <circle class="accent" cx="52" cy="56" r="4" />
+        <path class="ln" d="M60 30 L82 13 L102 27" />
+        <text class="lbl-a" x="66" y="80">göğüs dibinde koyu leke</text>
+      </g>)}
+
+      {tur === 'palamut' && (<g>
+        {[0,1,2,3,4,5].map((i) => (
+          <path class="ln" d={`M${44 + i * 16} 28 l14 12`} />
+        ))}
+        {[0,1,2].map((i) => (<path class="ln-thin" d={`M${122 + i * 9} 26 l6 3 l-6 3 z`} />))}
+        <text class="lbl-a" x="52" y="82">sırtta eğik çizgiler</text>
+      </g>)}
+
+      {tur === 'kolyoz' && (<g>
+        {[0,1,2,3,4].map((i) => (
+          <path class="ln" d={`M${46 + i * 18} 30 q9 8 18 0 q9 -8 18 0`} />
+        ))}
+        {[0,1,2].map((i) => (<path class="ln-thin" d={`M${120 + i * 9} 26 l6 3 l-6 3 z`} />))}
+        <path class="ln-thin" d="M62 26 L86 25 M96 27 L120 30" />
+        <text class="lbl-a" x="50" y="82">dalgalı zikzak çizgiler</text>
+      </g>)}
+
+      {tur === 'zargana' && (<g>
+        <path class="ln" d="M12 46 L-4 45" stroke-width="3" transform="translate(6,0)" />
+        <path class="ln" d="M2 44 L18 45" stroke-width="3.4" />
+        <path class="ln-thin" d="M4 42 L18 43 M4 47 L18 47" />
+        <text class="lbl-a" x="30" y="80">uzun dişli gaga</text>
+      </g>)}
+
+      {tur === 'cupra' && (<g>
+        <path class="accent" d="M28 30 q10 -4 18 2 l-2 6 q-8 -5 -16 -2 z" />
+        <circle class="accent" cx="52" cy="30" r="3.4" opacity="0.75" />
+        <text class="lbl-a" x="62" y="24">gözler arası altın bant</text>
+        <text class="lbl" x="62" y="86">solungaç üstünde koyu leke</text>
+      </g>)}
+
+      {tur === 'levrek' && (<g>
+        <path class="ln" d="M52 31 L66 14 L78 28" />
+        <path class="ln-thin" d="M57 25 L59 29 M62 20 L64 27 M68 17 L70 26" />
+        <path class="ln" d="M88 27 L108 16 L120 30" />
+        <path class="ln-thin" d="M44 38 l6 -5 M46 42 l6 -5" />
+        <text class="lbl-a" x="52" y="82">iki ayrı sırt yüzgeci</text>
+      </g>)}
+
+      {tur === 'kefal' && (<g>
+        <path class="ln" d="M16 40 C24 32 32 32 38 34" stroke-width="2" />
+        <path class="ln" d="M58 30 L72 17 L82 28" />
+        <path class="ln" d="M100 27 L116 18 L126 31" />
+        <path class="ln" d="M16 50 l10 1" stroke-width="2" />
+        <text class="lbl-a" x="52" y="82">geniş yassı baş, küçük ağız</text>
+      </g>)}
+
+      {tur === 'izmarit' && (<g>
+        <rect class="accent" x="76" y="38" width="24" height="16" rx="2" />
+        <text class="lbl-a" x="70" y="86">gövde ortasında koyu dikdörtgen</text>
+      </g>)}
+
+      {tur === 'kupes' && (<g>
+        {[0,1,2,3].map((i) => (<path class="ln-thin" d={`M42 ${36 + i * 5} L146 ${38 + i * 5}`} />))}
+        <text class="lbl-a" x="52" y="80">iri göz, altın boyuna çizgiler</text>
+      </g>)}
+
+      {tur === 'mezgit' && (<g>
+        <path class="ln" d="M50 32 L60 19 L70 29" />
+        <path class="ln" d="M76 28 L88 17 L98 28" />
+        <path class="ln" d="M106 28 L118 18 L128 30" />
+        <path class="ln" d="M62 60 L74 73 L86 61" />
+        <path class="ln" d="M96 61 L108 72 L120 58" />
+        <circle class="accent" cx="46" cy="55" r="3" />
+        <text class="lbl-a" x="52" y="84">üç sırt, iki anüs yüzgeci</text>
+      </g>)}
+
+      {tur === 'gelincik' && (<g>
+        <path class="ln" d="M50 34 C90 28 130 32 156 40" stroke-width="2" />
+        <path class="ln" d="M60 56 C96 62 130 56 154 48" stroke-width="1.4" />
+        <path class="ln" d="M16 50 q-8 6 -12 10" />
+        <path class="ln" d="M18 52 q-6 8 -6 12" />
+        <path class="ln" d="M22 53 q-2 8 0 12" />
+        <text class="lbl-a" x="42" y="84">çene altında üç bıyık</text>
+      </g>)}
+
+      {tur === 'iskorpit' && (<g>
+        {[0,1,2,3,4,5,6].map((i) => (
+          <path class="ln" d={`M${48 + i * 12} 30 L${52 + i * 12} 14`} />
+        ))}
+        <path class="ln" d="M48 30 L132 34" />
+        <path class="ln-thin" d="M22 34 l6 -6 M28 30 l4 -7 M20 42 l-6 -4" />
+        <path class="ln-thin" d="M26 56 q-6 6 -10 6" />
+        <text class="lbl-a" x="56" y="86">sırt dikenleri ZEHİRLİ</text>
+      </g>)}
+
+      {tur === 'karagoz' && (<g>
+        <path class="accent" d="M44 16 l10 0 l-4 62 l-10 0 z" opacity="0.8" />
+        <path class="accent" d="M138 26 l10 0 l-2 44 l-10 0 z" opacity="0.8" />
+        <text class="lbl-a" x="58" y="90">ense ve kuyrukta iki bant</text>
+      </g>)}
+
+      {tur === 'sargoz' && (<g>
+        {[0,1,2,3,4,5,6,7].map((i) => (
+          <path class="ln" d={`M${44 + i * 13} ${18 + Math.abs(3 - i) * 1.5} L${42 + i * 13} ${76 - Math.abs(3 - i) * 1.5}`} />
+        ))}
+        <path class="accent" d="M140 30 q10 16 0 34 q-8 -16 0 -34 z" />
+        <text class="lbl-a" x="46" y="92">7-9 dikey bant + kuyrukta siyah leke</text>
+      </g>)}
+
+      {tur === 'tekir' && (<g>
+        <path class="ln" d="M18 52 q-6 10 -10 14" stroke-width="1.6" />
+        <path class="ln" d="M22 53 q-2 10 0 14" stroke-width="1.6" />
+        <path class="ln" d="M54 32 L74 30 L72 38 L54 38 Z" />
+        <path class="ln-thin" d="M58 31 L58 38 M63 31 L63 38 M68 30 L68 38" />
+        <path class="accent" d="M40 44 L146 46 L146 50 L40 48 Z" opacity="0.7" />
+        <text class="lbl-a" x="40" y="86">ilk sırt yüzgecinde çizgiler + 2 bıyık</text>
+      </g>)}
+
+      {tur === 'barbunya' && (<g>
+        <path class="ln" d="M18 52 q-6 10 -10 14" stroke-width="1.6" />
+        <path class="ln" d="M22 53 q-2 10 0 14" stroke-width="1.6" />
+        <path class="ln" d="M54 32 L74 30 L72 38 L54 38 Z" />
+        <path class="ln" d="M14 40 C22 30 30 30 36 33" stroke-width="1.6" />
+        <text class="lbl-a" x="40" y="86">düz renkli sırt yüzgeci, dik alın</text>
+      </g>)}
+
+      {tur === 'minakop' && (<g>
+        {[0,1,2,3,4,5].map((i) => (
+          <path class="ln-thin" d={`M${40 + i * 18} 24 L${28 + i * 18} 66`} />
+        ))}
+        <path class="ln" d="M20 56 q-4 8 -4 10" stroke-width="2" />
+        <text class="lbl-a" x="40" y="90">tek kısa bıyık + eğik altın çizgiler</text>
+      </g>)}
+
+      {tur === 'sardalya' && (<g>
+        <path class="ln-thin" d="M26 34 L34 46 M24 40 L34 48 M24 50 L34 50" />
+        {[0,1,2].map((i) => (<circle class="accent" cx={54 + i * 18} cy="38" r="2.6" opacity="0.8" />))}
+        <text class="lbl-a" x="52" y="82">solungaçta ışınsal çizgiler</text>
+      </g>)}
+
+      {tur === 'hamsi' && (<g>
+        <path class="ln" d="M16 42 L8 44 L16 46" stroke-width="2" />
+        <path class="ln" d="M14 44 L44 54" stroke-width="1.8" />
+        <path class="accent" d="M20 44 L150 44 L150 48 L20 48 Z" opacity="0.55" />
+        <text class="lbl-a" x="46" y="82">çıkıntılı burun, göz arkasına</text>
+        <text class="lbl-a" x="46" y="92">kadar yarılan ağız</text>
+      </g>)}
+
+      {tur === 'istavrit' && (<g>
+        <path class="ln" d="M44 48 L150 46" />
+        {[0,1,2,3,4,5,6,7,8].map((i) => (
+          <path class="ln" d={`M${64 + i * 10} 44 l5 2 l-5 2`} />
+        ))}
+        <circle class="accent" cx="40" cy="36" r="2.6" />
+        <text class="lbl-a" x="52" y="82">yanal çizgide sert kemik plakalar</text>
+      </g>)}
+
+      {/* --- Tatlı su türleri ---------------------------------------- */}
+      {tur === 'sazan' && (<g>
+        <path class="ln" d="M20 40 q-8 6 -12 14" stroke-width="1.8" />
+        <path class="ln" d="M24 42 q-4 8 -4 14" stroke-width="1.8" />
+        <path class="ln" d="M46 20 q30 -6 62 4" stroke-width="2" />
+        {[0,1,2,3,4,5].map((i) => (<path class="ln-thin" d={`M${50 + i * 12} 20 L${48 + i * 12} 28`} />))}
+        <text class="lbl-a" x="44" y="90">dört bıyık + uzun sırt yüzgeci</text>
+      </g>)}
+
+      {tur === 'havuz-baligi' && (<g>
+        <path class="ln" d="M46 20 q30 -6 60 4" stroke-width="2" />
+        <path class="ln-thin" d="M22 44 q-6 2 -8 4" />
+        <circle class="accent" cx="18" cy="46" r="3" opacity="0.75" />
+        <text class="lbl-a" x="42" y="90">bıyığı YOK — sazandan farkı bu</text>
+      </g>)}
+
+      {tur === 'tatlisu-levregi' && (<g>
+        {[0,1,2,3,4,5].map((i) => (
+          <path class="accent" d={`M${48 + i * 17} 18 l9 0 l-6 58 l-9 0 z`} opacity="0.75" />
+        ))}
+        {[0,1,2,3,4,5,6].map((i) => (<path class="ln" d={`M${52 + i * 12} 16 L${50 + i * 12} 6`} />))}
+        <text class="lbl-a" x="42" y="92">dikey bantlar + dikenli sırt yüzgeci</text>
+      </g>)}
+
+      {tur === 'kizilkanat' && (<g>
+        <path class="accent" d="M70 74 q14 14 2 20 q-14 -6 -2 -20 z" opacity="0.85" />
+        <path class="accent" d="M108 70 q12 12 0 18 q-12 -6 0 -18 z" opacity="0.85" />
+        <path class="ln" d="M18 42 L26 38" stroke-width="2" />
+        <text class="lbl-a" x="44" y="94">kırmızı yüzgeçler, yukarı bakan ağız</text>
+      </g>)}
+
+      {tur === 'kadife' && (<g>
+        {[0,1,2,3].map((i) => (<circle class="ln-thin" cx={54 + i * 22} cy={40 + (i % 2) * 8} r="9" />))}
+        <path class="ln" d="M20 42 q-6 4 -8 8" stroke-width="1.8" />
+        <path class="accent" d="M140 34 q10 12 0 24 q-8 -12 0 -24 z" opacity="0.7" />
+        <text class="lbl-a" x="44" y="90">çok küçük pul, yuvarlak yüzgeçler</text>
+      </g>)}
+
+      {tur === 'turna' && (<g>
+        <path class="ln" d="M12 40 L34 44 L12 50" stroke-width="2" />
+        <path class="part" d="M116 30 l26 0 l0 12 l-26 2 z" />
+        {[0,1,2,3,4].map((i) => (<circle class="accent" cx={52 + i * 16} cy={38 + (i % 2) * 10} r="3" opacity="0.7" />))}
+        <text class="lbl-a" x="40" y="88">yassı gaga ağız, sırt yüzgeci en arkada</text>
+      </g>)}
+
+      {tur === 'gumus' && (<g>
+        <path class="accent" d="M28 44 L148 44 L148 48 L28 48 Z" opacity="0.7" />
+        <circle class="ln-thin" cx="30" cy="42" r="6" />
+        <text class="lbl-a" x="46" y="82">boydan boya gümüş şerit, iri göz</text>
+      </g>)}
+
+      {tur === 'tatlisu-kefali' && (<g>
+        <path class="ln" d="M14 38 q10 -4 20 2" stroke-width="2" />
+        {[0,1,2,3,4,5].map((i) => (
+          <path class="ln-thin" d={`M${50 + i * 16} 30 q8 8 0 16`} />
+        ))}
+        <path class="accent" d="M96 66 q10 12 0 16 q-10 -6 0 -16 z" opacity="0.7" />
+        <text class="lbl-a" x="42" y="88">geniş ağız, iri belirgin pullar</text>
+      </g>)}
+
+      {tur === 'yayin' && (<g>
+        <path class="ln" d="M20 36 q-10 -10 -14 -16" stroke-width="2" />
+        <path class="ln" d="M22 38 q-8 -8 -14 -10" stroke-width="2" />
+        <path class="ln" d="M20 52 q-6 6 -8 10 M24 53 q-3 6 -3 10" stroke-width="1.5" />
+        <path class="ln" d="M46 54 q40 12 108 0" stroke-width="2" />
+        <text class="lbl-a" x="40" y="86">iki uzun bıyık, pulsuz gövde</text>
+      </g>)}
+    </g>
+  )}
+</svg>

@@ -1,0 +1,24 @@
+---
+import { terimSozlugu } from '../lib/terimler';
+/**
+ * Terim balonunun tek örneği. Sayfada kaç işaretli terim olursa olsun
+ * DOM'a tek bir balon eklenir; içeriği tıklanan terime göre doldurulur.
+ */
+const sozluk = terimSozlugu();
+---
+<!-- Dokunmatikte panel alttan çıkar; perde arkadaki içeriği geri plana atar. -->
+<div id="terim-perde" hidden></div>
+<div id="terim-balonu" role="tooltip" hidden>
+  <div class="terim-balon-ic">
+    <p class="terim-balon-ad"></p>
+    <p class="terim-balon-ozet"></p>
+    <a class="terim-balon-bag" href="#">Ayrıntılı sayfa →</a>
+  </div>
+  <button type="button" class="terim-balon-kapat" aria-label="Açıklamayı kapat">×</button>
+</div>
+
+<script type="application/json" id="terim-verisi" set:html={JSON.stringify(sozluk)} is:inline></script>
+<script>
+  import { baslat } from '../components/islands/terim.ts';
+  document.addEventListener('astro:page-load', () => baslat());
+</script>

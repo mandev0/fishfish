@@ -1,0 +1,162 @@
+{
+  "ad": "Kolyoz",
+  "latin": "Scomber colias",
+  "ingilizce": "Atlantic chub mackerel",
+  "digerAdlar": [
+    "Kolyos"
+  ],
+  "ozet": "Uskumrunun akrabası, hızlı ve doymak bilmez bir sürü balığı. Yaz sonu ve sonbaharda çapariye adeta saldırır; hem lezzetli hem de kolay hedeftir.",
+  "zorluk": 2,
+  "aylar": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    3,
+    4,
+    5,
+    4,
+    3,
+    2
+  ],
+  "sular": [
+    "bogaz",
+    "marmara",
+    "karadeniz",
+    "halic"
+  ],
+  "gece": true,
+  "boySiniflari": [
+    {
+      "ad": "Küçük kolyoz",
+      "cm": "0-18 cm",
+      "not": "18 cm altı yasal değil."
+    },
+    {
+      "ad": "Kolyoz",
+      "cm": "18-30 cm"
+    },
+    {
+      "ad": "İri kolyoz",
+      "cm": "30 cm ve üzeri"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 18,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28"
+  },
+  "suSicakligi": {
+    "min": 14,
+    "ideal": [
+      17,
+      24
+    ],
+    "max": 27
+  },
+  "aktifSaatler": [
+    "safak",
+    "sabah",
+    "ikindi",
+    "aksam"
+  ],
+  "ruzgarTercihi": [
+    "poyraz",
+    "yildiz"
+  ],
+  "ruzgarKacinilan": [
+    "lodos"
+  ],
+  "derinlik": "Yüzey ile 30 m arası; genelde orta suda.",
+  "yasamAlani": "Açık su ve akıntı hatları; mendirek ve iskele önlerine sürü halinde girer.",
+  "teshis": {
+    "siluet": "kolyoz",
+    "ayirtEdici": [
+      "Sırtta dalgalı, zikzak koyu çizgiler; karın tarafında soluk benekler.",
+      "Gözü büyük ve saydam bir zarla çevrili.",
+      "İki sırt yüzgeci arası belirgin boşluk var.",
+      "Kuyruk önünde küçük yüzgeççikler dizisi."
+    ],
+    "karistirilan": [
+      "istavrit",
+      "palamut"
+    ]
+  },
+  "takimlar": [
+    "capari",
+    "capari-agir",
+    "zoka-atma"
+  ],
+  "yemler": {
+    "dogal": [
+      "Sardalya parçası",
+      "Karides",
+      "İstavrit şeridi"
+    ],
+    "sahte": [
+      "Tüylü çapari",
+      "15-30 gr zoka",
+      "Küçük kaşık"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "2,4-3,0 m, 20-60 gr",
+      "not": "Çapari için uzun, zoka için sert uçlu."
+    },
+    "makine": {
+      "deger": "3000-4000",
+      "not": "Standart spin makine."
+    },
+    "anaMisina": {
+      "deger": "0,28-0,30 mm mono veya PE 1,0"
+    },
+    "sokLideri": {
+      "deger": "0,30-0,35 mm fluorocarbon, 1 m",
+      "not": "Zoka kullanıyorsan gerekli."
+    },
+    "igne": {
+      "deger": "4-8 numara tüylü",
+      "not": "Kolyoz istavritten iri ağızlıdır."
+    },
+    "agirlik": {
+      "deger": "30-60 gr"
+    }
+  },
+  "taktik": {
+    "atis": "Sürü genelde orta suda dolaşır. Uzağa at, 10 saniye batır, sonra taramaya başla.",
+    "cekme": "Çapariyi hızlıca sar; kolyoz hareketli yeme saldırır. Zokada palamut gibi hızlı çek.",
+    "tokatlama": "Vuruş serttir, ekstra tokatlamaya gerek kalmaz.",
+    "yakalama": "Kolyoz sürekli döner ve misinayı burar. Çıkardıktan sonra takımın burulmadığını kontrol et.",
+    "ipuclari": [
+      "Kolyoz geldiğinde sürü yoğun olur; iki-üç iğneye birden takılır, çapariyi düzenli kontrol et.",
+      "Etinin bozulması çok hızlıdır — kovada değil buzda tut.",
+      "Çapariyle av yaparken lüfer de aynı sürünün peşindeyse bedeni kalınlaştır."
+    ],
+    "hatalar": [
+      "Yavaş sarmak.",
+      "Balığı güneşte bekletmek; eti bir saatte tadını kaybeder."
+    ]
+  },
+  "mutfak": "Izgara ve fırın için mükemmeldir; yağlı eti nedeniyle tavaya çok uygun değildir.",
+  "noktalar": [
+    "rumeli-kavagi",
+    "sariyer-mendirek",
+    "emirgan",
+    "kabatas",
+    "galata-koprusu",
+    "sarayburnu",
+    "anadolu-kavagi",
+    "beykoz",
+    "salacak",
+    "yenikapi",
+    "kumkapi",
+    "bakirkoy",
+    "moda",
+    "caddebostan",
+    "bostanci",
+    "kartal"
+  ]
+}

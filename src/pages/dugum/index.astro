@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Zorluk from '../../components/Zorluk.astro';
+import { baslikBicimi } from '../../lib/metin';
+
+const dugumler = (await getCollection('knots')).sort((a, b) => a.data.zorluk - b.data.zorluk);
+---
+<Base baslik="Düğümler" aciklama="Kıyı balıkçılığında gereken 7 düğüm: klinç, palomar, uni, FG, snell, çift ilmek ve köstek bağı.">
+  <h1 class="text-3xl sm:text-4xl">Düğümler</h1>
+  <p class="mt-2 max-w-2xl text-muted">
+    Yedi düğüm bütün kıyı takımlarını kapsar. Kolaydan zora sıralı — ilk üçünü öğrenmen çoğu gün yeter.
+  </p>
+  <p class="mt-3 rounded-sm border border-l-[3px] border-warn/40 border-l-warn bg-warn-soft p-3 text-sm">
+    Hangi düğümü bağlarsan bağla, sıkmadan önce <strong>mutlaka ıslat</strong>.
+    Kuru misina sürtünme ısısıyla zayıflar ve tam düğümün olduğu yerden kopar.
+  </p>
+
+  <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+    {dugumler.map((k) => (
+      <li>
+        <a href={`/dugum/${k.id}`} class="block h-full kart p-4 hover:border-accent">
+          <div class="flex items-baseline justify-between gap-2">
+            <h2 class="font-semibold">{baslikBicimi(k.data.ad)}</h2>
+            <Zorluk seviye={k.data.zorluk} />
+          </div>
+          <p class="mt-1 text-sm text-muted">{k.data.ozet}</p>
+          <p class="mt-2 text-xs text-accent">{k.data.guc}</p>
+        </a>
+      </li>
+    ))}
+  </ul>
+</Base>

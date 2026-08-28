@@ -1,0 +1,147 @@
+{
+  "ad": "Havuz balığı",
+  "latin": "Carassius gibelio",
+  "ingilizce": "Prussian carp",
+  "digerAdlar": [
+    "Gümüş sazan",
+    "Kara sazan"
+  ],
+  "ozet": "Sazana benzeyen ama bıyığı olmayan, hemen her suda çoğalan dayanıklı balık. Yeni başlayan için en kolay tatlı su hedefi.",
+  "zorluk": 1,
+  "aylar": [
+    2,
+    2,
+    2,
+    0,
+    0,
+    2,
+    4,
+    4,
+    4,
+    4,
+    3,
+    2
+  ],
+  "sular": [
+    "gol",
+    "dere",
+    "aci"
+  ],
+  "gece": false,
+  "boySiniflari": [
+    {
+      "ad": "Küçük havuz balığı",
+      "cm": "0-15 cm"
+    },
+    {
+      "ad": "Havuz balığı",
+      "cm": "15-25 cm"
+    },
+    {
+      "ad": "İri havuz balığı",
+      "cm": "25 cm ve üzeri"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": null,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Tebliğ'de bu tür için asgari boy belirtilmemiştir. İstilacı kabul edilen türler için ayrı hükümler getirilebiliyor; çıkmadan önce güncel tebliğ tablosunu kontrol et. İç sularda kişi başı günlük toplam 5 kg sınırı geçerlidir.",
+    "yasakDonemi": "15 Mart – 15 Haziran: iç sularda üreme dönemi av yasağı. Yasak amatör oltacıyı da kapsar."
+  },
+  "suSicakligi": {
+    "min": 6,
+    "ideal": [
+      16,
+      28
+    ],
+    "max": 32
+  },
+  "aktifSaatler": [
+    "sabah",
+    "oglen",
+    "ikindi",
+    "aksam"
+  ],
+  "ruzgarTercihi": [],
+  "ruzgarKacinilan": [],
+  "derinlik": "0,5-4 m; çamurlu ve sığ kesimlerde.",
+  "yasamAlani": "Durgun ve çamurlu her yer: göl kenarları, kanallar, yavaş akan dereler.",
+  "teshis": {
+    "siluet": "havuz-baligi",
+    "ayirtEdici": [
+      "Sazana benzer ama ağzında bıyık yoktur — iki türü ayıran kesin işaret budur.",
+      "Gövde yüksek ve yanlardan yassı; renk gümüşi griden koyu bronza kadar değişir.",
+      "Pullar iri ve düzenli.",
+      "Sırt yüzgeci uzun, kenarı hafif içbükeydir."
+    ],
+    "karistirilan": [
+      "sazan"
+    ]
+  },
+  "takimlar": [
+    "feeder-takimi",
+    "tatli-sabit-samandira",
+    "sazan-kayar-kursun"
+  ],
+  "yemler": {
+    "dogal": [
+      "Mısır",
+      "Hamur yem",
+      "Toprak solucanı",
+      "Ekmek içi"
+    ],
+    "sahte": []
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "3,0-3,6 m genel amaçlı kamış"
+    },
+    "makine": {
+      "deger": "2500-3500"
+    },
+    "anaMisina": {
+      "deger": "0,18-0,25 mm mono"
+    },
+    "sokLideri": {
+      "deger": "Gerekmez"
+    },
+    "igne": {
+      "deger": "8-12 numara"
+    },
+    "agirlik": {
+      "deger": "10-30 gr",
+      "not": "Sığ suda hafif ağırlık yeterli."
+    }
+  },
+  "taktik": {
+    "atis": "Kıyıdan 5-20 metre açığa, çamurlu ve durgun kesimlere at. Zor bir nokta seçmeye gerek yok.",
+    "cekme": "Beklemeli avdır; misinayı hafif gergin tut ve kamış ucunu izle.",
+    "tokatlama": "Uç birkaç kez titreyip sonra düzenli biçimde eğildiğinde tokatla.",
+    "yakalama": "Sazan kadar güçlü değildir; sabit baskıyla yaklaştır ve ıslak elle al.",
+    "ipuclari": [
+      "Bu balık neredeyse her koşulda yem alır; yeni bir noktayı denerken \"burada balık var mı\" sorusunu en hızlı o yanıtlar.",
+      "Yem olarak mısır tek başına yeterli.",
+      "Sazandan ayırmak için ağza bak: bıyık varsa sazandır."
+    ],
+    "hatalar": [
+      "Sazan sanıp yasal boy tartışmasına girmek; iki türün ayrımı bıyıktır.",
+      "Çok ince iğne kullanmak; havuz balığı yemi sertçe çeker.",
+      "Yakaladığını başka bir suya taşımak — bu tür yayıldığı yerde diğer türleri baskılıyor."
+    ]
+  },
+  "noktalar": [
+    "sapanca-sahil",
+    "sapanca-kirkpinar",
+    "sapanca-kurtkoy",
+    "sapanca-kartepe-guney",
+    "sapanca-kartepe-kuzey",
+    "poyrazlar-golu",
+    "taskisigi-golu",
+    "sakarya-nehri",
+    "riva-deresi",
+    "agva-goksu",
+    "agva-yesilcay",
+    "kucukcekmece-golu"
+  ]
+}

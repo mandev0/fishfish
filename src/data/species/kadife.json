@@ -1,0 +1,142 @@
+{
+  "ad": "Kadife balığı",
+  "latin": "Tinca tinca",
+  "ingilizce": "Tench",
+  "digerAdlar": [
+    "Kadife",
+    "Yeşil sazan (yanlış kullanım)"
+  ],
+  "ozet": "Koyu yeşil, kalın derili ve küçük pullu dip balığı. Sazlık dibinde sessizce beslenir; şafak ve akşam alacası onun saatidir.",
+  "zorluk": 3,
+  "aylar": [
+    1,
+    1,
+    1,
+    0,
+    0,
+    2,
+    4,
+    4,
+    4,
+    3,
+    1,
+    1
+  ],
+  "sular": [
+    "gol"
+  ],
+  "gece": false,
+  "boySiniflari": [
+    {
+      "ad": "Küçük kadife",
+      "cm": "0-26 cm",
+      "not": "26 cm altı yasal değil."
+    },
+    {
+      "ad": "Kadife",
+      "cm": "26-40 cm"
+    },
+    {
+      "ad": "İri kadife",
+      "cm": "40 cm ve üzeri"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 26,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Kaynaklar 18 ve 26 cm arasında farklılık gösteriyor; güvende olmak için 26 cm'i esas al. Kişi başı günlük 10 adet sınırı bildiriliyor. İç sularda kişi başı günlük toplam 5 kg sınırı geçerlidir.",
+    "yasakDonemi": "15 Mart – 15 Haziran: iç sularda üreme dönemi av yasağı. Yasak amatör oltacıyı da kapsar."
+  },
+  "suSicakligi": {
+    "min": 10,
+    "ideal": [
+      18,
+      26
+    ],
+    "max": 30
+  },
+  "aktifSaatler": [
+    "safak",
+    "aksam"
+  ],
+  "ruzgarTercihi": [
+    "lodos"
+  ],
+  "ruzgarKacinilan": [
+    "poyraz"
+  ],
+  "derinlik": "0,5-3 m; sazlık dibindeki yumuşak çamurda.",
+  "yasamAlani": "Sazlık ve nilüfer dipleri, çamur tabanlı sığ koylar, durgun göl kenarları.",
+  "teshis": {
+    "siluet": "kadife",
+    "ayirtEdici": [
+      "Gövde kalın ve tıknaz; renk koyu zeytin yeşili, karın sarımsı.",
+      "Pullar çok küçük ve derinin içine gömülüdür; balık kadife gibi kaygan hissedilir.",
+      "Ağzın iki yanında birer kısa bıyık var.",
+      "Bütün yüzgeçlerin kenarı yuvarlaktır; gözler küçük ve turuncudur."
+    ],
+    "karistirilan": [
+      "sazan"
+    ]
+  },
+  "takimlar": [
+    "feeder-takimi",
+    "sazan-kayar-kursun"
+  ],
+  "yemler": {
+    "dogal": [
+      "Toprak solucanı",
+      "Mısır",
+      "Hamur yem",
+      "Pelet"
+    ],
+    "sahte": []
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "3,0-3,6 m, ince uçlu"
+    },
+    "makine": {
+      "deger": "3000-4000"
+    },
+    "anaMisina": {
+      "deger": "0,20-0,25 mm mono"
+    },
+    "sokLideri": {
+      "deger": "Gerekmez"
+    },
+    "igne": {
+      "deger": "8-12 numara"
+    },
+    "agirlik": {
+      "deger": "20-40 gr yemlik kafes",
+      "not": "Sığ ve durgun suda hafif seç; ağır kafes sesiyle balığı ürkütür."
+    }
+  },
+  "taktik": {
+    "atis": "Sazlık önündeki açıklığa, kıyıdan 5-15 metre mesafeye at. Kadife uzakta değil, kenarda beslenir.",
+    "cekme": "Beklemeli avdır. Kamışı sehpaya koy, ince ucu izle.",
+    "tokatlama": "Uç önce ufak ufak titrer, sonra yavaşça yay yapar. Yay tamamlandığında tokatla.",
+    "yakalama": "Kadife dibe doğru dairesel kaçışlar yapar. Baskıyı sabit tut, sazlığa girmesine izin verme.",
+    "ipuclari": [
+      "Suda küçük kabarcık öbekleri görüyorsan kadife dipte besleniyor demektir; yemi tam oraya bırak.",
+      "Şafak ve akşam alacası dışındaki saatlerde verim belirgin biçimde düşer.",
+      "Yemi sabit bir noktada topla; kadife dağınık yemi izlemez."
+    ],
+    "hatalar": [
+      "Gürültülü ve ağır takımla sığ suya girmek.",
+      "Yemi her atışta farklı yere bırakmak.",
+      "Sazlığa kaçan balığı zorla çekmek; köstek kesin kopar."
+    ]
+  },
+  "mutfak": "Eti yumuşak ve tatlıdır ama çamurlu göllerde toprak tadı alabilir. Kılçığı çoktur.",
+  "noktalar": [
+    "sapanca-kirkpinar",
+    "sapanca-kurtkoy",
+    "sapanca-kartepe-guney",
+    "sapanca-kartepe-kuzey",
+    "poyrazlar-golu",
+    "taskisigi-golu"
+  ]
+}

@@ -1,0 +1,41 @@
+---
+import Adim from './_Adim.astro';
+---
+<svg class="diagram" viewBox="0 0 400 450" role="img" aria-labelledby="k-snell">
+  <title id="k-snell">Snell düğümü: misinayı gözden iğne ucuna doğru geçir, ilmek bırakarak ters yönde tekrar geçir, ilmeğin misinasını pipoya 6-8 kez sar ve ana misinayı çekerek sık.</title>
+
+  <Adim no={1} baslik="Gözden geçir, ilmek bırakarak geri geçir" y={0}>
+    <g transform="translate(240,20)">
+      <circle cx="0" cy="6" r="9" class="metal" />
+      <path class="igne" d="M0 15 L0 62 a16 16 0 1 0 26 7" stroke-width="2.2" />
+    </g>
+    <path class="misina" d="M388 26 L242 26" />
+    <path class="uc" d="M242 26 L150 26 q-30 0 -30 20 q0 20 30 20 L240 40" />
+    <text class="lbl-yem" x="120" y="86">ilmek</text>
+    <text class="lbl-misina" x="330" y="16" text-anchor="end">ana misina</text>
+  </Adim>
+
+  <Adim no={2} baslik="İlmeğin misinasını pipoya 6-8 tur sar" y={150}>
+    <g transform="translate(240,20)">
+      <circle cx="0" cy="6" r="9" class="metal" />
+      <path class="igne" d="M0 15 L0 62 a16 16 0 1 0 26 7" stroke-width="2.2" />
+    </g>
+    <path class="misina" d="M388 26 L242 26" />
+    {[0,1,2,3,4,5,6].map((i) => (
+      <path class="uc" d={`M232 ${24 + i * 5} q8 -6 16 0`} />
+    ))}
+    <path class="uc" d="M232 24 L150 24 q-28 0 -28 22 q0 22 28 22 L232 60" />
+    <text class="lbl-a" x="150" y="92">sarımlar göze doğru sıkışmalı</text>
+  </Adim>
+
+  <Adim no={3} baslik="Ana misinayı yavaşça çek, sarımlar pipoya otursun" y={300}>
+    <g transform="translate(240,20)">
+      <circle cx="0" cy="6" r="9" class="metal" />
+      <path class="igne" d="M0 15 L0 62 a16 16 0 1 0 26 7" stroke-width="2.2" />
+      <rect x="-7" y="14" width="14" height="34" rx="4" class="dugum-dolu" />
+      {[0,1,2,3,4].map((i) => (<path class="ln-thin" d={`M-7 ${19 + i * 6} L7 ${19 + i * 6}`} />))}
+    </g>
+    <path class="misina" d="M388 26 L242 26" />
+    <text class="lbl-a" x="120" y="52">sarımlar pipoya oturur</text>
+  </Adim>
+</svg>

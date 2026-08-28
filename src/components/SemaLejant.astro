@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import { SEMA_ETIKETLERI } from '../lib/semaEtiketleri';
+
+interface Props { sema: string }
+const { sema } = Astro.props;
+
+const etiketler = SEMA_ETIKETLERI[sema] ?? [];
+const ekipman = await getCollection('gear');
+const dugumler = await getCollection('knots');
+
+const satirlar = etiketler.map((e) => {
+  const kayit = e.tur === 'ekipman'
+    ? ekipman.find((g) => g.id === e.id)
+    : dugumler.find((k) => k.id === e.id);
+  return {
+    ...e,
+    href: `/${e.tur}/${e.id}`,
+    ozet: kayit ? (kayit.data as any).ozet : '',
+  };
+}).filter((s) => s.ozet);
+---
+{satirlar.length > 0 && (
+  <div class="mt-4 kart-2/50 p-3">
+    <p class="px-1 pb-2 text-xs font-semibold uppercase tracking-wide text-muted">
+      Şemada ne görüyorsun?
+    </p>
+    <ul class="grid gap-1.5 sm:grid-cols-2">
+      {satirlar.map((s) => (
+        <li>
+          <a href={s.href} class="flex min-h-11 flex-col justify-center rounded-lg px-2.5 py-1.5 transition-colors hover:bg-surface">
+            <span class="text-sm font-medium text-accent">{s.etiket}</span>
+            <span class="text-xs text-muted">{s.ozet}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}

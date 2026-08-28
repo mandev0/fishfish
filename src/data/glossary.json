@@ -1,0 +1,162 @@
+[
+  {
+    "terim": "Çapari",
+    "aciklama": "Tek beden üzerine sıralanmış birden fazla tüylü/simli iğneden oluşan takım. Sürü balığında bir atışta birkaç balık çıkarır."
+  },
+  {
+    "terim": "Sabiki",
+    "aciklama": "Çaparinin çok ince ve küçük iğneli hâli. Hamsi, sardalya ve canlı yem tedariki için kullanılır."
+  },
+  {
+    "terim": "Zoka",
+    "aciklama": "Ağır metal sahte yem. Uzağa atılıp hızlı sarılarak lüfer, palamut ve kolyoz avlanır."
+  },
+  {
+    "terim": "Egi",
+    "aciklama": "Karides biçimli kalamar zokası. İğneleri batmaz, halka halkadır ve kalamarın kollarına takılır."
+  },
+  {
+    "terim": "Jig head",
+    "aciklama": "Kurşunu iğnesiyle birleşik hafif takım parçası. Üzerine silikon yem geçirilir; LRF'nin temel bileşeni."
+  },
+  {
+    "terim": "LRF",
+    "aciklama": "Light Rock Fishing — çok hafif takımla kayalık diplerdeki küçük balıkları avlama tekniği."
+  },
+  {
+    "terim": "Köstek",
+    "aciklama": "İğnenin bağlandığı, ana misinadan daha ince olan kısa misina parçası. Takıldığında sadece kösteği kaybedersin."
+  },
+  {
+    "terim": "Beden",
+    "aciklama": "Çapari veya paternoster takımının ana gövdesini oluşturan misina."
+  },
+  {
+    "terim": "Şok lideri",
+    "aciklama": "Örgü ana misina ile yem arasına eklenen, atış yükünü ve sürtünmeyi karşılayan kalın misina parçası."
+  },
+  {
+    "terim": "Fluorocarbon",
+    "aciklama": "Suda kırılma indisi suya yakın olduğu için çok az görünen misina türü. Köstek ve lider olarak kullanılır."
+  },
+  {
+    "terim": "PE / Örgü misina",
+    "aciklama": "Çok sayıda ince lifin örülmesiyle yapılan, esnemeyen misina. Vuruşu net iletir ve daha uzağa atar."
+  },
+  {
+    "terim": "Monofilament (mono)",
+    "aciklama": "Tek parça naylon misina. Esner, darbeyi yumuşatır, sürtünmeye dayanıklıdır."
+  },
+  {
+    "terim": "Tokatlama",
+    "aciklama": "Balık yemi aldığında kamışı sertçe kaldırarak iğneyi ağza oturtma hareketi."
+  },
+  {
+    "terim": "Fırdöndü",
+    "aciklama": "Misinanın burulmasını engelleyen, dönebilen küçük bağlantı parçası."
+  },
+  {
+    "terim": "Klips",
+    "aciklama": "Sahte yemi düğüm açmadan değiştirmeyi sağlayan kilitli bağlantı."
+  },
+  {
+    "terim": "Stoper",
+    "aciklama": "Kayar şamandıra takımında derinliği belirleyen, misina üzerinde kayan küçük kauçuk parça."
+  },
+  {
+    "terim": "Paternoster",
+    "aciklama": "Kösteklerin bedenden dik açıyla ayrıldığı, kurşunu en altta olan dip takımı."
+  },
+  {
+    "terim": "Tırlama",
+    "aciklama": "Balığı bir noktaya toplamak için suya yem serpme. Çupra ve kefal avında etkilidir."
+  },
+  {
+    "terim": "Orkoz",
+    "aciklama": "Boğaz'da, özellikle kuvvetli lodosta koylarda oluşan ters akıntı. Yem balığını toplar, avcı balık peşinden gelir."
+  },
+  {
+    "terim": "Üst akıntı",
+    "aciklama": "Karadeniz'den Marmara'ya doğru, Boğaz'ın yüzeyinde akan ana akıntı."
+  },
+  {
+    "terim": "Poyraz",
+    "aciklama": "Kuzeydoğu rüzgârı. Boğaz akıntısını hızlandırır; lüfer ve palamut için klasik iyi hava."
+  },
+  {
+    "terim": "Lodos",
+    "aciklama": "Güneybatı rüzgârı. Suyu bulandırır, Marmara kıyısını döver, Boğaz'da orkoz yaratır. Levrek için iyi, kalamar için kötü."
+  },
+  {
+    "terim": "Karayel",
+    "aciklama": "Kuzeybatı rüzgârı. Sert ve soğuktur; Karadeniz kıyısını en çok döven rüzgâr."
+  },
+  {
+    "terim": "Yıldız",
+    "aciklama": "Kuzey rüzgârı. Serin ve genelde berrak su getirir."
+  },
+  {
+    "terim": "Beaufort",
+    "aciklama": "Rüzgâr şiddetini 0 (durgun) ile 12 (orkan) arasında ölçen ölçek."
+  },
+  {
+    "terim": "Asgari boy",
+    "aciklama": "Bir türün yasal olarak alıkonulabileceği en küçük boy. Altındaki balık suya bırakılmalıdır."
+  },
+  {
+    "terim": "Solid tip",
+    "aciklama": "Kamışın ucundaki dolu (içi boş olmayan) hassas bölüm. Küçük vuruşları görünür kılar; LRF kamışlarında bulunur."
+  },
+  {
+    "terim": "Aksiyon",
+    "aciklama": "Kamışın yük altında hangi noktadan büküldüğü. Fast (hızlı) uçtan, slow (yavaş) gövdeden büküldür."
+  },
+  {
+    "terim": "Atış gramajı",
+    "aciklama": "Kamışın rahatça atabileceği ağırlık aralığı. Aşarsan kamış kırılabilir."
+  },
+  {
+    "terim": "Kepçe",
+    "aciklama": "Balığı sudan almak için kullanılan saplı ağ. İri balıkta misinayı korur ve balığı yaralamaz."
+  },
+  {
+    "terim": "Vonoz",
+    "aciklama": "Palamudun en küçük boy sınıfı. Yasal boyun altındadır."
+  },
+  {
+    "terim": "Çinekop",
+    "aciklama": "Lüferin 14-20 cm arası boy sınıfı."
+  },
+  {
+    "terim": "Kofana",
+    "aciklama": "Lüferin 40 cm üstü, en makbul boy sınıfı."
+  },
+  {
+    "terim": "Sülünez",
+    "aciklama": "Deniz solucanı. Çupra, tekir ve karagöz için en etkili doğal yemlerden."
+  },
+  {
+    "terim": "Aç-çek",
+    "aciklama": "Ağır bir zokayı uzağa atıp, dibe bıraktıktan sonra durmadan sararak geri getirme yöntemi. Sonbaharda palamut ve lüfer sürüsü kıyıya vurduğunda kullanılır."
+  },
+  {
+    "terim": "Spin",
+    "aciklama": "Sahte yemi atıp sararak canlandırma yöntemi. Yem suda yaralı bir balık gibi yalpalar; avcı balık bunu fırsat sanıp saldırır."
+  },
+  {
+    "terim": "Feeder",
+    "aciklama": "Kurşun yerine yemle doldurulan delikli bir kafes kullanan tatlı su dip avı. Her atışta dibe yem bırakılır, balık zamanla o noktaya toplanır."
+  },
+  {
+    "terim": "Quiver tip",
+    "aciklama": "Feeder kamışlarının ayrı ve çok yumuşak ucu. Balığın en küçük dokunuşunda bile gözle görülür biçimde büküldüğü için vuruşu gösterir."
+  },
+  {
+    "terim": "İç sular",
+    "aciklama": "Göl, baraj gölü, dere ve nehirlerin ortak adı. Mevzuatta denizden ayrı hükümlere tabidir: 15 Mart – 15 Haziran arası üreme dönemi av yasağı uygulanır."
+  },
+  {
+    "terim": "Yemleme",
+    "aciklama": "Avlanacak noktaya önceden yem serpip balığı oraya toplama. Tatlı suda feeder kafesiyle, denizde elle serpilerek yapılır."
+  }
+]

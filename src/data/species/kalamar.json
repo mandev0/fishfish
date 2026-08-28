@@ -1,0 +1,151 @@
+{
+  "ad": "Kalamar",
+  "latin": "Loligo vulgaris",
+  "ingilizce": "European squid",
+  "digerAdlar": [
+    "Kalamar",
+    "Sübye kalamarı"
+  ],
+  "ozet": "Balık değil, kafadanbacaklı. Sonbahar ve kış gecelerinde ışıklı iskelelerde özel zoka (egi) ile avlanır. Ayrı bir teknik ister ama öğrenmesi çok keyiflidir.",
+  "zorluk": 3,
+  "aylar": [
+    4,
+    3,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    4,
+    5,
+    5
+  ],
+  "sular": [
+    "bogaz",
+    "marmara"
+  ],
+  "gece": true,
+  "boySiniflari": [
+    {
+      "ad": "Küçük kalamar",
+      "cm": "8-15 cm (gövde)"
+    },
+    {
+      "ad": "Kalamar",
+      "cm": "15-30 cm (gövde)"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": null,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Tebliğ'de bu tür için asgari boy belirtilmemiştir; günlük toplam 5 kg sınırı yine geçerlidir."
+  },
+  "suSicakligi": {
+    "min": 10,
+    "ideal": [
+      13,
+      20
+    ],
+    "max": 23
+  },
+  "aktifSaatler": [
+    "aksam",
+    "gece"
+  ],
+  "ruzgarTercihi": [],
+  "ruzgarKacinilan": [
+    "lodos",
+    "karayel"
+  ],
+  "derinlik": "3-40 m; gece ışık altında yüzeye yakın avlanır.",
+  "yasamAlani": "Işıklandırılmış iskele ve rıhtımlar, berrak sulu koylar, deniz çayırı kenarları.",
+  "teshis": {
+    "siluet": "kalamar",
+    "ayirtEdici": [
+      "Gövde uzun, sivri ve mızrak biçimli; yanlarda üçgen yüzgeçler gövdenin yarısından fazlasını kaplar.",
+      "Sekiz kısa kol ve iki uzun yakalama kolu.",
+      "İçinde şeffaf, plastik benzeri bir iç kabuk (kalem) bulunur.",
+      "Rahatsız edilince mürekkep püskürtür."
+    ],
+    "karistirilan": [
+      "subye"
+    ]
+  },
+  "takimlar": [
+    "kalamar-zokasi-egi"
+  ],
+  "yemler": {
+    "dogal": [],
+    "sahte": [
+      "2.5-3.5 boy egi (kalamar zokası)",
+      "Doğal renkli egi (berrak su)",
+      "Turuncu/pembe egi (bulanık su)"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "2,4-2,7 m, 8-25 gr hızlı aksiyon",
+      "not": "Egiye sıçrama hareketi verebilmeli."
+    },
+    "makine": {
+      "deger": "2500-3000",
+      "not": "Hafif olması uzun gecelerde kolunu yormaz."
+    },
+    "anaMisina": {
+      "deger": "PE 0,6-0,8 örgü",
+      "not": "İnce örgü hareketi net iletir."
+    },
+    "sokLideri": {
+      "deger": "0,26-0,30 mm fluorocarbon, 1,5-2 m",
+      "not": "Kalamar misinayı görürse yaklaşmaz."
+    },
+    "igne": {
+      "deger": "Eginin kendi halka iğneleri",
+      "not": "Batmaz, kollara takılır. Ayrı iğne kullanılmaz."
+    },
+    "agirlik": {
+      "deger": "Eginin kendi ağırlığı (10-20 gr)",
+      "not": "Ayrı kurşun kullanılmaz."
+    }
+  },
+  "taktik": {
+    "atis": "Işığın aydınlattığı alanın kenarına at. Kalamar aydınlık-karanlık sınırında pusu kurar.",
+    "cekme": "Dibe bırak, kamışı 2-3 kez keskin şekilde yukarı sıçrat, sonra egiyi serbest bırak. Kalamar zokayı düşerken yakalar — asıl vuruş bekleme anındadır.",
+    "tokatlama": "Sertçe tokatlama! Ağırlığı hissettiğinde yumuşak ama sürekli bir baskıyla çek; kollar iğneden kurtulmasın.",
+    "yakalama": "Kepçe kullan. Kamışla havaya kaldırırsan ağırlıkla kollarından kurtulur ve düşer. Sudan çıkarken mürekkep püskürtür, üstünü kirletmemek için gövdesini denize doğru tut.",
+    "ipuclari": [
+      "Ekim-Aralık arası, ay ışığının az olduğu gecelerde en verimlidir.",
+      "Berrak su şart; lodosun bulandırdığı suda kalamar avı verimsizdir.",
+      "Egiye klips takma — hareketini bozar, doğrudan bağla.",
+      "Bir kalamar çıktıysa aynı noktaya devam et; genelde grup halinde dolaşırlar."
+    ],
+    "hatalar": [
+      "Sert tokatlamak — kollar kopar ve kalamar kaçar.",
+      "Kepçesiz avlanmak.",
+      "Bulanık suda ısrar etmek."
+    ]
+  },
+  "mutfak": "Tava, izgara veya dolma. Taze kalamarın gövdesi diri ve saydamdır.",
+  "noktalar": [
+    "rumeli-kavagi",
+    "sariyer-mendirek",
+    "yenikoy",
+    "bebek",
+    "ortakoy",
+    "kabatas",
+    "anadolu-kavagi",
+    "pasabahce",
+    "cengelkoy",
+    "salacak",
+    "yenikapi",
+    "kumkapi",
+    "moda",
+    "caddebostan",
+    "bostanci",
+    "buyukada",
+    "bayramoglu"
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "ad": "Yayın",
+  "latin": "Silurus glanis",
+  "ingilizce": "Wels catfish",
+  "digerAdlar": [
+    "Yayın balığı",
+    "Kedi balığı (yanlış kullanım)"
+  ],
+  "ozet": "İç sularımızın en iri balığı. Gece dipte avlanır, kokuyla yem bulur. Yasal boyu 90 santimdir; kıyıdan çıkanların çoğu bu boyun altında kalır.",
+  "zorluk": 5,
+  "aylar": [
+    1,
+    1,
+    1,
+    0,
+    0,
+    2,
+    5,
+    5,
+    4,
+    3,
+    1,
+    1
+  ],
+  "sular": [
+    "gol",
+    "dere"
+  ],
+  "gece": true,
+  "boySiniflari": [
+    {
+      "ad": "Yavru yayın",
+      "cm": "0-90 cm",
+      "not": "90 cm altı yasal değil, suya bırakılır."
+    },
+    {
+      "ad": "Yayın",
+      "cm": "90-140 cm"
+    },
+    {
+      "ad": "İri yayın",
+      "cm": "140 cm ve üzeri"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 90,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Kişi başı günlük 1 adet sınırı vardır. Asgari boy yüksektir: kıyıdan tutulan yayınların çoğu bu boyun altında kalır ve suya bırakılmalıdır.",
+    "yasakDonemi": "15 Mart – 15 Haziran: iç sularda üreme dönemi av yasağı. Yasak amatör oltacıyı da kapsar."
+  },
+  "suSicakligi": {
+    "min": 12,
+    "ideal": [
+      20,
+      27
+    ],
+    "max": 30
+  },
+  "aktifSaatler": [
+    "aksam",
+    "gece",
+    "safak"
+  ],
+  "ruzgarTercihi": [
+    "lodos"
+  ],
+  "ruzgarKacinilan": [],
+  "derinlik": "2-10 m; gece beslenmek için sığ kıyıya sokulur.",
+  "yasamAlani": "Derin çukurlar, batık ağaç yığınları, nehir kıvrımlarının oyulmuş dış kenarları.",
+  "teshis": {
+    "siluet": "yayin",
+    "ayirtEdici": [
+      "Gövde pulsuz, kaygan ve uzun; arka yarısı yılan gibi yassılaşır.",
+      "Baş geniş ve yassı, ağız çok büyük.",
+      "Üst çenede iki uzun, alt çenede dört kısa bıyık var.",
+      "Sırt yüzgeci çok küçük, anal yüzgeç kuyruğa kadar uzanır."
+    ],
+    "karistirilan": []
+  },
+  "takimlar": [
+    "sazan-kayar-kursun",
+    "spin-tatli"
+  ],
+  "yemler": {
+    "dogal": [
+      "İri toprak solucanı demeti",
+      "Ölü yem balığı",
+      "Ciğer",
+      "Karides"
+    ],
+    "sahte": [
+      "İri silikon shad",
+      "Derin dalan maket"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "3,0-3,6 m, 80-150 gr",
+      "not": "Yayın ağır bir balıktır; hafif kamış yetmez."
+    },
+    "makine": {
+      "deger": "5000-8000",
+      "not": "Güçlü fren ve bol misina kapasitesi şart."
+    },
+    "anaMisina": {
+      "deger": "0,40 mm mono veya PE 1,5-2,0"
+    },
+    "sokLideri": {
+      "deger": "0,60-0,80 mm mono, 1 m",
+      "not": "Dipteki dal ve taş sürtünmesine karşı."
+    },
+    "igne": {
+      "deger": "2/0-6/0 kalın telli"
+    },
+    "agirlik": {
+      "deger": "60-120 gr",
+      "not": "Akıntılı nehirde ağır, durgun gölde hafif seç."
+    }
+  },
+  "taktik": {
+    "atis": "Batık ağaçların ve derin çukurların kenarına at. Yayın gündüz saklandığı yerden gece beslenmek için çıkar.",
+    "cekme": "Yemli avda çekme yok. Misinayı gergin tut, kamışı sehpaya koy ve zilli veya ışıklı uyarıcı kullan.",
+    "tokatlama": "Vuruş ağır ve yavaştır; misina düzenli biçimde gitmeye başlayınca güçlü bir tokat at.",
+    "yakalama": "Yayın dibe yapışır ve ağırlığıyla direnir. Sabit baskı uygula, kamışı dik tutma — tam ucundan kırılır.",
+    "ipuclari": [
+      "Sıcak yaz gecelerinde, hava kapalıyken ve fırtınadan önce belirgin biçimde hareketlenir.",
+      "Kokulu yem işe yarar: ciğer ve solucan demeti klasik tercihlerdir.",
+      "Kıyıya çektiğin yayını sürüklemeden, ıslak zeminde ve iki elle destekleyerek tut."
+    ],
+    "hatalar": [
+      "İnce takımla yayın aramak; balık takımı da eli de yorar, sonuç kopmaktır.",
+      "Ağzına elini sokmak — dişleri iğne gibidir, zımpara etkisi yapar.",
+      "90 cm altındaki yayını alıkoymak; yasal değil."
+    ]
+  },
+  "mutfak": "Eti yağlı ve kılçıksızdır, kızartma ve buğulamaya uygundur. Yasal boyun altındaki bireyler suya bırakılır.",
+  "noktalar": [
+    "sapanca-kirkpinar",
+    "sapanca-kurtkoy",
+    "sapanca-kartepe-guney",
+    "poyrazlar-golu",
+    "taskisigi-golu",
+    "sakarya-nehri"
+  ]
+}

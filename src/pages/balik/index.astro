@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SpeciesCard from '../../components/SpeciesCard.astro';
+import { baslikBicimi } from '../../lib/metin';
+import { SU_TURU } from '../../lib/season';
+
+const turler = (await getCollection('species')).sort((a, b) => a.data.ad.localeCompare(b.data.ad, 'tr'));
+
+/** Bir tür yalnızca göl ve derede yaşıyorsa tatlı su türüdür; gerisi denizde de bulunur. */
+const tatliSuMu = (t: typeof turler[number]) => t.data.sular.every((s) => SU_TURU[s] === 'tatli');
+
+const gruplar = [
+  {
+    ad: 'Deniz balıkları',
+    not: 'Boğaz, Marmara ve Karadeniz kıyısından tutulanlar.',
+    liste: turler.filter((t) => !tatliSuMu(t)),
+  },
+  {
+    ad: 'Tatlı su balıkları',
+    not: 'Göl, baraj ve dere kenarından tutulanlar. İç sularda 15 Mart – 15 Haziran arası üreme yasağı vardır.',
+    liste: turler.filter(tatliSuMu),
+  },
+];
+---
+<Base baslik="Balıklar" aciklama={`İstanbul, Kocaeli ve Sapanca çevresinde kıyıdan ve tatlı sudan tutulabilen ${turler.length} tür: teşhis, sezon, takım, yem ve taktik.`}>
+  <h1 class="text-3xl sm:text-4xl">Balıklar</h1>
+  <p class="mt-2 text-muted">
+    Kıyıdan ve tatlı sudan amatör olarak tutulabilen {turler.length} tür.
+    Her sayfada teşhis işaretleri, yasal boy, ekipman tablosu, takım şeması ve taktik adımları var.
+  </p>
+
+  {gruplar.map((g) => (
+    <section class="mt-8">
+      <h2 class="bolum-baslik mb-1 text-xl sm:text-2xl">{baslikBicimi(g.ad)}</h2>
+      <p class="mb-3 pl-[0.7rem] text-sm text-muted">{g.liste.length} tür · {g.not}</p>
+      <div class="grid gap-3 sm:grid-cols-2">
+        {g.liste.map((t) => <SpeciesCard tur={t} />)}
+      </div>
+    </section>
+  ))}
+</Base>

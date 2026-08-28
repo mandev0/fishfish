@@ -1,0 +1,151 @@
+{
+  "ad": "İskorpit",
+  "latin": "Scorpaena porcus",
+  "ingilizce": "Black scorpionfish",
+  "digerAdlar": [
+    "Lipsoz",
+    "Deniz akrebi"
+  ],
+  "ozet": "Kayalıkların pusucu avcısı. LRF takımıyla avlanması çok keyiflidir. Sırt dikenleri zehirlidir — çıplak elle tutma.",
+  "zorluk": 2,
+  "aylar": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4,
+    3
+  ],
+  "sular": [
+    "bogaz",
+    "marmara",
+    "karadeniz"
+  ],
+  "gece": true,
+  "boySiniflari": [
+    {
+      "ad": "İskorpit",
+      "cm": "10-30 cm"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": null,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Tebliğ'de bu tür için asgari boy belirtilmemiştir; günlük toplam 5 kg sınırı yine geçerlidir."
+  },
+  "suSicakligi": {
+    "min": 9,
+    "ideal": [
+      13,
+      23
+    ],
+    "max": 27
+  },
+  "aktifSaatler": [
+    "aksam",
+    "gece",
+    "safak"
+  ],
+  "ruzgarTercihi": [],
+  "ruzgarKacinilan": [],
+  "derinlik": "1-30 m; kaya oyuklarında ve yosun aralarında hareketsiz bekler.",
+  "yasamAlani": "Kayalık dipler, mendirek taşları, iskele ayakları, yosunlu zeminler.",
+  "teshis": {
+    "siluet": "iskorpit",
+    "ayirtEdici": [
+      "Baş iri, dikenli ve çıkıntılı; gövde kısa ve tıknaz.",
+      "Sırt yüzgecinde uzun, sivri ve ZEHİRLİ dikenler.",
+      "Renk zemine göre kahverengi-kırmızı arası değişir; mükemmel kamuflaj.",
+      "Göz üstünde ve çene altında deri uzantıları (püsküller)."
+    ],
+    "karistirilan": []
+  },
+  "takimlar": [
+    "lrf-jig-head",
+    "dip-takimi-sabit-kursun",
+    "paternoster"
+  ],
+  "yemler": {
+    "dogal": [
+      "Karides",
+      "Deniz solucanı",
+      "Midye içi",
+      "Balık parçası"
+    ],
+    "sahte": [
+      "2,5-5 cm kokulu silikon kurtçuk/karides",
+      "1-5 gr jig head"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "1,8-2,3 m, 0,5-7 gr solid tip",
+      "not": "Yumuşak uç en küçük vuruşu gösterir."
+    },
+    "makine": {
+      "deger": "1000-2500",
+      "not": "Hafif ve dengeli olmalı."
+    },
+    "anaMisina": {
+      "deger": "PE 0,3-0,6 örgü",
+      "not": "Dibi hissetmek için örgü şart."
+    },
+    "sokLideri": {
+      "deger": "0,16-0,22 mm fluorocarbon, 1-1,5 m",
+      "not": "Kaya sürtünmesine karşı."
+    },
+    "igne": {
+      "deger": "Jig head 6-10 numara"
+    },
+    "agirlik": {
+      "deger": "1-5 gr jig head",
+      "not": "Dibi hissedebildiğin en hafifini seç."
+    }
+  },
+  "taktik": {
+    "atis": "Kayalığın dibine, iskele ayağının yanına, yosun sınırına at. İskorpit açıkta durmaz, hep bir kenarda pusudadır.",
+    "cekme": "Dibe bırak, 2-3 kez kısa zıplat, dur ve 5 saniye bekle. Vuruş neredeyse her zaman bekleme anında gelir.",
+    "tokatlama": "Vuruş kısa ve tok bir \"tak\" şeklindedir. Hemen ve kısa tokatla.",
+    "yakalama": "Kayaya kaçmadan hızlıca yukarı al. Sudan çıkardığında ASLA elle tutma.",
+    "ipuclari": [
+      "Zehirli dikenler için yanında bez, pense ve iğne çıkarıcı bulundur. Batarsa yara ağrılı olur; bölgeyi dayanabileceğin kadar sıcak suya sok ve gerekirse hekime başvur.",
+      "Gece avında belirgin şekilde daha aktiftir.",
+      "Kokulu silikonlar iskorpitte normal silikondan çok daha iyi sonuç verir."
+    ],
+    "hatalar": [
+      "Balığı çıplak elle tutmak — en sık yapılan ve en acı veren hata.",
+      "Ağır jig head kullanmak; yem taş gibi düşer ve doğallığını kaybeder.",
+      "Sürekli sarmak; duraklamalar avın yarısıdır."
+    ]
+  },
+  "mutfak": "Çorbası efsanevidir. Ayıklaması zahmetlidir ama eti çok lezzetlidir. Temizlerken dikenleri makasla kes.",
+  "noktalar": [
+    "garipce",
+    "sariyer-mendirek",
+    "poyrazkoy",
+    "kandilli",
+    "kuzguncuk",
+    "kilyos",
+    "riva",
+    "sile",
+    "zeytinburnu",
+    "yesilkoy",
+    "moda",
+    "kartal",
+    "tuzla",
+    "buyukada",
+    "heybeliada",
+    "bayramoglu",
+    "eskihisar",
+    "kerpe",
+    "kefken",
+    "cebeci"
+  ]
+}

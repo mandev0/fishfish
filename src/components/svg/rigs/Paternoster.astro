@@ -1,0 +1,57 @@
+---
+// Paternoster — bedenden 90 derece çıkan kısa köstekler, altta kurşun.
+---
+<svg class="diagram" viewBox="0 0 380 540" role="img" aria-labelledby="paternoster-baslik">
+  <title id="paternoster-baslik">Paternoster takımı: bedenden dik açıyla çıkan üç kısa köstek, her birinde iğne, en altta kurşun.</title>
+
+  <path class="misina" d="M166 20 L166 46" />
+  <text class="lbl" x="182" y="30">Ana misinaya</text>
+
+  <ellipse class="metal" cx="166" cy="56" rx="6" ry="10" />
+  <text class="lbl-metal" x="182" y="60">Fırdöndü</text>
+
+  <!-- Beden -->
+  <path class="beden" d="M166 66 L166 424" />
+  <text class="lbl-misina" x="182" y="96">Beden</text>
+  <text class="lbl" x="182" y="110">0,35-0,40 mm mono</text>
+  <text class="lbl" x="182" y="124">kalın olmalı ki</text>
+  <text class="lbl" x="182" y="138">köstekler dik dursun</text>
+
+  {[0, 1, 2].map((i) => {
+    const y = 176 + i * 84;
+    return (
+      <g>
+        {/* köstek bağı ilmeği */}
+        <ellipse class="dugum-dolu" cx="166" cy={y} rx="7" ry="5" />
+        {/* 90 derece köstek */}
+        <path class="lider" d={`M159 ${y} L96 ${y}`} />
+        <path class="igne" d={`M96 ${y} l0 12 a7 7 0 1 1 11 3`} />
+        <circle class="yem" cx="102" cy={y + 16} r="7" />
+      </g>
+    );
+  })}
+
+  <!-- Ölçüler -->
+  <path class="tick" d="M240 176 L240 260" />
+  <path class="tick" d="M234 176 L246 176 M234 260 L246 260" />
+  <text class="lbl" x="250" y="214">30-40 cm</text>
+  <text class="lbl" x="250" y="228">köstek arası</text>
+
+  <path class="tick" d="M96 148 L159 148" />
+  <path class="tick" d="M96 142 L96 154 M159 142 L159 154" />
+  <text class="lbl-lider" x="76" y="138">15-25 cm köstek</text>
+
+  <text class="lbl-a" x="250" y="292">Köstek boyu, köstek</text>
+  <text class="lbl-a" x="250" y="306">arasının yarısını</text>
+  <text class="lbl-a" x="250" y="320">geçmemeli — yoksa</text>
+  <text class="lbl-a" x="250" y="334">birbirine dolaşır</text>
+
+  <!-- Kurşun -->
+  <path class="metal" d="M166 424 l26 66 l-52 0 z" />
+  <text class="lbl-metal" x="206" y="470">Piramit kurşun</text>
+  <text class="lbl" x="206" y="484">60-120 gr</text>
+  <text class="lbl-a" x="206" y="504">En altta olması takımın</text>
+  <text class="lbl-a" x="206" y="518">dikey durmasını sağlar</text>
+
+  <path class="ground" d="M0 494 q60 -12 120 0 q60 12 120 -4 q60 -14 140 2 L380 540 L0 540 z" />
+</svg>

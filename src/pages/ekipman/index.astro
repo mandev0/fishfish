@@ -1,0 +1,214 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Bolum from '../../components/Bolum.astro';
+import Ikon from '../../components/Ikon.astro';
+import Liste from '../../components/Liste.astro';
+import shops from '../../data/shops.json';
+import { baslikBicimi } from '../../lib/metin';
+
+const ekipman = await getCollection('gear');
+const gorulen = new Set<string>();
+
+const KATEGORILER = [
+  { id: 'kamis', ad: 'Kamış', ikon: 'iskele', not: 'Yemi atan ve balığı yoran yay.' },
+  { id: 'makine', ad: 'Makine', ikon: 'basinc', not: 'Misinayı saran ve balığın çekişini kontrol eden mekanizma.' },
+  { id: 'misina', ad: 'Misina', ikon: 'dalga', not: 'Takımın en zayıf halkası. Türü ve kalınlığı her şeyi belirler.' },
+  { id: 'terminal', ad: 'Terminal takım', ikon: 'pusula', not: 'Misinanın ucundaki her şey: iğne, kurşun, fırdöndü, şamandıra.' },
+  { id: 'sahte-yem', ad: 'Sahte yem', ikon: 'balik', not: 'Metal, plastik ve silikon taklitler.' },
+  { id: 'dogal-yem', ad: 'Doğal yem', ikon: 'kayalik', not: 'Solucan, midye, karides ve canlı yem.' },
+  { id: 'aksesuar', ad: 'Aksesuar', ikon: 'dukkan', not: 'Çantada bulunması gerekenler.' },
+] as const;
+
+const kademeler = [
+  {
+    ad: 'Başlangıç', hedef: 'İlk çıkışın. Amaç: balık tutmanın nasıl bir şey olduğunu görmek.',
+    kalemler: [
+      ['Kamış', '2,7-3,0 m teleskopik, 20-60 gr', 'Teleskopik kamış çantaya sığar, toplu taşımada sorun çıkarmaz.', 'kamis'],
+      ['Makine', '3000 boy spin makine', 'Marka önemli değil; freni pürüzsüz dönsün, tuzlu suya dayansın.', 'spin-makine'],
+      ['Ana misina', '0,28 mm monofilament, 150 m', 'Örgüyle başlama — mono daha affedicidir ve dolaştığında açılır.', 'monofilament'],
+      ['Takım', '3-4 adet hazır çapari + 4-5 adet armut kurşun (30-60 gr)', 'Çaparileri kaybedeceksin, yedekli al.', 'kursun'],
+      ['Aksesuar', 'Pense, makas, kova, bez, kafa feneri', 'Pense ve kafa feneri lüks değil, güvenlik gereci.', 'pense'],
+    ],
+  },
+  {
+    ad: 'Orta', hedef: 'Düzenli çıkmaya başladın. Amaç: birden fazla türü hedefleyebilmek.',
+    kalemler: [
+      ['İkinci kamış', '3,6-4,2 m surf kamışı, 100-150 gr', 'Dip takımı ve uzak atış için. Çupra, karagöz, mezgit kapıyı açar.', 'kamis'],
+      ['İkinci makine', '5000 boy', 'Surf kamışına takılır, daha çok misina alır.', 'spin-makine'],
+      ['Örgü misina', 'PE 1,0-1,5, 150 m', 'Zoka ve spin avı için. Yanına fluorocarbon şok lideri şart.', 'orgu-misina'],
+      ['Fluorocarbon', '0,25 / 0,35 / 0,45 mm birer makara', 'Köstek ve lider için üç kalınlık çoğu durumu kapsar.', 'fluorocarbon'],
+      ['Sahte yem', '3-4 zoka (20/30/40/60 gr), 2 maket, 1 kaşık', 'Gümüş ve mavi tonlarla başla.', 'zoka'],
+      ['Kepçe', 'Katlanır saplı, 50 cm ağız', 'İri balığı misinayla havaya kaldırmak kaybetmenin en hızlı yolu.', 'kepce'],
+    ],
+  },
+  {
+    ad: 'İleri', hedef: 'Belirli türlerde ustalaşıyorsun. Amaç: doğru araca doğru işi yaptırmak.',
+    kalemler: [
+      ['LRF takımı', '1,9-2,2 m solid tip kamış + 2000 makine + PE 0,4', 'Kayalık diplerde bambaşka bir oyun. Küçük balıkta bile büyük keyif.', 'solid-tip'],
+      ['Egging takımı', '2,4-2,7 m egging kamışı + 2500 makine', 'Kalamar ve sübye için. Ekim-Nisan arası kullanırsın.', 'egi'],
+      ['Match kamışı', '3,9-4,5 m + hassas şamandıralar', 'Kefal ve ince takım avı için.', 'samandira'],
+      ['Kamış sehpası', 'Tekli veya üçlü', 'Dip avında kamışı yere koymak yerine sehpaya oturt.', 'kamis-sehpasi'],
+      ['Balık ölçer', 'Şerit metre veya ölçüm bandı', 'Yasal boy tartışmalı olmasın. Gözle tahmin ceza getirir.', 'olcum-bandi'],
+    ],
+  },
+];
+
+const bakim = [
+  'Her çıkıştan sonra kamışı, makineyi ve takımları tatlı suyla durula. Tuz metal ve halkaları hızla yer.',
+  'Makineyi doğrudan hortumla yıkama; ıslak bezle sil, sonra kuru bezle kurula.',
+  'Makarayı gevşet — gergin bırakılan misina yay etkisiyle deforme olur.',
+  'Monofilamenti yılda bir değiştir; güneş ve tuz misinayı görünmez şekilde zayıflatır.',
+  'İğneleri her çıkıştan sonra tırnağına sürterek dene. Kaymıyorsa körelmiştir, at.',
+  'Kamışın halkalarını parmağınla kontrol et; çatlak halka misinayı görünmeden keser.',
+];
+
+const cantada = [
+  'Pense (iğne çıkarmak için — özellikle lüfer ve iskorpitte zorunlu)',
+  'Makas veya misina kesici',
+  'Kafa feneri + yedek pil',
+  'Kepçe (iri balık ihtimali varsa)',
+  'Ölçüm bandı (yasal boy ölçümü)',
+  'Kova ve buz veya soğutucu çanta',
+  'Bez veya eldiven (iskorpit ve gelincik için)',
+  'Küçük ilk yardım seti',
+  'Su ve bir şeyler yemek — 6 saatlik bir çıkış hızla geçer',
+  'Çöp poşeti: misina artığı ve ambalajı asla suda veya kıyıda bırakma',
+];
+---
+<Base
+  baslik="Ekipman" genis
+  aciklama="Kıyı balıkçılığı ekipmanı: her parçanın ne olduğu, ne işe yaradığı ve nasıl seçileceği — artı üç bütçe kademesinde başlangıç listesi."
+>
+  <h1 class="text-3xl sm:text-4xl">Ekipman</h1>
+  <p class="mt-2 max-w-2xl text-muted">
+    Takım şemalarında geçen her parçanın kendi sayfası var: ne olduğu, ne işe yaradığı,
+    nasıl seçileceği ve nelere dikkat edeceğin. Metinlerde noktalı altı çizili gördüğün
+    her terimin üstüne gelerek (telefonda dokunarak) kısa açıklamasını okuyabilirsin.
+  </p>
+
+  <div class="mt-6 rounded-sm border border-l-[3px] border-vurgu/40 border-l-vurgu bg-vurgu-soft p-4">
+    <h2 class="flex items-center gap-1.5 text-lg text-vurgu">
+      <Ikon ad="pusula" sinif="size-[18px]" />Tek Kamışla Başlayacaksan
+    </h2>
+    <p class="mt-1.5 text-sm">
+      <strong>3,0 metre, 20-60 gr atış gramajlı bir kamış + 3000 boy makine + 0,28 mm mono.</strong>
+      Bu üçlü; istavrit, izmarit, kupes, kolyoz, kefal, sardalya, lüfer ve çupranın önemli bir kısmını
+      kapsar. Yani sitedeki türlerin yarısından fazlası tek takımla erişilebilir.
+      Eksik kalan yerler kayalık dip (LRF) ve uzun atış gerektiren kumluk (surf) avlarıdır.
+    </p>
+  </div>
+
+  <Bolum baslik="Parça Parça Ekipman" not={`${ekipman.length} parça, yedi başlıkta. Her birinin kendi sayfası var.`}>
+    <div class="space-y-6">
+      {KATEGORILER.map((k) => {
+        const liste = ekipman.filter((e) => e.data.kategori === k.id);
+        return (
+          <div>
+            <h3 class="flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wide text-muted">
+              <Ikon ad={k.ikon} sinif="size-4" />{baslikBicimi(k.ad)}
+            </h3>
+            <p class="mt-0.5 text-sm text-muted">{k.not}</p>
+            <ul class="mt-2 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+              {liste.map((e) => (
+                <li>
+                  <a href={`/ekipman/${e.id}`} class="block h-full kart p-3 hover:border-accent">
+                    <span class="font-medium">{e.data.ad}</span>
+                    <span class="mt-0.5 block text-sm text-muted">{e.data.ozet}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })}
+    </div>
+  </Bolum>
+
+  {kademeler.map((k, i) => (
+    <Bolum baslik={`Bütçe kademesi ${i + 1}: ${k.ad}`} not={k.hedef}>
+      <div class="overflow-hidden rounded-sm border border-line">
+        <table class="w-full border-collapse text-sm">
+          <tbody>
+            {k.kalemler.map(([ad, deger, not, gid], j) => (
+              <tr class:list={[j % 2 ? 'bg-surface' : 'bg-surface-2/50']}>
+                <th scope="row" class="w-32 border-b border-line px-3 py-2.5 text-left align-top font-semibold">
+                  {gid ? <a href={`/ekipman/${gid}`} class="text-accent hover:underline">{ad}</a> : ad}
+                </th>
+                <td class="border-b border-line px-3 py-2.5 align-top">
+                  <span class="font-medium">{deger}</span>
+                  <span class="mt-0.5 block text-muted">{not}</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </Bolum>
+  ))}
+
+  <Bolum baslik="Çantada Mutlaka Bulunsun">
+    <Liste maddeler={cantada} gorulen={gorulen} />
+  </Bolum>
+
+  <Bolum baslik="Bakım" not="Tuzlu su ekipmanı acımasızca yer. Bu altı madde takımının ömrünü ikiye katlar.">
+    <Liste maddeler={bakim} tip="ipucu" gorulen={gorulen} />
+  </Bolum>
+
+  <Bolum baslik="Olta Malzemecileri" id="dukkanlar" not={`OpenStreetMap'te kayıtlı ${shops.dukkanlar.length} dükkân. Liste eksik olabilir.`}>
+    <div class="scroll-x overflow-hidden rounded-sm border border-line">
+      <table class="w-full min-w-[34rem] border-collapse text-sm">
+        <thead class="bg-surface-2">
+          <tr>
+            <th scope="col" class="px-3 py-2 text-left font-semibold">Dükkân</th>
+            <th scope="col" class="px-3 py-2 text-left font-semibold">İlçe</th>
+            <th scope="col" class="px-3 py-2 text-left font-semibold">İletişim</th>
+            <th scope="col" class="px-3 py-2 text-left font-semibold">Harita</th>
+          </tr>
+        </thead>
+        <tbody>
+          {shops.dukkanlar.map((dk) => (
+            <tr class="border-t border-line">
+              <th scope="row" class="px-3 py-2 text-left font-medium">{dk.ad}</th>
+              <td class="px-3 py-2 text-muted">{dk.ilce ?? '—'}</td>
+              <td class="px-3 py-2">
+                {dk.telefon ? <a class="text-accent hover:underline" href={`tel:${dk.telefon}`}>{dk.telefon}</a> : <span class="text-muted">—</span>}
+              </td>
+              <td class="px-3 py-2">
+                <a class="text-accent hover:underline" href={dk.osm} rel="noopener" target="_blank">aç →</a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-2 text-xs text-muted">
+      Kaynak: {shops.kaynak}. {shops.cekilmeTarihi} tarihinde çekildi.
+      Listeyi güncellemek için <code class="rounded bg-surface-2 px-1">npm run veri:dukkanlar</code>.
+      Bağcılar'daki yoğunluk gerçek: orada bir av malzemeleri çarşısı var.
+    </p>
+  </Bolum>
+
+  <Bolum baslik="Neye Para Harcamaya Değer, Neye Değmez">
+    <div class="grid gap-3 sm:grid-cols-2">
+      <div class="rounded-sm border border-l-[3px] border-good/40 border-l-good bg-good-soft p-4">
+        <h3 class="flex items-center gap-1.5 font-semibold text-good"><Ikon ad="pusula" sinif="size-4" />Değer</h3>
+        <ul class="mt-2 space-y-1.5 text-sm">
+          <li>· <strong>İğne.</strong> Ucuz iğne körelir ve bükülür; balığı orada kaybedersin.</li>
+          <li>· <strong>Misina.</strong> Takımın en zayıf halkası. Burada kısmak anlamsız.</li>
+          <li>· <strong>Makinenin freni.</strong> Kötü fren iri balığı kaybettirir.</li>
+          <li>· <strong>Kepçe ve pense.</strong> Hem balık hem parmak kurtarır.</li>
+        </ul>
+      </div>
+      <div class="kart p-4">
+        <h3 class="font-semibold">Şimdilik Değmez</h3>
+        <ul class="mt-2 space-y-1.5 text-sm text-muted">
+          <li>· Pahalı karbon kamış. Başlangıçta farkı hissetmezsin.</li>
+          <li>· Çok sayıda sahte yem. Üç zoka ve iki maket uzun süre yeter.</li>
+          <li>· Elektronik şamandıra, sonar gibi cihazlar.</li>
+          <li>· Marka çanta ve kıyafet. Sıcak tutan ve kaymayan ayakkabı yeter.</li>
+        </ul>
+      </div>
+    </div>
+  </Bolum>
+</Base>

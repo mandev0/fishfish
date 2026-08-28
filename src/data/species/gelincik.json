@@ -1,0 +1,148 @@
+{
+  "ad": "Gelincik",
+  "latin": "Gaidropsarus mediterraneus",
+  "ingilizce": "Shore rockling",
+  "digerAdlar": [
+    "Deniz gelinciği"
+  ],
+  "ozet": "Kayalık diplerin gece avcısı. Yılan gibi kaygan gövdesiyle ürkütücü görünür ama eti çok lezzetlidir. Kış gecelerinin balığıdır.",
+  "zorluk": 2,
+  "aylar": [
+    4,
+    4,
+    3,
+    2,
+    1,
+    1,
+    1,
+    1,
+    2,
+    3,
+    4,
+    4
+  ],
+  "sular": [
+    "bogaz",
+    "karadeniz",
+    "marmara"
+  ],
+  "gece": true,
+  "boySiniflari": [
+    {
+      "ad": "Gelincik",
+      "cm": "15-40 cm"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": null,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Tebliğ'de bu tür için asgari boy belirtilmemiştir; günlük toplam 5 kg sınırı yine geçerlidir."
+  },
+  "suSicakligi": {
+    "min": 6,
+    "ideal": [
+      9,
+      15
+    ],
+    "max": 19
+  },
+  "aktifSaatler": [
+    "aksam",
+    "gece"
+  ],
+  "ruzgarTercihi": [
+    "poyraz",
+    "yildiz"
+  ],
+  "ruzgarKacinilan": [],
+  "derinlik": "1-30 m; kayalık oyuklarda ve taş aralarında.",
+  "yasamAlani": "Kayalık dipler, mendirek taşları arası, taş blok yığınları.",
+  "teshis": {
+    "siluet": "gelincik",
+    "ayirtEdici": [
+      "Ağzının etrafında üç adet bıyık (barbel) — kesin ayırt edici.",
+      "Gövde uzun, yılanımsı ve kaygan; pulları çok küçük.",
+      "Kahverengi-bordo renk, üzerinde koyu lekeler.",
+      "Sırt yüzgeci gövdenin neredeyse tamamı boyunca uzanır."
+    ],
+    "karistirilan": [
+      "mezgit"
+    ]
+  },
+  "takimlar": [
+    "dip-takimi-sabit-kursun",
+    "paternoster",
+    "lrf-jig-head"
+  ],
+  "yemler": {
+    "dogal": [
+      "Deniz solucanı",
+      "Karides",
+      "Midye içi",
+      "Kalamar şeridi"
+    ],
+    "sahte": [
+      "Kokulu silikon kurtçuk"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "2,4-3,3 m, 20-80 gr",
+      "not": "Kayalıkta kısa kamış daha kontrollü."
+    },
+    "makine": {
+      "deger": "3000-4000"
+    },
+    "anaMisina": {
+      "deger": "0,30-0,35 mm mono",
+      "not": "Kaya sürtünmesine dayanıklı olmalı."
+    },
+    "sokLideri": {
+      "deger": "0,28-0,30 mm, 30-40 cm kısa köstek",
+      "not": "Kısa köstek taşa dolanmayı azaltır."
+    },
+    "igne": {
+      "deger": "1-4 numara uzun pipolu",
+      "not": "Yemi derin yutar, uzun pipo şart."
+    },
+    "agirlik": {
+      "deger": "40-100 gr",
+      "not": "Kayalıkta takılırsa kopsun diye kurşunu ince misinayla bağla."
+    }
+  },
+  "taktik": {
+    "atis": "Taş bloklarının hemen dibine, kısa mesafeye at. Gelincik oyuktan çıkıp yemi alır.",
+    "cekme": "Hiç sarma. Yem taşın dibinde beklesin; 10-15 dakikada bir yeri değiştir.",
+    "tokatlama": "Yemi tamamen yutar. Kamış yatınca sakince çek.",
+    "yakalama": "Mücadelesi zayıftır ama kayalığa kaçarsa çıkaramazsın; ilk anda baskı uygula.",
+    "ipuclari": [
+      "Kış gecelerinde, özellikle karanlık ve soğuk havalarda çok daha aktif.",
+      "Kaygan gövdesini tutmak için bez kullan.",
+      "Aynı oyukta genelde birden fazla birey olur."
+    ],
+    "hatalar": [
+      "Gündüz gelincik aramak.",
+      "Uzun köstek kullanıp sürekli taşa dolanmak."
+    ]
+  },
+  "mutfak": "Buğulama ve çorbası çok makbuldür. Kılçığı az, eti yoğun ve lezzetlidir.",
+  "noktalar": [
+    "garipce",
+    "sariyer-mendirek",
+    "poyrazkoy",
+    "kandilli",
+    "kilyos",
+    "riva",
+    "sile",
+    "agva",
+    "yesilkoy",
+    "moda",
+    "tuzla",
+    "buyukada",
+    "heybeliada",
+    "kerpe",
+    "kefken",
+    "cebeci"
+  ]
+}

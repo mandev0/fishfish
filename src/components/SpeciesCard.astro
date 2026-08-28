@@ -1,0 +1,22 @@
+---
+import Bolluk from './Bolluk.astro';
+import { baslikBicimi } from '../lib/metin';
+import FishSilhouette from './svg/FishSilhouette.astro';
+interface Props { tur: any; ay?: number }
+const { tur, ay } = Astro.props;
+const v = typeof ay === 'number' ? tur.data.aylar[ay - 1] : undefined;
+---
+<a
+  href={`/balik/${tur.id}`}
+  class="group flex gap-3 kart p-3 transition-colors hover:border-accent"
+>
+  <div class="w-24 shrink-0 self-center text-muted transition-colors group-hover:text-accent">
+    <FishSilhouette tur={tur.id} />
+  </div>
+  <div class="min-w-0">
+    <h3 class="font-semibold leading-tight">{baslikBicimi(tur.data.ad)}</h3>
+    <p class="text-xs italic text-muted">{tur.data.latin}</p>
+    {typeof v === 'number' && <p class="mt-1.5"><Bolluk deger={v} /></p>}
+    <p class="mt-1.5 line-clamp-2 text-sm text-muted">{tur.data.ozet}</p>
+  </div>
+</a>

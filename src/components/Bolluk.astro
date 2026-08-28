@@ -1,0 +1,16 @@
+---
+import { baslikBicimi } from '../lib/metin';
+import { bulunabilirlikMetni } from '../lib/season';
+/** Bulunabilirlik göstergesi. 0 yok → 5 sezonun zirvesi. Zorluk rozetiyle aynı dil, ters renk yönü. */
+interface Props { deger: number; etiket?: boolean }
+const { deger, etiket = true } = Astro.props;
+const v = Math.max(0, Math.min(5, Math.round(deger)));
+const ad = bulunabilirlikMetni(v);
+---
+<span class:list={['zorluk', `bolluk-${Math.max(1, v)}`]} title={`Bulunabilirlik ${v}/5 — ${ad}`}>
+  <span class="zorluk-bar" aria-hidden="true">
+    {[1, 2, 3, 4, 5].map((i) => <i data-dolu={i <= v ? '' : undefined} />)}
+  </span>
+  {etiket && <span>{baslikBicimi(ad)}</span>}
+  <span class="sr-only">Bulunabilirlik {v} / 5 — {ad}</span>
+</span>

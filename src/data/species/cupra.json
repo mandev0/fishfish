@@ -1,0 +1,201 @@
+{
+  "ad": "Çupra (Çipura)",
+  "latin": "Sparus aurata",
+  "ingilizce": "Gilt-head bream",
+  "digerAdlar": [
+    "Çipura",
+    "Karagöz çupra"
+  ],
+  "ozet": "Dip takımının en makbul hedefi. Kurnaz, temkinli ve güçlüdür; yemi almadan önce uzun uzun kontrol eder. Kıyıdan iri çupra tutmak ciddi bir başarıdır.",
+  "zorluk": 4,
+  "aylar": [
+    1,
+    1,
+    1,
+    2,
+    3,
+    4,
+    4,
+    4,
+    5,
+    5,
+    3,
+    2
+  ],
+  "sular": [
+    "bogaz",
+    "marmara",
+    "karadeniz"
+  ],
+  "gece": true,
+  "boySiniflari": [
+    {
+      "ad": "Küçük çupra",
+      "cm": "0-20 cm",
+      "not": "20 cm altı yasal değil."
+    },
+    {
+      "ad": "Çupra",
+      "cm": "20-35 cm"
+    },
+    {
+      "ad": "İri çupra",
+      "cm": "35 cm ve üzeri"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 20,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28"
+  },
+  "suSicakligi": {
+    "min": 14,
+    "ideal": [
+      18,
+      25
+    ],
+    "max": 28
+  },
+  "aktifSaatler": [
+    "safak",
+    "sabah",
+    "aksam",
+    "gece"
+  ],
+  "ruzgarTercihi": [
+    "poyraz",
+    "gundogusu"
+  ],
+  "ruzgarKacinilan": [
+    "karayel"
+  ],
+  "derinlik": "2-30 m; kıyıya çok yakın kum-kaya sınırlarında beslenir.",
+  "yasamAlani": "Kum ile kayanın birleştiği hatlar, midye yatakları, mendirek dipleri, deniz çayırı kenarları.",
+  "teshis": {
+    "siluet": "cupra",
+    "ayirtEdici": [
+      "İki gözün arasında parlak altın sarısı bir bant — adını buradan alır.",
+      "Solungaç kapağının üst kenarında koyu kırmızımsı bir leke.",
+      "Gövde oval, yüksek ve gümüş grisi.",
+      "Ağzında midye kabuğu kıran güçlü azı dişleri var."
+    ],
+    "karistirilan": [
+      "sargoz",
+      "karagoz"
+    ]
+  },
+  "takimlar": [
+    "dip-takimi-sabit-kursun",
+    "paternoster",
+    "lrf-jig-head"
+  ],
+  "yemler": {
+    "dogal": [
+      "Midye içi",
+      "Deniz solucanı (sülünez)",
+      "Karides",
+      "Kum midyesi",
+      "Yengeç"
+    ],
+    "sahte": [
+      "Kokulu silikon karides",
+      "2-5 gr jig head"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "3,0-4,2 m surf veya 2,7 m bot kamışı",
+      "not": "Uzak atış gerekiyorsa surf, iskeleden dikine avda kısa kamış."
+    },
+    "makine": {
+      "deger": "4000-6000 boy",
+      "not": "Freni hassas ayarlanabilmeli; çupra ilk kaçışta sert gider."
+    },
+    "anaMisina": {
+      "deger": "0,30-0,35 mm mono",
+      "not": "Kayalık dipte mono sürtünmeye daha dayanıklıdır."
+    },
+    "sokLideri": {
+      "deger": "0,28-0,35 mm fluorocarbon, 40-60 cm köstek",
+      "not": "Fluorocarbon şart — çupra misinayı görürse yemi bırakır."
+    },
+    "igne": {
+      "deger": "1-1/0 numara, kısa pipolu güçlü iğne",
+      "not": "Azı dişleri zayıf iğneyi büker."
+    },
+    "agirlik": {
+      "deger": "60-120 gr",
+      "not": "Akıntı varsa piramit kurşun dibi daha iyi tutar."
+    }
+  },
+  "taktik": {
+    "atis": "Kum ile kayalığın birleştiği sınır hattına at. Dibi bilmiyorsan önce kurşunla tarayarak yapıyı öğren: kum düz sürünür, kayalık takılır.",
+    "cekme": "Çekme yok — yem dipte durur. Misinayı tam germe, hafif gevşek bırak ki balık yemi alırken direnç hissetmesin.",
+    "tokatlama": "Kamış ucu önce birkaç kez küçük küçük titrer (çupra yemi kontrol ediyor), sonra tek seferde sert yatar. İlk titremede değil, kamış yatarken tokatla.",
+    "yakalama": "Kayalığa kaçmaya çalışır; ilk 5 saniye baskı uygula ve kayadan uzaklaştır. Sonra freni bırak, yorulmasını bekle.",
+    "ipuclari": [
+      "Midye içi en klasik yemdir ama sahilde topladığın taze midye, dükkândan alınandan çok daha iyi sonuç verir.",
+      "Yemin bir kısmını ezip suya serpmek (tırlama) çupra sürüsünü noktana çeker.",
+      "Sabah ilk ışık ve gün batımından sonraki ilk saat en verimli zamandır.",
+      "Kösteği ana misinadan daima ince tut; takıldığında sadece kösteği kaybedersin."
+    ],
+    "hatalar": [
+      "İlk titremede tokatlamak — çupra yemi henüz ağzına almamıştır.",
+      "Kalın köstek kullanmak; çupra en temkinli kıyı balığıdır.",
+      "Çok ağır kurşun; balık yemi çekerken direnci hisseder ve bırakır."
+    ]
+  },
+  "mutfak": "Izgara ve fırın için en makbul kıyı balıklarından. Tuzda pişirme de çok yakışır.",
+  "noktalar": [
+    "rumeli-kavagi",
+    "garipce",
+    "sariyer-mendirek",
+    "buyukdere",
+    "tarabya",
+    "yenikoy",
+    "emirgan",
+    "sarayburnu",
+    "anadolu-kavagi",
+    "poyrazkoy",
+    "beykoz",
+    "pasabahce",
+    "kanlica",
+    "anadolu-hisari",
+    "kandilli",
+    "beylerbeyi",
+    "salacak",
+    "kilyos",
+    "riva",
+    "sile",
+    "agva",
+    "yenikapi",
+    "kumkapi",
+    "zeytinburnu",
+    "bakirkoy",
+    "yesilkoy",
+    "florya",
+    "buyukcekmece",
+    "silivri",
+    "moda",
+    "caddebostan",
+    "bostanci",
+    "maltepe",
+    "kartal",
+    "pendik",
+    "tuzla",
+    "buyukada",
+    "heybeliada",
+    "bayramoglu",
+    "darica-sahil",
+    "eskihisar",
+    "tavsancil",
+    "hereke",
+    "karamursel",
+    "ulasli",
+    "degirmendere",
+    "bagirganli",
+    "kerpe",
+    "kefken",
+    "cebeci"
+  ]
+}

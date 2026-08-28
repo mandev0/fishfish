@@ -1,0 +1,71 @@
+---
+// Feeder takımı — ince uçlu kamış, kayar yemlik kafes, boncuk, fırdöndü, uzun köstek, mısırlı iğne.
+---
+<svg class="diagram" viewBox="0 0 380 540" role="img" aria-labelledby="feeder-baslik">
+  <title id="feeder-baslik">Feeder takımı şeması: ince uçlu kamış, misinanın üstünde kayan yemlik kafes, boncuk, fırdöndü, uzun köstek ve mısırlı iğne.</title>
+
+  <rect class="water" x="0" y="76" width="380" height="464" />
+  <path class="ln-thin" d="M0 76 q20 -6 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" />
+
+  <path class="kamis" d="M14 30 L96 42" />
+  <path class="ln" d="M96 42 L150 50" stroke-width="2.2" />
+  <text class="lbl-b" x="14" y="20">Feeder kamışı 3,0-3,6 m</text>
+  <text class="lbl-a" x="196" y="22">İnce uç</text>
+  <text class="lbl" x="196" y="36">vuruşu gözle gösterir</text>
+
+  <path class="misina" d="M150 50 L182 122" />
+  <text class="lbl-misina" x="204" y="98">Ana misina 0,22 mm</text>
+
+  <!-- Kayar yemlik kafes -->
+  <g transform="translate(182,166)">
+    <rect class="metal" x="-22" y="-34" width="44" height="60" rx="4" />
+    <path class="ln-thin" d="M-22 -18 h44 M-22 -2 h44 M-22 14 h44 M-8 -34 v60 M8 -34 v60" />
+    <path class="metal" d="M-22 20 h44 v6 h-44 z" />
+    <path class="misina" d="M0 -46 L0 -34 M0 26 L0 40" />
+  </g>
+  <text class="lbl-metal" x="216" y="140">Yemlik kafes</text>
+  <text class="lbl" x="216" y="154">20-60 gr</text>
+  <text class="lbl-a" x="216" y="174">Misina kafesin</text>
+  <text class="lbl-a" x="216" y="188">içinden kayar</text>
+  <text class="lbl-yem" x="146" y="150" text-anchor="end">Islatılmış yem</text>
+  <text class="lbl" x="146" y="164" text-anchor="end">kafesin içinde</text>
+  <path class="tick" d="M150 160 L156 166" />
+
+  <!-- Boncuk -->
+  <circle class="metal" cx="182" cy="220" r="6" />
+  <text class="lbl-metal" x="146" y="222" text-anchor="end">Boncuk</text>
+  <path class="tick" d="M152 220 L172 220" />
+
+  <!-- Fırdöndü -->
+  <ellipse class="metal" cx="182" cy="248" rx="6" ry="10" />
+  <text class="lbl-metal" x="146" y="252" text-anchor="end">Fırdöndü</text>
+  <path class="tick" d="M152 248 L174 248" />
+
+  <!-- Köstek -->
+  <path class="lider" d="M182 258 L182 396" />
+  <path class="tick" d="M134 258 L134 396 M128 258 L140 258 M128 396 L140 396" />
+  <text class="lbl-lider" x="118" y="308" text-anchor="end">Köstek</text>
+  <text class="lbl" x="118" y="322" text-anchor="end">0,16-0,20 mm</text>
+  <text class="lbl" x="118" y="336" text-anchor="end">25-60 cm</text>
+  <text class="lbl-a" x="118" y="356" text-anchor="end">Durgun suda uzun,</text>
+  <text class="lbl-a" x="118" y="370" text-anchor="end">akıntıda kısa tut</text>
+
+  <!-- Göl dibi -->
+  <path class="ground" d="M0 448 q40 -12 80 -2 q40 10 80 -6 q40 -14 80 0 q40 14 80 -4 q20 -8 40 -2 L380 540 L0 540 z" />
+  <path class="ln-thin" d="M0 448 q40 -12 80 -2 q40 10 80 -6 q40 -14 80 0 q40 14 80 -4 q20 -8 40 -2" />
+
+  <!-- İğne ve mısır -->
+  <g transform="translate(182,400)">
+    <path class="igne" d="M0 0 l0 14 a8 8 0 1 0 13 4" />
+    <circle class="yem" cx="5" cy="16" r="6" />
+    <circle class="yem" cx="12" cy="21" r="6" />
+  </g>
+  <text class="lbl-igne" x="216" y="412">İğne 10-14 no</text>
+  <text class="lbl-yem" x="216" y="426">mısır veya hamur</text>
+  <text class="lbl-a" x="216" y="446">İğnedeki yem,</text>
+  <text class="lbl-a" x="216" y="460">kafestekiyle aynı olsun</text>
+
+  <text class="lbl" x="14" y="500">Her atış dibe biraz yem bırakır; balık zamanla</text>
+  <text class="lbl" x="14" y="516">o noktaya toplanır. Bu yüzden hep aynı yere atmak</text>
+  <text class="lbl" x="14" y="532">yöntemin yarısıdır.</text>
+</svg>

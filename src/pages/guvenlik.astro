@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro';
+import Bolum from '../components/Bolum.astro';
+import Ikon from '../components/Ikon.astro';
+import Liste from '../components/Liste.astro';
+
+const gorulen = new Set<string>();
+
+const kayalik = [
+  'Islak kaya ve yosun buzdan daha kaygandır. Kaymayan tabanlı ayakkabı giy; spor ayakkabıyla kayalığa çıkma.',
+  'Kayalığa varır varmaz 10 dakika otur ve dalgayı izle. Her 15-20 dalgada bir belirgin şekilde büyük bir set gelir; ayağını nereye basacağını buna göre seç.',
+  'Sırtın hep denize dönük olmasın. Yem takarken bile arada bir denize bak.',
+  'Yalnız gitme. Gidiyorsan nereye ve kaçta döneceğini birine söyle.',
+  'Kurtarma halatı veya can yeleği kayalık avında lüks değildir — özellikle Karadeniz kıyısında.',
+];
+
+const mendirek = [
+  'Mendirek bloklarının arasındaki boşluklara ayak sıkışabilir. Blok üstünde koşma, atlama.',
+  'Dalga mendireği aşıyorsa mendirek başına çıkma. Su seni bir metrelik dalgayla bile devirebilir.',
+  'Korkuluksuz rıhtımda kenarın en az bir metre gerisinde dur.',
+  'Gece mendirekte kafa fenerini yanına al; el feneri iki elini birden meşgul eder.',
+];
+
+const hava = [
+  'Lodos fırtınasında Marmara kıyısına, karayelde Karadeniz kıyısına çıkma. Bu iki kombinasyon her yıl can alıyor.',
+  'Dalga 1,2 metreyi geçtiyse kayalık ve mendirek başı tehlikelidir. Sitedeki günlük panel bu eşiği aştığında uyarı basar.',
+  'Rüzgâr 45 km/sa üstündeyse takım atmak zaten anlamsızdır; ısrar etme.',
+  'Karadeniz\'de hava çok hızlı bozar. Bulut hattı yaklaşıyorsa toparlanmaya baş.',
+  'Yıldırım tehlikesi varsa hemen topla: karbon kamış mükemmel bir iletkendir.',
+];
+
+const ekipmanGuvenligi = [
+  'Yüksek gerilim hattının altında veya yakınında asla kamış kaldırma. Kamışın teli görmesine gerek yok, yakınına gelmesi yeter.',
+  'Kalabalık iskelede atış yapmadan önce arkanı kontrol et. Üç iğneli zoka arkadaki kişiye ciddi zarar verir.',
+  'Lüfer ve zargana çıkarırken elini ağızdan uzak tut, pense kullan.',
+  'İskorpit ve lipsozu asla çıplak elle tutma; sırt dikenleri zehirlidir.',
+  'İskorpit dikeni battıysa: yarayı sıkarak yıka, bölgeyi dayanabileceğin sıcaklıkta suya (yaklaşık 45 °C) 30-60 dakika sok, ağrı geçmezse veya şişme yayılırsa hekime başvur.',
+  'İğne parmağına battıysa ve tersi (barb) girdiyse kendi başına geri çekmeye çalışma — sağlık kuruluşuna git.',
+];
+---
+<Base
+  baslik="Güvenlik"
+  aciklama="Kıyı balıkçılığında kayalık, mendirek, hava ve ekipman güvenliği."
+>
+  <h1 class="text-3xl sm:text-4xl">Güvenlik</h1>
+  <p class="mt-2 max-w-2xl text-muted">
+    Balıkçılıkta yaşanan kazaların büyük kısmı iki nedenden oluyor:
+    bozan havada kayalığa çıkmak ve kalabalık yerde arkaya bakmadan atış yapmak.
+    Aşağıdakiler tavsiye değil, kural olarak okunmalı.
+  </p>
+
+  <div class="mt-5 rounded-sm border border-l-[3px] border-danger/40 border-l-danger bg-danger-soft p-4">
+    <p class="flex items-center gap-1.5 font-semibold text-danger">
+      <Ikon ad="uyari" sinif="size-4" />Acil durumda
+    </p>
+    <p class="mt-1 text-sm">
+      <strong>112</strong> — tek acil çağrı numarası (sağlık, itfaiye, jandarma, sahil güvenlik).
+      Denizde acil durumlar için <strong>Sahil Güvenlik 158</strong>.
+      Aramadan önce bulunduğun noktanın adını netleştir; nokta sayfalarındaki koordinatı okuyabilirsin.
+    </p>
+  </div>
+
+  <Bolum baslik="Kayalıkta">
+    <Liste maddeler={kayalik} tip="hata" gorulen={gorulen} />
+  </Bolum>
+
+  <Bolum baslik="Mendirek ve Rıhtımda">
+    <Liste maddeler={mendirek} tip="hata" gorulen={gorulen} />
+  </Bolum>
+
+  <Bolum baslik="Havaya Göre Karar">
+    <Liste maddeler={hava} tip="hata" gorulen={gorulen} />
+  </Bolum>
+
+  <Bolum baslik="Ekipman ve Balık Kaynaklı Yaralanmalar">
+    <Liste maddeler={ekipmanGuvenligi} tip="hata" gorulen={gorulen} />
+  </Bolum>
+
+  <Bolum baslik="Gece Avında">
+    <Liste maddeler={[
+      'Kafa feneri ve yedek pil olmadan gece avına çıkma.',
+      'Kırmızı ışık modu gece görüşünü korur ve balığı daha az ürkütür.',
+      'Reflektörlü yelek veya açık renk kıyafet, kalabalık rıhtımda seni görünür kılar.',
+      'Bulunduğun yeri gündüz bir kez gör. Karanlıkta ilk defa gittiğin kayalığa çıkma.',
+      'Telefonunun şarjını tam götür; hem fener hem acil çağrı için tek yedeğin o.',
+    ]} tip="ipucu" />
+  </Bolum>
+</Base>

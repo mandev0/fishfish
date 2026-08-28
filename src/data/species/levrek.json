@@ -1,0 +1,178 @@
+{
+  "ad": "Levrek",
+  "latin": "Dicentrarchus labrax",
+  "ingilizce": "European seabass",
+  "digerAdlar": [
+    "Deniz levreği",
+    "Sudak (yanlış kullanım)"
+  ],
+  "ozet": "Bulanık suyu ve dalgayı seven güçlü bir avcı. Fırtına sonrası, dere ağızlarında ve gece kıyıya sokulur. Kıyı balıkçılığının en saygın hedeflerinden.",
+  "zorluk": 4,
+  "aylar": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    2,
+    2,
+    2,
+    3,
+    4,
+    5,
+    4
+  ],
+  "sular": [
+    "bogaz",
+    "marmara",
+    "karadeniz",
+    "dere"
+  ],
+  "gece": true,
+  "boySiniflari": [
+    {
+      "ad": "Küçük levrek",
+      "cm": "0-25 cm",
+      "not": "25 cm altı yasal değil."
+    },
+    {
+      "ad": "Levrek",
+      "cm": "25-45 cm"
+    },
+    {
+      "ad": "İri levrek",
+      "cm": "45 cm ve üzeri"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 25,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28"
+  },
+  "suSicakligi": {
+    "min": 8,
+    "ideal": [
+      12,
+      20
+    ],
+    "max": 24
+  },
+  "aktifSaatler": [
+    "safak",
+    "aksam",
+    "gece"
+  ],
+  "ruzgarTercihi": [
+    "lodos",
+    "kible",
+    "gunbatisi"
+  ],
+  "ruzgarKacinilan": [],
+  "derinlik": "Yüzey ile 15 m arası; dalgalı havada 1 metrelik suya kadar girer.",
+  "yasamAlani": "Dere ağızları, dalga kıran mendirekler, köpüklü kayalık kıyılar, liman girişleri.",
+  "teshis": {
+    "siluet": "levrek",
+    "ayirtEdici": [
+      "Gövde uzun ve silindirik, sırt gümüş-gri, karın beyaz.",
+      "İki ayrı sırt yüzgeci; ilki sert dikenli.",
+      "Solungaç kapağının arka kenarında keskin dikenler var — elle tutarken dikkat.",
+      "Genç bireylerde sırtta dağınık koyu benekler bulunabilir."
+    ],
+    "karistirilan": [
+      "kefal"
+    ]
+  },
+  "takimlar": [
+    "samandirali-canli-yem",
+    "spin-yuzey",
+    "dip-takimi-sabit-kursun",
+    "lrf-jig-head"
+  ],
+  "yemler": {
+    "dogal": [
+      "Canlı istavrit",
+      "Deniz solucanı",
+      "Karides",
+      "Kalamar şeridi",
+      "Canlı kaya balığı"
+    ],
+    "sahte": [
+      "9-14 cm minnow",
+      "Silikon shad + 10-20 gr jig head",
+      "Yüzey popper"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "2,7-3,6 m, 15-50 gr",
+      "not": "Uzun kamış dalgalı kıyıda misinayı köpüğün üstünde tutar."
+    },
+    "makine": {
+      "deger": "3000-4000",
+      "not": "Tuzlu su korumalı olması uzun ömür sağlar."
+    },
+    "anaMisina": {
+      "deger": "PE 1,0-1,2 veya 0,28 mm mono"
+    },
+    "sokLideri": {
+      "deger": "0,30-0,40 mm fluorocarbon, 1-1,5 m",
+      "not": "Kayalık sürtünmesine karşı."
+    },
+    "igne": {
+      "deger": "1/0-3/0",
+      "not": "Canlı yemde ince telli iğne yemi az yorar."
+    },
+    "agirlik": {
+      "deger": "20-80 gr",
+      "not": "Dalgalı havada dibi tutması için ağır seç."
+    }
+  },
+  "taktik": {
+    "atis": "Köpüğün oluştuğu, suyun kabardığı yere at. Levrek bulanık ve hareketli suda avlanır — berrak sakin suda kıyıya yaklaşmaz. Dere ağızlarında tatlı-tuzlu suyun karıştığı hattı hedefle.",
+    "cekme": "Maketle avlanıyorsan yavaş ve duraklamalı sar; levrek yemi süzerek takip eder. Canlı yemde şamandırayı akıntıya bırak.",
+    "tokatlama": "Vuruş ağırdır, sanki dibe takıldın gibi hissedersin. Ağırlığı hissettiğin anda geniş bir hareketle tokatla.",
+    "yakalama": "Ağzı büyük ama dokusu incedir; sert çekiş iğneyi yırtar. Sabit ve orta baskıyla yaklaştır, dalganın kaldırdığı anda kepçele.",
+    "ipuclari": [
+      "En iyi levrek havası lodosun bozduğu, suyun bulandığı ve dalganın kıyıyı dövdüğü havadır — ama bu aynı zamanda en tehlikeli hava. Can yeleği ve emniyetli bir zemin şart.",
+      "Yağmurdan sonra Riva ve Ağva gibi dere ağızları çok verimli olur.",
+      "Gece avında sessizlik önemli; kıyıda fener ışığını suya doğrudan tutma."
+    ],
+    "hatalar": [
+      "Berrak ve durgun günde levrek aramak; boşa vakit harcarsın.",
+      "Fırtınalı havada güvenli olmayan kayalığa çıkmak — her yıl can kaybı yaşanıyor.",
+      "Sert ve ani çekişlerle balığı zorlamak."
+    ]
+  },
+  "mutfak": "Buğulama, fırında veya ızgara. Kıyıdan tutulan yabani levreğin eti çiftlik levreğinden belirgin şekilde farklıdır.",
+  "noktalar": [
+    "garipce",
+    "tarabya",
+    "bebek",
+    "arnavutkoy",
+    "poyrazkoy",
+    "kanlica",
+    "anadolu-hisari",
+    "kandilli",
+    "cengelkoy",
+    "kilyos",
+    "riva",
+    "sile",
+    "agva",
+    "yesilkoy",
+    "buyukcekmece",
+    "silivri",
+    "tuzla",
+    "bayramoglu",
+    "eskihisar",
+    "hereke",
+    "karamursel",
+    "degirmendere",
+    "golcuk",
+    "izmit-sahil",
+    "bagirganli",
+    "kerpe",
+    "kefken",
+    "cebeci",
+    "riva-deresi"
+  ]
+}

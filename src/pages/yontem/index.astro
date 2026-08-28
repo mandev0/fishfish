@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Ikon from '../../components/Ikon.astro';
+import Zorluk from '../../components/Zorluk.astro';
+import { baslikBicimi } from '../../lib/metin';
+
+const yontemler = (await getCollection('methods')).sort((a, b) => a.data.zorluk - b.data.zorluk);
+
+const deniz = yontemler.filter((y) => y.data.sular.includes('deniz'));
+const tatli = yontemler.filter((y) => y.data.sular.includes('tatli'));
+
+const TARZ_METNI = {
+  aktif: 'Aktif — yemi sen oynatırsın, yürüyerek balık ararsın.',
+  pasif: 'Pasif — yemi bırakır, balığın gelmesini beklersin.',
+} as const;
+
+const gruplar = [
+  { ad: 'Denizde', not: 'Kıyıdan, mendirekten ve iskeleden uygulanan yöntemler.', liste: deniz },
+  { ad: 'Tatlı suda', not: 'Göl, baraj ve dere kenarından uygulanan yöntemler.', liste: tatli },
+];
+---
+<Base
+  baslik="Yöntemler"
+  aciklama="Çapari, aç-çek, spin, LRF, yemli dip, şamandıra, egi, surf ve feeder — kıyıdan ve tatlı sudan uygulanan avlanma yöntemleri, hangisi kime uygun."
+>
+  <h1 class="text-3xl sm:text-4xl">Yöntemler</h1>
+  <p class="mt-2 max-w-2xl text-sm text-muted sm:text-base">
+    Takım "neyi bağladığın", yöntem "nasıl avlandığın". Aynı kamışla bambaşka biçimlerde
+    avlanabilirsin: birinde yemi bırakıp beklersin, diğerinde kilometrelerce yürüyüp sahte yem atarsın.
+    Aşağıdaki {yontemler.length} yöntemin hepsi kıyıdan uygulanır — tekne gerektirenler bu rehberin dışında.
+  </p>
+
+  {gruplar.map((g) => (
+    <section class="mt-8">
+      <h2 class="bolum-baslik mb-1 text-xl sm:text-2xl">{baslikBicimi(g.ad)}</h2>
+      <p class="mb-3 pl-[0.7rem] text-sm text-muted">{g.not}</p>
+      <div class="grid gap-4 sm:grid-cols-2">
+        {g.liste.map((y) => (
+          <a href={`/yontem/${y.id}`} class="group kart p-4 hover:border-accent">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 shrink-0 text-vurgu">
+                <Ikon ad={y.data.ikon} sinif="size-6" />
+              </span>
+              <div class="min-w-0">
+                <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                  <h3 class="font-semibold group-hover:text-accent">{baslikBicimi(y.data.ad)}</h3>
+                  <Zorluk seviye={y.data.zorluk} />
+                </div>
+                <p class="mt-1 text-sm text-muted">{y.data.ozet}</p>
+                <p class="mt-2 text-xs text-muted">
+                  {baslikBicimi(y.data.tarz)} · {y.data.turler.length} tür · {y.data.takimlar.length} takım
+                </p>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <section class="mt-10">
+    <h2 class="bolum-baslik mb-3 text-xl sm:text-2xl">Aktif mi, Pasif mi?</h2>
+    <div class="grid gap-3 sm:grid-cols-2">
+      {(['aktif', 'pasif'] as const).map((t) => (
+        <div class="kart kart-vurgulu p-4">
+          <h3 class="font-semibold">{baslikBicimi(t)}</h3>
+          <p class="mt-1 text-sm text-muted">{TARZ_METNI[t]}</p>
+          <ul class="mt-2 flex flex-wrap gap-1.5">
+            {yontemler.filter((y) => y.data.tarz === t).map((y) => (
+              <li>
+                <a href={`/yontem/${y.id}`} class="block kart px-2.5 py-1 text-sm hover:border-accent">{y.data.kisaAd}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,36 @@
+---
+import Adim from './_Adim.astro';
+---
+<svg class="diagram" viewBox="0 0 400 450" role="img" aria-labelledby="k-fg">
+  <title id="k-fg">FG düğümü: gergin örgünün üstüne lideri dik tut, örgüyü liderin etrafında dönüşümlü alttan üstten yaklaşık yirmi kez geçir, yarım düğümlerle kilitle.</title>
+
+  <Adim no={1} baslik="Örgüyü gergin tut, lideri dik konumda getir" y={0}>
+    <path class="orgu" d="M12 46 L388 46" />
+    <text class="lbl-orgu" x="12" y="30">örgü (gergin)</text>
+    <path class="lider" d="M180 8 L180 92" />
+    <text class="lbl-lider" x="190" y="88">fluorocarbon lider</text>
+    <path class="ln-thin" d="M40 62 q10 8 20 0" />
+    <text class="lbl" x="12" y="82">dizine veya ayağına dola</text>
+  </Adim>
+
+  <Adim no={2} baslik="Dönüşümlü sar — 20-24 geçiş" y={150}>
+    <path class="lider" d="M20 46 L340 46" stroke-width="3.2" />
+    {[0,1,2,3,4,5,6,7,8,9,10,11].map((i) => {
+      const x = 70 + i * 18;
+      return i % 2 === 0
+        ? <path class="orgu" d={`M${x} 24 q9 22 18 22 q-9 0 -18 22`} />
+        : <path class="orgu" d={`M${x} 68 q9 -22 18 -22 q-9 0 -18 -22`} />;
+    })}
+    <text class="lbl-orgu" x="70" y="100">bir üstten, bir alttan</text>
+  </Adim>
+
+  <Adim no={3} baslik="Yarım düğümlerle kilitle, ıslat ve yavaşça sık" y={300}>
+    <path class="lider" d="M20 46 L120 46" stroke-width="3.2" />
+    <rect x="120" y="34" width="120" height="24" rx="5" class="dugum-dolu" />
+    {[0,1,2,3,4,5,6].map((i) => (<path class="ln-thin" d={`M${130 + i * 15} 34 L${130 + i * 15} 58`} />))}
+    <path class="orgu" d="M240 46 L340 46" />
+    <path class="orgu" stroke-width="1.4" d="M244 46 q10 -14 20 0 q-10 14 -20 0" />
+    <path class="orgu" stroke-width="1.4" d="M262 46 q10 -14 20 0 q-10 14 -20 0" />
+    <text class="lbl-a" x="244" y="80">kilit yarım düğümler</text>
+  </Adim>
+</svg>

@@ -1,0 +1,147 @@
+{
+  "ad": "Tatlısu kefali",
+  "latin": "Squalius cephalus",
+  "ingilizce": "Chub",
+  "digerAdlar": [
+    "Akbalık",
+    "Tahta balığı"
+  ],
+  "ozet": "Akarsuların ve göl kıyılarının temkinli balığı. Yüzeydeki her şeyi denemekle ünlüdür ama en küçük gölgeyi görünce kaybolur.",
+  "zorluk": 3,
+  "aylar": [
+    2,
+    2,
+    2,
+    1,
+    1,
+    3,
+    4,
+    4,
+    4,
+    3,
+    3,
+    2
+  ],
+  "sular": [
+    "gol",
+    "dere"
+  ],
+  "gece": false,
+  "boySiniflari": [
+    {
+      "ad": "Küçük kefal",
+      "cm": "0-20 cm",
+      "not": "20 cm altı yasal değil."
+    },
+    {
+      "ad": "Tatlısu kefali",
+      "cm": "20-35 cm"
+    },
+    {
+      "ad": "İri kefal",
+      "cm": "35 cm ve üzeri"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 20,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Akarsularda oltayla tatlısu kefali avı, iç su yasağı döneminde de serbesttir; göl ve barajlarda yasak geçerlidir. İç sularda kişi başı günlük toplam 5 kg sınırı geçerlidir.",
+    "yasakDonemi": "15 Mart – 15 Haziran: iç sularda üreme dönemi av yasağı. Yasak amatör oltacıyı da kapsar."
+  },
+  "suSicakligi": {
+    "min": 5,
+    "ideal": [
+      12,
+      22
+    ],
+    "max": 26
+  },
+  "aktifSaatler": [
+    "safak",
+    "sabah",
+    "ikindi",
+    "aksam"
+  ],
+  "ruzgarTercihi": [],
+  "ruzgarKacinilan": [],
+  "derinlik": "0,5-3 m; akıntının yavaşladığı kenarlarda ve yüzeye yakın.",
+  "yasamAlani": "Dere kıvrımlarının iç kenarı, köprü ayakları, sarkan ağaç altları, göl kıyısındaki taşlık kesimler.",
+  "teshis": {
+    "siluet": "tatlisu-kefali",
+    "ayirtEdici": [
+      "Gövde silindirik ve kalın; sırt koyu gri-yeşil, yanlar pirinç rengi parlar.",
+      "Baş geniş ve ağız büyük — kızılkanattan en net farkı budur.",
+      "Pullar iri ve belirgin, kenarları koyu hatlıdır.",
+      "Anal yüzgecin kenarı dışa doğru yuvarlaktır."
+    ],
+    "karistirilan": [
+      "kizilkanat"
+    ]
+  },
+  "takimlar": [
+    "tatli-sabit-samandira",
+    "feeder-takimi"
+  ],
+  "yemler": {
+    "dogal": [
+      "Ekmek içi",
+      "Toprak solucanı",
+      "Mısır",
+      "Peynir",
+      "Kiraz ve dut"
+    ],
+    "sahte": [
+      "Küçük döner kaşık",
+      "3-5 cm silikon"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "3,0-3,9 m hafif kamış"
+    },
+    "makine": {
+      "deger": "2000-3000"
+    },
+    "anaMisina": {
+      "deger": "0,18-0,22 mm mono"
+    },
+    "sokLideri": {
+      "deger": "0,16-0,20 mm fluorocarbon",
+      "not": "Berrak suda daha az görünür."
+    },
+    "igne": {
+      "deger": "8-12 numara"
+    },
+    "agirlik": {
+      "deger": "Saçma kurşun veya 10-20 gr yemlik"
+    }
+  },
+  "taktik": {
+    "atis": "Kıyıya yaklaşırken gölgeni suya düşürme. Sarkan dalların altına ve köprü ayaklarının gerisine at.",
+    "cekme": "Yemi akıntıyla doğal biçimde süzülmeye bırak; gergin misinada sürüklenen yem sahte durur.",
+    "tokatlama": "Şamandıra battığında veya misina gerildiğinde net ama yumuşak bir tokat at.",
+    "yakalama": "Güçlü ve inatçıdır, ilk hamlede kıyıdaki dallara kaçar. Kamışı yana yatırıp yönünü açıktan çevir.",
+    "ipuclari": [
+      "Yaz aylarında suya düşen dut ve kiraz mevsiminde bu meyveler en iyi yemdir.",
+      "Sessiz yaklaş; ayak sesi ve gölge bu balığı anında kaçırır.",
+      "Yasak döneminde göllerde değil, akarsuda ara — mevzuat bu ayrımı yapıyor."
+    ],
+    "hatalar": [
+      "Kıyıda dikilip suya gölge düşürmek.",
+      "Kalın ve görünür misina kullanmak.",
+      "Yasak döneminde göl kıyısında avlanmak."
+    ]
+  },
+  "mutfak": "Kılçığı çoktur, tazeyken kızartılır. Çoğu balıkçı fotoğrafını çekip suya bırakır.",
+  "noktalar": [
+    "sapanca-sahil",
+    "sapanca-kirkpinar",
+    "sapanca-kurtkoy",
+    "sapanca-kartepe-kuzey",
+    "sakarya-nehri",
+    "riva-deresi",
+    "agva-goksu",
+    "agva-yesilcay"
+  ]
+}

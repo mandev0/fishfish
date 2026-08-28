@@ -1,0 +1,111 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { baslikBicimi } from '../lib/metin';
+import { AY_ADLARI, AY_KISA, bulunabilirlikMetni, SU_ADLARI, SU_KISA_ADLARI } from '../lib/season';
+
+const turler = (await getCollection('species'))
+  .sort((a, b) => b.data.aylar.reduce((x, y) => x + y, 0) - a.data.aylar.reduce((x, y) => x + y, 0));
+
+/**
+ * Su alanı süzgeci verinin kendisinden üretilir; elle liste tutulduğunda
+ * tatlı su eklendiğinde sessizce eksik kalıyordu. Sıra `SU_ADLARI` ile aynı:
+ * önce deniz alanları, sonra iç sular.
+ */
+const suSirasi = Object.keys(SU_ADLARI);
+const sular = [...new Set(turler.flatMap((t) => t.data.sular))]
+  .sort((a, b) => suSirasi.indexOf(a) - suSirasi.indexOf(b));
+
+/** Bolluk rozetleriyle aynı pastel skala (global.css → --bol*). */
+const hucre = (v: number) => (v > 0 ? `bolluk-${v}` : '');
+---
+<Base
+  baslik="Balık Takvimi" genis
+  aciklama="Hangi ay hangi balık tutulur — deniz ve tatlı su türleri için 12 aylık bulunabilirlik tablosu."
+>
+  <h1 class="text-3xl sm:text-4xl">Balık Takvimi</h1>
+  <p class="mt-2 max-w-2xl text-muted">
+    Deniz ve tatlı su türleri bir arada. Her hücre o türün o aydaki bulunabilirliğini
+    gösterir: 0 hiç yok, 5 sezonun zirvesi.
+    Değerler İstanbul ve Kocaeli kıyısı ile Sapanca çevresindeki iç sular için verilmiştir. İç su türlerinde ilkbahar boşluğu üreme dönemi av yasağından kaynaklanır.
+  </p>
+
+  <div class="mt-5 flex flex-wrap items-center gap-2">
+    <span class="text-sm text-muted">Su alanı:</span>
+    <button type="button" data-su="hepsi" class="su-dugme rounded-sm border border-vurgu bg-vurgu-soft px-3 py-1.5 text-sm font-medium text-vurgu">Hepsi</button>
+    {sular.map((s) => (
+      <button type="button" data-su={s} class="su-dugme rounded-sm border border-line bg-surface px-3 py-1.5 text-sm text-muted transition-colors hover:border-line-strong hover:text-ink">
+        {SU_KISA_ADLARI[s]}
+      </button>
+    ))}
+  </div>
+
+  <div class="scroll-x mt-5 rounded-sm border border-line">
+    <table class="w-full min-w-max border-collapse text-sm">
+      <caption class="sr-only">Türlere ve aylara göre bulunabilirlik</caption>
+      <thead class="sticky top-0 bg-surface-2">
+        <tr>
+          <th scope="col" class="sticky left-0 z-10 bg-surface-2 px-3 py-2 text-left font-semibold">Balık</th>
+          {AY_KISA.map((a, i) => (
+            <th scope="col" data-ay-basligi={i + 1} class="w-10 px-1 py-2 text-center text-xs font-medium text-muted">{a}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {turler.map((t) => (
+          <tr class="border-t border-line" data-sular={t.data.sular.join(' ')}>
+            <th scope="row" class="sticky left-0 z-10 whitespace-nowrap border-r border-line bg-surface px-3 py-1.5 text-left font-medium">
+              <a href={`/balik/${t.id}`} class="hover:text-accent">{baslikBicimi(t.data.ad)}</a>
+            </th>
+            {t.data.aylar.map((v, i) => (
+              <td class="p-0.5 text-center">
+                <span
+                  class:list={['flex h-7 w-9 items-center justify-center rounded text-xs font-semibold', hucre(v)]}
+                  style={v > 0 ? 'background: var(--z-bg); color: var(--z-fg)' : undefined}
+                  title={`${t.data.ad} · ${AY_ADLARI[i]}: ${bulunabilirlikMetni(v)}`}
+                >{v > 0 ? v : '·'}</span>
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <section class="mt-8">
+    <h2 class="text-lg font-semibold tracking-tight">Ay Ay Bak</h2>
+    <ul class="mt-3 flex flex-wrap gap-2">
+      {AY_ADLARI.map((ad, i) => (
+        <li>
+          <a href={`/ay/${i + 1}`} class="block kart px-3 py-1.5 text-sm hover:border-accent">{ad}</a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <script is:inline data-astro-rerun>
+    (function () {
+      // Bu ayın sütununu vurgula (derleme zamanına çivilenmesin diye tarayıcıda).
+      const ay = Number(new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Istanbul', month: 'numeric' }).format(new Date()));
+      const basl = document.querySelector(`[data-ay-basligi="${ay}"]`);
+      if (basl) { basl.classList.remove('text-muted'); basl.classList.add('text-accent', 'font-bold'); }
+
+      const dugmeler = document.querySelectorAll('.su-dugme');
+      const satirlar = document.querySelectorAll('tbody tr[data-sular]');
+      dugmeler.forEach((d) => d.addEventListener('click', () => {
+        const su = d.getAttribute('data-su');
+        dugmeler.forEach((x) => {
+          const secili = x === d;
+          x.className = 'su-dugme rounded-sm border px-3 py-1.5 text-sm transition-colors '
+            + (secili
+              ? 'border-vurgu bg-vurgu-soft font-medium text-vurgu'
+              : 'border-line bg-surface text-muted hover:border-line-strong hover:text-ink');
+        });
+        satirlar.forEach((s) => {
+          const uygun = su === 'hepsi' || (s.getAttribute('data-sular') || '').split(' ').includes(su);
+          s.hidden = !uygun;
+        });
+      }));
+    })();
+  </script>
+</Base>

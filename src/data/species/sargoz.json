@@ -1,0 +1,165 @@
+{
+  "ad": "Sargoz",
+  "latin": "Diplodus sargus",
+  "ingilizce": "White seabream",
+  "digerAdlar": [
+    "Sargos",
+    "Beyaz karagöz"
+  ],
+  "ozet": "Karagözün daha iri ve daha güçlü akrabası. Dalgalı kayalık kıyılarda beslenir; kıyıdan tutulması ciddi bir hedeftir.",
+  "zorluk": 4,
+  "aylar": [
+    2,
+    2,
+    3,
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4,
+    3,
+    2
+  ],
+  "sular": [
+    "marmara",
+    "karadeniz",
+    "bogaz"
+  ],
+  "gece": false,
+  "boySiniflari": [
+    {
+      "ad": "Küçük sargoz",
+      "cm": "0-21 cm",
+      "not": "21 cm altı yasal değil."
+    },
+    {
+      "ad": "Sargoz",
+      "cm": "21-35 cm"
+    },
+    {
+      "ad": "İri sargoz",
+      "cm": "35 cm ve üzeri"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 21,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28"
+  },
+  "suSicakligi": {
+    "min": 12,
+    "ideal": [
+      16,
+      25
+    ],
+    "max": 27
+  },
+  "aktifSaatler": [
+    "safak",
+    "sabah",
+    "ikindi",
+    "aksam"
+  ],
+  "ruzgarTercihi": [
+    "poyraz",
+    "lodos"
+  ],
+  "ruzgarKacinilan": [],
+  "derinlik": "1-25 m; dalganın kayaları dövdüğü köpüklü bölgeyi sever.",
+  "yasamAlani": "Dalgalı kayalık kıyılar, mendirek dış yüzü, midye kaplı bloklar.",
+  "teshis": {
+    "siluet": "sargoz",
+    "ayirtEdici": [
+      "Gövdede 7-9 adet ince, dikey koyu bant (karagözde sadece 2 bant vardır).",
+      "Kuyruk sapında geniş, belirgin siyah bir leke.",
+      "Gövde oval, yüksek ve parlak gümüş.",
+      "Ön dişler öne doğru çıkık ve kesici."
+    ],
+    "karistirilan": [
+      "karagoz",
+      "cupra"
+    ]
+  },
+  "takimlar": [
+    "dip-takimi-sabit-kursun",
+    "paternoster",
+    "lrf-jig-head"
+  ],
+  "yemler": {
+    "dogal": [
+      "Yengeç",
+      "Midye içi",
+      "Deniz solucanı",
+      "Karides",
+      "Kum midyesi"
+    ],
+    "sahte": [
+      "Kokulu silikon yengeç/karides"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "3,0-3,9 m, 30-100 gr",
+      "not": "Kayalıktan iri balık çekmek için gövdesi güçlü olmalı."
+    },
+    "makine": {
+      "deger": "4000-5000",
+      "not": "Freni sağlam; sargoz kayalığa doğru sert kaçar."
+    },
+    "anaMisina": {
+      "deger": "0,32-0,40 mm mono",
+      "not": "Kaya sürtünmesine dayanıklı olmalı."
+    },
+    "sokLideri": {
+      "deger": "0,28-0,35 mm fluorocarbon, 40-60 cm"
+    },
+    "igne": {
+      "deger": "1-4 numara güçlü kısa pipolu",
+      "not": "Azı dişleri zayıf iğneyi büker."
+    },
+    "agirlik": {
+      "deger": "60-120 gr",
+      "not": "Dalgada dibi tutması için ağır seç."
+    }
+  },
+  "taktik": {
+    "atis": "Köpüğün oluştuğu kaya kenarına at. Sargoz dalganın kopardığı midye ve yengeci kovalar.",
+    "cekme": "Yem dipte dursun ama misinayı gergin tut; dalga takımı sürüklerse yeniden at.",
+    "tokatlama": "Vuruş sert ve tektir. Hemen ve güçlü tokatla.",
+    "yakalama": "İlk kaçış çok güçlüdür ve doğrudan kayalığa yönelir. İlk 3-4 saniye freni sıkı tut, balığı kayadan uzaklaştır; sonra gevşet.",
+    "ipuclari": [
+      "En iyi yem taze yengeçtir; kabuğunu kırıp iğneye takarsan sargoz dayanamaz.",
+      "Dalgalı hava sargoz için iyidir ama kayalık güvenliğini asla ihmal etme.",
+      "Sabah ilk ışık en verimli zamandır."
+    ],
+    "hatalar": [
+      "Zayıf iğne kullanmak — sargoz iğneyi büker.",
+      "İlk kaçışta fren gevşek bırakmak; balık kayalığa girer ve misina kesilir."
+    ]
+  },
+  "mutfak": "Izgarada mükemmeldir. Eti karagözden daha yoğun ve lezzetlidir.",
+  "noktalar": [
+    "poyrazkoy",
+    "kilyos",
+    "riva",
+    "sile",
+    "yenikapi",
+    "bakirkoy",
+    "yesilkoy",
+    "buyukcekmece",
+    "silivri",
+    "caddebostan",
+    "maltepe",
+    "kartal",
+    "tuzla",
+    "buyukada",
+    "heybeliada",
+    "bayramoglu",
+    "bagirganli",
+    "kerpe",
+    "kefken",
+    "cebeci"
+  ]
+}

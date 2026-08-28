@@ -1,0 +1,138 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Bolum from '../components/Bolum.astro';
+import Ikon from '../components/Ikon.astro';
+import Liste from '../components/Liste.astro';
+
+const gorulen = new Set<string>();
+
+const turler = (await getCollection('species')).sort((a, b) => {
+  const av = a.data.yasal.asgariBoy, bv = b.data.yasal.asgariBoy;
+  if (av === null && bv === null) return a.data.ad.localeCompare(b.data.ad, 'tr');
+  if (av === null) return 1;
+  if (bv === null) return -1;
+  return bv - av;
+});
+
+const kaynak = turler[0]!.data.yasal.kaynak;
+const kontrol = turler[0]!.data.yasal.kontrolTarihi;
+
+const genelKurallar = [
+  'Amatör balıkçının bir günde alıkoyabileceği toplam miktar, tür tek veya karışık olsun 5 kg\'ı geçemez. Avlanan en büyük balık hariç tutulduğunda geri kalanların toplamı 4 kg\'ı geçemez.',
+  'Asgari boy belirtilen türlerde, o boyun altındaki balık suya bırakılmalıdır. Tebliğ küçük boylara %5 tolerans tanır.',
+  'Amatör avcılıkta yakalanan ürün satılamaz. Satış ticari avcılık sayılır ve ayrı belge gerektirir.',
+  'Işıkla (ışık kaynağı kullanarak balığı toplayarak) avlanmak amatör avcılıkta yasaktır.',
+  'Tüplü dalış ekipmanıyla zıpkın avcılığı yasaktır.',
+  'Patlayıcı, zehirli veya uyuşturucu madde ile avlanmak her koşulda yasaktır ve ağır cezası vardır.',
+  'Liman, tersane, askeri bölge ve köprü güvenlik alanlarında balık tutmak yasaktır. Uyarı levhalarına dikkat et.',
+  'Yasak dönem ve bölgeler yıl içinde değişebilir; çıkmadan önce güncel tebliği kontrol et.',
+];
+
+const icSuKurallari = [
+  'İç sularda (göl, baraj, dere ve nehir) 15 Mart – 15 Haziran arasında üreme dönemi av yasağı uygulanır. Yasak ticari balıkçıyı da amatör oltacıyı da kapsar; sazan, kadife, siraz, tatlısu kefali ve yayın adıyla sayılır.',
+  'Akarsularda oltayla tatlısu kefali ve gümüş balığı avı, yasak döneminde de serbesttir. Göl ve barajlarda bu istisna yoktur.',
+  'Tarihler her yıl il tarım ve orman müdürlüğünün duyurusuyla teyit edilir; gitmeden önce ilin duyurusuna bak.',
+  'İçme suyu rezervuarlarında akaryakıtla çalışan kayık ve motor kullanmak, su alma noktasına 300 metreden yakın avlanmak yasaktır.',
+  'İstanbul\'da Alibeyköy, Büyükçekmece, Darlık, Elmalı II, Ömerli ve Sazlıdere barajlarında ticari avlanma yasaktır; bu havzalar aynı zamanda içme suyu koruma alanıdır ve girişleri kısıtlıdır. Bu rehber bu barajlarda nokta önermiyor.',
+  'Baraj göllerinde DSİ\'nin belirlediği emniyet sahasında avlanmak hem tehlikeli hem yasaktır.',
+  'İç sularda sualtı tüfeği, zıpkın, pinter, sepet, parakete ve ağ (yemlik uzatma ağı hariç) kullanmak yasaktır.',
+];
+
+const surdurulebilirlik = [
+  'Yiyeceğin kadarını al. Kova doldurmak bir başarı ölçüsü değil.',
+  'Yasal boyun altındaki balığı ıslak elle, hızlıca ve mümkünse sudan çıkarmadan bırak.',
+  'Yavru sürüsüne (defne yaprağı lüfer, vonoz palamut) hiç dokunma. Bu balıklar bir kez bile yumurtlamadan tutuluyor.',
+  'Kullanılmış misinayı asla suda veya kıyıda bırakma. Kuşlar ve deniz canlıları misinaya dolanarak ölüyor.',
+  'Kırık iğneyi, ambalajı ve pil gibi atıkları yanında geri getir.',
+  'İğneyi derin yutmuş, bırakacağın balıkta kösteği kes; iğneyi çıkarmaya çalışmak balığı öldürür.',
+];
+---
+<Base
+  baslik="Kurallar"
+  aciklama="Amatör balıkçılık kuralları, asgari avlanma boyları ve yasaklar."
+>
+  <h1 class="text-3xl sm:text-4xl">Kurallar ve Boy Limitleri</h1>
+
+  <div class="mt-4 rounded-sm border border-l-[3px] border-warn/40 border-l-warn bg-warn-soft p-4">
+    <p class="flex items-start gap-2 text-sm">
+      <span class="mt-0.5 shrink-0 text-warn"><Ikon ad="uyari" sinif="size-4" /></span>
+      <span>
+        <strong>Bu sayfa bilgilendirme amaçlıdır, resmî metin değildir.</strong>
+        Boy limitleri ve yasaklar dönem dönem değişir. Suya çıkmadan önce
+        Tarım ve Orman Bakanlığı'nın yürürlükteki tebliğini ve ilin
+        av yasağı duyurusunu kendin kontrol et.
+      </span>
+    </p>
+    <p class="mt-2 text-xs text-muted">
+      Bu sayfadaki değerlerin dayandığı kaynak: {kaynak}. Son kontrol tarihi: {kontrol}.
+    </p>
+  </div>
+
+  <Bolum baslik="Asgari Avlanma Boyları" not="Bu boyun altındaki balığı suya bırakman gerekiyor.">
+    <div class="overflow-hidden rounded-sm border border-line">
+      <table class="w-full border-collapse text-sm">
+        <thead class="bg-surface-2">
+          <tr>
+            <th scope="col" class="px-3 py-2 text-left font-semibold">Balık</th>
+            <th scope="col" class="w-28 px-3 py-2 text-left font-semibold">Asgari boy</th>
+            <th scope="col" class="px-3 py-2 text-left font-semibold">Not</th>
+          </tr>
+        </thead>
+        <tbody>
+          {turler.map((t) => (
+            <tr class="border-t border-line">
+              <th scope="row" class="px-3 py-2 text-left font-medium">
+                <a href={`/balik/${t.id}`} class="hover:text-accent">{t.data.ad}</a>
+              </th>
+              <td class="px-3 py-2 tabular-nums">
+                {t.data.yasal.asgariBoy
+                  ? <span class="font-semibold">{t.data.yasal.asgariBoy} cm</span>
+                  : <span class="text-muted">belirtilmemiş</span>}
+              </td>
+              <td class="px-3 py-2 text-muted">{t.data.yasal.not ?? '—'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-3 text-sm text-muted">
+      Bazı türlerde kaynaklar arasında 1 cm'lik farklar görülüyor. Emin olamadığın durumda
+      daha büyük değeri esas al — yasal balığı suya bırakmak, yasadışı balığı almaktan iyidir.
+    </p>
+  </Bolum>
+
+  <Bolum baslik="Genel Kurallar">
+    <Liste maddeler={genelKurallar} gorulen={gorulen} />
+  </Bolum>
+
+  <Bolum baslik="İç Sular: Tatlı Su Kuralları" not="Göl, baraj, dere ve nehirde denizden farklı hükümler geçerli.">
+    <Liste maddeler={icSuKurallari} gorulen={gorulen} />
+    <p class="mt-3 text-sm text-muted">
+      Tatlı su türlerinin boy limitleri yukarıdaki tabloda diğer türlerle birlikte listelidir.
+      Her tür sayfasında o türün av yasağı dönemi ayrıca yazılıdır.
+    </p>
+  </Bolum>
+
+  <Bolum baslik="Sürdürülebilirlik" not="Kural olmasa da uyulması gerekenler.">
+    <Liste maddeler={surdurulebilirlik} tip="ipucu" gorulen={gorulen} />
+  </Bolum>
+
+  <Bolum baslik="Nereden Kontrol Edilir">
+    <ul class="space-y-2 text-sm">
+      <li>
+        <a class="text-accent underline" href="https://www.tarimorman.gov.tr" rel="noopener" target="_blank">
+          Tarım ve Orman Bakanlığı
+        </a> — güncel tebliğler ve duyurular
+      </li>
+      <li>
+        <a class="text-accent underline" href="https://www.resmigazete.gov.tr" rel="noopener" target="_blank">
+          Resmî Gazete
+        </a> — tebliğ metninin aslı ve ekli çizelgeler
+      </li>
+      <li>
+        İl Tarım ve Orman Müdürlükleri — bölgesel yasak alan ve dönem duyuruları
+      </li>
+    </ul>
+  </Bolum>
+</Base>

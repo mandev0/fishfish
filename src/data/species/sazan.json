@@ -1,0 +1,160 @@
+{
+  "ad": "Sazan",
+  "latin": "Cyprinus carpio",
+  "ingilizce": "Common carp",
+  "digerAdlar": [
+    "Aynalı sazan",
+    "Pullu sazan"
+  ],
+  "ozet": "Tatlı suyun en bilinen ve en güçlü balığı. Dipteki her şeyi karıştırarak beslenir, iri olanı kıyıdan tutulan en zorlu mücadeleyi verir.",
+  "zorluk": 3,
+  "aylar": [
+    1,
+    1,
+    1,
+    0,
+    0,
+    2,
+    4,
+    4,
+    5,
+    4,
+    2,
+    1
+  ],
+  "sular": [
+    "gol",
+    "dere",
+    "aci"
+  ],
+  "gece": true,
+  "boySiniflari": [
+    {
+      "ad": "Yavru sazan",
+      "cm": "0-40 cm",
+      "not": "40 cm altı yasal değil, suya bırakılır."
+    },
+    {
+      "ad": "Sazan",
+      "cm": "40-60 cm"
+    },
+    {
+      "ad": "İri sazan",
+      "cm": "60 cm ve üzeri",
+      "not": "Kepçe olmadan karaya alınmamalı."
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 40,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Kişi başı günlük 5 adet sınırı vardır. İç sularda kişi başı günlük toplam 5 kg sınırı geçerlidir.",
+    "yasakDonemi": "15 Mart – 15 Haziran: iç sularda üreme dönemi av yasağı. Yasak amatör oltacıyı da kapsar."
+  },
+  "suSicakligi": {
+    "min": 8,
+    "ideal": [
+      18,
+      26
+    ],
+    "max": 30
+  },
+  "aktifSaatler": [
+    "safak",
+    "aksam",
+    "gece"
+  ],
+  "ruzgarTercihi": [
+    "lodos",
+    "kible"
+  ],
+  "ruzgarKacinilan": [
+    "poyraz"
+  ],
+  "derinlik": "1-6 m; yazın sabahları yarım metrelik sığlığa kadar girer.",
+  "yasamAlani": "Sazlık kenarları, çamurlu ve balçık dipli koylar, iskele altları, nehirlerin yavaş akan iç kıvrımları.",
+  "teshis": {
+    "siluet": "sazan",
+    "ayirtEdici": [
+      "Gövde yüksek ve kalın, sırt kahverengi-zeytin, karın sarımsı.",
+      "Üst dudağın iki yanında toplam dört bıyık var — sazanı ayıran en kesin işaret budur.",
+      "Sırt yüzgeci uzun ve gövdenin yarısı boyunca uzanır.",
+      "Aynalı sazanda pullar seyrek ve iri, pullu sazanda gövde baştan sona pullarla kaplıdır."
+    ],
+    "karistirilan": [
+      "havuz-baligi",
+      "kadife"
+    ]
+  },
+  "takimlar": [
+    "sazan-kayar-kursun",
+    "feeder-takimi",
+    "tatli-sabit-samandira"
+  ],
+  "yemler": {
+    "dogal": [
+      "Mısır",
+      "Hamur yem",
+      "Toprak solucanı",
+      "Haşlanmış patates",
+      "Pelet"
+    ],
+    "sahte": []
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "3,0-3,6 m, 40-100 gr",
+      "not": "Gövdeden bükülen kamış iri sazanın hamlelerini emer."
+    },
+    "makine": {
+      "deger": "4000-5000",
+      "not": "En az 150 m 0,30 mm misina alabilmeli."
+    },
+    "anaMisina": {
+      "deger": "0,28-0,35 mm mono"
+    },
+    "sokLideri": {
+      "deger": "Gerekmez; uzun atışta 0,45 mm kısa lider",
+      "not": "Sazan avında şok lideri ancak ağır yemlikle uzun atış yapıyorsan gerekir."
+    },
+    "igne": {
+      "deger": "4-8 numara, kalın telli",
+      "not": "İnce telli iğneyi iri sazan açar."
+    },
+    "agirlik": {
+      "deger": "30-80 gr kayar",
+      "not": "Kayar bağla ki balık ağırlığı hissetmesin."
+    }
+  },
+  "taktik": {
+    "atis": "Sazlık kenarını, iskele altını ve dibin renginin değiştiği hattı hedefle. Atmadan önce aynı noktaya bir avuç mısır serp; balık yemi orada aramaya başlar.",
+    "cekme": "Sazan avında çekme yoktur, bekleme vardır. Misinayı hafif gergin bırak, kamışı sehpaya koy ve ucunu izle.",
+    "tokatlama": "Sazan yemi alıp yürür. Kamış ucu birkaç kez titreyip sonra tam yay yaptığında kamışı al; erken tokatlama iğneyi ağızdan çeker.",
+    "yakalama": "İlk kaçışa izin ver, freni zorlama. Balığı su yüzeyine çıkarıp yan yatırdıktan sonra kepçeyle al.",
+    "ipuclari": [
+      "Yaz sabahlarında sazan sığlıkta beslenir; uzağa atmak yerine kıyıya paralel dene.",
+      "Islak elle tut, ıslak bir bez üstünde iğneyi çıkar. Kuru el balığın koruyucu tabakasını siler.",
+      "Suya bırakacağın balığı asla solungaçtan tutma."
+    ],
+    "hatalar": [
+      "Freni kilitli bırakmak; ilk kaçışta köstek kopar.",
+      "İri balığı kamışla karaya sürüklemek — hem balık yaralanır hem takım kırılır.",
+      "Av yasağı dönemini kontrol etmeden göle gitmek."
+    ]
+  },
+  "mutfak": "Kılçığı çoktur, fırında veya ızgarada pişirilir. Çamurlu göllerden çıkan sazanda toprak tadı olabilir; birkaç saat soğuk suda bekletmek bunu azaltır.",
+  "noktalar": [
+    "sapanca-sahil",
+    "sapanca-kirkpinar",
+    "sapanca-kurtkoy",
+    "sapanca-kartepe-guney",
+    "sapanca-kartepe-kuzey",
+    "poyrazlar-golu",
+    "taskisigi-golu",
+    "sakarya-nehri",
+    "riva-deresi",
+    "agva-goksu",
+    "agva-yesilcay",
+    "kucukcekmece-golu"
+  ]
+}

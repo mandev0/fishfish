@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import Ikon from '../components/Ikon.astro';
+import { baslikBicimi } from '../lib/metin';
+import Kurulum from '../components/Kurulum.astro';
+import { MENU_BOLUMLERI } from '../lib/gezinme';
+---
+<Base
+  baslik="Menü"
+  aciklama="Balık türleri, takım şemaları, düğümler, ekipman rehberi, sözlük, yasal kurallar ve güvenlik başlıkları."
+>
+  <h1 class="text-3xl sm:text-4xl">Menü</h1>
+  <p class="mt-2 max-w-2xl text-muted">
+    Balığı bulduktan sonra gereken her şey burada. Günlük tavsiye, harita ve
+    takvim için alttaki çubuğu kullan.
+  </p>
+
+  {MENU_BOLUMLERI.map((bolum) => (
+    <section class="mt-8">
+      <h2 class="bolum-baslik mb-3 text-xl sm:text-2xl">{baslikBicimi(bolum.ad)}</h2>
+      <ul class="grid gap-2 sm:grid-cols-2">
+        {bolum.ogeler.map((oge) => (
+          <li>
+            <a
+              href={oge.href}
+              class="kart flex min-h-[3.5rem] items-center gap-3 px-3 py-2.5 transition-colors hover:border-accent"
+            >
+              <span class="flex size-9 shrink-0 items-center justify-center rounded-sm bg-accent-soft text-accent" aria-hidden="true">
+                <Ikon ad={oge.ikon} sinif="size-5" />
+              </span>
+              <span class="min-w-0">
+                <span class="block font-medium">{oge.ad}</span>
+                <span class="block text-sm text-muted">{oge.ipucu}</span>
+              </span>
+              <span class="ml-auto shrink-0 text-muted" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="size-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m9 6 6 6-6 6" />
+                </svg>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+
+  <Kurulum />
+</Base>

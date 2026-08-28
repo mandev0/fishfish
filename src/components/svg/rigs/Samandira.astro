@@ -1,0 +1,65 @@
+---
+// Şamandıralı canlı yem takımı — kayar şamandıra, stoper, fluoro köstek, canlı yem.
+---
+<svg class="diagram" viewBox="0 0 380 560" role="img" aria-labelledby="samandira-baslik">
+  <title id="samandira-baslik">Şamandıralı canlı yem takımı: stoper, boncuk, kayar şamandıra, fırdöndü, fluorocarbon köstek ve sırtından iğnelenmiş canlı yem balığı.</title>
+
+  <!-- Su yüzeyi -->
+  <rect class="water" x="0" y="150" width="380" height="410" />
+  <path class="ln-thin" d="M0 150 q20 -6 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" />
+  <text class="lbl" x="8" y="144">su yüzeyi</text>
+
+  <!-- Kamış + ana misina -->
+  <path class="kamis" d="M20 30 L110 46" />
+  <path class="misina" d="M110 46 L172 96" />
+  <text class="lbl-b" x="20" y="20">Kamış ucu</text>
+  <text class="lbl-misina" x="196" y="64">Ana misina</text>
+  <text class="lbl" x="196" y="78">0,28-0,32 mm mono</text>
+
+  <!-- Stoper + boncuk -->
+  <rect class="dugum-dolu" x="166" y="98" width="12" height="8" rx="2" />
+  <circle class="metal" cx="172" cy="114" r="5" />
+  <text class="lbl-a" x="192" y="104">Kauçuk stoper</text>
+  <text class="lbl" x="192" y="118">derinliği bu belirler</text>
+
+  <path class="misina" d="M172 120 L172 128" />
+
+  <!-- Kayar şamandıra: yarısı suyun üstünde -->
+  <path class="yem" d="M172 128 c16 10 20 34 8 54 c-6 10 -10 18 -8 26 c-2 -8 -6 -16 -12 -26 c-12 -20 -8 -44 12 -54 z" />
+  <circle class="metal" cx="172" cy="216" r="5" />
+  <text class="lbl-yem" x="212" y="176">Kayar şamandıra</text>
+  <text class="lbl" x="212" y="190">10-25 gr</text>
+
+  <!-- Fırdöndü -->
+  <path class="misina" d="M172 222 L172 236" />
+  <ellipse class="metal" cx="172" cy="244" rx="6" ry="10" />
+  <text class="lbl-metal" x="192" y="248">Fırdöndü</text>
+
+  <!-- Köstek -->
+  <path class="lider" d="M172 254 L172 400" />
+  <path class="tick" d="M132 254 L132 400" />
+  <path class="tick" d="M126 254 L138 254 M126 400 L138 400" />
+  <text class="lbl" x="52" y="322">60-80 cm</text>
+  <text class="lbl-lider" x="42" y="336">fluorocarbon</text>
+  <text class="lbl" x="52" y="350">0,40-0,50 mm</text>
+
+  <!-- Canlı yem balığı -->
+  <g transform="translate(172,414)">
+    <path class="yem" d="M-42 0 c14 -22 56 -22 72 0 c-16 22 -58 22 -72 0 z" />
+    <path class="yem" d="M30 0 l16 -12 l0 24 z" />
+    <circle class="solid" cx="-30" cy="-3" r="2.4" />
+    <!-- iğne sırt yüzgecinin önünde -->
+    <path class="igne" d="M-6 -12 l0 16 a7 7 0 1 0 12 3" />
+    <path class="igne" stroke-width="1.3" d="M-6 -12 l0 -14" />
+  </g>
+  <text class="lbl-yem" x="228" y="410">Canlı yem</text>
+  <text class="lbl" x="228" y="424">istavrit / izmarit</text>
+  <text class="lbl-igne" x="228" y="442">İğne sırt yüzgecinin</text>
+  <text class="lbl-igne" x="228" y="456">hemen önünden geçer</text>
+
+  <!-- Derinlik oku -->
+  <path class="ln-dash" d="M44 150 L44 414" />
+  <path class="ln-thin" d="M44 414 l-5 -9 M44 414 l5 -9" />
+  <text class="lbl" x="12" y="240">avlanma</text>
+  <text class="lbl" x="12" y="254">derinliği</text>
+</svg>

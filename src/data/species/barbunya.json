@@ -1,0 +1,141 @@
+{
+  "ad": "Barbunya",
+  "latin": "Mullus barbatus",
+  "ingilizce": "Red mullet",
+  "digerAdlar": [
+    "Barbun"
+  ],
+  "ozet": "Tekirin kardeşi; daha çamurlu ve kumlu diplerde yaşar. Yaz sonu kıyıya sokulur, dip takımıyla tutulur.",
+  "zorluk": 3,
+  "aylar": [
+    2,
+    2,
+    2,
+    2,
+    3,
+    4,
+    5,
+    5,
+    4,
+    3,
+    2,
+    2
+  ],
+  "sular": [
+    "marmara",
+    "karadeniz"
+  ],
+  "gece": false,
+  "boySiniflari": [
+    {
+      "ad": "Küçük barbunya",
+      "cm": "0-13 cm",
+      "not": "13 cm altı yasal değil."
+    },
+    {
+      "ad": "Barbunya",
+      "cm": "13-25 cm"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 13,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Kaynaklar 12 ve 13 cm arasında farklılık gösteriyor; güvende olmak için 13 cm'i esas al."
+  },
+  "suSicakligi": {
+    "min": 13,
+    "ideal": [
+      17,
+      25
+    ],
+    "max": 28
+  },
+  "aktifSaatler": [
+    "safak",
+    "sabah",
+    "ikindi",
+    "aksam"
+  ],
+  "ruzgarTercihi": [],
+  "ruzgarKacinilan": [],
+  "derinlik": "10-80 m; yazın kıyıda 10-25 m derinlikte.",
+  "yasamAlani": "Kumlu ve çamurlu düz dipler; tekirin aksine kayalık aramaz.",
+  "teshis": {
+    "siluet": "barbunya",
+    "ayirtEdici": [
+      "Çene altında iki bıyık.",
+      "İlk sırt yüzgeci düz renkli — tekirdeki koyu çizgiler yoktur.",
+      "Alnı tekire göre daha dik ve künt.",
+      "Renk daha soluk pembe-kırmızı."
+    ],
+    "karistirilan": [
+      "tekir"
+    ]
+  },
+  "takimlar": [
+    "dip-takimi-sabit-kursun",
+    "paternoster",
+    "surf-clipdown"
+  ],
+  "yemler": {
+    "dogal": [
+      "Deniz solucanı",
+      "Karides",
+      "Midye içi"
+    ],
+    "sahte": []
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "3,0-4,2 m surf, hassas uçlu"
+    },
+    "makine": {
+      "deger": "4000-5000"
+    },
+    "anaMisina": {
+      "deger": "0,25-0,30 mm mono"
+    },
+    "sokLideri": {
+      "deger": "0,18-0,22 mm fluorocarbon"
+    },
+    "igne": {
+      "deger": "6-10 numara uzun pipolu"
+    },
+    "agirlik": {
+      "deger": "80-150 gr",
+      "not": "Uzak atış gerektiği için ağır kurşun."
+    }
+  },
+  "taktik": {
+    "atis": "Düz kumluk dibe olabildiğince uzağa at. Barbunya tekirden daha açıkta durur.",
+    "cekme": "Yem dipte dursun; arada sürükleyerek yeni nokta ara.",
+    "tokatlama": "Hafif ve ardışık titremelerden sonra yumuşakça çek.",
+    "yakalama": "Zayıf mücadele. Paternosterle iki-üç balık birden gelebilir.",
+    "ipuclari": [
+      "Temmuz-Ağustos Marmara kıyılarında en verimli dönem.",
+      "Uzun atış barbunyada tekirden daha kritiktir."
+    ],
+    "hatalar": [
+      "Kayalık dipte barbunya aramak.",
+      "Kısa atış yapmak."
+    ]
+  },
+  "mutfak": "Tavada kızartılır. Tekire göre biraz daha yumuşak etli ama yine çok lezzetlidir.",
+  "noktalar": [
+    "kilyos",
+    "sile",
+    "bakirkoy",
+    "yesilkoy",
+    "florya",
+    "buyukcekmece",
+    "silivri",
+    "caddebostan",
+    "maltepe",
+    "kartal",
+    "pendik",
+    "karamursel",
+    "bagirganli",
+    "cebeci"
+  ]
+}

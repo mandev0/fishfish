@@ -1,0 +1,201 @@
+{
+  "ad": "İstavrit",
+  "latin": "Trachurus mediterraneus",
+  "ingilizce": "Horse mackerel",
+  "digerAdlar": [
+    "Karagöz istavrit",
+    "Kraça"
+  ],
+  "ozet": "Kıyı balıkçılığının bel kemiği. Yıl boyu bulunur, çapariyle kolayca tutulur ve hem yenir hem de lüfer/levrek için canlı yem olur. Yeni başlayan için en doğru ilk hedef.",
+  "zorluk": 1,
+  "aylar": [
+    4,
+    3,
+    3,
+    2,
+    2,
+    3,
+    3,
+    4,
+    5,
+    5,
+    5,
+    4
+  ],
+  "sular": [
+    "bogaz",
+    "marmara",
+    "karadeniz",
+    "halic"
+  ],
+  "gece": true,
+  "boySiniflari": [
+    {
+      "ad": "Kraça",
+      "cm": "8-13 cm",
+      "not": "13 cm altı yasal değil."
+    },
+    {
+      "ad": "İstavrit",
+      "cm": "13-20 cm"
+    },
+    {
+      "ad": "İri istavrit",
+      "cm": "20 cm ve üzeri",
+      "not": "Kışın Boğaz'da çıkan iri boy en lezzetlisidir."
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 13,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28"
+  },
+  "suSicakligi": {
+    "min": 8,
+    "ideal": [
+      12,
+      22
+    ],
+    "max": 26
+  },
+  "aktifSaatler": [
+    "safak",
+    "aksam",
+    "gece"
+  ],
+  "ruzgarTercihi": [
+    "poyraz",
+    "yildiz"
+  ],
+  "ruzgarKacinilan": [
+    "lodos"
+  ],
+  "derinlik": "5-40 m; gece ışık altında yüzeye kadar çıkar.",
+  "yasamAlani": "İskele altları, mendirek kenarları, ışıklandırılmış rıhtımlar. Sürü halinde dolaşır.",
+  "teshis": {
+    "siluet": "istavrit",
+    "ayirtEdici": [
+      "Yanal çizgi boyunca uzanan sert, dikenli kemik plakalar (\"zırh\") — elle dokununca hissedilir.",
+      "Gözü iri ve siyah.",
+      "Kuyruk sapı ince, gövde uzun ve yassı.",
+      "Solungaç kapağının üst kenarında koyu bir leke."
+    ],
+    "karistirilan": [
+      "kolyoz",
+      "sardalya"
+    ]
+  },
+  "takimlar": [
+    "capari",
+    "sabiki-ince",
+    "lrf-jig-head"
+  ],
+  "yemler": {
+    "dogal": [
+      "Karides",
+      "İnce midye eti",
+      "Sardalya parçası"
+    ],
+    "sahte": [
+      "Tüylü çapari iğnesi",
+      "1-3 gr jig head + 2,5 cm silikon",
+      "Küçük sabiki"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "2,4-3,0 m, 20-60 gr",
+      "not": "Uzun kamış çapariyi açık tutar."
+    },
+    "makine": {
+      "deger": "3000-4000 boy",
+      "not": "Standart spin makine yeterli."
+    },
+    "anaMisina": {
+      "deger": "0,25-0,30 mm mono",
+      "not": "Mono çapari takımında daha az dolaşır."
+    },
+    "sokLideri": {
+      "deger": "Gerekmez",
+      "not": "Çapari bedeninin kendisi lider görevi görür."
+    },
+    "igne": {
+      "deger": "6-10 numara tüylü",
+      "not": "İri istavritte 6, kraçada 10 numara."
+    },
+    "agirlik": {
+      "deger": "20-60 gr armut kurşun",
+      "not": "Akıntıya ve mesafeye göre."
+    }
+  },
+  "taktik": {
+    "atis": "Işıklı iskelede lambanın aydınlattığı dairenin tam kenarına at. Sürü aydınlık-karanlık sınırında dolaşır. Mendirekte 15-20 m açığa atıp dibe indir.",
+    "cekme": "Dibe indir, 3-4 tur sar ve 10 saniye bekle. Vuruş yoksa 3 tur daha sar. Böylece sürünün hangi derinlikte olduğunu adım adım bulursun. Bulunca o derinliği not et.",
+    "tokatlama": "Sert tokatlamaya gerek yok. İstavritin ağzı yumuşaktır; hafif bir kaldırma iğneyi oturtur.",
+    "yakalama": "İlk balıkta hemen sarma — 5-10 saniye bekle, aynı sürüden 2-3 balık daha takılır. Sonra sabit hızda ve durmadan sar.",
+    "ipuclari": [
+      "Sürü bulunduğunda hızlı çalış; istavrit sürüsü bir noktada uzun durmaz.",
+      "Kanlı istavriti hemen buzlu suya at; eti çok çabuk yumuşar.",
+      "Canlı yem için kullanacaksan iğneden silkeleyerek çıkar, elle sıkma — el ısısı pullarını bozar ve balık çabuk ölür.",
+      "Gece ışığın altında en iyi sonucu ince sabiki verir; gündüz normal çapari yeterli."
+    ],
+    "hatalar": [
+      "Kamışı sert çekmek — yumuşak ağzı yırtılır, balık düşer.",
+      "Çok ağır kurşun kullanıp çapariyi dolaştırmak.",
+      "Sürü gitti diye hemen yer değiştirmek. Çoğu zaman 10-15 dakika sonra geri döner."
+    ]
+  },
+  "mutfak": "Tavada un ile veya izgarada. İri boyu tuzlayıp bir gece bekletince (\"çiroz\" tarzı) bambaşka bir tat olur.",
+  "noktalar": [
+    "rumeli-kavagi",
+    "sariyer-mendirek",
+    "buyukdere",
+    "tarabya",
+    "yenikoy",
+    "emirgan",
+    "bebek",
+    "arnavutkoy",
+    "ortakoy",
+    "kabatas",
+    "galata-koprusu",
+    "sarayburnu",
+    "anadolu-kavagi",
+    "beykoz",
+    "pasabahce",
+    "kanlica",
+    "anadolu-hisari",
+    "kandilli",
+    "cengelkoy",
+    "beylerbeyi",
+    "kuzguncuk",
+    "salacak",
+    "yenikapi",
+    "kumkapi",
+    "zeytinburnu",
+    "bakirkoy",
+    "yesilkoy",
+    "florya",
+    "buyukcekmece",
+    "moda",
+    "caddebostan",
+    "bostanci",
+    "maltepe",
+    "kartal",
+    "pendik",
+    "tuzla",
+    "buyukada",
+    "heybeliada",
+    "bayramoglu",
+    "darica-sahil",
+    "eskihisar",
+    "tavsancil",
+    "hereke",
+    "karamursel",
+    "ulasli",
+    "degirmendere",
+    "golcuk",
+    "izmit-sahil",
+    "kerpe",
+    "kefken"
+  ]
+}

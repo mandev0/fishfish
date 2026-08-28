@@ -1,0 +1,1683 @@
+[
+  {
+    "id": "kamis",
+    "ad": "Kamış",
+    "kisaAd": "kamış",
+    "kategori": "kamis",
+    "esAdlar": [
+      "olta kamışı",
+      "olta"
+    ],
+    "ozet": "Yemi uzağa atmanı, balığın vuruşunu hissetmeni ve balığı yormanı sağlayan esnek çubuk.",
+    "nedir": "Kamış bir sopa değil, bir yay. Attığın ağırlık kamışı büker, kamış geri açılırken biriken enerjiyi yeme aktarır — atış mesafeni kolun değil, kamışın doğru bükülmesi belirler. Aynı yay, balık vurduğunda ters yönde çalışır: ani darbeleri emerek misinanın kopmasını ve iğnenin balığın ağzını yırtmasını engeller.",
+    "neIseYarar": [
+      "Yemi kıyıdan 20-100 metre açığa taşır.",
+      "Dipteki en küçük dokunuşu eline iletir.",
+      "Balığın ani kaçışlarını yayı sayesinde emer, misinayı korur.",
+      "Uzun boyu misinayı dalganın ve kayaların üstünde tutar."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Boy",
+        "metin": "Kıyıdan av için 2,4-3,3 m çoğu işi görür. Uzun kamış daha uzağa atar ve misinayı yüksekte tutar; kısa kamış kalabalık iskelede ve dar yerde daha kullanışlıdır. Kumluk sahilde uzun atış gerekiyorsa 3,9-4,2 m surf kamışına çıkılır."
+      },
+      {
+        "baslik": "Atış gramajı",
+        "metin": "Kamışın üstünde yazan aralık (örneğin 20-60 gr), rahatça atabileceği ağırlığı gösterir. Bu aralığın ortasında en iyi çalışır. Üst sınırı aşarsan kamış kırılabilir; çok altında kalırsan kamış hiç bükülmez ve uzağa atamazsın."
+      },
+      {
+        "baslik": "Aksiyon",
+        "metin": "Kamışın yük altında nereden büküldüğü. Fast (hızlı) sadece uçtan bükülür — vuruşu net iletir, tokatlama güçlü olur. Slow (yavuş/parabolik) gövdeden bükülür — balığı daha iyi yorar, ince misinayı korur. Kıyıda genel amaçlı seçim medium-fast'tir."
+      },
+      {
+        "baslik": "Teleskopik mi geçmeli mi",
+        "metin": "Teleskopik kamış iç içe kapanır, çantaya sığar, toplu taşımada avantajlıdır. Geçmeli (parçalı) kamış daha hassas ve daha dayanıklıdır. Şehir içinde toplu taşımayla gidiyorsan teleskopik doğru başlangıçtır."
+      }
+    ],
+    "dikkat": [
+      "Atış gramajının üst sınırını aşma. Kamış kırılması en sık bu yüzden olur.",
+      "Kamışı asla balığı havaya kaldırmak için kullanma; dik açıda tutulan kamış tam ucundan kırılır.",
+      "Halkaların içini parmağınla kontrol et: çatlak bir halka misinayı görünmeden keser."
+    ],
+    "ilgili": [
+      "atis-gramaji",
+      "aksiyon",
+      "solid-tip",
+      "spin-makine"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "atis-gramaji",
+    "ad": "Atış gramajı",
+    "kisaAd": "atış gramajı",
+    "kategori": "kamis",
+    "esAdlar": [
+      "c.w.",
+      "casting weight",
+      "atış ağırlığı"
+    ],
+    "ozet": "Kamışın üzerinde yazan, rahatça atabileceği ağırlık aralığı (örn. 20-60 gr).",
+    "nedir": "Kamışın gövdesine basılı olan bu aralık, üreticinin \"bu kamış şu ağırlıkta düzgün bükülür\" beyanıdır. Attığın kurşun + yem toplamı bu aralığa girmelidir. Aralığın ortası kamışın en verimli çalıştığı noktadır.",
+    "neIseYarar": [
+      "Hangi gramajda kurşun alacağını belirler.",
+      "Kamışın kırılma sınırını gösterir.",
+      "Yanlış eşleşmede neden uzağa atamadığını açıklar."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Hesabı",
+        "metin": "Kurşunun gramı + yemin ağırlığı toplamına bak. 60 gr yazan kamışa 80 gr kurşun bağlayıp sertçe atarsan kamış kırılır."
+      },
+      {
+        "baslik": "Alt sınır da önemli",
+        "metin": "60-120 gr yazan surf kamışıyla 5 gramlık bir jig head atamazsın — kamış bükülmez, yem 3 metre öteye düşer. Hafif takım için ayrı ve hafif bir kamış gerekir."
+      }
+    ],
+    "dikkat": [
+      "Akıntılı yerde daha ağır kurşun gerekir; kamışı ona göre seç, kamışı zorlama."
+    ],
+    "ilgili": [
+      "kamis",
+      "kursun"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "aksiyon",
+    "ad": "Kamış aksiyonu",
+    "kisaAd": "aksiyon",
+    "kategori": "kamis",
+    "esAdlar": [
+      "action",
+      "fast",
+      "medium",
+      "slow",
+      "parabolik"
+    ],
+    "ozet": "Kamışın yük altında hangi noktadan büküldüğü — uçtan mı, gövdeden mi.",
+    "nedir": "Aksiyon, kamışın karakteridir. Fast (hızlı) aksiyonlu bir kamış yalnızca üst üçte birinden bükülür; gövdesi dimdik kalır. Slow (yavaş) aksiyonlu kamış neredeyse tutamağına kadar bükülür. Medium ve medium-fast ikisinin arasıdır.",
+    "neIseYarar": [
+      "Vuruşun eline ne kadar net geleceğini belirler.",
+      "Tokatlamanın gücünü belirler: fast aksiyon iğneyi daha sert oturtur.",
+      "Balığın kaçışında misinanın ne kadar korunacağını belirler."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Fast",
+        "metin": "Zoka ve spin avı, uzak atış, sert tokatlama gereken lüfer ve palamut için. Vuruşu en net ileten aksiyon."
+      },
+      {
+        "baslik": "Medium / medium-fast",
+        "metin": "Genel amaçlı. Çapari, dip takımı ve şamandıralı avın hepsinde çalışır. İlk kamışın bu olsun."
+      },
+      {
+        "baslik": "Slow / parabolik",
+        "metin": "İnce misina ve küçük iğne kullanılan hassas avlarda (kefal, LRF) balığın dudağını yırtmadan yorar."
+      }
+    ],
+    "dikkat": [
+      "Aksiyon ile sertlik aynı şey değil: sert bir kamış slow aksiyonlu, yumuşak bir kamış fast aksiyonlu olabilir."
+    ],
+    "ilgili": [
+      "kamis",
+      "solid-tip"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "solid-tip",
+    "ad": "Solid tip",
+    "kisaAd": "solid tip",
+    "kategori": "kamis",
+    "esAdlar": [
+      "dolu uç",
+      "solid uç"
+    ],
+    "ozet": "Kamışın ucundaki içi dolu, çok esnek bölüm; en küçük vuruşu bile gözle görünür kılar.",
+    "nedir": "Normal kamış uçları içi boş (tubular) karbon borudur. Solid tip ise dolu karbondur: çok daha ince yapılabilir ve çok daha kolay bükülür. Balık yeme dokunduğunda kamışın ucu belirgin şekilde kıvrılır — vuruşu elinle değil, gözünle görürsün. LRF kamışlarının ayırt edici özelliğidir.",
+    "neIseYarar": [
+      "İskorpit ve izmarit gibi küçük ağızlı balıkların yumuşak dokunuşunu görünür kılar.",
+      "1-2 gramlık jig head'in dibe değdiğini hissetmeni sağlar.",
+      "Küçük balığın dudağını yırtmadan yorar."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Ne zaman gerekir",
+        "metin": "LRF ve hafif kaya balığı avında. Çapari, dip ve zoka avı için gereksizdir."
+      },
+      {
+        "baslik": "Kırılganlık",
+        "metin": "İnce olduğu için darbeye hassastır. Kamışı kapıya sıkıştırmak veya araç bagajına gelişigüzel atmak ucu kırar."
+      }
+    ],
+    "dikkat": [
+      "Solid tip ile ağır kurşun atma; uç kalıcı olarak eğilir."
+    ],
+    "ilgili": [
+      "kamis",
+      "aksiyon",
+      "jig-head"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "spin-makine",
+    "ad": "Spin makine",
+    "kisaAd": "makine",
+    "kategori": "makine",
+    "esAdlar": [
+      "olta makinesi",
+      "makara",
+      "spin makinesi",
+      "spinning reel"
+    ],
+    "ozet": "Misinayı saran ve balığın çekişini kontrollü şekilde salan mekanizma.",
+    "nedir": "Kıyı balıkçılığında neredeyse herkes spin (döner başlıklı) makine kullanır: makara sabit durur, misina bir kolun etrafında dönerek sarılır. Atış yaparken kolu açıp misinayı serbest bırakırsın. Üç şey önemlidir: boy, sarım oranı ve fren.",
+    "neIseYarar": [
+      "Misinayı düzenli sarar, atışta serbest bırakır.",
+      "Freni sayesinde balık çektiğinde misina kopmadan salınır.",
+      "Sarım oranı sayesinde sahte yemi doğru hızda çekmeni sağlar."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Boy (1000-8000)",
+        "metin": "Makaranın büyüklüğünü gösterir. 1000-2500 hafif ve LRF takımları; 3000-4000 kıyıda genel amaçlı (ilk makinen bu olsun); 5000-8000 surf ve uzak atış içindir. Büyük makara daha çok ve daha kalın misina alır."
+      },
+      {
+        "baslik": "Sarım oranı",
+        "metin": "\"5.2:1\" gibi yazar: kolu bir tur çevirince makara 5,2 tur döner. Yüksek oran (5.5:1 ve üzeri) zoka ve spin avında şart — palamut yavaş çekilen yeme bakmaz. Düşük oran dip avında güç kazandırır."
+      },
+      {
+        "baslik": "Fren",
+        "metin": "Makinenin en önemli parçası. Pürüzsüz ve kademesiz çalışmalı. Kötü fren takılarak salar ve tam o anda misinayı koparır. Dükkânda deneyebilirsin: freni orta seviyeye al ve misinayı elinle çek — takılmadan, düzgün gelmeli."
+      },
+      {
+        "baslik": "Tuzlu su koruması",
+        "metin": "Deniz balıkçılığında \"saltwater resistant\" ibaresi olan modelleri tercih et; olmayanlar bir sezonda paslanır."
+      }
+    ],
+    "dikkat": [
+      "Her çıkıştan sonra tatlı suyla nemli bezle sil. Hortumla yıkama — su içeri girer.",
+      "Depoda makarayı gevşek bırak; gergin misina yayla makarayı zorlar."
+    ],
+    "ilgili": [
+      "fren",
+      "sarim-orani",
+      "kamis",
+      "orgu-misina"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "fren",
+    "ad": "Fren",
+    "kisaAd": "fren",
+    "kategori": "makine",
+    "esAdlar": [
+      "drag",
+      "fren ayarı"
+    ],
+    "ozet": "Balık çektiğinde makinenin misinayı kontrollü şekilde salmasını sağlayan ayarlanabilir direnç.",
+    "nedir": "Fren, makaranın ne kadar zorlanınca misina salacağını belirler. Doğru ayarlanmış fren, balık ani bir kaçış yaptığında misinayı koparmak yerine biraz salar; balık yorulunca sen geri alırsın. Freni kilitlemek en sık yapılan hatadır: iri balığın ilk kaçışında ya misina kopar ya iğne yırtar.",
+    "neIseYarar": [
+      "İri balığın ilk kaçışını misinayı koparmadan karşılar.",
+      "İnce köstekle iri balık çekmeni mümkün kılar.",
+      "İğnenin balığın ağzını yırtmasını engeller."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Doğru ayar",
+        "metin": "Genel kural: freni misinanın kopma gücünün kabaca üçte birine ayarla. Pratik yöntemi: takımı bağla, misinayı elinle çek — zorlanarak ama düzgün şekilde gelmeli. Hiç gelmiyorsa çok sıkı, kolayca geliyorsa çok gevşek."
+      },
+      {
+        "baslik": "Ava göre",
+        "metin": "Kayalık dipte (sargoz, karagöz) ilk saniyelerde daha sıkı tut ki balık kayaya girmesin, sonra gevşet. Açık suda (lüfer, palamut) baştan daha gevşek bırak, balık koşsun."
+      }
+    ],
+    "dikkat": [
+      "Balıkla mücadele ederken freni sıkmaya çalışma; elin kayar ve kontrolü kaybedersin. Ayarını atıştan önce yap."
+    ],
+    "ilgili": [
+      "spin-makine",
+      "monofilament",
+      "orgu-misina"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "sarim-orani",
+    "ad": "Sarım oranı",
+    "kisaAd": "sarım oranı",
+    "kategori": "makine",
+    "esAdlar": [
+      "gear ratio",
+      "vites",
+      "dişli oranı"
+    ],
+    "ozet": "Kolu bir tur çevirdiğinde makaranın kaç tur döndüğü — örneğin 5.2:1.",
+    "nedir": "Yüksek oran hız, düşük oran güç demektir. Sahte yemle avda yemin doğru hızda gitmesi gerektiği için hız; dipten ağır takım toplarken güç önem kazanır.",
+    "neIseYarar": [
+      "Sahte yemi balığın tepki vereceği hızda çekmeni sağlar.",
+      "Dipten hızlı toplayıp yeniden atmanı hızlandırır."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "5.5:1 ve üzeri",
+        "metin": "Zoka, spin, palamut ve lüfer avı. Hız gerekir."
+      },
+      {
+        "baslik": "4.8:1 - 5.2:1",
+        "metin": "Genel amaçlı; çapari ve dip takımı için yeterli."
+      }
+    ],
+    "dikkat": [
+      "Sarım oranı yüksek makine, aynı turda daha çok misina sardığı için dipten daha çabuk kopartır — ağır takımda kolu zorlama."
+    ],
+    "ilgili": [
+      "spin-makine",
+      "zoka",
+      "maket-balik"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "monofilament",
+    "ad": "Monofilament (mono)",
+    "kisaAd": "monofilament",
+    "kategori": "misina",
+    "esAdlar": [
+      "mono",
+      "naylon misina",
+      "misina"
+    ],
+    "ozet": "Tek parça naylon misina. Esner, darbeyi yumuşatır, ucuzdur ve dolaştığında açılır.",
+    "nedir": "En yaygın ve en affedici misina türü. Yaklaşık %20-25 esner; bu esneme bir kusur değil, kıyı avında çoğu zaman bir avantajdır: balığın ani hamlesini emer, kamışın işini kolaylaştırır. Sürtünmeye örgüden daha dayanıklıdır, bu yüzden kayalık dipte tercih edilir.",
+    "neIseYarar": [
+      "Ani darbeleri emerek iğnenin yırtmasını ve misinanın kopmasını engeller.",
+      "Kayalık ve midyeli zeminde sürtünmeye örgüden daha iyi dayanır.",
+      "Çapari gibi çok iğneli takımlarda daha az dolaşır.",
+      "Ucuzdur — yılda bir değiştirmek külfet olmaz."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Kalınlık",
+        "metin": "Kıyıda 0,25-0,30 mm çoğu işi görür. Kefal gibi ürkek balıkta 0,18-0,22 mm'ye inilir; iri balık ve kayalık dipte 0,35 mm'ye çıkılır."
+      },
+      {
+        "baslik": "Ne kadar sürer",
+        "metin": "Güneş ve tuz naylonu görünmeden yaşlandırır. Yılda bir kez, yoğun kullanıyorsan altı ayda bir değiştir."
+      }
+    ],
+    "dikkat": [
+      "Esnediği için 40 metre öteden gelen küçük vuruşları örgü kadar net iletmez.",
+      "Depoda gergin bırakma; hafızası olur ve makaradan yay gibi fırlar."
+    ],
+    "ilgili": [
+      "orgu-misina",
+      "fluorocarbon",
+      "sok-lideri",
+      "kostek"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "orgu-misina",
+    "ad": "Örgü misina (PE)",
+    "kisaAd": "örgü misina",
+    "kategori": "misina",
+    "esAdlar": [
+      "örgü",
+      "PE",
+      "braid",
+      "ip misina"
+    ],
+    "ozet": "Çok sayıda ince lifin örülmesiyle yapılan, neredeyse hiç esnemeyen misina.",
+    "nedir": "Aynı kopma gücünü monofilamentin yarısı kalınlıkta verir ve pratikte hiç esnemez. Bu iki özellik birlikte şu anlama gelir: daha uzağa atarsın ve 60 metre öteden gelen en küçük dokunuşu bile parmağınla hissedersin. Karşılığında sürtünmeye zayıftır ve suda görünürdür — bu yüzden ucuna mutlaka bir şok lideri bağlanır.",
+    "neIseYarar": [
+      "Aynı güçte daha ince olduğu için belirgin şekilde daha uzağa atarsın.",
+      "Esnemediği için vuruşu ve dibin yapısını (kum mu, taş mı) eline iletir.",
+      "Zoka ve spin avında tokatlamayı doğrudan iğneye aktarır."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "PE numarası",
+        "metin": "Kalınlık PE ölçüsüyle yazılır. PE 0,3-0,6 → LRF; PE 0,6-1,0 → hafif spin; PE 1,0-1,5 → zoka ve genel kıyı avı; PE 2 ve üzeri → iri balık."
+      },
+      {
+        "baslik": "Lif sayısı",
+        "metin": "4 örgü ucuzdur ve halkada hışırdar; 8 örgü daha yuvarlak, daha sessiz ve daha uzağa atar. İlk makaranda 4 örgü yeterli."
+      }
+    ],
+    "dikkat": [
+      "Doğrudan yem bağlama — atış anındaki ani yükte kopar. Mutlaka şok lideri kullan.",
+      "Kayalık dipte sürtünmeye dayanmaz.",
+      "Ele dolayıp çekme: parmağını jilet gibi keser. Bez veya eldiven kullan."
+    ],
+    "ilgili": [
+      "sok-lideri",
+      "fluorocarbon",
+      "monofilament"
+    ],
+    "dugumler": [
+      "fg",
+      "palomar"
+    ]
+  },
+  {
+    "id": "fluorocarbon",
+    "ad": "Fluorocarbon",
+    "kisaAd": "fluorocarbon",
+    "kategori": "misina",
+    "esAdlar": [
+      "fluoro",
+      "flurocarbon",
+      "FC"
+    ],
+    "ozet": "Suda neredeyse görünmeyen, aşınmaya dayanıklı misina; köstek ve lider olarak kullanılır.",
+    "nedir": "Işığı suyun kırma indisine çok yakın bir oranda kırdığı için su altında gözle ayırt edilmesi zordur. Ayrıca monofilamentten daha sert ve aşınmaya daha dayanıklıdır. Bu iki özellik onu köstek ve şok lideri için ideal yapar. Pahalı olduğu için ana misina olarak değil, son 40-150 cm'lik bölümde kullanılır.",
+    "neIseYarar": [
+      "Çupra, karagöz ve kefal gibi temkinli balıkların misinayı görüp yemi bırakmasını engeller.",
+      "Kaya, midye ve balık dişine karşı aşınma direnci sağlar.",
+      "Örgü misinanın görünürlüğünü ve düğüm zayıflığını telafi eder."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Kalınlık",
+        "metin": "Köstek için hedefe göre: kefal 0,14-0,18 mm; çupra ve karagöz 0,22-0,30 mm; lüfer ve iri balık 0,40-0,50 mm."
+      },
+      {
+        "baslik": "Boy",
+        "metin": "Şok lideri olarak 1-1,5 m; kalamar avında 1,5-2 m (kalamar misinayı görürse yaklaşmaz); köstek olarak 30-80 cm."
+      },
+      {
+        "baslik": "Kural",
+        "metin": "Köstek daima ana misinadan ince olmalı. Takıldığında sadece kösteği kaybedersin, bütün takımı değil."
+      }
+    ],
+    "dikkat": [
+      "Sert olduğu için düğümü ıslatmadan sıkarsan belirgin şekilde zayıflar."
+    ],
+    "ilgili": [
+      "sok-lideri",
+      "kostek",
+      "orgu-misina"
+    ],
+    "dugumler": [
+      "fg",
+      "klinc",
+      "uni"
+    ]
+  },
+  {
+    "id": "sok-lideri",
+    "ad": "Şok lideri",
+    "kisaAd": "şok lideri",
+    "kategori": "misina",
+    "esAdlar": [
+      "lider",
+      "shock leader",
+      "şok liderı"
+    ],
+    "ozet": "Örgü ana misina ile yem arasına eklenen 1-1,5 metrelik kalın misina parçası.",
+    "nedir": "Atış anında misinaya bir anda çok büyük bir yük biner. Örgü misina esnemediği için bu yükü emmez ve tam düğümün olduğu yerden kopar — zokan denize gider. Şok lideri bu darbeyi karşılar. Ayrıca dişli balığa (lüfer, zargana) ve kayaya karşı son savunma hattıdır.",
+    "neIseYarar": [
+      "Atış anındaki ani yükü emerek yemin kopup gitmesini önler.",
+      "Lüferin ve zarganın dişine karşı koruma sağlar.",
+      "Görünmez fluorocarbon sayesinde ürkek balığı kaçırmaz."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Malzeme",
+        "metin": "Neredeyse her zaman fluorocarbon. Görünmezliği ve aşınma direnci ikisini birden verir."
+      },
+      {
+        "baslik": "Kalınlık",
+        "metin": "Ana misinanın kopma gücünün en az iki katı olacak şekilde. Pratikte: PE 1,0-1,5 örgüye 0,35-0,45 mm fluorocarbon."
+      },
+      {
+        "baslik": "Boy",
+        "metin": "Kamış boyunun yarısı kadar iyi bir başlangıç: 1-1,5 m. Uzun lider daha çok koruma verir ama düğüm halkalardan geçerken takılır."
+      }
+    ],
+    "dikkat": [
+      "Bağlantı düğümü mümkün olduğunca ince olmalı; kalın bir düğüm kamış halkalarına çarparak atışı keser. Bunun için FG düğümü kullanılır."
+    ],
+    "ilgili": [
+      "orgu-misina",
+      "fluorocarbon",
+      "klips"
+    ],
+    "dugumler": [
+      "fg",
+      "uni"
+    ]
+  },
+  {
+    "id": "kostek",
+    "ad": "Köstek",
+    "kisaAd": "köstek",
+    "kategori": "misina",
+    "esAdlar": [
+      "köstek misinası",
+      "hook length",
+      "tail"
+    ],
+    "ozet": "İğnenin bağlandığı, ana misinadan daha ince olan kısa misina parçası.",
+    "nedir": "Takımın en uçtaki, iğneye giden bölümü. Bilerek ana misinadan ince seçilir: dipte takıldığında yalnızca köstek kopar, kurşunu ve takımın geri kalanını kaybetmezsin. Ayrıca ince olduğu için yemin daha doğal hareket etmesini sağlar.",
+    "neIseYarar": [
+      "Takıldığında zararı en aza indirir — sadece iğneyi kaybedersin.",
+      "İnce ve görünmez olduğu için temkinli balığı ürkütmez.",
+      "Yemin akıntıda doğal salınmasını sağlar."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Kalınlık",
+        "metin": "Ana misinadan en az bir kademe ince. 0,30 mm ana misinaya 0,22-0,25 mm köstek."
+      },
+      {
+        "baslik": "Boy",
+        "metin": "Dip takımında 30-60 cm; şamandıralı canlı yemde 60-80 cm; paternosterde 15-25 cm (kısa olmalı ki bedene dolaşmasın)."
+      }
+    ],
+    "dikkat": [
+      "Kösteği ana misinayla aynı kalınlıkta yapmak en pahalı hatalardan biridir: bir takılmada bütün takım gider."
+    ],
+    "ilgili": [
+      "fluorocarbon",
+      "beden",
+      "igne"
+    ],
+    "dugumler": [
+      "cift-ilmek",
+      "snell",
+      "palomar"
+    ]
+  },
+  {
+    "id": "beden",
+    "ad": "Beden",
+    "kisaAd": "beden",
+    "kategori": "misina",
+    "esAdlar": [
+      "ana beden",
+      "gövde misinası"
+    ],
+    "ozet": "Çapari ve paternoster gibi çok iğneli takımların iskeletini oluşturan misina.",
+    "nedir": "Kösteklerin üzerine dizildiği ana gövde. Kösteklerden belirgin şekilde kalın seçilir; böylece köstekler dik durur ve birbirine dolaşmaz. Hazır çapariler zaten bedeni kurulmuş halde satılır.",
+    "neIseYarar": [
+      "Köstekleri belirli aralıklarla ve dik konumda tutar.",
+      "Kurşunun ağırlığını takımın tamamına dağıtır."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Kalınlık",
+        "metin": "Kösteğin yaklaşık iki katı. 0,20 mm köstek için 0,35-0,40 mm beden."
+      },
+      {
+        "baslik": "Köstek aralığı",
+        "metin": "İğneler arası 25-30 cm; köstek boyu bu aralığın yarısını geçmemeli, yoksa iki köstek birbirine dolanır."
+      }
+    ],
+    "dikkat": [
+      "İnce bedenle kalın köstek kullanırsan takım dikliğini kaybeder ve sürekli dolaşır."
+    ],
+    "ilgili": [
+      "kostek",
+      "kursun"
+    ],
+    "dugumler": [
+      "kostek-bagi"
+    ]
+  },
+  {
+    "id": "igne",
+    "ad": "İğne",
+    "kisaAd": "iğne",
+    "kategori": "terminal",
+    "esAdlar": [
+      "olta iğnesi",
+      "hook"
+    ],
+    "ozet": "Takımın balığa değen tek parçası. Numarası ne kadar büyükse iğne o kadar küçüktür.",
+    "nedir": "İğne numaralandırması kafa karıştırıcıdır: 20 numaradan 1 numaraya doğru gidildikçe iğne büyür, sonra 1/0 (bir sıfır), 2/0, 3/0 diye devam ederek daha da büyür. Yani 10 numara küçücük bir hamsi iğnesi, 4/0 iri bir lüfer iğnesidir. İğnenin \"pipo\" denen düz sap kısmı uzun olursa çıkarmak kolaylaşır; \"tersi\" (barb) denen küçük çentik balığın kurtulmasını engeller.",
+    "neIseYarar": [
+      "Balığı takıma bağlayan tek nokta.",
+      "Doğru numara, balığın ağzına giren ve orada kalan iğnedir."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Numara",
+        "metin": "Hedefin ağız büyüklüğüne göre: hamsi ve sardalya 12-16; izmarit, kupes ve kefal 8-14; karagöz ve tekir 4-10; çupra ve mezgit 1-4; lüfer, levrek ve palamut 1/0-4/0."
+      },
+      {
+        "baslik": "Uzun pipo",
+        "metin": "Dişli balıkta (lüfer, zargana) ve yemi derin yutan balıkta (gelincik, mezgit) uzun pipolu iğne seç: elini dişlerden uzak tutar."
+      },
+      {
+        "baslik": "Keskinlik",
+        "metin": "İğneyi tırnağının üstünde hafifçe sürt. Kaymadan tutunuyorsa keskindir; kayıyorsa körelmiştir, at."
+      }
+    ],
+    "dikkat": [
+      "Ucuz iğne bükülür ve körelir; takımın en yanlış kısıntı yeri burasıdır.",
+      "Bırakacağın balıkta iğne derin yutulmuşsa çıkarmaya çalışma, kösteği kes."
+    ],
+    "ilgili": [
+      "kostek",
+      "jig-head"
+    ],
+    "dugumler": [
+      "palomar",
+      "snell",
+      "klinc"
+    ]
+  },
+  {
+    "id": "kursun",
+    "ad": "Kurşun",
+    "kisaAd": "kurşun",
+    "kategori": "terminal",
+    "esAdlar": [
+      "ağırlık",
+      "sinker",
+      "kurşun ağırlık"
+    ],
+    "ozet": "Yemi dibe indiren ve uzağa atmanı sağlayan ağırlık. Biçimi kullanım yerine göre değişir.",
+    "nedir": "Kurşun sadece ağırlık değil, takımın nasıl davranacağını belirleyen bir parçadır. Biçimi dibi ne kadar tutacağını, ağırlığı ne kadar uzağa atacağını, sabit mi kayar mı olduğu ise balığın yemi çekerken direnç hissedip hissetmeyeceğini belirler.",
+    "neIseYarar": [
+      "Yemi hedeflenen derinliğe indirir ve orada tutar.",
+      "Kamışın bükülmesini sağlayarak atış mesafesi kazandırır.",
+      "Akıntıda takımın sürüklenmesini engeller."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Armut kurşun",
+        "metin": "En yaygın biçim. Çapari ve genel amaçlı kullanım. 20-80 gr."
+      },
+      {
+        "baslik": "Piramit kurşun",
+        "metin": "Köşeli tabanı kumluk ve akıntılı dipte çok daha iyi tutar. Karadeniz kıyısında ve surf avında tercih edilir. 60-150 gr."
+      },
+      {
+        "baslik": "Kayar kurşun",
+        "metin": "Ortasından delik; misina içinden geçer. Balık yemi çekerken kurşunun ağırlığını hissetmez. Çupra ve karagöz gibi temkinli balıklarda fark yaratır."
+      },
+      {
+        "baslik": "Saçma kurşun",
+        "metin": "Misinaya sıkıştırılan minik toplar. Şamandıra takımında dengeyi ince ayarlamak için birkaç tane dizilir."
+      },
+      {
+        "baslik": "Gramaj",
+        "metin": "Kamışın atış gramajını aşma. Akıntı arttıkça ağırlaştır: Boğaz'ın akıntılı noktalarında 60-80 gr, Marmara'nın durgun mendireklerinde 30-40 gr yeter."
+      }
+    ],
+    "dikkat": [
+      "Kayalık dipte kurşunu bedene daha ince bir misinayla bağla; takılınca sadece kurşunu kaybedersin.",
+      "Çok ağır kurşun, balığın yemi çekerken direnç hissedip bırakmasına yol açar."
+    ],
+    "ilgili": [
+      "atis-gramaji",
+      "beden",
+      "firdondu"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "firdondu",
+    "ad": "Fırdöndü",
+    "kisaAd": "fırdöndü",
+    "kategori": "terminal",
+    "esAdlar": [
+      "fırdondu",
+      "swivel",
+      "döner"
+    ],
+    "ozet": "İki misinayı birleştiren, kendi ekseninde dönebilen küçük metal bağlantı.",
+    "nedir": "İçinde dönen bir mil bulunur. Kaşık, zoka ve dönen yemler suda burularak misinayı saç gibi kıvırır; fırdöndü bu burulmayı üstlenerek misinayı kurtarır. Ayrıca ana misina ile kösteği ayırmanın en pratik yoludur.",
+    "neIseYarar": [
+      "Dönen yemlerin misinayı burmasını engeller.",
+      "Ana misina ile kösteği birbirinden ayırır.",
+      "Kayar kurşunun kösteğe geçmesini durdurur."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Boy",
+        "metin": "Mümkün olan en küçüğü. Büyük fırdöndü hem görünür hem de takımın doğal hareketini bozar."
+      },
+      {
+        "baslik": "Kilitli tip",
+        "metin": "Bir ucunda klips olan \"kilitli fırdöndü\", yemi düğüm açmadan değiştirmeni sağlar. Zoka ve çapari değişiminde çok pratiktir."
+      }
+    ],
+    "dikkat": [
+      "Ucuz fırdöndü dönmez ve işe yaramaz; elinde çevirip dönüşünü kontrol et."
+    ],
+    "ilgili": [
+      "klips",
+      "boncuk",
+      "kursun"
+    ],
+    "dugumler": [
+      "klinc",
+      "palomar"
+    ]
+  },
+  {
+    "id": "klips",
+    "ad": "Klips",
+    "kisaAd": "klips",
+    "kategori": "terminal",
+    "esAdlar": [
+      "snap",
+      "kilitli klips",
+      "karabina"
+    ],
+    "ozet": "Sahte yemi düğüm açmadan takıp çıkarmanı sağlayan küçük kilitli kanca.",
+    "nedir": "Bir çengelli iğneye benzer: açıp yemi geçirir, kapatıp kilitlersin. Zoka veya maket değiştirmek için her seferinde düğüm bağlamak yerine iki saniyede değiştirirsin. Karanlıkta ve soğukta bu ciddi bir kolaylıktır.",
+    "neIseYarar": [
+      "Sahte yemi saniyeler içinde değiştirmeni sağlar.",
+      "Düğüm sayısını azaltır — her düğüm bir zayıf noktadır."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Boy",
+        "metin": "Yeme göre en küçüğü. İri klips küçük bir maketin hareketini bozar."
+      },
+      {
+        "baslik": "Kilit tipi",
+        "metin": "Kendinden kilitli (\"cross-lock\" tarzı) olanları tercih et; basit açık klipsler balık çekerken açılabilir."
+      }
+    ],
+    "dikkat": [
+      "Kalamar zokasına (egi) klips takma — eginin dengesini ve düşme hareketini bozar, doğrudan bağla.",
+      "Klipsi her çıkışta kontrol et; deforme olmuş bir klips balıkla birlikte açılır."
+    ],
+    "ilgili": [
+      "firdondu",
+      "zoka",
+      "maket-balik",
+      "egi"
+    ],
+    "dugumler": [
+      "palomar",
+      "klinc"
+    ]
+  },
+  {
+    "id": "boncuk",
+    "ad": "Boncuk",
+    "kisaAd": "boncuk",
+    "kategori": "terminal",
+    "esAdlar": [
+      "bead",
+      "stoper boncuğu"
+    ],
+    "ozet": "Kurşun ile düğüm arasına konan küçük plastik veya cam halka.",
+    "nedir": "İki işi vardır. Birincisi koruma: kayar kurşun her atışta düğümün üstüne çarpar, boncuk bu darbeyi alır ve düğümün aşınmasını önler. İkincisi çekicilik: renkli veya parlak boncuklar dipteki yemin yanında ilgi çeker, özellikle mezgit ve barbunya avında kullanılır.",
+    "neIseYarar": [
+      "Kayar kurşunun düğümü aşındırmasını engeller.",
+      "Şamandıra takımında stoperle şamandıra arasında sürtünmeyi azaltır.",
+      "Parlak renkleriyle dip balıklarının dikkatini çeker."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Boy",
+        "metin": "Misinanın rahat geçtiği, ama stoperin geçemeyeceği kadar küçük delik."
+      },
+      {
+        "baslik": "Renk",
+        "metin": "Koruma amaçlıysa fark etmez. Çekicilik için kırmızı, turuncu ve fosforlu yeşil dip avında iyi bilinen seçimlerdir."
+      }
+    ],
+    "dikkat": [
+      "Keskin kenarlı ucuz boncuklar misinayı keser; parmağınla içini yokla."
+    ],
+    "ilgili": [
+      "kursun",
+      "stoper",
+      "samandira"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "stoper",
+    "ad": "Stoper",
+    "kisaAd": "stoper",
+    "kategori": "terminal",
+    "esAdlar": [
+      "stopper",
+      "kauçuk stoper",
+      "derinlik stoperi"
+    ],
+    "ozet": "Kayar şamandıra takımında avlanma derinliğini belirleyen, misina üzerinde kayan küçük kauçuk parça.",
+    "nedir": "Kayar şamandıra misina üzerinde serbestçe hareket eder; yukarı doğru sadece stopere kadar çıkabilir. Stoperi 3 metre yukarı kaydırırsan yemin 3 metre derinde durur. Kamış halkalarından geçebilecek kadar küçük olduğu için, çok derin sularda bile uzun takım kurmadan derinlik ayarlayabilirsin.",
+    "neIseYarar": [
+      "Avlanma derinliğini saniyeler içinde değiştirmeni sağlar.",
+      "Halkalardan geçtiği için 10 metre derinlikte bile atış yapmanı mümkün kılar."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Tip",
+        "metin": "Kauçuk ve iplik tipleri var. Kauçuk daha kolay kayar, iplik daha uzun ömürlüdür."
+      },
+      {
+        "baslik": "Sıkılık",
+        "metin": "Elle kaydırınca hareket etmeli, atış sırasında kaymamalı. Gevşediyse yenisini tak."
+      }
+    ],
+    "dikkat": [
+      "Vuruş almıyorsan ilk deneyeceğin şey stoperi 1 metre yukarı veya aşağı kaydırmak olsun. Derinlik çoğu zaman yemden daha önemlidir."
+    ],
+    "ilgili": [
+      "samandira",
+      "boncuk"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "samandira",
+    "ad": "Şamandıra",
+    "kisaAd": "şamandıra",
+    "kategori": "terminal",
+    "esAdlar": [
+      "mantar",
+      "float",
+      "şamandra"
+    ],
+    "ozet": "Yemi belirli bir derinlikte tutan ve balığın dokunuşunu gözle görünür kılan yüzer parça.",
+    "nedir": "İki iş yapar: yemi dibe oturtmadan istediğin derinlikte askıda tutar ve balık yeme dokunduğunda batıp sana haber verir. Kayar tip derin suda, sabit tip sığ suda kullanılır. Doğru dengelenmiş bir şamandıranın sadece tepesi suyun üstünde kalır — bu sayede en küçük dokunuş bile görünür.",
+    "neIseYarar": [
+      "Yemi dipten uzakta, balığın olduğu derinlikte tutar.",
+      "Vuruşu gözle görünür kılar.",
+      "Akıntıda yemin doğal şekilde süzülmesini sağlar."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Kayar şamandıra",
+        "metin": "Stoperle birlikte kullanılır, derin suda çalışır. Lüfer ve levrek için canlı yem takımının temeli. 10-25 gr."
+      },
+      {
+        "baslik": "Kalem şamandıra",
+        "metin": "İnce ve çok hassas. Kefal gibi yemi emip bırakan balıklarda en küçük dokunuşu gösterir. 1-4 gr."
+      },
+      {
+        "baslik": "Işıklı şamandıra",
+        "metin": "İçine kırılınca ışıyan çubuk takılır veya pilli olur. Gece avında şart."
+      },
+      {
+        "baslik": "Denge",
+        "metin": "Şamandıranın altına saçma kurşun dizerek sadece tepesi görünecek şekilde ayarla. Yüksekte duran şamandıra vuruşu gizler."
+      }
+    ],
+    "dikkat": [
+      "Ağır şamandıra, balık yemi çekerken direnç yaratır ve balık yemi bırakır. Mümkün olan en hafifini kullan."
+    ],
+    "ilgili": [
+      "stoper",
+      "boncuk",
+      "kursun",
+      "canli-yem"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "zoka",
+    "ad": "Zoka",
+    "kisaAd": "zoka",
+    "kategori": "sahte-yem",
+    "esAdlar": [
+      "jig",
+      "metal jig",
+      "kurşun kalem"
+    ],
+    "ozet": "Ağır, uzun ve parlak metal sahte yem. Uzağa atılıp hızlı sarılarak avcı balığı tetikler.",
+    "nedir": "Yoğun metalden döküldüğü için boyuna göre çok ağırdır — bu yüzden rüzgâra karşı bile 70-80 metre atılabilir. Suda sararken yanlara yalpalayarak yaralı bir yem balığı taklidi yapar. Lüfer ve palamut avının en temel sahte yemidir.",
+    "neIseYarar": [
+      "Uzaktaki sürüye ulaşmanı sağlar.",
+      "Hızlı sarımda yaralı balık taklidi yaparak avcıyı tetikler.",
+      "Ayrı kurşun gerektirmez; ağırlığı kendindedir."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Gramaj",
+        "metin": "20-60 gr arası üç dört gramaj yeterli. Rüzgâr ve akıntı arttıkça ağırlaştır; sürü yüzeye yakınsa hafiflet."
+      },
+      {
+        "baslik": "Renk",
+        "metin": "Berrak suda gümüş ve mavi; bulanık suda veya alacakaranlıkta daha parlak, pembe ve fosforlu tonlar."
+      },
+      {
+        "baslik": "İğne",
+        "metin": "Çoğu zoka üçlü iğneyle gelir. Balığı bırakacaksan üçlüyü çıkarıp tek iğne takmak balığa çok daha az zarar verir."
+      }
+    ],
+    "dikkat": [
+      "Örgü misinaya doğrudan bağlama — atışta kopar. Şok lideri kullan.",
+      "Tek hızda sarma; ritim değişimi vuruşu belirgin artırır."
+    ],
+    "ilgili": [
+      "sok-lideri",
+      "klips",
+      "maket-balik",
+      "kasik"
+    ],
+    "dugumler": [
+      "palomar",
+      "klinc"
+    ]
+  },
+  {
+    "id": "maket-balik",
+    "ad": "Maket balık (minnow)",
+    "kisaAd": "maket balık",
+    "kategori": "sahte-yem",
+    "esAdlar": [
+      "minnow",
+      "rapala",
+      "maket",
+      "hard bait",
+      "suni yem"
+    ],
+    "ozet": "Küçük bir balığı taklit eden, önünde dalgıç bulunan sert plastik sahte yem.",
+    "nedir": "\"Minnow\" ince uzun yem balığı biçimindeki maketlerin genel adıdır (Rapala bir markadır ama günlük dilde tür adı gibi kullanılır). Burnundaki şeffaf plastik kanada dalgıç veya lip denir; sardıkça suya çarpıp maketi aşağı çeker ve ona sağa sola sallanan bir yürüyüş kazandırır. Dalgıcın açısı ve boyu maketin ne kadar derine ineceğini belirler.",
+    "neIseYarar": [
+      "Yem balığının hareketini zokadan çok daha gerçekçi taklit eder.",
+      "Belirli bir derinlikte sabit kalarak o katmanı tarar.",
+      "Duraklamalı sarımda \"yaralı balık\" görüntüsü verir."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Boy",
+        "metin": "Kıyıda 7-12 cm çoğu işi görür. Zarganada ince ve uzun, lüferde daha gövdeli maketler iyi sonuç verir."
+      },
+      {
+        "baslik": "Yüzer mi batar mı",
+        "metin": "Floating (yüzer) durduğunda yukarı çıkar — kayalık dipte takılmayı azaltır. Sinking (batar) daha derine iner ve rüzgâra karşı daha iyi atılır."
+      },
+      {
+        "baslik": "Dalgıç boyu",
+        "metin": "Kısa ve dik dalgıç yüzeye yakın çalışır; uzun ve yatık dalgıç derine iner. Kutunun üstünde çoğu zaman çalışma derinliği yazar."
+      }
+    ],
+    "dikkat": [
+      "Çok hızlı sarma; maket suyun üstüne fırlar ve doğallığını kaybeder.",
+      "Üçlü iğneler kolay takılır — kayalık dipte kullanmadan önce dip yapısını öğren."
+    ],
+    "ilgili": [
+      "zoka",
+      "kasik",
+      "klips",
+      "sok-lideri"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "kasik",
+    "ad": "Kaşık",
+    "kisaAd": "kaşık",
+    "kategori": "sahte-yem",
+    "esAdlar": [
+      "spoon",
+      "dönen kaşık",
+      "spinner"
+    ],
+    "ozet": "Suda dönerek ya da yalpalayarak ışık çakan, kaşık biçimli metal sahte yem.",
+    "nedir": "Adını biçiminden alır. Sarılırken kendi ekseninde döner veya yalpalar; her dönüşte güneş veya iskele ışığını yansıtarak uzaktan fark edilen bir parıltı yaratır. Yapısı basit, fiyatı düşük ve zarganada çok etkilidir.",
+    "neIseYarar": [
+      "Parıltısıyla uzaktan balık çeker.",
+      "Ucuzdur; kayalıkta kaybetmek canını yakmaz.",
+      "Yavaş sarımda bile çalışır."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Gramaj",
+        "metin": "Kıyıda 7-20 gr. Hafif kaşık yüzeye yakın, ağır kaşık daha derinde çalışır."
+      },
+      {
+        "baslik": "Fırdöndü şart",
+        "metin": "Kaşık dönerken misinayı burar. Önüne mutlaka fırdöndü bağla, yoksa misina saç gibi kıvrılır."
+      }
+    ],
+    "dikkat": [
+      "Fırdöndüsüz kaşık kullanmak bir makara misinayı kullanılmaz hale getirebilir."
+    ],
+    "ilgili": [
+      "firdondu",
+      "zoka",
+      "maket-balik"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "jig-head",
+    "ad": "Jig head",
+    "kisaAd": "jig head",
+    "kategori": "sahte-yem",
+    "esAdlar": [
+      "jighead",
+      "kurşunlu iğne",
+      "jig kafa"
+    ],
+    "ozet": "Kurşunu iğnesiyle tek parça dökülmüş takım parçası; üzerine silikon yem geçirilir.",
+    "nedir": "İğnenin göz tarafına kurşun dökülmüştür; çoğu zaman küçük bir balık kafası biçimindedir ve gözü boyalıdır. Silikon yemi bu iğneye geçirirsin: kurşun yemi dibe indirir, iğne balığı bağlar, hepsi tek parçadır. LRF avının temel bileşenidir.",
+    "neIseYarar": [
+      "Çok küçük ve hafif yemleri atılabilir hale getirir.",
+      "Ağırlık önde olduğu için yem dibe burnu aşağı düşer — yaralı bir canlı gibi görünür.",
+      "Zıplatarak (jigleme) kaya diplerini taramanı sağlar."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Gramaj",
+        "metin": "Dibi hissedebildiğin en hafifini seç: kıyıda genelde 1-5 gr. Ağır jig head taş gibi düşer ve doğallığını kaybeder."
+      },
+      {
+        "baslik": "İğne numarası",
+        "metin": "6-10 numara kıyı kaya balıkları için uygundur. Silikonun boyuna göre seç: iğnenin ucu silikonun sırtından çıkmalı."
+      }
+    ],
+    "dikkat": [
+      "Silikonu eğri takarsan yem suda burgu gibi döner ve misinayı burar; düz geçir.",
+      "Ağır jig head ile başlama — LRF'de en sık yapılan hata budur."
+    ],
+    "ilgili": [
+      "silikon-yem",
+      "solid-tip",
+      "orgu-misina"
+    ],
+    "dugumler": [
+      "palomar",
+      "klinc"
+    ]
+  },
+  {
+    "id": "silikon-yem",
+    "ad": "Silikon yem",
+    "kisaAd": "silikon yem",
+    "kategori": "sahte-yem",
+    "esAdlar": [
+      "soft bait",
+      "soft plastic",
+      "lastik yem",
+      "silikon"
+    ],
+    "ozet": "Yumuşak plastikten dökülmüş kurtçuk, karides veya balık biçimli yem; jig head'e geçirilir.",
+    "nedir": "Yumuşak olduğu için suda son derece doğal kıvrılır ve balık ağzına aldığında gerçek yem hissi verir — bu yüzden balık yemi hemen bırakmaz, tokatlamak için birkaç saniyen olur. Kokulu (tuz, karides veya balık özlü) çeşitleri iskorpit gibi kokuyla avlanan balıklarda belirgin fark yaratır.",
+    "neIseYarar": [
+      "Doğal yem bulmak zorunda kalmadan aynı işi görür.",
+      "Kokulu çeşitleri dip balıklarını uzaktan çeker.",
+      "Yumuşaklığı sayesinde balık yemi tutar ve tokatlama şansı doğar."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Boy",
+        "metin": "Kıyıda 2,5-5 cm. Küçük ağızlı kaya balıkları için küçük tut."
+      },
+      {
+        "baslik": "Biçim",
+        "metin": "Kurtçuk ve karides biçimleri kaya diplerinde; küçük balık (shad) biçimleri levrek ve lüferde."
+      },
+      {
+        "baslik": "Renk",
+        "metin": "Berrak suda doğal ve şeffaf tonlar; bulanık suda beyaz, turuncu veya fosforlu yeşil."
+      }
+    ],
+    "dikkat": [
+      "Yıpranmış silikonu değiştir; yırtık bir yem doğal hareketini kaybeder."
+    ],
+    "ilgili": [
+      "jig-head",
+      "solid-tip"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "egi",
+    "ad": "Egi (kalamar zokası)",
+    "kisaAd": "egi",
+    "kategori": "sahte-yem",
+    "esAdlar": [
+      "kalamar zokası",
+      "eging zokası",
+      "kalamar sepeti"
+    ],
+    "ozet": "Karides biçimli, arkasında halka halka batmaz iğneleri olan özel kalamar yemi.",
+    "nedir": "Japon eging tekniğinden gelir. Kumaş kaplı karides biçimli bir gövdesi ve kuyruğunda taç gibi dizilmiş, ucu tersiz (batmayan) iğneleri vardır. Kalamar yemi kollarıyla sarar, bu iğneler kollara takılır. Bu yüzden \"tokatlamak\" yoktur; ağırlığı hissedince yumuşak ve sürekli baskıyla çekilir.",
+    "neIseYarar": [
+      "Kalamar ve sübye avının pratikte tek yolu.",
+      "Batmaz iğneleri sayesinde balığa değil, kollara takılır.",
+      "Dengeli yapısı sayesinde suda burnu aşağı, kuyruğu yukarı süzülür."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Boy",
+        "metin": "\"2.5\", \"3.0\", \"3.5\" gibi numaralanır; büyüdükçe ağırlaşır. Kıyıdan kalamar için 2.5-3.0, dipte sübye için 3.0-3.5."
+      },
+      {
+        "baslik": "Renk",
+        "metin": "Berrak suda doğal kahverengi ve pembe tonlar; bulanık suda turuncu ve fosforlu."
+      },
+      {
+        "baslik": "Bağlantı",
+        "metin": "Klips kullanma. Doğrudan fluorocarbon lidere bağla; klips eginin düşme dengesini bozar."
+      }
+    ],
+    "dikkat": [
+      "Sert tokatlama — kalamarın kolları kopar ve kaçar.",
+      "Kepçesiz çıkarmaya çalışma; ağırlığıyla kollarından kurtulur."
+    ],
+    "ilgili": [
+      "fluorocarbon",
+      "kepce"
+    ],
+    "dugumler": [
+      "klinc",
+      "fg"
+    ]
+  },
+  {
+    "id": "deniz-solucani",
+    "ad": "Deniz solucanı",
+    "kisaAd": "deniz solucanı",
+    "kategori": "dogal-yem",
+    "esAdlar": [
+      "sülünez",
+      "sülinez",
+      "çamur kurdu",
+      "kum kurdu",
+      "rag worm"
+    ],
+    "ozet": "Dip balıklarının en etkili doğal yemi. Balıkçı dükkânlarında kutuyla satılır.",
+    "nedir": "Kum ve çamur diplerde yaşayan, kıvrılan ve suda hareket eden solucan. Tekir, barbunya, çupra ve karagözün doğal besininin bir parçası olduğu için başka hiçbir yemin veremediği sonucu verir. Taze olması kritiktir.",
+    "neIseYarar": [
+      "Kum dibindeki neredeyse her balığı çeker.",
+      "Hareketi ve kokusu birlikte çalışır."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Tazelik",
+        "metin": "Diri, parlak ve dokununca kıvrılan olmalı. Solgun ve gevşek olanları alma."
+      },
+      {
+        "baslik": "Saklama",
+        "metin": "Serin yerde, kendi kutusunda ve gazete arasında tut. Doğrudan güneş ve buz ikisi de öldürür."
+      },
+      {
+        "baslik": "Takma",
+        "metin": "İğnenin ucundan başlayıp pipoya doğru geçir, ucundan 1-2 cm serbest bırak — hareket eden bu uç vuruşu getirir."
+      }
+    ],
+    "dikkat": [
+      "Bazı türlerin çenesi vardır ve ısırır; acıtır ama zararsızdır."
+    ],
+    "ilgili": [
+      "igne",
+      "midye",
+      "karides"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "midye",
+    "ad": "Midye içi",
+    "kisaAd": "midye",
+    "kategori": "dogal-yem",
+    "esAdlar": [
+      "midye",
+      "kara midye"
+    ],
+    "ozet": "Çupra, karagöz ve sargozun doğal besini; kıyıdan kendin toplayabilirsin.",
+    "nedir": "Kayalara ve mendirek taşlarına yapışan kara midyelerin içi. Bu balıklar zaten günlerini midye kırarak geçirdiği için en doğal yemdir. Sahilden topladığın taze midye, dükkândan alınandan belirgin şekilde daha iyi sonuç verir.",
+    "neIseYarar": [
+      "Kayalık dipteki sparid balıklarının (çupra, karagöz, sargoz) birinci tercihi.",
+      "Bedava ve avlanacağın yerde bulunur."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Takma",
+        "metin": "Kabuğu kır, içini çıkar. Yumuşak olduğu için iğneye zor durur; birkaç saniye havada bekletip biraz sertleşmesini bekle, sonra sıkıca ve küçük tak."
+      },
+      {
+        "baslik": "Tırlama",
+        "metin": "Birkaç midyeyi ezip suya serpmek balığı noktana toplar."
+      }
+    ],
+    "dikkat": [
+      "Kirli sulardan topladığın midyeyi yem olarak kullan, yeme.",
+      "Büyük yem karagözün soymasını kolaylaştırır; küçük ve sıkı tak."
+    ],
+    "ilgili": [
+      "igne",
+      "deniz-solucani",
+      "kostek"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "karides",
+    "ad": "Karides",
+    "kisaAd": "karides",
+    "kategori": "dogal-yem",
+    "esAdlar": [
+      "teke",
+      "karides yemi"
+    ],
+    "ozet": "Neredeyse her kıyı balığının aldığı, bulması kolay çok yönlü yem.",
+    "nedir": "Taze veya donmuş karides hemen her balığı ilgilendirir. Küçük balıklar için ufak parçalar halinde, iri balık için bütün olarak kullanılır. Kabuğunu soymak kokusunu artırır ama yemin iğnede durmasını zorlaştırır.",
+    "neIseYarar": [
+      "İzmarit, kupes, iskorpit, karagöz ve çupranın hepsinde çalışır.",
+      "Markette bile bulunur; ayrı bir tedarik derdi yoktur."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Boy",
+        "metin": "Küçük ağızlı balıkta parçala, iri balıkta bütün tak."
+      },
+      {
+        "baslik": "Takma",
+        "metin": "Kuyruktan başlayıp gövde boyunca iğneyi geçir; böylece atışta fırlamaz."
+      }
+    ],
+    "dikkat": [
+      "Donmuş karides çözüldükçe yumuşar ve iğneden düşer; küçük porsiyonlar halinde çıkar."
+    ],
+    "ilgili": [
+      "deniz-solucani",
+      "midye",
+      "igne"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "canli-yem",
+    "ad": "Canlı yem",
+    "kisaAd": "canlı yem",
+    "kategori": "dogal-yem",
+    "esAdlar": [
+      "canlı",
+      "yem balığı",
+      "canlı istavrit"
+    ],
+    "ozet": "Avlanacağın yerde tuttuğun küçük balığın canlı olarak iğnelenmesi. Lüfer ve levrekte en etkili yöntem.",
+    "nedir": "Avcı balık, doğal olarak avladığı canlıyı arar. Canlı bir istavrit veya izmarit suda panikleyerek yüzer ve bu panik hareketi lüferi, levreği ve iri palamudu tetikler. Hiçbir sahte yem bunu tam olarak taklit edemez.",
+    "neIseYarar": [
+      "Lüfer ve levrek için en yüksek başarı oranlı yöntem.",
+      "Şamandıralı takımla belirli bir derinlikte tutulabilir."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Nereden",
+        "metin": "Avlanacağın yerde çapariyle tut. Taşınan yem çabuk ölür ve etkisini kaybeder."
+      },
+      {
+        "baslik": "İğneleme",
+        "metin": "Sırt yüzgecinin hemen önünden, omurgaya değmeden geçir. Böylece yem saatlerce yaşar. Göz veya karın bölgesinden iğnelersen birkaç dakikada ölür."
+      },
+      {
+        "baslik": "Saklama",
+        "metin": "Kovada tut ve suyunu 20 dakikada bir yenile. Elle sıkma; el ısısı pullarını bozar."
+      }
+    ],
+    "dikkat": [
+      "Canlı yemi iğneden elle sıkarak çıkarma; silkeleyerek al."
+    ],
+    "ilgili": [
+      "samandira",
+      "igne",
+      "kostek"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "kepce",
+    "ad": "Kepçe",
+    "kisaAd": "kepçe",
+    "kategori": "aksesuar",
+    "esAdlar": [
+      "balık kepçesi",
+      "landing net",
+      "ağ"
+    ],
+    "ozet": "Balığı sudan almak için kullanılan saplı ağ. İri balıkta lüks değil, zorunluluk.",
+    "nedir": "Kıyı yüksekse veya balık iriyse, misinayla havaya kaldırmak balığın kendi ağırlığıyla iğneyi yırtmasına yol açar — balığı tam kıyıda kaybetmenin en yaygın nedeni budur. Kepçe hem balığı hem misinayı kurtarır, hem de bırakacağın balığı yaralamaz.",
+    "neIseYarar": [
+      "İri balığı misinayı zorlamadan sudan alır.",
+      "Kalamar ve sübyeyi kollarından kurtulmadan çıkarır.",
+      "Bırakacağın balığın pullarını ve mukusunu korur."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Sap boyu",
+        "metin": "Rıhtım yüksekliğine göre. Alçak mendirekte 1,5-2 m yeter; Galata Köprüsü gibi 8-10 metre yükseklikte kepçe değil, ip ve sepet gerekir."
+      },
+      {
+        "baslik": "Ağ malzemesi",
+        "metin": "Kauçuk kaplı ağ balığın mukusuna ve iğneye en az zarar veren seçenektir."
+      }
+    ],
+    "dikkat": [
+      "Kepçeyi balığın önünden değil, altından yaklaştır; önden gelen ağ balığı ürkütür ve son anda kaçırır."
+    ],
+    "ilgili": [
+      "egi",
+      "olcum-bandi"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "pense",
+    "ad": "Pense",
+    "kisaAd": "pense",
+    "kategori": "aksesuar",
+    "esAdlar": [
+      "kerpeten",
+      "iğne çıkarıcı",
+      "forseps"
+    ],
+    "ozet": "İğneyi balığın ağzından güvenle çıkarmaya yarayan alet. Lüfer ve iskorpitte zorunlu.",
+    "nedir": "Lüferin dişi jilet gibidir, zarganın gagası keser, iskorpitin sırt dikenleri zehirlidir. Uzun burunlu bir pense elini bu üçünden de uzak tutar. Ayrıca iğne tersini sıkıştırıp körelterek zor durumlarda iğneyi çıkarmayı kolaylaştırır.",
+    "neIseYarar": [
+      "Dişli ve dikenli balıklardan iğneyi güvenle çıkarır.",
+      "Derin takılan iğneye ulaşır.",
+      "Kurşun sıkıştırma ve misina kesme gibi küçük işleri de görür."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Tip",
+        "metin": "Uzun burunlu (kargaburun) veya balıkçılara özel kavisli forseps. Paslanmaz olması tuzlu suda ömrünü uzatır."
+      },
+      {
+        "baslik": "Bağlantı",
+        "metin": "Spiral kordonla çantaya bağla; mendirekten denize düşen pense geri gelmez."
+      }
+    ],
+    "dikkat": [
+      "Bırakacağın balıkta iğne derin yutulmuşsa çıkarmaya çalışma — kösteği kes, iğne zamanla erir."
+    ],
+    "ilgili": [
+      "igne",
+      "kafa-feneri"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "kafa-feneri",
+    "ad": "Kafa feneri",
+    "kisaAd": "kafa feneri",
+    "kategori": "aksesuar",
+    "esAdlar": [
+      "headlamp",
+      "kafa lambası",
+      "fener"
+    ],
+    "ozet": "Gece avında iki elini serbest bırakan baş feneri. El feneri onun yerini tutmaz.",
+    "nedir": "Kıyı balıkçılığının en verimli saatleri karanlıkta geçer. Düğüm bağlamak, yem takmak ve balık çıkarmak iki el ister; el feneriyle bunların hiçbiri yapılamaz. Kırmızı ışık modu olan modeller gece görüşünü korur ve balığı daha az ürkütür.",
+    "neIseYarar": [
+      "Düğüm ve yem işlerini karanlıkta yapmanı sağlar.",
+      "Kaygan kayada nereye bastığını görmeni sağlar — bir güvenlik gerecidir.",
+      "Kırmızı modu gece görüşünü bozmaz."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Kırmızı mod",
+        "metin": "Neredeyse zorunlu. Beyaz ışığı suya tuttuğunda o noktadaki balık dağılır."
+      },
+      {
+        "baslik": "Su geçirmezlik",
+        "metin": "En az IPX4. Deniz serpintisi ve yağmur kaçınılmazdır."
+      },
+      {
+        "baslik": "Yedek pil",
+        "metin": "Her zaman yanında bulundur. Fenersiz kalmak karanlık bir kayalıkta ciddi bir güvenlik sorunudur."
+      }
+    ],
+    "dikkat": [
+      "Işığı doğrudan suya tutma; avlandığın noktayı boşaltırsın."
+    ],
+    "ilgili": [
+      "pense",
+      "samandira"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "kamis-sehpasi",
+    "ad": "Kamış sehpası",
+    "kisaAd": "kamış sehpası",
+    "kategori": "aksesuar",
+    "esAdlar": [
+      "sehpa",
+      "rod holder",
+      "kamış tutucu",
+      "tripod"
+    ],
+    "ozet": "Dip avında kamışı yere koymadan, vuruşu görecek açıda tutan ayaklık.",
+    "nedir": "Dip takımıyla avlanırken beklemek işin yarısıdır. Kamışı taşa yaslamak halkalara zarar verir ve vuruşu göremezsin. Sehpa kamışı yukarı bakan bir açıda tutar; kamışın ucu balık dokunduğunda net şekilde titrer.",
+    "neIseYarar": [
+      "Vuruşu görünür kılar.",
+      "Kamışı ve halkaları taşın aşındırmasından korur.",
+      "Aynı anda birden fazla kamışla avlanmanı mümkün kılar."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Zemine göre",
+        "metin": "Kumsalda sivri uçlu tekli çubuk yeter; beton rıhtım ve mendirekte üç ayaklı (tripod) gerekir."
+      },
+      {
+        "baslik": "Ağırlık",
+        "metin": "Rüzgârda devrilmemesi için altına kova veya taş koyabileceğin bir yapıda olsun."
+      }
+    ],
+    "dikkat": [
+      "Kamışı sehpaya koyduğunda freni gevşet; iri bir vuruş sehpayı devirip kamışı denize alabilir."
+    ],
+    "ilgili": [
+      "kamis",
+      "fren"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "olcum-bandi",
+    "ad": "Ölçüm bandı",
+    "kisaAd": "ölçüm bandı",
+    "kategori": "aksesuar",
+    "esAdlar": [
+      "şerit metre",
+      "balık ölçer",
+      "mezura"
+    ],
+    "ozet": "Balığın yasal boyunu ölçmek için kullanılan şerit. Göz kararı ceza getirir.",
+    "nedir": "Amatör balıkçılıkta her türün yasal bir asgari boyu vardır ve altındaki balık suya bırakılmalıdır. Aradaki fark çoğu zaman 1-2 santimdir; göz kararı yeterli değildir. Ölçüm burnun ucundan kuyruk yüzgecinin ucuna kadar yapılır.",
+    "neIseYarar": [
+      "Yasal boyu kesin olarak belirler.",
+      "Sınırda kalan balığı vicdan rahatlığıyla bırakmanı sağlar."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Tip",
+        "metin": "Yapışkanlı şerit metreyi kovanın kenarına veya soğutucu çantanın kapağına yapıştırabilirsin — en pratik çözüm."
+      },
+      {
+        "baslik": "Ölçüm şekli",
+        "metin": "Ağzı kapalıyken, burun ucundan kuyruk yüzgecinin en uzun ucuna kadar düz çizgi."
+      }
+    ],
+    "dikkat": [
+      "Ölçtüğün balığı bırakacaksan ıslak elle tut ve mümkünse sudan hiç çıkarma."
+    ],
+    "ilgili": [
+      "kepce"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "spinner",
+    "ad": "Döner kaşık (spinner)",
+    "kisaAd": "döner kaşık",
+    "kategori": "sahte-yem",
+    "esAdlar": [
+      "spinner",
+      "döner pervane"
+    ],
+    "ozet": "Tel bir gövde üstünde dönen metal bir kanattan oluşan sahte yem. Dönerken hem parıldar hem suda titreşim yayar.",
+    "nedir": "Döner kaşığın kanadı sarma sırasında gövdenin etrafında pervane gibi döner. Bu dönüş iki iş yapar: güneşi yansıtarak uzaktan görünür, bir yandan da suda balığın yanal çizgisiyle hissettiği bir titreşim üretir. Bu yüzden bulanık suda, maket balığın işe yaramadığı yerlerde bile sonuç verir. Tatlı suda turna, tatlısu levreği ve alabalığın klasik yemidir; denizde de lüfer ve zargana vurur.",
+    "neIseYarar": [
+      "Bulanık suda görüş yerine titreşimle balık çeker.",
+      "Sabit hızda sarıldığında kendiliğinden çalışır — teknik gerektirmez.",
+      "Küçük boyları tatlı suda hemen her türe hitap eder."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Numara",
+        "metin": "Kanat boyuna göre 0'dan 5'e numaralanır. Tatlısu levreği ve alabalık için 1-2, turna için 3-4 numara uygundur. Numara büyüdükçe hem ağırlık hem çekerken hissedilen direnç artar."
+      },
+      {
+        "baslik": "Kanat rengi",
+        "metin": "Berrak suda ve güneşte gümüş, bulanık suda veya kapalı havada altın rengi daha çok iş görür. Kırmızı noktalı kanatlar tatlısu levreğinde belirgin fark yaratır."
+      },
+      {
+        "baslik": "Fırdöndü şart",
+        "metin": "Döner kaşık sararken misinayı burar. Kaşıkla lider arasına mutlaka bir fırdöndü koy, yoksa misina kendi üstüne kıvrılıp kısa sürede kullanılmaz hâle gelir."
+      }
+    ],
+    "dikkat": [
+      "Turna avında çelik veya kalın fluorocarbon lider kullan; turnanın dişi ince misinayı bir vuruşta keser.",
+      "Üç iğneli olduğu için çantaya gelişigüzel atma; bir kutu içinde tut."
+    ],
+    "ilgili": [
+      "kasik",
+      "maket-balik",
+      "firdondu",
+      "celik-lider"
+    ],
+    "dugumler": [
+      "klinc",
+      "palomar"
+    ]
+  },
+  {
+    "id": "celik-lider",
+    "ad": "Çelik lider",
+    "kisaAd": "çelik lider",
+    "kategori": "misina",
+    "esAdlar": [
+      "çelik köstek",
+      "turna lideri"
+    ],
+    "ozet": "Sahte yem ile ana misina arasına giren, dişli balığın kesemediği ince çelik tel.",
+    "nedir": "Turnanın ağzı jilet gibi dişlerle kaplıdır; 0,30 mm bir misinayı vurduğu anda keser. Çelik lider, yemin hemen üstüne giren 20-40 santimlik ince bir tel parçasıdır. Bir ucunda fırdöndü, diğerinde klips bulunur, böylece yemi saniyeler içinde değiştirebilirsin. Denizde de lüfer için aynı mantıkla kullanılır.",
+    "neIseYarar": [
+      "Dişli balığın misinayı kesmesini önler.",
+      "Yemin uçup gitmesini engeller — kesilen yem hem para hem doğaya bırakılmış plastik demektir.",
+      "Klipsli ucu sayesinde yem değişimi hızlanır."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Boy",
+        "metin": "Turna için 25-40 santim yeterlidir. Uzun lider yemin doğal hareketini bozar, kısa lider balığın dişini karşılamaz."
+      },
+      {
+        "baslik": "Kalınlık",
+        "metin": "Kıyıdan turna avı için 7-10 kg çekme gücündeki ince tel yeterli. Kalın tel görünür ve yemi cansızlaştırır."
+      },
+      {
+        "baslik": "Alternatifi",
+        "metin": "Berrak suda çelik yerine 0,50-0,60 mm fluorocarbon da kullanılır: daha az görünür ama dişe karşı çelik kadar güvenli değildir."
+      }
+    ],
+    "dikkat": [
+      "Kıvrılmış veya bükülmüş çelik lideri kullanma; bir kez katlanan tel o noktadan kırılır.",
+      "Her balıktan sonra elinle sıvazlayarak kontrol et."
+    ],
+    "ilgili": [
+      "sok-lideri",
+      "fluorocarbon",
+      "klips",
+      "firdondu"
+    ],
+    "dugumler": []
+  },
+  {
+    "id": "feeder-kafesi",
+    "ad": "Feeder kafesi (yemlik)",
+    "kisaAd": "feeder kafesi",
+    "kategori": "terminal",
+    "esAdlar": [
+      "yemlik kafes",
+      "feeder yemliği",
+      "method kafesi"
+    ],
+    "ozet": "İçine yem doldurulan, hem ağırlık hem yemleyici görevi gören delikli küçük kafes.",
+    "nedir": "Feeder kafesi bir kurşunun yerine geçer ama işi çok daha fazlasıdır. Delikli tel gövdesinin içine ıslatılmış yem karışımı doldurulur. Kafes dibe oturunca yem yavaşça çözülür ve iğnedeki yemin çevresinde bir koku bulutu oluşur. Her atışta dibe biraz daha yem bırakırsın; on beş dakika sonra o nokta balık için bir sofraya döner. Alt kısmındaki kurşun şerit kafesi dengede ve dik tutar.",
+    "neIseYarar": [
+      "Yemi ve ağırlığı tek parçada birleştirir.",
+      "Yemi tam iğnenin dibine bırakır — elle serpme yemin yapamadığı şey budur.",
+      "Farklı ağırlıklarıyla hem durgun gölde hem akıntılı nehirde çalışır."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Ağırlık",
+        "metin": "Durgun gölde 20-40 gr yeterlidir. Akıntılı nehirde kafesin sürüklenmemesi için 50-80 gr gerekir."
+      },
+      {
+        "baslik": "Kafes tipi",
+        "metin": "Açık tel kafes yemi hızlı bırakır, sıcak havada ve sığ suda iyidir. Kapalı gövdeli method kafesi yemi sıkıştırarak taşır, derin ve akıntılı suda tercih edilir."
+      },
+      {
+        "baslik": "Delik boyu",
+        "metin": "İri delikli kafes kaba yemi hızlı dağıtır, ince delikli kafes un bazlı yemi daha uzun tutar."
+      }
+    ],
+    "dikkat": [
+      "Yem fazla sulu olursa kafes dibe inmeden boşalır; avuçta topak olacak kıvamı yakala.",
+      "Kafesi kayar biçimde bağla; sabit kafeste balık ağırlığı hissedip yemi bırakır."
+    ],
+    "ilgili": [
+      "kursun",
+      "firdondu",
+      "boncuk",
+      "hamur-yem",
+      "misir"
+    ],
+    "dugumler": [
+      "cift-ilmek",
+      "palomar"
+    ]
+  },
+  {
+    "id": "misir",
+    "ad": "Mısır",
+    "kisaAd": "mısır",
+    "kategori": "dogal-yem",
+    "esAdlar": [
+      "tatlı mısır",
+      "konserve mısır"
+    ],
+    "ozet": "Tatlı suda sazan ve kadife için en ucuz, en kolay bulunan ve şaşırtıcı derecede etkili yem.",
+    "nedir": "Bakkaldan alınan bir konserve tatlı mısır, bir günlük sazan avına yeter. Sarı rengi bulanık suda uzaktan görünür, şekeri suda çözülerek koku bırakır. İğneye iki üç tane geçirilir; iğnenin ucu mısırın içinde kalmaz, dışarı çıkar. Feeder kafesinin içine de bir avuç atılır, böylece dipteki yem bulutuyla iğnedeki yem aynı şeydir.",
+    "neIseYarar": [
+      "Sazan, kadife ve kızılkanat için doğrudan hedef yemidir.",
+      "Bozulmaz, kokmaz, çantada taşıması temizdir.",
+      "Feeder yemine karıştırılarak dibe iri taneli bir hedef bırakır."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Taneli mi yapay mı",
+        "metin": "Konserve tane mısır çoğu iş için yeterlidir. Yapay (plastik) mısır tanesi suda dağılmaz ve küçük balıklar tarafından yenmez; uzun beklemeli avda avantajlıdır."
+      },
+      {
+        "baslik": "Kaç tane",
+        "metin": "Küçük balıkta tek tane, iri sazanda üç dört tane. Fazla tane iğnenin ucunu kapatır ve balığı kaçırır."
+      },
+      {
+        "baslik": "Renk",
+        "metin": "Standart sarı çoğu zaman en iyisidir. Su çok berraksa daha soluk, bulanıksa kırmızı boyalı taneler denenir."
+      }
+    ],
+    "dikkat": [
+      "Konservenin suyunu göle boşaltma; artık yem ve ambalajı yanında geri getir.",
+      "İğnenin ucunu mısırın içine gömme; balık iğneyi hissetmeden yemi çeker."
+    ],
+    "ilgili": [
+      "hamur-yem",
+      "toprak-solucani",
+      "feeder-kafesi",
+      "igne"
+    ],
+    "dugumler": [
+      "snell",
+      "palomar"
+    ]
+  },
+  {
+    "id": "hamur-yem",
+    "ad": "Hamur yem",
+    "kisaAd": "hamur",
+    "kategori": "dogal-yem",
+    "esAdlar": [
+      "ekmek içi",
+      "yem hamuru",
+      "pelet hamuru"
+    ],
+    "ozet": "Un, ekmek içi veya hazır karışımdan yoğrulan, iğneye sarılan yumuşak yem. Kefalden sazana kadar geniş bir aralığı kapsar.",
+    "nedir": "Hamur yem, iğnenin etrafına sarılan yumuşak bir yem topudur. En basiti ekmek içinin bir damla suyla yoğrulmuş hâlidir; hazır karışımlar ise balık unu, mısır unu ve çeşitli kokularla zenginleştirilmiştir. Kıvamı avın kendisini belirler: fazla yumuşak hamur atışta iğneden fırlar, fazla sert hamur suda çözülmez ve koku bırakmaz.",
+    "neIseYarar": [
+      "Kefal, sazan, kadife ve kızılkanat gibi ot ve tane yiyen balıkların doğal beslenmesine yakındır.",
+      "Kokusu suda dağılarak balığı iğnenin çevresine toplar.",
+      "Malzemesi mutfaktan çıkar; ekmek içi tek başına çoğu iş görür."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Kıvam",
+        "metin": "Avuçta sıkınca topak olacak, parmakla ovunca dağılacak kıvam doğrudur. Suya attığın bir parçayı izle: bir iki dakikada çözülüyorsa iyidir."
+      },
+      {
+        "baslik": "Koku",
+        "metin": "Tatlı su için vanilya ve anason, kefal için peynir ve ekmek kokusu yaygın tercihlerdir. Kokuyu abartma; balığı çeken şey ölçüdür."
+      },
+      {
+        "baslik": "İğneye takma",
+        "metin": "Hamuru iğnenin gövdesine sar, ucunu dışarıda bırak. Ucu kapalı kalan iğne yemi kaptırır ama balığı tutmaz."
+      }
+    ],
+    "dikkat": [
+      "Sıcak havada hamur çabuk ekşir; gölgede ve kapalı kapta tut.",
+      "Atışı yumuşak yap — sert atışta hamur havada iğneden ayrılır."
+    ],
+    "ilgili": [
+      "misir",
+      "toprak-solucani",
+      "feeder-kafesi",
+      "igne"
+    ],
+    "dugumler": [
+      "snell"
+    ]
+  },
+  {
+    "id": "toprak-solucani",
+    "ad": "Toprak solucanı",
+    "kisaAd": "toprak solucanı",
+    "kategori": "dogal-yem",
+    "esAdlar": [
+      "solucan",
+      "gübre solucanı"
+    ],
+    "ozet": "Tatlı suyun evrensel yemi. Neredeyse her tür vurur, kendin de bulabilirsin.",
+    "nedir": "Toprak solucanı, nemli toprakta ve gübre yığınlarının kenarında bulunan kırmızımsı solucandır. Denizdeki deniz solucanının tatlı sudaki karşılığıdır: hareketi ve kokusuyla sazan, kadife, tatlısu levreği, kızılkanat ve alabalık dahil hemen her türü çeker. Balıkçı dükkânlarında kutuyla satılır; nemli toprakla birlikte serin bir yerde birkaç gün canlı kalır.",
+    "neIseYarar": [
+      "Tatlı sudaki hemen her türün yediği tek yem.",
+      "Suda kıvranarak hareket eder; ölü yemlerin yapamadığı şey budur.",
+      "Küçük parçalara bölünerek küçük iğnelerde de kullanılabilir."
+    ],
+    "nasilSecilir": [
+      {
+        "baslik": "Boy",
+        "metin": "İri sazan ve yayın için bütün solucan, tatlısu levreği ve kızılkanat için yarım solucan yeterlidir."
+      },
+      {
+        "baslik": "Takma biçimi",
+        "metin": "İğneyi solucanın baş tarafından bir kez geçir, gövdenin çoğunu serbest bırak. Boydan boya geçirilen solucan kıvranmaz ve etkisini kaybeder."
+      },
+      {
+        "baslik": "Saklama",
+        "metin": "Nemli toprakla birlikte kapağı delikli bir kapta, buzdolabının değil serin bir gölgenin içinde tut."
+      }
+    ],
+    "dikkat": [
+      "Sıcakta arabada bırakma; birkaç saatte ölür ve kokar.",
+      "Artan solucanı doğaya rastgele bırakma; geldiği ortama benzeyen nemli toprağa bırak."
+    ],
+    "ilgili": [
+      "deniz-solucani",
+      "misir",
+      "hamur-yem",
+      "igne"
+    ],
+    "dugumler": [
+      "snell",
+      "palomar"
+    ]
+  }
+]

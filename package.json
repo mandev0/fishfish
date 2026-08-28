@@ -1,0 +1,29 @@
+{
+  "name": "fishfish",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "İstanbul, Kocaeli ve Sapanca çevresi kıyı ve tatlı su balıkçılığı rehberi",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/sw-surum.mjs",
+    "preview": "astro preview",
+    "check": "astro check",
+    "validate": "node scripts/validate-data.mjs",
+    "test": "vitest run",
+    "veri:dukkanlar": "node scripts/fetch-shops.mjs",
+    "ikon:uret": "node scripts/ikon-uret.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.13.0",
+    "leaflet": "^1.9.4"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@tailwindcss/vite": "^4.1.0",
+    "@types/leaflet": "^1.9.12",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.3",
+    "vitest": "^3.2.7"
+  }
+}

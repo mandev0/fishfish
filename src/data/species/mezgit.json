@@ -1,0 +1,159 @@
+{
+  "ad": "Mezgit",
+  "latin": "Merlangius merlangus",
+  "ingilizce": "Whiting",
+  "digerAdlar": [
+    "Bakalyaro"
+  ],
+  "ozet": "Soğuk suyun balığı. Kış aylarında Karadeniz ve Boğaz'da dip takımıyla bol miktarda tutulur; yaz sıcağında kıyıdan kaybolur.",
+  "zorluk": 2,
+  "aylar": [
+    5,
+    5,
+    4,
+    3,
+    2,
+    1,
+    1,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "sular": [
+    "karadeniz",
+    "bogaz",
+    "marmara"
+  ],
+  "gece": true,
+  "boySiniflari": [
+    {
+      "ad": "Küçük mezgit",
+      "cm": "0-13 cm",
+      "not": "13 cm altı yasal değil."
+    },
+    {
+      "ad": "Mezgit",
+      "cm": "13-30 cm"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 13,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28"
+  },
+  "suSicakligi": {
+    "min": 6,
+    "ideal": [
+      8,
+      14
+    ],
+    "max": 18
+  },
+  "aktifSaatler": [
+    "safak",
+    "aksam",
+    "gece"
+  ],
+  "ruzgarTercihi": [
+    "poyraz",
+    "yildiz",
+    "karayel"
+  ],
+  "ruzgarKacinilan": [],
+  "derinlik": "10-100 m; kışın kıyıya 10-20 m derinliğe kadar sokulur.",
+  "yasamAlani": "Kumlu ve çamurlu dipler, açık kıyılar, Karadeniz sahilleri.",
+  "teshis": {
+    "siluet": "mezgit",
+    "ayirtEdici": [
+      "Üç sırt, iki anüs yüzgeci — morina ailesinin tipik dizilimi.",
+      "Göğüs yüzgecinin dibinde küçük koyu bir leke.",
+      "Eti çok beyaz, gövde ince uzun ve yumuşak.",
+      "Alt çene üst çeneden kısadır."
+    ],
+    "karistirilan": [
+      "gelincik"
+    ]
+  },
+  "takimlar": [
+    "paternoster",
+    "dip-takimi-sabit-kursun",
+    "capari",
+    "surf-clipdown"
+  ],
+  "yemler": {
+    "dogal": [
+      "Deniz solucanı",
+      "Kalamar şeridi",
+      "Sardalya parçası",
+      "Karides"
+    ],
+    "sahte": [
+      "Parlak tüylü çapari",
+      "Kokulu silikon"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "3,0-4,2 m surf",
+      "not": "Kışın uzak atış gerekebilir."
+    },
+    "makine": {
+      "deger": "4000-6000"
+    },
+    "anaMisina": {
+      "deger": "0,28-0,35 mm mono"
+    },
+    "sokLideri": {
+      "deger": "0,25-0,30 mm, 2-3 köstek",
+      "not": "Paternoster ile birden fazla balık çıkar."
+    },
+    "igne": {
+      "deger": "2-6 numara uzun pipolu",
+      "not": "Uzun pipo çıkarmayı kolaylaştırır."
+    },
+    "agirlik": {
+      "deger": "60-150 gr",
+      "not": "Karadeniz'de akıntı için ağır piramit kurşun."
+    }
+  },
+  "taktik": {
+    "atis": "Kumluk dibe uzun at. Mezgit açıkta ve dipte beslenir; 60-80 m atış fark yaratır.",
+    "cekme": "Yem dipte dursun. Arada bir 1-2 metre sarıp yeni bir noktaya oturtmak vuruşu artırır.",
+    "tokatlama": "Vuruş belirgin ve tekrarlıdır. Kamış ucu iki-üç kez sertçe vurduktan sonra çek.",
+    "yakalama": "Zayıf mücadele eder. Paternosterle çoğu zaman iki-üç balık birden gelir.",
+    "ipuclari": [
+      "Aralık-Şubat arası Kilyos, Riva ve Şile'de en verimli dönemdir.",
+      "Su ne kadar soğuksa mezgit o kadar kıyıya sokulur.",
+      "Gece avı gündüzden belirgin şekilde daha verimlidir."
+    ],
+    "hatalar": [
+      "Yaz aylarında mezgit aramak.",
+      "Kısa atış yapmak."
+    ]
+  },
+  "mutfak": "Tavada veya buğulama. Eti çok yumuşak olduğu için pişirirken dağılmasına dikkat et.",
+  "noktalar": [
+    "sariyer-mendirek",
+    "yenikoy",
+    "anadolu-kavagi",
+    "kandilli",
+    "kilyos",
+    "riva",
+    "sile",
+    "agva",
+    "yenikapi",
+    "bakirkoy",
+    "silivri",
+    "caddebostan",
+    "bostanci",
+    "maltepe",
+    "kartal",
+    "pendik",
+    "bagirganli",
+    "kerpe",
+    "kefken",
+    "cebeci"
+  ]
+}

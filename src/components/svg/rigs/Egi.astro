@@ -1,0 +1,57 @@
+---
+// Kalamar zokası (egi) — karides biçimli gövde, arka halka iğneler, sıçratma hareketi.
+---
+<svg class="diagram" viewBox="0 0 380 480" role="img" aria-labelledby="egi-baslik">
+  <title id="egi-baslik">Kalamar zokası takımı: örgü misina, FG düğümü, uzun fluorocarbon lider ve karides biçimli egi; arkasında halka halka batmaz iğneler.</title>
+
+  <rect class="water" x="0" y="56" width="380" height="424" />
+  <path class="ln-thin" d="M0 56 q20 -6 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" />
+
+  <path class="kamis" d="M16 22 L100 34" />
+  <text class="lbl-b" x="16" y="14">Egging kamışı 2,4-2,7 m · 8-25 gr</text>
+
+  <path class="orgu" d="M100 34 L146 92" stroke-width="2.1" />
+  <text class="lbl-orgu" x="160" y="72">Örgü PE 0,6-0,8</text>
+
+  <g transform="translate(146,96)">
+    <path class="orgu" d="M0 0 L0 30" stroke-width="2.1" />
+    {[0,1,2,3,4].map((i) => (<path class="dugum" stroke-width="1.2" d={`M-5 ${5 + i * 5} q5 -3 10 0`} />))}
+    <circle class="dugum" cx="0" cy="15" r="11" />
+  </g>
+  <text class="lbl-a" x="170" y="114">FG düğümü</text>
+
+  <path class="lider" d="M146 126 L146 268" />
+  <path class="tick" d="M104 126 L104 268" />
+  <path class="tick" d="M98 126 L110 126 M98 268 L110 268" />
+  <text class="lbl-lider" x="24" y="188">Fluorocarbon</text>
+  <text class="lbl" x="24" y="202">1,5-2 m</text>
+  <text class="lbl" x="24" y="216">0,26-0,30 mm</text>
+  <text class="lbl-a" x="24" y="236">Kalamar misinayı</text>
+  <text class="lbl-a" x="24" y="250">görürse yaklaşmaz</text>
+
+  <!-- Egi gövdesi: burun aşağı, kuyruk yukarı -->
+  <g transform="translate(146,272) rotate(18)">
+    <path class="yem" d="M0 0 c18 4 34 22 40 46 c4 16 0 30 -6 34 c-8 -6 -20 -10 -34 -10 c-14 0 -22 -12 -18 -32 c4 -20 10 -34 18 -38 z" />
+    <!-- kumaş deseni -->
+    <path class="ln-thin" stroke="var(--d-yem)" d="M-4 22 q20 4 34 16 M-2 38 q18 4 30 14" />
+    <circle class="solid" cx="4" cy="10" r="2.2" />
+    <!-- kuyruktaki halka iğneler -->
+    {[0,1,2,3,4].map((i) => {
+      const a = -50 + i * 25;
+      return <path class="igne" d={`M34 80 l${Math.cos(a * Math.PI / 180) * 18} ${Math.sin(a * Math.PI / 180) * 18 + 10}`} />;
+    })}
+    <!-- karides bacakları -->
+    <path class="ln-thin" stroke="var(--d-yem)" d="M-12 30 l-12 6 M-14 44 l-14 4 M-10 56 l-14 8" />
+  </g>
+
+  <text class="lbl-yem" x="212" y="300">Egi 2.5-3.5 boy</text>
+  <text class="lbl" x="212" y="314">10-20 gr</text>
+  <text class="lbl-igne" x="212" y="334">Halka iğneler batmaz —</text>
+  <text class="lbl-igne" x="212" y="348">kalamarın kollarına takılır</text>
+
+  <!-- Sıçratma hareketi -->
+  <path class="hareket" d="M64 420 q22 -46 44 -6 q22 40 44 -8 q22 -48 44 -4" />
+  <path class="ln-thin" d="M196 402 l-2 -10 M196 402 l8 -6" />
+  <text class="lbl-a" x="18" y="446">At → dibe bırak → 2-3 kez keskin sıçrat → tekrar dibe bırak</text>
+  <text class="lbl" x="18" y="464">Kalamar zokayı düşerken yakalar. Tokatlama yok, sürekli baskı.</text>
+</svg>

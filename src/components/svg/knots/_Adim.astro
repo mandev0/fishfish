@@ -1,0 +1,12 @@
+---
+// Bir düğüm adımının çerçevesi: numara rozeti + kısa açıklama + çizim alanı.
+interface Props { no: number; baslik: string; y: number }
+const { no, baslik, y } = Astro.props;
+---
+<g transform={`translate(0,${y})`}>
+  <rect x="0.5" y="0.5" width="388" height="139" rx="10" class="ln-thin" fill="none" />
+  <rect x="11" y="11" width="22" height="22" rx="3" class="accent" />
+  <text x="22" y="26" text-anchor="middle" font-size="12" font-weight="700" fill="var(--accent-ink)">{no}</text>
+  <text x="42" y="26" class="lbl-b">{baslik}</text>
+  <g transform="translate(0,34)"><slot /></g>
+</g>

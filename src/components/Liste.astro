@@ -1,0 +1,27 @@
+---
+import Ikon from './Ikon.astro';
+import { isaretle } from '../lib/terimler';
+interface Props {
+  maddeler: string[];
+  tip?: 'ipucu' | 'hata' | 'duz';
+  /** Verilirse madde metinlerindeki terimler işaretlenir. */
+  gorulen?: Set<string>;
+  haric?: string;
+}
+const { maddeler, tip = 'duz', gorulen, haric } = Astro.props;
+const stil = {
+  ipucu: { kutu: 'border-good/40 border-l-[3px] border-l-good bg-good-soft', ikon: 'pusula', renk: 'text-good' },
+  hata: { kutu: 'border-danger/40 border-l-[3px] border-l-danger bg-danger-soft', ikon: 'uyari', renk: 'text-danger' },
+  duz: { kutu: 'border-line border-l-[3px] border-l-line-strong bg-surface', ikon: 'balik', renk: 'text-muted' },
+}[tip];
+---
+<ul class:list={['space-y-2.5 rounded-sm border p-4', stil.kutu]}>
+  {maddeler.map((m) => (
+    <li class="flex gap-2.5 text-sm">
+      <span class:list={['mt-[3px] shrink-0', stil.renk]}>
+        <Ikon ad={stil.ikon} sinif="size-[15px]" />
+      </span>
+      <span set:html={gorulen || haric ? isaretle(m, { gorulen, haric }) : m} />
+    </li>
+  ))}
+</ul>

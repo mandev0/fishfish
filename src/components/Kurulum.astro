@@ -1,0 +1,41 @@
+---
+import Ikon from './Ikon.astro';
+/**
+ * Ana ekrana ekleme kartı. Yönergeler sunucuda basılır (JavaScript kapalıyken
+ * de okunur); tarayıcı kurulum istemi sunuyorsa yerini tek düğme alır.
+ */
+---
+<section id="kurulum" class="kart kart-vurgulu mt-10 p-4">
+  <h2 class="flex items-center gap-2 text-base font-semibold">
+    <Ikon ad="ekle" sinif="size-[18px] shrink-0 text-vurgu" />
+    Uygulama Olarak Kullan
+  </h2>
+  <p class="mt-1.5 text-sm text-muted">
+    Ana ekrana eklediğinde tam ekran açılır ve rehberin tamamı — balıklar, takımlar,
+    düğümler, noktalar — şebeke olmadan çalışır. Canlı hava verisi için bağlantı gerekir.
+  </p>
+
+  <button
+    type="button" data-kur hidden
+    class="mt-3 inline-flex min-h-11 items-center gap-2 rounded-sm border border-vurgu bg-vurgu-soft px-3.5 py-2 text-sm font-semibold text-vurgu"
+  >
+    <Ikon ad="ekle" sinif="size-4 shrink-0" />
+    Ana ekrana ekle
+  </button>
+
+  <dl data-elle class="mt-3 space-y-2 text-sm">
+    <div class="flex gap-2">
+      <dt class="w-20 shrink-0 font-medium">iPhone</dt>
+      <dd class="text-muted">Safari'de paylaş düğmesi → “Ana Ekrana Ekle”.</dd>
+    </div>
+    <div class="flex gap-2">
+      <dt class="w-20 shrink-0 font-medium">Android</dt>
+      <dd class="text-muted">Chrome menüsü → “Uygulamayı yükle”.</dd>
+    </div>
+  </dl>
+</section>
+
+<script>
+  import { baslat } from '../components/islands/kurulum';
+  document.addEventListener('astro:page-load', () => baslat());
+</script>

@@ -1,0 +1,151 @@
+{
+  "ad": "Sübye (Mürekkep Balığı)",
+  "latin": "Sepia officinalis",
+  "ingilizce": "Common cuttlefish",
+  "digerAdlar": [
+    "Mürekkep balığı",
+    "Sepya"
+  ],
+  "ozet": "Kalamarın daha yassı ve daha ağır akrabası. İlkbaharda yumurtlamak için kıyıya sokulur; kumluk ve deniz çayırı diplerinde egi ile avlanır.",
+  "zorluk": 3,
+  "aylar": [
+    3,
+    4,
+    5,
+    5,
+    4,
+    2,
+    1,
+    1,
+    2,
+    3,
+    3,
+    3
+  ],
+  "sular": [
+    "marmara",
+    "bogaz"
+  ],
+  "gece": true,
+  "boySiniflari": [
+    {
+      "ad": "Küçük sübye",
+      "cm": "8-15 cm (gövde)"
+    },
+    {
+      "ad": "Sübye",
+      "cm": "15-30 cm (gövde)"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": null,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Tebliğ'de bu tür için asgari boy belirtilmemiştir; günlük toplam 5 kg sınırı yine geçerlidir."
+  },
+  "suSicakligi": {
+    "min": 10,
+    "ideal": [
+      13,
+      20
+    ],
+    "max": 24
+  },
+  "aktifSaatler": [
+    "aksam",
+    "gece",
+    "safak"
+  ],
+  "ruzgarTercihi": [],
+  "ruzgarKacinilan": [
+    "lodos"
+  ],
+  "derinlik": "2-30 m; ilkbaharda 3-10 metrelik sığ kumluklara girer.",
+  "yasamAlani": "Kumlu dipler, deniz çayırı (posidonya) yatakları, sığ koylar.",
+  "teshis": {
+    "siluet": "subye",
+    "ayirtEdici": [
+      "Gövde geniş, oval ve yassı; yüzgeç gövdenin tamamı boyunca kenardan uzanır.",
+      "İçinde kalın, beyaz, kireçli bir kemik (sübye kemiği) bulunur.",
+      "Derisi anlık renk değiştirir — dalgalanan desenler görürsün.",
+      "Kalamardan belirgin şekilde daha tıknaz ve ağırdır."
+    ],
+    "karistirilan": [
+      "kalamar"
+    ]
+  },
+  "takimlar": [
+    "kalamar-zokasi-egi"
+  ],
+  "yemler": {
+    "dogal": [],
+    "sahte": [
+      "3.0-3.5 boy egi",
+      "Turuncu ve kahverengi tonlar sübyede iyi sonuç verir"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "2,4-2,7 m, 8-30 gr",
+      "not": "Sübye kalamardan ağırdır, biraz daha güçlü kamış iyi olur."
+    },
+    "makine": {
+      "deger": "2500-3000"
+    },
+    "anaMisina": {
+      "deger": "PE 0,6-1,0"
+    },
+    "sokLideri": {
+      "deger": "0,28-0,32 mm fluorocarbon, 1,5 m"
+    },
+    "igne": {
+      "deger": "Eginin halka iğneleri"
+    },
+    "agirlik": {
+      "deger": "Eginin kendi ağırlığı (12-25 gr)",
+      "not": "Sübye dipte olduğu için biraz daha ağır egi tercih edilir."
+    }
+  },
+  "taktik": {
+    "atis": "Kumluk veya deniz çayırı dibine at. Sübye kalamar gibi orta suda değil, dibe yapışık dolaşır.",
+    "cekme": "Egiyi dibe indir, çok yavaş ve dibi tarayarak sar; arada kısa sıçratmalar yap. Sübye egiyi kollarıyla sarar, vuruş yerine ağırlık hissedersin.",
+    "tokatlama": "Tokatlama yok. Ağırlığı hissettiğinde sabit ve yumuşak baskıyla çekmeye başla.",
+    "yakalama": "Ağır olduğu için mutlaka kepçe kullan. Bol mürekkep püskürtür — gövdesini denize doğru tut.",
+    "ipuclari": [
+      "Şubat-Mayıs arası, yumurtlamak için sığ kumluklara girdiği dönem en verimlidir.",
+      "Deniz çayırı yatakları sübye için birinci sınıf alandır.",
+      "Kalamardan farklı olarak dipte avlanır; egiyi dipte tut."
+    ],
+    "hatalar": [
+      "Orta suda aramak.",
+      "Kepçesiz çıkarmaya çalışmak — ağırlığıyla kurtulur."
+    ]
+  },
+  "mutfak": "Tava, izgara veya mürekkepli pilav. Sübye kemiğini kuş kafesine koyabilirsin.",
+  "noktalar": [
+    "riva",
+    "bakirkoy",
+    "yesilkoy",
+    "florya",
+    "buyukcekmece",
+    "silivri",
+    "moda",
+    "caddebostan",
+    "bostanci",
+    "maltepe",
+    "kartal",
+    "pendik",
+    "tuzla",
+    "buyukada",
+    "heybeliada",
+    "bayramoglu",
+    "darica-sahil",
+    "eskihisar",
+    "tavsancil",
+    "hereke",
+    "karamursel",
+    "ulasli",
+    "degirmendere",
+    "golcuk"
+  ]
+}

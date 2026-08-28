@@ -1,0 +1,212 @@
+{
+  "ad": "Lüfer",
+  "latin": "Pomatomus saltatrix",
+  "ingilizce": "Bluefish",
+  "digerAdlar": [
+    "Defne yaprağı",
+    "Çinekop",
+    "Sarıkanat",
+    "Kofana"
+  ],
+  "ozet": "İstanbul'un sembol balığı. Sonbaharda Karadeniz'den Marmara'ya inen sürüler Boğaz'ı bir uçtan bir uca doldurur; kıyıdan avlanabilen en heyecanlı avcı balıktır.",
+  "zorluk": 3,
+  "aylar": [
+    3,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    2,
+    4,
+    5,
+    5,
+    4
+  ],
+  "sular": [
+    "bogaz",
+    "marmara",
+    "karadeniz",
+    "halic"
+  ],
+  "gece": true,
+  "boySiniflari": [
+    {
+      "ad": "Defne yaprağı",
+      "cm": "0-14 cm",
+      "not": "Yasal boyun altında. Mutlaka suya bırak."
+    },
+    {
+      "ad": "Çinekop",
+      "cm": "14-20 cm",
+      "not": "18 cm'in altı yasal değil."
+    },
+    {
+      "ad": "Sarıkanat",
+      "cm": "20-30 cm"
+    },
+    {
+      "ad": "Lüfer",
+      "cm": "30-40 cm"
+    },
+    {
+      "ad": "Kofana",
+      "cm": "40 cm ve üzeri",
+      "not": "Kıyıdan tutulması en zor, en makbul boy."
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 18,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Defne yaprağı boyundaki yavruları tutmak hem yasak hem de sürünün geleceğini bitiriyor."
+  },
+  "suSicakligi": {
+    "min": 12,
+    "ideal": [
+      15,
+      22
+    ],
+    "max": 25
+  },
+  "aktifSaatler": [
+    "safak",
+    "aksam",
+    "gece"
+  ],
+  "ruzgarTercihi": [
+    "poyraz",
+    "yildiz"
+  ],
+  "ruzgarKacinilan": [
+    "lodos",
+    "kible"
+  ],
+  "derinlik": "Yüzey ile 20 m arası; akşam alacasında ilk 5 metreye çıkar.",
+  "yasamAlani": "Akıntı kenarları, mendirek başları, köprü ayakları ve ışıklı iskele altları. Yem balığı sürüsünün olduğu her yerde.",
+  "teshis": {
+    "siluet": "lufer",
+    "ayirtEdici": [
+      "Alt çenesi üstten ileride, ağzı iri ve jilet gibi keskin dişli.",
+      "Sırtı mavi-yeşil, yanları gümüş.",
+      "Göğüs yüzgecinin dibinde koyu bir leke bulunur.",
+      "Kuyruğu derin çatallı ve sert."
+    ],
+    "karistirilan": [
+      "palamut"
+    ]
+  },
+  "takimlar": [
+    "capari-agir",
+    "samandirali-canli-yem",
+    "zoka-atma",
+    "spin-yuzey"
+  ],
+  "yemler": {
+    "dogal": [
+      "Canlı istavrit",
+      "Canlı izmarit",
+      "Sardalya filetosu",
+      "Kalamar şeridi"
+    ],
+    "sahte": [
+      "20-60 gr gümüş zoka",
+      "9-14 cm minnow maket",
+      "Kaşık",
+      "Silikon shad"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "2,7-3,3 m, 20-60 gr atış, medium-fast",
+      "not": "Kofana ihtimaline karşı gövdesi sağlam olmalı."
+    },
+    "makine": {
+      "deger": "4000-5000 boy, 5.2:1 üzeri sarım",
+      "not": "Freni yumuşak ve pürüzsüz çalışan bir makine seç."
+    },
+    "anaMisina": {
+      "deger": "PE 1,0-1,5 örgü veya 0,30-0,35 mm mono",
+      "not": "Örgü vuruşu çok daha net iletir."
+    },
+    "sokLideri": {
+      "deger": "0,40-0,50 mm fluorocarbon, 1-1,5 m",
+      "not": "İnce lider lüferin dişiyle kesilir; kofana bekliyorsan ince tel köstek kullan."
+    },
+    "igne": {
+      "deger": "1/0-4/0 uzun pipolu",
+      "not": "Uzun pipo, iğneyi çıkarırken parmağını dişlerden korur."
+    },
+    "agirlik": {
+      "deger": "40-80 gr",
+      "not": "Boğaz'ın akıntılı noktalarında 80 gr'a kadar çıkabilirsin."
+    }
+  },
+  "taktik": {
+    "atis": "Akıntının kıyıya sürüklendiği hattı bul ve akıntının yukarısına at; takım süzülerek balığın önüne gelsin. Işıklı iskelelerde aydınlık ile karanlığın birleştiği sınıra at — lüfer tam o çizgide pusu kurar.",
+    "cekme": "Zokada düzenli ve hızlıca sar, arada bir kamış ucunu 20-30 cm sarsarak yaralı balık taklidi yap. Şamandıralı canlı yemde hiç sarma; akıntı yemi 20-30 m süzsün, sonra topla ve tekrar bırak.",
+    "tokatlama": "Zokada vuruşu hissettiğin anda kısa ve sert tokatla. Canlı yemde acele etme: şamandıra daldıktan sonra iki-üç saniye say, misina gerçekten gitmeye başlayınca çek.",
+    "yakalama": "Lüfer sudan çıkarken şiddetle silkelenir; kamışla havaya kaldırma, kepçe kullan veya dalganın kaldırdığı anda kıyıya al. İğneyi asla elle çıkarma — pense kullan.",
+    "ipuclari": [
+      "En verimli saat gün batımından sonraki ilk 90 dakikadır. Karanlık bastıktan sonra vuruş belirgin azalır.",
+      "Yem balığı sıçrıyorsa lüfer altındadır. Sürünün kaynadığı noktanın 10 m ötesine at, ortasına değil.",
+      "Poyrazlı, hafif dalgalı ve serin bir akşam en klasik lüfer havasıdır.",
+      "Canlı yemi avlanacağın yerde çapariyle tut; taşınan yem çabuk ölür ve lüfer ölü yeme çok daha az ilgi gösterir."
+    ],
+    "hatalar": [
+      "İnce köstekle çıkmak. Lüferin dişi 0,30 mm fluorocarbonu tek hamlede keser.",
+      "Balığı kamışla havaya kaldırmak — ağırlıkla iğne yırtılır ve balık düşer.",
+      "Defne yaprağı boyundaki yavruları alıkoymak. Hem yasal değil hem de birkaç yıl içinde sürünün tamamını bitiriyor."
+    ]
+  },
+  "mutfak": "Çinekop tavada, sarıkanat ızgarada, kofana fırında veya buğulama olarak en iyisidir. Taze lüferin eti diri ve gözü berrak olur.",
+  "noktalar": [
+    "rumeli-kavagi",
+    "garipce",
+    "sariyer-mendirek",
+    "buyukdere",
+    "tarabya",
+    "yenikoy",
+    "emirgan",
+    "bebek",
+    "arnavutkoy",
+    "ortakoy",
+    "kabatas",
+    "galata-koprusu",
+    "sarayburnu",
+    "anadolu-kavagi",
+    "poyrazkoy",
+    "beykoz",
+    "pasabahce",
+    "kanlica",
+    "anadolu-hisari",
+    "kandilli",
+    "cengelkoy",
+    "beylerbeyi",
+    "kuzguncuk",
+    "salacak",
+    "kilyos",
+    "sile",
+    "yenikapi",
+    "kumkapi",
+    "zeytinburnu",
+    "bakirkoy",
+    "yesilkoy",
+    "buyukcekmece",
+    "silivri",
+    "moda",
+    "caddebostan",
+    "bostanci",
+    "maltepe",
+    "kartal",
+    "pendik",
+    "buyukada",
+    "heybeliada",
+    "bayramoglu",
+    "darica-sahil",
+    "eskihisar",
+    "kerpe",
+    "kefken"
+  ]
+}

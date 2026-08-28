@@ -1,0 +1,62 @@
+---
+// Dip takımı — kayar kurşun, boncuk, fırdöndü, fluoro köstek, dipteki yem.
+---
+<svg class="diagram" viewBox="0 0 380 520" role="img" aria-labelledby="dip-baslik">
+  <title id="dip-baslik">Dip takımı şeması: kayar kurşun, boncuk, fırdöndü, fluorocarbon köstek ve deniz dibinde duran yemli iğne.</title>
+
+  <rect class="water" x="0" y="70" width="380" height="450" />
+  <path class="ln-thin" d="M0 70 q20 -6 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" />
+
+  <path class="kamis" d="M18 26 L112 42" />
+  <text class="lbl-b" x="18" y="18">Surf kamışı 3,0-4,2 m</text>
+
+  <path class="misina" d="M112 42 L166 150" />
+  <text class="lbl-misina" x="182" y="112">Ana misina</text>
+  <text class="lbl" x="182" y="126">0,30-0,35 mm mono</text>
+
+  <!-- Kayar kurşun -->
+  <g transform="translate(166,182)">
+    <path class="metal" d="M0 -26 c14 0 22 14 22 30 c0 15 -10 24 -22 24 c-12 0 -22 -9 -22 -24 c0 -16 8 -30 22 -30 z" />
+    <path class="misina" d="M0 -26 L0 28" />
+  </g>
+  <text class="lbl-metal" x="202" y="180">Kayar kurşun</text>
+  <text class="lbl" x="202" y="194">60-150 gr</text>
+  <text class="lbl-a" x="202" y="212">Misina kurşunun içinden</text>
+  <text class="lbl-a" x="202" y="226">geçer — balık çekerken</text>
+  <text class="lbl-a" x="202" y="240">direnç hissetmez</text>
+
+  <!-- Boncuk -->
+  <circle class="metal" cx="166" cy="222" r="6" />
+  <text class="lbl-metal" x="112" y="222" text-anchor="end">Boncuk</text>
+  <path class="tick" d="M118 222 L156 222" />
+  <text class="lbl" x="112" y="236" text-anchor="end">düğümü korur</text>
+
+  <!-- Fırdöndü -->
+  <ellipse class="metal" cx="166" cy="248" rx="6" ry="10" />
+  <text class="lbl-metal" x="112" y="252" text-anchor="end">Fırdöndü</text>
+  <path class="tick" d="M118 248 L158 248" />
+
+  <!-- Köstek -->
+  <path class="lider" d="M166 258 L166 402" />
+  <path class="tick" d="M118 258 L118 402" />
+  <path class="tick" d="M112 258 L124 258 M112 402 L124 402" />
+  <text class="lbl-lider" x="30" y="316">Köstek</text>
+  <text class="lbl" x="30" y="330">30-60 cm</text>
+  <text class="lbl" x="30" y="344">fluorocarbon</text>
+  <text class="lbl-a" x="30" y="364">Ana misinadan</text>
+  <text class="lbl-a" x="30" y="378">daima daha ince</text>
+
+  <!-- Deniz dibi -->
+  <path class="ground" d="M0 440 q40 -16 80 -4 q40 12 80 -8 q40 -20 80 -2 q40 18 80 -6 q20 -12 40 -4 L380 520 L0 520 z" />
+  <path class="ln-thin" d="M0 440 q40 -16 80 -4 q40 12 80 -8 q40 -20 80 -2 q40 18 80 -6 q20 -12 40 -4" />
+
+  <!-- İğne + yem -->
+  <g transform="translate(166,406)">
+    <path class="igne" d="M0 0 l0 14 a8 8 0 1 0 13 4" />
+    <circle class="yem" cx="6" cy="18" r="9" />
+  </g>
+  <text class="lbl-igne" x="200" y="418">İğne 1-4 no</text>
+  <text class="lbl-yem" x="200" y="432">midye içi / deniz solucanı</text>
+
+  <text class="lbl" x="14" y="468">Misinayı tam germe — hafif gevşek bırak.</text>
+</svg>

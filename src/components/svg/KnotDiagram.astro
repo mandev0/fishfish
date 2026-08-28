@@ -1,0 +1,28 @@
+---
+import Klinc from './knots/Klinc.astro';
+import Palomar from './knots/Palomar.astro';
+import Uni from './knots/Uni.astro';
+import Fg from './knots/Fg.astro';
+import Snell from './knots/Snell.astro';
+import CiftIlmek from './knots/CiftIlmek.astro';
+import KostekBagi from './knots/KostekBagi.astro';
+
+interface Props { dugum: string }
+const { dugum } = Astro.props;
+
+const SEMALAR: Record<string, any> = {
+  klinc: Klinc,
+  palomar: Palomar,
+  uni: Uni,
+  fg: Fg,
+  snell: Snell,
+  'cift-ilmek': CiftIlmek,
+  'kostek-bagi': KostekBagi,
+};
+const Sema = SEMALAR[dugum];
+---
+{Sema ? <Sema /> : (
+  <p class="rounded-lg border border-line bg-surface-2 p-4 text-sm text-muted">
+    Bu düğüm için şema henüz çizilmedi ({dugum}).
+  </p>
+)}

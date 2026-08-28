@@ -1,0 +1,159 @@
+{
+  "ad": "Tekir",
+  "latin": "Mullus surmuletus",
+  "ingilizce": "Striped red mullet",
+  "digerAdlar": [
+    "Çizgili barbun",
+    "Paşa barbunu"
+  ],
+  "ozet": "Barbunyanın daha makbul akrabası. Kayalık-kum sınırında, iki bıyığıyla dibi tarayarak beslenir. Kıyıdan tutulan en lezzetli balıklardandır.",
+  "zorluk": 3,
+  "aylar": [
+    2,
+    2,
+    2,
+    2,
+    3,
+    4,
+    4,
+    4,
+    5,
+    4,
+    3,
+    2
+  ],
+  "sular": [
+    "marmara",
+    "karadeniz",
+    "bogaz"
+  ],
+  "gece": false,
+  "boySiniflari": [
+    {
+      "ad": "Küçük tekir",
+      "cm": "0-12 cm",
+      "not": "12 cm altı yasal değil."
+    },
+    {
+      "ad": "Tekir",
+      "cm": "12-25 cm"
+    },
+    {
+      "ad": "Paşa tekiri",
+      "cm": "25 cm ve üzeri"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 12,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Kaynaklar 11 ve 12 cm arasında farklılık gösteriyor; güvende olmak için 12 cm'i esas al."
+  },
+  "suSicakligi": {
+    "min": 12,
+    "ideal": [
+      16,
+      24
+    ],
+    "max": 27
+  },
+  "aktifSaatler": [
+    "safak",
+    "sabah",
+    "ikindi",
+    "aksam"
+  ],
+  "ruzgarTercihi": [
+    "poyraz"
+  ],
+  "ruzgarKacinilan": [],
+  "derinlik": "5-60 m; kıyıda 5-20 m arasındaki kum-kaya sınırlarında.",
+  "yasamAlani": "Kumlu ve çakıllı dipler, kayalıkla kumun birleştiği hatlar.",
+  "teshis": {
+    "siluet": "tekir",
+    "ayirtEdici": [
+      "Çene altında iki uzun bıyık (barbel) — dibi bunlarla tarar.",
+      "İlk sırt yüzgecinde belirgin koyu çizgiler (barbunyada yoktur).",
+      "Yan tarafta sarı boyuna bir bant.",
+      "Renk canlı kırmızı-pembe; alnı barbunyaya göre daha az dik."
+    ],
+    "karistirilan": [
+      "barbunya"
+    ]
+  },
+  "takimlar": [
+    "dip-takimi-sabit-kursun",
+    "paternoster",
+    "surf-clipdown"
+  ],
+  "yemler": {
+    "dogal": [
+      "Deniz solucanı (sülünez)",
+      "Karides",
+      "Midye içi"
+    ],
+    "sahte": []
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "3,0-4,2 m surf, hassas uçlu",
+      "not": "Vuruşu çok hafiftir; uç hassasiyeti kritik."
+    },
+    "makine": {
+      "deger": "4000-5000"
+    },
+    "anaMisina": {
+      "deger": "0,25-0,30 mm mono"
+    },
+    "sokLideri": {
+      "deger": "0,18-0,22 mm fluorocarbon, 40-60 cm",
+      "not": "İnce köstek tekirde belirgin fark yaratır."
+    },
+    "igne": {
+      "deger": "6-10 numara uzun pipolu",
+      "not": "Küçük ağzına küçük iğne."
+    },
+    "agirlik": {
+      "deger": "60-120 gr",
+      "not": "Kumluk dipte uzun atış avantajlıdır."
+    }
+  },
+  "taktik": {
+    "atis": "Kumluk dibe uzun at, sonra takımı 1-2 metre sürükleyerek kum-kaya sınırını ara. Tekir bu sınırda beslenir.",
+    "cekme": "Yem dipte dursun. 10 dakikada bir 2-3 metre sürükleyip yeni noktaya oturt.",
+    "tokatlama": "Vuruş çok hafif, ardışık küçük titremeler şeklindedir. İki-üç titremeden sonra yumuşakça çek.",
+    "yakalama": "Mücadelesi zayıftır. Ağzı yumuşak olduğu için sert çekme.",
+    "ipuclari": [
+      "En iyi yem taze deniz solucanıdır; başka hiçbir yem aynı sonucu vermez.",
+      "Sabah ilk ışıkta ve akşamüstü belirgin şekilde daha aktif.",
+      "Kum bulutu kaldıran bir sürü gördüysen o noktaya at — tekir dibi eşeleyerek beslenir."
+    ],
+    "hatalar": [
+      "Kalın köstek kullanmak.",
+      "Sert tokatlamak — yumuşak ağzı yırtılır."
+    ]
+  },
+  "mutfak": "Tavada kızartılır. İstanbul mutfağının en kıymetli balıklarından; küçük boyu bile makbuldür.",
+  "noktalar": [
+    "kilyos",
+    "riva",
+    "sile",
+    "zeytinburnu",
+    "bakirkoy",
+    "yesilkoy",
+    "florya",
+    "buyukcekmece",
+    "silivri",
+    "caddebostan",
+    "maltepe",
+    "kartal",
+    "pendik",
+    "tuzla",
+    "darica-sahil",
+    "hereke",
+    "karamursel",
+    "ulasli",
+    "bagirganli",
+    "cebeci"
+  ]
+}

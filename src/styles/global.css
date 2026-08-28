@@ -1,0 +1,717 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   Renk sistemi — "deniz haritası / balıkçı almanağı".
+
+   İki renk taşıyor:
+     --accent   yapı ve bağlantı rengi (Boğaz laciverti)
+     --vurgu    aksan (can yeleği / şamandıra turuncusu) — az ve yerinde
+
+   Bölgelerin kendi renkleri var; aynı renk hem haritada hem kartlarda.
+--------------------------------------------------------------- */
+:root {
+  color-scheme: light;
+  --bg: #f5f2e9;
+  --bg-tint: #ece7da;
+  --surface: #fffdf7;
+  --surface-2: #f0ece0;
+  --text: #10222e;
+  --text-muted: #55707e;
+  --border: #d5cdba;
+  --border-strong: #b7ab92;
+
+  /* Yapı ve bağlantı rengi: Boğaz laciverti. */
+  --accent: #0b4f66;
+  --accent-soft: #dae8ee;
+  --accent-ink: #ffffff;
+  /* Aksan: can yeleği / şamandıra turuncusu. Az ve yerinde kullanılır. */
+  --vurgu: #c4551f;
+  --vurgu-soft: #fbe4d5;
+  --vurgu-ink: #ffffff;
+
+  --warn: #a8620a;
+  --warn-soft: #fbeed4;
+  --danger: #9d2a1f;
+  --danger-soft: #f8e0dc;
+  --good: #256b4a;
+  --good-soft: #d8ecdf;
+
+  --shadow: 0 1px 0 rgb(16 34 46 / 0.05), 0 2px 8px rgb(16 34 46 / 0.06);
+
+  --bolge-bogaz-rumeli: #0b6e7f;
+  --bolge-bogaz-anadolu: #2c7145;
+  --bolge-karadeniz: #33538f;
+  --bolge-marmara-avrupa: #a85c11;
+  --bolge-marmara-anadolu: #6f4189;
+  --bolge-adalar: #9c3128;
+  --bolge-kocaeli-korfez: #7a6412;
+  --bolge-kocaeli-karadeniz: #1d6b6b;
+  --bolge-istanbul-icsu: #4f7a24;
+  --bolge-kocaeli-icsu: #4d4f9c;
+  --bolge-sapanca: #8f3a6b;
+  --bolge-sakarya-icsu: #7a3f18;
+
+  --zor1-bg: #dcefe0; --zor1-fg: #29613f; --zor1-cizgi: #6bb488;
+  --zor2-bg: #e7f0d6; --zor2-fg: #4a6529; --zor2-cizgi: #9dc26b;
+  --zor3-bg: #fbeed0; --zor3-fg: #855f10; --zor3-cizgi: #dfb555;
+  --zor4-bg: #fae1cb; --zor4-fg: #944c1a; --zor4-cizgi: #e39865;
+  --zor5-bg: #f9dad6; --zor5-fg: #96342a; --zor5-cizgi: #dc8378;
+
+  --bol1-bg: #eae6da; --bol1-fg: #6a6f66; --bol1-cizgi: #b3b7ac;
+  --bol2-bg: #e2ebdf; --bol2-fg: #587059; --bol2-cizgi: #99b79c;
+  --bol3-bg: #d8e9d9; --bol3-fg: #416b4f; --bol3-cizgi: #7fbb92;
+  --bol4-bg: #cde7d2; --bol4-fg: #2f6543; --bol4-cizgi: #63b381;
+  --bol5-bg: #c0e2c9; --bol5-fg: #1f5a38; --bol5-cizgi: #47a670;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+  --bg: #0b1820;
+  --bg-tint: #0f202a;
+  --surface: #12242f;
+  --surface-2: #182f3c;
+  --text: #e4eef3;
+  --text-muted: #8ba6b5;
+  --border: #21404f;
+  --border-strong: #33596b;
+
+  --accent: #5fb6d4;
+  --accent-soft: #0e3345;
+  --accent-ink: #04161f;
+  --vurgu: #ef8b52;
+  --vurgu-soft: #3a2013;
+  --vurgu-ink: #1b0d05;
+
+  --warn: #e0a04a;
+  --warn-soft: #33260f;
+  --danger: #e8827a;
+  --danger-soft: #38191a;
+  --good: #5cbe8c;
+  --good-soft: #113023;
+
+  --shadow: 0 1px 0 rgb(0 0 0 / 0.5), 0 2px 10px rgb(0 0 0 / 0.4);
+
+  --bolge-bogaz-rumeli: #46b3c4;
+  --bolge-bogaz-anadolu: #63bd86;
+  --bolge-karadeniz: #7d9fe0;
+  --bolge-marmara-avrupa: #e0a45c;
+  --bolge-marmara-anadolu: #b48bd0;
+  --bolge-adalar: #e5847a;
+  --bolge-kocaeli-korfez: #cbb455;
+  --bolge-kocaeli-karadeniz: #56b8b8;
+  --bolge-istanbul-icsu: #9ccb63;
+  --bolge-kocaeli-icsu: #9295e2;
+  --bolge-sapanca: #de85b8;
+  --bolge-sakarya-icsu: #cf9160;
+
+  --zor1-bg: #10301f; --zor1-fg: #7fcb9a; --zor1-cizgi: #3c7754;
+  --zor2-bg: #1c3016; --zor2-fg: #a9c887; --zor2-cizgi: #597b3e;
+  --zor3-bg: #32290f; --zor3-fg: #e0b360; --zor3-cizgi: #87682a;
+  --zor4-bg: #33200f; --zor4-fg: #e59967; --zor4-cizgi: #8a532a;
+  --zor5-bg: #331a19; --zor5-fg: #e68a80; --zor5-cizgi: #8a3e37;
+
+  --bol1-bg: #1a242a; --bol1-fg: #8b9ea7; --bol1-cizgi: #495b64;
+  --bol2-bg: #172b23; --bol2-fg: #90b59f; --bol2-cizgi: #446d57;
+  --bol3-bg: #143024; --bol3-fg: #83c29e; --bol3-cizgi: #3d7a59;
+  --bol4-bg: #113425; --bol4-fg: #74c99a; --bol4-cizgi: #38885c;
+  --bol5-bg: #0e3a27; --bol5-fg: #60cf96; --bol5-cizgi: #2d9960;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b1820;
+  --bg-tint: #0f202a;
+  --surface: #12242f;
+  --surface-2: #182f3c;
+  --text: #e4eef3;
+  --text-muted: #8ba6b5;
+  --border: #21404f;
+  --border-strong: #33596b;
+
+  --accent: #5fb6d4;
+  --accent-soft: #0e3345;
+  --accent-ink: #04161f;
+  --vurgu: #ef8b52;
+  --vurgu-soft: #3a2013;
+  --vurgu-ink: #1b0d05;
+
+  --warn: #e0a04a;
+  --warn-soft: #33260f;
+  --danger: #e8827a;
+  --danger-soft: #38191a;
+  --good: #5cbe8c;
+  --good-soft: #113023;
+
+  --shadow: 0 1px 0 rgb(0 0 0 / 0.5), 0 2px 10px rgb(0 0 0 / 0.4);
+
+  --bolge-bogaz-rumeli: #46b3c4;
+  --bolge-bogaz-anadolu: #63bd86;
+  --bolge-karadeniz: #7d9fe0;
+  --bolge-marmara-avrupa: #e0a45c;
+  --bolge-marmara-anadolu: #b48bd0;
+  --bolge-adalar: #e5847a;
+  --bolge-kocaeli-korfez: #cbb455;
+  --bolge-kocaeli-karadeniz: #56b8b8;
+  --bolge-istanbul-icsu: #9ccb63;
+  --bolge-kocaeli-icsu: #9295e2;
+  --bolge-sapanca: #de85b8;
+  --bolge-sakarya-icsu: #cf9160;
+
+  --zor1-bg: #10301f; --zor1-fg: #7fcb9a; --zor1-cizgi: #3c7754;
+  --zor2-bg: #1c3016; --zor2-fg: #a9c887; --zor2-cizgi: #597b3e;
+  --zor3-bg: #32290f; --zor3-fg: #e0b360; --zor3-cizgi: #87682a;
+  --zor4-bg: #33200f; --zor4-fg: #e59967; --zor4-cizgi: #8a532a;
+  --zor5-bg: #331a19; --zor5-fg: #e68a80; --zor5-cizgi: #8a3e37;
+
+  --bol1-bg: #1a242a; --bol1-fg: #8b9ea7; --bol1-cizgi: #495b64;
+  --bol2-bg: #172b23; --bol2-fg: #90b59f; --bol2-cizgi: #446d57;
+  --bol3-bg: #143024; --bol3-fg: #83c29e; --bol3-cizgi: #3d7a59;
+  --bol4-bg: #113425; --bol4-fg: #74c99a; --bol4-cizgi: #38885c;
+  --bol5-bg: #0e3a27; --bol5-fg: #60cf96; --bol5-cizgi: #2d9960;
+}
+
+:root[data-theme="light"] { color-scheme: light; }
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-tint: var(--bg-tint);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--text);
+  --color-muted: var(--text-muted);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
+  --color-vurgu: var(--vurgu);
+  --color-vurgu-soft: var(--vurgu-soft);
+  --color-vurgu-ink: var(--vurgu-ink);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-good: var(--good);
+  --color-good-soft: var(--good-soft);
+
+  /* Köşeler: deniz haritası ve tarife cetveli gibi keskin. */
+  --radius-xs: 1px;
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 5px;
+  --radius-2xl: 7px;
+  --radius-3xl: 9px;
+
+  /* Başlıklar serif — almanak/rehber hissi, jenerik arayüz hissi değil. */
+  --font-baslik: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
+                 Georgia, ui-serif, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, monospace;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  min-height: 100dvh;
+}
+
+/* Başlıklar serif ve sıkı; gövde metni sans. */
+h1, h2, h3 {
+  font-family: var(--font-baslik);
+  letter-spacing: -0.012em;
+  font-weight: 600;
+}
+h1 { letter-spacing: -0.02em; }
+
+/* Ölçüler ve sayılar hizalı okunsun. */
+table, .sayisal { font-variant-numeric: tabular-nums; }
+
+/* Ölçü birimi taşıyan değerler (gramaj, mm, cm, °C) monospace ile ayrışsın. */
+.olcu {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  letter-spacing: -0.02em;
+  word-spacing: -0.18em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--vurgu);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+::selection { background: var(--vurgu-soft); color: var(--vurgu); }
+
+/* Uzun içerik (tablo, şema) sayfayı yatay kaydırmasın */
+.scroll-x {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prose — düz metin bölümleri */
+.prose p { margin-block: 0.75rem; }
+.prose ul { margin-block: 0.75rem; padding-inline-start: 1.25rem; list-style: disc; }
+.prose ol { margin-block: 0.75rem; padding-inline-start: 1.25rem; list-style: decimal; }
+.prose li { margin-block: 0.25rem; }
+.prose a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.prose h2 { font-size: 1.25rem; margin-block: 1.5rem 0.5rem; }
+.prose h3 { font-size: 1.05rem; margin-block: 1.25rem 0.4rem; }
+.prose strong { font-weight: 650; }
+
+/* ---------------------------------------------------------------
+   Bölüm başlığı — solunda ince aksan çubuğu
+--------------------------------------------------------------- */
+.bolum-baslik {
+  position: relative;
+  padding-left: 0.7rem;
+}
+.bolum-baslik::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.18em;
+  bottom: 0.18em;
+  width: 3px;
+  border-radius: 1px;
+  background: var(--vurgu);
+}
+
+/* ---------------------------------------------------------------
+   Kart — köşeler keskin, gölge yok, yapı çizgiyle kuruluyor
+--------------------------------------------------------------- */
+.kart {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--surface);
+}
+.kart-vurgulu { border-left: 3px solid var(--vurgu); }
+
+/* Bölge renkleri — nokta kartlarının sol kenarında ve rozetlerde */
+[data-bolge] { --bolge: var(--border-strong); }
+[data-bolge="bogaz-rumeli"]    { --bolge: var(--bolge-bogaz-rumeli); }
+[data-bolge="bogaz-anadolu"]   { --bolge: var(--bolge-bogaz-anadolu); }
+[data-bolge="karadeniz"]       { --bolge: var(--bolge-karadeniz); }
+[data-bolge="marmara-avrupa"]  { --bolge: var(--bolge-marmara-avrupa); }
+[data-bolge="marmara-anadolu"] { --bolge: var(--bolge-marmara-anadolu); }
+[data-bolge="adalar"]             { --bolge: var(--bolge-adalar); }
+[data-bolge="kocaeli-korfez"]    { --bolge: var(--bolge-kocaeli-korfez); }
+[data-bolge="kocaeli-karadeniz"] { --bolge: var(--bolge-kocaeli-karadeniz); }
+[data-bolge="istanbul-icsu"]  { --bolge: var(--bolge-istanbul-icsu); }
+[data-bolge="kocaeli-icsu"]   { --bolge: var(--bolge-kocaeli-icsu); }
+[data-bolge="sapanca"]        { --bolge: var(--bolge-sapanca); }
+[data-bolge="sakarya-icsu"]   { --bolge: var(--bolge-sakarya-icsu); }
+
+.bolge-kenar { border-left: 3px solid var(--bolge); }
+.bolge-nokta {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 1px;
+  background: var(--bolge);
+}
+.bolge-metin { color: var(--bolge); }
+
+/* ---------------------------------------------------------------
+   Şema çizimleri — anlamsal renk sistemi
+
+   Şemadaki her parça türü kendi rengini taşır; aynı renk hem çizgide
+   hem de o çizgiyi anlatan etikette kullanılır. Böylece "hangi çizgi
+   neydi" sorusu ortadan kalkar:
+
+     misina  koyu mavi-gri  ana misina (monofilament)
+     orgu    mor            örgü misina (PE)
+     lider   camgöbeği      fluorocarbon şok lideri / köstek
+     metal   çelik grisi    kurşun, fırdöndü, klips, boncuk
+     igne    koyu gri       iğne
+     yem     turuncu        canlı yem, silikon, maket, hamur
+     dugum   turuncu        düğüm noktası
+     hareket turuncu kesik  hareket ve yön okları
+--------------------------------------------------------------- */
+:root {
+  --d-misina: #2f4a5c;
+  --d-orgu: #55458a;
+  --d-lider: #0d8497;
+  --d-metal-dolgu: #ccd0d6;
+  --d-metal-cizgi: #67707c;
+  --d-igne: #55626f;
+  --d-yem: #c4551f;
+  --d-yem-dolgu: #f7d9c6;
+  --d-dugum: #c4551f;
+  --d-su: #2f7fa8;
+  --d-zemin: #9c8557;
+}
+:root[data-theme="dark"],
+:root:not([data-theme="light"]) {
+  --d-misina: #92b8cb;
+  --d-orgu: #a99ae4;
+  --d-lider: #4fcadf;
+  --d-metal-dolgu: #2f3d49;
+  --d-metal-cizgi: #94a5b4;
+  --d-igne: #9db0bf;
+  --d-yem: #f09059;
+  --d-yem-dolgu: #46281a;
+  --d-dugum: #f09059;
+  --d-su: #4aa8d6;
+  --d-zemin: #b39a67;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --d-misina: #2f4a5c;
+    --d-orgu: #55458a;
+    --d-lider: #0d8497;
+    --d-metal-dolgu: #ccd0d6;
+    --d-metal-cizgi: #67707c;
+    --d-igne: #55626f;
+    --d-yem: #c4551f;
+    --d-yem-dolgu: #f7d9c6;
+    --d-dugum: #c4551f;
+    --d-su: #2f7fa8;
+    --d-zemin: #9c8557;
+  }
+}
+
+.diagram {
+  width: 100%;
+  height: auto;
+  color: var(--text);
+  display: block;
+}
+
+/* — Çizgiler — */
+.diagram .kamis    { stroke: var(--text); fill: none; stroke-width: 3.2; stroke-linecap: round; }
+.diagram .misina   { stroke: var(--d-misina); fill: none; stroke-width: 1.8; stroke-linecap: round; }
+.diagram .orgu     { stroke: var(--d-orgu);   fill: none; stroke-width: 2.4; stroke-linecap: round; }
+.diagram .lider    { stroke: var(--d-lider);  fill: none; stroke-width: 2.3; stroke-linecap: round; }
+.diagram .beden    { stroke: var(--d-misina); fill: none; stroke-width: 2.4; stroke-linecap: round; }
+.diagram .igne     { stroke: var(--d-igne);   fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.diagram .hareket  { stroke: var(--d-dugum);  fill: none; stroke-width: 2; stroke-dasharray: 6 4; stroke-linecap: round; }
+/* Düğüm şemalarında serbest uç (tag end) — ana hattan renkle ayrılır. */
+.diagram .uc       { stroke: var(--d-yem);    fill: none; stroke-width: 1.9; stroke-linecap: round; }
+
+/* Genel amaçlı ince yardımcı çizgiler */
+.diagram .ln       { stroke: var(--d-misina); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.diagram .ln-thin  { stroke: currentColor; fill: none; stroke-width: 1; opacity: .45; }
+.diagram .ln-dash  { stroke: currentColor; fill: none; stroke-width: 1.2; stroke-dasharray: 4 4; opacity: .5; }
+.diagram .lead     { stroke: var(--d-lider); fill: none; stroke-width: 2.3; stroke-linecap: round; }
+.diagram .lead-dash{ stroke: var(--d-dugum); fill: none; stroke-width: 2; stroke-dasharray: 6 4; }
+
+/* — Dolgulu parçalar — */
+.diagram .metal    { fill: var(--d-metal-dolgu); stroke: var(--d-metal-cizgi); stroke-width: 1.4; }
+.diagram .yem      { fill: var(--d-yem-dolgu);   stroke: var(--d-yem);         stroke-width: 1.6; }
+.diagram .dugum    { fill: none;                 stroke: var(--d-dugum);       stroke-width: 2; }
+.diagram .dugum-dolu { fill: var(--d-yem-dolgu); stroke: var(--d-dugum);       stroke-width: 1.6; }
+
+/* Eski adlar — anlamsal karşılıklarına bağlandı */
+.diagram .part     { fill: var(--d-metal-dolgu); stroke: var(--d-metal-cizgi); stroke-width: 1.4; }
+.diagram .part-a   { fill: var(--d-yem-dolgu);   stroke: var(--d-dugum);       stroke-width: 1.6; }
+.diagram .solid    { fill: currentColor; }
+.diagram .accent   { fill: var(--d-dugum); }
+.diagram .water    { fill: var(--d-su); opacity: .12; }
+.diagram .ground   { fill: var(--d-zemin); opacity: .3; }
+.diagram .tick     { stroke: var(--text-muted); stroke-width: 1; opacity: .5; }
+
+/* — Etiketler: rengi anlattığı parçayla aynı — */
+.diagram .lbl        { fill: var(--text-muted); font-size: 11px; font-family: var(--font-sans); }
+.diagram .lbl-b      { fill: var(--text); font-size: 11.5px; font-weight: 650; font-family: var(--font-sans); }
+.diagram .lbl-a      { fill: var(--d-dugum); font-size: 11px; font-weight: 650; font-family: var(--font-sans); }
+.diagram .lbl-misina { fill: var(--d-misina); font-size: 11px; font-weight: 650; font-family: var(--font-sans); }
+.diagram .lbl-orgu   { fill: var(--d-orgu);   font-size: 11px; font-weight: 650; font-family: var(--font-sans); }
+.diagram .lbl-lider  { fill: var(--d-lider);  font-size: 11px; font-weight: 650; font-family: var(--font-sans); }
+.diagram .lbl-metal  { fill: var(--d-metal-cizgi); font-size: 11px; font-weight: 650; font-family: var(--font-sans); }
+.diagram .lbl-yem    { fill: var(--d-yem);    font-size: 11px; font-weight: 650; font-family: var(--font-sans); }
+.diagram .lbl-igne   { fill: var(--d-igne);   font-size: 11px; font-weight: 650; font-family: var(--font-sans); }
+
+/* ---------------------------------------------------------------
+   Balık siluetleri — şema paletinden değil, üst öğenin renginden
+   beslenir; böylece kart içinde vurgulanınca birlikte renk değiştirir.
+--------------------------------------------------------------- */
+.diagram.siluet .part {
+  fill: color-mix(in srgb, currentColor 9%, var(--surface));
+  stroke: currentColor;
+  stroke-width: 1.35;
+}
+.diagram.siluet .ln      { stroke: currentColor; stroke-width: 1.7; }
+.diagram.siluet .ln-thin { stroke: currentColor; stroke-width: 1; opacity: .5; }
+.diagram.siluet .solid   { fill: currentColor; }
+.diagram.siluet .accent  { fill: var(--d-yem); }
+.diagram.siluet .part-a  { fill: var(--d-yem-dolgu); stroke: var(--d-yem); stroke-width: 1.3; }
+
+/* ---------------------------------------------------------------
+   Rüzgâr gülü
+--------------------------------------------------------------- */
+.diagram .ruzgar-cizgi  { stroke: currentColor; fill: none; stroke-width: 1; opacity: .35; }
+.diagram .ruzgar-secili { stroke: var(--vurgu); fill: none; stroke-width: 2.4; }
+.diagram .ruzgar-ok     { stroke: var(--vurgu); fill: none; stroke-width: 3; stroke-linecap: round; }
+.diagram .ruzgar-ok-uc  { fill: var(--vurgu); }
+.diagram .ruzgar-merkez { fill: var(--surface); stroke: var(--vurgu); stroke-width: 2; }
+
+/* Balık siluetlerinde işaret etiketleri: küçük kartlarda gürültü yapıp
+   viewBox dışına taştığı için varsayılan olarak gizli. */
+.diagram.siluet-sade text { display: none; }
+
+/* ---------------------------------------------------------------
+   Zorluk göstergesi
+--------------------------------------------------------------- */
+.zorluk {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 3px;
+  padding: 0.2rem 0.5rem 0.2rem 0.42rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+  background: var(--z-bg);
+  color: var(--z-fg);
+}
+.zorluk-1 { --z-bg: var(--zor1-bg); --z-fg: var(--zor1-fg); --z-cizgi: var(--zor1-cizgi); }
+.zorluk-2 { --z-bg: var(--zor2-bg); --z-fg: var(--zor2-fg); --z-cizgi: var(--zor2-cizgi); }
+.zorluk-3 { --z-bg: var(--zor3-bg); --z-fg: var(--zor3-fg); --z-cizgi: var(--zor3-cizgi); }
+.zorluk-4 { --z-bg: var(--zor4-bg); --z-fg: var(--zor4-fg); --z-cizgi: var(--zor4-cizgi); }
+.zorluk-5 { --z-bg: var(--zor5-bg); --z-fg: var(--zor5-fg); --z-cizgi: var(--zor5-cizgi); }
+
+.zorluk-bar { display: inline-flex; gap: 2px; }
+.zorluk-bar i {
+  display: block;
+  width: 4px;
+  height: 11px;
+  border-radius: 1px;
+  background: var(--z-cizgi);
+  opacity: 0.28;
+}
+.zorluk-bar i[data-dolu] { opacity: 1; }
+
+.bolluk-1 { --z-bg: var(--bol1-bg); --z-fg: var(--bol1-fg); --z-cizgi: var(--bol1-cizgi); }
+.bolluk-2 { --z-bg: var(--bol2-bg); --z-fg: var(--bol2-fg); --z-cizgi: var(--bol2-cizgi); }
+.bolluk-3 { --z-bg: var(--bol3-bg); --z-fg: var(--bol3-fg); --z-cizgi: var(--bol3-cizgi); }
+.bolluk-4 { --z-bg: var(--bol4-bg); --z-fg: var(--bol4-fg); --z-cizgi: var(--bol4-cizgi); }
+.bolluk-5 { --z-bg: var(--bol5-bg); --z-fg: var(--bol5-fg); --z-cizgi: var(--bol5-cizgi); }
+
+/* ---------------------------------------------------------------
+   Harita
+--------------------------------------------------------------- */
+#harita { position: relative; }
+.harita-ipucu {
+  position: absolute;
+  inset: 0;
+  z-index: 500;               /* Leaflet katmanlarının üstünde, kontrollerin altında değil */
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgb(11 26 31 / 0.55);
+  backdrop-filter: blur(1px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 160ms ease, visibility 160ms ease;
+  pointer-events: none;       /* katman tıklamayı engellemesin */
+}
+.harita-ipucu[data-acik] { opacity: 1; visibility: visible; }
+
+/* Leaflet açılır kutuları temaya uysun */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip { background: var(--surface); color: var(--text); }
+.leaflet-popup-content a { color: var(--accent); }
+.leaflet-container { background: var(--surface-2); font: inherit; }
+.leaflet-bar a {
+  background: var(--surface); color: var(--text); border-color: var(--border);
+}
+.leaflet-bar a:hover { background: var(--surface-2); color: var(--text); }
+.leaflet-control-attribution {
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+  color: var(--text-muted);
+}
+.leaflet-control-attribution a { color: var(--accent); }
+
+/* ---------------------------------------------------------------
+   Terim işaretleri ve açıklama balonu
+--------------------------------------------------------------- */
+.terim {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: help;
+  text-align: inherit;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--accent) 65%, transparent);
+  border-radius: 2px;
+}
+.terim:hover,
+.terim[aria-expanded='true'] {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+/* Dokunmatikte hedef alanı büyüsün (imleç yok, parmak var). */
+@media (hover: none) and (pointer: coarse) {
+  .terim { cursor: pointer; padding-block: 0.15rem; }
+}
+
+#terim-balonu {
+  position: fixed;
+  z-index: 60;
+  max-width: min(22rem, calc(100vw - 1rem));
+  display: flex;
+  align-items: flex-start;
+  gap: 0.25rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--border-strong);
+  border-left: 3px solid var(--vurgu);
+  border-radius: 3px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+#terim-balonu[hidden] { display: none; }
+.terim-balon-ad { font-weight: 650; }
+.terim-balon-ad[hidden] { display: none; }
+.terim-balon-ad[hidden] + .terim-balon-ozet { margin-top: 0; color: var(--text); }
+.terim-balon-ozet { margin-top: 0.15rem; color: var(--text-muted); }
+.terim-balon-bag {
+  display: inline-block;
+  margin-top: 0.45rem;
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.terim-balon-bag[hidden] { display: none; }
+.terim-balon-kapat {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: -0.25rem -0.35rem 0 0;
+  border: 0;
+  border-radius: 0.4rem;
+  background: none;
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.terim-balon-kapat:hover { background: var(--surface-2); color: var(--text); }
+.terim-balon-kapat[hidden] { display: none; }
+
+/* Dokunmatikte balon yerine alttan çıkan panel. Parmakla okunacak boyutta,
+   ekranın alt kenarında ve arkası perdeli: telefonda "üstüne gelme" diye bir
+   jest olmadığı için açıklama kalıcı bir yüzey olarak gösterilir. */
+#terim-perde {
+  position: fixed;
+  inset: 0;
+  z-index: 59;
+  background: rgb(0 0 0 / 0.45);
+}
+#terim-perde[hidden] { display: none; }
+
+#terim-balonu[data-mod="sayfa"] {
+  inset: auto 0 0 0;
+  max-width: none;
+  gap: 0.75rem;
+  padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom));
+  border: 0;
+  border-top: 3px solid var(--vurgu);
+  border-radius: 0;
+  font-size: 0.95rem;
+  box-shadow: 0 -14px 34px -16px rgb(0 0 0 / 0.4);
+  animation: terim-sayfa-ac 0.18s ease-out;
+}
+@keyframes terim-sayfa-ac {
+  from { transform: translateY(100%); }
+  to { transform: none; }
+}
+#terim-balonu[data-mod="sayfa"] .terim-balon-ic { flex: 1; min-width: 0; }
+#terim-balonu[data-mod="sayfa"] .terim-balon-ad { font-size: 1.05rem; }
+#terim-balonu[data-mod="sayfa"] .terim-balon-ozet { margin-top: 0.3rem; }
+#terim-balonu[data-mod="sayfa"] .terim-balon-bag { margin-top: 0.8rem; }
+#terim-balonu[data-mod="sayfa"] .terim-balon-kapat {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: -0.35rem -0.4rem 0 0;
+  font-size: 1.5rem;
+}
+
+/* ---------------------------------------------------------------
+   Nokta filtreleri — dar ekranda katlanır, geniş ekranda hep açık
+--------------------------------------------------------------- */
+.filtre-ozet {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--vurgu);
+  border-radius: 3px;
+  background: var(--surface);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  /* Tarayıcının varsayılan üçgen işaretini kendi okumuzla değiştiriyoruz. */
+  list-style: none;
+}
+.filtre-ozet::-webkit-details-marker { display: none; }
+.filtre-ok { margin-left: auto; transition: transform 0.15s ease; }
+[data-filtreler][open] .filtre-ok { transform: rotate(180deg); }
+
+/* Geniş ekranda katlamaya gerek yok: panel hep açık, başlık gizlenir. */
+@media (min-width: 640px) {
+  .filtre-ozet { display: none; }
+}
+
+/* ---------------------------------------------------------------
+   Rozet — simge + açıklama balonu
+--------------------------------------------------------------- */
+.rozet {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 1.6rem;
+  padding: 0.15rem 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.3;
+  /* Dar bir kapta uzun etiket (bölge listesi gibi) taşmak yerine alt satıra insin. */
+  max-width: 100%;
+  cursor: help;
+}
+.rozet:hover, .rozet:focus-visible { border-color: currentColor; }
+.rozet-vurgu   { color: var(--vurgu);  background: var(--vurgu-soft);  border-color: color-mix(in srgb, var(--vurgu) 35%, transparent); }
+.rozet-iyi     { color: var(--good);   background: var(--good-soft);   border-color: color-mix(in srgb, var(--good) 35%, transparent); }
+.rozet-uyari   { color: var(--warn);   background: var(--warn-soft);   border-color: color-mix(in srgb, var(--warn) 35%, transparent); }
+.rozet-tehlike { color: var(--danger); background: var(--danger-soft); border-color: color-mix(in srgb, var(--danger) 35%, transparent); }
+.rozet-bolge   { color: var(--bolge);  border-color: color-mix(in srgb, var(--bolge) 40%, transparent); }
+
+/* Dokunmatikte parmak hedefi büyüsün */
+@media (hover: none) and (pointer: coarse) {
+  .rozet { min-height: 2rem; padding-inline: 0.5rem; cursor: pointer; }
+}

@@ -1,0 +1,33 @@
+---
+import Metin from './Metin.astro';
+interface Props { ekipman: Record<string, { deger: string; not?: string }>; gorulen?: Set<string> }
+const { ekipman, gorulen } = Astro.props;
+const ETIKET: Record<string, string> = {
+  kamis: 'Kamış', makine: 'Makine', anaMisina: 'Ana misina',
+  sokLideri: 'Şok lideri / köstek', igne: 'İğne', agirlik: 'Ağırlık',
+};
+/** Tablo satırının hangi ekipman sayfasına gittiği. */
+const SAYFA: Record<string, string> = {
+  kamis: 'kamis', makine: 'spin-makine', anaMisina: 'monofilament',
+  sokLideri: 'sok-lideri', igne: 'igne', agirlik: 'kursun',
+};
+---
+<div class="overflow-hidden rounded-sm border border-line">
+  <table class="w-full border-collapse text-sm">
+    <tbody>
+      {Object.entries(ekipman).map(([k, v], i) => (
+        <tr class:list={[i % 2 ? 'bg-surface' : 'bg-surface-2/50']}>
+          <th scope="row" class="w-36 border-b border-line px-3 py-2.5 text-left align-top font-semibold">
+            {SAYFA[k]
+              ? <a href={`/ekipman/${SAYFA[k]}`} class="text-accent hover:underline">{ETIKET[k] ?? k}</a>
+              : (ETIKET[k] ?? k)}
+          </th>
+          <td class="border-b border-line px-3 py-2.5 align-top">
+            <span class="font-medium">{v.deger}</span>
+            {v.not && <Metin metin={v.not} etiket="span" sinif="mt-0.5 block text-muted" gorulen={gorulen} />}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

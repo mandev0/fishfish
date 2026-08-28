@@ -1,0 +1,143 @@
+{
+  "ad": "Kupes",
+  "latin": "Boops boops",
+  "ingilizce": "Bogue",
+  "digerAdlar": [
+    "Gopes"
+  ],
+  "ozet": "Kocaman gözlü, ince uzun bir sürü balığı. Yaz aylarında iskele altlarını doldurur; hafif takımla bol miktarda tutulur.",
+  "zorluk": 1,
+  "aylar": [
+    2,
+    2,
+    2,
+    3,
+    4,
+    4,
+    4,
+    4,
+    4,
+    3,
+    2,
+    2
+  ],
+  "sular": [
+    "bogaz",
+    "marmara"
+  ],
+  "gece": true,
+  "boySiniflari": [
+    {
+      "ad": "Kupes",
+      "cm": "12-25 cm"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": null,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "Tebliğ'de bu tür için asgari boy belirtilmemiştir; günlük toplam 5 kg sınırı yine geçerlidir."
+  },
+  "suSicakligi": {
+    "min": 13,
+    "ideal": [
+      17,
+      25
+    ],
+    "max": 28
+  },
+  "aktifSaatler": [
+    "ikindi",
+    "aksam",
+    "gece"
+  ],
+  "ruzgarTercihi": [],
+  "ruzgarKacinilan": [],
+  "derinlik": "5-50 m; gece ışığa gelerek yüzeye çıkar.",
+  "yasamAlani": "İskele ve rıhtım altları, deniz çayırı üstü, ışıklandırılmış kıyılar.",
+  "teshis": {
+    "siluet": "kupes",
+    "ayirtEdici": [
+      "Gözü gövdesine göre orantısız derecede iri.",
+      "Gövde uzun, ince ve neredeyse silindirik.",
+      "Sırtta boydan boya uzanan ince altın rengi çizgiler.",
+      "Ağzı küçük ve yukarı dönük."
+    ],
+    "karistirilan": [
+      "izmarit"
+    ]
+  },
+  "takimlar": [
+    "capari",
+    "sabiki-ince",
+    "paternoster",
+    "lrf-jig-head"
+  ],
+  "yemler": {
+    "dogal": [
+      "Hamur",
+      "Karides",
+      "Deniz solucanı",
+      "Ekmek içi"
+    ],
+    "sahte": [
+      "Küçük tüylü iğne",
+      "1 gr jig head + minik silikon"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "2,1-3,0 m, hafif"
+    },
+    "makine": {
+      "deger": "2000-3000"
+    },
+    "anaMisina": {
+      "deger": "0,18-0,22 mm mono"
+    },
+    "sokLideri": {
+      "deger": "0,14-0,18 mm fluorocarbon"
+    },
+    "igne": {
+      "deger": "10-14 numara",
+      "not": "Ağzı çok küçüktür."
+    },
+    "agirlik": {
+      "deger": "10-30 gr"
+    }
+  },
+  "taktik": {
+    "atis": "İskele ışığının altına, aydınlık dairenin içine at. Kupes ışığa toplanan planktonu kovalar.",
+    "cekme": "Yüzeye yakın tut; 2-3 tur sar, bekle, tekrar sar.",
+    "tokatlama": "Çok hafif. Kupesin ağzı incedir.",
+    "yakalama": "Sorunsuz, silkeleyerek kovaya boşalt.",
+    "ipuclari": [
+      "Gece iskele lambası altında en verimlidir.",
+      "Sürü kalabalıksa çapariye üç-dört balık birden takılır."
+    ],
+    "hatalar": [
+      "Büyük iğne kullanmak.",
+      "Dibe indirmek — kupes çoğu zaman orta suda ve yüzeye yakındır."
+    ]
+  },
+  "mutfak": "Tavada kızartılır veya buğulama yapılır. Ucuz ama lezzetli bir balıktır.",
+  "noktalar": [
+    "buyukdere",
+    "emirgan",
+    "kabatas",
+    "beykoz",
+    "cengelkoy",
+    "kuzguncuk",
+    "yenikapi",
+    "kumkapi",
+    "bakirkoy",
+    "moda",
+    "caddebostan",
+    "bostanci",
+    "buyukada",
+    "heybeliada",
+    "bayramoglu",
+    "darica-sahil",
+    "hereke"
+  ]
+}

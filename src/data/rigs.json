@@ -1,0 +1,1237 @@
+[
+  {
+    "id": "capari",
+    "ad": "Çapari",
+    "kisaAd": "Çapari",
+    "sema": "capari",
+    "ozet": "Tek misina üzerinde sıralanmış 4-6 tüylü iğne. Sürü balığında bir atışta birden fazla balık çıkarır; kıyı balıkçılığının en kolay ve en verimli takımıdır.",
+    "zorluk": 1,
+    "turler": [
+      "istavrit",
+      "kolyoz",
+      "izmarit",
+      "kupes",
+      "mezgit",
+      "sardalya"
+    ],
+    "yontem": "capari",
+    "bilesenler": [
+      {
+        "ad": "Kamış",
+        "deger": "2,4-3,0 m, 20-60 gr atış",
+        "aciklama": "Uzun kamış çapariyi açık tutar ve iğnelerin dolaşmasını azaltır.",
+        "ekipman": "kamis"
+      },
+      {
+        "ad": "Makine",
+        "deger": "3000-4000 boy",
+        "aciklama": "Standart spin makine yeter; çapariye özel bir şey gerekmez.",
+        "ekipman": "spin-makine"
+      },
+      {
+        "ad": "Ana misina",
+        "deger": "0,25-0,30 mm monofilament",
+        "aciklama": "Mono, örgüye göre daha az dolaşır ve balığın silkelenmesini yumuşatır.",
+        "ekipman": "monofilament"
+      },
+      {
+        "ad": "Çapari bedeni",
+        "deger": "0,20-0,25 mm, 4-6 iğneli",
+        "aciklama": "Hazır alınır. İğne aralığı 25-30 cm olmalı ki iğneler birbirine değmesin.",
+        "ekipman": "beden"
+      },
+      {
+        "ad": "İğne",
+        "deger": "6-10 numara, tüylü/simli",
+        "aciklama": "İstavrit için 8-10, kolyoz ve iri istavrit için 6 numara.",
+        "ekipman": "igne"
+      },
+      {
+        "ad": "Kurşun",
+        "deger": "20-60 gr armut kurşun",
+        "aciklama": "Çaparinin en altına bağlanır; akıntı ve mesafeye göre seçilir.",
+        "ekipman": "kursun"
+      }
+    ],
+    "kurulum": [
+      "Ana misinayı kamıştan geçirip ucuna bir fırdöndü bağla (klinç düğümü).",
+      "Hazır çapari bedenini fırdöndüye tak.",
+      "Çaparinin alt ucundaki halkaya kurşunu bağla.",
+      "Kurşunu tut, çapariyi havada gergin bırak; iğnelerin serbestçe sallandığını doğrula.",
+      "Atmadan önce iğneleri kamışın halkalarına takarak taşı; asla elde toplu tutma."
+    ],
+    "dugumler": [
+      "klinc",
+      "palomar"
+    ],
+    "ipuclari": [
+      "İskele ışığının aydınlattığı suyun tam kenarına at; sürü ışığın karanlıkla buluştuğu sınırda dolaşır.",
+      "Dibe indir, sonra 3-4 tur sar ve bekle. Vurmazsa 3 tur daha; sürünün derinliğini böyle tararsın.",
+      "Kamışı yavaşça yukarı kaldırıp indirmek (\"tokatlama\" değil, yumuşak jigleme) tüyleri oynatır ve vuruşu artırır.",
+      "İlk balık takıldığında hemen sarma; 5-10 saniye bekle, aynı sürüden 2-3 balık daha takılır."
+    ],
+    "hatalar": [
+      "Çok ağır kurşunla atıp çapariyi dolaştırmak. Kurşun, kamışın atış gramajının üst sınırını aşmamalı.",
+      "Balık takılınca kamışı sertçe yukarı çekmek — istavritin ağzı yumuşaktır, iğne yırtıp çıkar.",
+      "Kullanılmış çapariyi ıslak bırakmak. Tuz iğneyi paslandırır; her çıkıştan sonra tatlı suyla durula."
+    ]
+  },
+  {
+    "id": "capari-agir",
+    "ad": "Ağır Çapari (Lüfer Çaparisi)",
+    "kisaAd": "Ağır çapari",
+    "sema": "capari",
+    "ozet": "Kalın bedenli, 3-4 iri iğneli çapari. Lüfer ve sarıkanadın keskin dişlerine dayanacak şekilde kalın kösteklidir.",
+    "zorluk": 2,
+    "turler": [
+      "lufer",
+      "kolyoz",
+      "palamut"
+    ],
+    "yontem": "capari",
+    "bilesenler": [
+      {
+        "ad": "Kamış",
+        "deger": "2,7-3,3 m, 30-80 gr atış",
+        "aciklama": "Kofana boyunda balık için gövdesi sağlam kamış şart.",
+        "ekipman": "kamis"
+      },
+      {
+        "ad": "Makine",
+        "deger": "4000-5000 boy",
+        "aciklama": "Fren ayarı düzgün çalışan bir makine seç; kofana ilk kaçışında misina verir.",
+        "ekipman": "spin-makine"
+      },
+      {
+        "ad": "Ana misina",
+        "deger": "0,30-0,35 mm mono veya PE 1,5",
+        "aciklama": "Örgü kullanacaksan mutlaka şok lideri ekle.",
+        "ekipman": "monofilament"
+      },
+      {
+        "ad": "Beden",
+        "deger": "0,45-0,60 mm, 3-4 iğneli",
+        "aciklama": "İnce beden lüferin dişiyle kesilir. Aralık 40-50 cm.",
+        "ekipman": "beden"
+      },
+      {
+        "ad": "İğne",
+        "deger": "1/0-3/0 uzun pipolu",
+        "aciklama": "Uzun pipo, iğneyi çıkarırken elini dişlerden uzak tutar.",
+        "ekipman": "igne"
+      },
+      {
+        "ad": "Kurşun",
+        "deger": "40-80 gr",
+        "aciklama": "Akıntılı Boğaz noktalarında 60-80 gr gerekir.",
+        "ekipman": "kursun"
+      }
+    ],
+    "kurulum": [
+      "Örgü misina kullanıyorsan 1-1,5 m fluorocarbon şok liderini FG düğümüyle bağla.",
+      "Şok liderinin ucuna kilitli fırdöndü tak.",
+      "Ağır çapari bedenini fırdöndüye geçir, altına kurşunu bağla.",
+      "İğnelere isteğe göre ince sardalya şeridi veya silikon kuyruk ekle — çıplak tüyden daha çok vurur."
+    ],
+    "dugumler": [
+      "fg",
+      "klinc"
+    ],
+    "ipuclari": [
+      "Akşam alacasında suyun üst 3-5 metresini tara; lüfer karanlık basarken yüzeye çıkar.",
+      "Sürü kaynıyorsa kurşunu hafiflet ve çapariyi yüzeye yakın tut.",
+      "Balık çıkarırken elini ağzından uzak tut, pense kullan. Lüfer dişi jilet gibidir."
+    ],
+    "hatalar": [
+      "İnce bedenli normal çapariyle lüfere çıkmak — takımı komple kaybedersin.",
+      "Balığı kamışla havaya kaldırıp sallandırmak; ağırlık iğneyi söker."
+    ]
+  },
+  {
+    "id": "samandirali-canli-yem",
+    "ad": "Şamandıralı Canlı Yem Takımı",
+    "kisaAd": "Şamandıralı canlı",
+    "sema": "samandira",
+    "ozet": "Canlı istavrit veya izmaritin belirli bir derinlikte serbestçe yüzmesini sağlar. Lüfer, levrek ve iri palamut için en etkili kıyı takımı.",
+    "zorluk": 3,
+    "turler": [
+      "lufer",
+      "levrek",
+      "palamut"
+    ],
+    "yontem": "samandirali",
+    "bilesenler": [
+      {
+        "ad": "Kamış",
+        "deger": "3,0-3,9 m, 20-60 gr",
+        "aciklama": "Uzun kamış, şamandırayı akıntıda yönlendirmeni sağlar.",
+        "ekipman": "kamis"
+      },
+      {
+        "ad": "Makine",
+        "deger": "4000 boy, hassas fren",
+        "aciklama": "Canlı yem kaçarken misina verebilmeli.",
+        "ekipman": "spin-makine"
+      },
+      {
+        "ad": "Ana misina",
+        "deger": "0,28-0,32 mm mono",
+        "aciklama": "Mono, şamandıra takımında suyun üstünde kalır ve yönetimi kolaydır.",
+        "ekipman": "monofilament"
+      },
+      {
+        "ad": "Şamandıra",
+        "deger": "10-25 gr kayar şamandıra",
+        "aciklama": "Kayar tip, derin suda uzun beden kullanmadan derinlik ayarlamanı sağlar.",
+        "ekipman": "samandira"
+      },
+      {
+        "ad": "Stoper",
+        "deger": "Kauçuk stoper + boncuk",
+        "aciklama": "Stoperi kaydırarak avlanma derinliğini ayarlarsın.",
+        "ekipman": "stoper"
+      },
+      {
+        "ad": "Köstek",
+        "deger": "0,40-0,50 mm fluorocarbon, 60-80 cm",
+        "aciklama": "Fluorocarbon suda daha az görünür; lüfer için tel köstek de kullanılabilir.",
+        "ekipman": "kostek"
+      },
+      {
+        "ad": "İğne",
+        "deger": "1/0-4/0 canlı yem iğnesi",
+        "aciklama": "Yem balığının boyuna göre; ince telli iğne yemi az yorar.",
+        "ekipman": "igne"
+      }
+    ],
+    "kurulum": [
+      "Ana misinaya önce kauçuk stoperi, sonra küçük boncuğu geçir.",
+      "Kayar şamandırayı misinaya tak, altına ikinci bir boncuk ve fırdöndü ekle.",
+      "Fırdöndüye 60-80 cm fluorocarbon kösteği bağla (uni veya klinç).",
+      "Köstek ucuna canlı yem iğnesini bağla.",
+      "Stoperi, iğnenin dip yerine su ortasında duracağı derinliğe kaydır.",
+      "Canlı yemi sırt yüzgecinin hemen önünden, omurgaya değmeden iğnele — yem böylece saatlerce yaşar."
+    ],
+    "dugumler": [
+      "uni",
+      "klinc",
+      "palomar"
+    ],
+    "ipuclari": [
+      "Canlı yemini avlanacağın yerde çapariyle tut; taşınan yem çabuk ölür.",
+      "Şamandıra ilk daldığında hemen tokatlama. İki-üç saniye say, misina gerçekten gitmeye başlayınca tokatla.",
+      "Akıntıya bırak, şamandıranın kendi kendine 20-30 m süzülmesine izin ver; sonra topla ve tekrar bırak."
+    ],
+    "hatalar": [
+      "Yemi göz veya karın bölgesinden iğnelemek — birkaç dakikada ölür.",
+      "Şamandırayı çok ağır seçmek; balık yemi çekerken direnç hisseder ve bırakır.",
+      "Derinliği hiç değiştirmemek. Vuruş yoksa 1 metre yukarı/aşağı dene."
+    ]
+  },
+  {
+    "id": "zoka-atma",
+    "ad": "Zoka Atma (Kasting)",
+    "kisaAd": "Zoka",
+    "sema": "zoka",
+    "ozet": "Ağır metal zokayı uzağa atıp hızlı sararak avcı balığı tetikler. Sahte yemle av yapmanın en sade ve en uzun menzilli yolu.",
+    "zorluk": 2,
+    "turler": [
+      "lufer",
+      "palamut",
+      "kolyoz",
+      "zargana"
+    ],
+    "yontem": "ac-cek",
+    "bilesenler": [
+      {
+        "ad": "Kamış",
+        "deger": "2,4-3,0 m, 20-60 gr, medium-fast",
+        "aciklama": "Sert uçlu kamış zokayı uzağa fırlatır ve tokatlamayı iletir.",
+        "ekipman": "kamis"
+      },
+      {
+        "ad": "Makine",
+        "deger": "3000-4000, 5.2:1 ve üzeri",
+        "aciklama": "Hızlı sarım oranı, zokayı canlı gösterecek hızda çekmeni sağlar.",
+        "ekipman": "spin-makine"
+      },
+      {
+        "ad": "Ana misina",
+        "deger": "PE 1,0-1,5 örgü",
+        "aciklama": "Örgü esnemez; hem daha uzağa atarsın hem vuruşu net hissedersin.",
+        "ekipman": "orgu-misina"
+      },
+      {
+        "ad": "Şok lideri",
+        "deger": "0,35-0,45 mm fluorocarbon, 1-1,5 m",
+        "aciklama": "Atış sırasındaki ani yükü karşılar ve dişli balığa karşı koruma sağlar.",
+        "ekipman": "sok-lideri"
+      },
+      {
+        "ad": "Zoka",
+        "deger": "20-60 gr, gümüş/mavi",
+        "aciklama": "Rüzgâra ve mesafeye göre gram seç; bulanık suda daha parlak renk.",
+        "ekipman": "zoka"
+      },
+      {
+        "ad": "Klips",
+        "deger": "Küçük kilitli klips",
+        "aciklama": "Zokayı düğüm açmadan değiştirmeni sağlar.",
+        "ekipman": "klips"
+      }
+    ],
+    "kurulum": [
+      "Örgü ana misinaya FG düğümüyle 1-1,5 m fluorocarbon şok liderini bağla.",
+      "Liderin ucuna küçük kilitli klipsi palomar düğümüyle bağla.",
+      "Zokayı klipse tak.",
+      "İlk atıştan önce düğümleri ıslatıp elinle çekerek test et."
+    ],
+    "dugumler": [
+      "fg",
+      "palomar",
+      "klinc"
+    ],
+    "ipuclari": [
+      "Zokayı at, dibe kadar bırakma; 5-10 saniye batır, sonra düzenli hızda sar.",
+      "Sarma sırasında arada bir kamış ucunu 20-30 cm sarsmak zokaya yaralı balık görüntüsü verir.",
+      "Palamut sürüsü kaynıyorsa zokayı sürünün ortasına değil, kenarına at — ortaya atmak sürüyü dağıtır."
+    ],
+    "hatalar": [
+      "Şok lideri kullanmadan örgüye doğrudan zoka bağlamak; atış anında kopar.",
+      "Tek hızda sarmak. Hız ve ritim değişimi vuruşu ciddi artırır."
+    ]
+  },
+  {
+    "id": "spin-yuzey",
+    "ad": "Yüzey Spin (Rapala / Kaşık)",
+    "kisaAd": "Yüzey spin",
+    "sema": "spin",
+    "ozet": "Yüzeyde veya yüzeye yakın çalışan maket balık ve kaşıklarla aktif avcılık. Zarganada ve akşam lüferinde çok etkilidir.",
+    "zorluk": 3,
+    "turler": [
+      "zargana",
+      "lufer",
+      "levrek",
+      "palamut"
+    ],
+    "yontem": "spin",
+    "bilesenler": [
+      {
+        "ad": "Kamış",
+        "deger": "2,1-2,7 m, 7-30 gr",
+        "aciklama": "Hafif kamış maketin aksiyonunu bozmaz.",
+        "ekipman": "kamis"
+      },
+      {
+        "ad": "Makine",
+        "deger": "2500-3000",
+        "aciklama": "Hafif takımda küçük makine dengeyi korur.",
+        "ekipman": "spin-makine"
+      },
+      {
+        "ad": "Ana misina",
+        "deger": "PE 0,6-1,0",
+        "aciklama": "İnce örgü maketi daha doğal oynatır.",
+        "ekipman": "orgu-misina"
+      },
+      {
+        "ad": "Şok lideri",
+        "deger": "0,26-0,35 mm fluorocarbon, 1 m",
+        "aciklama": "Zargana avında daha ince, lüferde daha kalın.",
+        "ekipman": "sok-lideri"
+      },
+      {
+        "ad": "Maket / kaşık",
+        "deger": "7-12 cm minnow, 7-20 gr kaşık",
+        "aciklama": "Zarganada ince ve uzun; lüferde gövdeli ve gümüş.",
+        "ekipman": "maket-balik"
+      }
+    ],
+    "kurulum": [
+      "Örgüye FG ile fluorocarbon lider bağla.",
+      "Liderin ucuna klips tak, maketi klipse geçir.",
+      "Maketin dengede yüzdüğünü kontrol et; yan yatıyorsa klipsi maketin halkasında ortala."
+    ],
+    "dugumler": [
+      "fg",
+      "klinc"
+    ],
+    "ipuclari": [
+      "Zarganada üçlü iğneyi çıkarıp arkasına 10-15 cm ipek/naylon püskül bağla; zarganın uzun gagası püskülü keser ve dişlerine dolanır.",
+      "Akşam alacasında yüzeye yakın çalış, karanlık bastıkça 1-2 metre derinleş.",
+      "Maketi düz sarma; 3 tur sar-dur-2 tur sar ritmi çok daha fazla vuruş alır."
+    ],
+    "hatalar": [
+      "Çok hızlı sarmak — maket suyun üstüne fırlar ve doğallığını kaybeder.",
+      "Kaşığa fırdöndü takmamak; kaşık dönerken misinayı burar ve saç gibi kıvırır."
+    ]
+  },
+  {
+    "id": "dip-takimi-sabit-kursun",
+    "ad": "Dip Takımı (Sabit Kurşun)",
+    "kisaAd": "Dip takımı",
+    "sema": "dip",
+    "ozet": "Yemi dibe oturtan en klasik takım. Çupra, karagöz, minakop ve mezgit gibi dip balıklarının tamamı bu takımla tutulur.",
+    "zorluk": 1,
+    "turler": [
+      "cupra",
+      "karagoz",
+      "sargoz",
+      "minakop",
+      "mezgit",
+      "tekir",
+      "barbunya",
+      "gelincik"
+    ],
+    "yontem": "dip-yemli",
+    "bilesenler": [
+      {
+        "ad": "Kamış",
+        "deger": "3,0-4,2 m surf veya 2,7 m bot kamışı",
+        "aciklama": "Uzak atış gerekiyorsa surf kamışı, iskeleden dikine avda kısa kamış.",
+        "ekipman": "kamis"
+      },
+      {
+        "ad": "Makine",
+        "deger": "4000-6000 boy",
+        "aciklama": "Uzak atışta büyük makara daha çok misina salar.",
+        "ekipman": "spin-makine"
+      },
+      {
+        "ad": "Ana misina",
+        "deger": "0,30-0,35 mm mono",
+        "aciklama": "Kayalık dipte mono, örgüye göre sürtünmeye daha dayanıklıdır.",
+        "ekipman": "monofilament"
+      },
+      {
+        "ad": "Kurşun",
+        "deger": "60-150 gr piramit/armut",
+        "aciklama": "Akıntı varsa piramit kurşun dibi daha iyi tutar.",
+        "ekipman": "kursun"
+      },
+      {
+        "ad": "Köstek",
+        "deger": "0,25-0,35 mm fluorocarbon, 30-60 cm",
+        "aciklama": "Çupra ve karagöz için mutlaka fluorocarbon; görünürlüğü düşük.",
+        "ekipman": "kostek"
+      },
+      {
+        "ad": "İğne",
+        "deger": "1-4 numara (çupra 1/0)",
+        "aciklama": "Ağzı küçük balıkta (izmarit, barbunya) 8-10 numaraya kadar in.",
+        "ekipman": "igne"
+      }
+    ],
+    "kurulum": [
+      "Ana misinaya kurşunu geçir (kayar) veya ucuna fırdöndüyle sabitle.",
+      "Kurşunun altına boncuk koy — düğümü darbeden korur.",
+      "Üçlü fırdöndü bağla; bir koluna kösteği, diğerine ana misinayı bağla.",
+      "Kösteğin ucuna iğneyi snell veya palomar düğümüyle bağla.",
+      "Yemi taktıktan sonra kamışı sehpaya oturt ve misinayı hafif gergin bırak."
+    ],
+    "dugumler": [
+      "palomar",
+      "snell",
+      "klinc"
+    ],
+    "ipuclari": [
+      "Misinayı tamamen germe; hafif gevşek bırak ki balık yemi alırken direnç hissetmesin.",
+      "Kamış ucuna çıngırak veya ışıklı uç tak; gece vuruşu böyle görürsün.",
+      "Aynı noktaya üst üste atıp yemin bir kısmını suya serpmek (tırlama) balığı toplar."
+    ],
+    "hatalar": [
+      "Çok ağır kurşunla balığın yemi çekmesini engellemek.",
+      "Kösteği ana misinayla aynı kalınlıkta yapmak; takıldığında bütün takımı kaybedersin. Köstek daima daha ince olmalı."
+    ]
+  },
+  {
+    "id": "paternoster",
+    "ad": "Paternoster (Askılı Dip Takımı)",
+    "kisaAd": "Paternoster",
+    "sema": "paternoster",
+    "ozet": "İki-üç kösteği ana misinadan dik açıyla ayıran dip takımı. Kösteklerin dolaşmasını engeller ve yemi dipten birkaç karış yukarıda tutar.",
+    "zorluk": 2,
+    "turler": [
+      "mezgit",
+      "izmarit",
+      "karagoz",
+      "minakop",
+      "gelincik",
+      "barbunya"
+    ],
+    "yontem": "dip-yemli",
+    "bilesenler": [
+      {
+        "ad": "Beden",
+        "deger": "0,35-0,40 mm mono, 80-120 cm",
+        "aciklama": "Kalın beden köstekleri dik tutar.",
+        "ekipman": "beden"
+      },
+      {
+        "ad": "Köstek sayısı",
+        "deger": "2-3 adet, 15-25 cm",
+        "aciklama": "Kısa köstek dolaşmaz; uzun köstek daha doğal görünür.",
+        "ekipman": "kostek"
+      },
+      {
+        "ad": "Köstek bağlantısı",
+        "deger": "Köstek bağı (dropper loop) veya üçlü fırdöndü",
+        "aciklama": "Fırdöndülü versiyon daha az dolaşır ama ağırdır.",
+        "ekipman": "beden"
+      },
+      {
+        "ad": "Kurşun",
+        "deger": "60-120 gr, bedenin en altında",
+        "aciklama": "En altta olması takımın dikey durmasını sağlar.",
+        "ekipman": "kursun"
+      },
+      {
+        "ad": "İğne",
+        "deger": "4-10 numara",
+        "aciklama": "Hedef balığa göre; mezgitte 2-4, izmaritte 8-10.",
+        "ekipman": "igne"
+      }
+    ],
+    "kurulum": [
+      "Beden misinasının üstüne fırdöndü bağla (ana misinaya bağlanacak).",
+      "Beden üzerinde 30-40 cm aralıklarla köstek bağı (dropper loop) at.",
+      "Her ilmeğe 15-25 cm kösteği ilmek-ilmeğe geçirerek bağla.",
+      "Bedenin en altına kurşunu bağla.",
+      "Takımı gergin tutup her kösteğin bedene değmediğini kontrol et."
+    ],
+    "dugumler": [
+      "kostek-bagi",
+      "cift-ilmek",
+      "palomar"
+    ],
+    "ipuclari": [
+      "Farklı iğnelere farklı yem tak; hangi yemin çalıştığını ilk yarım saatte anlarsın.",
+      "Kayalık dipte kurşunu bedenden daha ince misinayla bağla — takılınca sadece kurşunu kaybedersin."
+    ],
+    "hatalar": [
+      "Kösteği köstek arasının yarısından uzun yapmak; iki köstek birbirine dolaşır.",
+      "İnce bedenle kalın köstek kullanmak; takım dikliğini kaybeder."
+    ]
+  },
+  {
+    "id": "lrf-jig-head",
+    "ad": "LRF Jig Head Takımı",
+    "kisaAd": "LRF",
+    "sema": "lrf",
+    "ozet": "Çok hafif kurşunlu iğne (jig head) ve küçük silikon yemle kaya diplerini taramak. Ultra hafif takımla küçük balıkta bile büyük keyif verir.",
+    "zorluk": 3,
+    "turler": [
+      "iskorpit",
+      "izmarit",
+      "karagoz",
+      "levrek",
+      "kupes",
+      "gelincik"
+    ],
+    "yontem": "lrf",
+    "bilesenler": [
+      {
+        "ad": "Kamış",
+        "deger": "1,8-2,3 m, 0,5-7 gr (solid tip)",
+        "aciklama": "Yumuşak uçlu solid tip kamış en küçük vuruşu bile gösterir.",
+        "ekipman": "kamis"
+      },
+      {
+        "ad": "Makine",
+        "deger": "1000-2500 boy",
+        "aciklama": "Hafif ve dengeli olmalı; ağır makine kamışın hassasiyetini öldürür.",
+        "ekipman": "spin-makine"
+      },
+      {
+        "ad": "Ana misina",
+        "deger": "PE 0,3-0,6 örgü",
+        "aciklama": "Örgü, 2 gramlık kurşunun dibe değdiğini bile parmağına iletir.",
+        "ekipman": "orgu-misina"
+      },
+      {
+        "ad": "Şok lideri",
+        "deger": "0,16-0,22 mm fluorocarbon, 1-1,5 m",
+        "aciklama": "Kaya sürtünmesine karşı ince ama aşınmaya dayanıklı.",
+        "ekipman": "sok-lideri"
+      },
+      {
+        "ad": "Jig head",
+        "deger": "1-5 gr, 6-10 numara iğne",
+        "aciklama": "Derinlik ve akıntıya göre en hafifini seç — hafif olan daha doğal düşer.",
+        "ekipman": "jig-head"
+      },
+      {
+        "ad": "Silikon yem",
+        "deger": "2,5-5 cm kurtçuk/karides",
+        "aciklama": "Kokulu (isca/gulp tarzı) silikonlar iskorpitte belirgin fark yaratır.",
+        "ekipman": "silikon-yem"
+      }
+    ],
+    "kurulum": [
+      "Örgüye FG düğümüyle ince fluorocarbon lider bağla.",
+      "Liderin ucuna jig head'i klinç veya palomar ile bağla.",
+      "Silikon yemi jig head'in iğnesine düz geçir — yem eğri durursa suda burgu gibi döner.",
+      "İğnenin ucunu silikonun sırtından çıkar."
+    ],
+    "dugumler": [
+      "fg",
+      "palomar",
+      "klinc"
+    ],
+    "ipuclari": [
+      "Kayalığın dibine bırak, 2-3 kere kısa kısa zıplat, dur ve bekle. Vuruş çoğu zaman bekleme anında gelir.",
+      "İskele ayağı, kaya oyuğu, yosun sınırı gibi \"kenarları\" tara — LRF balıkları açıkta durmaz.",
+      "En hafif jig head ile başla; dibi hissedemiyorsan 1 gram artır."
+    ],
+    "hatalar": [
+      "Ağır jig head ile başlamak; yem taş gibi düşer ve doğallığını kaybeder.",
+      "Sürekli sarmak. LRF'de duraklamalar avın yarısıdır.",
+      "İskorpiti elle tutmak — sırt dikenleri zehirlidir, mutlaka bez veya pense kullan."
+    ]
+  },
+  {
+    "id": "kalamar-zokasi-egi",
+    "ad": "Kalamar Zokası (Egi)",
+    "kisaAd": "Kalamar zokası",
+    "sema": "egi",
+    "ozet": "Karides biçimli, arkasında halka halka iğneleri olan özel zoka. Kalamar ve sübye avının tek yolu; iğneler batmaz, kalamarın kollarına takılır.",
+    "zorluk": 3,
+    "turler": [
+      "kalamar",
+      "subye"
+    ],
+    "yontem": "egi",
+    "bilesenler": [
+      {
+        "ad": "Kamış",
+        "deger": "2,4-2,7 m, 8-25 gr, hızlı aksiyon",
+        "aciklama": "Egging kamışı zokaya sıçrama hareketi verecek kadar sert olmalı.",
+        "ekipman": "kamis"
+      },
+      {
+        "ad": "Makine",
+        "deger": "2500-3000",
+        "aciklama": "Hafif takım, uzun gecelerde kolu yormaz.",
+        "ekipman": "spin-makine"
+      },
+      {
+        "ad": "Ana misina",
+        "deger": "PE 0,6-0,8",
+        "aciklama": "İnce örgü zokanın sıçrama hareketini net iletir.",
+        "ekipman": "orgu-misina"
+      },
+      {
+        "ad": "Şok lideri",
+        "deger": "0,26-0,30 mm fluorocarbon, 1,5-2 m",
+        "aciklama": "Kalamar misinayı görürse yaklaşmaz; fluorocarbon şart.",
+        "ekipman": "sok-lideri"
+      },
+      {
+        "ad": "Egi",
+        "deger": "2.5-3.5 boy, 10-20 gr",
+        "aciklama": "Berrak suda doğal renk, bulanık suda turuncu/pembe.",
+        "ekipman": "egi"
+      }
+    ],
+    "kurulum": [
+      "Örgüye FG ile 1,5-2 m fluorocarbon lider bağla.",
+      "Liderin ucuna egiyi doğrudan klinç düğümüyle bağla (klips egi'nin aksiyonunu bozar).",
+      "Egiyi suya bırakıp dengesini kontrol et: burnu hafif aşağı, kuyruğu yukarı bakmalı."
+    ],
+    "dugumler": [
+      "fg",
+      "klinc"
+    ],
+    "ipuclari": [
+      "At, dibe bırak, sonra kamışı 2-3 kez keskin şekilde yukarı sıçrat, tekrar dibe bırak. Kalamar zokayı düşerken yakalar.",
+      "Ağırlık hissettiğinde sertçe tokatlama — yumuşak ve sürekli baskıyla çek, kollar iğneden kurtulmasın.",
+      "Suyu aydınlatan iskele lambalarının kenarında, Ekim-Aralık arası gece avı en verimlisidir."
+    ],
+    "hatalar": [
+      "Kalamarı sudan çıkarırken kamışla havaya kaldırmak; ağırlıkla kollarından kurtulur, kepçe kullan.",
+      "Egiye klips takmak; hareketi bozulur."
+    ]
+  },
+  {
+    "id": "kefal-takimi",
+    "ad": "Kefal Takımı",
+    "kisaAd": "Kefal takımı",
+    "sema": "kefal",
+    "ozet": "Çok hassas şamandıra, ince köstek ve küçük iğne. Kefal ürkek ve seçicidir; kaba takımı hiç yemez.",
+    "zorluk": 3,
+    "turler": [
+      "kefal"
+    ],
+    "yontem": "samandirali",
+    "bilesenler": [
+      {
+        "ad": "Kamış",
+        "deger": "3,6-4,5 m match/telegonya",
+        "aciklama": "Uzun ve hafif kamış ince misinayı korur.",
+        "ekipman": "kamis"
+      },
+      {
+        "ad": "Makine",
+        "deger": "2500-3000, hassas fren",
+        "aciklama": "Kefal ilk kaçışta sert gider; fren yumuşak ayarlanmalı.",
+        "ekipman": "spin-makine"
+      },
+      {
+        "ad": "Ana misina",
+        "deger": "0,18-0,22 mm mono",
+        "aciklama": "İnce misina şamandırayı doğal süzülmeye bırakır.",
+        "ekipman": "monofilament"
+      },
+      {
+        "ad": "Şamandıra",
+        "deger": "1-4 gr hassas kalem şamandıra",
+        "aciklama": "Kefalin en küçük dokunuşunu göstermeli.",
+        "ekipman": "samandira"
+      },
+      {
+        "ad": "Köstek",
+        "deger": "0,14-0,18 mm fluorocarbon, 40-60 cm",
+        "aciklama": "Ne kadar ince o kadar çok vuruş.",
+        "ekipman": "kostek"
+      },
+      {
+        "ad": "İğne",
+        "deger": "10-14 numara, ince telli",
+        "aciklama": "Kefalin ağzı küçüktür; büyük iğne yutulmaz.",
+        "ekipman": "igne"
+      }
+    ],
+    "kurulum": [
+      "Ana misinaya stoper ve kayar şamandırayı geçir.",
+      "Şamandıranın altına birkaç küçük saçma kurşun dizerek dengeyi ayarla; şamandıranın sadece ucu suyun üstünde kalmalı.",
+      "Fırdöndü bağla, ardından 40-60 cm ince fluorocarbon köstek.",
+      "Küçük iğneyi bağla ve yemi (ekmek içi hamuru, mısır, deniz solucanı) fındık büyüklüğünde tak."
+    ],
+    "dugumler": [
+      "uni",
+      "palomar",
+      "cift-ilmek"
+    ],
+    "ipuclari": [
+      "Yem serpiştirerek balığı toplayacağın noktayı sabit tut; kefal alıştığı yere döner.",
+      "Şamandırayı akıntıya bırak, doğal süzülmesine izin ver. Sabit duran yemi kefal çoğu zaman yemez.",
+      "Liman içi, dere ağzı ve iskele altları en verimli kefal noktalarıdır."
+    ],
+    "hatalar": [
+      "Kalın misina ve büyük iğne kullanmak; kefal ürker.",
+      "İlk dokunuşta tokatlamak. Kefal yemi önce emip bırakır; şamandıra tamamen dalınca çek."
+    ]
+  },
+  {
+    "id": "sabiki-ince",
+    "ad": "İnce Sabiki",
+    "kisaAd": "İnce sabiki",
+    "sema": "capari",
+    "ozet": "Çok küçük iğneli, ince bedenli çapari. Hamsi, sardalya ve küçük istavrit için; aynı zamanda canlı yem tedarik etmenin en hızlı yolu.",
+    "zorluk": 1,
+    "turler": [
+      "hamsi",
+      "sardalya",
+      "istavrit",
+      "izmarit"
+    ],
+    "yontem": "capari",
+    "bilesenler": [
+      {
+        "ad": "Kamış",
+        "deger": "2,1-3,0 m, hafif",
+        "aciklama": "Ağır kamış küçük balığı yırtar.",
+        "ekipman": "kamis"
+      },
+      {
+        "ad": "Makine",
+        "deger": "2000-3000",
+        "aciklama": "Standart hafif spin makine.",
+        "ekipman": "spin-makine"
+      },
+      {
+        "ad": "Ana misina",
+        "deger": "0,18-0,22 mm mono",
+        "aciklama": "İnce olması sabikinin doğal salınmasını sağlar.",
+        "ekipman": "monofilament"
+      },
+      {
+        "ad": "Sabiki bedeni",
+        "deger": "0,10-0,14 mm, 6-8 iğneli",
+        "aciklama": "İğneler 12-18 numara, gümüş simli.",
+        "ekipman": "beden"
+      },
+      {
+        "ad": "Kurşun",
+        "deger": "10-30 gr",
+        "aciklama": "Sürü yüzeye yakınsa 10 gr yeter.",
+        "ekipman": "kursun"
+      }
+    ],
+    "kurulum": [
+      "Ana misinaya fırdöndü bağla, sabiki bedenini tak.",
+      "Alt uca hafif kurşunu bağla.",
+      "İğneler minicik olduğu için takımı rüzgâra karşı açık tutarak indir."
+    ],
+    "dugumler": [
+      "klinc",
+      "palomar"
+    ],
+    "ipuclari": [
+      "Sürünün derinliğini bul: dibe indir, 2 tur sararak yukarı doğru tara.",
+      "Hamsi sürüsü kalabalıksa sarmadan bekle; iğneler kendiliğinden dolar.",
+      "Tuttuğun canlı istavriti hemen kovaya al, kovanın suyunu 20 dakikada bir yenile."
+    ],
+    "hatalar": [
+      "Sabikiyi lüfer varken kullanmak; ince beden anında kesilir.",
+      "Balıkları iğneden elle çekmek — iğneler çok küçük, parmağa girer. Silkeleyerek kovaya boşalt."
+    ]
+  },
+  {
+    "id": "surf-clipdown",
+    "ad": "Surf Takımı (Kilitli İğne)",
+    "kisaAd": "Surf",
+    "yontem": "surf",
+    "sema": "surf",
+    "ozet": "Kumsaldan uzun atış için tasarlanmış dip takımı. İğne atış boyunca gövdeye kilitlenir, böylece takım havada dönmeden ok gibi gider.",
+    "zorluk": 4,
+    "turler": [
+      "minakop",
+      "barbunya",
+      "tekir",
+      "mezgit",
+      "levrek"
+    ],
+    "bilesenler": [
+      {
+        "ad": "Kamış",
+        "deger": "3,9-4,5 m, 100-200 gr",
+        "aciklama": "Uzun surf kamışı hem mesafe verir hem misinayı dalganın üstünde tutar.",
+        "ekipman": "kamis"
+      },
+      {
+        "ad": "Makine",
+        "deger": "6000-8000 boy",
+        "aciklama": "Geniş kafalı makine kalın misinayı sorunsuz sarar ve uzak atışta misinanın çıkışını kolaylaştırır.",
+        "ekipman": "spin-makine"
+      },
+      {
+        "ad": "Ana misina",
+        "deger": "0,28-0,35 mm mono veya PE 1,5",
+        "aciklama": "İnce ana misina rüzgâr direncini azaltır; yükü şok lideri taşır.",
+        "ekipman": "monofilament"
+      },
+      {
+        "ad": "Şok lideri",
+        "deger": "0,55-0,60 mm mono, kamış boyu + 5 tur",
+        "aciklama": "Atış anındaki ani yükü bu kalın bölüm karşılar. Şok lideri olmadan ağır kurşun atmak tehlikelidir.",
+        "ekipman": "sok-lideri"
+      },
+      {
+        "ad": "Beden",
+        "deger": "0,50 mm, 60-80 cm",
+        "aciklama": "Kurşunun üstünde kalan sert bölüm; köstek buraya bağlanır.",
+        "ekipman": "beden"
+      },
+      {
+        "ad": "Köstek",
+        "deger": "0,30-0,35 mm, 40-60 cm",
+        "aciklama": "Tek köstek yeter. İki köstek mesafeyi belirgin biçimde düşürür.",
+        "ekipman": "kostek"
+      },
+      {
+        "ad": "Kilit klipsi",
+        "deger": "Atış klipsi",
+        "aciklama": "İğne atış boyunca buraya takılı durur; kurşun dibe çarpınca kendiliğinden serbest kalır.",
+        "ekipman": "klips"
+      },
+      {
+        "ad": "İğne",
+        "deger": "1/0-3/0 uzun gövdeli",
+        "aciklama": "Deniz solucanını boydan taşıyacak uzunlukta olmalı.",
+        "ekipman": "igne"
+      },
+      {
+        "ad": "Kurşun",
+        "deger": "100-150 gr tırnaklı",
+        "aciklama": "Tırnaklı kurşun kumda tutunur, dalga takımı sürüklemez.",
+        "ekipman": "kursun"
+      }
+    ],
+    "kurulum": [
+      "Ana misinaya şok liderini FG veya çift ilmek ile bağla; düğüm makinede 5-6 tur kalacak kadar uzun olsun.",
+      "Liderin ucuna fırdöndü, fırdöndüden sonra 60-80 cm beden bağla.",
+      "Bedenin alt ucuna kurşunu, üst tarafına köstek bağını yaparak kösteği ekle.",
+      "İğneyi deniz solucanıyla doldur ve iğnenin ucunu atış klipsine tak.",
+      "Atıştan önce kurşunun kamış ucundan yaklaşık 1,5 m aşağıda sarktığından emin ol."
+    ],
+    "dugumler": [
+      "fg",
+      "cift-ilmek",
+      "kostek-bagi",
+      "palomar"
+    ],
+    "ipuclari": [
+      "Atışı kolla değil gövdeni döndürerek yap; mesafeyi kamışın yüklenmesi verir.",
+      "Aynı noktaya üst üste atmak, yemin kokusunu tek bir yerde biriktirir.",
+      "Kurşun dibe oturunca birkaç tur sarıp misinayı gerdir; gevşek misinada vuruş hiç görünmez."
+    ],
+    "hatalar": [
+      "Şok lideri kullanmadan 100 gr üstü kurşun atmak — misina kopar, kurşun kontrolsüz savrulur.",
+      "İki üç köstek bağlayıp mesafeyi öldürmek.",
+      "Kalabalık plajda uzun atış denemek."
+    ]
+  },
+  {
+    "id": "feeder-takimi",
+    "ad": "Feeder Takımı (Yemlik Kafes)",
+    "kisaAd": "Feeder",
+    "yontem": "feeder",
+    "sema": "feeder",
+    "ozet": "Kurşun yerine yem dolu bir kafes kullanan tatlı su dip takımı. Her atışta dibi besler, balığı tek bir noktaya toplar.",
+    "zorluk": 3,
+    "turler": [
+      "sazan",
+      "kadife",
+      "tatlisu-kefali",
+      "kizilkanat"
+    ],
+    "bilesenler": [
+      {
+        "ad": "Kamış",
+        "deger": "3,0-3,6 m, ince uçlu (quiver tip)",
+        "aciklama": "Ayrı ve çok yumuşak uç, en küçük dokunuşu bile gözle görünür biçimde büker.",
+        "ekipman": "kamis"
+      },
+      {
+        "ad": "Makine",
+        "deger": "3000-4000, ön frenli",
+        "aciklama": "İri sazanın ilk kaçışını fren karşılar; sert fren ince kösteği koparır.",
+        "ekipman": "spin-makine"
+      },
+      {
+        "ad": "Ana misina",
+        "deger": "0,22-0,25 mm mono",
+        "aciklama": "Mono esner ve balığın ani hamlelerini emer; feeder avında örgüye göre daha bağışlayıcıdır.",
+        "ekipman": "monofilament"
+      },
+      {
+        "ad": "Feeder kafesi",
+        "deger": "20-60 gr, kayar",
+        "aciklama": "Kayar bağlanır: balık yemi çektiğinde kafesin ağırlığını hissetmez.",
+        "ekipman": "feeder-kafesi"
+      },
+      {
+        "ad": "Boncuk",
+        "deger": "5 mm kauçuk",
+        "aciklama": "Kafesin fırdöndü düğümünü dövmesini engeller.",
+        "ekipman": "boncuk"
+      },
+      {
+        "ad": "Fırdöndü",
+        "deger": "10-12 numara",
+        "aciklama": "Kösteğin burulmasını önler ve kafesin kayacağı sınırı belirler.",
+        "ekipman": "firdondu"
+      },
+      {
+        "ad": "Köstek",
+        "deger": "0,16-0,20 mm, 25-60 cm",
+        "aciklama": "Durgun suda uzun, akıntıda kısa köstek kullanılır. Ana misinadan daima ince olmalı.",
+        "ekipman": "kostek"
+      },
+      {
+        "ad": "İğne",
+        "deger": "10-14 numara",
+        "aciklama": "Mısır ve hamur için küçük ama kalın telli iğne uygundur.",
+        "ekipman": "igne"
+      },
+      {
+        "ad": "Yem",
+        "deger": "Mısır, hamur veya toprak solucanı",
+        "aciklama": "İğnedeki yem, kafesin içindekiyle aynı olursa balık şüphelenmez.",
+        "ekipman": "misir"
+      }
+    ],
+    "kurulum": [
+      "Ana misinayı feeder kafesinin kayar borusundan geçir.",
+      "Arkasına boncuğu geçir, ardından fırdöndüyü palomar ile bağla.",
+      "Fırdöndünün alt halkasına 25-60 cm kösteği, ucuna iğneyi bağla.",
+      "Yem karışımını avuçta topak olacak kıvamda ıslat ve kafesi sıkıştırarak doldur.",
+      "İğnedeki yemi kafesin hemen yanına yerleştirip yumuşak bir hareketle at."
+    ],
+    "dugumler": [
+      "palomar",
+      "uni",
+      "snell"
+    ],
+    "ipuclari": [
+      "İlk beş atışı sadece yemlemek için yap: kafesi boşalt, hemen geri sar.",
+      "Karşı kıyıda bir işaret seç ve her atışta ona nişan al; aynı noktaya atmak yöntemin yarısıdır.",
+      "Vuruş beklerken kamışı sehpaya koy ve ince ucu gökyüzüne karşı izle — titremeyi böyle daha net görürsün."
+    ],
+    "hatalar": [
+      "Yemi fazla sulandırmak; kafes daha dibe inmeden boşalır.",
+      "Kafesi sabit bağlamak — balık ağırlığı hissedip yemi bırakır.",
+      "Freni kilitli bırakmak; iri sazanın ilk kaçışı ince kösteği anında koparır."
+    ]
+  },
+  {
+    "id": "sazan-kayar-kursun",
+    "ad": "Sazan Takımı (Kayar Kurşun)",
+    "kisaAd": "Sazan takımı",
+    "yontem": "dip-yemli",
+    "sema": "sazan",
+    "ozet": "İri tatlı su balığı için sade ve sağlam dip takımı: kayar kurşun, kısa köstek ve dipte duran tek bir iri yem.",
+    "zorluk": 2,
+    "turler": [
+      "sazan",
+      "yayin",
+      "kadife"
+    ],
+    "bilesenler": [
+      {
+        "ad": "Kamış",
+        "deger": "3,0-3,6 m, 40-100 gr",
+        "aciklama": "Gövdeden bükülen kamış iri sazanın hamlelerini emer ve iğnenin yırtmasını engeller.",
+        "ekipman": "kamis"
+      },
+      {
+        "ad": "Makine",
+        "deger": "4000-5000",
+        "aciklama": "En az 150 metre 0,30 mm misina alabilmeli; iri sazan uzun kaçış yapar.",
+        "ekipman": "spin-makine"
+      },
+      {
+        "ad": "Ana misina",
+        "deger": "0,28-0,35 mm mono",
+        "aciklama": "Esnek mono, dipteki dalların ve taşların sürtünmesini daha iyi kaldırır.",
+        "ekipman": "monofilament"
+      },
+      {
+        "ad": "Kayar kurşun",
+        "deger": "30-80 gr armut",
+        "aciklama": "Misina kurşunun içinden geçer; balık yemi çekerken ağırlığı hissetmez.",
+        "ekipman": "kursun"
+      },
+      {
+        "ad": "Boncuk",
+        "deger": "6-8 mm kauçuk",
+        "aciklama": "Kurşunun fırdöndü düğümünü ezmesini engeller.",
+        "ekipman": "boncuk"
+      },
+      {
+        "ad": "Fırdöndü",
+        "deger": "8-10 numara",
+        "aciklama": "Kösteği ayırır ve misinanın burulmasını önler.",
+        "ekipman": "firdondu"
+      },
+      {
+        "ad": "Köstek",
+        "deger": "0,25-0,30 mm, 20-35 cm",
+        "aciklama": "Kısa köstek, sazanın yemi alıp dönerken iğneyi kendi kendine oturtmasını sağlar.",
+        "ekipman": "kostek"
+      },
+      {
+        "ad": "İğne",
+        "deger": "4-8 numara, kısa gövdeli",
+        "aciklama": "Kalın telli iğne şart; sazan iri ve güçlüdür, ince tel açılır.",
+        "ekipman": "igne"
+      },
+      {
+        "ad": "Yem",
+        "deger": "3-4 tane mısır veya iri hamur topu",
+        "aciklama": "İğnenin ucu yemden dışarıda kalmalı.",
+        "ekipman": "misir"
+      }
+    ],
+    "kurulum": [
+      "Ana misinayı kayar kurşunun deliğinden geçir.",
+      "Arkasına boncuğu geçir ve fırdöndüyü klinç veya palomar ile bağla.",
+      "Fırdöndünün altına 20-35 cm kösteği bağla, ucuna iğneyi snell ile oturt.",
+      "Yemi iğnenin ucu görünecek şekilde tak.",
+      "Attıktan sonra misinayı hafifçe gerdir, kamışı sehpaya koy ve freni yumuşak bırak."
+    ],
+    "dugumler": [
+      "klinc",
+      "palomar",
+      "snell"
+    ],
+    "ipuclari": [
+      "Atmadan önce aynı noktaya bir avuç mısır serp; balık yemi orada aramaya başlar.",
+      "Sazan yemi alıp yürür. Kamış tam yay yaptığında al — erken tokatlama iğneyi ağızdan çeker.",
+      "İri balığı kepçe ile al; kıyıya sürüklemek hem balığı yaralar hem köstek koparır."
+    ],
+    "hatalar": [
+      "Kösteği ana misinadan kalın seçmek; dipte takıldığında kurşunla birlikte her şeyi kaybedersin.",
+      "İnce telli iğne kullanmak — iri sazan iğneyi açar.",
+      "Freni tam kilitlemek."
+    ]
+  },
+  {
+    "id": "tatli-sabit-samandira",
+    "ad": "Sabit Şamandıralı Tatlı Su Takımı",
+    "kisaAd": "Sabit şamandıra",
+    "yontem": "samandirali",
+    "sema": "tatli-samandira",
+    "ozet": "Sığ göl ve dere kenarında yemi belli bir derinlikte asılı tutan en sade takım. Vuruşu gözünle görürsün.",
+    "zorluk": 1,
+    "turler": [
+      "kizilkanat",
+      "tatlisu-kefali",
+      "gumus",
+      "tatlisu-levregi",
+      "havuz-baligi"
+    ],
+    "bilesenler": [
+      {
+        "ad": "Kamış",
+        "deger": "3,0-4,0 m hafif kamış",
+        "aciklama": "Uzun ve hafif kamış şamandırayı kontrol etmeyi kolaylaştırır.",
+        "ekipman": "kamis"
+      },
+      {
+        "ad": "Makine",
+        "deger": "1000-2500",
+        "aciklama": "Küçük makine yeterlidir; bu takımda uzun atış yoktur.",
+        "ekipman": "spin-makine"
+      },
+      {
+        "ad": "Ana misina",
+        "deger": "0,16-0,20 mm mono",
+        "aciklama": "İnce mono şamandıranın hassasiyetini korur.",
+        "ekipman": "monofilament"
+      },
+      {
+        "ad": "Sabit şamandıra",
+        "deger": "1-3 gr kalem şamandıra",
+        "aciklama": "İki stoperle misinaya sabitlenir; derinlik stoperleri kaydırarak ayarlanır.",
+        "ekipman": "samandira"
+      },
+      {
+        "ad": "Stoper",
+        "deger": "Kauçuk stoper (2 adet)",
+        "aciklama": "Şamandırayı istenen derinlikte tutar.",
+        "ekipman": "stoper"
+      },
+      {
+        "ad": "Saçma kurşun",
+        "deger": "Üç dört küçük saçma",
+        "aciklama": "Şamandırayı dik ve dengede tutar; en küçüğü iğneye en yakın dursun.",
+        "ekipman": "kursun"
+      },
+      {
+        "ad": "Köstek",
+        "deger": "0,12-0,16 mm, 25-40 cm",
+        "aciklama": "Ana misinadan ince olmalı; takıldığında sadece köstek gitsin.",
+        "ekipman": "kostek"
+      },
+      {
+        "ad": "İğne",
+        "deger": "12-16 numara",
+        "aciklama": "Küçük iğne, küçük yem. Kızılkanat ve gümüş için ince telli olanı seç.",
+        "ekipman": "igne"
+      },
+      {
+        "ad": "Yem",
+        "deger": "Toprak solucanı parçası, mısır veya hamur",
+        "aciklama": "Yem iğneyi tamamen kapatmasın.",
+        "ekipman": "toprak-solucani"
+      }
+    ],
+    "kurulum": [
+      "İki kauçuk stoperi misinaya geçir, aralarına şamandırayı yerleştir.",
+      "Derinliği ölç: iğneye küçük bir kurşun tak, dibe indir ve stoperleri yeme göre ayarla.",
+      "Saçma kurşunları misinaya azalan sırayla, en küçüğü en altta olacak şekilde sıkıştır.",
+      "Fırdöndü veya doğrudan düğümle 25-40 cm kösteği bağla, ucuna iğneyi tak.",
+      "Şamandıranın suyun üstünde ince bir çizgi kalacak kadar battığından emin ol."
+    ],
+    "dugumler": [
+      "klinc",
+      "cift-ilmek",
+      "snell"
+    ],
+    "ipuclari": [
+      "Yem dibin 20-40 cm üstünde dursun; sazlık dibinde yem dibe yatarsa görünmez olur.",
+      "Şamandıra yan yatıyorsa kurşun az, tamamen batıyorsa fazladır.",
+      "Rüzgâr misinayı sürüklüyorsa kamış ucunu suya yaklaştır."
+    ],
+    "hatalar": [
+      "İri şamandıra kullanmak; balık direnç hisseder ve yemi bırakır.",
+      "İlk oynamada tokatlamak. Şamandıra tamamen batıp bir saniye kaldığında tokatla.",
+      "Kösteği ana misinayla aynı kalınlıkta bağlamak."
+    ]
+  },
+  {
+    "id": "spin-tatli",
+    "ad": "Tatlı Su Spin Takımı",
+    "kisaAd": "Tatlı spin",
+    "yontem": "spin",
+    "sema": "spin-tatli",
+    "ozet": "Döner kaşık, kaşık ve maket balıkla turna ve tatlısu levreği avlamak için kurulan yürüyerek av takımı.",
+    "zorluk": 3,
+    "turler": [
+      "turna",
+      "tatlisu-levregi",
+      "yayin"
+    ],
+    "bilesenler": [
+      {
+        "ad": "Kamış",
+        "deger": "1,9-2,4 m, 5-25 gr",
+        "aciklama": "Kısa kamış sazlık ve ağaç arasında hareket serbestliği verir.",
+        "ekipman": "kamis"
+      },
+      {
+        "ad": "Makine",
+        "deger": "2500-3000",
+        "aciklama": "Hızlı sarım oranı yemi yüzeye yakın çalıştırmayı kolaylaştırır.",
+        "ekipman": "spin-makine"
+      },
+      {
+        "ad": "Ana misina",
+        "deger": "PE 0,8-1,2 örgü",
+        "aciklama": "Örgü misina yemin en küçük temasını bile eline iletir.",
+        "ekipman": "orgu-misina"
+      },
+      {
+        "ad": "Çelik lider",
+        "deger": "25-40 cm, 7-10 kg",
+        "aciklama": "Turna avında zorunlu: dişleri misinayı bir vuruşta keser.",
+        "ekipman": "celik-lider"
+      },
+      {
+        "ad": "Fırdöndü",
+        "deger": "10 numara, klipsli",
+        "aciklama": "Döner kaşık misinayı burar; fırdöndü olmadan misina kısa sürede kıvrılır.",
+        "ekipman": "firdondu"
+      },
+      {
+        "ad": "Sahte yem",
+        "deger": "2-4 numara döner kaşık, 7-11 cm maket",
+        "aciklama": "Bulanık suda döner kaşık, berrak suda maket balık öne çıkar.",
+        "ekipman": "spinner"
+      }
+    ],
+    "kurulum": [
+      "Örgü ana misinaya FG düğümüyle kısa bir fluorocarbon bağla veya doğrudan fırdöndüye geç.",
+      "Fırdöndünün altına çelik lideri tak.",
+      "Liderin klipsine sahte yemi tak — klips yemi saniyeler içinde değiştirmeni sağlar.",
+      "Yemi suya sokup birkaç metre çekerek doğru çalışıp çalışmadığını gözle kontrol et."
+    ],
+    "dugumler": [
+      "fg",
+      "klinc",
+      "palomar"
+    ],
+    "ipuclari": [
+      "Sazlık kenarını ve batık ağaçların çevresini tara; turna açıkta değil, pusuda bekler.",
+      "Yemi yüzeye yakın ve yavaş çalıştırarak başla, sonuç yoksa derinleş.",
+      "Turnayı elle tutma; ıslak bez veya balık tutma pensesi kullan, dişleri ciddi kesik açar."
+    ],
+    "hatalar": [
+      "Çelik lider kullanmadan turna aramak; hem yemi hem balığı kaybedersin.",
+      "Fırdöndüsüz döner kaşık bağlamak — misina burularak kullanılamaz hâle gelir.",
+      "Yasal boy altındaki turnayı kuru elle tutup suya bırakmak; koruyucu tabakası zarar görür."
+    ]
+  }
+]

@@ -1,0 +1,144 @@
+{
+  "ad": "Tatlısu levreği",
+  "latin": "Perca fluviatilis",
+  "ingilizce": "European perch",
+  "digerAdlar": [
+    "Sudak (yanlış kullanım)",
+    "Çizgili levrek"
+  ],
+  "ozet": "Sırtında dikenli yüzgeci ve gövdesinde koyu dikey bantları olan küçük avcı. Sürü hâlinde gezer; bir tane bulduğun yerde genelde çok sayıda vardır.",
+  "zorluk": 2,
+  "aylar": [
+    2,
+    2,
+    2,
+    0,
+    0,
+    2,
+    3,
+    3,
+    4,
+    5,
+    4,
+    3
+  ],
+  "sular": [
+    "gol"
+  ],
+  "gece": false,
+  "boySiniflari": [
+    {
+      "ad": "Küçük levrek",
+      "cm": "0-18 cm",
+      "not": "18 cm altı yasal değil."
+    },
+    {
+      "ad": "Tatlısu levreği",
+      "cm": "18-28 cm"
+    },
+    {
+      "ad": "İri levrek",
+      "cm": "28 cm ve üzeri"
+    }
+  ],
+  "yasal": {
+    "asgariBoy": 18,
+    "kaynak": "6/2 Numaralı Amatör Amaçlı Su Ürünleri Avcılığının Düzenlenmesi Hakkında Tebliğ (No: 2024/21), Resmî Gazete 11.08.2024/32629 — 1 Eylül 2024 / 31 Ağustos 2028",
+    "kontrolTarihi": "2026-08-28",
+    "not": "İç sularda kişi başı günlük toplam 5 kg sınırı geçerlidir.",
+    "yasakDonemi": "15 Mart – 15 Haziran: iç sularda üreme dönemi av yasağı. Yasak amatör oltacıyı da kapsar."
+  },
+  "suSicakligi": {
+    "min": 5,
+    "ideal": [
+      12,
+      20
+    ],
+    "max": 25
+  },
+  "aktifSaatler": [
+    "sabah",
+    "oglen",
+    "ikindi",
+    "aksam"
+  ],
+  "ruzgarTercihi": [],
+  "ruzgarKacinilan": [
+    "poyraz"
+  ],
+  "derinlik": "1-6 m; iskele ayakları ve batık yapıların çevresinde toplanır.",
+  "yasamAlani": "İskele ayakları, taş dolgular, batık ağaçlar, sazlık sınırı.",
+  "teshis": {
+    "siluet": "tatlisu-levregi",
+    "ayirtEdici": [
+      "Gövde yüksek, yeşilimsi sarı zemin üstünde 5-8 adet koyu dikey bant var.",
+      "Ön sırt yüzgeci tamamen sert dikenlidir; elle tutarken dikkat gerekir.",
+      "Karın ve anal yüzgeçler turuncu-kırmızı.",
+      "Solungaç kapağının arka kenarı keskindir."
+    ],
+    "karistirilan": []
+  },
+  "takimlar": [
+    "tatli-sabit-samandira",
+    "spin-tatli",
+    "lrf-jig-head"
+  ],
+  "yemler": {
+    "dogal": [
+      "Toprak solucanı",
+      "Küçük yem balığı"
+    ],
+    "sahte": [
+      "1-2 numara döner kaşık",
+      "3-6 cm silikon",
+      "Küçük maket balık"
+    ]
+  },
+  "ekipman": {
+    "kamis": {
+      "deger": "1,8-2,4 m, 2-12 gr",
+      "not": "Hafif kamış küçük yemi doğru çalıştırır."
+    },
+    "makine": {
+      "deger": "1000-2500"
+    },
+    "anaMisina": {
+      "deger": "PE 0,4-0,8 veya 0,18 mm mono"
+    },
+    "sokLideri": {
+      "deger": "0,18-0,22 mm fluorocarbon, 1 m"
+    },
+    "igne": {
+      "deger": "8-12 numara veya 1-4 gr jig head"
+    },
+    "agirlik": {
+      "deger": "1-7 gr",
+      "not": "En hafifiyle başla, dibi hissedemezsen artır."
+    }
+  },
+  "taktik": {
+    "atis": "İskele ayağına, taş dolgu kenarına ve batık dalların çevresine at. Sürü bu yapıların gölgesinde durur.",
+    "cekme": "İki üç kısa zıplatma yap, sonra dur. Vuruş çoğu zaman duraklamada gelir.",
+    "tokatlama": "Bileğinden kısa bir hareket yeterli; ağzı sert değildir, sert tokat iğneyi yırtar.",
+    "yakalama": "Küçük balıktır, sürüklemeden yukarı al. Sırt dikenlerine dokunmadan, gövdeyi yandan kavra.",
+    "ipuclari": [
+      "Bir levrek yakaladığın noktayı terk etme; sürü genelde oradadır.",
+      "Kırmızı noktalı döner kaşık tatlısu levreğinde belirgin fark yaratır.",
+      "Yasal boyun altındaki bireyleri ıslak elle hızlıca suya bırak."
+    ],
+    "hatalar": [
+      "İri yem kullanmak; ağzı küçüktür, büyük yemi ancak dürter.",
+      "Sırt dikenlerini kavramak.",
+      "Sürekli aynı hızda sarmak — duraklamasız çekişte vuruş azalır."
+    ]
+  },
+  "mutfak": "Eti beyaz, sıkı ve lezzetlidir. Kılçığı azdır; tavada kızartmaya çok uygundur.",
+  "noktalar": [
+    "sapanca-sahil",
+    "sapanca-kirkpinar",
+    "sapanca-kurtkoy",
+    "sapanca-kartepe-guney",
+    "poyrazlar-golu",
+    "taskisigi-golu"
+  ]
+}
