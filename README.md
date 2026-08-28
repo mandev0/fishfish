@@ -91,13 +91,31 @@ ve fonksiyon `isSecureContext` denetliyor.
 
 ## Yayına alma
 
-Sunucuda Docker yeterli; Node kurmak gerekmez, site imajın içinde derlenir.
+Site `fish.selimakpinar.com` adresinde **GitHub Pages** ile yayınlanır.
+`.github/workflows/deploy.yml`, `main` dalına her gönderimde veriyi denetler,
+testleri koşar, derler ve çıktıyı Pages'e gönderir; depoda derlenmiş dosya tutulmaz.
+
+Kurulum bir kereliktir:
+
+1. Depo ayarlarında **Settings → Pages → Source: GitHub Actions**.
+2. Aynı sayfada **Custom domain: `fish.selimakpinar.com`**, ardından **Enforce HTTPS**.
+3. DNS'te `fish` için `CNAME → mandev0.github.io`. Kayıt bir vekilin (Cloudflare gibi)
+   arkasındaysa sertifika verilene kadar vekili kapat; GitHub'ın Let's Encrypt sertifikası
+   proxy'li kayıtta çıkmıyor.
+
+`public/CNAME` alan adını çıktının içine de yazar, `public/.nojekyll` ise çıktının
+Jekyll'e sokulmasını engeller — `_astro/` klasörü alt çizgiyle başladığı için
+Jekyll onu yok sayardı.
+
+### Kendi sunucunda (yedek yol)
+
+Aynı site Docker ile de kalkar; Pages'e erişilemediğinde veya yerelde denemek için:
 
 ```bash
-git pull
 docker compose up -d --build
 ```
 
+Sunucuda Node kurmak gerekmez, site imajın içinde derlenir.
 `docker-compose.yaml` kapsayıcıyı `127.0.0.1:5453` üzerinde yayınlar — yani yalnızca
 makinenin kendisinden erişilebilir. TLS ve alan adı bu dosyanın dışındadır: önündeki
 ters vekil `fish.selimakpinar.com` isteklerini `http://127.0.0.1:5453` adresine taşır.
@@ -116,6 +134,12 @@ ağına ekle.
 
 Kapsayıcı salt okunur bir dosya sisteminde çalışır ve `/healthz` üzerinden sağlık
 yoklaması yapar; `docker compose ps` durumu `healthy` göstermelidir.
+
+**Derleme yeniden üretilebilir:** aynı kaynaktan aynı çıktı çıkar, yani service worker
+sürüm damgası ortamdan ortama değişmez. Buna bağlı iki incelik var — `getCollection('species')`
+her çağrıda kimliğe göre sıralanır (glob'un dosya sistemi sırası makineye göre değişiyor)
+ve `.dockerignore`, `.gitignore` dosyasını bağlamın dışında bırakmaz (Tailwind içerik
+taramasında ona bakıyor). Damga değişirse kurulu her kullanıcı 3,3 MB'ı yeniden indirir.
 
 ## Çevrimdışı çalışma
 

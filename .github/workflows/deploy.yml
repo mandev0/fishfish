@@ -1,0 +1,62 @@
+# fish.selimakpinar.com — GitHub Pages'e yayın.
+#
+# Site burada derlenir ve çıktı doğrudan Pages'e gönderilir; depoda derlenmiş
+# dosya tutulmaz. Derlemeden önce veri denetimi ve testler koşar: bozuk bir
+# çapraz referans veya kaynaksız yasal kayıt yayına çıkmasın diye.
+
+name: Yayına al
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Aynı anda tek yayın; sıradaki derlemeyi iptal etmiyoruz ki hiçbir
+# değişiklik atlanmasın.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  derle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Veri bütünlüğü
+        run: npm run validate
+
+      - name: Testler
+        run: npm run test
+
+      - name: Tip denetimi
+        run: npm run check
+
+      - name: Derleme
+        run: npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  yayinla:
+    needs: derle
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.dagitim.outputs.page_url }}
+    steps:
+      - id: dagitim
+        uses: actions/deploy-pages@v4

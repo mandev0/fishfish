@@ -23,6 +23,10 @@ RUN npm run validate \
 FROM nginx:1.27-alpine AS calisma
 
 COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
+
+# Temel imajın örnek sayfaları (index.html, 50x.html) burada duruyor; siteyle
+# karışmasın diye dizini boşaltıp yalnızca derleme çıktısını koyuyoruz.
+RUN rm -rf /usr/share/nginx/html/*
 COPY --from=derleme /app/dist /usr/share/nginx/html
 
 EXPOSE 80

@@ -12,8 +12,13 @@ import { readdir, readFile, stat, writeFile } from 'node:fs/promises';
 import { join, relative, sep } from 'node:path';
 
 const DIST = 'dist';
-/** Bunlar önbelleğe alınmaz: service worker kendini ve listesini önbellekleyemez. */
-const HARIC = new Set(['sw.js', 'sw-liste.json']);
+/**
+ * Bunlar önbelleğe alınmaz. `sw.js` ve `sw-liste.json`: service worker kendini
+ * ve listesini önbellekleyemez. `CNAME` ve `.nojekyll`: site içeriği değil,
+ * GitHub Pages'e ait dağıtım dosyaları — indirmenin anlamı yok ve içeriğe
+ * dokunmadıkları için sürüm damgasını da değiştirmemeliler.
+ */
+const HARIC = new Set(['sw.js', 'sw-liste.json', 'CNAME', '.nojekyll']);
 
 async function dosyalariTopla(kok) {
   const bulunan = [];
@@ -28,11 +33,21 @@ async function dosyalariTopla(kok) {
   return bulunan.sort();
 }
 
-/** dist yolunu siteye ait URL'ye çevirir; `/x/index.html` → `/x`, kök → `/`. */
+/**
+ * dist yolunu siteye ait URL'ye çevirir; `/x/index.html` → `/x/`, kök → `/`.
+ *
+ * Sondaki eğik çizgi bilerek duruyor: bazı statik sunucular (GitHub Pages
+ * dâhil) `/x` isteğini `/x/` adresine 301 ile yönlendirir. Yönlendirmeyi
+ * izleyerek gelen yanıtın `redirected` bayrağı açık olur ve tarayıcı böyle
+ * bir kaydı gezinme isteğine yanıt olarak vermeyi reddeder — sayfa ağ
+ * hatasıyla düşer. Kanonik adresi isteyerek yönlendirmeye hiç girmiyoruz.
+ * Önbellek anahtarı yine eğik çizgisiz: `sw.js` içindeki `anahtarla()`
+ * her iki biçimi aynı kayda indiriyor.
+ */
 function urlYap(dosya) {
   const gorece = relative(DIST, dosya).split(sep).join('/');
   if (gorece === 'index.html') return '/';
-  if (gorece.endsWith('/index.html')) return '/' + gorece.slice(0, -'/index.html'.length);
+  if (gorece.endsWith('/index.html')) return '/' + gorece.slice(0, -'index.html'.length);
   return '/' + gorece;
 }
 

@@ -10,7 +10,11 @@ export async function getStaticPaths() {
 }
 
 const { ay, ad } = Astro.props;
-const turler = await getCollection('species');
+// Tür koleksiyonu glob ile okunuyor ve sırası dosya sistemine göre değişiyor.
+// Kimliğe göre sıralamak derlemeyi yeniden üretilebilir kılıyor: aksi hâlde
+// aynı kaynaktan farklı çıktı çıkıyor, service worker sürüm damgası değişiyor
+// ve kurulu kullanıcılar boş yere bütün paketi yeniden indiriyor.
+const turler = (await getCollection('species')).sort((a, b) => a.id.localeCompare(b.id));
 
 const puanli = turler
   .map((t) => ({ t, v: t.data.aylar[ay - 1]! }))

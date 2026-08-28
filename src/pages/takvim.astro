@@ -4,7 +4,12 @@ import Base from '../layouts/Base.astro';
 import { baslikBicimi } from '../lib/metin';
 import { AY_ADLARI, AY_KISA, bulunabilirlikMetni, SU_ADLARI, SU_KISA_ADLARI } from '../lib/season';
 
+// Tür koleksiyonu glob ile okunuyor ve sırası dosya sistemine göre değişiyor.
+// Kimliğe göre sıralamak derlemeyi yeniden üretilebilir kılıyor: aksi hâlde
+// aynı kaynaktan farklı çıktı çıkıyor, service worker sürüm damgası değişiyor
+// ve kurulu kullanıcılar boş yere bütün paketi yeniden indiriyor.
 const turler = (await getCollection('species'))
+  .sort((a, b) => a.id.localeCompare(b.id))
   .sort((a, b) => b.data.aylar.reduce((x, y) => x + y, 0) - a.data.aylar.reduce((x, y) => x + y, 0));
 
 /**

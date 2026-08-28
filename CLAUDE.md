@@ -202,6 +202,17 @@ worker'a sürüm damgası olarak yazar ve önbelleğe alınacak dosya listesini
 - **Önbellek anahtarında sondaki eğik çizgi normalleştirilir.** Bağlantılar
   `/noktalar` derken statik çıktı `/noktalar/index.html`; ikisi aynı kayda düşmezse
   çevrimdışında sayfa bulunamaz.
+- **Önbelleğe alınan adres kanonik olmalı — yönlendirmeyle gelen yanıt saklanamaz.**
+  `sw-liste.json` sayfaları `/noktalar/` biçiminde (eğik çizgili) yazar, çünkü bazı statik
+  sunucular (GitHub Pages) `/noktalar` isteğini 301 ile eğik çizgiliye yönlendirir.
+  Yönlendirmeyi izleyen yanıtın `redirected` bayrağı açık olur ve tarayıcı böyle bir kaydı
+  **gezinme isteğine yanıt olarak vermeyi reddeder**: sayfa ağ hatasıyla düşer, üstelik
+  yalnızca service worker kurulduktan sonra. `fetch` dinleyicisi de aynı sebeple
+  `redirected` yanıtı önbelleğe koymaz.
+- **Derleme yeniden üretilebilir olmalı.** Sürüm damgası çıktının içerik özeti olduğu için
+  aynı kaynaktan farklı çıktı üretmek, kurulu her kullanıcıya 13 MB'ı yeniden indirtir.
+  `getCollection('species')` glob ile okunur ve sırası dosya sistemine göre değişir;
+  her çağrı kimliğe göre sıralanır. Sayfaya gömülen her listede aynı dikkat gerekir.
 - **`navigator.onLine` kullanma.** Yalnızca ağ arayüzü var mı der; internetsiz bir
   Wi-Fi'da da `true` döner. Bağlantı durumu hakkında bir şey yazacaksan onu
   isteğin gerçekten düşmüş olmasına dayandır.

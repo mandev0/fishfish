@@ -5,11 +5,15 @@ dist/
 .astro/
 .dev/
 .git/
-.gitignore
 *.log
 .DS_Store
 
-# Belgeler ve yerel geliştirme araçları imaja girmez
-README.md
-CLAUDE.md
-dev.sh
+# .gitignore bağlama DAHİL: Tailwind v4 içerik taramasında bu dosyanın
+# kurallarına uyuyor. Dışarıda bırakınca imajdaki CSS yerel derlemeden farklı
+# çıkıyor, bu da service worker sürüm damgasını (çıktının içerik özeti)
+# gereksiz yere değiştirip kullanıcılara 13 MB'ı yeniden indirtiyor.
+#
+# Belgeler bilerek dışarıda BIRAKILMADI: Tailwind v4 içerik taramasını proje
+# genelinde yapıyor ve .md dosyalarındaki sınıf adlarını da görüyor. Bunları
+# bağlamdan çıkarınca imajdaki CSS yerel derlemeden farklı çıkıyor —
+# aynı kaynaktan aynı çıktı alabilmek için hepsi bağlama giriyor.

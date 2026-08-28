@@ -17,7 +17,11 @@ import { RUZGARLAR } from '../../lib/wind';
 import { baslikBicimi } from '../../lib/metin';
 
 export async function getStaticPaths() {
-  const turler = await getCollection('species');
+  // Tür koleksiyonu glob ile okunuyor ve sırası dosya sistemine göre değişiyor.
+// Kimliğe göre sıralamak derlemeyi yeniden üretilebilir kılıyor: aksi hâlde
+// aynı kaynaktan farklı çıktı çıkıyor, service worker sürüm damgası değişiyor
+// ve kurulu kullanıcılar boş yere bütün paketi yeniden indiriyor.
+const turler = (await getCollection('species')).sort((a, b) => a.id.localeCompare(b.id));
   return turler.map((t) => ({ params: { id: t.id }, props: { tur: t } }));
 }
 

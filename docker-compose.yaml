@@ -22,7 +22,7 @@ services:
     # Vekilin kendisi bir kapsayıcıysa bunu "5453:80" yapıp bu servisi
     # vekilin ağına ekle (aşağıdaki networks bölümü).
     ports:
-      - "127.0.0.1:5453:80"
+      - "5453:80"
 
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://127.0.0.1/healthz"]

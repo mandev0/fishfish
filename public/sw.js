@@ -18,7 +18,8 @@
 const SURUM = '__SURUM__';
 const ONBELLEK = `fishfish-${SURUM}`;
 const LISTE_URL = '/sw-liste.json';
-const CEVRIMDISI = '/cevrimdisi';
+// Sondaki eğik çizgi kanonik adres: yönlendirmeye girmeden indirilir.
+const CEVRIMDISI = '/cevrimdisi/';
 
 /** Bunlar olmadan uygulama açılmaz. */
 const CEKIRDEK = ['/', CEVRIMDISI, '/manifest.webmanifest'];
@@ -101,7 +102,10 @@ self.addEventListener('fetch', (olay) => {
     try {
       const yanit = await fetch(istek);
       // Kurulumdan sonra eklenen bir yol (geç yüklenen varlık) olabilir.
-      if (yanit.ok && yanit.type === 'basic') {
+      // Yönlendirmeyle gelen yanıtı saklamıyoruz: tarayıcı `redirected`
+      // bayrağı açık bir kaydı gezinme isteğine yanıt olarak vermeyi
+      // reddediyor ve sayfa ağ hatasıyla düşüyor.
+      if (yanit.ok && yanit.type === 'basic' && !yanit.redirected) {
         await onbellek.put(anahtarla(istek.url), yanit.clone());
       }
       return yanit;
