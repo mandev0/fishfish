@@ -30,8 +30,6 @@ jobs:
 
       - uses: actions/setup-node@v7
         with:
-          # Dockerfile ile aynı sürüm: iki yolun da bit bit aynı çıktı üretmesi,
-          # dolayısıyla service worker sürüm damgasının değişmemesi için.
           node-version: '22'
           cache: npm
 

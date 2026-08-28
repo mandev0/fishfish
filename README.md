@@ -62,32 +62,25 @@ npm i -D playwright-core && npx playwright install chromium
 npm run ikon:uret
 ```
 
-## Telefondan test
+## Service worker'ı yerelde denemek
 
-`npm run dev` telefon testi için yeterli değil: service worker kaydı yalnızca üretim
-derlemesinde yapılır. `dev.sh` gereken zinciri kurar — eski süreçleri kapatır, derler,
-`astro preview` başlatır ve WSL2 kullanıyorsan LAN'dan erişim için Windows tarafında bir
-TCP yönlendirici çalıştırır:
+`npm run dev` service worker'ı kaydetmez: kayıt `import.meta.env.PROD`'a bağlı.
+Çevrimdışı davranışı, kurulumu veya önbellek sürümünü denemek istiyorsan üretim
+derlemesini sun:
 
 ```bash
-./dev.sh            # derle, sunucuyu başlat, adresleri yaz
-./dev.sh --hizli    # derlemeyi atla (dist güncelse)
-./dev.sh durum      # ne çalışıyor, zincir sağlam mı
-./dev.sh dur        # sunucuyu ve yönlendiriciyi kapat
+npm run build && npm run preview      # http://localhost:4321
 ```
 
-İki adres çıkar:
+`localhost` güvenli bağlam sayıldığı için service worker, konum ve "ana ekrana ekle"
+ek ayar olmadan çalışır. Güvenli bağlamın aktif olduğunu anlamanın en hızlı yolu:
+`/noktalar` sayfasında "Konumuma göre sırala" düğmesi görünüyorsa aktiftir. O düğmeyi
+`konumDestekli()` basıyor ve fonksiyon `isSecureContext` denetliyor.
 
-- **USB** — `http://localhost:4321`. Chrome'da `chrome://inspect` → Port forwarding
-  (`4321` → `localhost:4321`). Telefon adresi `localhost` gördüğü için güvenli bağlam
-  sayılır; service worker, konum ve kurulum ek ayar olmadan çalışır.
-- **LAN** — `http://<windows-lan-ip>:4322`. Kablo gerekmez ama `http` olduğu için güvenli
-  bağlam değildir. Telefonda Chrome → `chrome://flags` → "Insecure origins treated as
-  secure" alanına bu adresi yazıp Enabled yapman gerekir.
-
-Güvenli bağlamın aktif olduğunu anlamanın en hızlı yolu: `/noktalar` sayfasında
-"Konumuma göre sırala" düğmesi görünüyorsa aktiftir. O düğmeyi `konumDestekli()` basıyor
-ve fonksiyon `isSecureContext` denetliyor.
+Telefonda denemek için yayındaki adrese bak: `https://fish.selimakpinar.com`.
+Gerçek alan adı ve gerçek sertifikayla test etmek, yerelde LAN üzerinden `http` ile
+uğraşmaktan hem daha kolay hem daha doğru — güvenli bağlam ve service worker orada
+üretimdeki gibi davranıyor.
 
 ## Yayına alma
 
@@ -107,39 +100,10 @@ Kurulum bir kereliktir:
 Jekyll'e sokulmasını engeller — `_astro/` klasörü alt çizgiyle başladığı için
 Jekyll onu yok sayardı.
 
-### Kendi sunucunda (yedek yol)
-
-Aynı site Docker ile de kalkar; Pages'e erişilemediğinde veya yerelde denemek için:
-
-```bash
-docker compose up -d --build
-```
-
-Sunucuda Node kurmak gerekmez, site imajın içinde derlenir.
-`docker-compose.yaml` kapsayıcıyı `127.0.0.1:5453` üzerinde yayınlar — yani yalnızca
-makinenin kendisinden erişilebilir. TLS ve alan adı bu dosyanın dışındadır: önündeki
-ters vekil `fish.selimakpinar.com` isteklerini `http://127.0.0.1:5453` adresine taşır.
-Ters vekilin kendisi bir kapsayıcıysa yayın satırını `"5453:80"` yapıp servisi vekilin
-ağına ekle.
-
-`docker/nginx.conf` iki işi yapar:
-
-- **Adresleri olduğu gibi servis eder.** Site içindeki bağlantılar `/noktalar` der,
-  statik çıktı ise `/noktalar/index.html`. `try_files` sıralaması bu yüzden
-  `$uri/index.html`'i `$uri/`den önce dener: aksi hâlde nginx sona eğik çizgi ekleyen
-  bir 301 döndürür ve adres, service worker'ın önbellek anahtarından ayrışır.
-- **Önbellek başlıklarını ayırır.** `sw.js` ve `manifest.webmanifest` hiç önbelleğe
-  alınmaz (yeni sürümün fark edilmesi buna bağlı), adında içerik özeti taşıyan
-  `/_astro/` varlıkları bir yıl `immutable`, HTML ise her zaman doğrulanır.
-
-Kapsayıcı salt okunur bir dosya sisteminde çalışır ve `/healthz` üzerinden sağlık
-yoklaması yapar; `docker compose ps` durumu `healthy` göstermelidir.
-
 **Derleme yeniden üretilebilir:** aynı kaynaktan aynı çıktı çıkar, yani service worker
-sürüm damgası ortamdan ortama değişmez. Buna bağlı iki incelik var — `getCollection('species')`
-her çağrıda kimliğe göre sıralanır (glob'un dosya sistemi sırası makineye göre değişiyor)
-ve `.dockerignore`, `.gitignore` dosyasını bağlamın dışında bırakmaz (Tailwind içerik
-taramasında ona bakıyor). Damga değişirse kurulu her kullanıcı 3,3 MB'ı yeniden indirir.
+sürüm damgası ortamdan ortama değişmez. Bunun bir inceliği var — `getCollection('species')`
+her çağrıda kimliğe göre sıralanır, çünkü glob'un dosya sistemi sırası makineye göre
+değişiyor. Damga boş yere değişirse kurulu her kullanıcı 3,3 MB'ı yeniden indirir.
 
 ## Çevrimdışı çalışma
 
@@ -147,7 +111,7 @@ taramasında ona bakıyor). Damga değişirse kurulu her kullanıcı 3,3 MB'ı y
 worker'ın sürüm damgasını ve önbellek listesini yazar:
 
 ```
-Service worker sürümü 7a3f2fb32623 · 172 dosya · 9.3 MB çevrimdışı içerik
+Service worker sürümü 34e1f5ba157f · 215 dosya · 13.6 MB çevrimdışı içerik
 ```
 
 Sürüm, çıktının içerik özetidir — çıktı değişmezse tarayıcı gereksiz yere güncellemez.
