@@ -269,14 +269,14 @@ export async function baslat(): Promise<void> {
         kullaniciIsaretcisi?.remove();
         kullaniciIsaretcisi = null;
         mesafeleriGizle();
-        etiketiYaz('Konumuma göre sırala');
+        etiketiYaz('Konumuma Göre Sırala');
         durumuYaz(null);
         cerceveyeSigdir();
         return;
       }
 
       dugme.disabled = true;
-      etiketiYaz('Konum alınıyor…');
+      etiketiYaz('Konum Alınıyor…');
       durumuYaz(null);
       try {
         const konum = await konumAl();
@@ -330,7 +330,7 @@ export async function baslat(): Promise<void> {
       harita = null;
       kap.classList.add('hidden');
       const not = document.createElement('p');
-      not.className = 'mt-4 rounded-xl border border-line bg-surface-2 p-3 text-sm text-muted';
+      not.className = 'mt-4 rounded-sm border-2 border-line bg-surface-2 p-4 text-sm text-muted';
       not.textContent = 'Harita karoları yüklenemedi (bağlantı yok olabilir). Aşağıdaki liste ve filtreler çalışmaya devam ediyor.';
       kap.insertAdjacentElement('afterend', not);
     }, 6000);
@@ -346,7 +346,7 @@ export async function baslat(): Promise<void> {
       });
       m.bindPopup(
         `<strong>${n.ad}</strong><br>${n.ozet}<br>`
-        + `<a href="/nokta/${n.id}">Nokta sayfası →</a>`,
+        + `<a href="/nokta/${n.id}">Nokta Sayfası →</a>`,
       );
       m.bindTooltip(n.ad, { direction: 'top', offset: [0, -8] });
       isaretciler[n.id] = m;

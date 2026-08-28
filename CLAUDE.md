@@ -50,8 +50,15 @@ modeli göl ve dereleri kapsamaz); arayüz bunu "tatlı su" diye açıklar, "kap
     bileşenleri kullanan sayfada ekstra bir şey yapmak gerekmez.
   - `tests/baslik.test.ts` kaynaktaki sabit başlıkları denetler; cümle biçiminde bir başlık
     yazarsan test düşer.
-- **Rozet, çip ve kısa etiketler de başlık biçimindedir:** "Çok Kolay", "Gece Avı",
-  "Orta Yoğun", "1 Uyarı". Elle büyük harfli dize yazma, `baslikBicimi()` kullan.
+- **Düz metin olmayan her yer başlık biçimindedir.** Başlıklara ek olarak: düğme
+  etiketleri ("Konumuma Göre Sırala"), tablo sütun ve satır başlıkları ("Asgari Boy",
+  "Boy Sınıfı"), form etiketleri ("Sadece Gece Aydınlatması Olanlar"), açılır bölüm
+  başlıkları ("Skor Nasıl Hesaplandı?"), sekme adları, rozet ve çipler ("Çok Kolay",
+  "Gece Avı", "Orta Yoğun", "1 Uyarı"). Elle büyük harfli dize yazma, `baslikBicimi()`
+  kullan. Betiğin çalışma anında yazdığı etiketler de aynı biçimde olmalı
+  (`spot-map.ts`, `weather-panel.ts`).
+  `tests/baslik.test.ts` `<h1>`-`<h6>` yanında `<button>`, `<summary>` ve `<th>`
+  içindeki sabit metinleri de denetler.
 - **Cümleler, açıklamalar ve balon metinleri normal cümle biçimindedir** — yalnızca ilk harf
   büyük, sonunda nokta. Başlık biçimini cümlelere uygulama. Bölüm başlığının altındaki
   açıklama satırı (`Bolum` bileşenindeki `not`) da cümledir.
@@ -66,25 +73,72 @@ modeli göl ve dereleri kapsamaz); arayüz bunu "tatlı su" diye açıklar, "kap
   string kırparak kısaltma: "İstanbul Boğazı" → "Boğazı" gibi bozuk çekimler çıkıyor.
   Aynı gerekçe bölge → il çıkarımı için de geçerli.
 
+### Şablon ("AI üretimi") görüntüsünden kaçınma
+
+Aşağıdakiler kasıtlı kararlardır, geri alma:
+
+- **Web yazı tipi yüklenmiyor** — çevrimdışı çalışma ve yeniden üretilebilir derleme
+  gereği. Yüklemediğin bir yazı tipini (`"Inter"` gibi) yığına yazma: sessizce sistem
+  yüzüne düşer, tek yaptığı şablon kokusu bırakmak olur.
+- **Yarı saydam + bulanık çubuk yok.** Üst başlık ve alt sekme çubuğu düz zeminlidir;
+  `bg-bg/95 backdrop-blur` cam efekti kaldırıldı.
+- **Simge emoji değildir.** Favicon, başlıktaki logonun kendisidir (`ikonlar.ts` → `balik`),
+  `Base.astro` içinde tek kaynaktan üretilir. Logo değişirse `npm run ikon:uret` ile
+  PNG'leri de yenile; `scripts/ikon-uret.mjs` içindeki `ACCENT` sabiti `--accent` ile
+  aynı kalmalı.
+- **Gradyan, düz olmayan doku ve dekoratif gölge yok.** Ayrım çizgi, zemin tonu ve
+  tipografiyle kurulur.
+
 ---
 
 ## Tasarım sistemi
 
 Yön: **deniz haritası / balıkçı almanağı**. Jenerik arayüz görünümünden kaçın.
 
-- **İki renk taşınır.** `--accent` Boğaz laciverti (yapı, bağlantı, ikon),
-  `--vurgu` şamandıra turuncusu (aktif menü, bölüm başlığı çubuğu, panel kenarı, odak halkası).
+- **İki renk taşınır.** `--accent` mürekkeptir — siyaha yakın (yapı, bağlantı, ikon zemini);
+  koyu temada tersine dönüp kâğıt rengi olur. `--vurgu` şamandıra turuncusu **eylem
+  rengidir**: düğmeler, aktif menü, seçili çip, terim altı çizgisi, odak halkası.
   Turuncu az ve yerinde kullanılır — her yere serpme.
-- **Köşeler keskin.** Radius jetonları 1-9 px. `rounded-full`, `rounded-2xl` gibi yumuşak
-  köşeler kullanma; yapıyı çizgi ve **sol kenar vurgusu** (`border-l-[3px]`) ile kur.
+- **Renkli sol kenar çubuğu kullanma.** `border-l-[3px] border-l-vurgu` ve türevleri
+  bilinçli olarak kaldırıldı; her kutunun yanına renkli şerit koymak şablon görüntüsünün
+  ana kaynağıydı. Yapıyı **tam çerçeve**, **zemin tonu** (`.kart-vurgulu` → `--bg-tint`) ve
+  **tipografi** ile kur. Bölüm başlığının ayracı altındaki ince kuraldır (`.bolum-baslik`).
+- **Tek yarıçap sözlüğü: her şey 2 px.** Radius jetonlarının hepsi 2 px'e ayarlıdır;
+  `rounded-full`, `rounded-2xl`, `rounded-xl` kullanma. Ölçek boyunca değişen yuvarlaklık
+  (kart 8, düğme 12, rozet 999) da aynı şablon görüntüsünü üretiyor.
+- **Tekrar eden her yüzeyin tek bir sınıfı var; sayfa içine elle Tailwind yazma.**
+  Aynı işi gören öğe iki sayfada iki farklı boyda çıkıyordu.
+  - Düğme: `.dugme` + `.dugme-birincil` / `.dugme-ikincil` / `.dugme-cip` / `.dugme-ikon`.
+    **Tek düğme boyu vardır** (`min-height: 2.75rem`) — ikinci bir "küçük düğme" boyu
+    hem tutarsız görünüyor hem dokunma hedefini 44 px'in altına düşürüyor.
+    Birincil düğme dolu aksandır; seçili çip `aria-pressed` ile taşınır, sınıf değiştirerek değil.
+  - Form alanı: `.alan` (seçici, arama kutusu), onay kutusu `.onay`.
+  - Küçük etiket ("Rüzgâr", "Nokta"): `.etiket-ust`.
+  - Bölüm içi ara başlık ("Nokta Seçimi", "İpuçları"): `.alt-baslik`.
+  - Kart görünümlü kısa bağlantı: `.kart .baglanti-cip`.
+  - Satır içi açılır bölüm başlığı: `.acilir`.
+  - Kart iç boşluğu `p-4`'tür; tablo hücresi `px-3 py-2.5`.
+- **Dolgulu eylem yüzeyi `--vurgu-dolgu` okur, `--vurgu` değil.** `--vurgu` metin ve çizgi
+  rengidir ve koyu temada açılmak zorundadır; dolgulu düğme ise iki temada da koyu pas
+  zemin + beyaz yazıdır. Tek jetonla ikisi birden olmuyor — koyu temada düğme soluyor.
+- **Hiçbir yerde büyük harfe çevirme yok** (`text-transform: uppercase`). Etiketler de
+  başlık biçiminde yazılır — her kelimenin ilk harfi büyük, gerisi küçük. Ara başlıklar
+  (`.alt-baslik`) gerçek başlıklardan **rengiyle** ayrışır: gövde mürekkebinden açık,
+  kendi jetonunda (`--etiket`). O ton 19 px yarı kalın serifte WCAG'ın büyük metin
+  eşiğini (3:1) karşılar; 13 px'lik `.etiket-ust` bu yüzden `--text-muted`'ta kalır (4,5:1).
 - **Başlıklar serif** (`--font-baslik`), gövde metni sans. Ölçü değerleri (`18 cm`, `0,28 mm`,
   `40 gr`) `.olcu` sınıfıyla monospace; sayı içeren tablo ve kutular `.sayisal` ile
   `tabular-nums`.
 - **Kart yapısı** için `.kart` sınıfını kullan, elle `rounded-* border border-line bg-surface`
   yazma. Vurgulu kart: `.kart-vurgulu`.
+- **Çerçeveler 2 px, aralıklar geniş.** Kart, uyarı kutusu, tablo kabı, harita ve düğme
+  çerçevesi 2 px'tir (`border-2`); yalnızca rozet gibi küçük çipler 1 px kalır. Kart
+  ızgaralarında `gap-5`, döşeme/etiket ızgaralarında `gap-3`-`gap-4` kullanılır —
+  `gap-2`'lik kart ızgarası öğeleri birbirine yapıştırıyor.
 - **Bölge renkleri** (`--bolge-*`) tek kaynaktır: harita işaretçisi de nokta kartı da aynı
   jetonu okur. Yeni bir yerde bölge rengi gerekiyorsa `data-bolge` özniteliğini ver ve
-  `.bolge-kenar` / `.bolge-nokta` / `.bolge-metin` sınıflarını kullan.
+  `.bolge-nokta` / `.bolge-metin` sınıflarını kullan. (Kartın sol kenarındaki renkli
+  çubuk — `.bolge-kenar` — kaldırıldı; bölge kimliği kare ve etiket metniyle taşınıyor.)
 - **Arka plan düzdür.** Kareli/desenli doku ekleme.
 
 ### Renk asla tek başına bilgi taşımaz
@@ -97,6 +151,15 @@ gerekirse sıfırdan yazma: `Zorluk.astro` veya `Bolluk.astro` bileşenini yenid
 
 "Gece aydınlatması var", "otopark zor" gibi kısa bilgiler metin yerine simgeyle gösterilir
 (`Rozet.astro`). Kural:
+
+- **Metinli düğmede ikon yok** — yazının yanına simge koyma, yazı yeterlidir.
+  **Simge düğmesi** (yalnız ikon, metin yok) ayrı bir tiptir ve serbesttir: tema anahtarı,
+  alt sekme çubuğu, hava panelindeki yenile ve konum düğmeleri. Kuralı şu:
+  `.dugme-ikon` + **`aria-label` ve `title` birlikte** — `title` JavaScript kapalıyken
+  açıklamanın tek kaynağı, `aria-label` ekran okuyucunun. İkisi de aynı metni taşır ve
+  başlık biçimindedir ("Havayı Yenile").
+  (Rozet teknik olarak `<button>`'dur ama orada ikon süs değil, içeriğin kendisidir:
+  nokta kartlarında etiketsiz basılır.)
 
 - İkon yolları **yalnızca** `src/lib/ikonlar.ts` içinde tanımlanır; hem sunucu bileşeni
   (`Ikon.astro`) hem tarayıcıdaki panel aynı kaynağı kullanır. İkonu bileşen içine gömme.
@@ -260,6 +323,14 @@ Metinlerdeki balıkçılık terimleri **derleme zamanında** işaretlenir (`src/
 
 Bunlar isteğe bağlı iyileştirme değil, kabul koşuludur:
 
+- **Hava paneli üç bloktur** ve ayracı `.panel-bolum` kuralıdır: *Nokta Seçimi* (sabit
+  noktalı sayfalarda hiç basılmaz), *Bugünün Koşulları*, *Bugün Ne Çıkar*. Bölüm başlıkları
+  her durumda görünür; canlı/statik geçişini içerideki `[data-canli]` ve `[data-statik]`
+  kapları yapar. `[data-canli]` **birden fazladır**, adacık hepsini birlikte açıp kapatır.
+- **Son yenileme damgası yenile düğmesinin yanındadır** (`[data-guncelleme]`): "ne kadar
+  taze" sorusu "tazele" eylemiyle aynı yerde cevaplanır. Damga kısadır (`01:14 itibarıyla`,
+  bayatsa uyarı renginde `3 saat önce alındı`); uzun açıklamalar (tatlı su uyarısı, servise
+  ulaşılamama) `[data-durum-metni]` satırında kalır ve söyleyecek bir şey yoksa o satır gizlenir.
 - **Canlı veri gelmezse** sayfa boş kalmaz; mevsime dayalı statik içerik görünür ve durum
   açıkça yazılır.
 - **Bayat veri gizlenmez, etiketlenir.** Ağ düşerse son alınan hava paketiyle devam edilir

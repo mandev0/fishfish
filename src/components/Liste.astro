@@ -10,12 +10,12 @@ interface Props {
 }
 const { maddeler, tip = 'duz', gorulen, haric } = Astro.props;
 const stil = {
-  ipucu: { kutu: 'border-good/40 border-l-[3px] border-l-good bg-good-soft', ikon: 'pusula', renk: 'text-good' },
-  hata: { kutu: 'border-danger/40 border-l-[3px] border-l-danger bg-danger-soft', ikon: 'uyari', renk: 'text-danger' },
-  duz: { kutu: 'border-line border-l-[3px] border-l-line-strong bg-surface', ikon: 'balik', renk: 'text-muted' },
+  ipucu: { kutu: 'border-good/45 bg-good-soft', ikon: 'pusula', renk: 'text-good' },
+  hata: { kutu: 'border-danger/45 bg-danger-soft', ikon: 'uyari', renk: 'text-danger' },
+  duz: { kutu: 'border-line bg-surface', ikon: 'balik', renk: 'text-muted' },
 }[tip];
 ---
-<ul class:list={['space-y-2.5 rounded-sm border p-4', stil.kutu]}>
+<ul class:list={['space-y-3 rounded-sm border-2 p-4', stil.kutu]}>
   {maddeler.map((m) => (
     <li class="flex gap-2.5 text-sm">
       <span class:list={['mt-[3px] shrink-0', stil.renk]}>

@@ -42,77 +42,90 @@ const bolgeler = [...new Set(veri.noktalar.map((n) => n.bolge))];
 <section
   id="hava-panel"
   data-sabit={sabitNokta}
-  class="rounded-sm border border-line-strong border-l-[3px] border-l-vurgu bg-bg-tint p-4 sm:p-5"
+  class="rounded-sm border-2 border-line-strong bg-bg-tint p-4 sm:p-5"
 >
-  <div class="flex flex-wrap items-center gap-3">
+  {/* Başlık satırı aynı zamanda panelin araç çubuğu: son yenileme damgası
+      düğmelerin hemen yanında durur, "bu veri ne kadar taze" sorusu
+      yenileme eylemiyle aynı yerde cevaplanır.
+
+      Dar ekranda başlık ve araç çubuğu ayrı satırlara iner: `flex-wrap` ile
+      sarmalayınca damga + düğmeler başlığın altına kayıp sağa yapışıyor,
+      kazara olmuş gibi duruyordu. Damga sola, düğmeler sağa hizalı.
+      Damga gizliyken düğmeler `justify-end` sayesinde sağda kalır. */}
+  <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
     <h2 class="text-xl sm:text-2xl">{baslikBicimi(baslik)}</h2>
-    <button
-      type="button" data-yenile
-      class="ml-auto rounded-sm border border-line bg-surface px-2.5 py-1.5 text-xs font-medium text-muted transition-colors hover:border-line-strong hover:text-ink disabled:opacity-50"
-    >Yenile</button>
+    <div class="flex items-center justify-end gap-2 sm:ml-auto">
+      <span data-guncelleme hidden class="sayisal mr-auto text-xs leading-tight text-muted sm:mr-0"></span>
+      {!sabitNokta && (
+        /* Konum yalnızca bu düğmeye basılınca sorulur; tarayıcı konum
+           vermiyorsa düğme hiç görünmez ve seçiciler tek başına yeter. */
+        <button
+          type="button" data-en-yakin hidden
+          class="dugme dugme-birincil dugme-ikon"
+          aria-label="Konumuma En Yakın Noktayı Seç"
+          title="Konumuma En Yakın Noktayı Seç"
+        ><Ikon ad="konum" sinif="size-[18px]" /></button>
+      )}
+      <button
+        type="button" data-yenile
+        class="dugme dugme-birincil dugme-ikon"
+        aria-label="Havayı Yenile" title="Havayı Yenile"
+      ><Ikon ad="yenile" sinif="size-[18px]" /></button>
+    </div>
   </div>
 
   {!sabitNokta && (
-    <div class="mt-3 grid gap-3 sm:grid-cols-[minmax(0,10rem)_minmax(0,1fr)]">
-      <label class="block">
-        <span class="text-xs uppercase tracking-wide text-muted">İl</span>
-        <select
-          data-il
-          class="mt-1 w-full rounded-sm border border-line bg-surface px-3 py-2.5 text-sm"
-        >
-          {iller.map((il) => <option value={il}>{IL_ADLARI[il] ?? il}</option>)}
-        </select>
-      </label>
-      <label class="block">
-        <span class="text-xs uppercase tracking-wide text-muted">Nokta</span>
-        {/* Sunucu tüm noktaları basar; il seçilince istemci listeyi daraltır. */}
-        <select
-          data-secici
-          class="mt-1 w-full rounded-sm border border-line bg-surface px-3 py-2.5 text-sm"
-        >
-          {bolgeler.map((b) => (
-            <optgroup label={BOLGE_ADLARI[b] ?? b} data-bolge={b}>
-              {veri.noktalar.filter((n) => n.bolge === b).map((n) => (
-                <option value={n.id}>{n.ad}</option>
-              ))}
-            </optgroup>
-          ))}
-        </select>
-      </label>
+    <div class="panel-bolum">
+      <h3 class="alt-baslik">Nokta Seçimi</h3>
+      <div class="mt-2 grid gap-4 sm:grid-cols-[minmax(0,10rem)_minmax(0,1fr)]">
+        <label class="block">
+          <span class="etiket-ust">İl</span>
+          <select data-il class="alan mt-1.5">
+            {iller.map((il) => <option value={il}>{IL_ADLARI[il] ?? il}</option>)}
+          </select>
+        </label>
+        <label class="block">
+          <span class="etiket-ust">Nokta</span>
+          {/* Sunucu tüm noktaları basar; il seçilince istemci listeyi daraltır. */}
+          <select data-secici class="alan mt-1.5">
+            {bolgeler.map((b) => (
+              <optgroup label={BOLGE_ADLARI[b] ?? b} data-bolge={b}>
+                {veri.noktalar.filter((n) => n.bolge === b).map((n) => (
+                  <option value={n.id}>{n.ad}</option>
+                ))}
+              </optgroup>
+            ))}
+          </select>
+        </label>
+      </div>
+      <p data-konum-durum hidden class="mt-2 text-sm text-warn" role="status"></p>
     </div>
   )}
 
-  {!sabitNokta && (
-    <>
-      {/* Konum yalnızca bu düğmeye basılınca sorulur; tarayıcı konum
-          vermiyorsa düğme hiç görünmez ve seçiciler tek başına yeter. */}
-      <button
-        type="button" data-en-yakin hidden
-        class="mt-2 inline-flex min-h-11 items-center gap-2 rounded-sm border border-line bg-surface px-3 py-2 text-sm font-medium text-ink transition-colors hover:border-accent disabled:opacity-60"
-      >
-        <Ikon ad="konum" sinif="size-4 shrink-0 text-accent" />
-        <span data-en-yakin-etiket>Konumuma en yakın noktayı seç</span>
-      </button>
-      <p data-konum-durum hidden class="mt-2 text-sm text-warn" role="status"></p>
-    </>
-  )}
-
-  <p data-durum-metni class="mt-3 text-sm text-muted">
-    Canlı veri için tarayıcıda JavaScript gerekiyor. Aşağıdaki liste mevsime göre hazırlandı.
-  </p>
-
-  <div data-canli hidden>
-    <div data-durum class="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3"></div>
-    <div data-uyari class="mt-4"></div>
-    <ul data-liste class="mt-4 space-y-2"></ul>
-    <p class="mt-4 text-xs text-muted">
-      Skorlar sezgisel bir tahmindir, garanti değildir. Her satırdaki
-      “Skor nasıl hesaplandı?” bağlantısı hangi faktörün ne kadar etkilediğini gösterir.
-      Veri kaynağı: Open-Meteo.
+  <div class="panel-bolum">
+    <h3 class="alt-baslik">Bugünün Koşulları</h3>
+    <p data-durum-metni class="mt-2 text-sm text-muted">
+      Canlı veri için tarayıcıda JavaScript gerekiyor. Aşağıdaki liste mevsime göre hazırlandı.
     </p>
+    <div data-canli hidden>
+      <div data-durum class="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3"></div>
+      <div data-uyari class="mt-3"></div>
+    </div>
   </div>
 
-  <slot />
+  <div class="panel-bolum">
+    <h3 class="alt-baslik">Bugün Ne Çıkar</h3>
+    <div data-canli hidden>
+      <ul data-liste class="mt-3 space-y-3"></ul>
+      <p class="mt-3 text-xs text-muted">
+        Skorlar sezgisel bir tahmindir, garanti değildir. Her satırdaki
+        “Skor Nasıl Hesaplandı?” bağlantısı hangi faktörün ne kadar etkilediğini gösterir.
+        Veri kaynağı: Open-Meteo.
+      </p>
+    </div>
+
+    <slot />
+  </div>
 </section>
 
 <script type="application/json" id="fishfish-veri" set:html={JSON.stringify(veri)} is:inline></script>

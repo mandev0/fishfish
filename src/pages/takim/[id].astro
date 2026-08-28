@@ -32,15 +32,15 @@ const gorulen = new Set<string>();
   </div>
 
   <Bolum baslik="Bileşenler">
-    <div class="overflow-hidden rounded-sm border border-line">
+    <div class="overflow-hidden rounded-sm border-2 border-line">
       <table class="w-full border-collapse text-sm">
         <tbody>
           {d.bilesenler.map((b, i) => (
             <tr class:list={[i % 2 ? 'bg-surface' : 'bg-surface-2/50']}>
               <th scope="row" class="w-32 border-b border-line px-3 py-2.5 text-left align-top font-semibold">
                 {b.ekipman
-                  ? <a href={`/ekipman/${b.ekipman}`} class="text-accent hover:underline">{b.ad}</a>
-                  : b.ad}
+                  ? <a href={`/ekipman/${b.ekipman}`} class="text-accent hover:underline">{baslikBicimi(b.ad)}</a>
+                  : baslikBicimi(b.ad)}
               </th>
               <td class="border-b border-line px-3 py-2.5 align-top">
                 <span class="font-medium">{b.deger}</span>
@@ -59,10 +59,10 @@ const gorulen = new Set<string>();
   </Bolum>
 
   <Bolum baslik="Kurulum">
-    <ol class="space-y-2">
+    <ol class="space-y-3">
       {d.kurulum.map((adim, i) => (
-        <li class="kart flex gap-3 p-3 text-sm">
-          <span class="sayisal flex size-6 shrink-0 items-center justify-center rounded-sm bg-accent text-xs font-bold text-accent-ink">{i + 1}</span>
+        <li class="kart flex gap-4 p-4 text-sm">
+          <span class="sayisal flex size-7 shrink-0 items-center justify-center rounded-sm bg-accent text-sm font-bold text-accent-ink">{i + 1}</span>
           <Metin metin={adim} gorulen={gorulen} />
         </li>
       ))}
@@ -73,7 +73,7 @@ const gorulen = new Set<string>();
     <Bolum baslik="Gereken Düğümler">
       <ul class="flex flex-wrap gap-2">
         {dugumler.map((k) => (
-          <li><a href={`/dugum/${k!.id}`} class="block kart px-3 py-1.5 text-sm hover:border-accent">{k!.data.ad}</a></li>
+          <li><a href={`/dugum/${k!.id}`} class="kart baglanti-cip">{k!.data.ad}</a></li>
         ))}
       </ul>
     </Bolum>
@@ -85,7 +85,7 @@ const gorulen = new Set<string>();
   <Bolum baslik="Bu Takımla Tutulan Balıklar">
     <ul class="flex flex-wrap gap-2">
       {turler.map((t) => (
-        <li><a href={`/balik/${t!.id}`} class="block kart px-3 py-1.5 text-sm hover:border-accent">{t!.data.ad}</a></li>
+        <li><a href={`/balik/${t!.id}`} class="kart baglanti-cip">{t!.data.ad}</a></li>
       ))}
     </ul>
   </Bolum>

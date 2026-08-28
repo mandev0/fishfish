@@ -32,7 +32,7 @@ const KATEGORI_ADI: Record<string, string> = {
     <a href="/ekipman" class="text-accent hover:underline">← Tüm ekipman</a>
   </nav>
 
-  <p class="text-xs uppercase tracking-wide text-muted">{KATEGORI_ADI[d.kategori]}</p>
+  <p class="etiket-ust">{baslikBicimi(KATEGORI_ADI[d.kategori] ?? d.kategori)}</p>
   <h1 class="mt-1 text-2xl font-bold tracking-tight sm:text-3xl">{baslikBicimi(d.ad)}</h1>
   {d.esAdlar.length > 0 && (
     <p class="mt-1 text-sm text-muted">Ayrıca şöyle de denir: {d.esAdlar.join(', ')}</p>
@@ -53,7 +53,7 @@ const KATEGORI_ADI: Record<string, string> = {
 
   {d.nasilSecilir.length > 0 && (
     <Bolum baslik="Nasıl Seçilir">
-      <div class="space-y-2">
+      <div class="space-y-3">
         {d.nasilSecilir.map((n) => (
           <div class="kart p-4">
             <h3 class="font-semibold">{baslikBicimi(n.baslik)}</h3>
@@ -74,7 +74,7 @@ const KATEGORI_ADI: Record<string, string> = {
     <Bolum baslik="Bununla Kullanılan Düğümler">
       <ul class="flex flex-wrap gap-2">
         {dugumler.map((k) => (
-          <li><a href={`/dugum/${k!.id}`} class="block kart px-3 py-2 text-sm hover:border-accent">{k!.data.ad}</a></li>
+          <li><a href={`/dugum/${k!.id}`} class="kart baglanti-cip">{k!.data.ad}</a></li>
         ))}
       </ul>
     </Bolum>
@@ -89,7 +89,7 @@ const KATEGORI_ADI: Record<string, string> = {
             <div class="kart p-4">
               <div class="flex flex-wrap items-baseline gap-2">
                 <h3 class="font-semibold">
-                  <a href={`/takim/${r.id}`} class="hover:text-accent">{r.data.ad}</a>
+                  <a href={`/takim/${r.id}`} class="hover:text-vurgu">{r.data.ad}</a>
                 </h3>
                 <span class="text-sm text-muted">— burada: {b.deger}</span>
               </div>
@@ -106,10 +106,10 @@ const KATEGORI_ADI: Record<string, string> = {
 
   {ilgili.length > 0 && (
     <Bolum baslik="İlgili Parçalar">
-      <ul class="grid gap-2 sm:grid-cols-2">
+      <ul class="grid gap-3 sm:grid-cols-2">
         {ilgili.map((e) => (
           <li>
-            <a href={`/ekipman/${e!.id}`} class="block h-full kart p-3 hover:border-accent">
+            <a href={`/ekipman/${e!.id}`} class="block h-full kart p-4 hover:border-accent">
               <span class="font-medium">{e!.data.ad}</span>
               <span class="mt-0.5 block text-sm text-muted">{e!.data.ozet}</span>
             </a>

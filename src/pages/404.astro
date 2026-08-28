@@ -6,13 +6,13 @@ import Base from '../layouts/Base.astro';
   <p class="mt-2 text-muted">Aradığın sayfa taşınmış veya hiç var olmamış olabilir.</p>
   <ul class="mt-6 flex flex-wrap gap-2">
     {[
-      ['Bugün ne tutulur?', '/'],
-      ['Balık takvimi', '/takvim'],
+      ['Bugün Ne Tutulur?', '/'],
+      ['Balık Takvimi', '/takvim'],
       ['Balıklar', '/balik'],
       ['Takımlar', '/takim'],
       ['Noktalar', '/noktalar'],
     ].map(([ad, href]) => (
-      <li><a href={href} class="block kart px-3 py-1.5 text-sm hover:border-accent">{ad}</a></li>
+      <li><a href={href} class="kart baglanti-cip">{ad}</a></li>
     ))}
   </ul>
 </Base>

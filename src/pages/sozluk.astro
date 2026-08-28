@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import sozluk from '../data/glossary.json';
+import { baslikBicimi } from '../lib/metin';
 
 const sirali = [...sozluk].sort((a, b) => a.terim.localeCompare(b.terim, 'tr'));
 ---
@@ -14,14 +15,14 @@ const sirali = [...sozluk].sort((a, b) => a.terim.localeCompare(b.terim, 'tr'));
     <span class="sr-only">Terim ara</span>
     <input
       type="search" data-arama placeholder="Terim ara…"
-      class="w-full kart px-3 py-2 text-sm"
+      class="alan"
     />
   </label>
 
   <dl class="mt-5 divide-y divide-line kart">
     {sirali.map((s) => (
       <div data-madde data-terim={s.terim.toLocaleLowerCase('tr')} class="p-4">
-        <dt class="font-semibold">{s.terim}</dt>
+        <dt class="font-semibold">{baslikBicimi(s.terim)}</dt>
         <dd class="mt-1 text-sm text-muted">{s.aciklama}</dd>
       </div>
     ))}

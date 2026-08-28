@@ -6,6 +6,6 @@ const { baslik, id, not } = Astro.props;
 ---
 <section id={id} class="mt-10 scroll-mt-20">
   <h2 class="bolum-baslik mb-1 text-xl sm:text-2xl">{baslikBicimi(baslik)}</h2>
-  {not && <p class="mb-3 pl-[0.7rem] text-sm text-muted">{not}</p>}
+  {not && <p class="mb-3 mt-2 text-sm text-muted">{not}</p>}
   <div class={not ? '' : 'mt-3'}><slot /></div>
 </section>

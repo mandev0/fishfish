@@ -61,7 +61,7 @@ const gorulen = new Set<string>();
 
   <Bolum baslik="Nedir">
     <Metin metin={d.nedir} etiket="p" sinif="max-w-2xl" gorulen={gorulen} />
-    <div class="mt-4 grid gap-3 sm:grid-cols-2">
+    <div class="mt-4 grid gap-5 sm:grid-cols-2">
       <div class="kart kart-vurgulu p-4">
         <h3 class="text-sm font-semibold">Kime Uygun</h3>
         <Metin metin={d.kimeUygun} etiket="p" sinif="mt-1 text-sm text-muted" gorulen={gorulen} />
@@ -79,10 +79,10 @@ const gorulen = new Set<string>();
   </Bolum>
 
   <Bolum baslik="Adım Adım">
-    <ol class="space-y-2">
+    <ol class="space-y-3">
       {d.adimlar.map((adim, i) => (
-        <li class="kart flex gap-3 p-3 text-sm">
-          <span class="sayisal flex size-6 shrink-0 items-center justify-center rounded-sm bg-accent text-xs font-bold text-accent-ink">{i + 1}</span>
+        <li class="kart flex gap-4 p-4 text-sm">
+          <span class="sayisal flex size-7 shrink-0 items-center justify-center rounded-sm bg-accent text-sm font-bold text-accent-ink">{i + 1}</span>
           <Metin metin={adim} gorulen={gorulen} />
         </li>
       ))}
@@ -90,11 +90,11 @@ const gorulen = new Set<string>();
   </Bolum>
 
   <Bolum baslik="Kullanılan Takımlar" not={`${takimlar.length} takım şeması`}>
-    <div class="grid gap-4 sm:grid-cols-2">
+    <div class="grid gap-5 sm:grid-cols-2">
       {takimlar.map((r) => (
         <a href={`/takim/${r!.id}`} class="group kart p-4 hover:border-accent">
           <div class="flex items-baseline justify-between gap-2">
-            <h3 class="font-semibold group-hover:text-accent">{baslikBicimi(r!.data.ad)}</h3>
+            <h3 class="font-semibold group-hover:text-vurgu">{baslikBicimi(r!.data.ad)}</h3>
             <Zorluk seviye={r!.data.zorluk} etiket={false} />
           </div>
           <p class="mt-1 text-sm text-muted">{r!.data.ozet}</p>
@@ -110,7 +110,7 @@ const gorulen = new Set<string>();
     <Bolum baslik="Gereken Ekipman">
       <ul class="flex flex-wrap gap-2">
         {ekipman.map((e) => (
-          <li><a href={`/ekipman/${e!.id}`} class="block kart px-3 py-1.5 text-sm hover:border-accent">{e!.data.ad}</a></li>
+          <li><a href={`/ekipman/${e!.id}`} class="kart baglanti-cip">{e!.data.ad}</a></li>
         ))}
       </ul>
     </Bolum>
@@ -120,19 +120,19 @@ const gorulen = new Set<string>();
   {d.hatalar.length > 0 && <Bolum baslik="Sık Yapılan Hatalar"><Liste maddeler={d.hatalar} tip="hata" gorulen={gorulen} /></Bolum>}
 
   <Bolum baslik="Bu Yöntemin Balıkları" not={`${turler.length} tür`}>
-    <div class="grid gap-3 sm:grid-cols-2">
+    <div class="grid gap-5 sm:grid-cols-2">
       {turler.map((t) => <SpeciesCard tur={t} />)}
     </div>
   </Bolum>
 
   <Bolum baslik="Nerede Uygulanır" not={`${noktalar.length} nokta · ${bolgeler.length} bölge`}>
-    <ul class="grid gap-2 sm:grid-cols-2">
+    <ul class="grid gap-3 sm:grid-cols-2">
       {noktalar.map((n) => (
         <li>
           <a
             href={`/nokta/${n.id}`}
             data-bolge={n.data.bolge}
-            class="block kart bolge-kenar p-3 hover:border-accent"
+            class="block kart p-4 transition-colors hover:border-line-strong"
           >
             <span class="font-medium">{n.data.ad}</span>
             <span class="mt-0.5 block text-xs text-muted">{bolgeTamAdi(n.data.bolge)}</span>

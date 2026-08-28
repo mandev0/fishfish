@@ -24,14 +24,14 @@ const gruplar = yontemler
   {gruplar.map((g) => (
     <section class="mt-8">
       <h2 class="bolum-baslik mb-1 text-xl sm:text-2xl">
-        <a href={`/yontem/${g.yontem.id}`} class="hover:text-accent">{baslikBicimi(g.yontem.data.ad)}</a>
+        <a href={`/yontem/${g.yontem.id}`} class="hover:text-vurgu">{baslikBicimi(g.yontem.data.ad)}</a>
       </h2>
-      <p class="mb-3 pl-[0.7rem] text-sm text-muted">{g.yontem.data.ozet}</p>
-      <div class="grid gap-4 sm:grid-cols-2">
+      <p class="mb-3 mt-2 text-sm text-muted">{g.yontem.data.ozet}</p>
+      <div class="grid gap-5 sm:grid-cols-2">
         {g.liste.map((r) => (
           <a href={`/takim/${r.id}`} class="group kart p-4 hover:border-accent">
             <div class="flex items-baseline justify-between gap-2">
-              <h3 class="font-semibold group-hover:text-accent">{baslikBicimi(r.data.ad)}</h3>
+              <h3 class="font-semibold group-hover:text-vurgu">{baslikBicimi(r.data.ad)}</h3>
               <Zorluk seviye={r.data.zorluk} />
             </div>
             <p class="mt-1 text-sm text-muted">{r.data.ozet}</p>

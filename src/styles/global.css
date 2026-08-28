@@ -1,32 +1,38 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------
-   Renk sistemi — "deniz haritası / balıkçı almanağı".
+   Renk sistemi — "mürekkep ve kâğıt" almanağı.
 
    İki renk taşıyor:
-     --accent   yapı ve bağlantı rengi (Boğaz laciverti)
-     --vurgu    aksan (can yeleği / şamandıra turuncusu) — az ve yerinde
+     --accent   mürekkep: yapı, bağlantı, ikon zemini. Siyaha yakın.
+     --vurgu    aksan (can yeleği / şamandıra turuncusu): eylem rengi.
+                Düğmeler, aktif sekme, odak halkası. Az ve yerinde.
 
-   Bölgelerin kendi renkleri var; aynı renk hem haritada hem kartlarda.
+   Renkli sol kenar çubukları kaldırıldı: yapı çerçeve, zemin tonu ve
+   tipografiyle kuruluyor. Bölgelerin kendi renkleri var; aynı renk hem
+   haritada hem kartlarda (nokta karesi ve etiket metninde).
 --------------------------------------------------------------- */
 :root {
   color-scheme: light;
-  --bg: #f5f2e9;
-  --bg-tint: #ece7da;
+  --bg: #f4f1e8;
+  --bg-tint: #eae5d7;
   --surface: #fffdf7;
-  --surface-2: #f0ece0;
-  --text: #10222e;
-  --text-muted: #55707e;
-  --border: #d5cdba;
-  --border-strong: #b7ab92;
+  --surface-2: #efeade;
+  --text: #17191c;
+  --text-muted: #5d6469;
+  --border: #d8d2c1;
+  --border-strong: #b0a894;
 
-  /* Yapı ve bağlantı rengi: Boğaz laciverti. */
-  --accent: #0b4f66;
-  --accent-soft: #dae8ee;
-  --accent-ink: #ffffff;
-  /* Aksan: can yeleği / şamandıra turuncusu. Az ve yerinde kullanılır. */
-  --vurgu: #c4551f;
-  --vurgu-soft: #fbe4d5;
+  /* Mürekkep: yapı ve bağlantı rengi. Siyaha yakın, hafif soğuk. */
+  --accent: #1c1f22;
+  --accent-soft: #e7e3d6;
+  --accent-ink: #fffdf7;
+  /* Aksan: can yeleği / şamandıra turuncusu. Eylem rengi. */
+  --vurgu: #a5441a;
+  --vurgu-koyu: #87360f;
+  --vurgu-soft: #f6e4d5;
+  --vurgu-dolgu: #a5441a;
+  --vurgu-dolgu-koyu: #87360f;
   --vurgu-ink: #ffffff;
 
   --warn: #a8620a;
@@ -36,7 +42,9 @@
   --good: #256b4a;
   --good-soft: #d8ecdf;
 
-  --shadow: 0 1px 0 rgb(16 34 46 / 0.05), 0 2px 8px rgb(16 34 46 / 0.06);
+  --etiket: #767d83;
+
+  --shadow: 0 1px 0 rgb(23 25 28 / 0.06), 0 2px 8px rgb(23 25 28 / 0.07);
 
   --bolge-bogaz-rumeli: #0b6e7f;
   --bolge-bogaz-anadolu: #2c7145;
@@ -64,33 +72,39 @@
   --bol5-bg: #c0e2c9; --bol5-fg: #1f5a38; --bol5-cizgi: #47a670;
 }
 
+/* Koyu tema: zemin de siyaha yakın, mürekkep tersine döner (kâğıt rengi olur). */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-  --bg: #0b1820;
-  --bg-tint: #0f202a;
-  --surface: #12242f;
-  --surface-2: #182f3c;
-  --text: #e4eef3;
-  --text-muted: #8ba6b5;
-  --border: #21404f;
-  --border-strong: #33596b;
+  --bg: #0e0f11;
+  --bg-tint: #141618;
+  --surface: #16181a;
+  --surface-2: #1e2124;
+  --text: #e9e7e1;
+  --text-muted: #9aa0a4;
+  --border: #2a2d31;
+  --border-strong: #464b50;
 
-  --accent: #5fb6d4;
-  --accent-soft: #0e3345;
-  --accent-ink: #04161f;
-  --vurgu: #ef8b52;
-  --vurgu-soft: #3a2013;
-  --vurgu-ink: #1b0d05;
+  --accent: #e9ebec;
+  --accent-soft: #23262a;
+  --accent-ink: #0e0f11;
+  --vurgu: #e28a4d;
+  --vurgu-koyu: #ee9a5f;
+  --vurgu-soft: #2c1c11;
+  --vurgu-dolgu: #b84f1a;
+  --vurgu-dolgu-koyu: #cf5c22;
+  --vurgu-ink: #ffffff;
 
   --warn: #e0a04a;
-  --warn-soft: #33260f;
+  --warn-soft: #2b2313;
   --danger: #e8827a;
-  --danger-soft: #38191a;
+  --danger-soft: #2e1a19;
   --good: #5cbe8c;
-  --good-soft: #113023;
+  --good-soft: #12291f;
 
-  --shadow: 0 1px 0 rgb(0 0 0 / 0.5), 0 2px 10px rgb(0 0 0 / 0.4);
+  --etiket: #a8aeb3;
+
+  --shadow: 0 1px 0 rgb(0 0 0 / 0.6), 0 2px 10px rgb(0 0 0 / 0.5);
 
   --bolge-bogaz-rumeli: #46b3c4;
   --bolge-bogaz-anadolu: #63bd86;
@@ -111,7 +125,7 @@
   --zor4-bg: #33200f; --zor4-fg: #e59967; --zor4-cizgi: #8a532a;
   --zor5-bg: #331a19; --zor5-fg: #e68a80; --zor5-cizgi: #8a3e37;
 
-  --bol1-bg: #1a242a; --bol1-fg: #8b9ea7; --bol1-cizgi: #495b64;
+  --bol1-bg: #1a1c1e; --bol1-fg: #8b9ea7; --bol1-cizgi: #495b64;
   --bol2-bg: #172b23; --bol2-fg: #90b59f; --bol2-cizgi: #446d57;
   --bol3-bg: #143024; --bol3-fg: #83c29e; --bol3-cizgi: #3d7a59;
   --bol4-bg: #113425; --bol4-fg: #74c99a; --bol4-cizgi: #38885c;
@@ -121,30 +135,35 @@
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #0b1820;
-  --bg-tint: #0f202a;
-  --surface: #12242f;
-  --surface-2: #182f3c;
-  --text: #e4eef3;
-  --text-muted: #8ba6b5;
-  --border: #21404f;
-  --border-strong: #33596b;
+  --bg: #0e0f11;
+  --bg-tint: #141618;
+  --surface: #16181a;
+  --surface-2: #1e2124;
+  --text: #e9e7e1;
+  --text-muted: #9aa0a4;
+  --border: #2a2d31;
+  --border-strong: #464b50;
 
-  --accent: #5fb6d4;
-  --accent-soft: #0e3345;
-  --accent-ink: #04161f;
-  --vurgu: #ef8b52;
-  --vurgu-soft: #3a2013;
-  --vurgu-ink: #1b0d05;
+  --accent: #e9ebec;
+  --accent-soft: #23262a;
+  --accent-ink: #0e0f11;
+  --vurgu: #e28a4d;
+  --vurgu-koyu: #ee9a5f;
+  --vurgu-soft: #2c1c11;
+  --vurgu-dolgu: #b84f1a;
+  --vurgu-dolgu-koyu: #cf5c22;
+  --vurgu-ink: #ffffff;
 
   --warn: #e0a04a;
-  --warn-soft: #33260f;
+  --warn-soft: #2b2313;
   --danger: #e8827a;
-  --danger-soft: #38191a;
+  --danger-soft: #2e1a19;
   --good: #5cbe8c;
-  --good-soft: #113023;
+  --good-soft: #12291f;
 
-  --shadow: 0 1px 0 rgb(0 0 0 / 0.5), 0 2px 10px rgb(0 0 0 / 0.4);
+  --etiket: #a8aeb3;
+
+  --shadow: 0 1px 0 rgb(0 0 0 / 0.6), 0 2px 10px rgb(0 0 0 / 0.5);
 
   --bolge-bogaz-rumeli: #46b3c4;
   --bolge-bogaz-anadolu: #63bd86;
@@ -165,7 +184,7 @@
   --zor4-bg: #33200f; --zor4-fg: #e59967; --zor4-cizgi: #8a532a;
   --zor5-bg: #331a19; --zor5-fg: #e68a80; --zor5-cizgi: #8a3e37;
 
-  --bol1-bg: #1a242a; --bol1-fg: #8b9ea7; --bol1-cizgi: #495b64;
+  --bol1-bg: #1a1c1e; --bol1-fg: #8b9ea7; --bol1-cizgi: #495b64;
   --bol2-bg: #172b23; --bol2-fg: #90b59f; --bol2-cizgi: #446d57;
   --bol3-bg: #143024; --bol3-fg: #83c29e; --bol3-cizgi: #3d7a59;
   --bol4-bg: #113425; --bol4-fg: #74c99a; --bol4-cizgi: #38885c;
@@ -188,6 +207,7 @@
   --color-accent-ink: var(--accent-ink);
   --color-vurgu: var(--vurgu);
   --color-vurgu-soft: var(--vurgu-soft);
+  --color-vurgu-dolgu: var(--vurgu-dolgu);
   --color-vurgu-ink: var(--vurgu-ink);
   --color-warn: var(--warn);
   --color-warn-soft: var(--warn-soft);
@@ -196,19 +216,23 @@
   --color-good: var(--good);
   --color-good-soft: var(--good-soft);
 
-  /* Köşeler: deniz haritası ve tarife cetveli gibi keskin. */
-  --radius-xs: 1px;
+  /* Tek yarıçap sözlüğü: her şey 2 px. Ölçek boyunca değişen yuvarlaklık
+     (kart 8, düğme 12, rozet 999) şablon görüntüsünün ana kaynağı. */
+  --radius-xs: 2px;
   --radius-sm: 2px;
-  --radius-md: 3px;
-  --radius-lg: 4px;
-  --radius-xl: 5px;
-  --radius-2xl: 7px;
-  --radius-3xl: 9px;
+  --radius-md: 2px;
+  --radius-lg: 2px;
+  --radius-xl: 2px;
+  --radius-2xl: 2px;
+  --radius-3xl: 2px;
 
-  /* Başlıklar serif — almanak/rehber hissi, jenerik arayüz hissi değil. */
+  /* Başlıklar serif — almanak/rehber hissi. Gövde metni işletim sisteminin
+     kendi arayüz yüzü; "Inter" yazıp yüklememek zaten sistem yüzüne
+     düşüyordu, o hayalet adım kaldırıldı. */
   --font-baslik: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
                  Georgia, ui-serif, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, monospace;
 }
 
@@ -276,32 +300,25 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
 .prose strong { font-weight: 650; }
 
 /* ---------------------------------------------------------------
-   Bölüm başlığı — solunda ince aksan çubuğu
+   Bölüm başlığı — almanak kuralı: başlığın altına tam genişlik ince
+   çizgi. Eskiden solunda 3 px turuncu çubuk vardı; her kutunun yanına
+   renkli bir şerit koyan o desen kaldırıldı.
 --------------------------------------------------------------- */
 .bolum-baslik {
-  position: relative;
-  padding-left: 0.7rem;
-}
-.bolum-baslik::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.18em;
-  bottom: 0.18em;
-  width: 3px;
-  border-radius: 1px;
-  background: var(--vurgu);
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid var(--border-strong);
 }
 
 /* ---------------------------------------------------------------
    Kart — köşeler keskin, gölge yok, yapı çizgiyle kuruluyor
 --------------------------------------------------------------- */
 .kart {
-  border: 1px solid var(--border);
-  border-radius: 4px;
+  border: 2px solid var(--border);
+  border-radius: 2px;
   background: var(--surface);
 }
-.kart-vurgulu { border-left: 3px solid var(--vurgu); }
+/* Vurgulu kart: renkli kenar çubuğu değil, koyu zemin tonu + belirgin çerçeve. */
+.kart-vurgulu { background: var(--bg-tint); border-color: var(--border-strong); }
 
 /* Bölge renkleri — nokta kartlarının sol kenarında ve rozetlerde */
 [data-bolge] { --bolge: var(--border-strong); }
@@ -318,7 +335,9 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
 [data-bolge="sapanca"]        { --bolge: var(--bolge-sapanca); }
 [data-bolge="sakarya-icsu"]   { --bolge: var(--bolge-sakarya-icsu); }
 
-.bolge-kenar { border-left: 3px solid var(--bolge); }
+/* Bölge kimliği kartın sol kenarındaki renkli çubukla değil, başlık
+   satırındaki kare (.bolge-nokta) ve etiket metniyle (.bolge-metin)
+   taşınır — ikisi de harita işaretçisiyle aynı jetonu okuyor. */
 .bolge-nokta {
   display: inline-block;
   width: 0.5rem;
@@ -351,9 +370,9 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
   --d-metal-dolgu: #ccd0d6;
   --d-metal-cizgi: #67707c;
   --d-igne: #55626f;
-  --d-yem: #c4551f;
-  --d-yem-dolgu: #f7d9c6;
-  --d-dugum: #c4551f;
+  --d-yem: #a5441a;
+  --d-yem-dolgu: #f6e0cf;
+  --d-dugum: #a5441a;
   --d-su: #2f7fa8;
   --d-zemin: #9c8557;
 }
@@ -365,9 +384,9 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
   --d-metal-dolgu: #2f3d49;
   --d-metal-cizgi: #94a5b4;
   --d-igne: #9db0bf;
-  --d-yem: #f09059;
-  --d-yem-dolgu: #46281a;
-  --d-dugum: #f09059;
+  --d-yem: #e28a4d;
+  --d-yem-dolgu: #3a2415;
+  --d-dugum: #e28a4d;
   --d-su: #4aa8d6;
   --d-zemin: #b39a67;
 }
@@ -379,9 +398,9 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
     --d-metal-dolgu: #ccd0d6;
     --d-metal-cizgi: #67707c;
     --d-igne: #55626f;
-    --d-yem: #c4551f;
-    --d-yem-dolgu: #f7d9c6;
-    --d-dugum: #c4551f;
+    --d-yem: #a5441a;
+    --d-yem-dolgu: #f6e0cf;
+    --d-dugum: #a5441a;
     --d-su: #2f7fa8;
     --d-zemin: #9c8557;
   }
@@ -473,7 +492,7 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  border-radius: 3px;
+  border-radius: 2px;
   padding: 0.2rem 0.5rem 0.2rem 0.42rem;
   font-size: 0.75rem;
   font-weight: 600;
@@ -559,13 +578,13 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
   text-decoration-style: dotted;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 3px;
-  text-decoration-color: color-mix(in srgb, var(--accent) 65%, transparent);
+  text-decoration-color: color-mix(in srgb, var(--vurgu) 70%, transparent);
   border-radius: 2px;
 }
 .terim:hover,
 .terim[aria-expanded='true'] {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
+  color: var(--vurgu);
+  text-decoration-color: var(--vurgu);
 }
 /* Dokunmatikte hedef alanı büyüsün (imleç yok, parmak var). */
 @media (hover: none) and (pointer: coarse) {
@@ -580,9 +599,8 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
   align-items: flex-start;
   gap: 0.25rem;
   padding: 0.7rem 0.8rem;
-  border: 1px solid var(--border-strong);
-  border-left: 3px solid var(--vurgu);
-  border-radius: 3px;
+  border: 2px solid var(--border-strong);
+  border-radius: 2px;
   background: var(--surface);
   box-shadow: var(--shadow);
   font-size: 0.875rem;
@@ -608,7 +626,7 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
   height: 1.75rem;
   margin: -0.25rem -0.35rem 0 0;
   border: 0;
-  border-radius: 0.4rem;
+  border-radius: 2px;
   background: none;
   color: var(--text-muted);
   font-size: 1.15rem;
@@ -635,7 +653,7 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
   gap: 0.75rem;
   padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom));
   border: 0;
-  border-top: 3px solid var(--vurgu);
+  border-top: 2px solid var(--border-strong);
   border-radius: 0;
   font-size: 0.95rem;
   box-shadow: 0 -14px 34px -16px rgb(0 0 0 / 0.4);
@@ -663,11 +681,10 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  min-height: 2.75rem;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--vurgu);
-  border-radius: 3px;
+  min-height: 2.5rem;
+  padding: 0.4rem 0.7rem;
+  border: 2px solid var(--border-strong);
+  border-radius: 2px;
   background: var(--surface);
   font-size: 0.875rem;
   font-weight: 500;
@@ -694,7 +711,7 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
   min-height: 1.6rem;
   padding: 0.15rem 0.4rem;
   border: 1px solid var(--border);
-  border-radius: 3px;
+  border-radius: 2px;
   background: var(--surface);
   color: var(--text-muted);
   font-size: 0.75rem;
@@ -714,4 +731,187 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
 /* Dokunmatikte parmak hedefi büyüsün */
 @media (hover: none) and (pointer: coarse) {
   .rozet { min-height: 2rem; padding-inline: 0.5rem; cursor: pointer; }
+}
+
+/* ---------------------------------------------------------------
+   Düğmeler — tek sözlük
+
+   Eylem rengi aksandır (şamandıra turuncusu): birincil düğme dolu
+   turuncu, ikincil düğme mürekkep çerçeve. Sayfaların içine tek tek
+   Tailwind sınıfı yazmak yerine buradan okunur; aksi hâlde her sayfada
+   biraz farklı bir düğme çıkıyor.
+--------------------------------------------------------------- */
+.dugme {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.5rem;
+  padding: 0.4rem 0.8rem;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+.dugme:disabled { opacity: 0.55; cursor: default; }
+
+/* Birincil eylem: dolu aksan. */
+.dugme-birincil {
+  background: var(--vurgu-dolgu);
+  border-color: var(--vurgu-dolgu);
+  color: var(--vurgu-ink);
+}
+.dugme-birincil:hover:not(:disabled) {
+  background: var(--vurgu-dolgu-koyu);
+  border-color: var(--vurgu-dolgu-koyu);
+}
+
+/* İkincil eylem: mürekkep çerçeve, dolgusuz. */
+.dugme-ikincil {
+  background: var(--surface);
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+.dugme-ikincil:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--bg-tint);
+}
+
+/* Seçilebilir çip (su alanı süzgeci gibi). Seçili hâli aksan taşır.
+   Boyu diğer düğmelerle aynı: ikinci bir düğme boyu, dokunma hedefini de
+   44 px'in altına düşürüyordu. */
+.dugme-cip {
+  padding: 0.4rem 0.7rem;
+  font-weight: 500;
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+.dugme-cip:hover:not(:disabled) { border-color: var(--border-strong); color: var(--text); }
+.dugme-cip[aria-pressed="true"] {
+  background: var(--vurgu-dolgu);
+  border-color: var(--vurgu-dolgu);
+  color: var(--vurgu-ink);
+  font-weight: 600;
+}
+
+/* Kare ikon düğmesi (tema anahtarı). */
+.dugme-ikon {
+  width: 2.5rem;
+  min-height: 2.5rem;
+  padding: 0;
+}
+
+/* ---------------------------------------------------------------
+   Form alanları — tek sözlük
+
+   Seçici ve arama kutusu üç ayrı yerde üç farklı yazılmıştı
+   (`kart px-3 py-2.5`, elle çerçeve, `kart px-3 py-2`). Hepsi buradan
+   okunuyor; boy da düğmelerle aynı, satır başına tek bir yükseklik var.
+--------------------------------------------------------------- */
+.alan {
+  display: block;
+  width: 100%;
+  min-height: 2.5rem;
+  padding: 0.4rem 0.7rem;
+  border: 2px solid var(--border);
+  border-radius: 2px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.875rem;
+  line-height: 1.3;
+}
+.alan:hover { border-color: var(--border-strong); }
+
+/* Onay kutusu — parmakla vurulacak boyda, aksan rengiyle işaretlenir. */
+.onay {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+  accent-color: var(--vurgu-dolgu);
+}
+
+/* ---------------------------------------------------------------
+   Üst etiket ("İL", "RÜZGÂR", "YAŞAM ALANI")
+
+   Küçük büyük harfli etiket satırı 22 yerde üç farklı ağırlıkta
+   yazılmıştı. Tek yerden geliyor; ikonlu olanlar da aynı satırda hizalı.
+--------------------------------------------------------------- */
+.etiket-ust {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+/* ---------------------------------------------------------------
+   Alt başlık — bölüm içi ara başlık ("Nokta Seçimi", "İpuçları")
+
+   Büyük harfe çevrilmiyor: metin başlık biçiminde yazılır. Gerçek
+   başlıklardan (h1/h2, serif + mürekkep) rengiyle ayrışır: gövdeden
+   açık, kendi jetonunda. 19 px yarı kalın olduğu için bu açık ton
+   WCAG'ın büyük metin eşiğini karşılıyor.
+--------------------------------------------------------------- */
+.alt-baslik {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-baslik);
+  font-size: 1.1875rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  color: var(--etiket);
+}
+
+/* ---------------------------------------------------------------
+   Gezinme çipi — kart görünümlü kısa bağlantı (ay listesi, düğüm
+   listesi, ilgili tür listesi). `.kart` ile birlikte kullanılır;
+   yüksekliği düğmelerle aynı, dokunma hedefi 44 px.
+--------------------------------------------------------------- */
+.baglanti-cip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8125rem;
+  transition: border-color 0.12s ease, color 0.12s ease;
+}
+.baglanti-cip:hover { border-color: var(--accent); }
+
+/* ---------------------------------------------------------------
+   Satır içi açılır bölüm başlığı ("Skor Nasıl Hesaplandı?")
+
+   Tarayıcının kendi üçgen işareti durum göstergesi olarak duruyor;
+   `display: flex` onu kaldırdığı için boşluk dolguyla veriliyor.
+--------------------------------------------------------------- */
+.acilir {
+  padding-block: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.acilir:hover { color: var(--text); }
+
+/* ---------------------------------------------------------------
+   Hava paneli bölümleri
+
+   Panel üç işi birden yapıyor: nokta seçimi, günün koşulları ve tür
+   listesi. Üçü tek bloktayken hangisinin nerede bittiği okunmuyordu;
+   aralarına almanak kuralı giriyor.
+--------------------------------------------------------------- */
+.panel-bolum {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 2px solid var(--border);
 }

@@ -57,7 +57,7 @@ const NOTLAR: Record<number, string> = {
     <section class="mt-8">
       <h2 class="text-lg font-semibold tracking-tight">Bu Ayın Hedefleri</h2>
       <p class="mt-1 text-sm text-muted">Sezonu bu türlerde. Vaktinin çoğunu bunlara ayır.</p>
-      <div class="mt-3 grid gap-3 sm:grid-cols-2">
+      <div class="mt-3 grid gap-5 sm:grid-cols-2">
         {zirve.map(({ t }) => <SpeciesCard tur={t} ay={ay} />)}
       </div>
     </section>
@@ -66,7 +66,7 @@ const NOTLAR: Record<number, string> = {
   {olur.length > 0 && (
     <section class="mt-8">
       <h2 class="text-lg font-semibold tracking-tight">Tutulur</h2>
-      <div class="mt-3 grid gap-3 sm:grid-cols-2">
+      <div class="mt-3 grid gap-5 sm:grid-cols-2">
         {olur.map(({ t }) => <SpeciesCard tur={t} ay={ay} />)}
       </div>
     </section>
@@ -77,7 +77,7 @@ const NOTLAR: Record<number, string> = {
       <h2 class="text-lg font-semibold tracking-tight">Şansına</h2>
       <ul class="mt-3 flex flex-wrap gap-2">
         {seyrek.map(({ t }) => (
-          <li><a href={`/balik/${t.id}`} class="block kart px-3 py-1.5 text-sm hover:border-accent">{t.data.ad}</a></li>
+          <li><a href={`/balik/${t.id}`} class="kart baglanti-cip">{t.data.ad}</a></li>
         ))}
       </ul>
     </section>

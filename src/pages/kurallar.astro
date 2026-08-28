@@ -58,7 +58,7 @@ const surdurulebilirlik = [
 >
   <h1 class="text-3xl sm:text-4xl">Kurallar ve Boy Limitleri</h1>
 
-  <div class="mt-4 rounded-sm border border-l-[3px] border-warn/40 border-l-warn bg-warn-soft p-4">
+  <div class="mt-4 rounded-sm border-2 border-warn/45 bg-warn-soft p-4">
     <p class="flex items-start gap-2 text-sm">
       <span class="mt-0.5 shrink-0 text-warn"><Ikon ad="uyari" sinif="size-4" /></span>
       <span>
@@ -74,27 +74,27 @@ const surdurulebilirlik = [
   </div>
 
   <Bolum baslik="Asgari Avlanma Boyları" not="Bu boyun altındaki balığı suya bırakman gerekiyor.">
-    <div class="overflow-hidden rounded-sm border border-line">
+    <div class="overflow-hidden rounded-sm border-2 border-line">
       <table class="w-full border-collapse text-sm">
         <thead class="bg-surface-2">
           <tr>
-            <th scope="col" class="px-3 py-2 text-left font-semibold">Balık</th>
-            <th scope="col" class="w-28 px-3 py-2 text-left font-semibold">Asgari boy</th>
-            <th scope="col" class="px-3 py-2 text-left font-semibold">Not</th>
+            <th scope="col" class="px-3 py-2.5 text-left font-semibold">Balık</th>
+            <th scope="col" class="w-28 px-3 py-2.5 text-left font-semibold">Asgari Boy</th>
+            <th scope="col" class="px-3 py-2.5 text-left font-semibold">Not</th>
           </tr>
         </thead>
         <tbody>
           {turler.map((t) => (
             <tr class="border-t border-line">
-              <th scope="row" class="px-3 py-2 text-left font-medium">
-                <a href={`/balik/${t.id}`} class="hover:text-accent">{t.data.ad}</a>
+              <th scope="row" class="px-3 py-2.5 text-left font-medium">
+                <a href={`/balik/${t.id}`} class="hover:text-vurgu">{t.data.ad}</a>
               </th>
-              <td class="px-3 py-2 tabular-nums">
+              <td class="px-3 py-2.5 tabular-nums">
                 {t.data.yasal.asgariBoy
                   ? <span class="font-semibold">{t.data.yasal.asgariBoy} cm</span>
                   : <span class="text-muted">belirtilmemiş</span>}
               </td>
-              <td class="px-3 py-2 text-muted">{t.data.yasal.not ?? '—'}</td>
+              <td class="px-3 py-2.5 text-muted">{t.data.yasal.not ?? '—'}</td>
             </tr>
           ))}
         </tbody>
@@ -123,7 +123,7 @@ const surdurulebilirlik = [
   </Bolum>
 
   <Bolum baslik="Nereden Kontrol Edilir">
-    <ul class="space-y-2 text-sm">
+    <ul class="space-y-3 text-sm">
       <li>
         <a class="text-accent underline" href="https://www.tarimorman.gov.tr" rel="noopener" target="_blank">
           Tarım ve Orman Bakanlığı

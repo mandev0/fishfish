@@ -5,6 +5,20 @@ import Ikon from '../components/Ikon.astro';
 import TerimBalonu from '../components/TerimBalonu.astro';
 import { SEKMELER, TUM_BAGLANTILAR, aktifMi, aktifSekme } from '../lib/gezinme';
 import { baslikBicimi } from '../lib/metin';
+import { IKONLAR } from '../lib/ikonlar';
+
+/**
+ * Favicon, başlıktaki logonun aynısı: `ikonlar.ts` içindeki `balik` yolu
+ * mürekkep zemin üstünde kâğıt rengiyle. Tek kaynaktan okunduğu için logo
+ * değişince simge de değişir.
+ */
+const faviconVeri = 'data:image/svg+xml,' + encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">'
+  + '<rect width="24" height="24" fill="#1c1f22"/>'
+  + '<g transform="translate(12 12) scale(.78) translate(-12 -12)" fill="none"'
+  + ' stroke="#fffdf7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"'
+  + ' color="#fffdf7">' + IKONLAR.balik + '</g></svg>',
+);
 
 interface Props {
   baslik: string;
@@ -23,9 +37,12 @@ const acikSekme = aktifSekme(yol);
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{baslikBicimi(baslik)} · Balıkçılık Rehberi</title>
     {aciklama && <meta name="description" content={aciklama} />}
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎣%3C/text%3E%3C/svg%3E" />
-    <meta name="theme-color" content="#f6f4ee" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0c1417" media="(prefers-color-scheme: dark)" />
+    {/* Simge, başlıktaki logonun aynısı (ikonlar.ts → balik). Emoji favicon
+        hem markadan kopuktu hem her platformda başka görünüyordu. */}
+    <link rel="icon" type="image/svg+xml" href={faviconVeri} />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <meta name="theme-color" content="#f4f1e8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e0f11" media="(prefers-color-scheme: dark)" />
     <meta name="color-scheme" content="light dark" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -46,7 +63,7 @@ const acikSekme = aktifSekme(yol);
           if (t === 'dark' || t === 'light') {
             document.documentElement.dataset.theme = t;
             var damga = document.querySelector('meta[name="theme-color"]:not([media])');
-            if (damga) damga.setAttribute('content', t === 'dark' ? '#0c1417' : '#f6f4ee');
+            if (damga) damga.setAttribute('content', t === 'dark' ? '#0e0f11' : '#f4f1e8');
           }
         }
         uygula();
@@ -55,12 +72,13 @@ const acikSekme = aktifSekme(yol);
     </script>
   </head>
   <body class="pb-[calc(3.5rem+1px+env(safe-area-inset-bottom))] lg:pb-0">
-    <a href="#icerik" class="sr-only focus:not-sr-only absolute left-2 top-2 z-50 rounded bg-accent px-3 py-2 text-accent-ink">
+    <a href="#icerik" class="sr-only focus:not-sr-only absolute left-2 top-2 z-50 rounded bg-accent px-3 py-2.5 text-accent-ink">
       İçeriğe atla
     </a>
 
-    <header class="sticky top-0 z-40 border-b border-line-strong bg-bg/95 backdrop-blur">
-      <div class="h-[3px] w-full bg-vurgu" aria-hidden="true"></div>
+    {/* Künye çizgisi: tam genişlik turuncu şerit yerine çift kural (border-double).
+        Basılı almanak künyesinin kendi ayracı; şablon şeridi değil. */}
+    <header class="sticky top-0 z-40 border-b-4 border-double border-line-strong bg-bg">
       <div class="mx-auto flex max-w-6xl items-center gap-2 px-4 py-2">
         <a href="/" class="flex shrink-0 items-center gap-2 py-1">
           <span class="flex size-8 items-center justify-center rounded-sm bg-accent text-accent-ink" aria-hidden="true">
@@ -98,7 +116,7 @@ const acikSekme = aktifSekme(yol);
 
         <button
           id="tema-dugmesi" type="button"
-          class="ml-auto flex size-11 shrink-0 items-center justify-center rounded-sm border border-line bg-surface text-muted hover:border-line-strong hover:text-ink lg:ml-2"
+          class="dugme dugme-ikincil dugme-ikon ml-auto shrink-0 lg:ml-2"
           aria-label="Temayı değiştir"
         >
           <svg viewBox="0 0 24 24" class="size-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -137,7 +155,7 @@ const acikSekme = aktifSekme(yol);
     -->
     <nav
       aria-label="Ana gezinme"
-      class="fixed inset-x-0 bottom-0 z-40 border-t border-line-strong bg-bg/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden"
+      class="fixed inset-x-0 bottom-0 z-40 border-t border-line-strong bg-bg pb-[env(safe-area-inset-bottom)] lg:hidden"
     >
       <ul class="mx-auto flex max-w-md">
         {SEKMELER.map((s) => {
@@ -199,7 +217,7 @@ const acikSekme = aktifSekme(yol);
           kok.dataset.theme = yeni;
           try { localStorage.setItem('fishfish:tema', yeni); } catch (hata) {}
           var damga = document.querySelector('meta[name="theme-color"]:not([media])');
-          if (damga) damga.setAttribute('content', yeni === 'dark' ? '#0c1417' : '#f6f4ee');
+          if (damga) damga.setAttribute('content', yeni === 'dark' ? '#0e0f11' : '#f4f1e8');
         });
       })();
     </script>

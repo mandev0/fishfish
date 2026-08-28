@@ -37,20 +37,20 @@ const hucre = (v: number) => (v > 0 ? `bolluk-${v}` : '');
 
   <div class="mt-5 flex flex-wrap items-center gap-2">
     <span class="text-sm text-muted">Su alanı:</span>
-    <button type="button" data-su="hepsi" class="su-dugme rounded-sm border border-vurgu bg-vurgu-soft px-3 py-1.5 text-sm font-medium text-vurgu">Hepsi</button>
+    <button type="button" data-su="hepsi" aria-pressed="true" class="dugme dugme-cip su-dugme">Hepsi</button>
     {sular.map((s) => (
-      <button type="button" data-su={s} class="su-dugme rounded-sm border border-line bg-surface px-3 py-1.5 text-sm text-muted transition-colors hover:border-line-strong hover:text-ink">
+      <button type="button" data-su={s} aria-pressed="false" class="dugme dugme-cip su-dugme">
         {SU_KISA_ADLARI[s]}
       </button>
     ))}
   </div>
 
-  <div class="scroll-x mt-5 rounded-sm border border-line">
+  <div class="scroll-x mt-5 rounded-sm border-2 border-line">
     <table class="w-full min-w-max border-collapse text-sm">
       <caption class="sr-only">Türlere ve aylara göre bulunabilirlik</caption>
       <thead class="sticky top-0 bg-surface-2">
         <tr>
-          <th scope="col" class="sticky left-0 z-10 bg-surface-2 px-3 py-2 text-left font-semibold">Balık</th>
+          <th scope="col" class="sticky left-0 z-10 bg-surface-2 px-3 py-2.5 text-left font-semibold">Balık</th>
           {AY_KISA.map((a, i) => (
             <th scope="col" data-ay-basligi={i + 1} class="w-10 px-1 py-2 text-center text-xs font-medium text-muted">{a}</th>
           ))}
@@ -60,7 +60,7 @@ const hucre = (v: number) => (v > 0 ? `bolluk-${v}` : '');
         {turler.map((t) => (
           <tr class="border-t border-line" data-sular={t.data.sular.join(' ')}>
             <th scope="row" class="sticky left-0 z-10 whitespace-nowrap border-r border-line bg-surface px-3 py-1.5 text-left font-medium">
-              <a href={`/balik/${t.id}`} class="hover:text-accent">{baslikBicimi(t.data.ad)}</a>
+              <a href={`/balik/${t.id}`} class="hover:text-vurgu">{baslikBicimi(t.data.ad)}</a>
             </th>
             {t.data.aylar.map((v, i) => (
               <td class="p-0.5 text-center">
@@ -82,7 +82,7 @@ const hucre = (v: number) => (v > 0 ? `bolluk-${v}` : '');
     <ul class="mt-3 flex flex-wrap gap-2">
       {AY_ADLARI.map((ad, i) => (
         <li>
-          <a href={`/ay/${i + 1}`} class="block kart px-3 py-1.5 text-sm hover:border-accent">{ad}</a>
+          <a href={`/ay/${i + 1}`} class="kart baglanti-cip">{ad}</a>
         </li>
       ))}
     </ul>
@@ -93,19 +93,15 @@ const hucre = (v: number) => (v > 0 ? `bolluk-${v}` : '');
       // Bu ayın sütununu vurgula (derleme zamanına çivilenmesin diye tarayıcıda).
       const ay = Number(new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Istanbul', month: 'numeric' }).format(new Date()));
       const basl = document.querySelector(`[data-ay-basligi="${ay}"]`);
-      if (basl) { basl.classList.remove('text-muted'); basl.classList.add('text-accent', 'font-bold'); }
+      if (basl) { basl.classList.remove('text-muted'); basl.classList.add('text-vurgu', 'font-bold'); }
 
       const dugmeler = document.querySelectorAll('.su-dugme');
       const satirlar = document.querySelectorAll('tbody tr[data-sular]');
       dugmeler.forEach((d) => d.addEventListener('click', () => {
         const su = d.getAttribute('data-su');
-        dugmeler.forEach((x) => {
-          const secili = x === d;
-          x.className = 'su-dugme rounded-sm border px-3 py-1.5 text-sm transition-colors '
-            + (secili
-              ? 'border-vurgu bg-vurgu-soft font-medium text-vurgu'
-              : 'border-line bg-surface text-muted hover:border-line-strong hover:text-ink');
-        });
+        // Seçili hâl `aria-pressed` ile taşınıyor: hem ekran okuyucu duyuyor
+        // hem de görünüm tek yerden (.dugme-cip) besleniyor.
+        dugmeler.forEach((x) => x.setAttribute('aria-pressed', String(x === d)));
         satirlar.forEach((s) => {
           const uygun = su === 'hepsi' || (s.getAttribute('data-sular') || '').split(' ').includes(su);
           s.hidden = !uygun;

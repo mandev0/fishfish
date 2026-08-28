@@ -41,6 +41,9 @@ export const IKONLAR: Record<string, string> = {
   takim: '<path d="M12 3.5v8a4.5 4.5 0 1 1-4.5 4.5"/><path d="M9 3.5h6"/>',
   dugum: '<path d="M6.5 17.5c6.5-1 4-9.5 11-10.5"/><path d="M17.5 17.5c-6.5-1-4-9.5-11-10.5"/>',
   ekipman: '<path d="m3.5 20.5 12-12"/><path d="m14 5.5 4.5 4.5"/><path d="M16.5 3 21 7.5"/><circle cx="7.5" cy="16.5" r="2.4"/>',
+  // Çift oklu tazeleme simgesi. `orkoz` de dairesel bir oktur ama tek yay +
+  // içeride girdap taşır; ikisi karışmasın diye bu iki yaylı çizildi.
+  yenile: '<path d="M20.3 11.2A8.3 8.3 0 0 0 6.4 6.6L3.9 9.1"/><path d="M3.6 4.4v4.8h4.8"/><path d="M3.7 12.8a8.3 8.3 0 0 0 13.9 4.6l2.5-2.5"/><path d="M20.4 19.6v-4.8h-4.8"/>',
   filtre: '<path d="M3.5 5.5h17l-6.6 7.6V20l-3.8-2.4v-4.5Z"/>',
   ekle: '<rect x="6" y="2.5" width="12" height="19" rx="2"/><path d="M12 8.5v7M8.5 12h7"/>',
   yontem: '<path d="M14 3.5v7a4.5 4.5 0 1 1-4.5 4.5"/><path d="M11 3.5h6"/><path d="M3.5 8c1.8 1.6 1.8 4.4 0 6"/>',

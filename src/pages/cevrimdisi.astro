@@ -38,10 +38,10 @@ const bolumler = [BOLUMLER[0]!, ...MENU_BOLUMLERI];
   {bolumler.map((bolum) => (
     <section class="mt-8">
       <h2 class="bolum-baslik mb-3 text-xl sm:text-2xl">{baslikBicimi(bolum.ad)}</h2>
-      <ul class="grid gap-2 sm:grid-cols-2">
+      <ul class="grid gap-3 sm:grid-cols-2">
         {bolum.ogeler.map((oge) => (
           <li>
-            <a href={oge.href} class="kart flex min-h-[3.5rem] items-center gap-3 px-3 py-2.5 transition-colors hover:border-accent">
+            <a href={oge.href} class="kart flex min-h-[3.5rem] items-center gap-3 px-4 py-3 transition-colors hover:border-accent">
               <span class="flex size-9 shrink-0 items-center justify-center rounded-sm bg-accent-soft text-accent" aria-hidden="true">
                 <Ikon ad={oge.ikon} sinif="size-5" />
               </span>

@@ -21,14 +21,14 @@ const satirlar = etiketler.map((e) => {
 }).filter((s) => s.ozet);
 ---
 {satirlar.length > 0 && (
-  <div class="mt-4 kart-2/50 p-3">
-    <p class="px-1 pb-2 text-xs font-semibold uppercase tracking-wide text-muted">
-      Şemada ne görüyorsun?
+  <div class="kart mt-5 p-4">
+    <p class="mb-3 alt-baslik">
+      Şemada Ne Görüyorsun?
     </p>
     <ul class="grid gap-1.5 sm:grid-cols-2">
       {satirlar.map((s) => (
         <li>
-          <a href={s.href} class="flex min-h-11 flex-col justify-center rounded-lg px-2.5 py-1.5 transition-colors hover:bg-surface">
+          <a href={s.href} class="flex min-h-11 flex-col justify-center rounded-sm px-3 py-1.5 transition-colors hover:bg-surface">
             <span class="text-sm font-medium text-accent">{s.etiket}</span>
             <span class="text-xs text-muted">{s.ozet}</span>
           </a>

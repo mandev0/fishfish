@@ -79,8 +79,8 @@ const bolgeliNoktalar = [...new Set(noktalar.map((n) => n.data.bolge))].map((b) 
     </header>
 
     <div class:list={[
-      'mt-6 rounded-sm border border-l-[3px] p-4',
-      d.yasal.asgariBoy ? 'border-warn/40 border-l-warn bg-warn-soft' : 'border-line border-l-line-strong bg-surface',
+      'mt-6 rounded-sm border-2 p-4',
+      d.yasal.asgariBoy ? 'border-warn/45 bg-warn-soft' : 'border-line bg-surface',
     ]}>
       <p class="text-sm">
         {d.yasal.asgariBoy
@@ -121,19 +121,19 @@ const bolgeliNoktalar = [...new Set(noktalar.map((n) => n.data.bolge))].map((b) 
     <Bolum baslik="Sezon" not="Aylara göre bulunabilirlik. İç su türlerinde ilkbahar boşluğu üreme dönemi av yasağıdır.">
       <SeasonBar aylar={d.aylar} />
       {d.boySiniflari.length > 0 && (
-        <div class="mt-4 overflow-hidden rounded-sm border border-line">
+        <div class="mt-4 overflow-hidden rounded-sm border-2 border-line">
           <table class="w-full border-collapse text-sm">
             <thead class="bg-surface-2">
               <tr>
-                <th scope="col" class="px-3 py-2 text-left font-semibold">Boy sınıfı</th>
-                <th scope="col" class="px-3 py-2 text-left font-semibold">Boy</th>
+                <th scope="col" class="px-3 py-2.5 text-left font-semibold">Boy Sınıfı</th>
+                <th scope="col" class="px-3 py-2.5 text-left font-semibold">Boy</th>
               </tr>
             </thead>
             <tbody>
               {d.boySiniflari.map((b) => (
                 <tr class="border-t border-line">
-                  <td class="px-3 py-2 font-medium">{b.ad}</td>
-                  <td class="px-3 py-2">
+                  <td class="px-3 py-2.5 font-medium">{b.ad}</td>
+                  <td class="px-3 py-2.5">
                     {b.cm}
                     {b.not && <span class="block text-xs text-muted">{b.not}</span>}
                   </td>
@@ -146,29 +146,29 @@ const bolgeliNoktalar = [...new Set(noktalar.map((n) => n.data.bolge))].map((b) 
     </Bolum>
 
     <Bolum baslik="Nerede ve Ne Zaman">
-      <dl class="grid gap-3 sm:grid-cols-2">
-        <div class="kart p-3">
-          <dt class="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted"><Ikon ad="konum" sinif="size-[15px]" />Yaşam alanı</dt>
+      <dl class="grid gap-5 sm:grid-cols-2">
+        <div class="kart p-4">
+          <dt class="etiket-ust"><Ikon ad="konum" sinif="size-[15px]" />Yaşam Alanı</dt>
           <Metin metin={d.yasamAlani} etiket="dd" sinif="mt-1 text-sm" gorulen={gorulen} />
         </div>
-        <div class="kart p-3">
-          <dt class="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted"><Ikon ad="dalga" sinif="size-[15px]" />Derinlik</dt>
+        <div class="kart p-4">
+          <dt class="etiket-ust"><Ikon ad="dalga" sinif="size-[15px]" />Derinlik</dt>
           <Metin metin={d.derinlik} etiket="dd" sinif="mt-1 text-sm" gorulen={gorulen} />
         </div>
-        <div class="kart p-3">
-          <dt class="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted"><Ikon ad="saat" sinif="size-[15px]" />Aktif saatler</dt>
+        <div class="kart p-4">
+          <dt class="etiket-ust"><Ikon ad="saat" sinif="size-[15px]" />Aktif Saatler</dt>
           <dd class="mt-1 text-sm">{d.aktifSaatler.map((s) => SAAT_ADLARI[s]).join(' · ')}</dd>
         </div>
-        <div class="kart p-3">
-          <dt class="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted"><Ikon ad="sicaklik" sinif="size-[15px]" />Su sıcaklığı</dt>
+        <div class="kart p-4">
+          <dt class="etiket-ust"><Ikon ad="sicaklik" sinif="size-[15px]" />Su Sıcaklığı</dt>
           <dd class="mt-1 text-sm">
             İdeal <span class="olcu">{d.suSicakligi.ideal[0]}-{d.suSicakligi.ideal[1]} °C</span>
             <span class="text-muted"> (sınırlar <span class="olcu">{d.suSicakligi.min}-{d.suSicakligi.max} °C</span>)</span>
           </dd>
         </div>
         {(d.ruzgarTercihi.length > 0 || d.ruzgarKacinilan.length > 0) && (
-          <div class="kart p-3 sm:col-span-2">
-            <dt class="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted"><Ikon ad="ruzgar" sinif="size-[15px]" />Rüzgâr</dt>
+          <div class="kart p-4 sm:col-span-2">
+            <dt class="etiket-ust"><Ikon ad="ruzgar" sinif="size-[15px]" />Rüzgâr</dt>
             <dd class="mt-1 space-y-1 text-sm">
               {d.ruzgarTercihi.length > 0 && (
                 <p><span class="font-medium text-good">Makbul:</span> {d.ruzgarTercihi.map((r) => RUZGARLAR[r].ad).join(', ')}</p>
@@ -187,7 +187,7 @@ const bolgeliNoktalar = [...new Set(noktalar.map((n) => n.data.bolge))].map((b) 
     </Bolum>
 
     <Bolum baslik="Yem ve Sahte Yem">
-      <div class="grid gap-3 sm:grid-cols-2">
+      <div class="grid gap-5 sm:grid-cols-2">
         {d.yemler.dogal.length > 0 && (
           <div class="kart p-4">
             <h3 class="font-semibold">Doğal Yem</h3>
@@ -233,7 +233,7 @@ const bolgeliNoktalar = [...new Set(noktalar.map((n) => n.data.bolge))].map((b) 
           ['Tokatlama', d.taktik.tokatlama],
           ['Yakalama', d.taktik.yakalama],
         ].map(([ad, metin], i) => (
-          <li class="kart flex gap-3 p-4">
+          <li class="kart flex gap-4 p-4">
             <span class="sayisal flex size-7 shrink-0 items-center justify-center rounded-sm bg-accent text-sm font-bold text-accent-ink">{i + 1}</span>
             <div>
               <h3 class="font-semibold">{baslikBicimi(ad)}</h3>
@@ -245,13 +245,13 @@ const bolgeliNoktalar = [...new Set(noktalar.map((n) => n.data.bolge))].map((b) 
 
       {d.taktik.ipuclari.length > 0 && (
         <div class="mt-4">
-          <h3 class="mb-2 text-sm font-semibold uppercase tracking-wide text-muted">İpuçları</h3>
+          <h3 class="mb-2 alt-baslik">İpuçları</h3>
           <Liste maddeler={d.taktik.ipuclari} tip="ipucu" gorulen={gorulen} />
         </div>
       )}
       {d.taktik.hatalar.length > 0 && (
         <div class="mt-4">
-          <h3 class="mb-2 text-sm font-semibold uppercase tracking-wide text-muted">Sık Yapılan Hatalar</h3>
+          <h3 class="mb-2 alt-baslik">Sık Yapılan Hatalar</h3>
           <Liste maddeler={d.taktik.hatalar} tip="hata" gorulen={gorulen} />
         </div>
       )}
@@ -261,11 +261,11 @@ const bolgeliNoktalar = [...new Set(noktalar.map((n) => n.data.bolge))].map((b) 
       <div class="space-y-4">
         {bolgeliNoktalar.map(({ bolge, liste }) => (
           <div>
-            <h3 class="text-sm font-semibold uppercase tracking-wide text-muted">{bolgeTamAdi(bolge)}</h3>
+            <h3 class="alt-baslik">{baslikBicimi(bolgeTamAdi(bolge))}</h3>
             <ul class="mt-2 flex flex-wrap gap-2">
               {liste.map((n) => (
                 <li>
-                  <a href={`/nokta/${n.id}`} class="block kart px-3 py-1.5 text-sm hover:border-accent">
+                  <a href={`/nokta/${n.id}`} class="kart baglanti-cip">
                     {n.data.ad}
                   </a>
                 </li>

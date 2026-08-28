@@ -21,17 +21,17 @@ const gorulen = new Set<string>();
   <h1 class="text-3xl sm:text-4xl">{d.ad}</h1>
   <Metin metin={d.ozet} etiket="p" sinif="mt-2 max-w-2xl" gorulen={gorulen} />
 
-  <dl class="mt-4 grid gap-3 sm:grid-cols-3">
-    <div class="kart p-3">
-      <dt class="text-xs uppercase tracking-wide text-muted">Nerede kullanılır</dt>
+  <dl class="mt-4 grid gap-5 sm:grid-cols-3">
+    <div class="kart p-4">
+      <dt class="etiket-ust">Nerede Kullanılır</dt>
       <Metin metin={d.kullanim} etiket="dd" sinif="mt-1 text-sm" gorulen={gorulen} />
     </div>
-    <div class="kart p-3">
-      <dt class="text-xs uppercase tracking-wide text-muted">Gücü</dt>
+    <div class="kart p-4">
+      <dt class="etiket-ust">Gücü</dt>
       <dd class="mt-1 text-sm">{d.guc}</dd>
     </div>
-    <div class="kart p-3">
-      <dt class="text-xs uppercase tracking-wide text-muted">Zorluk</dt>
+    <div class="kart p-4">
+      <dt class="etiket-ust">Zorluk</dt>
       <dd class="mt-1"><Zorluk seviye={d.zorluk} /></dd>
     </div>
   </dl>
@@ -41,10 +41,10 @@ const gorulen = new Set<string>();
   </div>
 
   <Bolum baslik="Adım Adım">
-    <ol class="space-y-2">
+    <ol class="space-y-3">
       {d.adimlar.map((adim, i) => (
-        <li class="kart flex gap-3 p-3 text-sm">
-          <span class="sayisal flex size-6 shrink-0 items-center justify-center rounded-sm bg-accent text-xs font-bold text-accent-ink">{i + 1}</span>
+        <li class="kart flex gap-4 p-4 text-sm">
+          <span class="sayisal flex size-7 shrink-0 items-center justify-center rounded-sm bg-accent text-sm font-bold text-accent-ink">{i + 1}</span>
           <Metin metin={adim} gorulen={gorulen} />
         </li>
       ))}
@@ -57,7 +57,7 @@ const gorulen = new Set<string>();
     <Bolum baslik="Bu Düğümün Kullanıldığı Takımlar">
       <ul class="flex flex-wrap gap-2">
         {takimlar.map((r) => (
-          <li><a href={`/takim/${r.id}`} class="block kart px-3 py-1.5 text-sm hover:border-accent">{r.data.ad}</a></li>
+          <li><a href={`/takim/${r.id}`} class="kart baglanti-cip">{r.data.ad}</a></li>
         ))}
       </ul>
     </Bolum>

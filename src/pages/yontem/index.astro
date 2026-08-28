@@ -34,8 +34,8 @@ const gruplar = [
   {gruplar.map((g) => (
     <section class="mt-8">
       <h2 class="bolum-baslik mb-1 text-xl sm:text-2xl">{baslikBicimi(g.ad)}</h2>
-      <p class="mb-3 pl-[0.7rem] text-sm text-muted">{g.not}</p>
-      <div class="grid gap-4 sm:grid-cols-2">
+      <p class="mb-3 mt-2 text-sm text-muted">{g.not}</p>
+      <div class="grid gap-5 sm:grid-cols-2">
         {g.liste.map((y) => (
           <a href={`/yontem/${y.id}`} class="group kart p-4 hover:border-accent">
             <div class="flex items-start gap-3">
@@ -44,7 +44,7 @@ const gruplar = [
               </span>
               <div class="min-w-0">
                 <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-                  <h3 class="font-semibold group-hover:text-accent">{baslikBicimi(y.data.ad)}</h3>
+                  <h3 class="font-semibold group-hover:text-vurgu">{baslikBicimi(y.data.ad)}</h3>
                   <Zorluk seviye={y.data.zorluk} />
                 </div>
                 <p class="mt-1 text-sm text-muted">{y.data.ozet}</p>
@@ -61,7 +61,7 @@ const gruplar = [
 
   <section class="mt-10">
     <h2 class="bolum-baslik mb-3 text-xl sm:text-2xl">Aktif mi, Pasif mi?</h2>
-    <div class="grid gap-3 sm:grid-cols-2">
+    <div class="grid gap-5 sm:grid-cols-2">
       {(['aktif', 'pasif'] as const).map((t) => (
         <div class="kart kart-vurgulu p-4">
           <h3 class="font-semibold">{baslikBicimi(t)}</h3>
@@ -69,7 +69,7 @@ const gruplar = [
           <ul class="mt-2 flex flex-wrap gap-1.5">
             {yontemler.filter((y) => y.data.tarz === t).map((y) => (
               <li>
-                <a href={`/yontem/${y.id}`} class="block kart px-2.5 py-1 text-sm hover:border-accent">{y.data.kisaAd}</a>
+                <a href={`/yontem/${y.id}`} class="kart baglanti-cip">{y.data.kisaAd}</a>
               </li>
             ))}
           </ul>

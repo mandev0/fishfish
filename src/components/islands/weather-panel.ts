@@ -45,8 +45,8 @@ const SEVIYE_SINIFI: Record<SkorSonucu['seviye'], string> = {
 };
 
 function durumKarti(ikon: string, baslik: string, deger: string, alt: string): string {
-  return `<div class="kart p-3">
-    <p class="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-muted">
+  return `<div class="kart p-4">
+    <p class="etiket-ust">
       ${ikonSvg(ikon, 'size-[15px] shrink-0')}${kacir(baslik)}
     </p>
     <p class="sayisal mt-1 text-lg font-semibold leading-tight">${kacir(deger)}</p>
@@ -66,18 +66,18 @@ function turSatiri(tur: TurProfili & { ozet: string }, sonuc: SkorSonucu): strin
   const eksik = sonuc.faktorler.filter((f) => f.veriYok).map((f) => f.ad);
 
   return `<li class="kart">
-    <div class="flex items-center gap-3 p-3">
+    <div class="flex items-center gap-3 p-4">
       <span
         class="sayisal flex h-11 w-11 shrink-0 items-center justify-center rounded-sm text-base font-bold ${SEVIYE_SINIFI[sonuc.seviye]}"
         style="background: var(--z-bg); color: var(--z-fg)"
       >${sonuc.skor}</span>
       <div class="min-w-0 flex-1">
-        <a href="/balik/${kacir(tur.id)}" class="font-semibold hover:text-accent">${kacir(tur.ad)}</a>
+        <a href="/balik/${kacir(tur.id)}" class="font-semibold hover:text-vurgu">${kacir(tur.ad)}</a>
         <p class="truncate text-xs text-muted">${kacir(sonuc.seviyeMetni)} · ${kacir(tur.ozet)}</p>
       </div>
     </div>
-    <details class="border-t border-line bg-surface-2/40 px-3 py-2">
-      <summary class="cursor-pointer text-xs text-muted hover:text-ink">Skor nasıl hesaplandı?</summary>
+    <details class="border-t border-line bg-surface-2/40 px-4 py-1">
+      <summary class="acilir">Skor Nasıl Hesaplandı?</summary>
       <ul class="mt-2 divide-y divide-line text-xs">${faktorler}</ul>
       ${eksik.length ? `<p class="mt-2 text-xs text-warn">Veri alınamayan faktörler hesaba katılmadı: ${kacir(eksik.join(', '))}.</p>` : ''}
     </details>
@@ -98,8 +98,9 @@ export function baslat(): void {
   const listeAlani = kok.querySelector<HTMLElement>('[data-liste]');
   const uyariAlani = kok.querySelector<HTMLElement>('[data-uyari]');
   const statikAlan = document.querySelector<HTMLElement>('[data-statik]');
-  const canliAlan = kok.querySelector<HTMLElement>('[data-canli]');
+  const canliAlanlar = [...kok.querySelectorAll<HTMLElement>('[data-canli]')];
   const durumMetni = kok.querySelector<HTMLElement>('[data-durum-metni]');
+  const guncellemeDamgasi = kok.querySelector<HTMLElement>('[data-guncelleme]');
   const yenileDugmesi = kok.querySelector<HTMLButtonElement>('[data-yenile]');
 
   const noktaBul = (id: string | null) =>
@@ -148,9 +149,21 @@ export function baslat(): void {
     seciliId = secici.value;
   }
 
+  /** Son yenileme damgası — yenile düğmesinin yanında duran kısa ibare. */
+  function damgaYaz(metin: string, uyari: boolean): void {
+    if (!guncellemeDamgasi) return;
+    guncellemeDamgasi.textContent = metin;
+    // Hizalama sınıfları (`mr-auto sm:mr-0`) burada da yazılmalı: sınıf listesi
+    // baştan kuruluyor, düşerse damga dar ekranda düğmelere yapışıyor.
+    guncellemeDamgasi.className = uyari
+      ? 'sayisal mr-auto text-xs leading-tight text-warn sm:mr-0'
+      : 'sayisal mr-auto text-xs leading-tight text-muted sm:mr-0';
+    guncellemeDamgasi.hidden = false;
+  }
+
   async function yukle(tazele = false): Promise<void> {
     const nokta = noktaBul(seciliId);
-    if (durumMetni) durumMetni.textContent = 'Canlı veri alınıyor…';
+    damgaYaz('Alınıyor…', false);
     if (yenileDugmesi) yenileDugmesi.disabled = true;
 
     let paket: HavaPaketi | null = null;
@@ -162,15 +175,17 @@ export function baslat(): void {
     if (yenileDugmesi) yenileDugmesi.disabled = false;
 
     if (!paket) {
+      damgaYaz('Veri yok', true);
       if (durumMetni) {
         // Buraya yalnızca istek düştüğünde ve 24 saat içinde kayıtlı paket
         // bulunmadığında geliriz; ikisi de kesin bilgi.
+        durumMetni.hidden = false;
         durumMetni.textContent =
           'Hava servisine ulaşılamadı ve bu nokta için kayıtlı veri yok.'
           + ' Aşağıdaki liste yalnızca mevsime göre hazırlandı.';
-        durumMetni.className = 'text-sm text-warn';
+        durumMetni.className = 'mt-2 text-sm text-warn';
       }
-      canliAlan?.setAttribute('hidden', '');
+      canliAlanlar.forEach((e) => e.setAttribute('hidden', ''));
       statikAlan?.removeAttribute('hidden');
       return;
     }
@@ -191,7 +206,7 @@ export function baslat(): void {
         k.ruzgarHizi != null ? beaufortAdi(k.ruzgarHizi) : '—',
       ));
       kartlar.push(durumKarti(
-        'sicaklik', 'Deniz suyu',
+        'sicaklik', 'Deniz Suyu',
         k.suSicakligi != null ? `${sayiMetni(k.suSicakligi)} °C` : 'Veri yok',
         k.sicaklik != null ? `Hava ${Math.round(k.sicaklik)} °C` : '—',
       ));
@@ -218,7 +233,7 @@ export function baslat(): void {
       if (typeof k.denizSeviyesiSapmasi === 'number') {
         const cm = Math.round(k.denizSeviyesiSapmasi * 100);
         kartlar.push(durumKarti(
-          'dalga', 'Deniz seviyesi',
+          'dalga', 'Deniz Seviyesi',
           `${cm > 0 ? '+' : ''}${cm} cm`,
           Math.abs(cm) < 8 ? 'normal seviyede'
             : cm > 0 ? 'normalin üstünde — su kayaları örtüyor'
@@ -227,7 +242,7 @@ export function baslat(): void {
       }
       if (typeof k.dalgaPeriyodu === 'number' && (k.dalga ?? 0) >= 0.2) {
         kartlar.push(durumKarti(
-          'dalga', 'Dalga periyodu',
+          'dalga', 'Dalga Periyodu',
           `${sayiMetni(k.dalgaPeriyodu)} sn`,
           k.dalgaPeriyodu < 3 ? 'kısa, sert çırpıntı' : 'uzun, yönetilebilir',
         ));
@@ -258,7 +273,7 @@ export function baslat(): void {
     if (listeAlani) {
       listeAlani.innerHTML = sirali.length
         ? sirali.map(({ tur, sonuc }) => turSatiri(tur as TurProfili & { ozet: string }, sonuc)).join('')
-        : '<li class="rounded-xl border border-line bg-surface p-4 text-sm text-muted">Bu nokta için tür kaydı yok.</li>';
+        : '<li class="rounded-sm border-2 border-line bg-surface p-4 text-sm text-muted">Bu nokta için tür kaydı yok.</li>';
     }
 
     // --- Uyarılar ---
@@ -282,7 +297,7 @@ export function baslat(): void {
     }
     if (uyariAlani) {
       uyariAlani.innerHTML = uyarilar.size
-        ? `<div class="rounded-sm border border-warn/40 border-l-[3px] border-l-warn bg-warn-soft p-4 text-sm">
+        ? `<div class="rounded-sm border-2 border-warn/45 bg-warn-soft p-4 text-sm">
              <p class="flex items-center gap-1.5 font-semibold text-warn">${ikonSvg('uyari', 'size-4')}Dikkat</p>
              <ul class="mt-1.5 list-disc space-y-1 pl-5">${[...uyarilar].map((u) => `<li>${kacir(u)}</li>`).join('')}</ul>
            </div>`
@@ -290,28 +305,38 @@ export function baslat(): void {
     }
 
     statikAlan?.setAttribute('hidden', '');
-    canliAlan?.removeAttribute('hidden');
+    canliAlanlar.forEach((e) => e.removeAttribute('hidden'));
+    const yas = Date.now() - paket.guncelleme;
+    const bayat = yas > ONBELLEK_SURESI_MS;
+    // Bayat veriyi gizlemiyoruz: kullanıcı kaç saat önceki tahmine baktığını
+    // bilmeli. Damga yenile düğmesinin yanında durduğu için "ne kadar taze" ile
+    // "tazele" aynı yerde.
+    damgaYaz(
+      bayat
+        ? `${gecenSureMetni(yas)} alındı`
+        : `${saatMetni(new Date(paket.guncelleme))} itibarıyla`,
+      bayat,
+    );
+
     if (durumMetni) {
-      const yas = Date.now() - paket.guncelleme;
-      const bayat = yas > ONBELLEK_SURESI_MS;
-      // Bayat veriyi gizlemiyoruz: kullanıcı kaç saat önceki tahmine baktığını bilmeli.
-      durumMetni.className = bayat ? 'text-sm text-warn' : 'text-sm text-muted';
       const eksikDeniz = paket.eksik.includes('deniz');
       const denizYok = eksikDeniz || k.suSicakligi === null || k.dalga === null;
-      durumMetni.textContent =
-        `${nokta.ad} · `
-        // Paket tazelik sınırını aşmışsa `havaGetir` ağa çıkmayı denemiş ve
-        // başarısız olmuştur — yani bu ibare her koşulda doğru.
-        + (bayat
-          ? `${gecenSureMetni(yas)} alınan veri · servise şu an ulaşılamıyor`
-          : `${saatMetni(new Date(paket.guncelleme))} itibarıyla`)
-        + (denizYok
+      // Paket tazelik sınırını aşmışsa `havaGetir` ağa çıkmayı denemiş ve
+      // başarısız olmuştur — yani bu ibare her koşulda doğru.
+      const notlar = [
+        bayat ? 'Servise şu an ulaşılamıyor, en son alınan tahmin gösteriliyor.' : '',
+        denizYok
           ? (nokta.tatliSu
-            ? ' · tatlı su: deniz modeli göl ve dereleri kapsamıyor, skorlar dalga ve su sıcaklığı olmadan hesaplandı'
+            ? 'Tatlı su: deniz modeli göl ve dereleri kapsamıyor, skorlar dalga ve su sıcaklığı olmadan hesaplandı.'
             : nokta.denizVerisiZayif
-              ? ' · deniz modeli bu kapalı suyu kapsamıyor, skorlar dalga ve su sıcaklığı olmadan hesaplandı'
-              : ' · dalga ve su sıcaklığı verisi alınamadı')
-          : '');
+              ? 'Deniz modeli bu kapalı suyu kapsamıyor, skorlar dalga ve su sıcaklığı olmadan hesaplandı.'
+              : 'Dalga ve su sıcaklığı verisi alınamadı.')
+          : '',
+      ].filter(Boolean);
+      durumMetni.className = bayat ? 'mt-2 text-sm text-warn' : 'mt-2 text-sm text-muted';
+      durumMetni.textContent = notlar.join(' ');
+      // Söyleyecek bir şey yoksa boş bir satır bırakmıyoruz.
+      durumMetni.hidden = notlar.length === 0;
     }
   }
 
@@ -338,7 +363,6 @@ export function baslat(): void {
   // Panelin ilk sorusu "neredesin". Konum yalnızca bu düğmeye basılınca istenir;
   // izin verilmezse seçiciler tek başına çalışmaya devam eder.
   const enYakinDugmesi = kok.querySelector<HTMLButtonElement>('[data-en-yakin]');
-  const enYakinEtiket = kok.querySelector<HTMLElement>('[data-en-yakin-etiket]');
   const konumDurumu = kok.querySelector<HTMLElement>('[data-konum-durum]');
 
   /** Kapsam alanının dışındaysan en yakın nokta yine de çok uzak olabilir. */
@@ -355,8 +379,8 @@ export function baslat(): void {
     enYakinDugmesi.hidden = false;
     enYakinDugmesi.addEventListener('click', async () => {
       enYakinDugmesi.disabled = true;
-      if (enYakinEtiket) enYakinEtiket.textContent = 'Konum alınıyor…';
-      if (konumDurumu) konumDurumu.hidden = true;
+      enYakinDugmesi.setAttribute('aria-busy', 'true');
+      konumNotu('Konum alınıyor…', 'bilgi');
 
       try {
         const konum = await konumAl();
@@ -390,7 +414,7 @@ export function baslat(): void {
         konumNotu(konumHataMetni(hata), 'uyari');
       } finally {
         enYakinDugmesi.disabled = false;
-        if (enYakinEtiket) enYakinEtiket.textContent = 'Konumuma en yakın noktayı seç';
+        enYakinDugmesi.removeAttribute('aria-busy');
       }
     });
   }

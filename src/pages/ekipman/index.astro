@@ -87,7 +87,7 @@ const cantada = [
     her terimin üstüne gelerek (telefonda dokunarak) kısa açıklamasını okuyabilirsin.
   </p>
 
-  <div class="mt-6 rounded-sm border border-l-[3px] border-vurgu/40 border-l-vurgu bg-vurgu-soft p-4">
+  <div class="mt-6 rounded-sm border-2 border-vurgu/45 bg-vurgu-soft p-4">
     <h2 class="flex items-center gap-1.5 text-lg text-vurgu">
       <Ikon ad="pusula" sinif="size-[18px]" />Tek Kamışla Başlayacaksan
     </h2>
@@ -105,14 +105,14 @@ const cantada = [
         const liste = ekipman.filter((e) => e.data.kategori === k.id);
         return (
           <div>
-            <h3 class="flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wide text-muted">
+            <h3 class="alt-baslik">
               <Ikon ad={k.ikon} sinif="size-4" />{baslikBicimi(k.ad)}
             </h3>
             <p class="mt-0.5 text-sm text-muted">{k.not}</p>
-            <ul class="mt-2 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            <ul class="mt-2 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {liste.map((e) => (
                 <li>
-                  <a href={`/ekipman/${e.id}`} class="block h-full kart p-3 hover:border-accent">
+                  <a href={`/ekipman/${e.id}`} class="block h-full kart p-4 hover:border-accent">
                     <span class="font-medium">{e.data.ad}</span>
                     <span class="mt-0.5 block text-sm text-muted">{e.data.ozet}</span>
                   </a>
@@ -127,7 +127,7 @@ const cantada = [
 
   {kademeler.map((k, i) => (
     <Bolum baslik={`Bütçe kademesi ${i + 1}: ${k.ad}`} not={k.hedef}>
-      <div class="overflow-hidden rounded-sm border border-line">
+      <div class="overflow-hidden rounded-sm border-2 border-line">
         <table class="w-full border-collapse text-sm">
           <tbody>
             {k.kalemler.map(([ad, deger, not, gid], j) => (
@@ -156,25 +156,25 @@ const cantada = [
   </Bolum>
 
   <Bolum baslik="Olta Malzemecileri" id="dukkanlar" not={`OpenStreetMap'te kayıtlı ${shops.dukkanlar.length} dükkân. Liste eksik olabilir.`}>
-    <div class="scroll-x overflow-hidden rounded-sm border border-line">
+    <div class="scroll-x overflow-hidden rounded-sm border-2 border-line">
       <table class="w-full min-w-[34rem] border-collapse text-sm">
         <thead class="bg-surface-2">
           <tr>
-            <th scope="col" class="px-3 py-2 text-left font-semibold">Dükkân</th>
-            <th scope="col" class="px-3 py-2 text-left font-semibold">İlçe</th>
-            <th scope="col" class="px-3 py-2 text-left font-semibold">İletişim</th>
-            <th scope="col" class="px-3 py-2 text-left font-semibold">Harita</th>
+            <th scope="col" class="px-3 py-2.5 text-left font-semibold">Dükkân</th>
+            <th scope="col" class="px-3 py-2.5 text-left font-semibold">İlçe</th>
+            <th scope="col" class="px-3 py-2.5 text-left font-semibold">İletişim</th>
+            <th scope="col" class="px-3 py-2.5 text-left font-semibold">Harita</th>
           </tr>
         </thead>
         <tbody>
           {shops.dukkanlar.map((dk) => (
             <tr class="border-t border-line">
-              <th scope="row" class="px-3 py-2 text-left font-medium">{dk.ad}</th>
-              <td class="px-3 py-2 text-muted">{dk.ilce ?? '—'}</td>
-              <td class="px-3 py-2">
+              <th scope="row" class="px-3 py-2.5 text-left font-medium">{dk.ad}</th>
+              <td class="px-3 py-2.5 text-muted">{dk.ilce ?? '—'}</td>
+              <td class="px-3 py-2.5">
                 {dk.telefon ? <a class="text-accent hover:underline" href={`tel:${dk.telefon}`}>{dk.telefon}</a> : <span class="text-muted">—</span>}
               </td>
-              <td class="px-3 py-2">
+              <td class="px-3 py-2.5">
                 <a class="text-accent hover:underline" href={dk.osm} rel="noopener" target="_blank">aç →</a>
               </td>
             </tr>
@@ -190,8 +190,8 @@ const cantada = [
   </Bolum>
 
   <Bolum baslik="Neye Para Harcamaya Değer, Neye Değmez">
-    <div class="grid gap-3 sm:grid-cols-2">
-      <div class="rounded-sm border border-l-[3px] border-good/40 border-l-good bg-good-soft p-4">
+    <div class="grid gap-5 sm:grid-cols-2">
+      <div class="rounded-sm border-2 border-good/45 bg-good-soft p-4">
         <h3 class="flex items-center gap-1.5 font-semibold text-good"><Ikon ad="pusula" sinif="size-4" />Değer</h3>
         <ul class="mt-2 space-y-1.5 text-sm">
           <li>· <strong>İğne.</strong> Ucuz iğne körelir ve bükülür; balığı orada kaybedersin.</li>
