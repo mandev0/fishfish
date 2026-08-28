@@ -26,10 +26,12 @@ jobs:
   derle:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
+          # Dockerfile ile aynı sürüm: iki yolun da bit bit aynı çıktı üretmesi,
+          # dolayısıyla service worker sürüm damgasının değişmemesi için.
           node-version: '22'
           cache: npm
 
@@ -47,9 +49,14 @@ jobs:
       - name: Derleme
         run: npm run build
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
+          # v5 nokta ile başlayan dosyaları varsayılan olarak atıyor; `.nojekyll`
+          # bu yüzden düşerdi. Actions ile yayında Jekyll zaten çalışmıyor ama
+          # kaynak "Deploy from a branch"e çevrilirse `_astro/` klasörü alt
+          # çizgiyle başladığı için yok sayılırdı — dosya sigorta olarak duruyor.
+          include-hidden-files: true
 
   yayinla:
     needs: derle
@@ -59,4 +66,4 @@ jobs:
       url: ${{ steps.dagitim.outputs.page_url }}
     steps:
       - id: dagitim
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
