@@ -1,15 +1,20 @@
 ---
 /**
  * İkon. Yollar `src/lib/ikonlar.ts` içinde; aynı set tarayıcıda da kullanılıyor.
+ *
+ * İki set var: ev seti 24×24 çizgiyle, Phosphor seti 256×256 dolguyla çizilir.
+ * Ad hangi sette geçiyorsa onun öznitelikleri uygulanır.
  */
-import { IKONLAR } from '../lib/ikonlar';
+import { IKONLAR, IKONLAR_PH } from '../lib/ikonlar';
 
 interface Props { ad: string; sinif?: string }
 const { ad, sinif = 'size-4' } = Astro.props;
-const govde = IKONLAR[ad] ?? IKONLAR.pusula!;
+const ph = IKONLAR_PH[ad];
+const govde = ph ?? IKONLAR[ad] ?? IKONLAR.pusula!;
 ---
-<svg
-  class={sinif} viewBox="0 0 24 24" fill="none" stroke="currentColor"
-  stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"
-  aria-hidden="true" focusable="false" set:html={govde}
-/>
+{ph
+  ? <svg class={sinif} viewBox="0 0 256 256" fill="currentColor"
+      aria-hidden="true" focusable="false" set:html={govde} />
+  : <svg class={sinif} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"
+      aria-hidden="true" focusable="false" set:html={govde} />}

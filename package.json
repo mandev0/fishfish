@@ -11,7 +11,8 @@
     "validate": "node scripts/validate-data.mjs",
     "test": "vitest run",
     "veri:dukkanlar": "node scripts/fetch-shops.mjs",
-    "ikon:uret": "node scripts/ikon-uret.mjs"
+    "ikon:uret": "node scripts/ikon-uret.mjs",
+    "yazitipi:indir": "node scripts/yazitipi-indir.mjs"
   },
   "dependencies": {
     "astro": "^5.13.0",

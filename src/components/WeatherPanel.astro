@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Ikon from './Ikon.astro';
 import { baslikBicimi } from '../lib/metin';
-import { BOLGE_ADLARI, IL_ADLARI, SU_TURU } from '../lib/season';
+import { BOLGE_ADLARI, IL_ADLARI, SAAT_ADLARI, SU_TURU } from '../lib/season';
 
 interface Props {
   /** Verilirse panel bu noktaya kilitlenir, seçici gösterilmez. */
@@ -17,6 +17,16 @@ const noktalar = await getCollection('spots');
 // aynı kaynaktan farklı çıktı çıkıyor, service worker sürüm damgası değişiyor
 // ve kurulu kullanıcılar boş yere bütün paketi yeniden indiriyor.
 const turler = (await getCollection('species')).sort((a, b) => a.id.localeCompare(b.id));
+// Karar kartı "ne götürüyorsun" satırlarını ve yöntem adını takımdan okur.
+const takimlar = (await getCollection('rigs')).sort((a, b) => a.id.localeCompare(b.id));
+const yontemler = (await getCollection('methods')).sort((a, b) => a.id.localeCompare(b.id));
+
+/** Türün birincil takımı ve o takımın yöntemi — karar kartının "nasıl"ı. */
+function birincilTakim(t: (typeof turler)[number]) {
+  const takim = takimlar.find((r) => r.id === t.data.takimlar[0]);
+  const yontem = takim && yontemler.find((y) => y.id === takim.data.yontem);
+  return { takimAd: takim?.data.ad ?? null, yontemAd: yontem?.data.ad ?? null, takimId: takim?.id ?? null };
+}
 
 // İstemciye sadece skor için gereken alanları gönderiyoruz.
 const veri = {
@@ -28,12 +38,28 @@ const veri = {
     // Tatlı suda deniz modeli hiç veri döndürmez; panel bunu farklı anlatır.
     tatliSu: SU_TURU[n.data.su] !== 'deniz',
   })),
-  turler: turler.map((t) => ({
-    id: t.id, ad: t.data.ad, ozet: t.data.ozet,
-    aylar: t.data.aylar, gece: t.data.gece,
-    suSicakligi: t.data.suSicakligi, aktifSaatler: t.data.aktifSaatler,
-    ruzgarTercihi: t.data.ruzgarTercihi, ruzgarKacinilan: t.data.ruzgarKacinilan,
-  })),
+  turler: turler.map((t) => {
+    const { takimAd, yontemAd, takimId } = birincilTakim(t);
+    const e = t.data.ekipman;
+    return {
+      id: t.id, ad: t.data.ad, ozet: t.data.ozet,
+      aylar: t.data.aylar, gece: t.data.gece,
+      suSicakligi: t.data.suSicakligi, aktifSaatler: t.data.aktifSaatler,
+      ruzgarTercihi: t.data.ruzgarTercihi, ruzgarKacinilan: t.data.ruzgarKacinilan,
+      // — Karar kartı alanları —
+      takimAd, yontemAd, takimId,
+      /** Nerede aranacağı: yaşam alanı cümlesinin ilk yargısı yeter. */
+      nerede: (t.data.yasamAlani.split(/(?<=\.)\s/)[0] ?? t.data.yasamAlani).trim(),
+      saatler: t.data.aktifSaatler.map((x: string) => SAAT_ADLARI[x] ?? x),
+      /** Yasal boy hafızadan değil, kaynaklı veriden. Yoksa null. */
+      asgariBoy: t.data.yasal?.asgariBoy ?? null,
+      ekipman: [
+        ['Kamış', e.kamis?.deger], ['Makine', e.makine?.deger],
+        ['Ana misina', e.anaMisina?.deger], ['İğne', e.igne?.deger],
+        ['Ağırlık', e.agirlik?.deger],
+      ].filter((r) => r[1]) as [string, string][],
+    };
+  }),
 };
 
 const iller = [...new Set(veri.noktalar.map((n) => n.il))];
@@ -101,6 +127,12 @@ const bolgeler = [...new Set(veri.noktalar.map((n) => n.bolge))];
       <p data-konum-durum hidden class="mt-2 text-sm text-warn" role="status"></p>
     </div>
   )}
+
+  {/* Karar kartı — tasarım 1b. Yalnız canlı veriyle anlamlı olduğu için
+      `[data-canli]` içinde; veri gelmezse mevsimsel listeye düşülür. */}
+  <div data-canli hidden class="panel-bolum">
+    <div data-karar></div>
+  </div>
 
   <div class="panel-bolum">
     <h3 class="alt-baslik">Bugünün Koşulları</h3>

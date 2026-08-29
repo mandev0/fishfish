@@ -41,35 +41,17 @@ const acikSekme = aktifSekme(yol);
         hem markadan kopuktu hem her platformda başka görünüyordu. */}
     <link rel="icon" type="image/svg+xml" href={faviconVeri} />
     <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
-    <meta name="theme-color" content="#f4f1e8" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0e0f11" media="(prefers-color-scheme: dark)" />
-    <meta name="color-scheme" content="light dark" />
+    {/* Nocturne yalnız koyu tanımlı; tema seçimi ve anahtarı kaldırıldı. */}
+    <meta name="theme-color" content="#161826" />
+    <meta name="color-scheme" content="dark" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     {/* iOS'ta ana ekrandan açılınca tarayıcı çubuğu olmadan çalışsın. */}
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Balıkçılık" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="mobile-web-app-capable" content="yes" />
     <ClientRouter />
-    <script is:inline>
-      // Tema tercihini ilk boyamadan önce uygula ki ekran titremesin.
-      // Sayfa geçişinde <html> öznitelikleri yenisiyle değiştiği için
-      // aynı işi `astro:after-swap` sonrası tekrar yapıyoruz.
-      (function () {
-        function uygula() {
-          var t = null;
-          try { t = localStorage.getItem('fishfish:tema'); } catch (e) {}
-          if (t === 'dark' || t === 'light') {
-            document.documentElement.dataset.theme = t;
-            var damga = document.querySelector('meta[name="theme-color"]:not([media])');
-            if (damga) damga.setAttribute('content', t === 'dark' ? '#0e0f11' : '#f4f1e8');
-          }
-        }
-        uygula();
-        document.addEventListener('astro:after-swap', uygula);
-      })();
-    </script>
   </head>
   <body class="pb-[calc(3.5rem+1px+env(safe-area-inset-bottom))] lg:pb-0">
     <a href="#icerik" class="sr-only focus:not-sr-only absolute left-2 top-2 z-50 rounded bg-accent px-3 py-2.5 text-accent-ink">
@@ -114,16 +96,6 @@ const acikSekme = aktifSekme(yol);
           </ul>
         </nav>
 
-        <button
-          id="tema-dugmesi" type="button"
-          class="dugme dugme-ikincil dugme-ikon ml-auto shrink-0 lg:ml-2"
-          aria-label="Temayı değiştir"
-        >
-          <svg viewBox="0 0 24 24" class="size-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
-            <circle cx="12" cy="12" r="8" />
-            <path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor" stroke="none" />
-          </svg>
-        </button>
       </div>
     </header>
 
@@ -206,19 +178,6 @@ const acikSekme = aktifSekme(yol);
         if (window.__fishfishKabuk) return;
         window.__fishfishKabuk = true;
 
-        document.addEventListener('click', function (e) {
-          if (!(e.target instanceof Element)) return;
-          if (!e.target.closest('#tema-dugmesi')) return;
-          var kok = document.documentElement;
-          var koyuMu = kok.dataset.theme
-            ? kok.dataset.theme === 'dark'
-            : matchMedia('(prefers-color-scheme: dark)').matches;
-          var yeni = koyuMu ? 'light' : 'dark';
-          kok.dataset.theme = yeni;
-          try { localStorage.setItem('fishfish:tema', yeni); } catch (hata) {}
-          var damga = document.querySelector('meta[name="theme-color"]:not([media])');
-          if (damga) damga.setAttribute('content', yeni === 'dark' ? '#0e0f11' : '#f4f1e8');
-        });
       })();
     </script>
   </body>

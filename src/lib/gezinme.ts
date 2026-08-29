@@ -24,9 +24,9 @@ export const BOLUMLER: Bolum[] = [
   {
     ad: 'Planla',
     ogeler: [
-      { ad: 'Bugün', href: '/', ipucu: 'Canlı havaya göre tavsiye', ikon: 'gunes' },
-      { ad: 'Noktalar', href: '/noktalar', ipucu: 'Kıyı ve tatlı su', ikon: 'konum' },
-      { ad: 'Takvim', href: '/takvim', ipucu: 'Ay ay hangi balık', ikon: 'takvim' },
+      { ad: 'Bugün', href: '/', ipucu: 'Canlı havaya göre tavsiye', ikon: 'sun-horizon' },
+      { ad: 'Noktalar', href: '/noktalar', ipucu: 'Kıyı ve tatlı su', ikon: 'map-trifold' },
+      { ad: 'Takvim', href: '/takvim', ipucu: 'Ay ay hangi balık', ikon: 'calendar-dots' },
     ],
   },
   {
@@ -58,7 +58,7 @@ export const MENU_BOLUMLERI: Bolum[] = BOLUMLER.filter((b) => b.ad !== 'Planla')
 /** Telefonun başparmak menzilindeki birincil gezinme: üç plan sekmesi + menü. */
 export const SEKMELER: Baglanti[] = [
   ...BOLUMLER[0]!.ogeler,
-  { ad: 'Menü', href: '/menu', ipucu: 'Öğren ve dikkat başlıkları', ikon: 'menu' },
+  { ad: 'Menü', href: '/menu', ipucu: 'Öğren ve dikkat başlıkları', ikon: 'list' },
 ];
 
 /** Bir bağlantı, açık olan yolu temsil ediyor mu? */

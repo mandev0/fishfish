@@ -24,7 +24,20 @@ interface Nokta {
   denizVerisiZayif?: boolean;
   tatliSu?: boolean;
 }
-interface Veri { noktalar: Nokta[]; turler: (TurProfili & { ozet: string })[] }
+/** Karar kartının ihtiyaç duyduğu, skorlamaya girmeyen alanlar. */
+interface KararAlanlari {
+  takimAd: string | null;
+  yontemAd: string | null;
+  takimId: string | null;
+  nerede: string;
+  saatler: string[];
+  /** Kaynaklı veriden gelir; kaydı olmayan türde null. */
+  asgariBoy: number | null;
+  ekipman: [string, string][];
+}
+type PanelTuru = TurProfili & { ozet: string } & KararAlanlari;
+
+interface Veri { noktalar: Nokta[]; turler: PanelTuru[] }
 
 const SECIM_ANAHTARI = 'fishfish:nokta';
 const IL_ANAHTARI = 'fishfish:il';
@@ -52,6 +65,100 @@ function durumKarti(ikon: string, baslik: string, deger: string, alt: string): s
     <p class="sayisal mt-1 text-lg font-semibold leading-tight">${kacir(deger)}</p>
     <p class="mt-0.5 text-xs text-muted">${kacir(alt)}</p>
   </div>`;
+}
+
+/**
+ * Karar kartı — tasarım 1b.
+ *
+ * Panelin en üstünde tek bir "bunu yap" der: hedef tür, hangi takımla,
+ * ne zaman ve nerede. Altında skor motorunun kendi gerekçeleri, türün
+ * ekipman satırları ve kaynaklı yasal boy notu var.
+ *
+ * Tasarımdaki metinlerin hiçbiri sabit yazılmadı: saat penceresi günün
+ * gerçek batımından, gerekçeler skor faktörlerinden, ekipman ve boy
+ * limiti tür verisinden geliyor.
+ */
+function kararKarti(
+  tur: PanelTuru,
+  sonuc: SkorSonucu,
+  nokta: Nokta,
+  gunBatimi: Date | null | undefined,
+  alternatifler: { tur: PanelTuru; sonuc: SkorSonucu }[],
+): string {
+  // En güçlü üç olumlu faktör — motorun kendi gerekçe cümleleriyle.
+  const nedenler = sonuc.faktorler
+    .filter((f) => f.agirlik > 0 && !f.veriYok && f.puan >= 0.6)
+    .sort((a, b) => b.puan * b.agirlik - a.puan * a.agirlik)
+    .slice(0, 3);
+
+  const saatMetinleri = tur.saatler.map((x) => x.toLocaleLowerCase('tr'));
+  const pencere = saatMetinleri.length ? saatMetinleri.join(' · ') : 'gün boyu';
+  // Batım saatini yalnızca tür alacada/gecede aktifse yazıyoruz; öğlen
+  // avlanan bir tür için batım saati bilgi değil gürültü.
+  const alacaci = tur.aktifSaatler.some((x) => x === 'aksam' || x === 'gece');
+  const batimNotu = alacaci && gunBatimi ? ` Batım ${saatMetni(gunBatimi)}.` : '';
+
+  const yontem = tur.yontemAd ?? tur.takimAd;
+  const baslik = yontem ? `${kacir(tur.ad)}<br>${kacir(yontem.toLocaleLowerCase('tr'))} ile` : kacir(tur.ad);
+
+  const boyNotu = tur.asgariBoy != null
+    ? `<b class="font-medium">Asgari boy ${tur.asgariBoy} cm.</b> Altındakini suya bırak.`
+    : 'Bu tür için kayıtlı asgari boy yok; yürürlükteki tebliği kontrol et.';
+
+  return `
+  <div class="kart kart-vurgulu p-4">
+    <p class="etiket-ust" style="color:var(--accent-500)">${kacir(sonuc.seviyeMetni)} · En Yüksek Şans</p>
+    <p class="mt-1.5 text-[27px] font-medium leading-[1.1] tracking-tight">${baslik}</p>
+    <p class="mt-2 text-[13px] leading-relaxed text-accent-300">
+      ${kacir(pencere)} saatlerinde.${kacir(batimNotu)} ${kacir(tur.nerede)}
+    </p>
+    <div class="mt-4 flex gap-2">
+      <a href="/balik/${kacir(tur.id)}" class="dugme dugme-birincil flex-1">Türü Aç</a>
+      ${tur.takimId
+        ? `<a href="/takim/${kacir(tur.takimId)}" class="dugme dugme-ikincil flex-1">Takımı Kur</a>`
+        : ''}
+    </div>
+  </div>
+
+  ${nedenler.length ? `
+  <h4 class="etiket-ust mt-5">Neden</h4>
+  <ul class="mt-2 flex flex-col gap-2">
+    ${nedenler.map((f) => `<li class="flex gap-2.5 text-[13px] leading-relaxed text-neutral-300">
+      ${ikonSvg('check', 'mt-[3px] size-3.5 shrink-0 text-accent-600')}
+      <span><b class="font-medium">${kacir(f.ad)}</b> — ${kacir(f.gerekce)}</span>
+    </li>`).join('')}
+  </ul>` : ''}
+
+  ${tur.ekipman.length ? `
+  <h4 class="etiket-ust mt-5">Ne Götürüyorsun</h4>
+  <div class="kart mt-2 overflow-hidden">
+    ${tur.ekipman.map(([k, v], i) => `<div class="flex justify-between gap-3 px-3 py-2.5 text-[13px]${
+      i ? ' border-t border-line' : ''}">
+      <span class="shrink-0 text-muted">${kacir(k)}</span>
+      <span class="text-right">${kacir(v)}</span>
+    </div>`).join('')}
+  </div>` : ''}
+
+  <div class="mt-3 flex gap-2 rounded-md bg-accent-900/60 p-3 text-[12px] leading-relaxed text-accent-300"
+       style="box-shadow:0 0 0 1px #3a3358">
+    ${ikonSvg('ruler', 'mt-[2px] size-3.5 shrink-0')}<div>${boyNotu}</div>
+  </div>
+
+  ${alternatifler.length ? `
+  <h4 class="etiket-ust mt-5">Alternatifler</h4>
+  <div class="mt-2 flex flex-col gap-2">
+    ${alternatifler.map(({ tur: a, sonuc: as_ }) => `
+      <a href="/balik/${kacir(a.id)}" class="kart flex items-center gap-3 px-3 py-2.5">
+        ${ikonSvg('fish', 'size-[18px] shrink-0 text-accent-500')}
+        <span class="min-w-0 flex-1">
+          <span class="block text-[13.5px] font-medium">${kacir(a.ad)}</span>
+          <span class="block text-[11px] text-muted">${kacir(a.yontemAd ?? a.takimAd ?? '')}${
+            a.yontemAd || a.takimAd ? ' · ' : ''}${kacir(as_.seviyeMetni.toLocaleLowerCase('tr'))}</span>
+        </span>
+        <span class="shrink-0 text-[11px] text-accent-500">${as_.skor}</span>
+        ${ikonSvg('caret-right', 'size-3.5 shrink-0 text-neutral-600')}
+      </a>`).join('')}
+  </div>` : ''}`;
 }
 
 function turSatiri(tur: TurProfili & { ozet: string }, sonuc: SkorSonucu): string {
@@ -100,6 +207,7 @@ export function baslat(): void {
   const statikAlan = document.querySelector<HTMLElement>('[data-statik]');
   const canliAlanlar = [...kok.querySelectorAll<HTMLElement>('[data-canli]')];
   const durumMetni = kok.querySelector<HTMLElement>('[data-durum-metni]');
+  const kararAlani = kok.querySelector<HTMLElement>('[data-karar]');
   const guncellemeDamgasi = kok.querySelector<HTMLElement>('[data-guncelleme]');
   const yenileDugmesi = kok.querySelector<HTMLButtonElement>('[data-yenile]');
 
@@ -272,8 +380,19 @@ export function baslat(): void {
 
     if (listeAlani) {
       listeAlani.innerHTML = sirali.length
-        ? sirali.map(({ tur, sonuc }) => turSatiri(tur as TurProfili & { ozet: string }, sonuc)).join('')
-        : '<li class="rounded-sm border-2 border-line bg-surface p-4 text-sm text-muted">Bu nokta için tür kaydı yok.</li>';
+        ? sirali.map(({ tur, sonuc }) => turSatiri(tur as PanelTuru, sonuc)).join('')
+        : '<li class="kart p-4 text-sm text-muted">Bu nokta için tür kaydı yok.</li>';
+    }
+
+    // --- Karar kartı: listenin başındaki tür ---
+    if (kararAlani) {
+      const en = sirali[0];
+      kararAlani.innerHTML = en
+        ? kararKarti(
+            en.tur as PanelTuru, en.sonuc, nokta, k.gunBatimi,
+            sirali.slice(1, 3).map((o) => ({ tur: o.tur as PanelTuru, sonuc: o.sonuc })),
+          )
+        : '';
     }
 
     // --- Uyarılar ---

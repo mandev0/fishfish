@@ -1,169 +1,80 @@
 @import "tailwindcss";
+@import "./inter.css";
 
 /* ---------------------------------------------------------------
-   Renk sistemi — "mürekkep ve kâğıt" almanağı.
+   Nocturne — claude.ai/design tasarım sisteminden alınan jetonlar.
+   Kaynak: _ds/nocturne-9fd0ba22/styles.css
 
-   İki renk taşıyor:
-     --accent   mürekkep: yapı, bağlantı, ikon zemini. Siyaha yakın.
-     --vurgu    aksan (can yeleği / şamandıra turuncusu): eylem rengi.
-                Düğmeler, aktif sekme, odak halkası. Az ve yerinde.
+   Tek tema: Nocturne yalnız koyu tanımlı, o yüzden açık tema ve tema
+   anahtarı kaldırıldı. Aksan mor-lacivert (blurple); yapı yüzey rengi,
+   hairline halka ve gölgeyle kuruluyor.
 
-   Renkli sol kenar çubukları kaldırıldı: yapı çerçeve, zemin tonu ve
-   tipografiyle kuruluyor. Bölgelerin kendi renkleri var; aynı renk hem
-   haritada hem kartlarda (nokta karesi ve etiket metninde).
+   Bölge renkleri Nocturne'de yok — harita işaretçisiyle nokta kartını
+   aynı jetona bağlayan tek kaynak olduğu için korundu, koyu zemine
+   göre ayarlı hâlleriyle.
 --------------------------------------------------------------- */
 :root {
-  color-scheme: light;
-  --bg: #f4f1e8;
-  --bg-tint: #eae5d7;
-  --surface: #fffdf7;
-  --surface-2: #efeade;
-  --text: #17191c;
-  --text-muted: #5d6469;
-  --border: #d8d2c1;
-  --border-strong: #b0a894;
-
-  /* Mürekkep: yapı ve bağlantı rengi. Siyaha yakın, hafif soğuk. */
-  --accent: #1c1f22;
-  --accent-soft: #e7e3d6;
-  --accent-ink: #fffdf7;
-  /* Aksan: can yeleği / şamandıra turuncusu. Eylem rengi. */
-  --vurgu: #a5441a;
-  --vurgu-koyu: #87360f;
-  --vurgu-soft: #f6e4d5;
-  --vurgu-dolgu: #a5441a;
-  --vurgu-dolgu-koyu: #87360f;
-  --vurgu-ink: #ffffff;
-
-  --warn: #a8620a;
-  --warn-soft: #fbeed4;
-  --danger: #9d2a1f;
-  --danger-soft: #f8e0dc;
-  --good: #256b4a;
-  --good-soft: #d8ecdf;
-
-  --etiket: #767d83;
-
-  --shadow: 0 1px 0 rgb(23 25 28 / 0.06), 0 2px 8px rgb(23 25 28 / 0.07);
-
-  --bolge-bogaz-rumeli: #0b6e7f;
-  --bolge-bogaz-anadolu: #2c7145;
-  --bolge-karadeniz: #33538f;
-  --bolge-marmara-avrupa: #a85c11;
-  --bolge-marmara-anadolu: #6f4189;
-  --bolge-adalar: #9c3128;
-  --bolge-kocaeli-korfez: #7a6412;
-  --bolge-kocaeli-karadeniz: #1d6b6b;
-  --bolge-istanbul-icsu: #4f7a24;
-  --bolge-kocaeli-icsu: #4d4f9c;
-  --bolge-sapanca: #8f3a6b;
-  --bolge-sakarya-icsu: #7a3f18;
-
-  --zor1-bg: #dcefe0; --zor1-fg: #29613f; --zor1-cizgi: #6bb488;
-  --zor2-bg: #e7f0d6; --zor2-fg: #4a6529; --zor2-cizgi: #9dc26b;
-  --zor3-bg: #fbeed0; --zor3-fg: #855f10; --zor3-cizgi: #dfb555;
-  --zor4-bg: #fae1cb; --zor4-fg: #944c1a; --zor4-cizgi: #e39865;
-  --zor5-bg: #f9dad6; --zor5-fg: #96342a; --zor5-cizgi: #dc8378;
-
-  --bol1-bg: #eae6da; --bol1-fg: #6a6f66; --bol1-cizgi: #b3b7ac;
-  --bol2-bg: #e2ebdf; --bol2-fg: #587059; --bol2-cizgi: #99b79c;
-  --bol3-bg: #d8e9d9; --bol3-fg: #416b4f; --bol3-cizgi: #7fbb92;
-  --bol4-bg: #cde7d2; --bol4-fg: #2f6543; --bol4-cizgi: #63b381;
-  --bol5-bg: #c0e2c9; --bol5-fg: #1f5a38; --bol5-cizgi: #47a670;
-}
-
-/* Koyu tema: zemin de siyaha yakın, mürekkep tersine döner (kâğıt rengi olur). */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-  --bg: #0e0f11;
-  --bg-tint: #141618;
-  --surface: #16181a;
-  --surface-2: #1e2124;
-  --text: #e9e7e1;
-  --text-muted: #9aa0a4;
-  --border: #2a2d31;
-  --border-strong: #464b50;
-
-  --accent: #e9ebec;
-  --accent-soft: #23262a;
-  --accent-ink: #0e0f11;
-  --vurgu: #e28a4d;
-  --vurgu-koyu: #ee9a5f;
-  --vurgu-soft: #2c1c11;
-  --vurgu-dolgu: #b84f1a;
-  --vurgu-dolgu-koyu: #cf5c22;
-  --vurgu-ink: #ffffff;
-
-  --warn: #e0a04a;
-  --warn-soft: #2b2313;
-  --danger: #e8827a;
-  --danger-soft: #2e1a19;
-  --good: #5cbe8c;
-  --good-soft: #12291f;
-
-  --etiket: #a8aeb3;
-
-  --shadow: 0 1px 0 rgb(0 0 0 / 0.6), 0 2px 10px rgb(0 0 0 / 0.5);
-
-  --bolge-bogaz-rumeli: #46b3c4;
-  --bolge-bogaz-anadolu: #63bd86;
-  --bolge-karadeniz: #7d9fe0;
-  --bolge-marmara-avrupa: #e0a45c;
-  --bolge-marmara-anadolu: #b48bd0;
-  --bolge-adalar: #e5847a;
-  --bolge-kocaeli-korfez: #cbb455;
-  --bolge-kocaeli-karadeniz: #56b8b8;
-  --bolge-istanbul-icsu: #9ccb63;
-  --bolge-kocaeli-icsu: #9295e2;
-  --bolge-sapanca: #de85b8;
-  --bolge-sakarya-icsu: #cf9160;
-
-  --zor1-bg: #10301f; --zor1-fg: #7fcb9a; --zor1-cizgi: #3c7754;
-  --zor2-bg: #1c3016; --zor2-fg: #a9c887; --zor2-cizgi: #597b3e;
-  --zor3-bg: #32290f; --zor3-fg: #e0b360; --zor3-cizgi: #87682a;
-  --zor4-bg: #33200f; --zor4-fg: #e59967; --zor4-cizgi: #8a532a;
-  --zor5-bg: #331a19; --zor5-fg: #e68a80; --zor5-cizgi: #8a3e37;
-
-  --bol1-bg: #1a1c1e; --bol1-fg: #8b9ea7; --bol1-cizgi: #495b64;
-  --bol2-bg: #172b23; --bol2-fg: #90b59f; --bol2-cizgi: #446d57;
-  --bol3-bg: #143024; --bol3-fg: #83c29e; --bol3-cizgi: #3d7a59;
-  --bol4-bg: #113425; --bol4-fg: #74c99a; --bol4-cizgi: #38885c;
-  --bol5-bg: #0e3a27; --bol5-fg: #60cf96; --bol5-cizgi: #2d9960;
-  }
-}
-
-:root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #0e0f11;
-  --bg-tint: #141618;
-  --surface: #16181a;
-  --surface-2: #1e2124;
-  --text: #e9e7e1;
-  --text-muted: #9aa0a4;
-  --border: #2a2d31;
-  --border-strong: #464b50;
 
-  --accent: #e9ebec;
-  --accent-soft: #23262a;
-  --accent-ink: #0e0f11;
-  --vurgu: #e28a4d;
-  --vurgu-koyu: #ee9a5f;
-  --vurgu-soft: #2c1c11;
-  --vurgu-dolgu: #b84f1a;
-  --vurgu-dolgu-koyu: #cf5c22;
-  --vurgu-ink: #ffffff;
+  /* — Nocturne çekirdek — */
+  --bg: #161826;
+  --surface: #232532;
+  --text: #e9e9ed;
+  --accent: #9184d9;
+  --accent-2: #a7a1db;
+  --divider: color-mix(in srgb, #e9e9ed 16%, transparent);
 
-  --warn: #e0a04a;
-  --warn-soft: #2b2313;
-  --danger: #e8827a;
-  --danger-soft: #2e1a19;
-  --good: #5cbe8c;
-  --good-soft: #12291f;
+  /* Nötr rampa — tek aydınlık ölçeğinde */
+  --neutral-100: #f3f5fe;
+  --neutral-200: #e4e7f5;
+  --neutral-300: #cfd3e5;
+  --neutral-400: #b2b6ca;
+  --neutral-500: #9397ab;
+  --neutral-600: #75798c;
+  --neutral-700: #595d6c;
+  --neutral-800: #3f424d;
+  --neutral-900: #292b31;
 
-  --etiket: #a8aeb3;
+  --accent-100: #f5f4ff;
+  --accent-200: #e7e5fe;
+  --accent-300: #d2cefd;
+  --accent-400: #b5abfc;
+  --accent-500: #968ae0;
+  --accent-600: #796cbf;
+  --accent-700: #5d5294;
+  --accent-800: #423a6a;
+  --accent-900: #2b2741;
 
-  --shadow: 0 1px 0 rgb(0 0 0 / 0.6), 0 2px 10px rgb(0 0 0 / 0.5);
+  /* — Projenin kendi anlamsal adları, Nocturne rampasına bağlandı — */
+  --bg-tint: #1b1d2a;
+  --surface-2: #2b2d3b;
+  --text-muted: var(--neutral-500);
+  --etiket: var(--neutral-400);
+  --border: var(--neutral-800);
+  --border-strong: var(--neutral-700);
+
+  --accent-soft: var(--accent-900);
+  --accent-ink: #161826;
+  /* Eylem rengi de aksanın kendisi: Nocturne'de ikinci bir vurgu rengi yok. */
+  --vurgu: var(--accent-500);
+  --vurgu-koyu: var(--accent-400);
+  --vurgu-soft: var(--accent-900);
+  --vurgu-dolgu: var(--accent-600);
+  --vurgu-dolgu-koyu: var(--accent-500);
+  --vurgu-ink: var(--accent-100);
+
+  --warn: #d8a657;
+  --warn-soft: #2f2718;
+  --danger: #e08a82;
+  --danger-soft: #331e1d;
+  --good: #7ec79b;
+  --good-soft: #17301f;
+
+  /* Yükseklik — koyu temada hairline kenar + ortam karanlığı. */
+  --shadow-sm: 0 0 0 1px var(--neutral-800);
+  --shadow-md: 0 0 0 1px var(--neutral-700), 0 6px 18px rgb(0 0 0 / 0.55);
+  --shadow-lg: 0 0 0 1px var(--neutral-500), 0 16px 40px rgb(0 0 0 / 0.65);
+  --shadow: var(--shadow-md);
 
   --bolge-bogaz-rumeli: #46b3c4;
   --bolge-bogaz-anadolu: #63bd86;
@@ -178,20 +89,18 @@
   --bolge-sapanca: #de85b8;
   --bolge-sakarya-icsu: #cf9160;
 
-  --zor1-bg: #10301f; --zor1-fg: #7fcb9a; --zor1-cizgi: #3c7754;
-  --zor2-bg: #1c3016; --zor2-fg: #a9c887; --zor2-cizgi: #597b3e;
-  --zor3-bg: #32290f; --zor3-fg: #e0b360; --zor3-cizgi: #87682a;
-  --zor4-bg: #33200f; --zor4-fg: #e59967; --zor4-cizgi: #8a532a;
-  --zor5-bg: #331a19; --zor5-fg: #e68a80; --zor5-cizgi: #8a3e37;
+  --zor1-bg: #16301f; --zor1-fg: #7ec79b; --zor1-cizgi: #3c7754;
+  --zor2-bg: #1e2f18; --zor2-fg: #a9c887; --zor2-cizgi: #597b3e;
+  --zor3-bg: #2f2718; --zor3-fg: #d8a657; --zor3-cizgi: #87682a;
+  --zor4-bg: #322213; --zor4-fg: #e0996b; --zor4-cizgi: #8a532a;
+  --zor5-bg: #331e1d; --zor5-fg: #e08a82; --zor5-cizgi: #8a3e37;
 
-  --bol1-bg: #1a1c1e; --bol1-fg: #8b9ea7; --bol1-cizgi: #495b64;
-  --bol2-bg: #172b23; --bol2-fg: #90b59f; --bol2-cizgi: #446d57;
-  --bol3-bg: #143024; --bol3-fg: #83c29e; --bol3-cizgi: #3d7a59;
-  --bol4-bg: #113425; --bol4-fg: #74c99a; --bol4-cizgi: #38885c;
-  --bol5-bg: #0e3a27; --bol5-fg: #60cf96; --bol5-cizgi: #2d9960;
+  --bol1-bg: #292b31; --bol1-fg: #9397ab; --bol1-cizgi: #595d6c;
+  --bol2-bg: #1f2a26; --bol2-fg: #90b59f; --bol2-cizgi: #446d57;
+  --bol3-bg: #1a2f26; --bol3-fg: #83c29e; --bol3-cizgi: #3d7a59;
+  --bol4-bg: #163326; --bol4-fg: #74c99a; --bol4-cizgi: #38885c;
+  --bol5-bg: #113828; --bol5-fg: #60cf96; --bol5-cizgi: #2d9960;
 }
-
-:root[data-theme="light"] { color-scheme: light; }
 
 @theme inline {
   --color-bg: var(--bg);
@@ -215,24 +124,40 @@
   --color-danger-soft: var(--danger-soft);
   --color-good: var(--good);
   --color-good-soft: var(--good-soft);
+  /* Nocturne rampalarını Tailwind'e tanıt. Kaydedilmezse `text-neutral-300`
+     Tailwind'in kendi nötr grisine düşüyor (kroma 0) — Nocturne'ün nötrü
+     mavi dökümlü, ikisi yan yana ayrışıyor. */
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+  --color-accent-100: var(--accent-100);
+  --color-accent-200: var(--accent-200);
+  --color-accent-300: var(--accent-300);
+  --color-accent-400: var(--accent-400);
+  --color-accent-500: var(--accent-500);
+  --color-accent-600: var(--accent-600);
+  --color-accent-700: var(--accent-700);
+  --color-accent-800: var(--accent-800);
+  --color-accent-900: var(--accent-900);
 
-  /* Tek yarıçap sözlüğü: her şey 2 px. Ölçek boyunca değişen yuvarlaklık
-     (kart 8, düğme 12, rozet 999) şablon görüntüsünün ana kaynağı. */
-  --radius-xs: 2px;
-  --radius-sm: 2px;
-  --radius-md: 2px;
-  --radius-lg: 2px;
-  --radius-xl: 2px;
-  --radius-2xl: 2px;
-  --radius-3xl: 2px;
+  /* Nocturne yarıçap sözlüğü: 4 / 8 / 14 px. */
+  --radius-xs: 4px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 8px;
+  --radius-xl: 8px;
+  --radius-2xl: 14px;
+  --radius-3xl: 14px;
 
-  /* Başlıklar serif — almanak/rehber hissi. Gövde metni işletim sisteminin
-     kendi arayüz yüzü; "Inter" yazıp yüklememek zaten sistem yüzüne
-     düşüyordu, o hayalet adım kaldırıldı. */
-  --font-baslik: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
-                 Georgia, ui-serif, serif;
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-               "Helvetica Neue", Arial, sans-serif;
+  /* Nocturne tek yüzle çalışır: başlık da gövde de Inter. */
+  --font-baslik: "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, monospace;
 }
 
@@ -251,13 +176,14 @@ body {
   min-height: 100dvh;
 }
 
-/* Başlıklar serif ve sıkı; gövde metni sans. */
-h1, h2, h3 {
+/* Nocturne tipografi ölçeği. Tek yüz (Inter), başlıklar 500 ağırlıkta —
+   serif başlık/sans gövde ayrımı Nocturne'de yok. */
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-baslik);
-  letter-spacing: -0.012em;
-  font-weight: 600;
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
 }
-h1 { letter-spacing: -0.02em; }
 
 /* Ölçüler ve sayılar hizalı okunsun. */
 table, .sayisal { font-variant-numeric: tabular-nums; }
@@ -305,20 +231,30 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
    renkli bir şerit koyan o desen kaldırıldı.
 --------------------------------------------------------------- */
 .bolum-baslik {
-  padding-bottom: 0.35rem;
-  border-bottom: 2px solid var(--border-strong);
+  padding-bottom: 0.4rem;
+  border: 0;
+  /* Nocturne imzası: kural iki uçta saydama söner, keskin bitmez. */
+  background: linear-gradient(to right,
+    transparent, var(--divider) 48px,
+    var(--divider) calc(100% - 48px), transparent) no-repeat bottom / 100% 1px;
 }
 
 /* ---------------------------------------------------------------
    Kart — köşeler keskin, gölge yok, yapı çizgiyle kuruluyor
 --------------------------------------------------------------- */
 .kart {
-  border: 2px solid var(--border);
-  border-radius: 2px;
+  border: 0;
+  border-radius: var(--radius-md);
   background: var(--surface);
+  box-shadow: var(--shadow-sm);
 }
 /* Vurgulu kart: renkli kenar çubuğu değil, koyu zemin tonu + belirgin çerçeve. */
-.kart-vurgulu { background: var(--bg-tint); border-color: var(--border-strong); }
+/* Vurgulu kart: Nocturne'ün karar kartı zemini — aksan ailesinden
+   köşegen degrade + aksan halkası. */
+.kart-vurgulu {
+  background: linear-gradient(150deg, #242847, #1a1c2c);
+  box-shadow: 0 0 0 1px #3a3358;
+}
 
 /* Bölge renkleri — nokta kartlarının sol kenarında ve rozetlerde */
 [data-bolge] { --bolge: var(--border-strong); }
@@ -363,47 +299,20 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
      dugum   turuncu        düğüm noktası
      hareket turuncu kesik  hareket ve yön okları
 --------------------------------------------------------------- */
+/* Tek tema kaldığı için şema paleti de tek: koyu zemine göre.
+   Yem/düğüm turuncusunun yerini Nocturne aksanı aldı. */
 :root {
-  --d-misina: #2f4a5c;
-  --d-orgu: #55458a;
-  --d-lider: #0d8497;
-  --d-metal-dolgu: #ccd0d6;
-  --d-metal-cizgi: #67707c;
-  --d-igne: #55626f;
-  --d-yem: #a5441a;
-  --d-yem-dolgu: #f6e0cf;
-  --d-dugum: #a5441a;
-  --d-su: #2f7fa8;
-  --d-zemin: #9c8557;
-}
-:root[data-theme="dark"],
-:root:not([data-theme="light"]) {
   --d-misina: #92b8cb;
   --d-orgu: #a99ae4;
   --d-lider: #4fcadf;
   --d-metal-dolgu: #2f3d49;
   --d-metal-cizgi: #94a5b4;
   --d-igne: #9db0bf;
-  --d-yem: #e28a4d;
-  --d-yem-dolgu: #3a2415;
-  --d-dugum: #e28a4d;
+  --d-yem: var(--accent-500);
+  --d-yem-dolgu: var(--accent-900);
+  --d-dugum: var(--accent-500);
   --d-su: #4aa8d6;
   --d-zemin: #b39a67;
-}
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --d-misina: #2f4a5c;
-    --d-orgu: #55458a;
-    --d-lider: #0d8497;
-    --d-metal-dolgu: #ccd0d6;
-    --d-metal-cizgi: #67707c;
-    --d-igne: #55626f;
-    --d-yem: #a5441a;
-    --d-yem-dolgu: #f6e0cf;
-    --d-dugum: #a5441a;
-    --d-su: #2f7fa8;
-    --d-zemin: #9c8557;
-  }
 }
 
 .diagram {
@@ -492,7 +401,7 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  border-radius: 2px;
+  border-radius: calc(var(--radius-md) * 0.75);
   padding: 0.2rem 0.5rem 0.2rem 0.42rem;
   font-size: 0.75rem;
   font-weight: 600;
@@ -683,8 +592,8 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
   gap: 0.5rem;
   min-height: 2.5rem;
   padding: 0.4rem 0.7rem;
-  border: 2px solid var(--border-strong);
-  border-radius: 2px;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-md);
   background: var(--surface);
   font-size: 0.875rem;
   font-weight: 500;
@@ -709,9 +618,9 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
   align-items: center;
   gap: 0.3rem;
   min-height: 1.6rem;
-  padding: 0.15rem 0.4rem;
-  border: 1px solid var(--border);
-  border-radius: 2px;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--divider);
+  border-radius: calc(var(--radius-md) * 0.75);
   background: var(--surface);
   color: var(--text-muted);
   font-size: 0.75rem;
@@ -747,11 +656,11 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
   justify-content: center;
   gap: 0.45rem;
   min-height: 2.5rem;
-  padding: 0.4rem 0.8rem;
-  border: 2px solid transparent;
-  border-radius: 2px;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
   font: inherit;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.2;
   text-align: center;
@@ -773,13 +682,12 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
 
 /* İkincil eylem: mürekkep çerçeve, dolgusuz. */
 .dugme-ikincil {
-  background: var(--surface);
-  border-color: var(--border-strong);
+  background: transparent;
+  border-color: var(--divider);
   color: var(--text);
 }
 .dugme-ikincil:hover:not(:disabled) {
-  border-color: var(--accent);
-  background: var(--bg-tint);
+  background: color-mix(in srgb, var(--text) 7%, transparent);
 }
 
 /* Seçilebilir çip (su alanı süzgeci gibi). Seçili hâli aksan taşır.
@@ -789,7 +697,7 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
   padding: 0.4rem 0.7rem;
   font-weight: 500;
   background: var(--surface);
-  border-color: var(--border);
+  border-color: var(--divider);
   color: var(--text-muted);
 }
 .dugme-cip:hover:not(:disabled) { border-color: var(--border-strong); color: var(--text); }
@@ -819,15 +727,16 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
   width: 100%;
   min-height: 2.5rem;
   padding: 0.4rem 0.7rem;
-  border: 2px solid var(--border);
-  border-radius: 2px;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-md);
   background: var(--surface);
   color: var(--text);
+  caret-color: var(--accent);
   font: inherit;
   font-size: 0.875rem;
   line-height: 1.3;
 }
-.alan:hover { border-color: var(--border-strong); }
+.alan:hover { border-color: color-mix(in srgb, var(--text) 45%, transparent); }
 
 /* Onay kutusu — parmakla vurulacak boyda, aksan rengiyle işaretlenir. */
 .onay {
@@ -866,10 +775,10 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
   align-items: center;
   gap: 0.45rem;
   font-family: var(--font-baslik);
-  font-size: 1.1875rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 500;
   line-height: 1.3;
-  letter-spacing: -0.005em;
+  letter-spacing: 0.01em;
   color: var(--etiket);
 }
 
@@ -887,7 +796,7 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
   font-size: 0.8125rem;
   transition: border-color 0.12s ease, color 0.12s ease;
 }
-.baglanti-cip:hover { border-color: var(--accent); }
+.baglanti-cip:hover { box-shadow: 0 0 0 1px var(--accent-700); }
 
 /* ---------------------------------------------------------------
    Satır içi açılır bölüm başlığı ("Skor Nasıl Hesaplandı?")
@@ -913,5 +822,7 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
 .panel-bolum {
   margin-top: 1.25rem;
   padding-top: 1.25rem;
-  border-top: 2px solid var(--border);
+  background: linear-gradient(to right,
+    transparent, var(--divider) 48px,
+    var(--divider) calc(100% - 48px), transparent) no-repeat top / 100% 1px;
 }

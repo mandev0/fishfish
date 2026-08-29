@@ -13,7 +13,7 @@
 
 import { readFile } from 'node:fs/promises';
 
-const ACCENT = '#1c1f22';
+const ACCENT = '#9184d9';
 
 let chromium;
 try {

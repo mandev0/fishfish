@@ -93,19 +93,30 @@ Aşağıdakiler kasıtlı kararlardır, geri alma:
 
 ## Tasarım sistemi
 
-Yön: **deniz haritası / balıkçı almanağı**. Jenerik arayüz görünümünden kaçın.
+Yön: **Nocturne** — claude.ai/design'dan alınan tasarım sistemi
+(proje: `claude.ai/design/p/32a69d32-59c5-4f24-a3d4-b6daa6e8ee42`, ekran
+`Balikcilik-Rehberi.dc.html`, yön 1b "karar kartı").
 
-- **İki renk taşınır.** `--accent` mürekkeptir — siyaha yakın (yapı, bağlantı, ikon zemini);
-  koyu temada tersine dönüp kâğıt rengi olur. `--vurgu` şamandıra turuncusu **eylem
-  rengidir**: düğmeler, aktif menü, seçili çip, terim altı çizgisi, odak halkası.
-  Turuncu az ve yerinde kullanılır — her yere serpme.
+Jetonların tek kaynağı artık `global.css` içindeki `:root` bloğudur — teslim paketi
+depoda tutulmuyor. Sistemi baştan değiştirmek gerekirse paketi Claude Design'dan
+yeniden indir; ara düzenlemeleri doğrudan `global.css` üzerinde yap.
+
+**Tek tema vardır.** Nocturne yalnız koyu tanımlı; açık tema, `data-theme` ve tema anahtarı
+kaldırıldı. `prefers-color-scheme` sorgusu yazma.
+
+- **Tek aksan vardır: Nocturne'ün blurple'ı** (`--accent: #9184d9`). Eylem rengi de odur
+  (`--vurgu`, `--vurgu-dolgu` aynı aileden). İkinci bir vurgu rengi yok — turuncu paletten
+  tamamen çıktı. `--accent-100…900` ve `--neutral-100…900` rampaları Tailwind'e de
+  kayıtlıdır; `text-neutral-300` yazınca Nocturne'ün nötrü gelir, Tailwind'in kendi grisi değil.
 - **Renkli sol kenar çubuğu kullanma.** `border-l-[3px] border-l-vurgu` ve türevleri
   bilinçli olarak kaldırıldı; her kutunun yanına renkli şerit koymak şablon görüntüsünün
   ana kaynağıydı. Yapıyı **tam çerçeve**, **zemin tonu** (`.kart-vurgulu` → `--bg-tint`) ve
   **tipografi** ile kur. Bölüm başlığının ayracı altındaki ince kuraldır (`.bolum-baslik`).
-- **Tek yarıçap sözlüğü: her şey 2 px.** Radius jetonlarının hepsi 2 px'e ayarlıdır;
-  `rounded-full`, `rounded-2xl`, `rounded-xl` kullanma. Ölçek boyunca değişen yuvarlaklık
-  (kart 8, düğme 12, rozet 999) da aynı şablon görüntüsünü üretiyor.
+- **Nocturne yarıçap sözlüğü: 4 / 8 / 14 px** (`--radius-sm/md/lg`). Kart ve düğme 8 px.
+- **Yapı çerçeveyle değil, yüzey + hairline halkayla kurulur.** `.kart` kenarlık taşımaz;
+  `--shadow-sm` (`0 0 0 1px`) halkası ve `--surface` zemini yeter. Serbest kurallar iki uçta
+  saydama söner (`.bolum-baslik`, `.panel-bolum`) — bu bir Nocturne imzasıdır, düz çizgiye
+  çevirme.
 - **Tekrar eden her yüzeyin tek bir sınıfı var; sayfa içine elle Tailwind yazma.**
   Aynı işi gören öğe iki sayfada iki farklı boyda çıkıyordu.
   - Düğme: `.dugme` + `.dugme-birincil` / `.dugme-ikincil` / `.dugme-cip` / `.dugme-ikon`.
@@ -126,7 +137,11 @@ Yön: **deniz haritası / balıkçı almanağı**. Jenerik arayüz görünümün
   (`.alt-baslik`) gerçek başlıklardan **rengiyle** ayrışır: gövde mürekkebinden açık,
   kendi jetonunda (`--etiket`). O ton 19 px yarı kalın serifte WCAG'ın büyük metin
   eşiğini (3:1) karşılar; 13 px'lik `.etiket-ust` bu yüzden `--text-muted`'ta kalır (4,5:1).
-- **Başlıklar serif** (`--font-baslik`), gövde metni sans. Ölçü değerleri (`18 cm`, `0,28 mm`,
+- **Tek yazı yüzü: Inter.** Başlık ve gövde aynı; başlıklar 500 ağırlıkta. Serif başlık yok.
+  **Inter depodan servis edilir** (`public/fonts/`, `src/styles/inter.css`), Google Fonts'tan
+  değil: çalışma anında CDN'e gitmek çevrimdışı açılışta yazı tipini düşürür ve derlemeyi
+  ağa bağımlı kılar. Sürüm yükseltmek için `npm run yazitipi:indir`. Türkçe için latin-ext
+  altkümesi zorunlu (ğ ş İ ı). Ölçü değerleri (`18 cm`, `0,28 mm`,
   `40 gr`) `.olcu` sınıfıyla monospace; sayı içeren tablo ve kutular `.sayisal` ile
   `tabular-nums`.
 - **Kart yapısı** için `.kart` sınıfını kullan, elle `rounded-* border border-line bg-surface`
@@ -161,6 +176,11 @@ gerekirse sıfırdan yazma: `Zorluk.astro` veya `Bolluk.astro` bileşenini yenid
   (Rozet teknik olarak `<button>`'dur ama orada ikon süs değil, içeriğin kendisidir:
   nokta kartlarında etiketsiz basılır.)
 
+- **İki ikon seti var, ikisi de gömülü.** `IKONLAR` ev seti (24×24, çizgi);
+  `IKONLAR_PH` Phosphor regular (256×256, dolgu) — Nocturne'ün seti, MIT lisanslı.
+  `ikonSvg()` ve `Ikon.astro` ada bakıp doğru viewBox/dolgu-çizgi kipini seçer.
+  Phosphor'u `unpkg.com`'dan **çekme**: ikon yazı tipi CDN'den gelince çevrimdışı açılışta
+  bütün ikonlar kaybolur. Yeni bir Phosphor glifi gerekirse SVG'sini `IKONLAR_PH`'e göm.
 - İkon yolları **yalnızca** `src/lib/ikonlar.ts` içinde tanımlanır; hem sunucu bileşeni
   (`Ikon.astro`) hem tarayıcıdaki panel aynı kaynağı kullanır. İkonu bileşen içine gömme.
 - Her rozette **ekran okuyucular için gizli tam metin** ve **`title` özniteliği** bulunur;
@@ -323,8 +343,13 @@ Metinlerdeki balıkçılık terimleri **derleme zamanında** işaretlenir (`src/
 
 Bunlar isteğe bağlı iyileştirme değil, kabul koşuludur:
 
-- **Hava paneli üç bloktur** ve ayracı `.panel-bolum` kuralıdır: *Nokta Seçimi* (sabit
-  noktalı sayfalarda hiç basılmaz), *Bugünün Koşulları*, *Bugün Ne Çıkar*. Bölüm başlıkları
+- **Karar kartı** (`kararKarti()`, tasarım 1b) panelin en üstündedir ve tek bir "bunu yap"
+  der. İçindeki hiçbir cümle sabit değildir: saat penceresi günün gerçek batımından,
+  gerekçeler skor motorunun `faktorler[].gerekce` alanından, ekipman satırları ve **yasal
+  boy** tür verisinden gelir. Tasarım dosyasındaki boy limitlerini kopyalama — onlar
+  kaynaksız ve iki türde depodaki kaynaklı değerle çelişiyordu.
+- **Hava paneli bloklara ayrılır** ve ayracı `.panel-bolum` kuralıdır: karar kartı,
+  *Nokta Seçimi* (sabit noktalı sayfalarda hiç basılmaz), *Bugünün Koşulları*, *Bugün Ne Çıkar*. Bölüm başlıkları
   her durumda görünür; canlı/statik geçişini içerideki `[data-canli]` ve `[data-statik]`
   kapları yapar. `[data-canli]` **birden fazladır**, adacık hepsini birlikte açıp kapatır.
 - **Son yenileme damgası yenile düğmesinin yanındadır** (`[data-guncelleme]`): "ne kadar
