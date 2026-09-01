@@ -1,0 +1,24 @@
+---
+/**
+ * Şemadaki tek bir ip parçası.
+ *
+ * `ust` verildiğinde ipin altına zemin renginde kalın bir "kılıf" çizilir;
+ * altından geçen ip o noktada kesilmiş görünür. Düğüm çiziminde üst/alt
+ * bilgisini taşıyan tek şey budur — kesişmeleri anlaşılır kılan da odur.
+ *
+ * Kalınlık `style` ile veriliyor: sınıf kuralı (`.diagram .misina`) sunum
+ * özniteliğini ezer, satır içi biçem ezmez.
+ */
+interface Props {
+  d: string;
+  /** Parçanın türü — rengi ve kalınlığı buradan gelir. */
+  tur?: 'misina' | 'uc' | 'orgu' | 'lider' | 'beden' | 'igne';
+  /** true ise altındakinin üstünden geçer. */
+  ust?: boolean;
+  /** Kılıfın genişliği; kalın iplerde büyütülür. */
+  kilif?: number;
+}
+const { d, tur = 'misina', ust = false, kilif = 7 } = Astro.props;
+---
+{ust && <path class="kilif" d={d} style={`stroke-width:${kilif}`} />}
+<path class={tur} d={d} />

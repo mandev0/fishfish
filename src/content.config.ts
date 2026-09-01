@@ -99,6 +99,20 @@ const spots = defineCollection({
       'kocaeli-korfez', 'kocaeli-karadeniz',
       'istanbul-icsu', 'kocaeli-icsu', 'sapanca', 'sakarya-icsu',
     ]),
+    /**
+     * İdari ilçe. Bölgeden bağımsız bir eksen: Anadolu yakası hem Boğaz'ı hem
+     * Marmara'yı hem Karadeniz'i kesiyor. İlçe → il ve ilçe → yaka eşlemeleri
+     * `season.ts` içindedir; nokta adından çıkarım yapılmaz.
+     */
+    ilce: z.enum([
+      'sariyer', 'besiktas', 'beyoglu', 'fatih', 'zeytinburnu', 'bakirkoy',
+      'kucukcekmece', 'buyukcekmece', 'silivri',
+      'beykoz', 'uskudar', 'kadikoy', 'maltepe', 'kartal', 'pendik', 'tuzla', 'sile',
+      'adalar',
+      'darica', 'gebze', 'dilovasi', 'korfez', 'izmit', 'golcuk', 'karamursel',
+      'kandira', 'kartepe',
+      'sapanca', 'adapazari',
+    ]),
     su: suAlani,
     lat: z.number().min(40.6).max(41.45),
     lng: z.number().min(27.9).max(30.62),
@@ -199,6 +213,8 @@ const knots = defineCollection({
   loader: file('./src/data/knots.json'),
   schema: z.object({
     ad: z.string(),
+    /** Düğümün gördüğü iş; liste sayfası buna göre gruplar (src/lib/dugum.ts). */
+    kategori: z.enum(['halka', 'hat', 'ilmek']),
     ozet: z.string(),
     kullanim: z.string(),
     zorluk: z.number().int().min(1).max(5),

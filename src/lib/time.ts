@@ -67,7 +67,7 @@ export function isoyuCozumle(iso: string, ofsetSaniye: number): Date {
 }
 
 /**
- * "Ne kadar önce" metni — çevrimdışıyken gösterilen verinin yaşını söylemek için.
+ * "Ne kadar önce" metni — ağ düşünce gösterilen son verinin yaşını söylemek için.
  * Kullanıcı bayat bir tahmine bakıyorsa bunu gizlemiyoruz.
  */
 export function gecenSureMetni(ms: number): string {

@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Ikon from './Ikon.astro';
 import { baslikBicimi } from '../lib/metin';
 import { BOLGE_ADLARI, IL_ADLARI, SAAT_ADLARI, SU_TURU } from '../lib/season';
+import { turYontemleri } from '../lib/yontem';
 
 interface Props {
   /** Verilirse panel bu noktaya kilitlenir, seçici gösterilmez. */
@@ -14,12 +15,19 @@ const { sabitNokta, baslik = 'Bugün Ne Tutulur?' } = Astro.props;
 const noktalar = await getCollection('spots');
 // Tür koleksiyonu glob ile okunuyor ve sırası dosya sistemine göre değişiyor.
 // Kimliğe göre sıralamak derlemeyi yeniden üretilebilir kılıyor: aksi hâlde
-// aynı kaynaktan farklı çıktı çıkıyor, service worker sürüm damgası değişiyor
-// ve kurulu kullanıcılar boş yere bütün paketi yeniden indiriyor.
+// aynı kaynaktan makineye göre farklı çıktı çıkıyor ve yayın farkı okunmaz oluyor.
 const turler = (await getCollection('species')).sort((a, b) => a.id.localeCompare(b.id));
 // Karar kartı "ne götürüyorsun" satırlarını ve yöntem adını takımdan okur.
 const takimlar = (await getCollection('rigs')).sort((a, b) => a.id.localeCompare(b.id));
 const yontemler = (await getCollection('methods')).sort((a, b) => a.id.localeCompare(b.id));
+// Tür ↔ yöntem eşlemesi tek yerden gelir; iki kaynağın birleşimidir (yontem.ts).
+const turYontemHaritasi = turYontemleri(
+  turler.map((t) => ({ id: t.id, takimlar: t.data.takimlar })),
+  takimlar.map((r) => ({ id: r.id, yontem: r.data.yontem })),
+  yontemler.map((y) => ({ id: y.id, turler: y.data.turler })),
+);
+/** Filtre kutusunda kolaydan zora: yeni başlayan önce çaparıyı görür. */
+const yontemSecenekleri = [...yontemler].sort((a, b) => a.data.zorluk - b.data.zorluk);
 
 /** Türün birincil takımı ve o takımın yöntemi — karar kartının "nasıl"ı. */
 function birincilTakim(t: (typeof turler)[number]) {
@@ -30,11 +38,14 @@ function birincilTakim(t: (typeof turler)[number]) {
 
 // İstemciye sadece skor için gereken alanları gönderiyoruz.
 const veri = {
+  yontemAdlari: {} as Record<string, string>,
   noktalar: noktalar.map((n) => ({
     id: n.id, ad: n.data.ad, bolge: n.data.bolge,
     il: n.data.il,
     lat: n.data.lat, lng: n.data.lng, kiyiYonu: n.data.kiyiYonu,
     turler: n.data.turler, denizVerisiZayif: n.data.denizVerisiZayif,
+    // Noktada kıyıdan uygulanabilen yöntemler: seçili yöntem burada yoksa panel söyler.
+    yontemler: n.data.yontemler,
     // Tatlı suda deniz modeli hiç veri döndürmez; panel bunu farklı anlatır.
     tatliSu: SU_TURU[n.data.su] !== 'deniz',
   })),
@@ -44,6 +55,7 @@ const veri = {
     return {
       id: t.id, ad: t.data.ad, ozet: t.data.ozet,
       aylar: t.data.aylar, gece: t.data.gece,
+      yontemler: turYontemHaritasi[t.id] ?? [],
       suSicakligi: t.data.suSicakligi, aktifSaatler: t.data.aktifSaatler,
       ruzgarTercihi: t.data.ruzgarTercihi, ruzgarKacinilan: t.data.ruzgarKacinilan,
       // — Karar kartı alanları —
@@ -64,6 +76,8 @@ const veri = {
 
 const iller = [...new Set(veri.noktalar.map((n) => n.il))];
 const bolgeler = [...new Set(veri.noktalar.map((n) => n.bolge))];
+// Yöntem adları durum cümlelerinde adıyla anıldığı için istemciye de gidiyor.
+veri.yontemAdlari = Object.fromEntries(yontemler.map((y) => [y.id, y.data.ad]));
 ---
 <section
   id="hava-panel"
@@ -100,16 +114,21 @@ const bolgeler = [...new Set(veri.noktalar.map((n) => n.bolge))];
     </div>
   </div>
 
-  {!sabitNokta && (
-    <div class="panel-bolum">
-      <h3 class="alt-baslik">Nokta Seçimi</h3>
-      <div class="mt-2 grid gap-4 sm:grid-cols-[minmax(0,10rem)_minmax(0,1fr)]">
+  {/* Panelin girdileri: nerede ve nasıl. Sabit noktalı sayfalarda nokta
+      seçicisi basılmaz, yöntem seçicisi kalır — "burada bugün hangi yöntemle
+      ne çıkar" sorusu orada da geçerli. */}
+  <div class="panel-bolum">
+    <h3 class="alt-baslik">{sabitNokta ? 'Yöntem Seçimi' : 'Nokta ve Yöntem'}</h3>
+    <div class:list={['mt-2 grid gap-4', !sabitNokta && 'sm:grid-cols-[minmax(0,9rem)_minmax(0,1fr)]']}>
+      {!sabitNokta && (
         <label class="block">
           <span class="etiket-ust">İl</span>
           <select data-il class="alan mt-1.5">
             {iller.map((il) => <option value={il}>{IL_ADLARI[il] ?? il}</option>)}
           </select>
         </label>
+      )}
+      {!sabitNokta && (
         <label class="block">
           <span class="etiket-ust">Nokta</span>
           {/* Sunucu tüm noktaları basar; il seçilince istemci listeyi daraltır. */}
@@ -123,10 +142,22 @@ const bolgeler = [...new Set(veri.noktalar.map((n) => n.bolge))];
             ))}
           </select>
         </label>
-      </div>
-      <p data-konum-durum hidden class="mt-2 text-sm text-warn" role="status"></p>
+      )}
+      {/* Yöntem dar ekranda kendi satırına iner; iki seçicinin yanına
+          sıkıştırılınca üç kutu da okunmaz genişliğe düşüyordu. */}
+      <label class={sabitNokta ? 'block' : 'block sm:col-span-2'}>
+        <span class="etiket-ust">Yöntem</span>
+        <select data-yontem class="alan mt-1.5">
+          <option value="">Hepsi</option>
+          {yontemSecenekleri.map((y) => <option value={y.id}>{y.data.kisaAd}</option>)}
+        </select>
+      </label>
     </div>
-  )}
+    {/* Seçilen yöntem bu noktada uygulanmıyorsa panel bunu söyler ve
+        uygulandığı noktalara yönlendirir. */}
+    <p data-yontem-durum hidden class="mt-2 text-sm text-warn" role="status"></p>
+    {!sabitNokta && <p data-konum-durum hidden class="mt-2 text-sm text-warn" role="status"></p>}
+  </div>
 
   {/* Karar kartı — tasarım 1b. Yalnız canlı veriyle anlamlı olduğu için
       `[data-canli]` içinde; veri gelmezse mevsimsel listeye düşülür. */}

@@ -10,6 +10,12 @@
 
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+// Node 24 tip açıklamalarını kendisi soyuyor; eşlemeyi kopyalamak yerine
+// kaynağından okuyoruz (season.ts'te de aynı ilke geçerli).
+import { yontemAyrismalari } from '../src/lib/yontem.ts';
+import {
+  BOLGE_ILI, IL_ADLARI, ILCE_ADLARI, ILCE_ILI, ILCE_YAKASI, SU_TURU, YAKA_ADLARI,
+} from '../src/lib/season.ts';
 
 const KOK = new URL('..', import.meta.url).pathname;
 const oku = (p) => JSON.parse(readFileSync(join(KOK, p), 'utf8'));
@@ -61,23 +67,25 @@ for (const [ad, liste] of [['nokta', spots], ['takım', rigs], ['düğüm', knot
  */
 const KAPSAM_BBOX = { latMin: 40.6, latMax: 41.45, lngMin: 27.9, lngMax: 30.62 };
 
-/**
- * Bölge → il eşlemesi tek kaynaktan okunur: season.ts. Burada kopyasını tutmak
- * iki dosyanın sessizce ayrışmasına yol açıyordu.
- */
-const seasonKaynak = readFileSync(join(KOK, 'src/lib/season.ts'), 'utf8');
-const bolgeIliBloku = seasonKaynak.match(/BOLGE_ILI: Record<string, string> = \{([^}]*)\}/s);
-const BOLGE_ILI = Object.fromEntries(
-  [...(bolgeIliBloku?.[1] ?? '').matchAll(/'([\w-]+)':\s*'([\w-]+)'/g)].map((m) => [m[1], m[2]]),
-);
-if (!Object.keys(BOLGE_ILI).length) hata('season.ts içindeki BOLGE_ILI eşlemesi okunamadı.');
+// Bölge/ilçe/su eşlemeleri tek kaynaktan gelir: season.ts. Burada kopyasını
+// tutmak iki dosyanın sessizce ayrışmasına yol açıyordu.
+if (!Object.keys(BOLGE_ILI).length) hata('season.ts içindeki BOLGE_ILI eşlemesi boş.');
+if (!Object.keys(SU_TURU).length) hata('season.ts içindeki SU_TURU eşlemesi boş.');
+if (!Object.keys(ILCE_ILI).length) hata('season.ts içindeki ILCE_ILI eşlemesi boş.');
 
-/** Su alanının tuzluluk sınıfı — yine season.ts'ten. */
-const suTuruBloku = seasonKaynak.match(/SU_TURU: Record<string, 'deniz' \| 'tatli' \| 'aci'> = \{([^}]*)\}/s);
-const SU_TURU = Object.fromEntries(
-  [...(suTuruBloku?.[1] ?? '').matchAll(/(\w+):\s*'(\w+)'/g)].map((m) => [m[1], m[2]]),
-);
-if (!Object.keys(SU_TURU).length) hata('season.ts içindeki SU_TURU eşlemesi okunamadı.');
+// İlçe eşlemeleri kendi içinde tutarlı mı?
+for (const [ilce, il] of Object.entries(ILCE_ILI)) {
+  if (!ILCE_ADLARI[ilce]) hata(`season.ts: "${ilce}" ILCE_ILI içinde var ama ILCE_ADLARI içinde yok.`);
+  if (!IL_ADLARI[il]) hata(`season.ts: "${ilce}" bilinmeyen ile bağlı ("${il}").`);
+}
+for (const ilce of Object.keys(ILCE_ADLARI)) {
+  if (!ILCE_ILI[ilce]) hata(`season.ts: "${ilce}" ILCE_ADLARI içinde var ama ILCE_ILI içinde yok.`);
+  if (!spots.some((s) => s.ilce === ilce)) uyari(`season.ts: "${ilce}" ilçesinde kayıtlı nokta yok.`);
+}
+for (const [ilce, yaka] of Object.entries(ILCE_YAKASI)) {
+  if (!ILCE_ADLARI[ilce]) hata(`season.ts: ILCE_YAKASI içinde bilinmeyen ilçe "${ilce}".`);
+  if (!YAKA_ADLARI[yaka]) hata(`season.ts: "${ilce}" bilinmeyen yakaya bağlı ("${yaka}").`);
+}
 
 for (const t of species) {
   const nerede = `species/${t.id}.json`;
@@ -152,6 +160,14 @@ for (const s of spots) {
 
   if (!SU_TURU[s.su]) hata(`${nerede}: su alanı "${s.su}" season.ts içindeki SU_TURU eşlemesinde yok.`);
 
+  // İl ile ilçe de birbirini tutmalı; ilçe süzgeci il seçimine göre daraltılıyor.
+  const ilceIli = ILCE_ILI[s.ilce];
+  if (!s.ilce) hata(`${nerede}: ilçe yazılmamış.`);
+  else if (!ilceIli) hata(`${nerede}: ilçe "${s.ilce}" season.ts içindeki ILCE_ILI eşlemesinde yok.`);
+  else if (s.il !== ilceIli) {
+    hata(`${nerede}: il "${s.il}" ile ilçe "${s.ilce}" uyuşmuyor (beklenen il: ${ilceIli}).`);
+  }
+
   // Yöntemler: kimlik gerçek mi ve bu suda uygulanabilir mi?
   if (!s.yontemler?.length) hata(`${nerede}: hiçbir yöntem listelenmemiş.`);
   const suSinifi = SU_TURU[s.su] === 'deniz' ? 'deniz' : 'tatli';
@@ -192,6 +208,17 @@ for (const m of methods) {
   if (!spots.some((s) => s.yontemler?.includes(m.id))) {
     uyari(`${nerede}: hiçbir nokta bu yöntemi listelemiyor.`);
   }
+}
+
+// Tür ↔ yöntem bilgisi iki yerde duruyor: yöntem kaydındaki `turler` listesi ve
+// türün takımlarından türeyen yöntemler. Arayüzdeki yöntem filtresi ikisinin
+// birleşimini kullanır (bkz. src/lib/yontem.ts), yani ayrışma sessizce bir türü
+// düşürmez — ama listelerden biri eksik demektir. Hata değil, düzeltilecek iş.
+for (const { tur, takimdanEksik, yontemdenEksik } of yontemAyrismalari(species, rigs, methods)) {
+  const parcalar = [];
+  if (yontemdenEksik.length) parcalar.push(`methods.json'da yok: ${yontemdenEksik.join(', ')}`);
+  if (takimdanEksik.length) parcalar.push(`takımlarından çıkmıyor: ${takimdanEksik.join(', ')}`);
+  uyari(`species/${tur}.json: tür ↔ yöntem listeleri ayrışıyor (${parcalar.join(' · ')}).`);
 }
 
 // --- Takımlar -------------------------------------------------------

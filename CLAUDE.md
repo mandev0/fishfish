@@ -5,23 +5,52 @@ Hedef okuyucu **yeni başlayan bir hobi balıkçısı** — her açıklama bunu 
 
 **Kapsanan alan: İstanbul, Kocaeli ve Sakarya.** Deniz tarafı Boğaz, Marmara, Karadeniz kıyısı,
 Adalar ve İzmit Körfezi; tatlı su tarafı Sapanca Gölü, Sakarya iç suları (Sakarya Nehri,
-Poyrazlar, Taşkısığı) ve İstanbul dereleri. Her noktanın açık bir `il` alanı vardır; bölge adından
-string ayrıştırarak il çıkarma. Yeni bir il/bölge eklerken şu yerleri birlikte güncelle,
-yoksa yarım kalır: `content.config.ts` (il ve bölge enum'ları + koordinat sınırları),
-`season.ts` (`IL_ADLARI`, `BOLGE_ADLARI`, `BOLGE_ILI`), `global.css` (`--bolge-*` rengi, hem
-aydınlık hem koyu tema), `scripts/validate-data.mjs` (`KAPSAM_BBOX`), `scripts/fetch-shops.mjs`
-(Overpass sorgusu). Metinlerdeki kapsam ifadelerini de gözden geçir — "İstanbul'da" gibi sabit
-ifadeler yanlış olur.
+Poyrazlar, Taşkısığı) ve İstanbul dereleri. Her noktanın açık bir `il` ve `ilce` alanı vardır;
+bölge veya nokta adından string ayrıştırarak il/ilçe çıkarma. Yeni bir il/bölge/ilçe eklerken şu
+yerleri birlikte güncelle, yoksa yarım kalır: `content.config.ts` (il, bölge ve ilçe enum'ları +
+koordinat sınırları), `season.ts` (`IL_ADLARI`, `BOLGE_ADLARI`, `BOLGE_ILI`, `ILCE_ADLARI`,
+`ILCE_ILI`, gerekiyorsa `ILCE_YAKASI` + `YAKA_ADLARI`), `global.css` (`--bolge-*` rengi),
+`scripts/validate-data.mjs` (`KAPSAM_BBOX`), `scripts/fetch-shops.mjs` (Overpass sorgusu).
+Metinlerdeki kapsam ifadelerini de gözden geçir — "İstanbul'da" gibi sabit ifadeler yanlış olur.
 
 **Bağımlı seçim kutuları** (il → bölge → nokta) `BOLGE_ILI` eşlemesine güvenir; `tests/bolge.test.ts`
-bu eşlemenin veriyle çakışmadığını denetler. `validate-data.mjs` bu eşlemeyi kopyalamaz,
-`season.ts`'ten okur.
+bu eşlemenin veriyle çakışmadığını denetler. `validate-data.mjs` bu eşlemeleri kopyalamaz,
+`season.ts`'ten içe aktarır (Node tip açıklamalarını kendisi soyuyor).
+
+**Bölge ve ilçe iki ayrı eksendir, biri diğerinden çıkarılamaz.** Bölge su alanına göre
+bölünür (Boğaz, Marmara, Karadeniz), ilçe idaridir. "Anadolu yakasındayım" sorusu bölgeyle
+cevaplanamıyor: Anadolu yakası bu üç bölgeyi birden kesiyor. Bu yüzden ilçelerin üstünde bir
+**yaka** katmanı var (`ILCE_YAKASI`) — İstanbul'da Avrupa/Anadolu/Adalar, Kocaeli'nde körfezin
+kuzey/güney kıyısı ve Kandıra. Sakarya'da böyle bir bölünme yok; oradaki ilçeler yakasız kalır
+ve süzgeçte yalnız ilçe olarak görünür. Bir yaka **tek bir ile** ait olmalı, çünkü yaka çipleri
+de il seçimine göre daraltılıyor; `tests/bolge.test.ts` bunu denetler.
 
 **Yöntem, takım ve tür üç ayrı katmandır.** Yöntem "nasıl avlandığın" (LRF, spin, aç-çek,
 yemli dip, şamandıra, çapari, egi, surf, feeder), takım "neyi bağladığın", tür "neyi
 avladığın". Her takımın bir `yontem` alanı, her noktanın bir `yontemler` dizisi vardır.
 **Tekneden yapılan yöntemler kapsam dışıdır** — sürütme, tekne jigi ve benzeri eklenmez;
 `tests/yontem.test.ts` bunu denetler.
+
+**Tür ↔ yöntem eşlemesi `src/lib/yontem.ts` içindedir; sayfa kendi eşlemesini kurmasın.**
+Bu bilgi depoda iki yerde duruyor ve ikisi de tek başına eksik: `methods[].turler` elle
+yazılmış liste, `species[].takimlar → rigs[].yontem` ise takım katmanından türeyen liste.
+`turYontemleri()` **birleşimlerini** alır — biri unutulduğunda tür filtreden sessizce
+düşmesin diye. Ayrışan kayıtlar `npm run validate` çıktısında uyarı olarak listelenir;
+uyarıyı kapatmanın yolu ilgili tür veya yöntem kaydını tamamlamaktır, birleşimi
+daraltmak değil.
+
+**`/noktalar` süzgeçlerinin ikisi çok seçimlidir:** yaka ve ilçe. Çok seçimli olduğu için
+açılır kutu değil çip (`aria-pressed`); hiçbiri basılı değilken süzgeç kapalıdır, "Hepsi"
+diye ayrı bir çip yoktur. İl seçilince ikisi de daraltılır ve **gizlenen çipin seçimi
+bırakılır** — görünmeyen bir süzgeç yüzünden boş listeye bakmak en kolay düşülen tuzaktı.
+Aynı sebeple çok seçimli süzgeç varken "Filtreleri Temizle" düğmesi görünür olmalı.
+Adres parametreleri: `?yontem=<id>` ve `?ilce=<id>` (nokta sayfasındaki ilçe bağlantısı).
+
+**Yöntem süzgeci dört yerdedir ve hepsi aynı eşlemeyi okur:** hava paneli (`Yöntem`
+seçicisi — hem `/` hem sabit noktalı sayfalarda), `/takvim` ve `/balik` (çip satırı),
+`/noktalar` (seçici + `?yontem=` adres parametresi). Yeni bir liste sayfası eklerken
+süzgeci de ekle; kullanıcı bir yöntem seçtiyse siteyi o yöntemle gezebilmeli.
+`/noktalar?yontem=<id>` bağlantısı yöntem sayfasından ve panelin uyarısından kullanılır.
 
 **Tatlı su ile deniz aynı şemayı paylaşır, ayrım `su` alanındadır.** Hangi su alanının tatlı
 sayıldığı tek yerde tanımlıdır: `season.ts` içindeki `SU_TURU`. Nokta veya bölge adından
@@ -77,8 +106,8 @@ modeli göl ve dereleri kapsamaz); arayüz bunu "tatlı su" diye açıklar, "kap
 
 Aşağıdakiler kasıtlı kararlardır, geri alma:
 
-- **Web yazı tipi yüklenmiyor** — çevrimdışı çalışma ve yeniden üretilebilir derleme
-  gereği. Yüklemediğin bir yazı tipini (`"Inter"` gibi) yığına yazma: sessizce sistem
+- **Web yazı tipi CDN'den yüklenmiyor** — derleme ağa bağımlı olmasın diye.
+  Yüklemediğin bir yazı tipini (`"Inter"` gibi) yığına yazma: sessizce sistem
   yüzüne düşer, tek yaptığı şablon kokusu bırakmak olur.
 - **Yarı saydam + bulanık çubuk yok.** Üst başlık ve alt sekme çubuğu düz zeminlidir;
   `bg-bg/95 backdrop-blur` cam efekti kaldırıldı.
@@ -139,8 +168,8 @@ kaldırıldı. `prefers-color-scheme` sorgusu yazma.
   eşiğini (3:1) karşılar; 13 px'lik `.etiket-ust` bu yüzden `--text-muted`'ta kalır (4,5:1).
 - **Tek yazı yüzü: Inter.** Başlık ve gövde aynı; başlıklar 500 ağırlıkta. Serif başlık yok.
   **Inter depodan servis edilir** (`public/fonts/`, `src/styles/inter.css`), Google Fonts'tan
-  değil: çalışma anında CDN'e gitmek çevrimdışı açılışta yazı tipini düşürür ve derlemeyi
-  ağa bağımlı kılar. Sürüm yükseltmek için `npm run yazitipi:indir`. Türkçe için latin-ext
+  değil: çalışma anında CDN'e gitmek derlemeyi ağa bağımlı kılar ve CDN yavaşladığında
+  yazı tipini düşürür. Sürüm yükseltmek için `npm run yazitipi:indir`. Türkçe için latin-ext
   altkümesi zorunlu (ğ ş İ ı). Ölçü değerleri (`18 cm`, `0,28 mm`,
   `40 gr`) `.olcu` sınıfıyla monospace; sayı içeren tablo ve kutular `.sayisal` ile
   `tabular-nums`.
@@ -179,8 +208,8 @@ gerekirse sıfırdan yazma: `Zorluk.astro` veya `Bolluk.astro` bileşenini yenid
 - **İki ikon seti var, ikisi de gömülü.** `IKONLAR` ev seti (24×24, çizgi);
   `IKONLAR_PH` Phosphor regular (256×256, dolgu) — Nocturne'ün seti, MIT lisanslı.
   `ikonSvg()` ve `Ikon.astro` ada bakıp doğru viewBox/dolgu-çizgi kipini seçer.
-  Phosphor'u `unpkg.com`'dan **çekme**: ikon yazı tipi CDN'den gelince çevrimdışı açılışta
-  bütün ikonlar kaybolur. Yeni bir Phosphor glifi gerekirse SVG'sini `IKONLAR_PH`'e göm.
+  Phosphor'u `unpkg.com`'dan **çekme**: ikon yazı tipi CDN'den gelince derleme ağa
+  bağımlı olur ve CDN düşünce bütün ikonlar kaybolur. Yeni bir Phosphor glifi gerekirse SVG'sini `IKONLAR_PH`'e göm.
 - İkon yolları **yalnızca** `src/lib/ikonlar.ts` içinde tanımlanır; hem sunucu bileşeni
   (`Ikon.astro`) hem tarayıcıdaki panel aynı kaynağı kullanır. İkonu bileşen içine gömme.
 - Her rozette **ekran okuyucular için gizli tam metin** ve **`title` özniteliği** bulunur;
@@ -205,11 +234,45 @@ Tüm şemalar elle çizilmiş satır içi SVG'dir; dış görsel dosyası yoktur
 - Balık siluetleri bu paletin dışındadır: `currentColor` kullanır, üst öğenin rengini alır.
 - Uzun açıklama cümlelerini çizimin içine yazma — sayfada zaten "Adım adım" veya
   "Bileşenler" bölümünde var. Çizimde yalnızca kısa parça etiketleri bulunur.
-- **Etiketler viewBox dışına taşmamalı ve birbiriyle çakışmamalı.** Şema değiştirdikten sonra
-  bunu tarayıcıda ölçerek doğrula (`getBoundingClientRect`, `getBBox` grup dönüşümünü
-  hesaba katmaz ve yanlış sonuç verir).
-- Şemadaki her etiketin karşılığı `src/lib/semaEtiketleri.ts` içinde tanımlanır; sayfada
-  "Şemada ne görüyorsun?" lejantı olarak basılır. Yeni etiket eklersen lejanta da ekle.
+- **Etiketler viewBox dışına taşmamalı ve birbiriyle çakışmamalı.**
+  `tests/dugumSema.test.ts` düğüm şemalarında bunu ölçerek denetler: her adımın
+  etiketleri, yolları, iğnesi, halkası ve sarımı 320 × `boy` çerçevesinin içinde
+  kalmalı. Takım şemalarında böyle bir kılavuz yok, orada tarayıcıda ölç
+  (`getBoundingClientRect`; `getBBox` grup dönüşümünü hesaba katmaz ve yanlış sonuç verir).
+- Takım şemalarındaki her etiketin karşılığı `src/lib/semaEtiketleri.ts` içinde tanımlanır;
+  sayfada "Şemada ne görüyorsun?" lejantı olarak basılır. Yeni etiket eklersen lejanta da ekle.
+  Düğüm şemalarının lejantı ayrıdır: `KnotDiagram.astro` içindeki renk anahtarı, hangi
+  rengin ana misina hangisinin serbest uç olduğunu söyler.
+
+### Düğüm şemaları — üst/alt bilgisi ve çizim yardımcıları
+
+Düğüm çizimini anlaşılır kılan şey renk değil, **hangi ipin hangisinin üstünden geçtiği**.
+Elle çizilmiş iki eğrinin kesişmesi bu bilgiyi taşımaz; okuyucu düğümü kafasında kuramaz.
+
+- **Kesişen her yerde `_Ip.astro`'nun `ust` bayrağını kullan.** Üstten geçen ipin altına
+  zemin renginde kalın bir "kılıf" (`.kilif`) basılır, alttaki ip orada kesilmiş görünür.
+  Kılıf zeminini `--sema-zemin` jetonundan okur.
+- **Sarımı elle `q`/`c` eğrisiyle çizme.** `_Sarim.astro` helis geometrisini
+  `src/lib/semaIp.ts`'ten hesaplar; her tur, eksenin arkasında kalan ve önünden geçen iki
+  yarıma bölünür. Sıralama zorunludur: arka yarımlar → eksen (varsayılan slot) → ön yarımlar.
+  Eksen araya girmezse sarım ipin "etrafında" değil "üstünde" görünür. İki telin birbirine
+  burulması için `_Burgu.astro` (aynı helis yarım periyot kaydırılmış hâli).
+- **Çift (katlanmış) misina `_CiftIp.astro`'dur.** Aynı yol kalın renkli gövde + üstüne ince
+  zemin çizgisi olarak basılır; iki paralel tel her eğride kendiliğinden doğru genişlikte
+  çıkar. Katlanan ucun dönüşü `kapaliBas` / `kapaliSon` ile kapatılır.
+- **İki hattı birleştiren düğümde (cerrah) çakışan bölüm iki paralel telle çizilir:** aynı
+  merkez eğrinin iki yana ofsetlenmiş kopyası, her tel kendi renginde. Tek bir kalın hat
+  çizersen "hangi hat nereye gidiyor" bilgisi kaybolur; katlanmış tek misina için
+  `_CiftIp.astro` vardır, iki ayrı hat için değil.
+- Ortak parçalar: `_Halka.astro` (göz/fırdöndü, deliği gerçekten delik), `_Igne.astro`,
+  `_Sikilmis.astro` (bitmiş düğüm gövdesi), `_Ok.astro` (hareket yönü), `_Olcu.astro`.
+  Bunları yeniden yazma — aynı işi gören iki farklı iğne çizimi ortaya çıkıyor.
+- **Her adım kendi kartında, kendi SVG'sindedir** (`_Adim.astro`, 320 × 170). Adımları tek
+  bir uzun SVG'ye sığdırma: telefonda her çizim ~120 piksele düşüyor ve sarımlar okunmuyordu.
+  Adım cümlesi SVG içinde değil HTML'de basılır — uzun cümle satır kaydırır, viewBox dışına
+  taşamaz. Her düğümün en az dört adımı ve bir "bitmiş hâli" adımı vardır.
+- **CSS sınıfı, sunum özniteliğini ezer.** `.diagram .misina { stroke-width }` varken
+  `stroke-width="6.6"` yazmak işe yaramaz; kalınlığı satır içi `style` ile ver.
 
 ---
 
@@ -267,43 +330,6 @@ var, ikisi de sessizce bozar:
 - **`<html>` öznitelikleri geçişte yenisiyle değişir**, yani tema `data-theme` silinir.
   `astro:after-swap` sonrası yeniden uygulanır.
 
----
-
-## Çevrimdışı çalışma (PWA)
-
-Site kurulabilir bir uygulamadır: `public/manifest.webmanifest` + `public/sw.js`.
-Derleme sonrası `scripts/sw-surum.mjs` çalışır; çıktının içerik özetini service
-worker'a sürüm damgası olarak yazar ve önbelleğe alınacak dosya listesini
-`dist/sw-liste.json` içine döker. Çıktı değişmezse damga da değişmez.
-
-- **Tüm site kurulumda önbelleğe alınır** (sıkıştırılmış ~2 MB). Kıyıda şebeke
-  yokken rehberin tamamı açılır. Derleme, paket 25 MB'ı aşarsa uyarır.
-- **Önbelleğe alınmayanlar bilinçlidir:** Open-Meteo istekleri ve harita karoları
-  ağdan geçer. Hava verisinin tazeliği `openMeteo.ts` içindeki zaman damgalı
-  localStorage katmanında yönetilir; service worker'a ikinci bir önbellek koyarsak
-  veri yaşı iki yerden yönetilir.
-- **Önbellek anahtarında sondaki eğik çizgi normalleştirilir.** Bağlantılar
-  `/noktalar` derken statik çıktı `/noktalar/index.html`; ikisi aynı kayda düşmezse
-  çevrimdışında sayfa bulunamaz.
-- **Önbelleğe alınan adres kanonik olmalı — yönlendirmeyle gelen yanıt saklanamaz.**
-  `sw-liste.json` sayfaları `/noktalar/` biçiminde (eğik çizgili) yazar, çünkü bazı statik
-  sunucular (GitHub Pages) `/noktalar` isteğini 301 ile eğik çizgiliye yönlendirir.
-  Yönlendirmeyi izleyen yanıtın `redirected` bayrağı açık olur ve tarayıcı böyle bir kaydı
-  **gezinme isteğine yanıt olarak vermeyi reddeder**: sayfa ağ hatasıyla düşer, üstelik
-  yalnızca service worker kurulduktan sonra. `fetch` dinleyicisi de aynı sebeple
-  `redirected` yanıtı önbelleğe koymaz.
-- **Derleme yeniden üretilebilir olmalı.** Sürüm damgası çıktının içerik özeti olduğu için
-  aynı kaynaktan farklı çıktı üretmek, kurulu her kullanıcıya 13 MB'ı yeniden indirtir.
-  `getCollection('species')` glob ile okunur ve sırası dosya sistemine göre değişir;
-  her çağrı kimliğe göre sıralanır. Sayfaya gömülen her listede aynı dikkat gerekir.
-- **`navigator.onLine` kullanma.** Yalnızca ağ arayüzü var mı der; internetsiz bir
-  Wi-Fi'da da `true` döner. Bağlantı durumu hakkında bir şey yazacaksan onu
-  isteğin gerçekten düşmüş olmasına dayandır.
-- Simgeler `npm run ikon:uret` ile üretilir ve depoda durur; kaynağı başlıktaki
-  logonun ta kendisidir (`ikonlar.ts` içindeki `balik`). Logo değişirse yeniden üret.
-
----
-
 ## Terim balonları
 
 Metinlerdeki balıkçılık terimleri **derleme zamanında** işaretlenir (`src/lib/terimler.ts`).
@@ -348,8 +374,12 @@ Bunlar isteğe bağlı iyileştirme değil, kabul koşuludur:
   gerekçeler skor motorunun `faktorler[].gerekce` alanından, ekipman satırları ve **yasal
   boy** tür verisinden gelir. Tasarım dosyasındaki boy limitlerini kopyalama — onlar
   kaynaksız ve iki türde depodaki kaynaklı değerle çelişiyordu.
-- **Hava paneli bloklara ayrılır** ve ayracı `.panel-bolum` kuralıdır: karar kartı,
-  *Nokta Seçimi* (sabit noktalı sayfalarda hiç basılmaz), *Bugünün Koşulları*, *Bugün Ne Çıkar*. Bölüm başlıkları
+- **Hava paneli bloklara ayrılır** ve ayracı `.panel-bolum` kuralıdır: *Nokta ve Yöntem*
+  (sabit noktalı sayfalarda yalnız yöntem seçicisi kalır, başlık *Yöntem Seçimi* olur),
+  karar kartı, *Bugünün Koşulları*, *Bugün Ne Çıkar*. Seçili yöntem o noktada
+  uygulanmıyorsa panel bunu `[data-yontem-durum]` satırında söyler ve
+  `/noktalar?yontem=…` bağlantısını verir — boş listeyi "burada balık yok" diye
+  okutmak yanlış olurdu. Bölüm başlıkları
   her durumda görünür; canlı/statik geçişini içerideki `[data-canli]` ve `[data-statik]`
   kapları yapar. `[data-canli]` **birden fazladır**, adacık hepsini birlikte açıp kapatır.
 - **Son yenileme damgası yenile düğmesinin yanındadır** (`[data-guncelleme]`): "ne kadar
@@ -391,6 +421,10 @@ npm run build      # statik çıktı
 
 Ayrıca gözden kaçmaması gerekenler:
 
+- **Derleme yeniden üretilebilir olmalı** — aynı kaynak aynı çıktıyı versin ki yayın
+  farkı okunabilsin. `getCollection('species')` glob ile okunur ve sırası dosya sistemine
+  göre değişir; her çağrı kimliğe göre sıralanır. Sayfaya gömülen her listede aynı
+  dikkat gerekir.
 - Toplu metin değiştirme yaparken **her değişikliğin gerçekten eşleştiğini doğrula.**
   Sessizce eşleşmeyen bir düzenleme yarım kalmış işaretleme bırakabiliyor.
 - İki temada ve 360 px genişlikte yatay taşma olmamalı.

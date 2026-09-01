@@ -44,13 +44,7 @@ const acikSekme = aktifSekme(yol);
     {/* Nocturne yalnız koyu tanımlı; tema seçimi ve anahtarı kaldırıldı. */}
     <meta name="theme-color" content="#161826" />
     <meta name="color-scheme" content="dark" />
-    <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    {/* iOS'ta ana ekrandan açılınca tarayıcı çubuğu olmadan çalışsın. */}
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="Balıkçılık" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="mobile-web-app-capable" content="yes" />
     <ClientRouter />
   </head>
   <body class="pb-[calc(3.5rem+1px+env(safe-area-inset-bottom))] lg:pb-0">
@@ -155,21 +149,6 @@ const acikSekme = aktifSekme(yol);
     </nav>
 
     <TerimBalonu />
-
-    {import.meta.env.PROD && (
-      <script is:inline>
-        // Çevrimdışı kullanım için service worker. Kayıt sayfa yüklendikten sonra
-        // yapılır ki ilk boyamayla yarışmasın. Geliştirme derlemesinde hiç kaydedilmez:
-        // kayıtlı bir service worker eski dosyaları servis edip kafa karıştırıyor.
-        if ('serviceWorker' in navigator) {
-          addEventListener('load', function () {
-            navigator.serviceWorker.register('/sw.js').catch(function () {
-              // Kayıt olmazsa site normal şekilde ağdan çalışmaya devam eder.
-            });
-          });
-        }
-      </script>
-    )}
 
     <script is:inline>
       // Kabuk betiği bir kez kurulur: dinleyiciler `document` üzerinde durduğu için

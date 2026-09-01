@@ -1,32 +1,54 @@
 ---
 import Adim from './_Adim.astro';
+import CiftIp from './_CiftIp.astro';
+import Igne from './_Igne.astro';
+import Ip from './_Ip.astro';
+import Ok from './_Ok.astro';
+import Olcu from './_Olcu.astro';
+import Sikilmis from './_Sikilmis.astro';
 ---
-<svg class="diagram" viewBox="0 0 400 450" role="img" aria-labelledby="k-palomar">
-  <title id="k-palomar">Palomar düğümü: misinayı ikiye katlayıp halkadan geçir, çift misinayla basit düğüm at, ilmeği iğnenin üstünden aşır ve sık.</title>
+<Adim no={1} baslik="Misinayı ikiye katla; oluşan ilmeği iğnenin gözünden geçir.">
+  <CiftIp d="M312 30 L48 30" tur="misina" kapaliBas />
+  <Igne x={76} y={30} />
+  <text class="lbl-misina" x="240" y="18" text-anchor="middle">çift misina</text>
+  <text class="lbl-misina" x="48" y="62" text-anchor="middle">ilmek</text>
+  <text class="lbl-igne" x="136" y="112">iğne</text>
+</Adim>
 
-  <Adim no={1} baslik="İkiye katla, katlanmış ilmeği halkadan geçir" y={0}>
-    <circle cx="70" cy="46" r="13" class="metal" />
-    <path class="misina" d="M388 40 L84 40" />
-    <path class="misina" d="M388 52 L84 52" />
-    <path class="uc" d="M84 40 q-24 0 -24 6 q0 6 24 6" />
-    <text class="lbl-misina" x="100" y="88">çift misina</text>
-  </Adim>
+<Adim no={2} baslik="Çift misinayla basit bir düğüm at; ilmeği serbest bırak.">
+  <CiftIp d="M312 26 L216 26 C182 26 166 44 176 60 C186 76 208 70 208 54" tur="misina" />
+  <CiftIp d="M208 54 C208 36 190 24 160 28 C112 36 76 56 78 76" tur="misina" ust />
+  <CiftIp d="M78 76 C80 92 96 100 116 100 C142 100 158 84 168 66 L176 60" tur="misina" />
+  <Igne x={116} y={100} olcek={0.5} />
+  <text class="lbl-a" x="238" y="86">basit düğüm</text>
+  <text class="lbl-misina" x="26" y="120">serbest ilmek</text>
+</Adim>
 
-  <Adim no={2} baslik="Çift misinayla basit düğüm at, ilmeği serbest bırak" y={150}>
-    <circle cx="70" cy="46" r="13" class="metal" />
-    <path class="misina" d="M388 40 L150 40" />
-    <path class="misina" d="M388 52 L150 52" />
-    <path class="uc" d="M150 40 q-40 -6 -54 12 q-14 18 10 24 q24 6 32 -12 q8 -18 -14 -24 L96 46" />
-    <path class="uc" d="M96 46 q-30 0 -30 6 q0 6 20 6" />
-    <text class="lbl" x="176" y="94">ilmeği açık bırak</text>
-  </Adim>
+<Adim no={3} baslik="İlmeği açıp iğnenin tamamının üstünden geçir; iğne ucuna takılmasın.">
+  <Igne x={150} y={54} olcek={0.85} />
+  <CiftIp d="M112 96 C104 28 208 22 204 92" tur="misina" ust />
+  <Ok x1={110} y1={106} x2={122} y2={146} kavis={-8} />
+  <Ok x1={206} y1={102} x2={194} y2={146} kavis={8} />
+  <text class="lbl-a" x="312" y="132" text-anchor="end">iğnenin tamamı</text>
+</Adim>
 
-  <Adim no={3} baslik="İlmeği iğnenin tamamının üstünden geçir, sık" y={300}>
-    <circle cx="70" cy="46" r="13" class="metal" />
-    <path class="igne" d="M70 59 l0 16 a12 12 0 1 0 20 5" />
-    <path class="hareket" d="M84 46 q40 -22 62 4 q22 26 -6 44 q-30 20 -56 -6" />
-    <path class="misina" d="M388 40 L160 40" />
-    <path class="misina" d="M388 52 L160 52" />
-    <text class="lbl-a" x="176" y="96">ilmek iğnenin üstünden aşırılır</text>
-  </Adim>
-</svg>
+<Adim no={4} baslik="Islat; ana misinayla serbest ucu aynı anda çekerek düğümü gözün üstüne oturt.">
+  <Ip d="M312 40 L154 40" tur="misina" />
+  <Ip d="M96 40 L108 40" tur="misina" />
+  <Sikilmis x={130} y={40} en={48} boy={24} adet={5} />
+  <Igne x={86} y={40} olcek={0.95} />
+  <Ip d="M154 52 L190 66" tur="uc" />
+  <text class="lbl-uc" x="196" y="74">serbest uç</text>
+  <Ok x1={224} y1={22} x2={300} y2={22} />
+  <text class="lbl" x="310" y="14" text-anchor="end">iki ucu birden çek</text>
+</Adim>
+
+<Adim no={5} baslik="Fazlalığı 2-3 mm bırakarak kes.">
+  <Ip d="M312 60 L151 60" tur="misina" />
+  <Ip d="M96 60 L106 60" tur="misina" />
+  <Sikilmis x={128} y={60} en={46} boy={24} adet={5} />
+  <Igne x={86} y={60} olcek={0.9} />
+  <Ip d="M151 52 L168 42" tur="uc" />
+  <Olcu x1={151} x2={168} y={28} metin="2-3 mm" ustte />
+  <text class="lbl-a" x="196" y="96">bitmiş düğüm</text>
+</Adim>

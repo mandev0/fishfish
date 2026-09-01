@@ -1,36 +1,60 @@
 ---
 import Adim from './_Adim.astro';
+import Ip from './_Ip.astro';
+import Ok from './_Ok.astro';
+import Olcu from './_Olcu.astro';
+import Sarim from './_Sarim.astro';
+import Sikilmis from './_Sikilmis.astro';
 ---
-<svg class="diagram" viewBox="0 0 400 450" role="img" aria-labelledby="k-fg">
-  <title id="k-fg">FG düğümü: gergin örgünün üstüne lideri dik tut, örgüyü liderin etrafında dönüşümlü alttan üstten yaklaşık yirmi kez geçir, yarım düğümlerle kilitle.</title>
+<Adim no={1} baslik="Örgüyü gergin tut (ayağına veya dizine dola), lideri örgüye dik konumda getir.">
+  <Ip d="M12 76 L308 76" tur="orgu" />
+  <Ip d="M160 22 L160 130" tur="lider" ust />
+  <text class="lbl-orgu" x="12" y="62">örgü (gergin)</text>
+  <text class="lbl-lider" x="172" y="126">fluorocarbon lider</text>
+  <Ok x1={64} y1={100} x2={18} y2={100} />
+  <Ok x1={256} y1={100} x2={302} y2={100} />
+  <text class="lbl" x="160" y="152" text-anchor="middle">gerginlik sabit kalmalı</text>
+</Adim>
 
-  <Adim no={1} baslik="Örgüyü gergin tut, lideri dik konumda getir" y={0}>
-    <path class="orgu" d="M12 46 L388 46" />
-    <text class="lbl-orgu" x="12" y="30">örgü (gergin)</text>
-    <path class="lider" d="M180 8 L180 92" />
-    <text class="lbl-lider" x="190" y="88">fluorocarbon lider</text>
-    <path class="ln-thin" d="M40 62 q10 8 20 0" />
-    <text class="lbl" x="12" y="82">dizine veya ayağına dola</text>
-  </Adim>
+<Adim no={2} baslik="Örgüyü liderin etrafında dönüşümlü olarak alttan ve üstten geçir; 20-24 geçiş yeterli.">
+  <Ip d="M14 44 Q50 44 68 60" tur="orgu" />
+  <Sarim x={80} y={74} adet={8} adim={24} yaricap={14} tur="orgu">
+    <Ip d="M14 74 L306 74" tur="lider" />
+  </Sarim>
+  <Ip d="M260 60 Q284 52 306 58" tur="orgu" />
+  <text class="lbl-orgu" x="40" y="34" text-anchor="middle">örgü</text>
+  <text class="lbl-lider" x="306" y="96" text-anchor="end">lider</text>
+  <Olcu x1={68} x2={260} y={112} metin="20-24 geçiş" sinif="lbl-orgu" />
+</Adim>
 
-  <Adim no={2} baslik="Dönüşümlü sar — 20-24 geçiş" y={150}>
-    <path class="lider" d="M20 46 L340 46" stroke-width="3.2" />
-    {[0,1,2,3,4,5,6,7,8,9,10,11].map((i) => {
-      const x = 70 + i * 18;
-      return i % 2 === 0
-        ? <path class="orgu" d={`M${x} 24 q9 22 18 22 q-9 0 -18 22`} />
-        : <path class="orgu" d={`M${x} 68 q9 -22 18 -22 q-9 0 -18 -22`} />;
-    })}
-    <text class="lbl-orgu" x="70" y="100">bir üstten, bir alttan</text>
-  </Adim>
+<Adim no={3} baslik="Sarımların üstüne örgünün serbest ucuyla iki kez yarım düğüm atarak kilitle.">
+  <Ip d="M12 92 L80 92 Q95 92 97 63" tur="orgu" />
+  <Sarim x={104} y={74} adet={7} adim={14} yaricap={11} tur="orgu">
+    <Ip d="M84 74 L200 74" tur="lider" />
+  </Sarim>
+  <Ip d="M200 74 L306 74" tur="lider" />
+  <Ip d="M195 63 C216 56 236 64 236 76 C236 88 218 92 210 82" tur="orgu" ust />
+  <Ip d="M210 82 C224 92 250 88 252 74 C254 60 236 56 228 64" tur="orgu" ust />
+  <text class="lbl-orgu" x="306" y="112" text-anchor="end">kilit yarım düğümler</text>
+  <text class="lbl-lider" x="12" y="126">lider ucu</text>
+</Adim>
 
-  <Adim no={3} baslik="Yarım düğümlerle kilitle, ıslat ve yavaşça sık" y={300}>
-    <path class="lider" d="M20 46 L120 46" stroke-width="3.2" />
-    <rect x="120" y="34" width="120" height="24" rx="5" class="dugum-dolu" />
-    {[0,1,2,3,4,5,6].map((i) => (<path class="ln-thin" d={`M${130 + i * 15} 34 L${130 + i * 15} 58`} />))}
-    <path class="orgu" d="M240 46 L340 46" />
-    <path class="orgu" stroke-width="1.4" d="M244 46 q10 -14 20 0 q-10 14 -20 0" />
-    <path class="orgu" stroke-width="1.4" d="M262 46 q10 -14 20 0 q-10 14 -20 0" />
-    <text class="lbl-a" x="244" y="80">kilit yarım düğümler</text>
-  </Adim>
-</svg>
+<Adim no={4} baslik="Düğümü iyice ıslat ve yavaşça sıkıştır; sarımların lidere gömüldüğünü gör.">
+  <Ip d="M12 74 L104 74" tur="orgu" />
+  <Ip d="M216 74 L306 74" tur="lider" />
+  <Sikilmis x={160} y={74} en={112} boy={20} adet={9} />
+  <text class="lbl-a" x="160" y="112" text-anchor="middle">ince kalır</text>
+  <Ok x1={92} y1={136} x2={20} y2={136} />
+  <Ok x1={228} y1={136} x2={300} y2={136} />
+  <text class="lbl" x="160" y="152" text-anchor="middle">kamış halkasından pürüzsüz geçer</text>
+</Adim>
+
+<Adim no={5} baslik="Lider fazlalığını 1-2 mm bırakarak, örgü fazlalığını dibinden kes.">
+  <Ip d="M12 84 L104 84" tur="orgu" />
+  <Ip d="M216 84 L306 84" tur="lider" />
+  <Sikilmis x={160} y={84} en={112} boy={20} adet={9} />
+  <Ip d="M216 76 L228 64" tur="lider" />
+  <Olcu x1={216} x2={228} y={50} metin="1-2 mm" ustte />
+  <Ip d="M104 92 L114 102" tur="orgu" />
+  <text class="lbl-orgu" x="106" y="128">dibinden kes</text>
+</Adim>

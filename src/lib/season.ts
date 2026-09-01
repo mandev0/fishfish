@@ -114,6 +114,99 @@ export const BOLGE_ADLARI: Record<string, string> = {
   'sakarya-icsu': 'İç Sular — Nehir ve Göller',
 };
 
+/**
+ * İlçeler.
+ *
+ * Bölge su alanına göre bölünür (Boğaz, Marmara, Karadeniz), ilçe ise idari
+ * bölünmedir; ikisi kesişir ama biri diğerinden çıkarılamaz. Nokta adından
+ * ilçe çıkarma: "Arnavutköy" hem Beşiktaş'ın Boğaz mahallesi hem ayrı bir
+ * ilçedir, "Ağva" Şile'nin mahallesidir. Eşleme burada, tek yerde durur.
+ */
+export const ILCE_ADLARI: Record<string, string> = {
+  // İstanbul — Avrupa
+  sariyer: 'Sarıyer',
+  besiktas: 'Beşiktaş',
+  beyoglu: 'Beyoğlu',
+  fatih: 'Fatih',
+  zeytinburnu: 'Zeytinburnu',
+  bakirkoy: 'Bakırköy',
+  kucukcekmece: 'Küçükçekmece',
+  buyukcekmece: 'Büyükçekmece',
+  silivri: 'Silivri',
+  // İstanbul — Anadolu
+  beykoz: 'Beykoz',
+  uskudar: 'Üsküdar',
+  kadikoy: 'Kadıköy',
+  maltepe: 'Maltepe',
+  kartal: 'Kartal',
+  pendik: 'Pendik',
+  tuzla: 'Tuzla',
+  sile: 'Şile',
+  // İstanbul — Adalar
+  adalar: 'Adalar',
+  // Kocaeli
+  darica: 'Darıca',
+  gebze: 'Gebze',
+  dilovasi: 'Dilovası',
+  korfez: 'Körfez',
+  izmit: 'İzmit',
+  golcuk: 'Gölcük',
+  karamursel: 'Karamürsel',
+  kandira: 'Kandıra',
+  kartepe: 'Kartepe',
+  // Sakarya
+  sapanca: 'Sapanca',
+  adapazari: 'Adapazarı',
+};
+
+/** Hangi ilçe hangi ile ait — bağımlı süzgeç ve doğrulama için. */
+export const ILCE_ILI: Record<string, string> = {
+  sariyer: 'istanbul', besiktas: 'istanbul', beyoglu: 'istanbul', fatih: 'istanbul',
+  zeytinburnu: 'istanbul', bakirkoy: 'istanbul', kucukcekmece: 'istanbul',
+  buyukcekmece: 'istanbul', silivri: 'istanbul',
+  beykoz: 'istanbul', uskudar: 'istanbul', kadikoy: 'istanbul', maltepe: 'istanbul',
+  kartal: 'istanbul', pendik: 'istanbul', tuzla: 'istanbul', sile: 'istanbul',
+  adalar: 'istanbul',
+  darica: 'kocaeli', gebze: 'kocaeli', dilovasi: 'kocaeli', korfez: 'kocaeli',
+  izmit: 'kocaeli', golcuk: 'kocaeli', karamursel: 'kocaeli', kandira: 'kocaeli',
+  kartepe: 'kocaeli',
+  sapanca: 'sakarya', adapazari: 'sakarya',
+};
+
+/**
+ * Yaka — ilçelerin üstündeki kaba bölünme.
+ *
+ * "Anadolu yakasındayım, nereye gideyim?" gerçek bir soru ve bölgeyle
+ * cevaplanamıyor: Anadolu yakası hem Boğaz'ı hem Marmara'yı hem Karadeniz'i
+ * kesiyor. Kocaeli'nde aynı soru körfezin hangi kıyısında olduğundur —
+ * karşıya geçmek yarım saatlik bir karardır.
+ *
+ * Sakarya'da böyle bir bölünme yok; oradaki ilçeler yakasız kalır ve
+ * süzgeçte il adı altında listelenir.
+ */
+export const YAKA_ADLARI: Record<string, string> = {
+  avrupa: 'Avrupa Yakası',
+  anadolu: 'Anadolu Yakası',
+  'istanbul-adalar': 'Adalar',
+  'korfez-kuzey': 'Körfez Kuzeyi',
+  'korfez-guney': 'Körfez Güneyi',
+  'kocaeli-kuzey': 'Kandıra Kıyısı',
+};
+
+/** İlçe → yaka. Burada olmayan ilçe yakasızdır. */
+export const ILCE_YAKASI: Record<string, string> = {
+  sariyer: 'avrupa', besiktas: 'avrupa', beyoglu: 'avrupa', fatih: 'avrupa',
+  zeytinburnu: 'avrupa', bakirkoy: 'avrupa', kucukcekmece: 'avrupa',
+  buyukcekmece: 'avrupa', silivri: 'avrupa',
+  beykoz: 'anadolu', uskudar: 'anadolu', kadikoy: 'anadolu', maltepe: 'anadolu',
+  kartal: 'anadolu', pendik: 'anadolu', tuzla: 'anadolu', sile: 'anadolu',
+  adalar: 'istanbul-adalar',
+  darica: 'korfez-kuzey', gebze: 'korfez-kuzey', dilovasi: 'korfez-kuzey',
+  korfez: 'korfez-kuzey', izmit: 'korfez-kuzey',
+  golcuk: 'korfez-guney', karamursel: 'korfez-guney',
+  kandira: 'kocaeli-kuzey',
+};
+
 /** Bölgenin il adıyla birlikte tam karşılığı. */
 export function bolgeTamAdi(bolge: string): string {
   const il = IL_ADLARI[BOLGE_ILI[bolge] ?? ''] ?? '';

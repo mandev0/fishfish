@@ -62,25 +62,22 @@ npm i -D playwright-core && npx playwright install chromium
 npm run ikon:uret
 ```
 
-## Service worker'ı yerelde denemek
+## Üretim derlemesini yerelde sunmak
 
-`npm run dev` service worker'ı kaydetmez: kayıt `import.meta.env.PROD`'a bağlı.
-Çevrimdışı davranışı, kurulumu veya önbellek sürümünü denemek istiyorsan üretim
-derlemesini sun:
+`npm run dev` geliştirme sunucusudur; gerçek çıktıyı görmek istiyorsan:
 
 ```bash
 npm run build && npm run preview      # http://localhost:4321
 ```
 
-`localhost` güvenli bağlam sayıldığı için service worker, konum ve "ana ekrana ekle"
-ek ayar olmadan çalışır. Güvenli bağlamın aktif olduğunu anlamanın en hızlı yolu:
-`/noktalar` sayfasında "Konumuma göre sırala" düğmesi görünüyorsa aktiftir. O düğmeyi
-`konumDestekli()` basıyor ve fonksiyon `isSecureContext` denetliyor.
+`localhost` güvenli bağlam sayıldığı için konum izni ek ayar olmadan çalışır. Güvenli
+bağlamın aktif olduğunu anlamanın en hızlı yolu: `/noktalar` sayfasında "Konumuma göre
+sırala" düğmesi görünüyorsa aktiftir. O düğmeyi `konumDestekli()` basıyor ve fonksiyon
+`isSecureContext` denetliyor.
 
 Telefonda denemek için yayındaki adrese bak: `https://fish.selimakpinar.com`.
 Gerçek alan adı ve gerçek sertifikayla test etmek, yerelde LAN üzerinden `http` ile
-uğraşmaktan hem daha kolay hem daha doğru — güvenli bağlam ve service worker orada
-üretimdeki gibi davranıyor.
+uğraşmaktan hem daha kolay hem daha doğru.
 
 ## Yayına alma
 
@@ -100,23 +97,10 @@ Kurulum bir kereliktir:
 Jekyll'e sokulmasını engeller — `_astro/` klasörü alt çizgiyle başladığı için
 Jekyll onu yok sayardı.
 
-**Derleme yeniden üretilebilir:** aynı kaynaktan aynı çıktı çıkar, yani service worker
-sürüm damgası ortamdan ortama değişmez. Bunun bir inceliği var — `getCollection('species')`
+**Derleme yeniden üretilebilir:** aynı kaynaktan aynı çıktı çıkar, yani yayın farkında
+yalnızca gerçekten değişenler görünür. Bunun bir inceliği var — `getCollection('species')`
 her çağrıda kimliğe göre sıralanır, çünkü glob'un dosya sistemi sırası makineye göre
-değişiyor. Damga boş yere değişirse kurulu her kullanıcı 3,3 MB'ı yeniden indirir.
-
-## Çevrimdışı çalışma
-
-`npm run build`, Astro çıktısını ürettikten sonra `scripts/sw-surum.mjs` ile service
-worker'ın sürüm damgasını ve önbellek listesini yazar:
-
-```
-Service worker sürümü 34e1f5ba157f · 215 dosya · 13.6 MB çevrimdışı içerik
-```
-
-Sürüm, çıktının içerik özetidir — çıktı değişmezse tarayıcı gereksiz yere güncellemez.
-Önbelleğe **alınmayanlar** bilinçlidir: Open-Meteo istekleri ve harita karoları ağdan
-geçer, çünkü hava verisinin tazeliği ayrı bir zaman damgalı katmanda yönetiliyor.
+değişiyor.
 
 ## İçerik
 

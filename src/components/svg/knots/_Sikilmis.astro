@@ -1,0 +1,15 @@
+---
+/**
+ * Sıkılmış düğüm gövdesi: sarımlar toplanınca ortaya çıkan kısa, taralı silindir.
+ * Her düğümün son adımı "bitmiş hâli" olarak bunu gösterir.
+ */
+interface Props { x: number; y: number; en?: number; boy?: number; adet?: number; donme?: number }
+const { x, y, en = 54, boy = 22, adet = 5, donme = 0 } = Astro.props;
+const bosluk = en / (adet + 1);
+---
+<g transform={`translate(${x},${y}) rotate(${donme})`}>
+  <rect x={-en / 2} y={-boy / 2} width={en} height={boy} rx={Math.min(6, boy / 2)} class="dugum-dolu" />
+  {Array.from({ length: adet }, (_, i) => (
+    <path class="ln-thin" style="stroke:var(--d-dugum);opacity:.55" d={`M${-en / 2 + bosluk * (i + 1)} ${-boy / 2 + 2} L${-en / 2 + bosluk * (i + 1)} ${boy / 2 - 2}`} />
+  ))}
+</g>

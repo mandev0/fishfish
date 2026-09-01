@@ -1,37 +1,58 @@
 ---
 import Adim from './_Adim.astro';
+import Halka from './_Halka.astro';
+import Ip from './_Ip.astro';
+import Ok from './_Ok.astro';
+import Olcu from './_Olcu.astro';
+import Sarim from './_Sarim.astro';
+import Sikilmis from './_Sikilmis.astro';
 ---
-<svg class="diagram" viewBox="0 0 400 450" role="img" aria-labelledby="k-uni">
-  <title id="k-uni">Uni düğümü: halkadan geçir ve geriye katlayarak paralel hat oluştur, ucu bu hattın etrafında beş-altı kez ilmekten geçir, sık ve halkaya kaydır.</title>
+<Adim no={1} baslik="Misinayı halkadan geçir ve geriye katlayarak paralel bir hat oluştur.">
+  <Ip d="M312 68 L42 68" tur="misina" />
+  <Ip d="M42 68 C20 68 20 84 42 84 L246 84" tur="uc" />
+  <Halka cx={42} cy={76} r={16} ic={10} />
+  <text class="lbl-misina" x="312" y="56" text-anchor="end">ana misina</text>
+  <text class="lbl-uc" x="246" y="102" text-anchor="end">serbest uç</text>
+  <Olcu x1={110} x2={246} y={120} metin="paralel çift hat" />
+</Adim>
 
-  <Adim no={1} baslik="Halkadan geçir, geriye katlayarak paralel hat yap" y={0}>
-    <circle cx="60" cy="46" r="13" class="metal" />
-    <path class="misina" d="M388 40 L73 40" />
-    <path class="uc" d="M47 40 q-14 0 -14 8 q0 8 14 8 L230 56" />
-    <path class="uc" d="M230 56 q26 2 26 -8" />
-    <text class="lbl-misina" x="120" y="86">paralel çift hat</text>
-  </Adim>
+<Adim no={2} baslik="Serbest uçla, çift hattın etrafında geriye doğru bir ilmek çevir.">
+  <Ip d="M312 68 L42 68" tur="misina" />
+  <Ip d="M42 68 C20 68 20 84 42 84 L206 84 C244 84 260 62 236 50" tur="uc" />
+  <Halka cx={42} cy={76} r={16} ic={10} />
+  <Ip d="M236 50 C214 40 170 48 144 70 L114 90" tur="uc" ust />
+  <text class="lbl-a" x="268" y="112" text-anchor="middle">ilmek</text>
+  <text class="lbl-misina" x="180" y="118" text-anchor="middle">çift hat</text>
+</Adim>
 
-  <Adim no={2} baslik="Ucu, çift hattın etrafındaki ilmekten 5-6 kez geçir" y={150}>
-    <circle cx="60" cy="46" r="13" class="metal" />
-    <path class="misina" d="M388 40 L73 40" />
-    <path class="uc" d="M47 40 q-14 0 -14 8 q0 8 14 8 L240 56" />
-    <path class="uc" d="M240 56 q28 2 28 -10 q0 -10 -20 -10 L150 36" />
-    {[0,1,2,3,4,5].map((i) => (
-      <path class="uc" d={`M${152 + i * 16} 36 q8 22 16 20 q8 -2 0 -20`} />
-    ))}
-    <text class="lbl-a" x="150" y="96">5-6 sarım ilmeğin içinden</text>
-  </Adim>
+<Adim no={3} baslik="Serbest ucu bu ilmeğin içinden 5-6 kez geçir.">
+  <Sarim x={140} y={76} adet={5} adim={24} yaricap={17} tur="uc">
+    <Ip d="M312 68 L42 68" tur="misina" />
+    <Ip d="M42 68 C20 68 20 84 42 84 L250 84" tur="uc" />
+  </Sarim>
+  <Ip d="M250 84 C280 84 292 108 262 114 C210 122 150 100 128 59" tur="uc" ust />
+  <Ip d="M236 59 L258 46" tur="uc" />
+  <Halka cx={42} cy={76} r={16} ic={10} />
+  <Olcu x1={128} x2={236} y={140} metin="5-6 sarım" sinif="lbl-uc" />
+</Adim>
 
-  <Adim no={3} baslik="Islat, ucu çekerek topla, sonra halkaya kaydır" y={300}>
-    <circle cx="60" cy="46" r="13" class="metal" />
-    <path class="misina" d="M388 40 L112 40" />
-    <g transform="translate(88,40)">
-      <rect x="-24" y="-13" width="48" height="26" rx="5" class="dugum-dolu" />
-      {[0,1,2,3].map((i) => (<path class="ln-thin" d={`M${-16 + i * 10} -13 L${-16 + i * 10} 13`} />))}
-    </g>
-    <path class="misina" d="M64 40 L76 40" />
-    <path class="uc" d="M112 40 l24 -10" />
-    <text class="lbl-a" x="150" y="34">fazlalığı kes</text>
-  </Adim>
-</svg>
+<Adim no={4} baslik="Islat, serbest ucu çekerek sarımları toparla.">
+  <Ip d="M312 68 L42 68" tur="misina" />
+  <Ip d="M42 68 C20 68 20 84 42 84 L150 84" tur="uc" />
+  <Halka cx={42} cy={76} r={16} ic={10} />
+  <Sikilmis x={176} y={76} en={52} boy={30} adet={6} />
+  <Ip d="M202 68 L244 56" tur="uc" />
+  <Ok x1={250} y1={50} x2={300} y2={38} />
+  <text class="lbl-a" x="308" y="96" text-anchor="end">önce ucu çek</text>
+</Adim>
+
+<Adim no={5} baslik="Ana misinayı çekerek düğümü halkaya kadar kaydır, fazlalığı kes.">
+  <Ip d="M312 76 L116 76" tur="misina" />
+  <Ip d="M58 76 L68 76" tur="misina" />
+  <Sikilmis x={92} y={76} en={48} boy={28} adet={6} />
+  <Halka cx={42} cy={76} r={16} ic={10} />
+  <Ip d="M114 62 L132 50" tur="uc" />
+  <Olcu x1={114} x2={132} y={36} metin="2-3 mm" ustte />
+  <Ok x1={186} y1={114} x2={110} y2={102} kavis={-14} />
+  <text class="lbl-a" x="192" y="122">halkaya kayar</text>
+</Adim>

@@ -2,6 +2,7 @@
   {
     "id": "klinc",
     "ad": "Klinç Düğümü",
+    "kategori": "halka",
     "ozet": "İğne, fırdöndü ve zoka bağlamanın en yaygın yolu. Öğrenmesi beş dakika, ömür boyu işine yarar.",
     "kullanim": "Monofilament ve fluorocarbon misinayı iğne/fırdöndü halkasına bağlamak.",
     "zorluk": 1,
@@ -22,6 +23,7 @@
   {
     "id": "palomar",
     "ad": "Palomar Düğümü",
+    "kategori": "halka",
     "ozet": "Bağlaması en kolay, gücü en yüksek düğümlerden biri. Karanlıkta bile bağlayabilirsin.",
     "kullanim": "Örgü ve monofilament misinayı iğne, klips veya fırdöndüye bağlamak.",
     "zorluk": 1,
@@ -41,6 +43,7 @@
   {
     "id": "uni",
     "ad": "Uni Düğümü",
+    "kategori": "halka",
     "ozet": "Tek başına bağlantı düğümü, iki tane yan yana kullanılınca iki misinayı birleştiren \"çift uni\" olur.",
     "kullanim": "Halkaya bağlamak veya iki misinayı (ana misina ↔ köstek) birleştirmek.",
     "zorluk": 2,
@@ -60,6 +63,7 @@
   {
     "id": "fg",
     "ad": "FG Düğümü",
+    "kategori": "hat",
     "ozet": "Örgü misinayı fluorocarbon şok liderine bağlamanın en ince ve en güçlü yolu. Düğüm neredeyse hiç kalınlaşmadığı için kamış halkalarından pürüzsüz geçer.",
     "kullanim": "PE örgü ana misina ↔ fluorocarbon şok lideri.",
     "zorluk": 4,
@@ -81,6 +85,7 @@
   {
     "id": "snell",
     "ad": "Snell Düğümü",
+    "kategori": "halka",
     "ozet": "Misinayı iğnenin pipo kısmına sararak bağlar. Çekiş kuvveti iğneyi döndürüp ağza daha iyi kilitler.",
     "kullanim": "Pipolu (gözsüz veya gözlü) iğnelere köstek bağlamak; özellikle dip takımında.",
     "zorluk": 3,
@@ -100,6 +105,7 @@
   {
     "id": "cift-ilmek",
     "ad": "Çift İlmek (Surgeon's Loop)",
+    "kategori": "ilmek",
     "ozet": "Misina ucunda sağlam bir ilmek oluşturur. İlmek-ilmeğe bağlantıyla köstek değiştirmeyi saniyeler meselesi yapar.",
     "kullanim": "Köstek ucu, beden ucu ve hızlı takım değişimi.",
     "zorluk": 1,
@@ -119,6 +125,7 @@
   {
     "id": "kostek-bagi",
     "ad": "Köstek Bağı (Dropper Loop)",
+    "kategori": "ilmek",
     "ozet": "Misinanın ortasında, hattı kesmeden dik duran bir ilmek oluşturur. Paternoster ve çapari yapımının temel düğümü.",
     "kullanim": "Bedenin ortasına köstek çıkışı açmak.",
     "zorluk": 3,
@@ -134,6 +141,29 @@
     "ipuclari": [
       "İlmek uzunluğu, köstek arası mesafenin yarısını geçmesin.",
       "Sarım sayısı tek değil çift olsun; ilmek daha dik durur."
+    ]
+  },
+  {
+    "id": "cerrah",
+    "ad": "Cerrah Düğümü (Surgeon's Knot)",
+    "kategori": "hat",
+    "ozet": "İki misinayı birbirine eklemenin en kolay yolu. FG kadar ince oturmaz ama beş dakikada öğrenilir ve iki hat arasındaki kalınlık farkını affeder.",
+    "kullanim": "Ana misinaya fluorocarbon lider, şok lideri veya ince köstek eklemek; mono-mono ve mono-fluorocarbon eklerinde.",
+    "zorluk": 2,
+    "guc": "İnce olan hattın gücünün yaklaşık %85-90'ı",
+    "adimlar": [
+      "İki misinayı, uçları ters yöne bakacak şekilde 15-20 cm boyunca üst üste getir.",
+      "Çakışan iki hattı tek parça gibi tutup basit bir ilmek oluştur.",
+      "Lideri ve ana misinanın serbest ucunu birlikte bu ilmeğin içinden geçir.",
+      "Aynı yönde ikinci kez daha geçir; iki hat arasındaki kalınlık farkı belirginse üçüncü bir tur daha at.",
+      "Düğümü iyice ıslat, dört ucu birden yavaşça çekerek sık; sarımlar yan yana dizilmeli.",
+      "İki fazlalığı 2 mm bırakarak kes."
+    ],
+    "ipuclari": [
+      "İki hat arasındaki kalınlık farkı belirginse iki tur yerine üç tur at (triple surgeon's); iki tur ince hattın üstünde kayabilir.",
+      "Sıkarken dört ucu aynı anda çek. Önce tek çifti çekersen düğüm eğri oturur ve kamış halkasına takılır.",
+      "FG'ye göre kalın kalır ve kamış halkasından geçerken takırdar; örgü ana misinada uzun atış yapıyorsan FG'yi tercih et, kıyıda mono ana misinada bu düğüm fazlasıyla yeter.",
+      "Aynı örgüyü katlanmış tek misinayla atarsan çift ilmek çıkar; iki düğüm de aynı ailedendir, biri iki hattı ekler, diğeri hattın ucunda ilmek bırakır."
     ]
   }
 ]

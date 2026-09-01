@@ -1,0 +1,12 @@
+---
+/**
+ * Ölçü çizgisi ve metni ("15-20 cm", "3-5 cm", "6-8 tur").
+ * Ondalık ayracı virgüldür; metni çağıran taraf verir.
+ */
+import { olcu } from '../../../lib/semaIp';
+
+interface Props { x1: number; x2: number; y: number; metin: string; ustte?: boolean; sinif?: string }
+const { x1, x2, y, metin, ustte = false, sinif = 'lbl' } = Astro.props;
+---
+<path class="tick" d={olcu(x1, x2, y)} />
+<text class={sinif} x={(x1 + x2) / 2} y={ustte ? y - 8 : y + 15} text-anchor="middle">{metin}</text>

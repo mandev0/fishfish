@@ -140,5 +140,9 @@ const gorulen = new Set<string>();
         </li>
       ))}
     </ul>
+    {/* Haritada ve filtrelerle görmek isteyen için: nokta listesi bu yöntemle açılır. */}
+    <a href={`/noktalar?yontem=${yontem.id}`} class="kart baglanti-cip mt-3 inline-flex">
+      Bu Yöntemi Haritada Gör
+    </a>
   </Bolum>
 </Base>

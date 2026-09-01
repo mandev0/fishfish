@@ -1,0 +1,17 @@
+---
+/**
+ * İğne: göz + düz pipo + kavis + iğne ucu ve tırnak.
+ * Göz merkezine göre çizilir, aşağı doğru bakar; `donme` ile yatırılabilir.
+ * Göz deliği misinanın iki kat geçebileceği kadar geniştir (Palomar).
+ */
+import Halka from './_Halka.astro';
+
+interface Props { x: number; y: number; olcek?: number; donme?: number }
+const { x, y, olcek = 1, donme = 0 } = Astro.props;
+---
+<g transform={`translate(${x},${y}) rotate(${donme}) scale(${olcek})`}>
+  <path class="igne" d="M0 10 L0 54" />
+  <path class="igne" d="M0 54 C0 78 7 92 21 92 C35 92 42 80 40 68 L37 50" />
+  <path class="igne" d="M37 52 L31 62" />
+  <Halka cx={0} cy={0} r={10} ic={6} />
+</g>

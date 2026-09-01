@@ -1,12 +1,29 @@
 ---
-// Bir düğüm adımının çerçevesi: numara rozeti + kısa açıklama + çizim alanı.
-interface Props { no: number; baslik: string; y: number }
-const { no, baslik, y } = Astro.props;
+/**
+ * Bir düğüm adımı: kendi kartında, kendi çizim alanında.
+ *
+ * Eskiden üç adım tek bir 400x450 SVG'ye sığdırılıyordu; telefonda her çizim
+ * ~120 piksel yüksekliğinde kalıyor ve sarımlar okunmuyordu. Artık her adım
+ * ayrı bir SVG: dar ekranda tam genişlikte, geniş ekranda iki sütun.
+ *
+ * Açıklama cümlesi SVG içinde değil HTML'de basılır — böylece uzun cümle
+ * satır kaydırır, viewBox dışına taşamaz ve gerçek metin olarak seçilebilir.
+ */
+interface Props {
+  no: number;
+  /** Adımın cümlesi — başlık değil, cümle biçiminde. */
+  baslik: string;
+  /** Çizim alanının yüksekliği; varsayılan 170. */
+  boy?: number;
+}
+const { no, baslik, boy = 170 } = Astro.props;
 ---
-<g transform={`translate(0,${y})`}>
-  <rect x="0.5" y="0.5" width="388" height="139" rx="10" class="ln-thin" fill="none" />
-  <rect x="11" y="11" width="22" height="22" rx="3" class="accent" />
-  <text x="22" y="26" text-anchor="middle" font-size="12" font-weight="700" fill="var(--accent-ink)">{no}</text>
-  <text x="42" y="26" class="lbl-b">{baslik}</text>
-  <g transform="translate(0,34)"><slot /></g>
-</g>
+<li class="kart p-3">
+  <svg class="diagram" viewBox={`0 0 320 ${boy}`} aria-hidden="true">
+    <slot />
+  </svg>
+  <p class="mt-2 flex items-start gap-2.5 text-sm">
+    <span class="sayisal mt-px flex size-6 shrink-0 items-center justify-center rounded-sm bg-accent text-xs font-bold text-accent-ink">{no}</span>
+    <span class="text-muted">{baslik}</span>
+  </p>
+</li>

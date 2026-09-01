@@ -1,0 +1,23 @@
+---
+/**
+ * İki telin birbirine burulması (köstek bağındaki dönüşler).
+ *
+ * Aynı helis yarım periyot kaydırılarak iki kez üretilir: birinin öne geldiği
+ * yerde diğeri arkada kalır. İki telin arka yarımları önce, ön yarımları sonra
+ * çizilir — sıra karışırsa burgu düz bir zincir gibi görünüyor.
+ */
+import { sarim } from '../../../lib/semaIp';
+import Ip from './_Ip.astro';
+
+interface Props {
+  x: number; y: number; adet: number; adim: number;
+  yaricap?: number; aci?: number;
+  tur?: 'misina' | 'uc' | 'orgu' | 'lider' | 'beden';
+}
+const { x, y, adet, adim, yaricap = 10, aci = 0, tur = 'beden' } = Astro.props;
+const a = sarim({ x, y, adet, adim, yaricap, aci });
+const b = sarim({ x: x + (adim / 2) * Math.cos((aci * Math.PI) / 180), y: y + (adim / 2) * Math.sin((aci * Math.PI) / 180), adet, adim, yaricap, aci });
+const teller = [...a, ...b];
+---
+{teller.filter((p) => !p.on).map((p) => <path class={`${tur} ip-arka`} d={p.d} />)}
+{teller.filter((p) => p.on).map((p) => <Ip d={p.d} tur={tur} ust kilif={6} />)}

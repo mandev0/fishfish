@@ -1,0 +1,73 @@
+---
+/**
+ * Cerrah düğümü — iki hattı birleştiren tek düğüm şeması.
+ *
+ * Diğer düğümlerde ana hat ile serbest uç farklı renktedir; burada ayrım iki
+ * **hat** arasındadır: ana misina ve lider düğümün içinde yan yana ilerler.
+ * Bu yüzden çakışan bölüm tek bir eğri değil, aynı merkez eğrinin iki yana
+ * 3,6 piksel ofsetlenmiş iki kopyasıdır — her tel kendi rengini korur ve
+ * okuyucu hangi hattın nereye gittiğini izleyebilir. Kesişmelerde ikisi
+ * birlikte üste geçer (`ust`), kılıf çifti birden örtecek genişliktedir.
+ *
+ * Uçların yönü bütün adımlarda aynıdır: ana misina sola, lider sağa gider;
+ * serbest uçlar bunun tersine bakar (1. adımdaki kural son adıma kadar sürer).
+ */
+import Adim from './_Adim.astro';
+import Ip from './_Ip.astro';
+import Ok from './_Ok.astro';
+import Olcu from './_Olcu.astro';
+import Sikilmis from './_Sikilmis.astro';
+---
+<Adim no={1} baslik="İki misinayı, uçları ters yöne bakacak şekilde 15-20 cm boyunca üst üste getir.">
+  <Ip d="M12 60 L258 60" tur="misina" />
+  <Ip d="M308 80 L62 80" tur="lider" />
+  <text class="lbl-misina" x="12" y="46">ana misina</text>
+  <text class="lbl-lider" x="308" y="100" text-anchor="end">lider</text>
+  <Olcu x1={62} x2={258} y={118} metin="15-20 cm üst üste" />
+  <text class="lbl" x="160" y="154" text-anchor="middle">uçlar ters yöne bakar</text>
+</Adim>
+
+<Adim no={2} baslik="Çakışan iki hattı tek parça gibi tutup basit bir ilmek oluştur.">
+  <Ip d="M12 54 L128 54 C176 54 206 107 172 129" tur="misina" />
+  <Ip d="M12 62 L128 62 C176 62 202 101 168 123" tur="lider" />
+  <Ip d="M172 129 C138 149 93 106 111 82 C127 62 156 65 180 47 L250 43" tur="misina" ust kilif={6} />
+  <Ip d="M168 123 C134 143 99 110 117 86 C133 66 160 71 184 53 L308 48" tur="lider" ust kilif={6} />
+  <text class="lbl-misina" x="12" y="42">ana misina</text>
+  <text class="lbl-lider" x="308" y="70" text-anchor="end">lider</text>
+  <text class="lbl-a" x="252" y="106" text-anchor="middle">basit ilmek</text>
+</Adim>
+
+<Adim no={3} baslik="Lideri ve ana misinanın ucunu birlikte ilmekten geçir, aynı yönde ikinci kez daha geçir.">
+  <Ip d="M12 42 L108 42 C152 42 182 93 150 115" tur="misina" />
+  <Ip d="M12 50 L108 50 C152 50 178 87 146 109" tur="lider" />
+  <Ip d="M150 115 C118 135 75 94 93 70 C107 52 136 61 164 45" tur="misina" ust kilif={6} />
+  <Ip d="M146 109 C114 129 81 98 99 74 C113 56 140 67 168 51" tur="lider" ust kilif={6} />
+  <Ip d="M164 45 C197 31 233 62 219 90 C207 112 165 110 153 92" tur="misina" ust kilif={6} />
+  <Ip d="M168 51 C199 37 227 58 213 86 C201 108 171 106 159 88" tur="lider" ust kilif={6} />
+  <Ip d="M153 92 C167 107 210 111 246 106" tur="misina" ust kilif={6} />
+  <Ip d="M159 88 C173 101 219 104 261 98 L308 92" tur="lider" ust kilif={6} />
+  <text class="lbl-a" x="308" y="38" text-anchor="end">iki tur</text>
+  <Ok x1={196} y1={140} x2={272} y2={124} />
+  <text class="lbl" x="150" y="144" text-anchor="end">uçlar bu yönde çıkar</text>
+</Adim>
+
+<Adim no={4} baslik="Düğümü ıslat ve dört ucu birden yavaşça çekerek sık.">
+  <Ip d="M12 74 L124 74" tur="misina" />
+  <Ip d="M196 74 L308 74" tur="lider" />
+  <Sikilmis x={160} y={74} en={76} boy={28} adet={5} />
+  <Ip d="M194 62 L232 48" tur="misina" />
+  <Ip d="M126 62 L88 48" tur="lider" />
+  <Ok x1={104} y1={124} x2={26} y2={124} />
+  <Ok x1={216} y1={124} x2={294} y2={124} />
+  <text class="lbl" x="160" y="152" text-anchor="middle">dört ucu birden çek</text>
+</Adim>
+
+<Adim no={5} baslik="İki fazlalığı 2 mm bırakarak kes.">
+  <Ip d="M12 86 L124 86" tur="misina" />
+  <Ip d="M196 86 L308 86" tur="lider" />
+  <Sikilmis x={160} y={86} en={76} boy={28} adet={5} />
+  <Ip d="M194 74 L206 66" tur="misina" />
+  <Ip d="M126 74 L114 66" tur="lider" />
+  <Olcu x1={194} x2={206} y={52} metin="2 mm" ustte />
+  <text class="lbl-a" x="160" y="130" text-anchor="middle">bitmiş hâli</text>
+</Adim>

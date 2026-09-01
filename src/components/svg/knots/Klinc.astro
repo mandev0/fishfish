@@ -1,36 +1,62 @@
 ---
 import Adim from './_Adim.astro';
+import Halka from './_Halka.astro';
+import Ip from './_Ip.astro';
+import Ok from './_Ok.astro';
+import Olcu from './_Olcu.astro';
+import Sarim from './_Sarim.astro';
+import Sikilmis from './_Sikilmis.astro';
 ---
-<svg class="diagram" viewBox="0 0 400 450" role="img" aria-labelledby="k-klinc">
-  <title id="k-klinc">Klinç düğümü: misinayı halkadan geçir, ana misina etrafında beş tur sar, ucu halkanın yanındaki ilmekten ve ardından büyük ilmekten geçir, ıslatıp sık.</title>
+<Adim no={1} baslik="Misinanın ucunu halkadan geçir, 15-20 cm serbest uç bırak.">
+  <Ip d="M312 74 L38 74" tur="misina" />
+  <Ip d="M38 74 C16 74 16 88 38 88 L266 88" tur="uc" />
+  <Halka cx={38} cy={81} r={16} ic={9} />
+  <text class="lbl-misina" x="312" y="62" text-anchor="end">ana misina</text>
+  <text class="lbl-uc" x="266" y="106" text-anchor="end">serbest uç</text>
+  <text class="lbl-metal" x="38" y="118" text-anchor="middle">halka</text>
+  <Olcu x1={148} x2={266} y={132} metin="15-20 cm" />
+</Adim>
 
-  <Adim no={1} baslik="Halkadan geçir, 15-20 cm uç bırak" y={0}>
-    <circle cx="60" cy="46" r="13" class="metal" />
-    <path class="misina" d="M388 46 L73 46" />
-    <path class="uc" d="M47 46 q-14 0 -14 12 q0 12 16 12 L300 70" />
-    <text class="lbl-misina" x="300" y="34" text-anchor="end">ana misina</text>
-    <text class="lbl-yem" x="300" y="88" text-anchor="end">serbest uç</text>
-  </Adim>
+<Adim no={2} baslik="Serbest ucu ana misinanın etrafında 5-6 tur sar.">
+  <Sarim x={118} y={74} adet={5} adim={27} yaricap={12} tur="uc">
+    <Ip d="M312 74 L38 74" tur="misina" />
+  </Sarim>
+  <Ip d="M38 74 C16 74 16 88 38 88 L70 88 Q98 88 104.5 62" tur="uc" ust />
+  <Ip d="M239.5 62 Q264 56 282 68" tur="uc" />
+  <Halka cx={38} cy={81} r={16} ic={9} />
+  <Olcu x1={104} x2={240} y={112} metin="5-6 tur" sinif="lbl-uc" />
+</Adim>
 
-  <Adim no={2} baslik="Serbest ucu ana misinaya 5-6 tur sar" y={150}>
-    <circle cx="60" cy="46" r="13" class="metal" />
-    <path class="misina" d="M388 46 L73 46" />
-    <path class="uc" d="M47 46 q-14 0 -14 12 q0 12 16 12 L120 70" />
-    {[0,1,2,3,4,5].map((i) => (
-      <path class="uc" d={`M${128 + i * 26} 70 q13 -30 26 -24`} />
-    ))}
-    <path class="uc" d="M282 46 L316 58" />
-    <text class="lbl-yem" x="150" y="100">5-6 tur</text>
-  </Adim>
+<Adim no={3} baslik="Serbest ucu, halkanın hemen üstünde kalan ilk ilmeğin içinden geçir.">
+  <Sarim x={118} y={74} adet={5} adim={27} yaricap={12} tur="uc">
+    <Ip d="M312 74 L38 74" tur="misina" />
+  </Sarim>
+  <Ip d="M38 74 C16 74 16 88 38 88 L70 88 Q98 88 104.5 62" tur="uc" ust />
+  <Halka cx={38} cy={81} r={16} ic={9} />
+  <circle class="dugum" cx="104" cy="74" r="17" />
+  <Ok x1={244} y1={58} x2={112} y2={64} kavis={26} />
+  <text class="lbl-a" x="104" y="116" text-anchor="middle">ilk ilmek</text>
+</Adim>
 
-  <Adim no={3} baslik="Ucu önce küçük, sonra büyük ilmekten geçir" y={300}>
-    <circle cx="60" cy="46" r="13" class="metal" />
-    <path class="misina" d="M388 46 L73 46" />
-    <path class="uc" d="M47 46 q-14 0 -14 12 q0 12 16 12 L120 70" />
-    {[0,1,2,3,4,5].map((i) => (
-      <path class="uc" d={`M${128 + i * 26} 70 q13 -30 26 -24`} />
-    ))}
-    <path class="dugum" d="M92 60 q-14 20 8 26 q30 8 60 -6 q26 -12 10 -30" />
-    <text class="lbl-a" x="188" y="96">ikinci geçiş — kaymayı önler</text>
-  </Adim>
-</svg>
+<Adim no={4} baslik="Yeni oluşan büyük ilmeğin içinden ucu bir kez daha geçir; düğümü kilitleyen adım budur.">
+  <Sarim x={118} y={64} adet={5} adim={27} yaricap={12} tur="uc">
+    <Ip d="M312 64 L38 64" tur="misina" />
+  </Sarim>
+  <Ip d="M38 64 C16 64 16 78 38 78 L70 78 Q98 78 104.5 52" tur="uc" ust />
+  <Halka cx={38} cy={71} r={16} ic={9} />
+  <Ip d="M239.5 52 Q170 26 112 50" tur="uc" ust />
+  <Ip d="M112 50 C96 62 100 86 128 96 C168 110 206 100 214 84" tur="uc" ust />
+  <Ok x1={250} y1={112} x2={162} y2={88} kavis={18} />
+  <text class="lbl-a" x="150" y="132" text-anchor="middle">büyük ilmek</text>
+</Adim>
+
+<Adim no={5} baslik="Islat, ana misinayı çekerek sarımları halkaya sıkıştır ve fazlalığı 2-3 mm bırakarak kes.">
+  <Ip d="M312 80 L128 80" tur="misina" />
+  <Ip d="M54 80 L66 80" tur="misina" />
+  <Sikilmis x={96} y={80} en={62} boy={26} adet={6} />
+  <Halka cx={38} cy={80} r={16} ic={9} />
+  <Ip d="M127 72 L150 60" tur="uc" />
+  <Olcu x1={127} x2={150} y={44} metin="2-3 mm" ustte />
+  <Ok x1={196} y1={112} x2={286} y2={112} />
+  <text class="lbl" x="196" y="132">ana misinayı çek</text>
+</Adim>

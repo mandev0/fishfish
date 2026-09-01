@@ -1,0 +1,11 @@
+---
+/**
+ * İğne gözü, fırdöndü veya klips halkası — içi boş metal bir çember.
+ * Delik gerçekten delik: misina içinden geçerken kesişme okunur kalsın diye
+ * tek yol + `evenodd` ile çiziliyor.
+ */
+interface Props { cx: number; cy: number; r?: number; ic?: number }
+const { cx, cy, r = 15, ic = Math.round(r * 0.58) } = Astro.props;
+const cember = (yc: number) => `M${cx - yc} ${cy} a${yc} ${yc} 0 1 0 ${2 * yc} 0 a${yc} ${yc} 0 1 0 ${-2 * yc} 0`;
+---
+<path class="metal" fill-rule="evenodd" d={`${cember(r)} ${cember(ic)}`} />

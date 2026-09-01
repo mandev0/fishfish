@@ -1,0 +1,21 @@
+---
+/**
+ * Bir ekseni saran ip (klinç turları, snell sarımı, FG geçişleri).
+ *
+ * Helis geometrisi `semaIp.ts` içinde hesaplanır: her tur, eksenin arkasında
+ * kalan ve önünden geçen iki yarıma bölünür. Sıralama şu olmak zorunda —
+ * arka yarımlar, sonra eksenin kendisi (varsayılan slot), sonra ön yarımlar.
+ * Eksen araya girmezse sarım ipin "etrafında" değil "üstünde" görünür.
+ */
+import { sarim, type SarimSecenek } from '../../../lib/semaIp';
+import Ip from './_Ip.astro';
+
+interface Props extends SarimSecenek {
+  tur?: 'misina' | 'uc' | 'orgu' | 'lider';
+}
+const { tur = 'uc', ...secenek } = Astro.props;
+const parcalar = sarim(secenek);
+---
+{parcalar.filter((p) => !p.on).map((p) => <path class={`${tur} ip-arka`} d={p.d} />)}
+<slot />
+{parcalar.filter((p) => p.on).map((p) => <Ip d={p.d} tur={tur} ust />)}

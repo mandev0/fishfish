@@ -1,33 +1,52 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import Bolum from '../../components/Bolum.astro';
 import Zorluk from '../../components/Zorluk.astro';
+import { DUGUM_KATEGORILERI } from '../../lib/dugum';
 import { baslikBicimi } from '../../lib/metin';
 
-const dugumler = (await getCollection('knots')).sort((a, b) => a.data.zorluk - b.data.zorluk);
+/**
+ * Düğümler işe göre gruplanır, grup içinde zorluğa göre sıralanır.
+ * Salt zorluk sıralaması "en kolay üçü" cevabını veriyordu; okuyucunun
+ * sorusu ise "bu takımı kurmak için hangi düğümler gerekiyor".
+ */
+const dugumler = await getCollection('knots');
+const gruplar = DUGUM_KATEGORILERI.map((k) => ({
+  ...k,
+  liste: dugumler
+    .filter((d) => d.data.kategori === k.id)
+    .sort((a, b) => a.data.zorluk - b.data.zorluk || a.id.localeCompare(b.id, 'tr')),
+}));
 ---
-<Base baslik="Düğümler" aciklama="Kıyı balıkçılığında gereken 7 düğüm: klinç, palomar, uni, FG, snell, çift ilmek ve köstek bağı.">
+<Base baslik="Düğümler" aciklama="Kıyı balıkçılığında gereken 8 düğüm, işine göre üç grupta: halkaya bağlama, iki hattı birleştirme ve ilmek yapma.">
   <h1 class="text-3xl sm:text-4xl">Düğümler</h1>
   <p class="mt-2 max-w-2xl text-muted">
-    Yedi düğüm bütün kıyı takımlarını kapsar. Kolaydan zora sıralı — ilk üçünü öğrenmen çoğu gün yeter.
+    Sekiz düğüm bütün kıyı takımlarını kapsar. Hepsini öğrenmen gerekmez: her gruptan
+    birer tane (klinç, cerrah, çift ilmek) bilen biri takımı baştan sona kurabilir.
+    Gruplar kendi içinde kolaydan zora sıralı.
   </p>
   <p class="mt-3 rounded-sm border-2 border-warn/45 bg-warn-soft p-3 text-sm">
     Hangi düğümü bağlarsan bağla, sıkmadan önce <strong>mutlaka ıslat</strong>.
     Kuru misina sürtünme ısısıyla zayıflar ve tam düğümün olduğu yerden kopar.
   </p>
 
-  <ul class="mt-6 grid gap-5 sm:grid-cols-2">
-    {dugumler.map((k) => (
-      <li>
-        <a href={`/dugum/${k.id}`} class="block h-full kart p-4 hover:border-accent">
-          <div class="flex items-baseline justify-between gap-2">
-            <h2 class="font-semibold">{baslikBicimi(k.data.ad)}</h2>
-            <Zorluk seviye={k.data.zorluk} />
-          </div>
-          <p class="mt-1 text-sm text-muted">{k.data.ozet}</p>
-          <p class="mt-2 text-xs text-accent">{k.data.guc}</p>
-        </a>
-      </li>
-    ))}
-  </ul>
+  {gruplar.map((g) => (
+    <Bolum baslik={g.ad} not={g.not}>
+      <ul class="grid gap-5 sm:grid-cols-2">
+        {g.liste.map((k) => (
+          <li>
+            <a href={`/dugum/${k.id}`} class="block h-full kart p-4 hover:border-accent">
+              <div class="flex items-baseline justify-between gap-2">
+                <h3 class="font-semibold">{baslikBicimi(k.data.ad)}</h3>
+                <Zorluk seviye={k.data.zorluk} />
+              </div>
+              <p class="mt-1 text-sm text-muted">{k.data.ozet}</p>
+              <p class="mt-2 text-xs text-accent">{k.data.guc}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </Bolum>
+  ))}
 </Base>

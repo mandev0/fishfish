@@ -9,7 +9,7 @@ import SpeciesCard from '../../components/SpeciesCard.astro';
 import WeatherPanel from '../../components/WeatherPanel.astro';
 import Ikon from '../../components/Ikon.astro';
 import { baslikBicimi } from '../../lib/metin';
-import { bolgeTamAdi, SU_ADLARI, SU_TURU } from '../../lib/season';
+import { bolgeTamAdi, ILCE_ADLARI, SU_ADLARI, SU_TURU } from '../../lib/season';
 import { ruzgar } from '../../lib/wind';
 import { mesafeKm, mesafeMetni } from '../../lib/mesafe';
 import shops from '../../data/shops.json';
@@ -56,6 +56,11 @@ const KALABALIK_METNI: Record<string, string> = {
 
   <p class="flex items-center gap-1.5 text-sm font-medium bolge-metin" data-bolge={d.bolge}>
     <span class="bolge-nokta" aria-hidden="true" />{bolgeTamAdi(d.bolge)} · {SU_ADLARI[d.su]}
+  </p>
+  {/* İlçe ayrı bir eksen: "Anadolu yakasında hangi ilçedeyim" sorusu bölgeyle
+      cevaplanmıyor. Bağlantı nokta listesini o ilçeyle açar. */}
+  <p class="mt-0.5 text-sm text-muted">
+    <a href={`/noktalar?ilce=${d.ilce}`} class="hover:text-vurgu">{ILCE_ADLARI[d.ilce]}</a>
   </p>
   <h1 class="mt-1 text-3xl sm:text-4xl">{baslikBicimi(d.ad)}</h1>
   <Metin metin={d.ozet} etiket="p" sinif="mt-3 max-w-2xl" gorulen={gorulen} />

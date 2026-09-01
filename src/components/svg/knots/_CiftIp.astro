@@ -1,0 +1,32 @@
+---
+/**
+ * Katlanmış (çift) misina — Palomar ve çift ilmekte hattın iki kat olduğu bölüm.
+ *
+ * İki paralel eğriyi elle çizmek yerine aynı yol üç kez basılır: kalın renkli
+ * gövde, üstüne zemin renginde ince bir çizgi. Ortadaki boşluk iki teli
+ * ayırır ve her eğride kendiliğinden doğru genişlikte kalır.
+ *
+ * `kapaliBas` / `kapaliSon` ile uç yuvarlanır: ortadaki boşluk `pathLength`
+ * üzerinden kırpılır, iki tel orada birleşir — katlanmış ucun dönüşü budur.
+ */
+interface Props {
+  d: string;
+  tur?: 'misina' | 'uc' | 'orgu' | 'lider';
+  /** Alttakinin üstünden geçer. */
+  ust?: boolean;
+  /** Yolun başında/sonunda iki tel birleşsin mi (katlanan uç). */
+  kapaliBas?: boolean;
+  kapaliSon?: boolean;
+  /** Çift hattın dış genişliği. */
+  en?: number;
+}
+const { d, tur = 'misina', ust = false, kapaliBas = false, kapaliSon = false, en = 6.6 } = Astro.props;
+const bas = kapaliBas ? 2 : 0;
+const son = kapaliSon ? 2 : 0;
+const kirp = bas || son
+  ? { pathLength: 100, 'stroke-dasharray': `${100 - bas - son} 100`, 'stroke-dashoffset': -bas }
+  : {};
+---
+{ust && <path class="kilif" d={d} style={`stroke-width:${en + 5}`} />}
+<path class={tur} d={d} style={`stroke-width:${en}`} />
+<path class="kilif" d={d} style={`stroke-width:${en - 4}`} {...kirp} />

@@ -859,7 +859,7 @@
       }
     ],
     "kurulum": [
-      "Ana misinaya şok liderini FG veya çift ilmek ile bağla; düğüm makinede 5-6 tur kalacak kadar uzun olsun.",
+      "Ana misinaya şok liderini bağla: örgü ana misinada FG, mono ana misinada cerrah düğümü işini görür. Düğüm makinede 5-6 tur kalacak kadar uzun olsun.",
       "Liderin ucuna fırdöndü, fırdöndüden sonra 60-80 cm beden bağla.",
       "Bedenin alt ucuna kurşunu, üst tarafına köstek bağını yaparak kösteği ekle.",
       "İğneyi deniz solucanıyla doldur ve iğnenin ucunu atış klipsine tak.",
@@ -867,6 +867,7 @@
     ],
     "dugumler": [
       "fg",
+      "cerrah",
       "cift-ilmek",
       "kostek-bagi",
       "palomar"
@@ -1142,11 +1143,12 @@
       "İki kauçuk stoperi misinaya geçir, aralarına şamandırayı yerleştir.",
       "Derinliği ölç: iğneye küçük bir kurşun tak, dibe indir ve stoperleri yeme göre ayarla.",
       "Saçma kurşunları misinaya azalan sırayla, en küçüğü en altta olacak şekilde sıkıştır.",
-      "Fırdöndü veya doğrudan düğümle 25-40 cm kösteği bağla, ucuna iğneyi tak.",
+      "Fırdöndü kullan ya da 25-40 cm kösteği doğrudan cerrah düğümüyle ana misinaya ekle, ucuna iğneyi tak.",
       "Şamandıranın suyun üstünde ince bir çizgi kalacak kadar battığından emin ol."
     ],
     "dugumler": [
       "klinc",
+      "cerrah",
       "cift-ilmek",
       "snell"
     ],

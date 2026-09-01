@@ -4,8 +4,21 @@ import Base from '../../layouts/Base.astro';
 import SpeciesCard from '../../components/SpeciesCard.astro';
 import { baslikBicimi } from '../../lib/metin';
 import { SU_TURU } from '../../lib/season';
+import { turYontemleri } from '../../lib/yontem';
 
 const turler = (await getCollection('species')).sort((a, b) => a.data.ad.localeCompare(b.data.ad, 'tr'));
+
+/**
+ * Yöntem süzgeci: kullanıcı bir yöntem öğreniyorsa listeyi ona indirger.
+ * Tür ↔ yöntem eşlemesi `yontem.ts` içinde tek yerden kuruluyor.
+ */
+const takimlar = await getCollection('rigs');
+const yontemler = (await getCollection('methods')).sort((a, b) => a.data.zorluk - b.data.zorluk);
+const turYontemHaritasi = turYontemleri(
+  turler.map((t) => ({ id: t.id, takimlar: t.data.takimlar })),
+  takimlar.map((r) => ({ id: r.id, yontem: r.data.yontem })),
+  yontemler.map((y) => ({ id: y.id, turler: y.data.turler })),
+);
 
 /** Bir tür yalnızca göl ve derede yaşıyorsa tatlı su türüdür; gerisi denizde de bulunur. */
 const tatliSuMu = (t: typeof turler[number]) => t.data.sular.every((s) => SU_TURU[s] === 'tatli');
@@ -30,13 +43,54 @@ const gruplar = [
     Her sayfada teşhis işaretleri, yasal boy, ekipman tablosu, takım şeması ve taktik adımları var.
   </p>
 
+  <div class="mt-5 flex flex-wrap items-center gap-2">
+    <span class="text-sm text-muted">Yöntem:</span>
+    <button type="button" data-yontem="hepsi" aria-pressed="true" class="dugme dugme-cip yontem-dugme">Hepsi</button>
+    {yontemler.map((y) => (
+      <button type="button" data-yontem={y.id} aria-pressed="false" class="dugme dugme-cip yontem-dugme">
+        {y.data.kisaAd}
+      </button>
+    ))}
+  </div>
+
   {gruplar.map((g) => (
-    <section class="mt-8">
+    <section class="mt-8" data-grup>
       <h2 class="bolum-baslik mb-1 text-xl sm:text-2xl">{baslikBicimi(g.ad)}</h2>
-      <p class="mb-3 mt-2 text-sm text-muted">{g.liste.length} tür · {g.not}</p>
+      <p class="mb-3 mt-2 text-sm text-muted">
+        <span data-grup-sayac>{g.liste.length}</span> tür · {g.not}
+      </p>
       <div class="grid gap-5 sm:grid-cols-2">
-        {g.liste.map((t) => <SpeciesCard tur={t} />)}
+        {g.liste.map((t) => (
+          <div data-tur class="flex" data-yontemler={(turYontemHaritasi[t.id] ?? []).join(" ")}>
+            <SpeciesCard tur={t} />
+          </div>
+        ))}
       </div>
     </section>
   ))}
+
+  <script is:inline data-astro-rerun>
+    (function () {
+      // Süzgeç JavaScript'e bağlı; kapalıyken bütün türler listede kalır.
+      const dugmeler = document.querySelectorAll('.yontem-dugme');
+      const gruplar = document.querySelectorAll('[data-grup]');
+      dugmeler.forEach((d) => d.addEventListener('click', () => {
+        const yontem = d.getAttribute('data-yontem');
+        dugmeler.forEach((x) => x.setAttribute('aria-pressed', String(x === d)));
+        gruplar.forEach((grup) => {
+          let sayi = 0;
+          grup.querySelectorAll('[data-tur]').forEach((kart) => {
+            const uygun = yontem === 'hepsi'
+              || (kart.getAttribute('data-yontemler') || '').split(' ').includes(yontem);
+            kart.hidden = !uygun;
+            if (uygun) sayi++;
+          });
+          const sayac = grup.querySelector('[data-grup-sayac]');
+          if (sayac) sayac.textContent = String(sayi);
+          // Tek bir tür bile kalmayan grubu başlığıyla birlikte gizle.
+          grup.hidden = sayi === 0;
+        });
+      }));
+    })();
+  </script>
 </Base>

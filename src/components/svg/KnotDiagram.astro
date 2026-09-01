@@ -1,4 +1,12 @@
 ---
+/**
+ * Bir düğümün adım adım şeması.
+ *
+ * Her adım kendi kartında, kendi SVG'sinde çizilir (`knots/_Adim.astro`);
+ * dar ekranda tek sütun, geniş ekranda iki sütun. Altında renk anahtarı var:
+ * çizimdeki her ipin hangi taraf olduğunu söyler, çünkü düğüm çiziminde
+ * "hangisi elimdeki uç" sorusu en sık takılınan yer.
+ */
 import Klinc from './knots/Klinc.astro';
 import Palomar from './knots/Palomar.astro';
 import Uni from './knots/Uni.astro';
@@ -6,6 +14,7 @@ import Fg from './knots/Fg.astro';
 import Snell from './knots/Snell.astro';
 import CiftIlmek from './knots/CiftIlmek.astro';
 import KostekBagi from './knots/KostekBagi.astro';
+import Cerrah from './knots/Cerrah.astro';
 
 interface Props { dugum: string }
 const { dugum } = Astro.props;
@@ -18,11 +27,63 @@ const SEMALAR: Record<string, any> = {
   snell: Snell,
   'cift-ilmek': CiftIlmek,
   'kostek-bagi': KostekBagi,
+  cerrah: Cerrah,
 };
 const Sema = SEMALAR[dugum];
+
+/** Renk anahtarındaki satırlar — çizim sınıflarıyla birebir aynı jetonu okur. */
+const ANAHTAR = {
+  misina: { ad: 'Ana Misina', aciklama: 'Makaradan gelen, gerilen taraf.' },
+  beden: { ad: 'Beden', aciklama: 'Kesilmeden devam eden ana hat.' },
+  uc: { ad: 'Serbest Uç', aciklama: 'Elinde tuttuğun, düğümü ören taraf.' },
+  orgu: { ad: 'Örgü Misina', aciklama: 'PE ana misina.' },
+  lider: { ad: 'Fluorocarbon Lider', aciklama: 'Ana misinaya eklenen şeffaf uç bölüm.' },
+  metal: { ad: 'Halka', aciklama: 'İğne gözü, fırdöndü veya klips.' },
+  igne: { ad: 'İğne', aciklama: 'Göz, pipo ve iğne ucu.' },
+  dugum: { ad: 'Sıkılmış Düğüm', aciklama: 'Sarımlar toplandıktan sonraki hâli.' },
+  hareket: { ad: 'Hareket Yönü', aciklama: 'Nereden geçireceğin, nereye çekeceğin.' },
+} as const;
+
+type AnahtarAdi = keyof typeof ANAHTAR;
+
+const ANAHTARLAR: Record<string, AnahtarAdi[]> = {
+  klinc: ['misina', 'uc', 'metal', 'dugum', 'hareket'],
+  palomar: ['misina', 'uc', 'igne', 'dugum', 'hareket'],
+  uni: ['misina', 'uc', 'metal', 'dugum', 'hareket'],
+  fg: ['orgu', 'lider', 'dugum', 'hareket'],
+  snell: ['misina', 'uc', 'igne', 'dugum', 'hareket'],
+  'cift-ilmek': ['misina', 'dugum', 'hareket'],
+  'kostek-bagi': ['beden', 'uc', 'dugum', 'hareket'],
+  cerrah: ['misina', 'lider', 'dugum', 'hareket'],
+};
+const satirlar = (ANAHTARLAR[dugum] ?? []).map((ad) => ({ tur: ad, ...ANAHTAR[ad] }));
 ---
-{Sema ? <Sema /> : (
-  <p class="rounded-lg border border-line bg-surface-2 p-4 text-sm text-muted">
+{Sema ? (
+  <div>
+    <ol class="grid gap-4 sm:grid-cols-2">
+      <Sema />
+    </ol>
+
+    <div class="kart mt-4 p-4">
+      <p class="alt-baslik mb-3">Renkler Ne Anlama Geliyor?</p>
+      <ul class="grid gap-2 sm:grid-cols-2">
+        {satirlar.map((s) => (
+          <li class="flex items-center gap-3 text-sm">
+            <svg class="diagram shrink-0" style="width:34px;height:16px" viewBox="0 0 34 16" aria-hidden="true">
+              {s.tur === 'metal' && <circle class="metal" cx="17" cy="8" r="6.5" />}
+              {s.tur === 'igne' && <path class="igne" d="M9 2 L9 9 C9 13 14 14 16 11" />}
+              {s.tur === 'dugum' && <rect class="dugum-dolu" x="5" y="2" width="24" height="12" rx="5" />}
+              {s.tur === 'hareket' && <Fragment><path class="hareket" d="M3 8 L22 8" /><polygon class="hareket-uc" points="31,8 22,11.6 22,4.4" /></Fragment>}
+              {!['metal', 'igne', 'dugum', 'hareket'].includes(s.tur) && <path class={s.tur} d="M3 8 L31 8" />}
+            </svg>
+            <span><span class="font-medium">{s.ad}</span> <span class="ml-1 text-muted">— {s.aciklama}</span></span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+) : (
+  <p class="kart p-4 text-sm text-muted">
     Bu düğüm için şema henüz çizilmedi ({dugum}).
   </p>
 )}

@@ -5,7 +5,7 @@
   "description": "İstanbul, Kocaeli ve Sapanca çevresi kıyı ve tatlı su balıkçılığı rehberi",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/sw-surum.mjs",
+    "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
     "validate": "node scripts/validate-data.mjs",

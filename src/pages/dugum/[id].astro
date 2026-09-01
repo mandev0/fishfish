@@ -6,6 +6,8 @@ import Liste from '../../components/Liste.astro';
 import Metin from '../../components/Metin.astro';
 import KnotDiagram from '../../components/svg/KnotDiagram.astro';
 import Zorluk from '../../components/Zorluk.astro';
+import { dugumKategoriAdi } from '../../lib/dugum';
+import { baslikBicimi } from '../../lib/metin';
 
 export async function getStaticPaths() {
   const dugumler = await getCollection('knots');
@@ -18,7 +20,8 @@ const takimlar = (await getCollection('rigs')).filter((r) => r.data.dugumler.inc
 const gorulen = new Set<string>();
 ---
 <Base baslik={d.ad} aciklama={d.ozet}>
-  <h1 class="text-3xl sm:text-4xl">{d.ad}</h1>
+  <p class="etiket-ust">{baslikBicimi(dugumKategoriAdi(d.kategori))}</p>
+  <h1 class="mt-1 text-3xl sm:text-4xl">{d.ad}</h1>
   <Metin metin={d.ozet} etiket="p" sinif="mt-2 max-w-2xl" gorulen={gorulen} />
 
   <dl class="mt-4 grid gap-5 sm:grid-cols-3">
@@ -36,8 +39,8 @@ const gorulen = new Set<string>();
     </div>
   </dl>
 
-  <div class="mt-6 kart p-4">
-    <div class="mx-auto max-w-md"><KnotDiagram dugum={dugum.id} /></div>
+  <div class="mt-6">
+    <KnotDiagram dugum={dugum.id} />
   </div>
 
   <Bolum baslik="Adım Adım">

@@ -20,6 +20,8 @@ import { beaufortAdi, KIYI_ILISKISI_METNI, kiyiIliskisi, ruzgar } from '../../li
 interface Nokta {
   id: string; ad: string; il: string; bolge: string;
   lat: number; lng: number; kiyiYonu: number; turler: string[];
+  /** Bu noktada kıyıdan uygulanabilen yöntemler. */
+  yontemler: string[];
   /** Open-Meteo deniz modelinin kapsamadığı kapalı/sığ sular. */
   denizVerisiZayif?: boolean;
   tatliSu?: boolean;
@@ -35,12 +37,18 @@ interface KararAlanlari {
   asgariBoy: number | null;
   ekipman: [string, string][];
 }
-type PanelTuru = TurProfili & { ozet: string } & KararAlanlari;
+type PanelTuru = TurProfili & { ozet: string; yontemler: string[] } & KararAlanlari;
 
-interface Veri { noktalar: Nokta[]; turler: PanelTuru[] }
+interface Veri {
+  noktalar: Nokta[];
+  turler: PanelTuru[];
+  /** Yöntem kimliği → görünen ad; durum cümlelerinde kullanılır. */
+  yontemAdlari: Record<string, string>;
+}
 
 const SECIM_ANAHTARI = 'fishfish:nokta';
 const IL_ANAHTARI = 'fishfish:il';
+const YONTEM_ANAHTARI = 'fishfish:yontem';
 
 /** Sayfa geçişlerinde yenilenen yükleyici; `online` dinleyicisi bunu çağırır. */
 let aktifYukle: ((tazele?: boolean) => Promise<void>) | null = null;
@@ -208,6 +216,8 @@ export function baslat(): void {
   const canliAlanlar = [...kok.querySelectorAll<HTMLElement>('[data-canli]')];
   const durumMetni = kok.querySelector<HTMLElement>('[data-durum-metni]');
   const kararAlani = kok.querySelector<HTMLElement>('[data-karar]');
+  const yontemSecici = kok.querySelector<HTMLSelectElement>('[data-yontem]');
+  const yontemDurumu = kok.querySelector<HTMLElement>('[data-yontem-durum]');
   const guncellemeDamgasi = kok.querySelector<HTMLElement>('[data-guncelleme]');
   const yenileDugmesi = kok.querySelector<HTMLButtonElement>('[data-yenile]');
 
@@ -255,6 +265,39 @@ export function baslat(): void {
     seciliId = secici.value;
   } else if (!sabitId && secici) {
     seciliId = secici.value;
+  }
+
+  // Yöntem seçimi noktadan bağımsız hatırlanır: kullanıcı bir yöntemi öğreniyorsa
+  // nokta değiştirdikçe onu yeniden seçmek zorunda kalmasın.
+  if (yontemSecici) {
+    try {
+      const kayitli = localStorage.getItem(YONTEM_ANAHTARI);
+      if (kayitli && [...yontemSecici.options].some((o) => o.value === kayitli)) {
+        yontemSecici.value = kayitli;
+      }
+    } catch { /* önbelleksiz devam */ }
+  }
+
+  const yontemAdi = (id: string) => veri.yontemAdlari?.[id] ?? id;
+
+  /**
+   * Seçili yöntem bu noktada uygulanmıyorsa söyle ve uygulandığı noktalara
+   * yönlendir. Sessizce boş liste göstermek kullanıcıyı "burada balık yok"
+   * sanısına düşürüyordu; sorun nokta değil, yöntem-nokta uyuşmazlığı.
+   */
+  function yontemNotu(nokta: Nokta, yontem: string, eslesen: number): void {
+    if (!yontemDurumu) return;
+    if (!yontem || nokta.yontemler?.includes(yontem)) {
+      yontemDurumu.hidden = true;
+      yontemDurumu.textContent = '';
+      return;
+    }
+    const ad = kacir(yontemAdi(yontem));
+    yontemDurumu.innerHTML =
+      `${kacir(nokta.ad)} kaydında ${ad} listelenmiyor.`
+      + (eslesen ? ' Aşağıdaki türler bu yöntemle başka noktalarda avlanıyor.' : '')
+      + ` <a class="underline" href="/noktalar?yontem=${encodeURIComponent(yontem)}">Bu yöntemin uygulandığı noktalar</a>.`;
+    yontemDurumu.hidden = false;
   }
 
   /** Son yenileme damgası — yenile düğmesinin yanında duran kısa ibare. */
@@ -375,13 +418,21 @@ export function baslat(): void {
       kiyiYonu: nokta.kiyiYonu,
     };
 
-    const adaylar = veri.turler.filter((t) => nokta.turler.includes(t.id));
+    const yontem = yontemSecici?.value || '';
+    const noktadaki = veri.turler.filter((t) => nokta.turler.includes(t.id));
+    const adaylar = yontem ? noktadaki.filter((t) => t.yontemler.includes(yontem)) : noktadaki;
     const sirali = turleriSirala(adaylar, kosul).slice(0, 6);
+
+    yontemNotu(nokta, yontem, adaylar.length);
 
     if (listeAlani) {
       listeAlani.innerHTML = sirali.length
         ? sirali.map(({ tur, sonuc }) => turSatiri(tur as PanelTuru, sonuc)).join('')
-        : '<li class="kart p-4 text-sm text-muted">Bu nokta için tür kaydı yok.</li>';
+        : `<li class="kart p-4 text-sm text-muted">${
+            yontem
+              ? `${kacir(nokta.ad)} için ${kacir(yontemAdi(yontem).toLocaleLowerCase('tr'))} ile kayıtlı tür yok. Yöntemi "Hepsi"ne al veya başka bir nokta seç.`
+              : 'Bu nokta için tür kaydı yok.'
+          }</li>`;
     }
 
     // --- Karar kartı: listenin başındaki tür ---
@@ -476,6 +527,12 @@ export function baslat(): void {
   secici?.addEventListener('change', () => {
     seciliId = secici.value;
     try { localStorage.setItem(SECIM_ANAHTARI, seciliId); } catch { /* yoksay */ }
+    void yukle();
+  });
+
+  yontemSecici?.addEventListener('change', () => {
+    try { localStorage.setItem(YONTEM_ANAHTARI, yontemSecici.value); } catch { /* yoksay */ }
+    // Hava paketi önbellekten geldiği için bu yeniden çizim ağa çıkmaz.
     void yukle();
   });
   // --- Konumuma en yakın nokta ---

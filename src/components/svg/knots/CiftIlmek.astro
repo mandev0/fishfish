@@ -1,34 +1,36 @@
 ---
 import Adim from './_Adim.astro';
+import CiftIp from './_CiftIp.astro';
+import Ip from './_Ip.astro';
+import Ok from './_Ok.astro';
+import Olcu from './_Olcu.astro';
+import Sikilmis from './_Sikilmis.astro';
 ---
-<svg class="diagram" viewBox="0 0 400 450" role="img" aria-labelledby="k-cift">
-  <title id="k-cift">Çift ilmek: misinayı katlayarak çift hat yap, basit bir ilmek at, katlanmış ucu bu ilmekten iki kez geçir ve sık.</title>
+<Adim no={1} baslik="Misinanın ucunu 15 cm katlayarak çift hat oluştur.">
+  <CiftIp d="M312 76 L60 76" tur="misina" kapaliBas />
+  <text class="lbl-misina" x="200" y="58" text-anchor="middle">çift hat</text>
+  <Olcu x1={60} x2={200} y={104} metin="15 cm" />
+</Adim>
 
-  <Adim no={1} baslik="Ucu 15 cm katlayarak çift hat oluştur" y={0}>
-    <path class="misina" d="M388 40 L120 40" />
-    <path class="misina" d="M388 54 L120 54" />
-    <path class="uc" d="M120 40 q-34 0 -34 7 q0 7 34 7" />
-    <text class="lbl-misina" x="140" y="86">çift hat</text>
-  </Adim>
+<Adim no={2} baslik="Çift hatla basit bir ilmek yap.">
+  <CiftIp d="M312 60 L212 60 C170 60 146 84 160 104 C174 124 206 116 208 96" tur="misina" />
+  <CiftIp d="M208 96 C210 72 186 58 152 62 L64 74" tur="misina" ust kapaliSon />
+  <text class="lbl-a" x="176" y="146" text-anchor="middle">basit ilmek</text>
+</Adim>
 
-  <Adim no={2} baslik="İlmek yap, katlanmış ucu İKİ kez geçir" y={150}>
-    <path class="misina" d="M388 46 L214 46" />
-    <path class="misina" d="M388 58 L214 58" />
-    <path class="uc" d="M214 46 q-56 -14 -78 10 q-22 24 8 34 q30 10 46 -12 q16 -22 -12 -32" />
-    <path class="hareket" d="M178 46 q-40 -4 -56 8 q-16 12 4 20" />
-    <text class="lbl-a" x="30" y="96">iki geçiş</text>
-  </Adim>
+<Adim no={3} baslik="Katlanmış ucu bu ilmeğin içinden iki kez geçir.">
+  <CiftIp d="M312 56 L212 56 C170 56 146 80 160 100 C174 120 206 112 208 92" tur="misina" />
+  <CiftIp d="M208 92 C210 68 186 54 152 58 C118 64 96 82 108 98" tur="misina" ust />
+  <CiftIp d="M108 98 C120 114 152 110 158 92" tur="misina" ust kapaliSon />
+  <Ok x1={252} y1={130} x2={192} y2={112} kavis={14} />
+  <text class="lbl-a" x="258" y="140">iki kez</text>
+</Adim>
 
-  <Adim no={3} baslik="Dört ucu birden çekerek sık — 3-5 cm ilmek kalsın" y={300}>
-    <path class="misina" d="M388 46 L180 46" />
-    <path class="misina" d="M388 58 L180 58" />
-    <g transform="translate(158,52)">
-      <rect x="-18" y="-14" width="36" height="28" rx="5" class="dugum-dolu" />
-      <path class="ln-thin" stroke="var(--d-dugum)" d="M-8 -14 L-8 14 M2 -14 L2 14" />
-    </g>
-    <path class="uc" d="M140 46 q-46 -4 -46 6 q0 10 46 6" />
-    <path class="tick" d="M94 78 L140 78" />
-    <path class="tick" d="M94 72 L94 84 M140 72 L140 84" />
-    <text class="lbl" x="94" y="98">3-5 cm</text>
-  </Adim>
-</svg>
+<Adim no={4} baslik="Islat ve dört ucu birden çekerek sık; ilmek boyu 3-5 cm kalsın.">
+  <CiftIp d="M312 76 L190 76" tur="misina" />
+  <Sikilmis x={166} y={76} en={46} boy={30} adet={5} />
+  <Ip d="M144 66 C96 56 84 96 144 86" tur="misina" />
+  <Olcu x1={90} x2={144} y={116} metin="3-5 cm" />
+  <Ok x1={240} y1={36} x2={302} y2={36} />
+  <Ok x1={96} y1={36} x2={34} y2={36} />
+</Adim>

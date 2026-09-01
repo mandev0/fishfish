@@ -1,5 +1,5 @@
 /**
- * Uygulama simgelerini üretir (`public/icon-*.png`, `public/apple-touch-icon.png`).
+ * Site simgelerini üretir (`public/icon-192.png`, `public/apple-touch-icon.png`).
  *
  * Simge, başlıktaki logonun aynısıdır: `src/lib/ikonlar.ts` içindeki `balik`
  * yolu, `--accent` zemin üstünde beyaz. Logo değişirse burayı bir kez çalıştır.
@@ -46,12 +46,9 @@ function sayfa(boyut, oran) {
 }
 
 const ISLER = [
+  // SVG favicon'u desteklemeyen tarayıcılar için PNG karşılığı.
   ['public/icon-192.png', 192, 0.68],
-  ['public/icon-512.png', 512, 0.68],
-  // Maskeli simge: Android simgeyi daire/kare/damla kesebilir. Güvenli alan
-  // merkezdeki %80; simgeyi ona sığdırıyoruz, zemin tam kanar.
-  ['public/icon-maskable-512.png', 512, 0.50],
-  // iOS ana ekran simgesi: şeffaflık yok, köşeleri iOS kendi yuvarlar.
+  // iOS'ta yer imi simgesi: şeffaflık yok, köşeleri iOS kendi yuvarlar.
   ['public/apple-touch-icon.png', 180, 0.68],
 ];
 

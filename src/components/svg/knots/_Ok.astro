@@ -1,0 +1,17 @@
+---
+/**
+ * Hareket oku: "buradan geçir", "bu yöne çek".
+ * Gövde kesik çizgi, uç dolu üçgen — ikisi de aksan rengindedir.
+ */
+import { ok } from '../../../lib/semaIp';
+
+interface Props {
+  x1: number; y1: number; x2: number; y2: number;
+  kavis?: number;
+  uc?: number;
+}
+const { x1, y1, x2, y2, kavis, uc } = Astro.props;
+const o = ok(x1, y1, x2, y2, { kavis, uc });
+---
+<path class="hareket" d={o.govde} />
+<polygon class="hareket-uc" points={o.uc} />

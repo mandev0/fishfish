@@ -333,6 +333,17 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
 /* Düğüm şemalarında serbest uç (tag end) — ana hattan renkle ayrılır. */
 .diagram .uc       { stroke: var(--d-yem);    fill: none; stroke-width: 1.9; stroke-linecap: round; }
 
+/* Kesişme kılıfı — düğüm çizimini anlaşılır kılan tek şey üst/alt bilgisidir.
+   Üstten geçen ipin altına zemin renginde kalın bir çizgi basılır; alttaki ip
+   tam o noktada kesilmiş görünür. Kılıf zemini bir jetondan okur, çünkü şema
+   kart içinde de (`--surface`) sayfa zemininde de (`--bg`) durabiliyor. */
+.diagram           { --sema-zemin: var(--surface); }
+.diagram .kilif    { stroke: var(--sema-zemin); fill: none; stroke-width: 7; stroke-linecap: round; }
+/* Bir ekseni saran ipin eksenin arkasında kalan yarısı. */
+.diagram .ip-arka  { opacity: .4; }
+/* Hareket okunun dolu ucu — gövdesi `hareket` kesik çizgisi. */
+.diagram .hareket-uc { fill: var(--d-dugum); stroke: none; }
+
 /* Genel amaçlı ince yardımcı çizgiler */
 .diagram .ln       { stroke: var(--d-misina); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .diagram .ln-thin  { stroke: currentColor; fill: none; stroke-width: 1; opacity: .45; }
@@ -365,6 +376,7 @@ table, .sayisal { font-variant-numeric: tabular-nums; }
 .diagram .lbl-metal  { fill: var(--d-metal-cizgi); font-size: 11px; font-weight: 650; font-family: var(--font-sans); }
 .diagram .lbl-yem    { fill: var(--d-yem);    font-size: 11px; font-weight: 650; font-family: var(--font-sans); }
 .diagram .lbl-igne   { fill: var(--d-igne);   font-size: 11px; font-weight: 650; font-family: var(--font-sans); }
+.diagram .lbl-uc     { fill: var(--d-yem);    font-size: 11px; font-weight: 650; font-family: var(--font-sans); }
 
 /* ---------------------------------------------------------------
    Balık siluetleri — şema paletinden değil, üst öğenin renginden

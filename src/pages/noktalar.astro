@@ -3,7 +3,9 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import NoktaRozetleri from '../components/NoktaRozetleri.astro';
 import { baslikBicimi } from '../lib/metin';
-import { BOLGE_ADLARI, BOLGE_ILI, IL_ADLARI, SU_TURU } from '../lib/season';
+import {
+  BOLGE_ADLARI, BOLGE_ILI, IL_ADLARI, ILCE_ADLARI, ILCE_ILI, ILCE_YAKASI, SU_TURU, YAKA_ADLARI,
+} from '../lib/season';
 
 const noktalar = (await getCollection('spots')).sort((a, b) => a.data.ad.localeCompare(b.data.ad, 'tr'));
 const turler = (await getCollection('species')).sort((a, b) => a.data.ad.localeCompare(b.data.ad, 'tr'));
@@ -13,11 +15,38 @@ const veri = noktalar.map((n) => ({
   id: n.id, ad: n.data.ad, il: n.data.il, bolge: n.data.bolge, su: n.data.su,
   lat: n.data.lat, lng: n.data.lng, turler: n.data.turler, tip: n.data.tip,
   yontemler: n.data.yontemler,
+  ilce: n.data.ilce,
+  /** Yakası olmayan ilçelerde boş — süzgeç o zaman yalnız ilçeyle çalışır. */
+  yaka: ILCE_YAKASI[n.data.ilce] ?? '',
   geceIsigi: n.data.geceIsigi, otopark: n.data.otopark, ozet: n.data.ozet,
 }));
 
 const iller = [...new Set(noktalar.map((n) => n.data.il))];
 const bolgeler = [...new Set(noktalar.map((n) => n.data.bolge))];
+
+/**
+ * İlçe ve yaka süzgeçleri kullanılan noktalardan üretilir; elle liste tutunca
+ * yeni nokta eklendiğinde sessizce eksik kalıyordu. Sıra `ILCE_ADLARI` ile
+ * aynı: il il, il içinde de yakalar gruplanmış hâlde.
+ */
+const ilceSirasi = Object.keys(ILCE_ADLARI);
+const kullanilanIlceler = [...new Set(noktalar.map((n) => n.data.ilce))]
+  .sort((a, b) => ilceSirasi.indexOf(a) - ilceSirasi.indexOf(b));
+
+const ilceler = kullanilanIlceler.map((id) => ({
+  id,
+  ad: ILCE_ADLARI[id]!,
+  il: ILCE_ILI[id]!,
+  yaka: ILCE_YAKASI[id] ?? '',
+  sayi: noktalar.filter((n) => n.data.ilce === id).length,
+}));
+
+/** Yaka çipleri: "Anadolu yakasındayım" sorusu bölgeyle cevaplanamıyor. */
+const yakalar = [...new Set(ilceler.map((i) => i.yaka))].filter(Boolean).map((id) => ({
+  id,
+  ad: YAKA_ADLARI[id]!,
+  il: ilceler.find((i) => i.yaka === id)!.il,
+}));
 
 /**
  * Su türü filtresi. Seçenek değeri, o sınıfa giren su alanı kimliklerini
@@ -114,6 +143,37 @@ const tatliSuSayisi = noktalar.filter((n) => SU_TURU[n.data.su] !== 'deniz').len
         <span class="text-sm">Sadece Gece Aydınlatması Olanlar</span>
       </label>
     </div>
+
+    {/* Yaka ve ilçe: seçicilerden farklı olarak **birden fazla** seçilebilir,
+        bu yüzden açılır kutu değil çip. Seçili hâl `aria-pressed` ile taşınır.
+        Hiçbiri seçili değilken süzgeç kapalıdır — "hepsi" ayrı bir çip değil. */}
+    <div class="mt-4 border-t border-line pt-4">
+      <p class="etiket-ust">Yaka</p>
+      <div class="mt-2 flex flex-wrap gap-2">
+        {yakalar.map((y) => (
+          <button
+            type="button" data-yaka={y.id} data-il={y.il}
+            aria-pressed="false" class="dugme dugme-cip"
+          >{y.ad}</button>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <p class="etiket-ust">İlçe</p>
+      <div class="mt-2 flex flex-wrap gap-2">
+        {ilceler.map((i) => (
+          <button
+            type="button" data-ilce={i.id} data-il={i.il} data-yaka={i.yaka || undefined}
+            aria-pressed="false" class="dugme dugme-cip"
+          >{i.ad}</button>
+        ))}
+      </div>
+    </div>
+
+    <button type="button" data-filtre-sifirla hidden class="dugme dugme-ikincil mt-4">
+      Filtreleri Temizle
+    </button>
   </details>
 
   <script is:inline data-astro-rerun>

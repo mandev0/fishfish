@@ -9,8 +9,7 @@ import { AY_ADLARI } from '../lib/season';
 
 // Tür koleksiyonu glob ile okunuyor ve sırası dosya sistemine göre değişiyor.
 // Kimliğe göre sıralamak derlemeyi yeniden üretilebilir kılıyor: aksi hâlde
-// aynı kaynaktan farklı çıktı çıkıyor, service worker sürüm damgası değişiyor
-// ve kurulu kullanıcılar boş yere bütün paketi yeniden indiriyor.
+// aynı kaynaktan makineye göre farklı çıktı çıkıyor ve yayın farkı okunmaz oluyor.
 const turler = (await getCollection('species')).sort((a, b) => a.id.localeCompare(b.id));
 const noktaSayisi = (await getCollection('spots')).length;
 const takimSayisi = (await getCollection('rigs')).length;

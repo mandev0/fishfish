@@ -3,8 +3,8 @@
  * `src/styles/inter.css` içindeki `@font-face` bloklarını üretir.
  *
  * Derlemenin parçası değildir; dosyalar depoda durur. Sebep: çalışma anında
- * `fonts.googleapis.com`'a gitmek hem çevrimdışı açılışta yazı tipini
- * düşürüyor hem derlemeyi ağa bağımlı kılıyor. Yalnızca Inter sürümü
+ * `fonts.googleapis.com`'a gitmek derlemeyi ağa bağımlı kılıyor ve CDN
+ * yavaşladığında yazı tipini düşürüyor. Yalnızca Inter sürümü
  * yükseltilecekse elle çalıştır:
  *
  *   npm run yazitipi:indir
@@ -41,9 +41,9 @@ const baslik = `/* -------------------------------------------------------------
    Inter — Nocturne'ün gövde ve başlık yüzü.
 
    Google Fonts'tan çalışma anında değil, depodan servis ediliyor:
-   \`@import url(fonts.googleapis.com)\` çevrimdışı açılışta yazı tipini
-   düşürür ve derlemeyi ağa bağımlı kılardı. Dosyalar \`public/fonts/\`
-   içinde durur; \`npm run yazitipi:indir\` ile yenilenir.
+   \`@import url(fonts.googleapis.com)\` derlemeyi ağa bağımlı kılar ve CDN
+   yavaşladığında yazı tipini düşürür. Dosyalar \`public/fonts/\` içinde durur;
+   \`npm run yazitipi:indir\` ile yenilenir.
 
    latin-ext altkümesi Türkçe için zorunlu: ğ ş İ ı bu aralıkta.
 --------------------------------------------------------------- */`;

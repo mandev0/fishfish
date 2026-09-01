@@ -3,11 +3,11 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { baslikBicimi } from '../lib/metin';
 import { AY_ADLARI, AY_KISA, bulunabilirlikMetni, SU_ADLARI, SU_KISA_ADLARI } from '../lib/season';
+import { turYontemleri } from '../lib/yontem';
 
 // Tür koleksiyonu glob ile okunuyor ve sırası dosya sistemine göre değişiyor.
 // Kimliğe göre sıralamak derlemeyi yeniden üretilebilir kılıyor: aksi hâlde
-// aynı kaynaktan farklı çıktı çıkıyor, service worker sürüm damgası değişiyor
-// ve kurulu kullanıcılar boş yere bütün paketi yeniden indiriyor.
+// aynı kaynaktan makineye göre farklı çıktı çıkıyor ve yayın farkı okunmaz oluyor.
 const turler = (await getCollection('species'))
   .sort((a, b) => a.id.localeCompare(b.id))
   .sort((a, b) => b.data.aylar.reduce((x, y) => x + y, 0) - a.data.aylar.reduce((x, y) => x + y, 0));
@@ -20,6 +20,18 @@ const turler = (await getCollection('species'))
 const suSirasi = Object.keys(SU_ADLARI);
 const sular = [...new Set(turler.flatMap((t) => t.data.sular))]
   .sort((a, b) => suSirasi.indexOf(a) - suSirasi.indexOf(b));
+
+/**
+ * Yöntem süzgeci: "hangi ay LRF yapılır" sorusunun cevabı burada.
+ * Tür ↔ yöntem eşlemesi `yontem.ts` içinde tek yerden kuruluyor.
+ */
+const takimlar = await getCollection('rigs');
+const yontemler = (await getCollection('methods')).sort((a, b) => a.data.zorluk - b.data.zorluk);
+const turYontemHaritasi = turYontemleri(
+  turler.map((t) => ({ id: t.id, takimlar: t.data.takimlar })),
+  takimlar.map((r) => ({ id: r.id, yontem: r.data.yontem })),
+  yontemler.map((y) => ({ id: y.id, turler: y.data.turler })),
+);
 
 /** Bolluk rozetleriyle aynı pastel skala (global.css → --bol*). */
 const hucre = (v: number) => (v > 0 ? `bolluk-${v}` : '');
@@ -45,6 +57,20 @@ const hucre = (v: number) => (v > 0 ? `bolluk-${v}` : '');
     ))}
   </div>
 
+  <div class="mt-3 flex flex-wrap items-center gap-2">
+    <span class="text-sm text-muted">Yöntem:</span>
+    <button type="button" data-yontem="hepsi" aria-pressed="true" class="dugme dugme-cip yontem-dugme">Hepsi</button>
+    {yontemler.map((y) => (
+      <button type="button" data-yontem={y.id} aria-pressed="false" class="dugme dugme-cip yontem-dugme">
+        {y.data.kisaAd}
+      </button>
+    ))}
+  </div>
+
+  <p data-bos hidden class="mt-4 kart p-4 text-sm text-muted" role="status">
+    Bu su alanı ve yöntem birlikte hiçbir türe uymuyor. Süzgeçlerden birini "Hepsi"ne al.
+  </p>
+
   <div class="scroll-x mt-5 rounded-sm border-2 border-line">
     <table class="w-full min-w-max border-collapse text-sm">
       <caption class="sr-only">Türlere ve aylara göre bulunabilirlik</caption>
@@ -58,7 +84,11 @@ const hucre = (v: number) => (v > 0 ? `bolluk-${v}` : '');
       </thead>
       <tbody>
         {turler.map((t) => (
-          <tr class="border-t border-line" data-sular={t.data.sular.join(' ')}>
+          <tr
+            class="border-t border-line"
+            data-sular={t.data.sular.join(' ')}
+            data-yontemler={(turYontemHaritasi[t.id] ?? []).join(' ')}
+          >
             <th scope="row" class="sticky left-0 z-10 whitespace-nowrap border-r border-line bg-surface px-3 py-1.5 text-left font-medium">
               <a href={`/balik/${t.id}`} class="hover:text-vurgu">{baslikBicimi(t.data.ad)}</a>
             </th>
@@ -95,17 +125,39 @@ const hucre = (v: number) => (v > 0 ? `bolluk-${v}` : '');
       const basl = document.querySelector(`[data-ay-basligi="${ay}"]`);
       if (basl) { basl.classList.remove('text-muted'); basl.classList.add('text-vurgu', 'font-bold'); }
 
-      const dugmeler = document.querySelectorAll('.su-dugme');
+      // İki süzgeç birlikte çalışır; her tıklamada ikisi birden uygulanır,
+      // yoksa biri diğerinin gizlediği satırı geri açıyordu.
+      const suDugmeleri = document.querySelectorAll('.su-dugme');
+      const yontemDugmeleri = document.querySelectorAll('.yontem-dugme');
       const satirlar = document.querySelectorAll('tbody tr[data-sular]');
-      dugmeler.forEach((d) => d.addEventListener('click', () => {
-        const su = d.getAttribute('data-su');
-        // Seçili hâl `aria-pressed` ile taşınıyor: hem ekran okuyucu duyuyor
-        // hem de görünüm tek yerden (.dugme-cip) besleniyor.
-        dugmeler.forEach((x) => x.setAttribute('aria-pressed', String(x === d)));
+      const bosluk = document.querySelector('[data-bos]');
+      let su = 'hepsi';
+      let yontem = 'hepsi';
+
+      function uygula() {
+        let sayi = 0;
         satirlar.forEach((s) => {
-          const uygun = su === 'hepsi' || (s.getAttribute('data-sular') || '').split(' ').includes(su);
+          const suUygun = su === 'hepsi' || (s.getAttribute('data-sular') || '').split(' ').includes(su);
+          const yontemUygun = yontem === 'hepsi'
+            || (s.getAttribute('data-yontemler') || '').split(' ').includes(yontem);
+          const uygun = suUygun && yontemUygun;
           s.hidden = !uygun;
+          if (uygun) sayi++;
         });
+        if (bosluk) bosluk.hidden = sayi > 0;
+      }
+
+      // Seçili hâl `aria-pressed` ile taşınıyor: hem ekran okuyucu duyuyor
+      // hem de görünüm tek yerden (.dugme-cip) besleniyor.
+      suDugmeleri.forEach((d) => d.addEventListener('click', () => {
+        su = d.getAttribute('data-su');
+        suDugmeleri.forEach((x) => x.setAttribute('aria-pressed', String(x === d)));
+        uygula();
+      }));
+      yontemDugmeleri.forEach((d) => d.addEventListener('click', () => {
+        yontem = d.getAttribute('data-yontem');
+        yontemDugmeleri.forEach((x) => x.setAttribute('aria-pressed', String(x === d)));
+        uygula();
       }));
     })();
   </script>
